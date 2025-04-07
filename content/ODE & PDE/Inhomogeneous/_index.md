@@ -1,7 +1,7 @@
 +++
-title = "Log"
+title = "Inhomogeneous"
 type = "chapter"
-weight = 1
+weight = 2
 +++
 
 This is a new chapter.

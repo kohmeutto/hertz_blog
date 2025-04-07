@@ -1,5 +1,5 @@
 +++
-title = "Log"
+title = "ODE & PDE"
 type = "chapter"
 weight = 1
 +++
