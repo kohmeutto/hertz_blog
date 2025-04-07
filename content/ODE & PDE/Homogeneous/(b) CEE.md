@@ -17,32 +17,42 @@ $$
 
 * 형태2
 
-	$xy^{\prime}+ay=0$
-	
-	$D+a=0$ 
+$$
+\begin{aligned}
+&xy^{\prime}+ay=0 \\
+\\
+&D+a=0
+\end{aligned}
+$$
 
 ---
 
 ### 2. 서로 다른, 실수 해
 
-	$D=\alpha,\beta$
-	
-    $y=c_1x^{\alpha}+c_2x^{\beta}$
+$$
+\begin{aligned}
+&D=\alpha,\beta \\
+\\
+&y=c_1x^{\alpha}+c_2x^{\beta}
+\end{aligned}
+$$
 
 ---
 
 example1)
 
-	$x^2y''-4xy'+6y=0$
+$$x^2y''-4xy'+6y=0$$
 
-<details>
-<summary>sol</summary>
+{{< details summary="sol" >}}
+$$
+\begin{aligned}
+&\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2 \\
+\\
+&y=c_1x^3+c_2x^2
+\end{aligned}
+$$
+{{< /details >}}
 
-	$\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2$
-	
-	$y=c_1x^3+c_2x^2$
-
-</details>
 
 example2)
 
