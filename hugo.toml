@@ -15,6 +15,5 @@ defaultContentLanguage = 'en'
           inline = [['\(', '\)']]
 [params]
   math = true
-
-[params]
   customCSS = ["assets/custom.css"]
+  
