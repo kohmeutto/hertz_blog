@@ -1,6 +1,5 @@
 +++
 title = "Homogeneous"
-type = "chapter"
 weight = 1
 +++
 

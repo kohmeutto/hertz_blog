@@ -4,3 +4,14 @@ title = 'My New Hugo Site'
 theme = 'hugo-theme-relearn'
 
 defaultContentLanguage = 'en'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+[params]
+  math = true

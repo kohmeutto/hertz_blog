@@ -1,12 +1,15 @@
-## (b) CEE - Homogenous
++++
+title = "(b) CEE - Homogenous"
+weight = 1
++++
 
 ### 1. 코시-오일러 제차미분방정식
 
 형태1
 
-	$x^2y''+axy'+by=0$
+$$x^2y''+axy'+by=0$$
 	
-	$D^2+\left(a-1\right)D+b=0$
+$D^2+\left(a-1\right)D+b=0$
 
 형태2
 
@@ -26,7 +29,7 @@
 
 example1)
 
-		$x^2y''-4xy'+6y=0$
+	$x^2y''-4xy'+6y=0$
 
 <details>
 <summary>sol</summary>
