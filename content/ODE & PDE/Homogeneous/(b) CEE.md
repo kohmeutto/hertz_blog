@@ -5,13 +5,17 @@ weight = 1
 
 ### 1. 코시-오일러 제차미분방정식
 
-형태1
+* 형태1
 
-$$x^2y''+axy'+by=0$$
-	
-$D^2+\left(a-1\right)D+b=0$
+$$
+\begin{aligned}
+&x^2y''+axy'+by=0 \\
+\\
+&D^2+\left(a-1\right)D+b=0
+\end{aligned}
+$$
 
-형태2
+* 형태2
 
 	$xy^{\prime}+ay=0$
 	
