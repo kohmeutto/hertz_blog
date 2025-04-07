@@ -15,3 +15,4 @@ defaultContentLanguage = 'en'
           inline = [['\(', '\)']]
 [params]
   math = true
+  customCSS = ["custom.css"]
