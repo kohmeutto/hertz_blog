@@ -1,0 +1,12 @@
+.collapsible-content {
+  display: none;
+}
+
+.collapsible-button {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border: none;
+  background-color: #f0f0f0; /* 배경색 설정 (선택 사항) */
+  cursor: pointer;
+}

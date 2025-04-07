@@ -13,7 +13,9 @@ defaultContentLanguage = 'en'
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+          
 [params]
   math = true
-  customCSS = ["assets/custom.css"]
+  customCSS = ["css/collapsible.css"]
+  customJS = ["js/collapsible.js"]
   
