@@ -1,15 +1,27 @@
 +++
-title = "(b) ODE - Homogenous"
-weight = 1
+title = "(b) CEE - Homogenous"
+weight = 2
 +++
 
-### 1. 상미분제차차방정식
+### 1. 코시-오일러 제차미분방정식
+
+* 형태1
 
 $$
 \begin{aligned}
-&xy''+ay'+by=0 \\
+&x^2y''+axy'+by=0 \\
 \\
-&D^2+\left(a\right)D+b=0
+&D^2+\left(a-1\right)D+b=0
+\end{aligned}
+$$
+
+* 형태2
+
+$$
+\begin{aligned}
+&xy^{\prime}+ay=0 \\
+\\
+&D+a=0
 \end{aligned}
 $$
 
@@ -21,7 +33,7 @@ $$
 \begin{aligned}
 &D=\alpha,\beta \\
 \\
-&y=c_1e^{\alpha x}+c_2e^{\beta x}
+&y=c_1x^{\alpha}+c_2x^{\beta}
 \end{aligned}
 $$
 
@@ -29,14 +41,14 @@ $$
 
 example1)
 
-$$y''-4y'=0$$
+$$x^2y''-4xy'+6y=0$$
 
 {{< details summary="sol" >}}
 $$
 \begin{aligned}
-&\left(D\right)\left(D-4\right)=0\rightarrow D=0,4 \\
+&\left(D-3\right)\left(D-2\right)=0\rightarrow D=3,2 \\
 \\
-&y=c_1x^3+c_2e^{4x}
+&y=c_1x^3+c_2x^2
 \end{aligned}
 $$
 {{< /details >}}

@@ -1,6 +1,5 @@
 +++
 title = "ODE & PDE"
-type = "chapter"
 weight = 1
 +++
 
