@@ -1,5 +1,5 @@
 +++
-title = 'ODE & PDE'
+title = "Strum-Lioville"
 weight = 5
 +++
 
