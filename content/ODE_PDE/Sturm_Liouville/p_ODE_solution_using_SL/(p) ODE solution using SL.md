@@ -51,9 +51,9 @@ $$
 \begin{aligned}
 &\int_0^1dx\left\lbrack a_{n}\sin n\pi x\right\rbrack^2=1 \\
 \\
-&\left|a_{n}^{}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}^{}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}^{}\right|^2}{2}=1 \\
+&\left|a_{n}\right|^2\cdot\frac12\int_{-1}^1dx\left\lbrack\sin^2n\pi x\right\rbrack=\left|a_{n}\right|^2\cdot\frac12\cdot1=\frac{\left|a_{n}\right|^2}{2}=1 \\
 \\
-&\left|a_{n}^{}\right|=\sqrt2 \\
+&\left|a_{n}\right|=\sqrt2 \\
 \\
 &\varphi_{n}=\sqrt{2}\sin n\pi x
 \end{aligned}
@@ -125,13 +125,13 @@ $$
 $φ_{n}$ 을 eigenfunction 이라고 하자.
 
 $$
-\left(D^2+\lambda\right)\varphi_{n}=-\lambda_{n}^{}w\left(x\right)\varphi_{n}
+\left(D^2+\lambda\right)\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}
 $$
 
 w(x)=1로 놓으면,
 
 $$
-\left(D^2+\lambda+\lambda_{n}^{}\right)\varphi_{n}=0
+\left(D^2+\lambda+\lambda_{n}\right)\varphi_{n}=0
 $$
 
 (1) $λ+λ_{n}≠0$
@@ -206,7 +206,7 @@ $$\lambda_{n}=0$$
 
 따라서,
 
-$$y=\sum c_{n}^{}\sqrt{2}\sin n\pi x$$
+$$y=\sum c_{n}\sqrt{2}\sin n\pi x$$
 
 {{< /details >}}
 
@@ -258,7 +258,7 @@ $$
 
 계수 $λ_{n}$을 구하면,
 
-![](image1.png)
+![image1](image1.png)
 
 $$
 \lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots
@@ -310,8 +310,6 @@ $$
 
 eigen-expansion 을 수행한다.
 
-
-
 $$
 \begin{aligned}
 &y''=-2y-x \\
@@ -345,111 +343,86 @@ $$
 {{< /details >}}
 
 
+{{< details summary="sol2" >}}
 
+$$y''+2y=-x$$
 
+$φ_{n}$ 을 eigenfunction 이라고 하자. 따라서, 위 미분 방정식의 해는
 
+$$y=\sum c_{n}\varphi_{n}$$
 
-- sol2
+eigenfunction 구하면,
 
-  $$
-  y''+2y=-x
-  $$
+$$\left(D^2+2\right)\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$
 
-  φ$_{n}$ 을 eigenfunction 이라고 하자. 따라서, 위 미분 방정식의 해는
+w(x)=1로 놓으면,
 
-  $$
-  y=\sum c_{n}^{}\varphi_{n}
-  $$
+$$\varphi_{n}=a_{n}\sin\sqrt{2+\lambda_{n}}x+b_{n}\cos\sqrt{2+\lambda_{n}}x$$
 
-  eigenfunction 구하면,
+boundary condition을 적용한다. 따라서,
 
-  $$
-  \left(D^2+2\right)\varphi_{n}=-\lambda_{n}^{}w\left(x\right)\varphi_{n}
-  $$
+$$
+\begin{aligned}
+&\varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0 \\
+\\
+&\varphi_{n}\left(1\right)+\varphi_{n}'\left(1\right)=0=a_{n}\left(\sin\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}\right) \\
+\\
+&0=\tan\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}
+\end{aligned}
+$$
 
-  w(x)=1로 놓으면,
+$+λ_{n}$을 구하면,
 
-  $$
-  \varphi_{n}=a_{n}\sin\sqrt{2+\lambda_{n}}x+b_{n}\cos\sqrt{2+\lambda_{n}}x
-  $$
+$$2+\lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots$$
 
-  boundary condition을 적용한다. 따라서,
+따라서,
 
-  $$
-  \varphi_{n}\left(0\right)=0=b_{n},\quad b_{n}=0
-  $$
+$$\lambda_{n}=0.0288,2.9132,5.9787,9.086,12.207,\cdots,\quad n=1,2,3,\cdots$$
 
-  $$
-  \varphi_{n}\left(1\right)+\varphi_{n}'\left(1\right)=0=a_{n}\left(\sin\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}\right)
-  $$
+<hr>
 
-  $$
-  0=\tan\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}
-  $$
+고유함수의 계수를 구해보자.
 
-  2+λ$_{n}$을 구하면,
+$$
+\begin{aligned}
+&\int_0^1dx\left\lbrack a_{n}\sin\sqrt{2+\lambda_{n}}x\right\rbrack^2=1 \\
+\\
+&\left|a_{n}\right|^2\int_0^1dx\left\lbrack\sin^2\sqrt{2+\lambda_{n}}x\right\rbrack=\frac{\left|a_{n}\right|^2}{2}\int_0^1dx\left\lbrack1-\cos2\sqrt{2+\lambda_{n}}x\right\rbrack \\
+\\
+&1=\frac{\left|a_{n}\right|^2}{2}\left(1-\frac{1}{2\sqrt{2+\lambda_{n}}}\sin2\sqrt{2+\lambda_{n}}\right) \\
+\\
+&\left|a_{n}\right|^2=\frac{2}{1-\frac{1}{2\sqrt{2+\lambda_{n}}}\sin2\sqrt{2+\lambda_{n}}}=\frac{2}{1-\frac{\sin\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}}{\sqrt{2+\lambda_{n}}}}
+\end{aligned}
+$$
 
-  $$
-  2+\lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots
-  $$
+since, $0=\sin\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}$
 
-  따라서,
+$$
+\begin{aligned}
+&\left|a_{n}\right|^2=\frac{2}{1+\cos^2\sqrt{2+\lambda_{n}}} \\
+\\
+&\varphi_{n}=\frac{\sqrt{2}\sin\sqrt{2+\lambda_{n}}x}{\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}
+\end{aligned}
+$$
 
-  $$
-  \lambda_{n}=0.0288,2.9132,5.9787,9.086,12.207,\cdots,\quad n=1,2,3,\cdots
-  $$
+<hr>
 
-  ---
+$$
+\begin{aligned}
+&y=-\sum_{n=1}^{N}\frac{\langle-x|\varphi_{n}\rangle}{\lambda_{n}}\varphi_{n}=\sum_{n=1}^{N}\frac{\langle x |\varphi_{n} \rangle}{\lambda_{n}}\varphi_{n} \\
+\\
+&\langle x | \varphi_{n}\rangle=\frac{\sqrt{2}}{\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}\int_0^1dx\left\lbrack x\sin\sqrt{2+\lambda_{n}}x\right\rbrack \\
+&=\frac{2\sqrt2\sin\sqrt{1+\lambda_{n}}}{\left(2+\lambda_{n}\right)\left(1+\cos^2\sqrt{1+\lambda_{n}}\right)^{1/2}} \\
+\\
+&y=\sum_{n=1}^{N}\frac{2\sqrt2\sin\sqrt{2+\lambda_{n}}\sin\sqrt{2+\lambda_{n}}x}{\lambda_{n}\left(2+\lambda_{n}\right)\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}
+\end{aligned}
+$$
 
-  고유함수의 계수를 구해보자.
-
-  $$
-  \int_0^1dx\left\lbrack a_{n}\sin\sqrt{2+\lambda_{n}}x\right\rbrack^2=1
-  $$
-
-  $$
-  \left|a_{n}^{}\right|^2\int_0^1dx\left\lbrack\sin^2\sqrt{2+\lambda_{n}}x\right\rbrack=\frac{\left|a_{n}^{}\right|^2}{2}\int_0^1dx\left\lbrack1-\cos2\sqrt{2+\lambda_{n}}x\right\rbrack
-  $$
-
-  $$
-  1=\frac{\left|a_{n}^{}\right|^2}{2}\left(1-\frac{1}{2\sqrt{2+\lambda_{n}}}\sin2\sqrt{2+\lambda_{n}}\right)
-  $$
-
-  $$
-  \left|a_{n}^{}\right|^2=\frac{2}{1-\frac{1}{2\sqrt{2+\lambda_{n}}}\sin2\sqrt{2+\lambda_{n}}}=\frac{2}{1-\frac{\sin\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}}{\sqrt{2+\lambda_{n}}}}
-  $$
-
-  since, $0=\sin\sqrt{2+\lambda_{n}}+\sqrt{2+\lambda_{n}}\cos\sqrt{2+\lambda_{n}}$
-
-  $$
-  \left|a_{n}^{}\right|^2=\frac{2}{1+\cos^2\sqrt{2+\lambda_{n}}}
-  $$
-
-  $$
-  \varphi_{n}=\frac{\sqrt{2}\sin\sqrt{2+\lambda_{n}}x}{\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}
-  $$
-
-  ---
-
-  $$
-  y=-\sum_{n=1}^{N}\frac{\left<-x\left|\varphi_{n}\right.\right>}{\lambda_{n}}\varphi_{n}=\sum_{n=1}^{N}\frac{\left<x\left|\varphi_{n}\right.\right>}{\lambda_{n}}\varphi_{n}
-  $$
-
-  $$
-  \left<x\left|\right.\varphi_{n}\right>=\frac{\sqrt{2}}{\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}\int_0^1dx\left\lbrack x\sin\sqrt{2+\lambda_{n}}x\right\rbrack
-  $$
-
-  $$
-  =\frac{2\sqrt2\sin\sqrt{1+\lambda_{n}}}{\left(2+\lambda_{n}\right)\left(1+\cos^2\sqrt{1+\lambda_{n}}\right)^{1/2}}
-  $$
-
-  $$
-  y=\sum_{n=1}^{N}\frac{2\sqrt2\sin\sqrt{2+\lambda_{n}}\sin\sqrt{2+\lambda_{n}}x}{\lambda_{n}\left(2+\lambda_{n}\right)\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}
-  $$
+{{< /details >}}
 
 ---
 
-**example3) Determine the normalized eigenfunctions of the problem (필수)**
+example3) Determine the normalized eigenfunctions of the problem (필수)
 
 $$
 \left(xy'\right)'+\frac{y}{x}=\frac{1}{x},\quad y\left(1\right)=y\left(e\right)=0
@@ -560,7 +533,7 @@ $$
   orthogonality 를 이용한다.
 
   $$
-  c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=\left<1\left|\varphi_{n}^{}\right.\right>_{w}
+  c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=\langle1\left|\varphi_{n}\right.\rangle_{w}
   $$
 
   $$
@@ -568,11 +541,11 @@ $$
   $$
 
   $$
-  \left<1\left|\varphi_{n}^{}\right.\right>_{w}=\int_1^{e}dx\left\lbrack\frac{\sqrt{2}\sin\left(n\pi\ln x\right)}{x}\right\rbrack=-\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)^{}\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack1-\cos\left(n\pi\right)^{}\right.]
+  \langle1\left|\varphi_{n}\right.\rangle_{w}=\int_1^{e}dx\left\lbrack\frac{\sqrt{2}\sin\left(n\pi\ln x\right)}{x}\right\rbrack=-\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack1-\cos\left(n\pi\right)\right.]
   $$
 
   $$
-  c_{n}=\frac{\sqrt{2}}{n\pi}\frac{1-\cos\left(n\pi\right)^{}}{1-n^2\pi^2}
+  c_{n}=\frac{\sqrt{2}}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}
   $$
 
   ---
@@ -594,7 +567,7 @@ $$
   eigen-expansion 으로 표현된 해는 다음과 같다.
 
   $$
-  y=\sum_{n=1}^{N}\frac{\left<\varphi_{n}|-1\right>_{w}}{k_{n}^2}\varphi_{n}
+  y=\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1\rangle_{w}}{k_{n}^2}\varphi_{n}
   $$
 
   ---
@@ -664,11 +637,11 @@ $$
   ---
 
   $$
-  y=\sum_{n=1}^{N}\frac{\left<\varphi_{n}|-1\right>_{w}}{k_{n}^2}\varphi_{n}
+  y=\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1\rangle_{w}}{k_{n}^2}\varphi_{n}
   $$
 
   $$
-  \left<\varphi_{n}|-1\right>_{w}=-\int_1^{e}dx\left\lbrack\frac{\sqrt2\sin\left(n\pi\ln x\right)}{x}\right\rbrack=\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)^{}\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack\cos\left(n\pi\right)-1\right.]
+  \langle\varphi_{n}|-1\rangle_{w}=-\int_1^{e}dx\left\lbrack\frac{\sqrt2\sin\left(n\pi\ln x\right)}{x}\right\rbrack=\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack\cos\left(n\pi\right)-1\right.]
   $$
 
   $$
