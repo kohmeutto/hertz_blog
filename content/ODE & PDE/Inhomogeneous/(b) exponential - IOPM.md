@@ -45,7 +45,7 @@ $$
 
 example3) 
 
-$$y''-4y'+3y=10e^{-2x}$$
+$$y''-4y^{\prime}+3y=10e^{-2x}$$
 
 {{< details summary="sol" >}}
 $$
@@ -59,7 +59,7 @@ $$
 
 example4) 
 
-$$y''+4y'+3y=-5e^{5x}$$
+$$y''+4y^{\prime}+3y=-5e^{5x}$$
 
 {{< details summary="sol" >}}
 $$

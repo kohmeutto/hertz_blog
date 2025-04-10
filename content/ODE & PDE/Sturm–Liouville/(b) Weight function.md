@@ -19,7 +19,7 @@ $$
 
 $$
 \begin{aligned}
-&L_{p}=\lbrack\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)\rbrack u_{n} \\
+&L_{p}=\left\lbrack\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)\right\rbrack u_{n} \\
 \\
 &L_{p}u_{n}=-w\left(x\right)\lambda_{n}u_{n}
 \end{aligned}
@@ -28,7 +28,7 @@ $$
 따라서, 임의의 미분 연산자는 아래와 같이 표현할 수 있다.
 
 $$
-L=-\frac{1}{w\left(x\right)}\lbrack\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)\rbrack u_{n}=\lambda_{n}u_{n}
+L=-\frac{1}{w\left(x\right)}\left\lbrack\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right)\right\rbrack u_{n}=\lambda_{n}u_{n}
 $$
 
 여기서의 w(x)는 weight function 이라고 한다.
