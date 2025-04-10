@@ -18,5 +18,4 @@ defaultContentLanguage = 'en'
   math = true
   customCSS = ["css/collapsible.css"]
   customJS = ["js/collapsible.js"]
-  disableExplicitIndexURLs = true
   

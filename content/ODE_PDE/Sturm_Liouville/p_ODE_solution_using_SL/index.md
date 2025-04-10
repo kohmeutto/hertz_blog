@@ -1,8 +1,4 @@
 +++
-categories = ['explanation', 'reference']
-description = 'How to extend the topbar'
-options = ['editURL']
-outputs = ['html', 'rss', 'print', 'markdown', 'source']
 title = "(p) ODE solution using SL"
 weight = 5
 +++
@@ -17,7 +13,7 @@ $$y''+\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$
 
 $φ_{n}$ 을 eigenfunction 이라고 하자.
 
-$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$
+$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$`
 
 w(x)=1로 놓으면,
 
@@ -262,7 +258,7 @@ $$
 
 계수 $λ_{n}$을 구하면,
 
-![image1](image1.png)
+<img src="image1.png" alt="">
 
 $$
 \lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots
@@ -342,7 +338,12 @@ $$
 y=\sum_{n=1}^{N}\frac{2\sqrt2\sin\sqrt{\lambda_{n}}\sin\sqrt{\lambda_{n}}x}{\lambda_{n}\left(\lambda_{n}-2\right)\left(1+\cos^2\sqrt{\lambda_{n}}\right)^{1/2}}
 $$
 
-![image2](image2.mp4)
+<br>
+
+<video controls autoplay loop style="display: block; margin: 0 auto; max-width: 60%; height: auto; object-fit: contain;">
+  <source src="image2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 {{< /details >}}
 
@@ -655,4 +656,3 @@ $$
 ---
 
 [스트룸-리우빌 이론 - 공돌이의 수학정리노트 (Angelo's Math Notes)](https://angeloyeo.github.io/2021/06/06/Sturm_Liouville.html)
-
