@@ -258,7 +258,7 @@ $$
 
 계수 $λ_{n}$을 구하면,
 
-<img src="image1.png" alt="">
+<img src="image1.png" width="110%" height="auto">
 
 $$
 \lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots
