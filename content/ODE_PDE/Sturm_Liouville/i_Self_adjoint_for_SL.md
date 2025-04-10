@@ -61,7 +61,7 @@ $$
 both 항에 대한 차이는 아래와 같이 쓸 수 있다.
 
 $$
-\langle\varphi_{m},L\varphi_{n}\rangle_{w}-\langle L\varphi_{m}|\varphi_{n}\rangle_{w}=\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast}|\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}
+\langle\varphi_{m}|L\varphi_{n}\rangle_{w}-\langle L\varphi_{m}|\varphi_{n}\rangle_{w}=\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}
 $$
 
 {{< details summary="proof" >}}
