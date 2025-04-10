@@ -120,7 +120,7 @@ $$
 
 또한, 해는 eigen-decomposition으로 표현할 수 있다. 적합한 해를 표현하기 위해서는, summation 의 계수는 모두 0이 될 수 없다.
 
-**(1) Dirichlet BC**
+###### (1) Dirichlet BC
 
 eigenfunction 은 선형 독립이므로,
 
@@ -140,7 +140,7 @@ $$
 \left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}=0
 $$
 
-**(2) Neumann BC**
+###### (2) Neumann BC
 
 eigenfunction 은 선형 독립이므로,
 
@@ -154,7 +154,7 @@ $$
 \left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}=0
 $$
 
-**(3) Periodic BC**
+###### (3) Periodic BC
 
 eigenfunction 은 선형 독립이므로,
 
