@@ -45,7 +45,7 @@ $$
 ℹ️ 여기서 주의해야 할 사항은,
 
 스텀-리우빌 경계 조건은 **특정 종류의 2계 미분 연산자가 Hermitian임을 보장하는 데 사용되는 조건**이다. **하지만 모든 Hermitian 연산자가 스텀-리우빌 경계 조건을 만족해야 하는 것은 아니다.** 스텀-리우빌 경계 조건은 2계 미분 연산자가 self-adjoint임을 보장하는 **충분 조건이지만, 필요 조건은 아니다**. 즉, 스텀-리우빌 경계 조건을 만족하지 않더라도 self-adjoint한 2계 미분 연산자가 존재할 수 있다. 관련 내용은 
-[(b) Weight function](\content\ODE & PDE\Sturm–Liouville\(b) Weight function.md)
+[(r) Singular Sturm-Liouville](r_Singular_Sturm_Liouville.md)
  를 참조한다.
 
 ---
@@ -61,7 +61,7 @@ $$
 both 항에 대한 차이는 아래와 같이 쓸 수 있다.
 
 $$
-\langle\varphi_{m},L\varphi_{n}\rangle_{w}-\langle L\varphi_{m},\varphi_{n}\rangle_{w}=\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast},\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}
+\langle\varphi_{m},L\varphi_{n}\rangle_{w}-\langle L\varphi_{m}|\varphi_{n}\rangle_{w}=\left\lbrack p\left(x\right)W\left(\varphi_{m}^{\ast}|\varphi_{n}\right)\right\rbrack_{x_1}^{x_2}
 $$
 
 {{< details summary="proof" >}}
