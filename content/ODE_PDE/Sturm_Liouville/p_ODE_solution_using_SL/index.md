@@ -506,20 +506,20 @@ orthogonality 를 이용한다.
 
 $$
 \begin{aligned}
-&c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=\langle 1\left|\varphi_{n}\right.\rangle_{w} \\
+&c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=\langle \varphi_{n}|1\rangle_{w} \\
 \\
 &c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=c_{n}\left(1-n^2\pi^2\right)\\
 \\
-&\langle \varphi_{n}|1 \rangle_{w}=\int_1^{e}dx\left\lbrack\frac{\sin\left(n\pi\ln x\right)}{\sqrt{2}x}\right\rbrack=-\frac{1}{\sqrt{2}n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{1}{\sqrt{2}n\pi}\left\lbrack 1-\cos\left(n\pi\right)\right\rbrack \\
+&\langle \varphi_{n}|1 \rangle_{w}=\int_1^{e}dx\left\lbrack\frac{\sin\left(n\pi\ln x\right)}{\sqrt{2}x}\right\rbrack=-\frac{1}{\sqrt{2}n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{1}{\sqrt{2}n\pi}\left\lbrack \cos\left(n\pi\right)-1\right\rbrack \\
 \\
-&c_{n}=\frac{1}{\sqrt{2}n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}
+&c_{n}=\frac{1}{\sqrt{2}n\pi}\frac{\cos\left(n\pi\right)-1}{1-n^2\pi^2}
 \end{aligned}
 $$
 
 따라서,
 
 $$
-y=\sum\frac{1}{2n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
+y=\sum\frac{1}{2n\pi}\frac{\cos\left(n\pi\right)-1}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
 $$
 
 {{< /details >}}
@@ -535,7 +535,7 @@ $$x\left(xy'\right)'-y=-1$$
 
 eigen-expansion 으로 표현된 해는 다음과 같다.
 
-$$y=-\sum_{n=1}^{N}\frac{\langle -1|\varphi_{n}\rangle_{w}}{k_{n}^2}\varphi_{n}$$
+$$y=-\sum_{n=1}^{N}\frac{\langle \varphi_{n}|-1 \rangle_{w}}{k_{n}^2}\varphi_{n}$$
 
 eigenfunction 을 구한다.
 
@@ -590,12 +590,12 @@ $$
 
 $$
 \begin{aligned}
-&y=-\sum_{n=1}^{N}\frac{\langle-1|\varphi_{n} \rangle_{w}}{k_{n}^2}\varphi_{n} \\
+&y=-\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1 \rangle_{w}}{k_{n}^2}\varphi_{n} \\
 \\
-&-\langle-1|\varphi_{n} \rangle_{w} = -\int_1^{e}dx\left\lbrack\frac{\sin\left(n\pi\ln x\right)}{\sqrt2x}\right\rbrack=\frac{1}{\sqrt2n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.\\
-&=\frac{1}{\sqrt2n\pi}\left\lbrack 1-\cos\left(n\pi\right)\right\rbrack \\
+&-\langle \varphi_{n}|-1 \rangle_{w} = \int_1^{e}dx\left\lbrack\frac{\sin\left(n\pi\ln x\right)}{\sqrt2x}\right\rbrack=-\frac{1}{\sqrt2n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.\\
+&=\frac{1}{\sqrt2n\pi}\left\lbrack \cos\left(n\pi\right)-1\right\rbrack \\
 \\
-&y=\sum\frac{1}{2n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
+&y=\sum\frac{1}{2n\pi}\frac{\cos\left(n\pi\right)-1}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
 \end{aligned}
 $$
 
