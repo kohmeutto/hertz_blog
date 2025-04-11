@@ -29,7 +29,7 @@ $$\varphi_{n}=a_{n}e^{-\sqrt{-\lambda_{n}}x}+b_{n}e^{+\sqrt{-\lambda_{n}}x}$$
 
 (3) $λ_{0}=0$
 
-$$\varphi_0=a_0'+b_0'x$$
+$$\varphi_0=a_0+b_0x$$
 
 <hr>
 
@@ -85,11 +85,11 @@ $$
 
 $$
 \begin{aligned}
-&\varphi_0=a_0'+b_0'x \\
+&\varphi_0=a_0+b_0x \\
 \\
-&\varphi_0\left(0\right)=0=a'_0,\quad a'_0=0 \\
+&\varphi_0\left(0\right)=0=a_0,\quad a_0=0 \\
 \\
-&\varphi_0\left(1\right)=0=b_0',\quad b_0'=0 \\
+&\varphi_0\left(1\right)=0=b_0,\quad b_0=0 \\
 \\
 &\varphi_0=0
 \end{aligned}
