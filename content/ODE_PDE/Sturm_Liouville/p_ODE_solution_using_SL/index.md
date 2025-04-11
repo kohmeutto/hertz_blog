@@ -492,7 +492,7 @@ $$
 \end{aligned}
 $$
 
-(2) $k_{n}\ne0$
+(2) $k_{n}=0$
 
 $$
 \begin{aligned}
