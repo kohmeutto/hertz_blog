@@ -400,7 +400,7 @@ $$
 
 $$
 \begin{aligned}
-&y=-\sum_{n=1}^{N}\frac{\langle-x|\varphi_{n}\rangle}{\lambda_{n}}\varphi_{n}=\sum_{n=1}^{N}\frac{\langle x |\varphi_{n} \rangle}{\lambda_{n}}\varphi_{n} \\
+&y=\sum_{n=1}^{N}\frac{\langle \varphi_{n}|x \rangle}{\lambda_{n}}\varphi_{n} \\
 \\
 &\langle x | \varphi_{n}\rangle=\frac{\sqrt{2}}{\left(1+\cos^2\sqrt{2+\lambda_{n}}\right)^{1/2}}\int_0^1dx\left\lbrack x\sin\sqrt{2+\lambda_{n}}x\right\rbrack \\
 &=\frac{2\sqrt2\sin\sqrt{1+\lambda_{n}}}{\left(2+\lambda_{n}\right)\left(1+\cos^2\sqrt{1+\lambda_{n}}\right)^{1/2}} \\
@@ -535,7 +535,7 @@ $$x\left(xy'\right)'-y=-1$$
 
 eigen-expansion 으로 표현된 해는 다음과 같다.
 
-$$y=-\sum_{n=1}^{N}\frac{\langle \varphi_{n}|-1 \rangle_{w}}{k_{n}^2}\varphi_{n}$$
+$$y=\sum_{n=1}^{N}\frac{\langle \varphi_{n}|1 \rangle_{w}}{k_{n}^2}\varphi_{n}$$
 
 eigenfunction 을 구한다.
 
@@ -590,9 +590,9 @@ $$
 
 $$
 \begin{aligned}
-&y=-\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1 \rangle_{w}}{k_{n}^2}\varphi_{n} \\
+&y=\sum_{n=1}^{N}\frac{\langle\varphi_{n}|1 \rangle_{w}}{k_{n}^2}\varphi_{n} \\
 \\
-&-\langle \varphi_{n}|-1 \rangle_{w} = \int_1^{e}dx\left\lbrack\frac{\sin\left(n\pi\ln x\right)}{\sqrt2x}\right\rbrack=-\frac{1}{\sqrt2n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.\\
+&\langle \varphi_{n}|1 \rangle_{w} = \int_1^{e}dx\left\lbrack\frac{\sin\left(n\pi\ln x\right)}{\sqrt2x}\right\rbrack=-\frac{1}{\sqrt2n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.\\
 &=\frac{1}{\sqrt2n\pi}\left\lbrack \cos\left(n\pi\right)-1\right\rbrack \\
 \\
 &y=\sum\frac{1}{2n\pi}\frac{\cos\left(n\pi\right)-1}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
