@@ -172,8 +172,6 @@ $$
 \end{aligned}
 $$
 
-<hr>
-
 (2) $λ+λ_{n}=0$
 
 $$
@@ -190,23 +188,9 @@ $$
 
 <hr>
 
-eigen-expansion을을 수행한다.
+eigen-expansion을 수행한다. 따라서,
 
-$$
-\begin{aligned}
-&y''+\lambda y=0 \\
-\\
-&\sum\lambda_{n}c_{n}\varphi_{n}=0
-\end{aligned}
-$$
-
-c$_{n}$φ$_{n}$를 은 0이 아니므로,
-
-$$\lambda_{n}=0$$
-
-따라서,
-
-$$y=\sum c_{n}\sqrt{2}\sin n\pi x$$
+$$y=\sum_{n}c_{n}\sqrt{2}\sin n\pi x$$
 
 {{< /details >}}
 
