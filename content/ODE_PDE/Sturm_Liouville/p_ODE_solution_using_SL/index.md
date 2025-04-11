@@ -13,7 +13,7 @@ $$y''+\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0$$
 
 $φ_{n}$ 을 eigenfunction 이라고 하자.
 
-$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$`
+$$D^2\varphi_{n}=-\lambda_{n}w\left(x\right)\varphi_{n}$$
 
 w(x)=1로 놓으면,
 
@@ -134,7 +134,7 @@ $$
 \left(D^2+\lambda+\lambda_{n}\right)\varphi_{n}=0
 $$
 
-(1) $λ+λ_{n}≠0$
+(1) $λ+λ_{n}\ne0$
 
 $$
 \varphi_{n}=a_{n}\sin\sqrt{\lambda_{n}+\lambda}x+b_{n}\cos\sqrt{\lambda_{n}+\lambda}x
@@ -146,7 +146,7 @@ $$\varphi_{n}=a_{n}+b_{n}x$$
 
 <hr>
 
-(1) $λ+λ_{n}$≠0
+(1) $λ+λ_{n}\ne0$
 
 $$
 \begin{aligned}
@@ -174,7 +174,7 @@ $$
 
 <hr>
 
-(2) $λ+λ_{n}$=0
+(2) $λ+λ_{n}=0$
 
 $$
 \begin{aligned}
@@ -240,7 +240,7 @@ $c_{n}$ 은 0이 아니어야 한다.
 
 <hr>
 
-(1) $λ_{n}$≠0
+(1) $λ_{n}≠0$
 
 $$
 \begin{aligned}
@@ -435,226 +435,189 @@ $$
 \left(xy'\right)'+\frac{y}{x}=\frac{1}{x},\quad y\left(1\right)=y\left(e\right)=0
 $$
 
-- sol1
-
-  $$
-  D\left(xD\right)\varphi_{n}=-k_{n}^2w\left(x\right)\varphi_{n}
-  $$
-
-  w=1/x 로 놓는다. 그렇다면, 위 문제의 미분 방정식을 아래와 같이 변형된다.
-
-  - x\left(xy'\right)'-y=-1
-
-  eigen-value 와 eigen-function 을 구한다.
-
-  $$
-  x^2\varphi_{n}''+x\varphi_{n}'+k_{n}^2\varphi_n=0
-  $$
-
-  $$
-  D^2+k_{n}^2=0
-  $$
-
-  (1) k$_{n}$≠0
-
-  $$
-  \varphi_{n}=a_{n}\sin\left(k_{n}\ln x\right)+b_{n}\cos\left(k_{n}\ln x\right)
-  $$
-
-  (2) k$_{n}$=0
-
-  $$
-  \varphi_{n}=a_{n}+b_{n}\ln x
-  $$
-
-  ---
-
-  (1) k$_{n}$≠0
-
-  Applying B.C
-
-  $$
-  \varphi_{n}\left(1\right)=0=b_{n}
-  $$
-
-  $$
-  \varphi_{n}\left(e\right)=0=a_{n}\sin k_{n}
-  $$
-
-  $$
-  k_{n}=n\pi,\quad n=1,2,3,\cdots
-  $$
-
-  $$
-  \varphi_{n}=a_{n}\sin\left(n\pi\ln x\right)
-  $$
-
-  계수 a$_{n}$을 구하기 위해서는,
-
-  $$
-  \left|a_{n}\right|^2\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=1
-  $$
-
-  $$
-  \int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=\frac12\int_1^{e}dx\left\lbrack\frac{1-\cos\left(2n\pi\ln x\right)}{x}\right\rbrack
-  $$
-
-  $$
-  =\frac12\left\lbrack\left.\ln x\right|_1^{e}-\left.\frac{1}{2n\pi}\sin\left(2n\pi\ln x\right)\right|_1^{e}\right\rbrack=\frac12
-  $$
-
-  $$
-  \left|a_{n}\right|=\sqrt{2}
-  $$
-
-  $$
-  \varphi_{n}=\sqrt2\sin\left(n\pi\ln x\right)
-  $$
-
-  (2) k$_{n}$=0
-
-  $$
-  \varphi_{n}\left(1\right)=0=a_{n}
-  $$
-
-  $$
-  \varphi_{n}\left(e\right)=0=b_{n}
-  $$
-
-  $$
-  \varphi_{n}=0
-  $$
-
-  ---
-
-  - x\left(xy'\right)'-y=-1
-
-  $$
-  \sum_{n}c_{n}n^2\pi^2\varphi_{n}-\sum c_{n}\varphi_{n}=-1
-  $$
-
-  $$
-  \sum c_{n}\varphi_{n}\left(1-n^2\pi^2\right)=1
-  $$
-
-  orthogonality 를 이용한다.
-
-  $$
-  c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=\langle1\left|\varphi_{n}\right.\rangle_{w}
-  $$
-
-  $$
-  c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=c_{n}\left(1-n^2\pi^2\right)
-  $$
-
-  $$
-  \langle1\left|\varphi_{n}\right.\rangle_{w}=\int_1^{e}dx\left\lbrack\frac{\sqrt{2}\sin\left(n\pi\ln x\right)}{x}\right\rbrack=-\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack1-\cos\left(n\pi\right)\right.]
-  $$
-
-  $$
-  c_{n}=\frac{\sqrt{2}}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}
-  $$
-
-  ---
-
-  $$
-  y=\sum\frac{2}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
-  $$
-
-- sol2
-
-  $$
-  D\left(xD\right)\varphi_{n}=-k_{n}^2w\left(x\right)\varphi_{n}
-  $$
-
-  w=1/x 로 놓는다. 그렇다면, 위 문제의 미분 방정식을 아래와 같이 변형된다.
-
-  - x\left(xy'\right)'-y=-1
-
-  eigen-expansion 으로 표현된 해는 다음과 같다.
-
-  $$
-  y=\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1\rangle_{w}}{k_{n}^2}\varphi_{n}
-  $$
-
-  ---
-
-  w=1/x 로 놓고, eigenfunction 을 구한다.
-
-  $$
-  x^2\varphi_{n}''+x\varphi_{n}'+\left(1+k_{n}^2\right)\varphi_{n}=0
-  $$
-
-  $$
-  D^2+\left(1+k_{n}^2\right)=0
-  $$
-
-  $$
-  \varphi_{n}=a_{n}\sin\left(\sqrt{1+k_{n}^2}\ln x\right)+b_{n}\cos\left(\sqrt{1+k_{n}^2}\ln x\right)
-  $$
-
-  ---
-
-  Applying B.C
-
-  $$
-  \varphi_{n}\left(1\right)=0=b_{n}
-  $$
-
-  $$
-  \varphi_{n}\left(e\right)=0=a_{n}\sin\sqrt{1+k_{n}^2}
-  $$
-
-  $$
-  \sqrt{1+k_{n}^2}=n\pi,\quad n=1,2,3,\cdots
-  $$
-
-  여기에서, k$_{n}$2 는 다음과 같다.
-
-  $$
-  k_{n}^2=n^2\pi^2-1,\quad n=1,2,3,\cdots
-  $$
-
-  $$
-  \varphi_{n}=a_{n}\sin\left(n\pi\ln x\right)
-  $$
-
-  계수 an을 구하기 위해서는,
-
-  $$
-  \left|a_{n}\right|^2\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=1
-  $$
-
-  $$
-  \int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=\frac12\int_1^{e}dx\left\lbrack\frac{1-\cos\left(2n\pi\ln x\right)}{x}\right\rbrack
-  $$
-
-  $$
-  =\frac12\left\lbrack\left.\ln x\right|_1^{e}-\left.\frac{1}{2n\pi}\sin\left(2n\pi\ln x\right)\right|_1^{e}\right\rbrack=\frac12
-  $$
-
-  $$
-  \left|a_{n}\right|=\sqrt{2}
-  $$
-
-  $$
-  \varphi_{n}=\sqrt2\sin\left(n\pi\ln x\right)
-  $$
-
-  ---
-
-  $$
-  y=\sum_{n=1}^{N}\frac{\langle\varphi_{n}|-1\rangle_{w}}{k_{n}^2}\varphi_{n}
-  $$
-
-  $$
-  \langle\varphi_{n}|-1\rangle_{w}=-\int_1^{e}dx\left\lbrack\frac{\sqrt2\sin\left(n\pi\ln x\right)}{x}\right\rbrack=\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack\cos\left(n\pi\right)-1\right.]
-  $$
-
-  $$
-  y=\sum\frac{2}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
-  $$
+{{< details summary="sol" >}}
+
+$$\left\lbrack D\left(xD\right) -\frac1x \right\rbrack \varphi_{n}=-k_{n}^2w\left(x\right)\varphi_{n}$$
+
+w=1/x 로 놓는다. 그렇다면, 위 문제의 미분 방정식을 아래와 같이 변형된다.
+
+$$x\left(xy'\right)'-y=-1$$
+
+eigen-expansion 으로 표현된 해는 다음과 같다.
+
+$$y=-\sum_{n=1}^{N}\frac{\langle -1|\varphi_{n}\rangle_{w}}{k_{n}^2}\varphi_{n}$$
+
+w=1/x 로 놓고, eigenfunction 을 구한다.
+
+$$
+\begin{aligned}
+&x^2\varphi_{n}''+x\varphi_{n}'+\left(1+k_{n}^2\right)\varphi_{n}=0 \\
+\\
+&D^2+\left(1+k_{n}^2\right)=0 \\
+\\
+&\varphi_{n}=a_{n}\sin\left(\sqrt{1+k_{n}^2}\ln x\right)+b_{n}\cos\left(\sqrt{1+k_{n}^2}\ln x\right)
+\end{aligned}
+$$
+
+Applying B.C
+
+$$
+\begin{aligned}
+&\varphi_{n}\left(1\right)=0=b_{n} \\
+\\
+&\varphi_{n}\left(e\right)=0=a_{n}\sin\sqrt{1+k_{n}^2} \\
+\\
+&\sqrt{1+k_{n}^2}=n\pi,\quad n=1,2,3,\cdots
+\end{aligned}
+$$
+
+여기에서, $k_{n}^{2}$ 는 다음과 같다.
+
+$$
+\begin{aligned}
+&k_{n}^2=n^2\pi^2-1,\quad n=1,2,3,\cdots \\
+\\
+&\varphi_{n}=a_{n}\sin\left(n\pi\ln x\right)
+\end{aligned}
+$$
+
+계수 $a_{n}$ 구하기 위해서는,
+
+$$
+\begin{aligned}
+&\left|a_{n}\right|^2\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=1 \\
+\\
+&\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=\frac12\int_1^{e}dx\left\lbrack\frac{1-\cos\left(2n\pi\ln x\right)}{x}\right\rbrack \\
+&=\frac12\left\lbrack\left.\ln x\right|_1^{e}-\left.\frac{1}{2n\pi}\sin\left(2n\pi\ln x\right)\right|_1^{e}\right\rbrack=\frac12 \\
+\\
+&\left|a_{n}\right|=\frac{1}{\sqrt{2}} \\
+\\
+&\varphi_{n}=\frac{1}{\sqrt{2}}\sin\left(n\pi\ln x\right)
+\end{aligned}
+$$
+
+따라서,
+
+$$
+\begin{aligned}
+&y=-\sum_{n=1}^{N}\frac{\langle-1|\varphi_{n} \rangle_{w}}{k_{n}^2}\varphi_{n} \\
+\\
+&-\langle-1|\varphi_{n} \rangle_{w} = -\int_1^{e}dx\left\lbrack\frac{\sin\left(n\pi\ln x\right)}{\sqrt2x}\right\rbrack=\frac{1}{\sqrt2n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.\\
+&=\frac{1}{\sqrt2n\pi}\left\lbrack 1-\cos\left(n\pi\right)\right\rbrack \\
+\\
+&y=\sum\frac{1}{2n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
+\end{aligned}
+$$
+
+{{< /details >}}
 
 ---
 
 [스트룸-리우빌 이론 - 공돌이의 수학정리노트 (Angelo's Math Notes)](https://angeloyeo.github.io/2021/06/06/Sturm_Liouville.html)
+
+
+
+
+{{< details summary="temp" >}}
+
+$$D\left(xD\right)\varphi_{n}=-k_{n}^2w\left(x\right)\varphi_{n}$$
+
+w=1/x 로 놓는다. eigen-value 와 eigen-function 을 구한다.
+
+$$
+\begin{aligned}
+&x^2\varphi_{n}''+k_{n}^2\varphi_n=0 \\
+\\
+&D^2+k_{n}^2=0
+\end{aligned}
+$$
+
+(1) $k_{n}\ne0$
+
+$$\varphi_{n}=a_{n}\sin\left(k_{n}\ln x\right)+b_{n}\cos\left(k_{n}\ln x\right)$$
+
+(2) $k_{n}=0$
+
+$$\varphi_{n}=a_{n}+b_{n}\ln x$$
+
+<hr>
+ 
+(1) $k_{n}\ne0$
+
+Applying B.C
+
+$$
+\begin{aligned}
+&\varphi_{n}\left(1\right)=0=b_{n} \\
+\\
+&\varphi_{n}\left(e\right)=0=a_{n}\sin k_{n} \\
+\\
+&k_{n}=n\pi,\quad n=1,2,3,\cdots \\
+\\
+&\varphi_{n}=a_{n}\sin\left(n\pi\ln x\right)
+\end{aligned}
+$$
+
+계수 a$_{n}$을 구하기 위해서는,
+
+$$
+\begin{aligned}
+&\left|a_{n}\right|^2\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=1 \\
+\\
+&\int_1^{e}dx\left\lbrack\frac{\sin^2\left(n\pi\ln x\right)}{x}\right\rbrack=\frac12\int_1^{e}dx\left\lbrack\frac{1-\cos\left(2n\pi\ln x\right)}{x}\right\rbrack \\
+\\
+&=\frac12\left\lbrack\left.\ln x\right|_1^{e}-\left.\frac{1}{2n\pi}\sin\left(2n\pi\ln x\right)\right|_1^{e}\right\rbrack=\frac12 \\
+\\
+&\left|a_{n}\right|=\sqrt{2} \\
+\\
+&\varphi_{n}=\sqrt2\sin\left(n\pi\ln x\right)
+\end{aligned}
+$$
+
+(2) $k_{n}\ne0$
+
+$$
+\begin{aligned}
+&\varphi_{n}\left(1\right)=0=a_{n} \\
+\\
+&\varphi_{n}\left(e\right)=0=b_{n} \\
+\\
+&\varphi_{n}=0
+\end{aligned}
+$$
+
+<hr>
+
+eigen-expansion을 수행한다.
+
+$$
+\begin{aligned}
+&x\left(xy'\right)'-y=-1 \\
+\\
+&\sum_{n}c_{n}n^2\pi^2\varphi_{n}-\sum c_{n}\varphi_{n}=-1 \\
+\\
+&\sum c_{n}\varphi_{n}\left(1-n^2\pi^2\right)=1
+\end{aligned}
+$$
+
+orthogonality 를 이용한다.
+
+$$
+\begin{aligned}
+&c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=\langle 1\left|\varphi_{n}\right.\rangle_{w} \\
+\\
+&c_{n}\int_1^{e}dx\left\lbrack\frac{\varphi_{n}\varphi_{n}^{\ast}}{x}\left(1-n^2\pi^2\right)\right\rbrack=c_{n}\left(1-n^2\pi^2\right)\\
+\\
+&\langle 1|\varphi_{n} \rangle_{w}=\int_1^{e}dx\left\lbrack\frac{\sqrt{2}\sin\left(n\pi\ln x\right)}{x}\right\rbrack=-\frac{\sqrt{2}}{n\pi}\cos\left(n\pi\ln x\right)\left|_1^{e}\right.=\frac{\sqrt{2}}{n\pi}\left\lbrack 1-\cos\left(n\pi\right)\right\rbrack \\
+\\
+&c_{n}=\frac{\sqrt{2}}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}
+\end{aligned}
+$$
+
+따라서,
+
+$$
+y=\sum\frac{2}{n\pi}\frac{1-\cos\left(n\pi\right)}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
+$$
+
+{{< /details >}}
