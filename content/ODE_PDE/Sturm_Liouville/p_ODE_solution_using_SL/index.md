@@ -447,7 +447,7 @@ eigen-expansion 으로 표현된 해는 다음과 같다.
 
 $$y=-\sum_{n=1}^{N}\frac{\langle -1|\varphi_{n}\rangle_{w}}{k_{n}^2}\varphi_{n}$$
 
-w=1/x 로 놓고, eigenfunction 을 구한다.
+eigenfunction 을 구한다.
 
 $$
 \begin{aligned}
