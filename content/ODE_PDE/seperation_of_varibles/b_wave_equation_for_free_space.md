@@ -22,7 +22,7 @@ $$
 \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)
 $$
 
-proof1)
+**proof1)**
 
 $$L:=\nabla^2-\frac{1}{v^2}\frac{\partial^2}{\partial t^2}$$
 
@@ -54,6 +54,6 @@ $$
 \langle Lg|f\rangle=-\int_{V}d^3V\left\lbrack\nabla g^{\ast}\cdot\nabla f+g^{\ast}\cdot\frac{1}{v^2}\frac{\partial^2}{\partial t^2}f\right\rbrack
 $$
 
-proof2)
+**proof2)**
 
 전자기파는 에너지 보존 법칙을 만족해야 한다. 위의 파동방정식으로부터, 슈뢰딩거 방정식을 유도할 수 있으며, 따라서, self-adjoint 해야 한다.

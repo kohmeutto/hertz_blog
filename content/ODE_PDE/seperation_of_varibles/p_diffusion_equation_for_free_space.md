@@ -19,7 +19,7 @@ $$
 
 ---
 
-proof)
+**proof)**
 
 $$
 \frac{\partial^2}{\partial x^2}X\left(x\right)T\left(t\right)=-k^2X\left(x\right)T\left(t\right)

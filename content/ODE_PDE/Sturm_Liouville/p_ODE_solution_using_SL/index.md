@@ -5,7 +5,7 @@ weight = 5
 
 ---
 
-example1) Determine the normalized eigenfunctions of the problem
+**example1) Determine the normalized eigenfunctions of the problem**
 
 $$
 y''+\lambda y=0,\quad y\left(0\right)=y\left(1\right)=0
@@ -240,7 +240,7 @@ $$
 
 ---
 
-example2) Determine the normalized eigenfunctions of the problem
+**example2) Determine the normalized eigenfunctions of the problem**
 
 $$
 y''+2y=-x,\quad y\left(0\right)=0,\quad y\left(1\right)+y'\left(1\right)=0
@@ -302,7 +302,7 @@ $$
 
 <br><br>
 
-<img src="image1.png" width="70%" height="auto">
+<img src="image1.png" width="50%" height="auto">
 
 $$
 \lambda_{n}=2.0288,4.9132,7.9787,11.086,14.207,\cdots,\quad n=1,2,3,\cdots
@@ -504,7 +504,7 @@ $$
 
 ---
 
-example3) Determine the normalized eigenfunctions of the problem (필수)
+**example3) Determine the normalized eigenfunctions of the problem (필수)**
 
 $$
 \left(xy'\right)'+\frac{y}{x}=\frac{1}{x},\quad y\left(1\right)=y\left(e\right)=0

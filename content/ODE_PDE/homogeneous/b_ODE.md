@@ -27,7 +27,7 @@ $$
 
 ---
 
-example1)
+**example1)**
 
 $$
 y''-y'-2y'=0
@@ -45,7 +45,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 y''-4y'=0
@@ -77,7 +77,7 @@ $$
 
 ---
 
-example1)
+**example1)**
 
 $$
 y''+6y'+9y=0
@@ -113,7 +113,7 @@ $$
 
 ---
 
-example1)
+**example1)**
 
 $$
 y''+4y=0
@@ -131,7 +131,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 y''+2y'+2y=0
@@ -149,7 +149,7 @@ $$
 
 {{< /details >}}
 
-example3)
+**example3)**
 
 $$
 y''-2y'+10y=0
@@ -167,7 +167,7 @@ $$
 
 {{< /details >}}
 
-example4)
+**example4)**
 
 $$
 y'''-2y''+3y'-6y=0
@@ -185,7 +185,7 @@ $$
 
 {{< /details >}}
 
-example5)
+**example5)**
 
 $$
 y'''-6y''+12y'-8y=0

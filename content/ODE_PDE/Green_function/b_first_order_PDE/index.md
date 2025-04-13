@@ -1,5 +1,5 @@
 +++
-title = "(b) First-order ODE"
+title = "(b) First-order PDE"
 weight = 2
 +++
 
@@ -63,7 +63,7 @@ $$
 $$
 
 $$
-\int_{x_{>}'}^{x_{<}'}dx\left\lbrack\frac{\partial}{\partial x}G\left(x,x'\right)+q\left(x\right)G\left(x,x'\right)\right\rbrack=\int_{x_{>}'}^{x_{<}'}dx\left\lbrack\delta\left(x-x'\right)\right\rbrack=1
+\int_{x_{>}'}^{x_{<}'}dx\left\lbrack\frac{\partial}{\partial x}G\left(x,x'\right)+q\left(x\right)G\left(x,x'\right)\right\rbrack=1
 $$
 
 $$
@@ -84,7 +84,7 @@ $$
 
 ---
 
-example1)
+**example1)**
 
 해석범위는 $x\in\left\lbrack a,\infty\right)$이고, 초기값 $G\left(a,x'\right)=0$이다.  $G\left(x,x'\right)$을 구하여라.
 

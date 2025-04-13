@@ -11,13 +11,15 @@ weight = 4
 
 ---
 
-### 1.
+### 1. 유형1
 
 $$
 \frac{1}{f\left(D\right)}\left\lbrack e^{\alpha x}R\left(x\right)\right\rbrack=e^{\alpha x}\frac{1}{f\left(D+\alpha\right)}\left\lbrack R\left(x\right)\right\rbrack
 $$
 
-example1)
+<hr>
+
+**example1)**
 
 $$
 y''-3y'-4y=xe^{-2x}
@@ -39,7 +41,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 y''-y'-2y=e^{3x}\sin x
@@ -64,7 +66,7 @@ $$
 
 {{< /details >}}
 
-example3) 
+**example3)**
 
 $$
 y''-y'-2y=x\cos x

@@ -39,7 +39,7 @@ $$
 
 ---
 
-example1)
+**example1)**
 
 $$
 x^2y''-4xy'+6y=0
@@ -57,7 +57,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 x^2y''-xy'-y=0
@@ -75,7 +75,7 @@ $$
 
 {{< /details >}}
 
-example3)
+**example3)**
 
 $$
 xy''-y'=0
@@ -93,7 +93,7 @@ $$
 
 {{< /details >}}
 
-example4) 
+**example4)**
 
 $$
 x^3y''+2x^2y'-6xy=0
@@ -124,7 +124,7 @@ $$
 
 ---
 
-example1)
+**example1)**
 
 $$
 xy''+y'=0
@@ -142,7 +142,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 x^2y''-xy'+y=0
@@ -177,7 +177,7 @@ $$
 
 ---
 
-example1)
+**example1)**
 
 $$
 x^2y''+xy'+y=0
@@ -195,7 +195,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 x^2y''+3xy'+3y=0

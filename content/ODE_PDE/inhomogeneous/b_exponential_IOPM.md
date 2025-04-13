@@ -11,13 +11,15 @@ weight = 1
 
 ---
 
-### 1. 
+### 1. 유형1
 
 $$
 \frac{1}{f\left(D\right)}e^{\alpha x}=\frac{1}{f\left(\alpha\right)}e^{\alpha x,}, \quad f\left(\alpha\right)\ne0
 $$
 
-example1)
+<hr>
+
+**example1)**
 
 $$
 y''+y'-2y=e^{3x}
@@ -35,7 +37,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 y''-y'-6y=e^{-x}
@@ -53,7 +55,7 @@ $$
 
 {{< /details >}}
 
-example3) 
+**example3)**
 
 $$
 y''-4y'+3y=10e^{-2x}
@@ -70,7 +72,7 @@ y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}
 $$
 {{< /details >}}
 
-example4) 
+**example4)**
 
 $$
 y''+4y'+3y=-5e^{5x}
@@ -88,7 +90,7 @@ $$
 
 {{< /details >}}
 
-example5) 
+**example5)**
 
 $$
 x^2y''-4xy'+6y=2e^{4x}
@@ -106,7 +108,7 @@ $$
 
 {{< /details >}}
 
-example6)
+**example6)**
 
 $$
 x^2y''-xy'-8y=9e^{-7x}
@@ -126,13 +128,15 @@ $$
 
 ---
 
-### 2.
+### 2. 유형2
 
 $$
 \frac{1}{\left(D-\alpha\right)^{n}}e^{\alpha x}=\frac{x^{n}}{n!}e^{\alpha x}
 $$
 
-example1)
+<hr>
+
+**example1)**
 
 $$
 y''+2y'+y=e^{-x}
@@ -151,7 +155,7 @@ $$
 {{< /details >}}
 
 
-example2)
+**example2)**
 
 $$
 y''-6y'+9y=-e^{3x}
@@ -169,7 +173,7 @@ $$
 
 {{< /details >}}
 
-example3) 
+**example3)**
 
 $$
 y''+4y'+4y=3e^{-2x}
@@ -189,13 +193,15 @@ $$
 
 ---
 
-### 3.
+### 3. 유형3
 
 $$
 \frac{1}{f\left(D\right)\left(D-\alpha\right)^{n}}e^{\alpha x}=\frac{x^{n}}{f\left(\alpha\right)n!}e^{\alpha x}
 $$
 
-example1)
+<hr>
+
+**example1)**
 
 $$
 y''+y'-2y=e^{x}
@@ -213,7 +219,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 y''-4y'+3y=-2e^{3x}
@@ -231,7 +237,7 @@ $$
 
 {{< /details >}}
 
-example3) 
+**example3)**
 
 $$
 x^2y''-4xy'+6y=2e^{3x}
@@ -249,7 +255,7 @@ $$
 
 {{< /details >}}
 
-example4)
+**example4)**
 
 $$
 x^2y''-4xy'-14y=3e^{-2x}

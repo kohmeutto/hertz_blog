@@ -11,7 +11,7 @@ weight = 2
 
 ---
 
-### 1. Trigonometric
+### 1. 유형1
 
 $$
 \frac{1}{f\left(D\right)}\cos\alpha x=\operatorname{Re}\left\lbrack\frac{1}{f\left(D\right)}e^{i\alpha x}\right\rbrack
@@ -21,7 +21,9 @@ $$
 \frac{1}{f\left(D\right)}\sin\alpha x=\operatorname{\operatorname{Im}}\left\lbrack\frac{1}{f\left(D\right)}e^{i\alpha x}\right\rbrack
 $$
 
-example1)
+<hr>
+
+**example1)**
 
 $$
 y''-y'-2y=\cos x
@@ -43,7 +45,7 @@ $$
 
 {{< /details >}}
 
-example2) 
+**example2)**
 
 $$
 y''-3y'-4y=\sin 2x
@@ -65,7 +67,7 @@ $$
 
 {{< /details >}}
 
-example3) 
+**example3)**
 
 $$
 y''+y'-2y=4\sin 2x
@@ -87,7 +89,7 @@ $$
 
 {{< /details >}}
 
-example4) 
+**example4)**
 
 $$
 y''+25y=32\cos 3x
@@ -105,7 +107,7 @@ $$
 
 {{< /details >}}
 
-example5)
+**example5)**
 
 $$
 y''+4y=\sin 2x
@@ -126,7 +128,7 @@ $$
 
 {{< /details >}}
 
-example6)
+**example6)**
 
 $$x^2y''-2xy'+2y=\cos x$$
 
@@ -145,7 +147,7 @@ $$
 
 {{< /details >}}
 
-example7)
+**example7)**
 
 $$
 x^2y^{\prime\prime}+xy^{\prime}+25y=3\sin3x

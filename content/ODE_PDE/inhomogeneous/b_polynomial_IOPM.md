@@ -11,13 +11,15 @@ weight = 3
 
 ---
 
-### 1.
+### 1. 유형1
 
 $$
 \frac{1}{f\left(D\right)}\left\lbrace \text{polynomial}\right\rbrace
 $$
 
-example1)
+<hr>
+
+**example1)**
 
 $$
 y''+y=x^2
@@ -35,7 +37,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 y''+y'-6y=6x^3-3x^2+12
@@ -61,7 +63,7 @@ $$
 
 {{< /details >}}
 
-example3)
+**example3)**
 
 $$
 \frac{1}{4} y''+y'+y=x^2-2x
@@ -87,7 +89,7 @@ $$
 
 {{< /details >}}
 
-example4)
+**example4)**
 
 $$
 x^2y''+3xy'+3y=2x^2-2
@@ -114,13 +116,15 @@ $$
 
 ---
 
-### 2.
+### 2. 유형2
 
 $$
 \frac{1}{Df\left(D\right)}\left\lbrack R\left(x\right)\right\rbrack=\int_{x=x'}dx'\left\lbrack\frac{1}{f\left(D\right)}\left\lbrack R\left(x'\right)\right\rbrack\right\rbrack
 $$
 
-example1)
+<hr>
+
+**example1)**
 
 $$
 y''+y'=2x
@@ -138,7 +142,7 @@ $$
 
 {{< /details >}}
 
-example2)
+**example2)**
 
 $$
 y''-2y'=x
@@ -160,7 +164,7 @@ $$
 
 {{< /details >}}
 
-example3)
+**example3)**
 
 $$
 x^2y''-2xy'=3x

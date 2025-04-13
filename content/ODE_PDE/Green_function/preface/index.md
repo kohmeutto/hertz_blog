@@ -71,27 +71,19 @@ $$
 G\left(\vec{r},\vec{r}'\right)f\left(\vec{r}'\right)
 $$
 
-이 모든 결과를 더하면, 천제 원천소스가 만들어 내는 총 결과를 구할 수 있다. 연산자 L로 지배방정식을 표현하고, 해를 표현하면, 다음과 같다.
+이 모든 결과를 더하면, 천제 원천소스가 만들어 내는 총 결과를 구할 수 있다. 
+
+$$u=\int_{r'}d^3\vec{r}'\left\lbrack G\left(\vec{r},\vec{r}'\right)f\left(\vec{r}'\right)\right\rbrack
+$$
+
+G는 그린함수로 kernel(커널)이다. 연산자 L로 지배방정식을 표현하자. u는 지배방정식의 해이므로 대입해 보자.
 
 $$
 Lu\left(\vec{r}\right)=f\left(\vec{r}\right)
 $$
 
-$$u=\int_{r'}d^3\vec{r}'\left\lbrack G\left(\vec{r},\vec{r}'\right)f\left(\vec{r}'\right)\right\rbrack
 $$
-
-G는 그린함수로 kernel(커널)이다. u는 미분연산자에 대한 지배방정식의 해이므로 대입해 보자.
-
-$$
-Lu=L\int_{r'}d^3\vec{r}'\left\lbrack G\left(\vec{r},\vec{r}'\right)f\left(\vec{r}'\right)\right\rbrack
-$$
-
-$$
-=\int_{r'}d^3\vec{r}'\left\lbrack LG\left(\vec{r},\vec{r}'\right)f\left(\vec{r}'\right)\right\rbrack
-$$
-
-$$
-=f\left(\vec{r}\right)
+L\int_{r'}d^3\vec{r}'\left\lbrack G\left(\vec{r},\vec{r}'\right)f\left(\vec{r}'\right)\right\rbrack=\int_{r'}d^3\vec{r}'\left\lbrack LG\left(\vec{r},\vec{r}'\right)f\left(\vec{r}'\right)\right\rbrack=f\left(\vec{r}\right)
 $$
 
 따라서,

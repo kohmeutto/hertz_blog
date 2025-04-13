@@ -79,7 +79,7 @@ $$
 
 ---
 
-example1) Hermitle's ODE
+**example1) Hermitle's ODE**
 
 $$
 y''-2xy'+2ny=0
@@ -107,7 +107,7 @@ $$
 
 {{< /details >}}
 
-example2) Laguerre’s ODE (라게르 미분방정식)
+**example2) Laguerre’s ODE (라게르 미분방정식)**
 
 $$
 xy''+\left(1-x\right)y'+ay=0
@@ -133,7 +133,7 @@ $$
 
 {{< /details >}}
 
-example3) Legendre’s ODE
+**example3) Legendre’s ODE**
 
 $$
 \left(1-x^2\right)y''-2xy'+l\left(l+1\right)y=0
@@ -159,7 +159,7 @@ $$
 
 {{< /details >}}
 
-example4) Chebyshev’s ODE
+**example4) Chebyshev’s ODE**
 
 $$
 \left(1-x^2\right)y''-xy'+n^2y=0

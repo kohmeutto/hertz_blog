@@ -5,6 +5,8 @@ weight = 2
 
 ---
 
+1차원 파동방정식의 해는 아래와 같다.
+
 $$
 \frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)
 $$
@@ -25,7 +27,7 @@ $$
 
 ---
 
-proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이
+**proof1) 양자역학에서 보는 관점(스텀-리우빌 적용), 아주 엄밀한 풀이**
 
 $$
 \frac{\partial^2}{\partial x^2}u\left(x,t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(x,t\right)
@@ -93,7 +95,7 @@ $$
 
 ---
 
-proof2) 페이저 변환과 중첩을 사용한 쉬운 풀이, 고전역학 & 전자기학 에서 많이 사용
+**proof2) 페이저 변환과 중첩을 사용한 쉬운 풀이, 고전역학 & 전자기학 에서 많이 사용**
 
 $e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다.
 
@@ -125,7 +127,7 @@ $$
 
 ---
 
-proof3) 푸리에 변환을 사용한 풀이
+**proof3) 푸리에 변환을 사용한 풀이
 
 [https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/185434137/a+Fourier+transform+for+PDE#example2)-Fourier-solution-of-the-wave-equation%2C-%EC%A4%91%EC%9A%94](https://www.notion.so/a-Fourier-transform-for-PDE-1cc8bc3f1406812983a0c53d45e0e677?pvs=21) 를 참조한다.
 

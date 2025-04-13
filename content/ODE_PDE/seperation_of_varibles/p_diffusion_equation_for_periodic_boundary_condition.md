@@ -33,7 +33,7 @@ $$
 
 ---
 
-proof1)
+**proof1)**
 
 $$
 \frac{\partial^2}{\partial x^2}X_{n}\left(x\right)T_{n}\left(t\right)=-k_{n}^2X_{n}\left(x\right)T_{n}\left(t\right)
@@ -139,7 +139,7 @@ $$
 
 ---
 
-proof2)
+**proof2)**
 
 $$
 \frac{\partial^2}{\partial x^2}X_{n}\left(x\right)T_{n}\left(t\right)=-k_{n}^2X_{n}\left(x\right)T_{n}\left(t\right)
