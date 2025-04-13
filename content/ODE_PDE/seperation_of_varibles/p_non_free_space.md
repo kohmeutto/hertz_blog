@@ -122,7 +122,6 @@ $$
 example2)
 
 $$
-
 f\left(x\right)\frac{\partial^2}{\partial x^2}u+g\left(x\right)\frac{\partial}{\partial x}u+h\left(x\right)u=\frac{\partial}{\partial t}u+k\left(t\right)u
 $$
 
