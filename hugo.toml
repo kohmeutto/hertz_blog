@@ -1,3 +1,23 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://kohmeutto.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = '수리전자물리학'
+theme = 'hugo-theme-relearn'
+
+defaultContentLanguage = 'en'
+
+[markup]
+  [markup.goldmark]  
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+          
+[params]
+  math = true
+  mathJaxInitialize = '{ "chtml": { "displayAlign": "left", "displayIndent": "3.7em" }}'
+  customCSS = ["css/mathjax-indent.css"]
+  themeVariant = "relearn-light"
