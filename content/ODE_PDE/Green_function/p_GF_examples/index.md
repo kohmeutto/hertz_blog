@@ -379,7 +379,7 @@ G\left(x,x'\right)
 =\begin{cases}
     0 & x < x'
     \\
-    \frac12\sin2\left(x-x'\right) & x > x'
+    \cfrac12\sin2\left(x-x'\right) & x > x'
 \end{cases}
 $$
     
@@ -554,9 +554,9 @@ $$
 $$
 G\left(x,x'\right)=
 \begin{cases}
-    \frac{x'^2-4}{6x'^5}\left(x^3-x\right) & x < x'
+    \cfrac{x'^2-4}{6x'^5}\left(x^3-x\right) & x < x'
     \\
-    \frac{x'^2-1}{6x'^5}\left(x^3-4x\right) &  x >x'
+    \cfrac{x'^2-1}{6x'^5}\left(x^3-4x\right) &  x >x'
 \end{cases}
 $$
     
