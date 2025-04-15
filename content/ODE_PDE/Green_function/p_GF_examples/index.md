@@ -64,7 +64,7 @@ $$
     
 (3) $y_{p}(x)$
     
-<img src="example1-1.png" width="65%" height="auto">
+<img src="image1-1.png" width="65%" height="auto">
     
 $$
 y_{p}=-\frac18\int_{x}^{\infty}dx'\left\lbrack e^{-4x'}e^{4x}\cdot x'e^{-2x'}\right\rbrack-\frac18\int_{-\infty}^{x}dx'\left\lbrack e^{4x'}e^{-4x}\cdot x'e^{-2x'}\right\rbrack
@@ -164,7 +164,7 @@ $$
     
 (3) $y_{p}(x)$
     
-<img src="example1-2.png" width="65%" height="auto">
+<img src="image1-2.png" width="65%" height="auto">
     
 $$
 y_{p}=\int_0^{x}dx'\left\lbrack e^{x'}\left(-x'+x\right)e^{-x}\cdot e^{-x'}\right\rbrack=-e^{-x}\int_0^{x}dx'\left\lbrack x'\right\rbrack+xe^{x}\int_0^{x}dx'
@@ -178,42 +178,42 @@ $$
 
 <hr>
 
-(3) $y''+9y=x+\sin x$ (단, x의 범위는 0…∞)
+**example1-3)**
+$$y''+9y=x+\sin x,\quad x\in[0,∞)$$
 
 {{< details summary="IOPM-D&T" >}}
   
-    $$
-    D^2+9=0
-    $$
+$$
+D^2+9=0
+$$
     
-    $$
-    y_{p1}=\frac{1}{D^2+9}\left\lbrack x\right\rbrack=\frac19\cdot\left(1\right)x=\frac19x
-    $$
+$$
+y_{p1}=\frac{1}{D^2+9}\left\lbrack x\right\rbrack=\frac19\cdot\left(1\right)x=\frac19x
+$$
     
-    $$
-    y_{p2}=\frac{1}{D^2+9}\operatorname{Im}\operatorname{}\left\lbrack e^{jx}\right\rbrack=\operatorname{Im}\operatorname{}\left\lbrack\frac18e^{jx}\right\rbrack=\frac18\sin x
-    $$
+$$
+y_{p2}=\frac{1}{D^2+9}\operatorname{Im}\left\lbrack e^{jx}\right\rbrack=\operatorname{Im}\left\lbrack\frac18e^{jx}\right\rbrack=\frac18\sin x
+$$
 
 {{< /details >}}
     
 {{< details summary="GF" >}}
     
-    @Seungmin Son 
+(1) $x\ne x'$
     
-    (1) $x\ne x'$
+$$
+\left(D^2+9\right)G\left(x,x'\right)=0
+$$
     
-    $$
-    \left(D^2+9\right)G\left(x,x'\right)=0
-    $$
+(2) $x=x'$
     
-    (2) $x=x'$
-    
-    (3) y$_{p}$(x)
-    
-    ![](image-20250227-122814.png)
-    
-    q
+(3) y$_{p}$(x)
+
+<img src="image1-3.png" width="65%" height="auto">
+
 {{< /details >}}
+
+<hr>
 
 **example2) 중요**
 
@@ -225,120 +225,131 @@ $$
 
 {{< details summary="IOPM-T" >}}
     
-    특수해
+특수해
     
-    $$
-    D^2+4=0
-    $$
+$$
+D^2+4=0
+$$
     
-    $$
-    y_{p}=\frac{1}{D^2+4}\operatorname{\operatorname{Im}}\left\lbrack e^{j2x}\right\rbrack=\frac{1}{\left(D-j2\right)\left(D+2j\right)}\operatorname{\operatorname{Im}}\left\lbrack e^{j2x}\right\rbrack
-    $$
+$$
+y_{p}=\frac{1}{D^2+4}\operatorname{Im}\left\lbrack e^{j2x}\right\rbrack=\frac{1}{\left(D-j2\right)\left(D+2j\right)}\operatorname{Im}\left\lbrack e^{j2x}\right\rbrack
+$$
     
-    $$
-    =\operatorname{\operatorname{Im}}\left\lbrack\frac{x}{4j}\left(\cos2x+j\sin2x\right)\right\rbrack=-\frac{x}{4}\cos2x
-    $$
+$$
+=\operatorname{Im}\left\lbrack\frac{x}{4j}\left(\cos2x+j\sin2x\right)\right\rbrack=-\frac{x}{4}\cos2x
+$$
     
-    일반해
+일반해
     
-    $$
-    y_{h}=c_1\cos2x+c_2\sin2x
-    $$
+$$
+y_{h}=c_1\cos2x+c_2\sin2x
+$$
     
-    최종해
+최종해
+ 
+$$
+c_1=1
+$$
     
-    $$
-    c_1=1
-    $$
+$$
+2c_2-\frac14=-2\to c_2=-\frac78
+$$
     
-    $$
-    2c_2-\frac14=-2\to c_2=-\frac78
-    $$
-    
-    $$
-    y_{}=\cos2x-\frac78\sin2x-\frac{x}{4}\cos2x
-    $$
+$$
+y=\cos2x-\frac78\sin2x-\frac{x}{4}\cos2x
+$$
 
 {{< /details >}}    
     
 {{< details summary="GF" >}}
-    - 특수해
+
+(1) $x\ne x'$
     
-    (1) $x\ne x'$
+$$
+\left(D^2+4\right)G\left(x,x'\right)=0
+$$
     
-    $$
-    \left(D^2+4\right)G\left(x,x'\right)=0
-    $$
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    0 & x < x'
+    \\
+    c_2\left(x'\right)\left(a\sin2x+b\cos2x\right) & x > x'
+\end{cases}
+$$
     
-    $$
-    \begin{aligned}G\left(x,x'\right)=\begin{cases}0 & x<x'\\ c_2\left(x'\right)\left(a\sin2x+b\cos2x\right) & x>x'\end{cases}\end{aligned}
-    $$
+(2) $x=x'$
     
-    (2) $x=x'$
+continuous
     
-    continuous
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    0 & x < x'
+    \\
+    c_2\left(x'\right)\sin2\left(x-x'\right) & x > x'
+\end{cases}
+$$
     
-    $$
-    \begin{aligned}G\left(x,x'\right)=\begin{cases}0 & x<x'\\ c_2\left(x'\right)\sin2\left(x-x'\right) & x>x'\end{cases}\end{aligned}
-    $$
+jump condition
     
-    jump condition
+$$
+c_2\left(x'\right)=\frac12
+$$
     
-    $$
-    c_2\left(x'\right)=\frac12
-    $$
+(3) y$_{p}$(x)
+
+<img src="image2.png" width="65%" height="auto">
+
+$$
+y_{p}=\int_0^{x}dx'\left\lbrack\frac12\sin2\left(x-x'\right)\cdot\sin2x'\right\rbrack+\int_{x}^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack
+$$
     
-    (3) y$_{p}$(x)
+$$
+=\frac12\int_0^{x}dx'\left\lbrack-\frac12\cos2x+\frac12\cos2\left(x-2x'\right)\right\rbrack
+$$
     
-    ![](image-20250227-122822.png)
+$$
+=-\frac{x}{4}\cos2x+\frac14\int_0^{x}dx'\left\lbrack\cos2\left(x-2x'\right)\right\rbrack
+$$
     
-    $$
-    y_{p}=\int_0^{x}dx'\left\lbrack\frac12\sin2\left(x-x'\right)\cdot\sin2x'\right\rbrack+\int_{x}^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack
-    $$
+$$
+=-\frac{x}{4}\cos2x-\frac{1}{16}\left.\sin2\left(x-2x'\right)\right|_{x'=0}^{x}=-\frac{x}{4}\cos2x-\frac{1}{16}\left(\sin2\left(-x\right)-\sin2x\right)
+$$
     
-    $$
-    =\frac12\int_0^{x}dx'\left\lbrack-\frac12\cos2x+\frac12\cos2\left(x-2x'\right)\right\rbrack
-    $$
+$$
+=-\frac{x}{4}\cos2x+\frac18\sin2x
+$$
     
-    $$
-    =-\frac{x}{4}\cos2x+\frac14\int_0^{x}dx'\left\lbrack\cos2\left(x-2x'\right)\right\rbrack
-    $$
+특수해
+
+$$
+y_{h}=c_1\cos2x+c_2\sin2x
+$$
     
-    $$
-    =-\frac{x}{4}\cos2x-\frac{1}{16}\left.\sin2\left(x-2x'\right)\right|_{x'=0}^{x}=-\frac{x}{4}\cos2x-\frac{1}{16}\left(\sin2\left(-x\right)-\sin2x\right)
-    $$
+boundary condition 적용한다.
     
-    $$
-    =-\frac{x}{4}\cos2x+\frac18\sin2x
-    $$
+$$
+c_1=1
+$$
     
-    - 일반해
+$$
+2c_2=-2\to c_2=-1
+$$
     
-    $$
-    y_{h}=c_1\cos2x+c_2\sin2x
-    $$
+$$
+y_{h}=\cos2x-\sin2x
+$$
     
-    boundary condition 적용한다.
+최종해
     
-    $$
-    c_1=1
-    $$
-    
-    $$
-    2c_2=-2\to c_2=-1
-    $$
-    
-    $$
-    y_{h}=_{}\cos2x-\sin2x
-    $$
-    
-    - 최종해
-    
-    $$
-    y_{}=\cos2x-\frac78\sin2x-\frac{x}{4}\cos2x
-    $$
+$$
+y=\cos2x-\frac78\sin2x-\frac{x}{4}\cos2x
+$$
+
 {{< /details >}}
-    
+
+<hr>
 
 **example3) 매우중요**
 
@@ -351,52 +362,70 @@ $$
 where the forcing function f is piecewise defined:
 
 $$
-\begin{aligned}f\left(x\right)=\begin{cases}0 & x<0\\ \sin2x & 0\le x\le2\pi\\ 0 & x>2\pi\end{cases}\end{aligned}
+f\left(x\right)
+=\begin{cases}
+    0 & x < 0
+    \\
+    \sin2x & 0 \le x \le 2\pi
+    \\
+    0 & x > 2\pi
+\end{cases}
 $$
 
 {{< details summary="GF" >}}
     
-    $$
-    \begin{aligned}G\left(x,x'\right)=\begin{cases}0 & x<x'\\ \displaystyle\frac12\sin2\left(x-x'\right) & x>x'\end{cases}\end{aligned}
-    $$
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    0 & x < x'
+    \\
+    \frac12\sin2\left(x-x'\right) & x > x'
+\end{cases}
+$$
     
-    1) $x<0$
+(1) $x<0$
     
-    ![](image-20250227-122835.png)
+<img src="image3-1.png" width="65%" height="auto">
+
+$$
+y_{p}=\int_0^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack=0
+$$
     
-    $$
-    y_{p}=\int_0^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack=0
-    $$
+적분범위를 유심히 살펴본다.
+
+<br><br>
     
-    적분범위를 유심히 살펴본다.
+(2) $0\le x\le2\pi$
+
+<img src="image3-2.png" width="65%" height="auto">
     
-    2) $0\le x\le2\pi$
+$$
+y_{p}=\int_0^{x}dx'\left\lbrack\frac12\sin2\left(x-x'\right)\cdot\sin2x'\right\rbrack+\int_{x}^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack
+$$
     
-    ![](image-20250227-122847.png)
+$$
+=-\frac{x}{4}\cos2x+\frac18\sin2x
+$$
     
-    $$
-    y_{p}=\int_0^{x}dx'\left\lbrack\frac12\sin2\left(x-x'\right)\cdot\sin2x'\right\rbrack+\int_{x}^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack
-    $$
+(3) $2\pi < x$
+
+<img src="image3-3.png" width="65%" height="auto">
     
-    $$
-    =-\frac{x}{4}\cos2x+\frac18\sin2x
-    $$
+$$
+y_{p}=\int_0^{2\pi}dx'\left\lbrack\frac12\sin2\left(x-x'\right)\cdot\sin2x'\right\rbrack
+$$
     
-    3) $2\pi<x$
-    
-    ![](image-20250227-122906.png)
-    
-    $$
-    y_{p}=\int_0^{2\pi}dx'\left\lbrack\frac12\sin2\left(x-x'\right)\cdot\sin2x'\right\rbrack
-    $$
-    
-    $$
-    =-\frac{2\pi}{4}\cos4\pi+\frac18\sin4\pi=-\frac{\pi}{2}
-    $$
-    
-    적분범위를 유심히 살펴본다.
+$$
+=-\frac{2\pi}{4}\cos4\pi+\frac18\sin4\pi=-\frac{\pi}{2}
+$$
+
+<br>
+
+적분범위를 유심히 살펴본다.
+
 {{< /details >}}
-    
+
+<hr>    
 
 **example4)**
 
@@ -408,41 +437,52 @@ $$
 
 {{< details summary="GF" >}}
     
-    1) $x\ne x'$
+(1) $x\ne x'$
     
-    $$
-    \left(D^2+4\right)G\left(x,x'\right)=0
-    $$
+$$
+\left(D^2+4\right)G\left(x,x'\right)=0
+$$
     
-    $$
-    \begin{aligned}G\left(x,x'\right)=\begin{cases}c_1\left(x'\right)\cos2x & x<x'\\ c_2\left(x'\right)\sin2x & x>x'\end{cases}\end{aligned}
-    $$
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    c_1\left(x'\right)\cos2x & x < x'
+    \\
+    c_2\left(x'\right)\sin2x & x > x'
+\end{cases}
+$$
     
-    2)$x=x'$
+(2)$x=x'$
     
-    $$
-    \begin{aligned}W=\left|\left[\begin{matrix}\cos2x & \sin2x\\ -2\sin2x & 2\cos2x\end{matrix}\right]\right|=2\end{aligned}
-    $$
+$$
+W=
+\left|\left[\begin{matrix}
+    \cos2x & \sin2x
+    \\
+    -2\sin2x & 2\cos2x
+\end{matrix}\right]\right|
+=2
+$$
     
-    $$
-    c_1\begin{aligned}=\frac{\sin2x'}{2},\end{aligned}c_2\begin{aligned}=\frac{\cos2x'}{2}\end{aligned}
-    $$
+$$
+c_1=\frac{\sin2x'}{2},\quad c_2=\frac{\cos2x'}{2}
+$$
     
-    3) y$_{p}$(x)
+(3) $y_{p}(x)$
+
+<img src="image4.png" width="65%" height="auto">
     
-    ![](image-20250227-122925.png)
+$$
+y_{p}=\int_0^{x}dx'\left\lbrack\cos2x'\sin2x\right\rbrack+\int_{x}^{\frac{\pi}{2}}dx'\left\lbrack\sin2x'\cos2x\right\rbrack
+$$
     
-    $$
-    y_{p}=\int_0^{x}dx'\left\lbrack\cos2x'\sin2x\right\rbrack+\int_{x}^{\frac{\pi}{2}}dx'\left\lbrack\sin2x'\cos2x\right\rbrack
-    $$
+$$
+=\sin2x\int_0^{x}dx'\left\lbrack\cos2x'\right\rbrack+\cos2x\int_{x}^{\frac{\pi}{2}}dx'\left\lbrack\sin2x'\right\rbrack
+$$
     
-    $$
-    =\sin2x\int_0^{x}dx'\left\lbrack\cos2x'\right\rbrack+\cos2x\int_{x}^{\frac{\pi}{2}}dx'\left\lbrack\sin2x'\right\rbrack
-    $$
-    
-    q
 {{< /details >}}
-    
+
+<hr>
 
 **example5)**
 
@@ -454,56 +494,77 @@ $$
 
 {{< details summary="GF" >}}
     
-    스트룸-리우빌 형태로 변형한다.
+스트룸-리우빌 형태로 변형한다.
+
+<br><br>
     
-    $$
-    \left\lbrack\left(D^2-\frac{3}{x}D\right)+\frac{3}{x^2}\right\rbrack y=24x^3
-    $$
+$$
+\left\lbrack\left(D^2-\frac{3}{x}D\right)+\frac{3}{x^2}\right\rbrack y=24x^3
+$$
     
-    $$
-    r\left(x\right)=\exp\left\lbrace\int dx\left\lbrack\frac{3}{x}\right\rbrack\right\rbrace=x^3
-    $$
+$$
+r\left(x\right)=\exp\left\lbrace\int dx\left\lbrack\frac{3}{x}\right\rbrack\right\rbrace=x^3
+$$
     
-    $$
-    \left\lbrack D\left(x^3D\right)+3x\right\rbrack y=24x^6
-    $$
+$$
+\left\lbrack D\left(x^3D\right)+3x\right\rbrack y=24x^6
+$$
     
-    1) $x\ne x'$
+(1) $x\ne x'$
     
-    특성방정식은 아래와 같다.
+특성방정식은 아래와 같다.
     
-    $$
-    \left(\lambda-3\right)\left(\lambda-1\right)=0
-    $$
+$$
+\left(\lambda-3\right)\left(\lambda-1\right)=0
+$$
     
-    $$
-    \begin{aligned}G\left(x,x'\right)=\begin{cases}c_1\left(x'\right)\left(ax^3+x\right) & x<x'\\ c_2\left(x'\right)\left(x^3+bx\right) & x>x'\end{cases}\end{aligned}
-    $$
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    c_1\left(x'\right)\left(ax^3+x\right) & x < x'
+    \\
+    c_2\left(x'\right)\left(x^3+bx\right) & x > x'
+\end{cases}
+$$
     
-    $$
-    a=-1,b=-4
-    $$
+$$
+a=-1,b=-4
+$$
     
-    2) $x=x'$
+(2) $x=x'$
     
-    $$
-    \begin{aligned}W=\left|\left[\begin{matrix}-x^3+x & x^3-4x\\ -3x^2+1 & 3x^2-4\end{matrix}\right]\right|=-6x^3\end{aligned}
-    $$
+$$
+W=
+\left|\left[\begin{matrix}
+    -x^3+x & x^3-4x
+    \\
+    -3x^2+1 & 3x^2-4
+\end{matrix}\right]\right|
+=-6x^3
+$$
     
-    $$
-    c_1\begin{aligned}=\frac{x^{\prime3}-4x'}{-6x^{\prime6}}=-\frac{x^{\prime2}-4}{6x'^5},\quad\end{aligned}c_2\begin{aligned}=\frac{-x^{\prime3}+x'}{-6x^{\prime6}}=\frac{x^{\prime2}-1}{6x^{\prime5}}\end{aligned}
-    $$
+$$
+c_1=\frac{x'^3-4x'}{-6x'^6}=-\frac{x'^2-4}{6x'^5}
+$$
+
+$$
+c_2=\frac{-x'^3+x'}{-6x'^6}=\frac{x'^2-1}{6x'^5}
+$$
     
-    $$
-    \begin{aligned}
-    G\left(x,x'\right)=\begin{cases}\displaystyle\frac{x^{\prime2}-4}{6x'^5}\left(x^3-x\right) & x<x'\\ \displaystyle\frac{x^{\prime2}-1}{6x^{\prime5}}\left(x^3-4x\right) & x>x'\end{cases}\end{aligned}
-    $$
+$$
+G\left(x,x'\right)=
+\begin{cases}
+    \frac{x'^2-4}{6x'^5}\left(x^3-x\right) & x < x'
+    \\
+    \frac{x'^2-1}{6x'^5}\left(x^3-4x\right) &  x >x'
+\end{cases}
+$$
     
-    3) y$_{p}$(x)
+(3) $y_{p}(x)$
     
-    $$
-    y_p(x) = 6(4x - x^3) (\ln |x^4 - 4| - \ln 3) + 6(x - x^3) (16 - x^4)
-    $$
+$$
+y_p(x) = 6(4x - x^3) (\ln \left|x^4 - 4\right| - \ln 3) + 6(x - x^3) (16 - x^4)
+$$
 
 {{< /details >}}
     

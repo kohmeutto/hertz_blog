@@ -24,7 +24,7 @@ $$
 위로부터, $x'$과 **인접한 부분**에서, $\partial_{x}{\displaystyle G\left(x,x'\right)}$는 **불연속 함수인** **“단위 계단 함수”** 임을 알 수 있다. [*Characteristics of Dirac delta](https://www.notion.so/Characteristics-of-Dirac-delta-1cc8bc3f14068129a99ed044cc755420?pvs=21)
 
 $$
-p\left(x\right)\frac{\partial}{\partial_{}x}G\left(x,x'\right)=u\left(x-x'\right)\implies\frac{\partial}{\partial_{}x}G\left(x,x'\right)=\frac{1}{p\left(x\right)}u\left(x-x'\right)
+p\left(x\right)\frac{\partial}{\partialx}G\left(x,x'\right)=u\left(x-x'\right)\implies\frac{\partial}{\partialx}G\left(x,x'\right)=\frac{1}{p\left(x\right)}u\left(x-x'\right)
 $$
 
 $x'$과 **인접한 부분**에서 위 식을 적분하면, G(x,x')은 **연속 함수**가 나옴을 알 수 있다. 위 그린함수의 형태를 그려보면 다음과 같다.
@@ -39,7 +39,7 @@ $x'$과 **인접한 부분**에서 위 식을 적분하면, G(x,x')은 **연속 
 
 ---
 
-### **2. General solution**
+### 2. General solution
 
 $$
 \left\lbrack\frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)+q\left(x\right)\right\rbrack G\left(x,x'\right)=\delta\left(x-x'\right)
@@ -73,7 +73,7 @@ $$
 $$
 
 $$
-\int_{x_{>}'}^{x_{<}'}dx\left\lbrack\frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)G\left(x,x'\right)+q\left(x\right)G\left(x,x'\right)\right\rbrack=\int_{x_{>}'}^{x_{<}'}dx\left\lbrack\delta\left(x-x'\right)\right\rbrack=1
+\int_{x_{>}'}^{x_{<}'}dx\left\lbrack\frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)G\left(x,x'\right)+q\left(x\right)G\left(x,x'\right)\right\rbrack=1
 $$
 
 $$
@@ -115,7 +115,7 @@ c_1\left(x'\right)u_1\left(x'\right)-c_2\left(x'\right)u_2\left(x'\right)=0
 $$
 
 $$
-c_2\left(x'\right)u_2'\left(x_{}'\right)-c_1\left(x'\right)u_1'\left(x_{}'\right)=\frac{1}{p(x')}
+c_2\left(x'\right)u_2'\left(x'\right)-c_1\left(x'\right)u_1'\left(x'\right)=\frac{1}{p(x')}
 $$
 
 위 식은 다음과 같다.
