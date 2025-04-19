@@ -14,11 +14,11 @@ $$
 미분연산자가 self-adjoint 하면, 아래와 같이 eigen-expansion 을 수행할 수 있다.
 
 $$
-y=\sum_{n=1}^{\infty}\frac{\left<\varphi_{n},f\right>_{w}}{\lambda_{n}}\varphi_{n}
+y=\sum_{n=1}^{\infty}\frac{\left<\varphi_{n}|f\right>_{w}}{\lambda_{n}}\varphi_{n}
 $$
 
 $$
-y=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx'\left\lbrack\frac{w\left(x'\right)f\left(x'\right)\varphi_{n}^{\ast}\left(x'\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right)
+=\sum_{n=1}^{\infty}\int_{x_1}^{x_2}dx'\left\lbrack\frac{w\left(x'\right)f\left(x'\right)\varphi_{n}^{\ast}\left(x'\right)}{\lambda_{n}}\right\rbrack\varphi_{n}\left(x\right)
 $$
 
 $$
@@ -41,7 +41,10 @@ $$
 
 ---
 
-실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는 (1)변수 분리가 가능하다는 사실과, (2)교환법칙이 가능하다는 것, (3) self -adjoint인 경우, 그린함수 풀이법이 전체 해** 이다.
+실제적으로는 이전 챕터에서 사용하는 방식을 사용한다. 위와 같은 표현법은 무한합을 포함하기 때문에, 계산이 복잡하다. **이번 챕터에서의 중요한 사실은, 그린함수는
+- 변수 분리가 가능
+- 교환법칙이 가능
+- self -adjoint인 경우, 그린함수 풀이법이 전체 해
 
 $$
 G\left(x,x'\right)=g_1\left(x\right)g_2\left(x'\right)

@@ -7,10 +7,8 @@ weight = 1
 
 **페이저 변환을 수행할 수 있는 조건**
 
-- **입력과 출력이 단일 주기와 단일 파장을 가진다.**
-- **경계조건이 필요 없는 경우여야 한다.**
-  - **즉, 특수해를 구할 때 쓸 수 있다. (특수해는 경계조건에 상관없기 때문)**
-  - **boundary condition 한쪽 또는 양쪽이 unbounded 되어 있을 때, 쓸 수 있다.**
+- 입력과 출력이 단일 주기와 단일 파장을 가진다.
+- 연산자가 self-adjoint 일 경우, 특수해는 전체해가 된다.
 
 ---
 
@@ -54,7 +52,7 @@ $$
 \frac{\partial^2}{\partial t^2}\to-\omega^2
 $$
 
-$e^{i\omega t}$를 기준으로,
+$e^{+i\omega t}$를 기준으로,
 
 $$
 \frac{\partial}{\partial t}\to i\omega
@@ -72,18 +70,14 @@ $$
 y''-y'-2y=\cos x
 $$
 
-$$
-\underbar{abc} + y = z
-$$
-
 {{< details summary="sol" >}}
 
 $$
-\left(-1-i-2\right)\utilde{y}_{p}=1
+\left(-1-i-2\right)\underline{y_p}=1
 $$
 
 $$
-\utilde{y}_{p}=-\frac{1}{3+i}=-\frac{3-i}{10}
+\underline{y_p}=-\frac{1}{3+i}=-\frac{3-i}{10}
 $$
 
 $$
@@ -93,29 +87,59 @@ $$
 {{< /details >}}
 
 
-**example2)** @Seungmin Son 
+**example2)**
 
 $$
 y''-3y'-4y=\sin 2x
 $$
 
-- sol)
+{{< details summary="sol" >}}
 
-**example3)** @Seungmin Son 
+$$
+(-4-6i-4)\underline{y_p}=-1i
+$$
+
+$$
+y_p=\operatorname{Re}\left\lbrack\frac{-i}{-4-6i-4}e^{i2x}\right\rbrack=\operatorname{Re}\left\lbrack\frac{-8i+6}{100}\left(\cos x+i\sin x\right)\right\rbrack=\frac{3}{50}\cos x+\frac{2}{25}\sin x
+$$
+
+{{< /details >}}
+
+**example3)**
 
 $$
 y''+y'-2y=4\sin 2x
 $$
 
-- sol)
+{{< details summary="sol" >}}
 
-**example4)** @Seungmin Son 
+$$
+(-4+i-2)\underline{y_p}=-1i
+$$
+
+$$
+y_p=\operatorname{Re}\left\lbrack\frac{-i}{-4+i-2}e^{i2x}\right\rbrack=\operatorname{Re}\left\lbrack\frac{6i-1}{37}\left(\cos x+i\sin x\right)\right\rbrack=-\frac{1}{37}\cos x-\frac{6}{37}\sin x
+$$
+
+{{< /details >}}
+
+**example4)**
 
 $$
 y''+25y=32\cos 3x
 $$
 
-- sol)
+{{< details summary="sol" >}}
+
+$$
+(-9+25)\underline{y_p}=1
+$$
+
+$$
+y_p=\operatorname{Re}\left\lbrack\frac{1}{16}e^{i3x}\right\rbrack=\frac{1}{16}\cos 3x
+$$
+
+{{< /details >}}
 
 **example5)**
 
@@ -123,19 +147,21 @@ $$
 y''+4y=\sin 2x
 $$
 
-- sol)
+{{< details summary="sol" >}}
 
-  $$
-  \left(s^2+4\right)\tenq{y}_{p}=-1i,\quad s=2i
-  $$
+$$
+\left(s^2+4\right)\underline{y_p}=-1i,\quad s=2i
+$$
 
-  $$
-  \tenq{y}_{p}=\operatorname{}\frac{1}{s-2i}\cdot\frac{-i}{\left.\left(s+2i\right)\right|_{s=2i}_{}}=x\cdot\frac{-i}{4i}=-\frac14x
-  $$
+$$
+\underline{y_p}=\frac{1}{s-2i}\cdot\frac{-i}{\left.\left(s+2i\right)\right|_{s=2i}}=x\cdot\frac{-i}{4i}=-\frac14x
+$$
 
-  $$
-  y_{p}=\operatorname{Re}\left\lbrack-\frac{x}{4}e^{i2x}\right\rbrack=-\frac{x}{4}\cos2x
-  $$
+$$
+y_{p}=\operatorname{Re}\left\lbrack-\frac{x}{4}e^{i2x}\right\rbrack=-\frac{x}{4}\cos2x
+$$
+
+{{< /details >}}
 
 **example6)**
 
@@ -143,27 +169,43 @@ $$
 x^2y''-2xy'+2y=\cos x
 $$
 
-- sol)
-
-  $$
-  \left(s^2-3s+2\right)\tenq{y}_{p}=\operatorname{}1
-  $$
-
-  $$
-  \tenq{y}_{p}=\frac{1}{\left(s^2-3s+2\right)\left|_{s=i}^{}\right.}=\frac{1}{-3i+1}
-  $$
-
-  $$
-  y_{p}=\operatorname{Re}\left\lbrack\frac{3i+1}{10}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{10}\cos x-\frac{3}{10}\sin x
-  $$
-
-**example7)** @Seungmin Son  
+{{< details summary="sol" >}}
 
 $$
-\begin{aligned}x^2y^{\prime\prime}+11xy^{\prime}+25y=3\sin3x\end{aligned}
+\left(s^2-3s+2\right)\underline{y_p}=1
 $$
 
-- sol)
+$$
+\underline{y_p}=\frac{1}{\left(s^2-3s+2\right)\left|_{s=i}\right.}=\frac{1}{-3i+1}
+$$
+
+$$
+y_{p}=\operatorname{Re}\left\lbrack\frac{3i+1}{10}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{10}\cos x-\frac{3}{10}\sin x
+$$
+
+{{< /details >}}
+
+**example7)**
+
+$$
+x^2y''+11xy'+25y=3\sin3x
+$$
+
+{{< details summary="sol" >}}
+
+$$
+\left(s^2-10s+25\right)\underline{y_p}=-1i
+$$
+
+$$
+\underline{y_p}=\frac{1}{\left(s-5\right)^2\left|_{s=3i}\right.}=\frac{1}{34}
+$$
+
+$$
+y_{p}=\operatorname{Re}\left\lbrack\frac{1}{34}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{34}\cos x
+$$
+
+{{< /details >}}
 
 ---
 
