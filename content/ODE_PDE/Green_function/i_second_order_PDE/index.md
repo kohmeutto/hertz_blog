@@ -24,7 +24,7 @@ $$
 위로부터, $x'$과 **인접한 부분**에서, $\partial_{x}{\displaystyle G\left(x,x'\right)}$는 **불연속 함수인** **“단위 계단 함수”** 임을 알 수 있다. [*Characteristics of Dirac delta](https://www.notion.so/Characteristics-of-Dirac-delta-1cc8bc3f14068129a99ed044cc755420?pvs=21)
 
 $$
-p\left(x\right)\frac{\partial}{\partialx}G\left(x,x'\right)=u\left(x-x'\right)\implies\frac{\partial}{\partialx}G\left(x,x'\right)=\frac{1}{p\left(x\right)}u\left(x-x'\right)
+p\left(x\right)\frac{\partial}{\partial x}G\left(x,x'\right)=u\left(x-x'\right)\implies\frac{\partial}{\partial x}G\left(x,x'\right)=\frac{1}{p\left(x\right)}u\left(x-x'\right)
 $$
 
 $x'$과 **인접한 부분**에서 위 식을 적분하면, G(x,x')은 **연속 함수**가 나옴을 알 수 있다. 위 그린함수의 형태를 그려보면 다음과 같다.
@@ -283,7 +283,9 @@ $$
 
 {{< details summary="general solution" >}}
 
-공사중
+공사중 
+
+<br>
 
 (1) $x\ne x'$ 
 
