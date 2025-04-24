@@ -19,7 +19,7 @@ $$
 
 '임의의 2차 상미분방정식'을 모두 스텀텀-리우빌 미분방정식으로 표현하여 해의 특성에 대해 미리 예측하고 성질을 파악할 수 있다.
 
-###### (1) $p'_0\left(x\right)=p_1\left(x\right)$ 경우
+**(1) $p'_0\left(x\right)=p_1\left(x\right)$ 경우**
 
 $$
 L=p_0\left(x\right)\frac{d^2}{dx^2}+p_1\left(x\right)\frac{d}{dx}+p_2\left(x\right) 
@@ -29,7 +29,7 @@ $$
 L=\frac{d}{dx}\left(p_0\left(x\right)\frac{d}{dx}\right)+p_2\left(x\right)
 $$
 
-###### (2) $p_0'\left(x\right)\ne p_1\left(x\right)$ 경우
+**(2) $p_0'\left(x\right)\ne p_1\left(x\right)$ 경우**
 
 위 (1)번과 같이 바꿀 수 없다. 따라서, 적절한 함수를 곱하여, 스텀-리우빌 형태로 만들어보자.
 
@@ -105,6 +105,8 @@ $$
 \lambda_{n}=2n,\quad w\left(x\right)=e^{-x^2}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2) Laguerre’s ODE (라게르 미분방정식)**
@@ -131,6 +133,8 @@ $$
 \lambda_{n}=a,\quad w\left(x\right)=e^{-x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example3) Legendre’s ODE**
@@ -156,6 +160,8 @@ $$
 $$
 \lambda_{n}=l\left(l+1\right),\quad w\left(x\right)=1
 $$
+
+<hr>
 
 {{< /details >}}
 

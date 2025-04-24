@@ -17,7 +17,7 @@ $$
 
 ### 2. Weak solution for Poisson's equation
 
-포아송 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 포아송송 방정식에 대입하면, 다음과 같다.
+포아송 방정식에 대한 해를, $\varphi_1$, $\varphi_2$ 하고, 두 해의 차이를 $\psi=\varphi_1-\varphi_2$ 라고 하자. 이를 포아송 방정식에 대입하면, 다음과 같다.
 
 $$
 \nabla^2\psi\left(\vec{r}\right)=0

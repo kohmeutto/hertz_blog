@@ -100,23 +100,23 @@ $$
 $e^{-i \omega t}$를 기준으로, 페이저 변환을 수행한다.
 
 $$
-\nabla^2\tilde u\left(x\right)=-\frac{\omega^2}{v^2}\tilde u\left(x\right)
+\nabla^2\underline u\left(x\right)=-\frac{\omega^2}{v^2}\underline u\left(x\right)
 $$
 
 $$
-\left(\nabla^2+\frac{\omega^2}{v^2}\right)\tilde u\left(x\right)=0
+\left(\nabla^2+\frac{\omega^2}{v^2}\right)\underline u\left(x\right)=0
 $$
 
 $\displaystyle k=\frac{\omega}{v}$이면,
 
 $$
-\left(\nabla^2+k^2\right)\tilde u\left(x\right)=0
+\left(\nabla^2+k^2\right)\underline u\left(x\right)=0
 $$
 
 따라서,
 
 $$
-u\left(x,t\right)=\operatorname{Re}\left\lbrack\tilde u\left(x\right)e^{-i\omega t}\right\rbrack
+u\left(x,t\right)=\operatorname{Re}\left\lbrack\underline u\left(x\right)e^{-i\omega t}\right\rbrack
 $$
 
 1차원의 x방향 & 주파수가 중첩이 되어 있다고 하면,
