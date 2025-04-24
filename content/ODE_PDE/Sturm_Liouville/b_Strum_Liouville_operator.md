@@ -10,7 +10,7 @@ weight = 1
 스텀-리우빌 형태는 아래와 같다.
 
 $$
-L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right), p\left(x\right)>0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}
+L_{p}=\frac{d}{dx}\left(p\left(x\right)\frac{d}{dx}\right)+q\left(x\right), \quad p\left(x\right)>0, \quad p\left(x\right)\text{는 일차 미분 가능해야 함}
 $$
 
 ---
