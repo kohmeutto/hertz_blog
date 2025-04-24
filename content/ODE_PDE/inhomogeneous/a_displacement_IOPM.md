@@ -39,6 +39,8 @@ $$
 =\frac{e^{-2x}}{6}\left(1+\frac76D\right)\left\lbrack x\right\rbrack=\frac{e^{-2x}}{6}\left(x+\frac76\right)
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -63,6 +65,8 @@ $$
 $$
 =e^{3x}\operatorname{Im}\left\lbrack\frac{1}{5i+3}e^{ix}\right\rbrack=e^{3x}\left(\frac{5}{34}\cos x-\frac{3}{34}\sin x\right)
 $$
+
+<hr>
 
 {{< /details >}}
 

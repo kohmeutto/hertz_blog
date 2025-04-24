@@ -35,6 +35,8 @@ $$
 y_{p}=\operatorname{}\frac{1}{1+D^2}x^2=\left(1-D^2\right)x^2=x^2-2
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -61,6 +63,8 @@ $$
 =-x^3-3x-\frac12
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example3)**
@@ -86,6 +90,8 @@ $$
 $$
 =x^2-4x+\frac{7}{2}
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -140,6 +146,8 @@ $$
 y_{p}=\frac{1}{D\left(1+D\right)}2x=\int_{x=x'}dx'\left\lbrack\left(1-D\right)2x'\right\rbrack=\int_{x=x'}dx'\left\lbrack2x'-2\right\rbrack=x^2-2x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -161,6 +169,8 @@ $$
 $$
 =-x^2-\frac14x
 $$
+
+<hr>
 
 {{< /details >}}
 

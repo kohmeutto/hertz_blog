@@ -35,6 +35,8 @@ $$
 y_{p}=\frac{1}{\left(D+2\right)\left(D-1\right)\left|_{D=3}\right.}e^{3x}=\frac{1}{10}e^{3x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -53,6 +55,8 @@ $$
 y_{p}=\frac{1}{\left(D-3\right)\left(D+2\right)\left|_{D=-1}^{}\right.}e^{-x}=-\frac14e^{-x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example3)**
@@ -70,6 +74,9 @@ $$
 $$
 y_{p}=\frac{1}{\left(D-3\right)\left(D-1\right)\left|_{D=-2}\right.}10_{}e^{-2x}=\frac23e^{-2x}
 $$
+
+<hr>
+
 {{< /details >}}
 
 **example4)**
@@ -88,6 +95,8 @@ $$
 y_{p}=\frac{1}{\left(D+1\right)\left(D+3\right)\left|_{D=5}\right.}-5e^{5x}=-\frac{5}{48}e^{5x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example5)**
@@ -105,6 +114,8 @@ $$
 $$
 y_{p}=\frac{1}{\left(D-3\right)\left(D-2\right)\left|_{D=4}\right.}2e^{4x}=e^{4x}
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -152,6 +163,8 @@ $$
 y_{p}=\frac{1}{\left(D+1\right)^2}e^{-x}=\frac{x^2}{2}e^{-x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 
@@ -170,6 +183,8 @@ $$
 $$
 y_{p}=-\frac{1}{\left(D-3\right)^2}e^{3x}=-\frac{x^2}{2}e^{3x}
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -217,6 +232,8 @@ $$
 y_{p}=\frac{1}{\left.\left(D+2\right)\right|_{D=1}\left(D-1\right)^{}}e^{x}=\frac13\cdot xe^{-x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -235,6 +252,8 @@ $$
 y_{p}=\frac{1}{\left.\left(D-1\right)\right|_{D=3}\left(D-3\right)}-2e^{3x}=\frac12\cdot x\cdot-2e^{3x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example3)**
@@ -252,6 +271,8 @@ $$
 $$
 y_{p}=\frac{1}{\left(D-2\right)\left|_{D=3}^{}\right.\left(D-3\right)^{}}2e^{3x}=2xe^{3x}
 $$
+
+<hr>
 
 {{< /details >}}
 

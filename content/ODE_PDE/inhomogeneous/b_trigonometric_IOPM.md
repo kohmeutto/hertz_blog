@@ -43,6 +43,8 @@ $$
 =\operatorname{Re}\left\lbrack\frac{-3+i}{10}\left(\cos x+i\sin x\right)\right\rbrack=-\frac{3}{10}\cos x-\frac{1}{10}\sin x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -64,6 +66,8 @@ $$
 $$
 =\operatorname{\operatorname{Im}}\left\lbrack\frac{-8+6i}{100}\left(\cos2x+i\sin2x\right)\right\rbrack=-\frac{2}{25}\sin2x+\frac{3}{50}\cos2x
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -87,6 +91,8 @@ $$
 =\operatorname{Im}\left\lbrack\frac{-6+2i}{10}\left(\cos2x+i\sin2x\right)\right\rbrack=\frac15\cos2x-\frac35\sin2x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example4)**
@@ -104,6 +110,8 @@ $$
 $$
 y_{p}=\operatorname{Re}\left\lbrack\frac{1}{\left(D+5i\right)\left(D-5i\right)\left|_{D=3i}\right.}32e^{i3x}\right\rbrack=\operatorname{Re}\left\lbrack\frac{1}{16}32e^{i3x}\right\rbrack=2\cos3x
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -126,6 +134,8 @@ $$
 $$=\operatorname{Im}\left\lbrack\frac{1}{4i}\cdot x\cdot\left(\cos2x+i\sin2x\right)\right\rbrack=-\frac{x}{4}\cos2x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example6)**
@@ -144,6 +154,8 @@ $$
 
 $$=\operatorname{Re}\left\lbrack\frac{3i+1}{10}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{10}\cos x-\frac{3}{10}\sin x
 $$
+
+<hr>
 
 {{< /details >}}
 

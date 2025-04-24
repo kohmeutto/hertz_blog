@@ -147,6 +147,8 @@ $$
 y=\sum_{n=1}^{N}\frac{\lambda}{\lambda_{n}}\sqrt{2}\sin n\pi x
 $$
 
+<hr>
+
 {{< /details >}}
 
 
@@ -399,6 +401,8 @@ $$
   Your browser does not support the video tag.
 </video>
 
+<hr>
+
 {{< /details >}}
 
 
@@ -635,6 +639,8 @@ $$
 $$
 y=\sum\frac{1}{2n\pi}\frac{\cos\left(n\pi\right)-1}{1-n^2\pi^2}\sin\left(n\pi\ln x\right)
 $$
+
+<hr>
 
 {{< /details >}}
 
