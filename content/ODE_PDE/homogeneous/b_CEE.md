@@ -55,6 +55,8 @@ $$
 y=c_1x^3+c_2x^2
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -72,6 +74,8 @@ $$
 $$
 y=c_1x^{1+\sqrt{2}}+c_2x^{1-\sqrt{2}}
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -91,6 +95,8 @@ $$
 y=c_1x^2+c_2
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example4)**
@@ -108,6 +114,7 @@ $$
 $$
 y=c_1e^{-3x}+c_2e^{2x}
 $$
+
 {{< /details >}}
 
 ---
@@ -139,6 +146,8 @@ $$
 $$
 y=c_1+c_2\ln x
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -192,6 +201,8 @@ $$
 $$
 y=c_1\cos\left(\ln x\right)+c_2\sin\left(\ln x\right)
 $$
+
+<hr>
 
 {{< /details >}}
 

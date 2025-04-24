@@ -43,6 +43,8 @@ $$
 y=c_1e^{-1x}+c_2e^{2x}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -129,6 +131,8 @@ $$
 y=c_1\cos 2x+c_2\sin 2x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -146,6 +150,8 @@ $$
 $$
 y=e^{-x}\left(c_1\cos x+c_2\sin x\right)
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -165,6 +171,8 @@ $$
 y=e^{x}\left(c_1\cos 3x+c_2\sin 3x\right)
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example4)**
@@ -182,6 +190,8 @@ $$
 $$
 y=c_1e^{2x}+c_2\cos 3x+c_3\sin 3x
 $$
+
+<hr>
 
 {{< /details >}}
 

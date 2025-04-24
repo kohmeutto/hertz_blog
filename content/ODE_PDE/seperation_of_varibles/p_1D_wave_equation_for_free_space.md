@@ -127,9 +127,9 @@ $$
 
 ---
 
-**proof3) 푸리에 변환을 사용한 풀이
+**proof3) 푸리에 변환을 사용한 풀이**
 
-[https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/185434137/a+Fourier+transform+for+PDE#example2)-Fourier-solution-of-the-wave-equation%2C-%EC%A4%91%EC%9A%94](https://www.notion.so/a-Fourier-transform-for-PDE-1cc8bc3f1406812983a0c53d45e0e677?pvs=21) 를 참조한다.
+[(a) Fourier transform for PDE]({{% ref "ODE_PDE/transformation/b_phasor_transform_for_PDE.md" %}}) 를 참조한다.
 
 ---
 

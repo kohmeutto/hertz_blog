@@ -84,6 +84,8 @@ $$
 y_{p}=\operatorname{Re}\left\lbrack-\frac{3-i}{10}e^{ix}\right\rbrack=\operatorname{Re}\left\lbrack-\frac{3-i}{10}\left(\cos x+i\sin x\right)\right\rbrack=-\frac{3}{10}\cos x-\frac{1}{10}\sin x
 $$
 
+<hr>
+
 {{< /details >}}
 
 
@@ -103,6 +105,8 @@ $$
 y_p=\operatorname{Re}\left\lbrack\frac{-i}{-4-6i-4}e^{i2x}\right\rbrack=\operatorname{Re}\left\lbrack\frac{-8i+6}{100}\left(\cos x+i\sin x\right)\right\rbrack=\frac{3}{50}\cos x+\frac{2}{25}\sin x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example3)**
@@ -121,6 +125,8 @@ $$
 y_p=\operatorname{Re}\left\lbrack\frac{-i}{-4+i-2}e^{i2x}\right\rbrack=\operatorname{Re}\left\lbrack\frac{6i-1}{37}\left(\cos x+i\sin x\right)\right\rbrack=-\frac{1}{37}\cos x-\frac{6}{37}\sin x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example4)**
@@ -138,6 +144,8 @@ $$
 $$
 y_p=\operatorname{Re}\left\lbrack\frac{1}{16}e^{i3x}\right\rbrack=\frac{1}{16}\cos 3x
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -161,6 +169,8 @@ $$
 y_{p}=\operatorname{Re}\left\lbrack-\frac{x}{4}e^{i2x}\right\rbrack=-\frac{x}{4}\cos2x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example6)**
@@ -183,6 +193,8 @@ $$
 y_{p}=\operatorname{Re}\left\lbrack\frac{3i+1}{10}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{10}\cos x-\frac{3}{10}\sin x
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example7)**
@@ -204,6 +216,8 @@ $$
 $$
 y_{p}=\operatorname{Re}\left\lbrack\frac{1}{34}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{34}\cos x
 $$
+
+<hr>
 
 {{< /details >}}
 
