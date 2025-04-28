@@ -217,8 +217,6 @@ $$
 y_{p}=\operatorname{Re}\left\lbrack\frac{1}{34}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{34}\cos x
 $$
 
-<hr>
-
 {{< /details >}}
 
 ---

@@ -5,7 +5,7 @@ weight = 6
 
 ---
 
-**중요사항: 동일 [실 공간]** 에 대한 것으로 **텐서 성분 변환** 을 다룬다. 여기서의 텐서는 벡터이며, 변위벡터, 국소벡터를 의미한다. 
+**중요사항: 동일 [실 공간]** 에 대한 것으로 **텐서 성분 변환** 을 다룬다. 여기서의 텐서는 벡터이며, 국소벡터를 의미한다. 
 
 ---
 
@@ -143,10 +143,14 @@ $$
 
 $$
 =\left[\begin{matrix}
-    v_1\left\lbrack1\right\rbrack & v_2\left\lbrack1\right\rbrack & v_3\left\lbrack1\right\rbrack \\ v_1\left\lbrack2\right\rbrack & v_2\left\lbrack2\right\rbrack & v_3\left\lbrack2\right\rbrack \\ v_1\left\lbrack3\right\rbrack & v_2\left\lbrack3\right\rbrack & v_3\left\lbrack3\right\rbrack
+    v_1\left\lbrack1\right\rbrack & v_2\left\lbrack1\right\rbrack & v_3\left\lbrack1\right\rbrack \\ 
+    v_1\left\lbrack2\right\rbrack & v_2\left\lbrack2\right\rbrack & v_3\left\lbrack2\right\rbrack \\ 
+    v_1\left\lbrack3\right\rbrack & v_2\left\lbrack3\right\rbrack & v_3\left\lbrack3\right\rbrack
 \end{matrix}\right]^{T}
 \left[\begin{matrix}
-    u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\ u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\ u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
+    u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\
+    u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\
+    u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
 \end{matrix}\right]
 \left[\begin{matrix}
     c_1 \\ c_2 \\ c_3
@@ -155,10 +159,14 @@ $$
 
 $$
 =\left[\begin{matrix}
-    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\ v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\ v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
+    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\
+    v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\ 
+    v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
 \end{matrix}\right]
 \left[\begin{matrix}
-    u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\ u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\ u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
+    u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\ 
+    u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\ 
+    u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
 \end{matrix}\right]
 \left[\begin{matrix}
     c_1 \\ c_2 \\ c_3
@@ -170,7 +178,8 @@ $$
 $$
 \sum_{i=1}^3\sum_{j=1}^3c_{i}\langle v_{j}|u_{i}\rangle]
 =\left[\begin{matrix}
-    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\ v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\ v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
+    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\ v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\ 
+    v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
 \end{matrix}\right]
 \left[\begin{matrix}
     c_1 \\ c_2 \\ c_3

@@ -25,6 +25,8 @@ $$
 =\frac{e^{-2x}}{D^2-4D-12}\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\cdot\left\lbrace1-\frac13D+\frac{1}{12}D^2\right\rbrace\left\lbrack x\right\rbrack=-\frac{e^{-2x}}{12}\left(x-\frac13\right)
 $$
 
+<hr>
+
 {{< /details >}}
 
 {{< details summary="GF" >}}
@@ -49,8 +51,7 @@ $$
 (2) $x=x'$
     
 $$
-W=
-\left|\left[\begin{matrix}
+W=\left|\left[\begin{matrix}
     e^{4x} & e^{-4x}
     \\
     4e^{4x} & -4e^{-4x}
@@ -110,24 +111,26 @@ $$
 y_{p}=\frac{1}{\left(D+1\right)^2}\left\lbrack e^{-x}\right\rbrack=\frac{x^2}{2}e^{-x}
 $$
 
+<hr>
+
 {{< /details >}}
     
 {{< details summary="GF" >}}
     
 (1) $x\ne x'$
     
- $$
- \left(D+1\right)^2G\left(x,x'\right)=0
- $$
+$$
+\left(D+1\right)^2G\left(x,x'\right)=0
+$$
     
- 경계조건에서 0이어야 하므로,
+경계조건에서 0이어야 하므로,
     
- $$
- G\left(x,x'\right)
- =\begin{cases}
-    0 & x < x'
-    \\
-    c_2\left(x'\right)\left(a+x\right)e^{-x} & x > x'
+$$
+G\left(x,x'\right)
+=\begin{cases}
+   0 & x < x'
+   \\
+   c_2\left(x'\right)\left(a+x\right)e^{-x} & x > x'
 \end{cases}
 $$
     
@@ -179,6 +182,7 @@ $$
 <hr>
 
 **example1-3)**
+
 $$y''+9y=x+\sin x,\quad x\in[0,∞)$$
 
 {{< details summary="IOPM-D&T" >}}
@@ -206,8 +210,12 @@ $$
 $$
     
 (2) $x=x'$
-    
-(3) y$_{p}$(x)
+
+qqq
+
+(3) $y_{p}(x)$
+
+qqq
 
 <img src="image1-3.png" width="65%" height="auto">
 
@@ -258,6 +266,8 @@ $$
 $$
 y=\cos2x-\frac78\sin2x-\frac{x}{4}\cos2x
 $$
+
+<hr>
 
 {{< /details >}}    
     

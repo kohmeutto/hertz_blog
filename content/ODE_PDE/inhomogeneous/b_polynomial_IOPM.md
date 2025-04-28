@@ -125,7 +125,7 @@ $$
 ### 2. 유형2
 
 $$
-\frac{1}{Df\left(D\right)}\left\lbrack R\left(x\right)\right\rbrack=\int_{x=x'}dx'\left\lbrack\frac{1}{f\left(D\right)}\left\lbrack R\left(x'\right)\right\rbrack\right\rbrack
+\frac{1}{Df\left(D\right)}\left\lbrack R\left(x\right)\right\rbrack=\int_{x}dx'\left\lbrack\frac{1}{f\left(D\right)}\left\lbrack R\left(x'\right)\right\rbrack\right\rbrack
 $$
 
 <hr>
@@ -143,7 +143,7 @@ D\left(D+1\right)y_{p}=2x
 $$
 
 $$
-y_{p}=\frac{1}{D\left(1+D\right)}2x=\int_{x=x'}dx'\left\lbrack\left(1-D\right)2x'\right\rbrack=\int_{x=x'}dx'\left\lbrack2x'-2\right\rbrack=x^2-2x
+y_{p}=\frac{1}{D\left(1+D\right)}2x=\int_{x}dx'\left\lbrack\left(1-D\right)2x'\right\rbrack=\int_{x}dx'\left\lbrack2x'-2\right\rbrack=x^2-2x
 $$
 
 <hr>
@@ -163,7 +163,7 @@ D\left(D-2\right)y_{p}=x
 $$
 
 $$
-y_{p}=\operatorname{}\frac{1}{D\left(D-2\right)}x=\int_{x=x'}dx'\left\lbrack-\frac12\left(1+\frac12D\right)x'\right\rbrack=\int_{x=x'}dx'\left\lbrack-\frac12x'-\frac14\right\rbrack
+y_{p}=\operatorname{}\frac{1}{D\left(D-2\right)}x=\int_{x}dx'\left\lbrack-\frac12\left(1+\frac12D\right)x'\right\rbrack=\int_{x}dx'\left\lbrack-\frac12x'-\frac14\right\rbrack
 $$
 
 $$
@@ -187,7 +187,7 @@ D\left(D-3\right)y_{p}=3x
 $$
 
 $$
-y_{p}=\frac{1}{D\left(D-3\right)}x=\int_{x=x'}dx'\left\lbrack-\frac13\left(1+\frac13D\right)x'\right\rbrack=\int_{x=x'}dx'\left\lbrack-\frac13x'-\frac19\right\rbrack
+y_{p}=\frac{1}{D\left(D-3\right)}x=\int_{x}dx'\left\lbrack-\frac13\left(1+\frac13D\right)x'\right\rbrack=\int_{x}dx'\left\lbrack-\frac13x'-\frac19\right\rbrack
 $$
 
 $$
