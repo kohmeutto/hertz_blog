@@ -1,7 +1,11 @@
 +++
-title = "(b) Tensor components transformation"
+title = "(b) Tensor components transformation I"
 weight = 6
 +++
+
+---
+
+**중요사항: 동일 [실 공간]** 에 대한 것으로 **텐서 성분 변환** 을 다룬다. 여기서의 텐서는 벡터이며, 변위벡터, 국소벡터를 의미한다. 
 
 ---
 
