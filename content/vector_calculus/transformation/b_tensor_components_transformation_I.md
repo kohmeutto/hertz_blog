@@ -5,7 +5,7 @@ weight = 6
 
 ---
 
-**중요사항: 동일 [실 공간]** 에 대한 것으로 **텐서 성분 변환** 을 다룬다. 여기서의 텐서는 벡터이며, 국소벡터를 의미한다. 
+**중요사항: 동일 [실 공간]** 에 대한 것으로 **텐서의 성분 변환** 을 다룬다.
 
 ---
 
@@ -14,29 +14,29 @@ weight = 6
 아래와 같이 u 좌표계의 **orthnormal** 한 기저 벡터를 아래와 같이 놓는다.
 
 $$
-|u_{i}\rangle=\left[\begin{matrix}
+|u_{i}\rangle=\begin{bmatrix}
     u_{i}\left\lbrack1\right\rbrack \\
     u_{i}\left\lbrack2\right\rbrack \\
     u_{i}\left\lbrack3\right\rbrack
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 $$
-|u_1\rangle=\left[\begin{matrix}
+|u_1\rangle=\begin{bmatrix}
     u_1\left\lbrack1\right\rbrack \\
     u_1\left\lbrack2\right\rbrack \\
     u_1\left\lbrack3\right\rbrack
-\end{matrix}\right], \quad
-|u_2\rangle=\left[\begin{matrix}
+\end{bmatrix}, \quad
+|u_2\rangle=\begin{bmatrix}
     u_2\left\lbrack1\right\rbrack \\
     u_2\left\lbrack2\right\rbrack \\
     u_2\left\lbrack3\right\rbrack
-\end{matrix}\right], \quad
-|u_3\rangle=\left[\begin{matrix}
+\end{bmatrix}, \quad
+|u_3\rangle=\begin{bmatrix}
     u_3\left\lbrack1\right\rbrack \\
     u_3\left\lbrack2\right\rbrack \\
     u_3\left\lbrack3\right\rbrack
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 기저 벡터의 전치행렬, 즉 행벡터는 아래와 같이 표현할 수 있다.
@@ -142,48 +142,49 @@ $$
 $$
 
 $$
-=\left[\begin{matrix}
+=\begin{bmatrix}
     v_1\left\lbrack1\right\rbrack & v_2\left\lbrack1\right\rbrack & v_3\left\lbrack1\right\rbrack \\ 
     v_1\left\lbrack2\right\rbrack & v_2\left\lbrack2\right\rbrack & v_3\left\lbrack2\right\rbrack \\ 
     v_1\left\lbrack3\right\rbrack & v_2\left\lbrack3\right\rbrack & v_3\left\lbrack3\right\rbrack
-\end{matrix}\right]^{T}
-\left[\begin{matrix}
+\end{bmatrix}^{T}
+\begin{bmatrix}
     u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\
     u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\
     u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     c_1 \\ c_2 \\ c_3
-\end{matrix}\right] 
+\end{bmatrix} 
 $$
 
 $$
-=\left[\begin{matrix}
+=\begin{bmatrix}
     v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\
     v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\ 
     v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     u_1\left\lbrack1\right\rbrack & u_2\left\lbrack1\right\rbrack & u_3\left\lbrack1\right\rbrack \\ 
     u_1\left\lbrack2\right\rbrack & u_2\left\lbrack2\right\rbrack & u_3\left\lbrack2\right\rbrack \\ 
     u_1\left\lbrack3\right\rbrack & u_2\left\lbrack3\right\rbrack & u_3\left\lbrack3\right\rbrack
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     c_1 \\ c_2 \\ c_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 만약 u좌표계의 기저가 표준기저라고 하면,
 
 $$
 \sum_{i=1}^3\sum_{j=1}^3c_{i}\langle v_{j}|u_{i}\rangle]
-=\left[\begin{matrix}
-    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\ v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\ 
+=\begin{bmatrix}
+    v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\
+    v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\
     v_3\left\lbrack1\right\rbrack & v_3\left\lbrack2\right\rbrack & v_3\left\lbrack3\right\rbrack
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     c_1 \\ c_2 \\ c_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 위 내용을 정리하면, **u좌표계의 기저가 표준기저라고 하면, u→v의 성분변환행렬은 u→v의 기저행렬(u 표준기저를 기준으로 새로운 v 기저 벡터들을 열로 나열하여 만든 행렬)의 전치행렬과 같다.**

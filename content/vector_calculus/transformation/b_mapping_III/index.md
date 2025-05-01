@@ -16,18 +16,18 @@ Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변
 - **u 매개변수 공간** 에서, 미소변위벡터
 
 $$
-d\vec{u}=\left[\begin{matrix}
+d\vec{u}=\begin{bmatrix}
     du_1 \\ du_2 \\ du_3
-\end{matrix}\right]
+\end{bmatrix}
 =\hat{u}_1du_1+\hat{u}_2du_2+\hat{u}_3du_3
 $$
 
 - **v 실 공간** 에서, **매핑된 위치** 에서의 미소변위벡터
 
 $$
-d\vec{v}=\left[\begin{matrix}
+d\vec{v}=\begin{bmatrix}
     dv_1 \\ dv_2 \\ dv_3
-\end{matrix}\right]
+\end{bmatrix}
 =\hat{v}_1dv_1+\hat{v}_2dv_2+\hat{v}_3dv_3
 $$
 
@@ -44,24 +44,24 @@ $$
 수학적 벡터로 표현하면,
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     dv_1 \\ dv_2 \\ dv_3
-\end{matrix}\right]
-=du_1\left[\begin{matrix}
+\end{bmatrix}
+=du_1\begin{bmatrix}
     \cfrac{\partial v_1}{\partial u_1} \\
     \cfrac{\partial v_2}{\partial u_1} \\
     \cfrac{\partial v_3}{\partial u_1}
-\end{matrix}\right]+du_2
-\left[\begin{matrix}
+\end{bmatrix}+du_2
+\begin{bmatrix}
     \cfrac{\partial v_1}{\partial u_2} \\
     \cfrac{\partial v_2}{\partial u_2} \\
     \cfrac{\partial v_3}{\partial u_2}
-\end{matrix}\right]+du_3
-\left[\begin{matrix}
+\end{bmatrix}+du_3
+\begin{bmatrix}
     \cfrac{\partial v_1}{\partial u_3} \\
     \cfrac{\partial v_2}{\partial u_3} \\
     \cfrac{\partial v_3}{\partial u_3}
-\end{matrix}\right]
+\end{bmatrix}
 =\begin{bmatrix}
     \cfrac{\partial v_1}{\partial u_1} & \cfrac{\partial v_1}{\partial u_2} & \cfrac{\partial v_1}{\partial u_3} \\
     \cfrac{\partial v_2}{\partial u_1} & \cfrac{\partial v_2}{\partial u_2} & \cfrac{\partial v_2}{\partial u_3} \\
@@ -131,80 +131,80 @@ $$
 
 $$
 \vec{h}_{\rho}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cfrac{\partial x}{\partial \rho} \\
     \cfrac{\partial y}{\partial \rho} \\
     \cfrac{\partial z}{\partial \rho}
-\end{matrix}\right]_{\rho',\phi',z'}
-=\left[\begin{matrix}
+\end{bmatrix}_{\rho',\phi',z'}
+=\begin{bmatrix}
     \cfrac{\partial}{\partial \rho} \rho\cos\phi \\
     \cfrac{\partial}{\partial \rho} \rho\sin\phi \\
     \cfrac{\partial}{\partial \rho} z
-\end{matrix}\right]_{\rho',\phi',z'}
-=\left[\begin{matrix}
+\end{bmatrix}_{\rho',\phi',z'}
+=\begin{bmatrix}
     \cos\phi' \\
     \sin\phi' \\
     0
-\end{matrix}\right] \implies
+\end{bmatrix} \implies
 h_\rho=1,
 \hat{\rho}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cos\phi' \\
     \sin\phi' \\
     0
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 $$
 \vec{h}_{\phi}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cfrac{\partial x}{\partial \phi} \\
     \cfrac{\partial y}{\partial \phi} \\
     \cfrac{\partial z}{\partial \phi}
-\end{matrix}\right]_{\rho',\phi',z'}
-=\left[\begin{matrix}
+\end{bmatrix}_{\rho',\phi',z'}
+=\begin{bmatrix}
     \cfrac{\partial}{\partial \phi} \rho\cos\phi \\
     \cfrac{\partial}{\partial \phi} \rho\sin\phi \\
     \cfrac{\partial}{\partial \phi} z
-\end{matrix}\right]_{\rho',\phi',z'}
-=\rho'\left[\begin{matrix}
+\end{bmatrix}_{\rho',\phi',z'}
+=\rho'\begin{bmatrix}
     -\sin\phi' \\
     \cos\phi' \\
     0
-\end{matrix}\right] \implies
+\end{bmatrix} \implies
 h_\phi = \rho',
 \hat{\phi}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     -\sin\phi' \\
     \cos\phi' \\
     0
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 $$
 \vec{h}_{z}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cfrac{\partial x}{\partial z} \\
     \cfrac{\partial y}{\partial z} \\
     \cfrac{\partial z}{\partial z}
-\end{matrix}\right]_{\rho',\phi',z'}
-=\left[\begin{matrix}
+\end{bmatrix}_{\rho',\phi',z'}
+=\begin{bmatrix}
     \cfrac{\partial}{\partial z} \rho\cos\phi \\
     \cfrac{\partial}{\partial z} \rho\sin\phi \\
     \cfrac{\partial}{\partial z} z
-\end{matrix}\right]_{\rho',\phi',z'}
-=\left[\begin{matrix}
+\end{bmatrix}_{\rho',\phi',z'}
+=\begin{bmatrix}
     0 \\
     0 \\
     1
-\end{matrix}\right] \implies
+\end{bmatrix} \implies
 h_z = 1,
 \hat{z}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     0 \\
     0 \\
     1
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 **정리하면,**
@@ -215,15 +215,15 @@ $$
 
 $$
 d\vec{l}_D
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cos\phi' \\ \sin\phi' \\ 0
-\end{matrix}\right]d\rho
-+\left[\begin{matrix}
+\end{bmatrix}d\rho
++\begin{bmatrix}
     -\sin\phi' \\ \cos\phi' \\ 0
-\end{matrix}\right]\rho' d\phi
-+\left[\begin{matrix}
+\end{bmatrix}\rho' d\phi
++\begin{bmatrix}
     0 \\ 0 \\ 1
-\end{matrix}\right]dz
+\end{bmatrix}dz
 $$
 
 $$
@@ -280,80 +280,80 @@ $$
 
 $$
 \vec{h}_{r}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cfrac{\partial x}{\partial r} \\
     \cfrac{\partial y}{\partial r} \\
     \cfrac{\partial z}{\partial r}
-\end{matrix}\right]_{r',\theta',\phi'}
-=\left[\begin{matrix}
+\end{bmatrix}_{r',\theta',\phi'}
+=\begin{bmatrix}
     \cfrac{\partial}{\partial r} r\sin\theta\cos\phi \\
     \cfrac{\partial}{\partial r} r\sin\theta\sin\phi \\
     \cfrac{\partial}{\partial r} r\cos\theta
-\end{matrix}\right]_{r',\theta',\phi'}
-=\left[\begin{matrix}
+\end{bmatrix}_{r',\theta',\phi'}
+=\begin{bmatrix}
     \sin\theta'\cos\phi' \\
     \sin\theta'\sin\phi' \\
     \cos\theta'
-\end{matrix}\right] \implies
+\end{bmatrix} \implies
 h_r=1,
 \hat{r}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \sin\theta'\cos\phi' \\
     \sin\theta'\sin\phi' \\
     \cos\theta'
-\end{matrix}\right] 
+\end{bmatrix} 
 $$
 
 $$
 \vec{h}_{\theta}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cfrac{\partial x}{\partial \theta} \\
     \cfrac{\partial y}{\partial \theta} \\
     \cfrac{\partial z}{\partial \theta}
-\end{matrix}\right]_{r',\theta',\phi'}
-=\left[\begin{matrix}
+\end{bmatrix}_{r',\theta',\phi'}
+=\begin{bmatrix}
     \cfrac{\partial}{\partial \theta} r\sin\theta\cos\phi \\
     \cfrac{\partial}{\partial \theta} r\sin\theta\sin\phi \\
     \cfrac{\partial}{\partial \theta} r\cos\theta
-\end{matrix}\right]_{r',\theta',\phi'}
-=r'\left[\begin{matrix}
+\end{bmatrix}_{r',\theta',\phi'}
+=r'\begin{bmatrix}
     \cos\theta'\cos\phi' \\
     \cos\theta'\sin\phi' \\
     -\sin\theta'
-\end{matrix}\right] \implies
+\end{bmatrix} \implies
 h_\theta = r',
 \hat{\theta}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cos\theta'\cos\phi' \\
     \cos\theta'\sin\phi' \\
     -\sin\theta'
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 $$
 \vec{h}_{\phi}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \cfrac{\partial x}{\partial \phi} \\
     \cfrac{\partial y}{\partial \phi} \\
     \cfrac{\partial z}{\partial \phi}
-\end{matrix}\right]_{r',\theta',\phi'}
-=\left[\begin{matrix}
+\end{bmatrix}_{r',\theta',\phi'}
+=\begin{bmatrix}
     \cfrac{\partial}{\partial \phi} r\sin\theta\cos\phi \\
     \cfrac{\partial}{\partial \phi} r\sin\theta\sin\phi \\
     \cfrac{\partial}{\partial \phi} r\cos\theta
-\end{matrix}\right]_{r',\theta',\phi'}
-=r'\sin\theta'\left[\begin{matrix}
+\end{bmatrix}_{r',\theta',\phi'}
+=r'\sin\theta'\begin{bmatrix}
     -\sin\phi' \\
     \cos\phi' \\
     0
-\end{matrix}\right] \implies
+\end{bmatrix} \implies
 h_\phi = r'\sin\theta',
 \hat{\phi}
-=\left[\begin{matrix}
+=\begin{bmatrix}
     -\sin\phi' \\
     \cos\phi' \\
     0
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 **정리하면,**
@@ -364,21 +364,21 @@ $$
 
 $$
 d\vec{l}_D
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \sin\theta'\cos\phi' \\
     \sin\theta'\sin\phi' \\
     \cos\theta'
-\end{matrix}\right]dr
-+\left[\begin{matrix}
+\end{bmatrix}dr
++\begin{bmatrix}
     \cos\theta'\cos\phi' \\
     \cos\theta'\sin\phi' \\
     -\sin\theta'
-\end{matrix}\right]r'd\theta
-+\left[\begin{matrix}
+\end{bmatrix}r'd\theta
++\begin{bmatrix}
     -\sin\phi' \\
     \cos\phi' \\
     0
-\end{matrix}\right]r'\sin\theta' d\phi
+\end{bmatrix}r'\sin\theta' d\phi
 $$
 
 $$

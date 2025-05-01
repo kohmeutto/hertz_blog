@@ -5,42 +5,42 @@ weight = 7
 
 ---
 
-**중요사항: 동일 [실 공간]** 에 대한 것으로 **텐서 성분 변환** 을 다룬다. 여기서의 텐서는 벡터이며, 국소벡터를 의미한다.
+**중요사항: 동일 [실 공간]** 에 대한 것으로 **텐서의 성분 변환** 을 다룬다.
 
 ---
 
 ### 0. 정리
 
-<img src="image1.png" width="40%" height="auto">
+<img src="image1.png" width="50%" height="auto">
 
 - **데카르트 → 원통, 원통 → 구**
 
 $$
-M_{CD}=\left[\begin{matrix}
+M_{CD}=\begin{bmatrix}
     \cos\phi & \sin\phi & 0 \\
     -\sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right], \quad 
-M_{CS}=\left[\begin{matrix}
+\end{bmatrix}, \quad 
+M_{CS}=\begin{bmatrix}
     \sin\theta & 0 & \cos\theta \\
     \cos\theta & 0 & -\sin\theta \\
     0 & 1 & 0
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 - **원통 → 데카르트, 구 → 원통**
 
 $$
-M_{DC}=\left[\begin{matrix}
+M_{DC}=\begin{bmatrix}
     \cos\phi & -\sin\phi & 0 \\
     \sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right],\quad
-M_{CS}=\left[\begin{matrix}
+\end{bmatrix},\quad
+M_{CS}=\begin{bmatrix}
     \sin\theta & \cos\theta & 0 \\
     0 & 0 & 1 \\
     \cos\theta & -\sin\theta & 0
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 ---
@@ -52,77 +52,77 @@ $$
 - 데카르트 좌표계 기준에서, 데카르트 좌표계의 국소 벡터 표현
 
 $$
-u_1\left[\begin{matrix}
+u_1\begin{bmatrix}
     1 \\ 0 \\ 0
-\end{matrix}\right]
-+u_2\left[\begin{matrix}
+\end{bmatrix}
++u_2\begin{bmatrix}
     0 \\ 1 \\ 0
-\end{matrix}\right]
-+u_3\left[\begin{matrix}
+\end{bmatrix}
++u_3\begin{bmatrix}
     0 \\ 0 \\ 1
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     u_1 \\ u_2 \\ u_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 - 데카르트 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현
 
 $$
-v_1\left[\begin{matrix}
+v_1\begin{bmatrix}
     \cos\phi \\ \sin\phi \\ 0
-\end{matrix}\right]
-+v_2\left[\begin{matrix}
+\end{bmatrix}
++v_2\begin{bmatrix}
     -\sin\phi \\ \cos\phi \\ 0
-\end{matrix}\right]
-+v_3\left[\begin{matrix}
+\end{bmatrix}
++v_3\begin{bmatrix}
     0\\ 0\\ 1
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \cos\phi & -\sin\phi & 0 \\
     \sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     v_1 \\ v_2 \\ v_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     u_1 \\ u_2 \\ u_3
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \cos\phi & -\sin\phi & 0 \\
     \sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     v_1 \\ v_2 \\ v_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 또한, **위의 행렬은 회전변환 행렬이므로, 유니타리 연산자** 이다. 따라서, 역행렬은 전치행렬과 같다.
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     v_1 \\ v_2 \\ v_3
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \cos\phi & \sin\phi & 0 \\
     -\sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     u_1 \\ u_2 \\ u_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 ---
@@ -134,77 +134,77 @@ $$
 - 원통 좌표계 기준에서, 원통 좌표계의 국소 벡터 표현
 
 $$
-u_1\left[\begin{matrix}
+u_1\begin{bmatrix}
     1 \\ 0\\ 0
-\end{matrix}\right]
-+u_2\left[\begin{matrix}
+\end{bmatrix}
++u_2\begin{bmatrix}
     0 \\ 1 \\ 0
-\end{matrix}\right]
-+u_3\left[\begin{matrix}
+\end{bmatrix}
++u_3\begin{bmatrix}
     0 \\ 0 \\ 1
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     u_1 \\ u_2 \\ u_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 - 원통 좌표계 기준에서, 구 좌표계의 국소 벡터 표현
 
 $$
-v_1\left[\begin{matrix}
+v_1\begin{bmatrix}
     \sin\theta \\ 0 \\ \cos\theta
-\end{matrix}\right]
-+v_2\left[\begin{matrix}
+\end{bmatrix}
++v_2\begin{bmatrix}
     \cos\theta \\ 0 \\ -\sin\theta
-\end{matrix}\right]
-+v_3\left[\begin{matrix}
+\end{bmatrix}
++v_3\begin{bmatrix}
     0 \\ 1 \\ 0
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \sin\theta & \cos\theta & 0 \\
     0 & 0 & 1 \\
     \cos\theta & -\sin\theta & 0
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     v_1 \\ v_2 \\ v_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 국소 벡터는 텐서 이므로, 좌표계에 상관없이 동일해야 한다.
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     u_1 \\ u_2 \\ u_3
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \sin\theta & \cos\theta & 0 \\
     0 & 0 & 1 \\
     \cos\theta & -\sin\theta & 0
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     v_1 \\ v_2 \\ v_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 또한, **위의 행렬은 회전변환 행렬이므로, 유니타리 연산자** 이다. 따라서, 역행렬은 전치행렬과 같다.
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     v_1 \\ v_2 \\ v_3
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \sin\theta & 0 & \cos\theta \\
     \cos\theta & 0 & -\sin\theta \\
     0 & 1 & 0
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     u_1 \\ u_2 \\ u_3
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 ---
@@ -218,16 +218,16 @@ M_{SD}=M_{SC}M_{CD}
 $$
 
 $$
-M_{SD}=\left[\begin{matrix}
+M_{SD}=\begin{bmatrix}
     \sin\theta & 0 & \cos\theta \\
     \cos\theta & 0 & -\sin\theta \\
     0 & 1 & 0
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     \cos\phi & \sin\phi & 0 \\
     -\sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 구좌표계에서 데카르트 좌표계로의 **좌표 변환 행렬** $M_{DS}$ 는
@@ -237,16 +237,16 @@ M_{DS}=M_{DC}M_{CS}
 $$
 
 $$
-M_{DS}=\left[\begin{matrix}
+M_{DS}=\begin{bmatrix}
     \sin\theta & \cos\theta & 0 \\
     0 & 0 & 1 \\
     \cos\theta & -\sin\theta & 0
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     \cos\phi & -\sin\phi & 0 \\
     \sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 
@@ -259,45 +259,45 @@ Express vector $\vec{A}=\hat{x}\left(x+y\right)+\hat{y}\left(y-x\right)+\hat{z}z
 {{< details summary="sol" >}}
     
 $$
-M_{SD}=\left[\begin{matrix}
+M_{SD}=\begin{bmatrix}
     \sin\theta & 0 & \cos\theta \\
     \cos\theta & 0 & -\sin\theta \\
     0 & 1 & 0
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     \cos\phi & \sin\phi & 0 \\
     -\sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\
     \cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\
     -\sin\phi & \cos\phi & 0
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 좌표변환을 수행한다.
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     A_{R} \\ A_{\theta} \\ A_{\phi}
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     \sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\
     \cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\
     -\sin\phi & \cos\phi & 0
-\end{matrix}\right]
-\left[\begin{matrix}
+\end{bmatrix}
+\begin{bmatrix}
     x+y \\ y-x \\ z
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 $$
-=\left[\begin{matrix}
+=\begin{bmatrix}
     \left(x+y\right)\sin\theta\cos\phi+\left(y-x\right)\sin\theta\sin\phi+z\cos\theta \\
     \left(x+y\right)\cos\theta\cos\phi+\left(y-x\right)\cos\theta\sin\phi-z\sin\theta \\
     -\left(x+y\right)\sin\phi+\left(y-x\right)\cos\phi
-\end{matrix}\right]
+\end{bmatrix}
 $$
     
 x,y,z 는 아래와 같다.
@@ -317,12 +317,12 @@ $$
 대입하면,
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     A_{R} \\ A_{\theta} \\ A_{\phi}
-\end{matrix}\right]
-=\left[\begin{matrix}
+\end{bmatrix}
+=\begin{bmatrix}
     R \\ 0 \\ r\sin\theta
-\end{matrix}\right]
+\end{bmatrix}
 $$
 
 {{< /details >}}

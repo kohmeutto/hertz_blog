@@ -28,12 +28,12 @@ weight = 4
 <img src="image2.png" width="50%" height="auto">
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     d\rho\\ d\phi\\ dz
-\end{matrix}\right] \rightarrow
-\left[\begin{matrix}
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
     d\rho \\ \rho d\phi \\ dz
-\end{matrix}\right],\quad
+\end{bmatrix},\quad
 \hat{u}_\rho d\rho+\hat{u}_\phi d\phi+\hat{u}_z dz \rightarrow
 \hat{\rho}d\rho+\hat{\phi}\rho d\phi+\hat{z}z
 $$
@@ -58,12 +58,12 @@ $$
 <img src="image5.png" width="50%" height="auto">
 
 $$
-\left[\begin{matrix}
+\begin{bmatrix}
     dr \\ d\theta \\ d\phi
-\end{matrix}\right] \rightarrow
-\left[\begin{matrix}
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
     dr \\ r'd\theta \\ r'\sin\theta' d\phi
-\end{matrix}\right], \quad
+\end{bmatrix}, \quad
 \hat{u}_rdr+\hat{u}_\theta d\theta+\hat{u}_\phi d\phi \rightarrow
 \hat{r}dr+\hat{\theta}r'd\theta+\hat{\phi}r'\sin\theta' d\phi
 $$

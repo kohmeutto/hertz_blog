@@ -22,18 +22,15 @@ $\vec{v}+\vec{w}$는 벡터 $\vec{v}$의 궤적으로 움직인 다음,  벡터 
 $$
 \vec{v}+\vec{w}
 =\left[\begin{matrix}
-    v_1 
-    \\
+    v_1 \\ 
     v_2
 \end{matrix}\right]+
 \left[\begin{matrix}
-    w_1
-    \\
+    w_1 \\ 
     w_2
 \end{matrix}\right]
 =\left[\begin{matrix}
-    v_1+w_1
-    \\
+    v_1+w_1 \\ 
     v_2+w_2
 \end{matrix}\right]
 $$
@@ -51,13 +48,11 @@ $$
 $$
 a\vec{v}
 =a\left[\begin{matrix}
-    v_1
-    \\
+    v_1 \\
     v_2
 \end{matrix}\right]
 =\left[\begin{matrix}
-    av_1
-    \\
+    av_1 \\
     av_2
 \end{matrix}\right]
 $$

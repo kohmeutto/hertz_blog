@@ -129,7 +129,7 @@ $$
 
 **proof3) 푸리에 변환을 사용한 풀이**
 
-[(a) Fourier transform for PDE]({{% ref "ODE_PDE/transformation/b_phasor_transform_for_PDE.md" %}}) 를 참조한다.
+[(a) Fourier transform for PDE]({{% ref "ODE_PDE/transformation/a_Fourier_transform_for_PDE/index.md" %}}) 를 참조한다.
 
 ---
 

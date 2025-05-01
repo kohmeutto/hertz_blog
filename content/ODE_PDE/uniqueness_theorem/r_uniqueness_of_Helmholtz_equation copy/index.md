@@ -26,7 +26,7 @@ $$
 \left(\nabla^2+k^2\right)\varphi\left(\vec{r}\right)=0
 $$
 
-$\psi$가 0임을 보인다면, 해는 유일하다. 위 미분방정식의 해인 $\psi$가 strong solution 이고, weak solution 또한 strong solution 이라고 가정하면,
+$\psi$가 0임을 보인다면, 해는 유일하다. "약해가 유일하다면, 만약 그 문제에 강해가 존재한다면, 그 강해는 유일한 약해와 같아야 한다.
 
 $$
 \int d^3V \left\lbrack\psi^\ast\left(\nabla^2+k^2\right)\psi\right\rbrack=0

@@ -63,7 +63,7 @@ $$
 $$
 
 $$
-\frac{\partial^2}{\partial\vec{r}^2}\to-\left|\left|\vec{k}\right|\right|^2
+\frac{\partial^2}{\partial\vec{r}^2}\to-\left|\vec{k}\right|^2
 $$
 
 ---
@@ -197,6 +197,6 @@ $$
 
 ---
 
-[fourier_lectures_part5.pdf](fourier_lectures_part5.pdf)
+[fourier_lectures.pdf](fourier_lectures.pdf)
 
 [도함수의 푸리에 변환 : 네이버 블로그](https://blog.naver.com/pro_000/220850807099)
