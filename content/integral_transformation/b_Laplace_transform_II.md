@@ -178,39 +178,55 @@ $$
 \mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=F\left(s-a\right)
 $$
 
-- proof
+{{< details summary="proof" >}}
     
-    $$
-    \mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=\int_0^{\infty}dt\left\lbrack f\left(t\right)e^{-\left(s-a\right)t}\right\rbrack=F\left(s-a\right)
-    $$
-    
+$$
+\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=\int_0^{\infty}dt\left\lbrack f\left(t\right)e^{-\left(s-a\right)t}\right\rbrack=F\left(s-a\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 **4) convolution**
 
 $$
-\mathcal{L}\left\lbrace h\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=H\left(\omega\right)F\left(\omega\right)
+\mathcal{L}\left\lbrace h\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=H\left(s\right)F\left(s\right)
 $$
 
-- proof
-    
-    라플라스 변환을 사용 @Seungmin Son 
-    
-    ---
-    
-    라플라스 역변환을 사용한다. 입력 함수는, eigenfunction의 선형결합으로 **표현할 수 있다고 가정**해보자.  (표현할 수 없는 경우도 존재함)
-    
-    - -uriencoded--f\left(t\right)=\frac%7B1%7D%7BA%7D\int_%7Bc-i\infty%7D%5e%7Bc+i\infty%7DF\left(s\right)e%5e%7Bst%7Dds
-    - -uriencoded--h\left\lbrack f\left(t\right)\right\rbrack=\frac%7B1%7D%7BA%7D\int_%7B-\infty%7D%5e%7B\infty%7Ddt%5e%7B\prime%7D\left\lbrack h\left(t%5e%7B\prime%7D\right)\int_%7Bc-i\infty%7D%5e%7Bc+i\infty%7Dds\left\lbrack F\left(s\right)e%5e%7Bs\left(t-t%5e%7B\prime%7D\right)%7D\right\rbrack\right\rbrack
-    - -uriencoded--=\frac%7B1%7D%7BA%7D\int_%7Bc-i\infty%7D%5e%7Bc+i\infty%7Dds\left\lbrack F\left(s\right)\int_%7B-\infty%7D%5e%7B\infty%7Ddt%5e%7B\prime%7D\left\lbrack h\left(t%5e%7B\prime%7D\right)e%5e%7Bs\left(t-t%5e%7B\prime%7D\right)%7D\right\rbrack\right\rbrack
-    - -uriencoded--=\frac%7B1%7D%7BA%7D\int_%7Bc-i\infty%7D%5e%7Bc+i\infty%7Dds\left\lbrack F\left(s\right)e%5e%7Bst%7D\int_%7B-\infty%7D%5e%7B\infty%7Ddt%5e%7B\prime%7D\left\lbrack h\left(t%5e%7B\prime%7D\right)e%5e%7B-st%5e%7B\prime%7D%7D\right\rbrack\right\rbrack
-    - -uriencoded--=\frac%7B1%7D%7BA%7D\int_%7Bc-i\infty%7D%5e%7Bc+i\infty%7Dds\left\lbrack F\left(s\right)H\left(s\right)e%5e%7Bst%7D\right\rbrack
-    
-    **즉,** $h\left(t\right)\ast f\left(t\right)$**의** $e^{st}$**에 대한, 라플라스 변환에 해당하는 eigenvalue 는**
-    
-    $$
-    \mathcal{L}\left\lbrace h\ast f\right\rbrace\left(s\right)=H\left(s\right)F\left(s\right)=F\left(s\right)H\left(s\right)
-    $$
-    
+{{< details summary="proof" >}}
+
+$$
+\int^{\infty}_{0}dt\left[e^{-st}\int^{\infty}_{0}d\tau\left[h\right(t-\tau\left)f\left(\tau\right)\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}dt\left[e^{-s\left(t-\tau+\tau\right)}\int^{\infty}_{0}d\tau\left[h\right(t-\tau\left)f\left(\tau\right)\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}dt\left[\int^{\infty}_{0}d\tau\left[h\left(t-\tau\right)e^{-s\left(t-\tau\right)}f\left(\tau\right)e^{-s\tau}\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}d\tau\left[ f\left(\tau\right)e^{-s\tau}\int^{\infty}_{0}dt\left[h\left(t-\tau\right)e^{-s\left(t-\tau\right)}\right]\right]
+$$
+
+$$
+=\int^{\infty}_{0}d\tau\left[ f\left(\tau\right)e^{-s\tau}H\left(s\right)\right]
+$$
+
+$$
+=H\left(s\right)\int^{\infty}_{0}d\tau\left[ f\left(\tau\right)e^{-s\tau}\right]
+$$
+
+$$
+=H\left(s\right)F\left(s\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 **5) differentiation**
 
@@ -218,10 +234,13 @@ $$
 \mathcal{L}\left\lbrace\frac{d^{n}}{dx^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(\omega\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
 $$
 
-- proof
-    
-    @Seungmin Son 
-    
+{{< details summary="proof" >}}
+
+공사중
+
+<hr>
+
+{{< /details >}}    
 
 **6) integration**
 
@@ -229,10 +248,13 @@ $$
 \mathcal{L}\left\lbrace\int_0^{t}dt^{\prime}\left\lbrack f\left(t^{\prime}\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}F\left(s\right)
 $$
 
-- proof
-    
-    [최수인 (Unlicensed)](https://hertz2hnu.atlassian.net/wiki/people/712020:1f3af0d6-22e5-4b45-9a8a-7a617da825a0?ref=confluence)
-    
+{{< details summary="proof" >}}
+
+공사중
+
+<hr>
+
+{{< /details >}}    
 
 **7) initial and final values**
 
@@ -244,21 +266,16 @@ $$
 f\left(\infty\right)=\lim_{s\rightarrow0}\mathcal{sL}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
 $$
 
-- proof
-    
-    @Seungmin Son
-    
+{{< details summary="proof" >}}
+
+공사중
+
+{{< /details >}}    
 
 ---
 
 ### 3. Practice
 
-[CH08-1 Laplace transform I.pdf](CH08-1_Laplace_transform_I.pdf)
-
-[CH08-1 Laplace transform I.pdf](CH08-1_Laplace_transform_I%201.pdf)
+연구실 구성원들에게만 허용된 자료 입니다. [연습문제](https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/53608611/b+LTI+System)
 
 ---
-
-### 4. 주의사항
-
-**[주의] 컨볼루션의** $h,f$ **함수가 반드시 선형일 필요는 없다. 참조 (**[라플라스 변환(Laplace Transform) - 6. 합성곱(Convolution) :: jjycjn's Math Storehouse (tistory.com)](https://jjycjnmath.tistory.com/97))

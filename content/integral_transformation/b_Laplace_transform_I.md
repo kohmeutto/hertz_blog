@@ -57,7 +57,7 @@ $$
 
 ### 3. 대수방정식
 
-eigenfuction과 eigenvalue를 이용한다는 것은, 복잡한 식을 단순하게 바꿀 수 있는 편리한 도구라는 사용한다는 말과 같다.
+eigenfuction과 eigenvalue를 이용한다는 것은, 복잡한 식을 단순하게 바꿀 수 있는 편리한 도구를 사용한다는 말과 같다.
 convolution에 대한, eigenfuction, $e^{st}$ 은 모두 동일하므로, $e^{st}$은 나눠져서 사라지게 된다.
 
 **즉, eigenvalue에 대한 대수 방정식으로 바뀐다.** 아래의 예를 보면, 쉽게 이해할 수 있다.
