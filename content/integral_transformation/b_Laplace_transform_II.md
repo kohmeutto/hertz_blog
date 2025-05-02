@@ -154,17 +154,17 @@ $$
 **2) time shifting**
 
 $$
-\mathcal{L}\left\lbrace f\left(t-t^{\prime}\right)\right\rbrace\left(s\right)=e^{-st^{\prime}}\mathcal{L}\left\lbrack f\left(t\right)\right\rbrack
+\mathcal{L}\left\lbrace f\left(t-t'\right)\right\rbrace\left(s\right)=e^{-st'}\mathcal{L}\left\lbrack f\left(t\right)\right\rbrack
 $$
 
 {{< details summary="proof" >}}
 
 $$
-\mathcal{L}\left\lbrace f\left(t-t^{\prime}\right)\right\rbrace\left(s\right)=\int_0^{\infty}dt\left\lbrack f\left(t-t^{\prime}\right)e^{-st}\right\rbrack=\int_{-\infty}^{\infty}d\tau\left\lbrack f\left(\tau\right)e^{-s\left(\tau+t^{\prime}\right)}\right\rbrack
+\mathcal{L}\left\lbrace f\left(t-t'\right)\right\rbrace\left(s\right)=\int_0^{\infty}dt\left\lbrack f\left(t-t'\right)e^{-st}\right\rbrack=\int_{-\infty}^{\infty}d\tau\left\lbrack f\left(\tau\right)e^{-s\left(\tau+t'\right)}\right\rbrack
 $$
     
 $$
-=e^{-st^{\prime}}F\left(\omega\right)
+=e^{-st'}F\left(\omega\right)
 $$
 
 <hr>
@@ -267,12 +267,14 @@ $$
 **6) integration**
 
 $$
-\mathcal{L}\left\lbrace\int_0^{t}dt^{\prime}\left\lbrack f\left(t^{\prime}\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}F\left(s\right)
+\mathcal{L}\left\lbrace\int_0^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}F\left(s\right)
 $$
 
 {{< details summary="proof" >}}
 
-공사중
+$$
+\mathcal{L}\left\lbrace\int_0^{t}dt'\left\lbrack u\left(t-t'\right)f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}F\left(s\right)
+$$
 
 <hr>
 
@@ -281,16 +283,56 @@ $$
 **7) initial and final values**
 
 $$
-f\left(0\right)=\lim_{s\rightarrow\infty}\mathcal{sL}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
+f\left(0\right)=\lim_{s\to\infty}s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
 $$
 
 $$
-f\left(\infty\right)=\lim_{s\rightarrow0}\mathcal{sL}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
+f\left(\infty\right)=\lim_{s\to0}s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
 $$
 
 {{< details summary="proof" >}}
 
-공사중
+$$
+\mathcal{L}\left\lbrace \frac{d}{dt} f\left(t\right)\right\rbrace\left(s\right)=s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)-f\left(0\right)
+$$
+
+$$
+\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)-f\left(0\right)
+$$
+
+<hr>
+
+(1) 첫번째 식의 증명
+
+$$
+\lim_{s\to\infty}\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=\lim_{s\to\infty}\left[s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+만약, $f'(t)$ 가 $e^{-st}$의 감소보다 증가량이 크지 않다면, (에너지 보존 법칙으로 인해, 물리 시스템의 응답, 공학적인 신호 등의 대부분 이 조건을 만족하는 함수들임)
+
+$$
+0=\lim_{s\to\infty}\left[s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(0\right)=\lim_{s\to\infty}s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
+$$
+
+<hr>
+
+(2) 두번째 식의 증명,
+
+$$
+\lim_{s\to 0}\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=\lim_{s\to 0}\left[s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(\infty\right)-f\left(0\right)=\lim_{s\to 0}\left[s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(\infty\right)=\lim_{s\to0}s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
+$$
 
 {{< /details >}}    
 
