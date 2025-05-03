@@ -9,8 +9,13 @@ weight = 4
 
 ---
 
+### 1. 라플라스 변환의 중요 조건 - 수렴영역
 
-### 1. 중요변환
+**수렴 영역(ROC)** 은 라플라스 변환 정의 적분이 수렴하는 복소수 s의 집합을 의미한다. s 값이 ROC 안에 있으면 적분은 유한한 값으로 수렴하고, ROC 밖에 있으면 적분은 발산한다.
+
+---
+
+### 2. 중요변환
 
 **example1)**
 
@@ -133,12 +138,12 @@ $$
 
 ---
 
-### 2. Properties
+### 3. Properties
 
 **1) time scaling**
 
 $$
-\mathcal{L}\left\lbrace f\left(at\right)\right\rbrace\left(s\right)=\frac{1}{\left|a\right|}F\left(\frac{s}{a}\right)
+\mathcal{L}\left\lbrace f\left(at\right)\right\rbrace\left(s\right)=\frac{1}{\left|a\right|}\mathcal{L}\left\lbrace f\left(at\right)\right\rbrace\left(\frac{s}{a}\right)
 $$
 
 {{< details summary="proof" >}}
@@ -154,7 +159,7 @@ $$
 **2) time shifting**
 
 $$
-\mathcal{L}\left\lbrace f\left(t-t'\right)\right\rbrace\left(s\right)=e^{-st'}\mathcal{L}\left\lbrack f\left(t\right)\right\rbrack
+\mathcal{L}\left\lbrace f\left(t-t'\right)\right\rbrace\left(s\right)=e^{-st'}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
 $$
 
 {{< details summary="proof" >}}
@@ -175,7 +180,7 @@ $$
 **3) frequency shifting**
 
 $$
-\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=F\left(s-a\right)
+\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s-a\right)
 $$
 
 {{< details summary="proof" >}}
@@ -231,7 +236,7 @@ $$
 **5) differentiation**
 
 $$
-\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(\omega\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(s\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
 $$
 
 {{< details summary="proof" >}}
@@ -257,7 +262,7 @@ $$
 따라서, 반복하면,
 
 $$
-\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(\omega\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}F\left(s\right)-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
 $$
 
 <hr>
@@ -338,7 +343,7 @@ $$
 
 ---
 
-### 3. Practice
+### 4. Practice
 
 연구실 구성원들에게만 허용된 자료 입니다. [연습문제](https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/53608611/b+LTI+System)
 
