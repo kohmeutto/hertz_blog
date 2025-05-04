@@ -195,7 +195,7 @@ $$
 
 ---
 
-### 6. Properties, 라플라스 변환과 동일
+### 2. Properties, 라플라스 변환과 동일
 
 **1) time scaling**
 
@@ -249,7 +249,7 @@ $$
 **3) frequency shifting**
 
 $$
-\mathcal{F}\left\lbrace e^{iat}f\left(t\right)\right\rbrace\left(\omega\right)=F\left(\omega-a\right)
+\mathcal{F}\left\lbrace e^{iat}f\left(t\right)\right\rbrace\left(\omega\right)=\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega-a\right)
 $$
 
 {{< details summary="proof)" >}}
@@ -405,7 +405,7 @@ $$
 
 {{< /details >}}
 
-{{< details summary="sol2" >}}
+{{< details summary="sol2, 중요" >}}
 
 $$
 \mathcal{F}\left\lbrace e^{at}u\left(-t\right)\right\rbrace\left(\omega\right)
@@ -428,31 +428,77 @@ $$
 
 ---
 
-### 7. Properties, 라플라스 변환과 유사
+### 3. Properties, 라플라스 변환과 유사
 
 **1) time differentiation, 중요**
 
 $$
-\mathcal{F}\left\lbrace\frac{d}{dt}f\left(t\right)\right\rbrace\left(\omega\right)=\left(-j\omega\right)F\left(\omega\right)
+\mathcal{F}\left\lbrace\frac{d}{dt}f\left(t\right)\right\rbrace\left(\omega\right)=\left(i\omega\right)F\left(\omega\right)
 $$
 
 $$
-\mathcal{F}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(\omega\right)=\left(-j\omega\right)^{n}F\left(\omega\right)
+\mathcal{F}\left\lbrace\frac{d^{n}}{d t^{n}}f\left(t\right)\right\rbrace\left(\omega\right)=\left(i\omega\right)^{n}F\left(\omega\right)
 $$
 
-- proof
-
-**2) frequency differentiation @Seungmin Son** 
+{{< details summary="proof)" >}}
 
 $$
-\mathcal{F}\left\lbrace tf\left(t\right)\right\rbrace\left(\omega\right)=j\frac{d}{d\omega}F\left(\omega\right)
+\mathcal{F}\left\lbrace\frac{\partial^{n}}{\partial t^{n}}f\left(t\right)\right\rbrace\left(\omega\right)
+=\int^{\infty}_{-\infty}dt\left[e^{-i\omega t}\frac{\partial^{n}}{\partial t^{n}}f\left(t\right)\right]
 $$
 
 $$
-\mathcal{F}\left\lbrace t^{n}f\left(t\right)\right\rbrace\left(\omega\right)=\left(j\right)^{n}\frac{d^{\left(n\right)}}{d\omega^{\left(n\right)}}F\left(\omega\right)
+=\int^{\infty}_{-\infty}dt\left[\frac{\partial}{\partial t}\left\lbrace e^{-i\omega t}\frac{\partial^{n-1}}{\partial t^{n-1}}f\left(t\right)\right\rbrace+i\omega e^{-i\omega t}\frac{\partial^{n-1}}{\partial t^{n-1}}f\left(t\right)\right]
 $$
 
-- proof
+$$
+=\left[e^{-i\omega t}\frac{\partial^{n-1}}{\partial t^{n-1}}f\left(t\right)\right]^{\infty}_{-\infty}+i\omega \int^{\infty}_{-\infty}dt\left[ e^{-i\omega t}\frac{\partial^{n-1}}{\partial t^{n-1}}f\left(t\right)\right]
+$$
+
+$$
+=i\omega \int^{\infty}_{-\infty}dt\left[ e^{-i\omega t}\frac{\partial^{n-1}}{\partial t^{n-1}}f\left(t\right)\right]
+$$
+
+계속 반복해서 적용하면,
+
+$$
+\mathcal{F}\left\lbrace\frac{\partial^{n}}{\partial t^{n}}f\left(t\right)\right\rbrace\left(\omega\right)
+=\left(i\omega\right)^{n}F\left(\omega\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**2) frequency differentiation** 
+
+$$
+\mathcal{F}\left\lbrace tf\left(t\right)\right\rbrace\left(\omega\right)=i\frac{d}{d\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)
+$$
+
+$$
+\mathcal{F}\left\lbrace t^{n}f\left(t\right)\right\rbrace\left(\omega\right)=i^n\frac{d^n}{d\omega^n}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="proof)" >}}
+
+$$
+\mathcal{F}\left\lbrace t^{n}f\left(t\right)\right\rbrace\left(\omega\right)
+=\int^{\infty}_{-\infty}dt\left[e^{-i\omega t}t^n f\left(t\right)\right]
+$$
+
+$$
+=\int^{\infty}_{-\infty}dt\left[f\left(t\right)\left(\frac{1}{-i}\right)^n\frac{\partial^n}{\partial\omega^n}e^{-i\omega t}\right]
+=i^n\frac{\partial^n}{\partial\omega^n}\int^{\infty}_{-\infty}dt\left[f\left(t\right)e^{-i\omega t}\right]
+$$
+
+$$
+=i^n\frac{d^n}{d\omega^n}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\omega\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 **3) time integration @Seungmin Son** 
 

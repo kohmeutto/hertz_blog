@@ -55,15 +55,22 @@ $$
 - **3D**
 
 $$
-F\left\lbrace\frac{\partial}{\partial\vec{r}}f\right\rbrace\left(\vec{k}\right)=\int_{-\infty}^{\infty}d^3\vec{r}\left\lbrack e^{-i\vec{k}\cdot\vec{r}}\frac{\partial}{\partial\vec{r}}f\left(\vec{r}\right)\right\rbrack=\int_{-\infty}^{\infty}d^3\vec{r}\left\lbrack\frac{\partial}{\partial\vec{r}}\left\lbrack e^{-i\vec{k}\cdot\vec{r}}f\left(\vec{r}\right)\right\rbrack+i\vec{k}e^{-i\vec{k}\cdot\vec{r}}f\left(\vec{r}\right)\right\rbrack
+F\left\lbrace\nabla\cdot \vec{f}\right(\vec{r}\left)\right\rbrace\left(\vec{k}\right)
+=\int_{\mathbb{R}^3}d^3\vec{r}\left[e^{-i\vec{k}\cdot\vec{r}}\nabla\cdot \vec{f}\left(\vec{r}\right)\right]
+=\int_{\mathbb{R}^3}d^3\vec{r}\left[\nabla\cdot \left(e^{-i\vec{k}\cdot\vec{r}}\vec{f}\left(\vec{r}\right)\right)-\vec{f}\left(\vec{r}\right)\cdot\nabla e^{-i\vec{k}\cdot\vec{r}}\right]
 $$
 
 $$
-\frac{\partial}{\partial\vec{r}}\to i\vec{k}
+=\int_{\mathbb{R}^2}d^2\vec{r} \cdot \left[e^{-i\vec{k}\cdot\vec{r}}\vec{f}\left(\vec{r}\right)\right]+\int_{\mathbb{R}^3}d^3\vec{r}\left[e^{-i\vec{k}\cdot\vec{r}}i\vec{k}\cdot\vec{f}\left(\vec{r}\right)\right]
+=i\vec{k}\cdot\int_{\mathbb{R}^3}d^3\vec{r}\left[e^{-i\vec{k}\cdot\vec{r}}\vec{f}\left(\vec{r}\right)\right]
 $$
 
 $$
-\frac{\partial^2}{\partial\vec{r}^2}\to-\left|\vec{k}\right|^2
+\nabla\to i\vec{k}
+$$
+
+$$
+\nabla^2\to-\left|\vec{k}\right|^2
 $$
 
 ---
