@@ -55,7 +55,7 @@ $$
 - **3D**
 
 $$
-F\left\lbrace\nabla\cdot \vec{f}\right(\vec{r}\left)\right\rbrace\left(\vec{k}\right)
+F\left\lbrace\nabla\cdot \vec{f}\left(\vec{r}\right)\right\rbrace \left(\vec{k}\right)
 =\int_{\mathbb{R}^3}d^3\vec{r}\left[e^{-i\vec{k}\cdot\vec{r}}\nabla\cdot \vec{f}\left(\vec{r}\right)\right]
 =\int_{\mathbb{R}^3}d^3\vec{r}\left[\nabla\cdot \left(e^{-i\vec{k}\cdot\vec{r}}\vec{f}\left(\vec{r}\right)\right)-\vec{f}\left(\vec{r}\right)\cdot\nabla e^{-i\vec{k}\cdot\vec{r}}\right]
 $$
@@ -174,16 +174,22 @@ $$
 $$
 
 {{< details summary="sol" >}}
-   
+
+이 문제는 공간에 대한 적분 범위를 $-\infty$ 부터 $\infty$ 로 잡을 수 있다. 주어진 영역 이외에는  입자가 존재할 수 없으므로 0이다. 
+
 $$
-\frac{\hbar^2}{2m}\left|\left|\vec{k}\right|\right|^2\underline{\psi}\left(\vec{k},t\right)=i\hbar\frac{\partial}{\partial t}\underline{\psi}\left(\vec{k},t\right),\quad\left|\left|\vec{k}\right|\right|^2=k_{x}^2+k_{y}^2
+\frac{\hbar^2}{2m}\left|\vec{k}\right|^2\underline{\psi}\left(\vec{k},t\right)=i\hbar\frac{\partial}{\partial t}\underline{\psi}\left(\vec{k},t\right),\quad\left|\vec{k}\right|^2=k_{x}^2+k_{y}^2
 $$
 
     
-변수분리 형태를 적용하고, 위 미분방정식의 해는
+변수분리 형태를 적용하고, 시간에 대해서 풀면, 위 미분방정식의 해는
+
+$$
+\underline{\psi}\left(\vec{k},t\right)=\underline{f}\left(k_{x}\right)\underline{g}\left(k_{y}\right)T\left(t\right)
+$$
     
 $$
-\underline{\psi}\left(\vec{k},t\right)=\underline{f}\left(k_{x}\right)\underline{g}\left(k_{y}\right)e^{-i\frac{\hbar\left|\left|\vec{k}\right|\right|^2}{2m}t}
+\underline{\psi}\left(\vec{k},t\right)=\underline{f}\left(k_{x}\right)\underline{g}\left(k_{y}\right)e^{-i\frac{\hbar\left|\vec{k}\right|^2}{2m}t}
 $$
 
 해를 구하기 위해 역 푸리에 변환을 수행한다. 에너지가 외부로 전달되지 않는 갇혀 있는 구조에서는 공진이 발생한다. 공진은 시간에 따라, 위아래로 진동하며, 길이는 반파장의 정수배이다. 이미 알고 있는 결과를 사용하면,

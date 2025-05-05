@@ -143,13 +143,13 @@ $$
 **1) time scaling**
 
 $$
-\mathcal{L}\left\lbrace f\left(at\right)\right\rbrace\left(s\right)=\frac{1}{\left|a\right|}\mathcal{L}\left\lbrace f\left(at\right)\right\rbrace\left(\frac{s}{a}\right)
+\mathcal{L}\left\lbrace f\left(at+b\right)\right\rbrace\left(s\right)=\frac{1}{\left|a\right|}e^{\frac{b}{a}s}\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{s}{a}\right)
 $$
 
 {{< details summary="proof" >}}
 
 $$
-\mathcal{L}\left\lbrace f\left(at\right)\right\rbrace\left(s\right)=\int_0^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=\frac{1}{a}F\left(\frac{s}{a}\right)
+\mathcal{L}\left\lbrace f\left(at+b\right)\right\rbrace\left(s\right)=e^{\frac{b}{a}s}\int_0^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=e^{\frac{b}{a}s}\frac{1}{a}F\left(\frac{s}{a}\right)
 $$
 
 <hr>

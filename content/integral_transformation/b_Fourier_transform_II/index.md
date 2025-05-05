@@ -36,7 +36,7 @@ $$
 {{< details summary="sol" >}}
     
 $$
-f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{j\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi}
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)e^{i\omega t}\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left\lbrack\delta\left(\omega\right)\right\rbrack=\frac{1}{2\pi}
 $$
 
 <hr>
@@ -52,7 +52,7 @@ $$
 {{< details summary="sol" >}}
     
 $$
-F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-j\omega t}\right\rbrack=2\pi\delta\left(\omega\right)
+F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack e^{-i\omega t}\right\rbrack=2\pi\delta\left(\omega\right)
 $$
 
 <hr>
@@ -177,22 +177,6 @@ $$
 
 {{< /details >}}
 
-**example4)**
-
-$$
-\mathcal{F}\left\lbrace tu\left(t\right)\right\rbrace\left(\omega\right)
-$$
-
-{{< details summary="sol" >}}
-
-$$
-\mathcal{F}\left(\omega\right)=\int^{\infty}_{0}dt\left[te^{-i\omega t}\right]
-=\int^{\infty}_{0}dt\left[\frac{\partial}{\partial t}\left(\frac{t}{-i\omega}e^{-i\omega t}\right)-e^{-i\omega t}\right]
-$$
-
-{{< /details >}}
-    
-
 ---
 
 ### 2. Properties, 라플라스 변환과 동일
@@ -200,7 +184,7 @@ $$
 **1) time scaling**
 
 $$
-\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)=\frac{1}{\left|a\right|}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
+\mathcal{F}\left\lbrace f\left(at+b\right)\right\rbrace\left(\omega\right)=\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
 $$
 
 {{< details summary="proof)" >}}
@@ -208,13 +192,13 @@ $$
 (1) a>0
 
 $$
-\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=\frac{1}{a}F\left(\frac{\omega}{a}\right)
+\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)=e^{i\frac{b}{a}\omega}\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
 $$
 
 (2) a<0
 
 $$
-\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)=\int_{\infty}^{-\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=-\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=-\frac{1}{a}F\left(\frac{\omega}{a}\right)
+\mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)=e^{i\frac{b}{a}}\int_{\infty}^{-\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=-\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
 $$
 
 <br>
@@ -255,7 +239,7 @@ $$
 {{< details summary="proof)" >}}
 
 $$
-\mathcal{F}\left\lbrace e^{jat}f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-i\left(\omega-a\right)t}\right\rbrack=F\left(\omega-a\right)
+\mathcal{F}\left\lbrace e^{iat}f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-i\left(\omega-a\right)t}\right\rbrack=F\left(\omega-a\right)
 $$
     
 <hr>
@@ -305,7 +289,43 @@ $$
 
 ---
 
-**example1)**
+**example1)** 
+
+$$
+\mathcal{F}\left\lbrace u\left(t-t'\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol" >}}
+
+$$
+e^{-i\omega t'}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)
+=\frac{e^{-i\omega't}}{i\omega}+e^{-i\omega' t}\pi\delta\left(\omega\right)
+$$
+
+{{< /details >}}
+
+**example2)**
+
+$$
+\mathcal{F}\left\lbrace\delta\left(t-t'\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol1" >}}
+    
+$$
+F(\omega)=\int_{-\infty}^{\infty}dt\left[\delta\left(t-t'\right)e^{-i\omega t}\right]=e^{-i\omega t'}\int_{-\infty}^{\infty}dt\left[\delta\left(t-t'\right)\right]
+=e^{-i\omega t'}
+$$
+
+{{< /details >}}
+
+{{< details summary="sol2" >}}
+    
+공사중
+
+{{< /details >}}
+
+**example3)**
 
 $$
 \mathcal{F}\left\lbrace e^{iat}\right\rbrace\left(\omega\right)
@@ -331,7 +351,7 @@ $$
 
 {{< /details >}}
 
-**example2)** 
+**example4)** 
 
 $$
 \mathcal{F}\left\lbrace e^{at}u\left(t\right)\right\rbrace\left(\omega\right),\quad a<0
@@ -385,9 +405,31 @@ $$
 
 <hr>
 
-{{< /details >}}    
+{{< /details >}}
 
-**example3)**
+**example5)** 
+
+$$
+\mathcal{F}\left\lbrace u\left(-t\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol" >}}
+
+$$
+\mathcal{F}\left\lbrace u\left(-t\right)\right\rbrace\left(\omega\right)
+=\frac{1}{|-1|}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(-\omega\right)
+$$
+
+$$
+=-\frac{1}{i\omega}+\pi\delta\left(-\omega\right)
+=-\frac{1}{i\omega}+\pi\delta\left(\omega\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example6)**
 
 $$
 \mathcal{F}\left\lbrace e^{at}u\left(-t\right)\right\rbrace\left(\omega\right),\quad a>0
@@ -424,11 +466,152 @@ $$
 F\left(\omega\right)=F_L\left(i\omega\right)=\frac{1}{a-i\omega}
 $$
 
+<hr>
+
+{{< /details >}}
+
+**example7)**
+
+$$
+\mathcal{F}\left\lbrace e^{-t}u\left(t-1\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol1" >}}
+
+$$
+\mathcal{F}\left\lbrace e^{-\left(t-1\right)-1}u\left(t-1\right)\right\rbrace\left(\omega\right)
+=e^{-s}\mathcal{L}\left\lbrace e^{-t-1}u\left(t\right)\right\rbrace\left(s\right)|_{s=i\omega}
+$$
+
+$$
+=e^{-s-1}\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(s\right)|_{s=i\omega}
+=e^{-s-1}\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s+1\right)|_{s=i\omega}
+$$
+
+$$
+=\left.\frac{e^{-s-1}}{s+1}\right|_{s=i\omega}
+=\frac{e^{-i\omega-1}}{i\omega+1}
+$$
+
+<hr>
+
+{{< /details >}}
+
+{{< details summary="sol2" >}}
+
+$$
+\mathcal{F}\left\lbrace e^{i\cdot i\left(t-1\right)-1}u\left(t-1\right)\right\rbrace\left(\omega\right)
+=e^{-i\omega-1}\mathcal{F}\left\lbrace e^{i\cdot it}u\left(t\right)\right\rbrace\left(\omega\right)
+$$
+
+$$
+=e^{-i\omega-1}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega-i\right)
+$$
+
+$$
+=e^{-i\omega-1}\left\lbrace \frac{1}{i\left(\omega-i\right)}+\pi\delta\left(\omega-i\right) \right\rbrace
+$$
+
+$$
+=\frac{e^{-i\omega-1}}{i\omega+1}
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example8)**
+
+$$
+\mathcal{F}\left\lbrace e^{-2t}u\left(2t-1\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol" >}}
+
+$$
+\mathcal{L}\left\lbrace e^{-(2t-1)-1}u\left(2t-1\right)\right\rbrace\left(s\right)
+=e^{-1}\mathcal{L}\left\lbrace e^{-(2t-1)}u\left(2t-1\right)\right\rbrace\left(s\right)
+$$
+
+$$
+=e^{-\frac{s}{2}}\frac{e^{-1}}{2}\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(\frac{s}{2}\right)
+=\frac{1}{2}e^{-\frac{s}{2}-1}\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(\frac{s}{2}+1\right)
+$$
+
+$$
+=\frac{1}{2}e^{-\frac{s}{2}-1}\cdot\frac{2}{s+2}
+$$
+
+$s=i\omega$ 를 대입하면,
+
+$$
+\frac{e^{-i\omega/2-1}}{i\omega+2}
+$$
+
+
+
+
+$$
+\mathcal{L}\left\lbrace e^{-(2t-1)-1}u\left(2t-1\right)\right\rbrace\left(s\right)
+=e^{-1}\mathcal{L}\left\lbrace e^{-(2t-1)}u\left(2t-1\right)\right\rbrace\left(s\right)
+$$
+
+$$
+=\left.\mathcal{L}\left\lbrace e^{-(t-\frac{1}{2})}u\left(t-\frac{1}{2}\right)\right\rbrace\left(s\right)\right|_{\frac{s}{2}}
+=e^{-\frac{s}{2}}\left[\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(s\right)\right]_{\frac{s}{2}}
+$$
+
+$$
+=e^{-\frac{s}{2}}\left[\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s\right)\right]_{\frac{s}{2}+1}
+$$
+
+$s=i\omega$ 를 대입하면,
+
+$$
+\frac{e^{-i\omega/2-1}}{i\omega+2}
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example9)**
+
+$$
+\mathcal{F}\left\lbrace e^{t}u\left(1-t\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol" >}}
+
+$$
+\mathcal{L}\left\lbrace e^{t}u\left(1-t\right)\right\rbrace\left(s\right)
+=\mathcal{L}\left\lbrace e^{-(1-t)+1}u\left(1-t\right)\right\rbrace\left(s\right)
+$$
+
+$$
+=e^1\mathcal{L}\left\lbrace e^{-(1-t)}u\left(1-t\right)\right\rbrace\left(s\right)
+=e^1e^{-s}\mathcal{L}\left\lbrace e^{-t}u\left(t\right)\right\rbrace\left(-s\right)
+$$
+
+$$
+=e^{-s+1}\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(-s+1\right)
+$$
+
+$$
+=\frac{e^{1-s}}{1-s}
+$$
+
+$s=i\omega$ 를 대입하면,
+
+$$
+\frac{e^{1-i\omega}}{1-i\omega}
+$$
+
 {{< /details >}}
 
 ---
 
-### 3. Properties, 라플라스 변환과 유사
+### 3. Properties 2
 
 **1) time differentiation, 중요**
 
@@ -500,83 +683,148 @@ $$
 
 {{< /details >}}
 
-**3) time integration @Seungmin Son** 
+**3) time integration** 
 
 $$
-\mathcal{F}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(\omega\right)=\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)\cdot F\left(\omega\right)
-$$
-
-$$
-=\left(\frac{1}{j\omega}+\pi\delta\left(\omega\right)\right)F\left(\omega\right)=\frac{F\left(\omega\right)}{j\omega}+\pi F\left(0\right)\delta\left(\omega\right)
+\mathcal{F}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(\omega\right)
+=\mathcal{F}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(\omega\right)
 $$
 
 $$
-F\left(0\right)\delta\left(\omega\right)\text{는 DC 성분을 의미 함}
+=\left(\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right)F\left(\omega\right)=\frac{F\left(\omega\right)}{i\omega}+\pi F\left(0\right)\delta\left(\omega\right)
 $$
-
-- proof
 
 ---
 
-### 8. Properties, 푸리에 변환의 독특한 특성
-
-**1) reversal**
+**example1) 중요**
 
 $$
-\mathcal{F}\left\lbrack f\left(-t\right)\right\rbrack=F\left(-\omega\right)\text{ or }F^{\ast}\left(\omega\right)
+\mathcal{F}\left\lbrace tu\left(t\right)\right\rbrace\left(\omega\right)
 $$
 
-- proof
-    
-    $$
-    \mathcal{F}\left\lbrack f\left(-t\right)\right\rbrack=\frac{1}{\left|-1\right|}F\left(\frac{\omega}{-1}\right)=F\left(-\omega\right)
-    $$
-    
+{{< details summary="sol" >}}
 
-**2) duality**
+$$
+\mathcal{F}\left\lbrace tu\left(t\right)\right\rbrace\left(\omega\right)
+=i\frac{d}{d\omega}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(\omega\right)
+$$
 
-- proof
+$$
+=i\frac{d}{d\omega}\left\lbrace \frac{1}{i\omega}+\pi\delta\left(\omega\right)\right\rbrace
+=-\frac{1}{\omega^2}+i\pi\delta'\left(\omega\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example2)**
+
+$$
+\mathcal{F}\left\lbrace tu\left(-t\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol" >}}
+
+$$
+\mathcal{F}\left\lbrace tu\left(-t\right)\right\rbrace\left(\omega\right)
+=\mathcal{F}\left\lbrace -tu\left(t\right)\right\rbrace\left(-\omega\right)
+$$
+
+$$
+=i\frac{d}{d\omega}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\left(-\omega\right)
+=i\frac{d}{d\omega}\left\lbrace -\frac{1}{i\omega}+\pi\delta\left(\omega\right)\right\rbrace
+$$
+
+$$
+=\frac{1}{\omega^2}+i\pi\delta'\left(\omega\right)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example3)**
+
+$$
+\mathcal{F}\left\lbrace tu\left(2t+1\right)\right\rbrace\left(\omega\right)
+$$
+
+{{< details summary="sol" >}}
+
+$$
+\mathcal{F}\left\lbrace tu\left(2t+1\right)\right\rbrace\left(\omega\right)
+=\mathcal{F}\left\lbrace\frac{1}{2}\left(2t+1-1\right)u\left(2t+1\right)\right\rbrace\left(\omega\right)
+$$
+
+$$
+=\frac{1}{2}\mathcal{F}\left\lbrace\left(2t+1-1\right)u\left(2t+1\right)\right\rbrace\left(\omega\right)
+$$
+
+$$
+=\frac{1}{2}\mathcal{F}\left\lbrace\left(2t+1\right)u\left(2t+1\right)-u\left(2t+1\right)\right\rbrace\left(\omega\right)
+$$
+
+$$
+=\frac{1}{4}e^{+i\frac{1}{2}\omega}\mathcal{F}\left\lbrace tu\left(t\right)-u\left(t\right)\right\rbrace\left(\frac{\omega}{2}\right)
+$$
+
+$$
+=\frac{1}{4}e^{+i\frac{1}{2}\omega}\left[2i\frac{d}{d\omega}\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace -\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\right]\left(\frac{\omega}{2}\right)
+$$
+
+$$
+=\frac{1}{4}e^{+i\frac{1}{2}\omega}\left[\frac{2}{\omega^2}+2i\pi\delta'\left(\omega\right) -\mathcal{F}\left\lbrace u\left(t\right)\right\rbrace\right]\left(\frac{\omega}{2}\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 ---
 
-**example5), 복소함수론을 학습이 요구 됨. (처음 학습 시 단순 암기할 것), @Seungmin Son** 
+### 8. Inverse Laplace & Fourier transform
 
 $$
-\mathcal{F}\left\lbrack u\left(-t\right)\right\rbrack
+\mathcal{L}^{-1}\left\lbrace F_L\left(s\right)\right\rbrace\left(t\right)=\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F_L\left(s\right)\right\rbrack
 $$
 
-- sol
-
-**example9) [최수인 (Unlicensed)](https://hertz2hnu.atlassian.net/wiki/people/712020:1f3af0d6-22e5-4b45-9a8a-7a617da825a0?ref=confluence)**
-
 $$
-\mathcal{F}\left\lbrack tu\left(-t\right)\right\rbrack
+\mathcal{F}^{-1}\left\lbrace F(\omega)\right\rbrace\left(t\right)=\frac{1}{2\pi}\int_{-\infty}^{\infty}d\omega\left[e^{i\omega t}F\left(\omega\right)\right]
 $$
 
-- sol
-    
-    <aside>
-    ℹ️ 단순히 라플라스 변환과 동일 함.
-    
-    </aside>
-    
+$s=i\omega$를 라플라스 변환에 대입해 보자.
+
+$$
+\mathcal{L}^{-1}\left\lbrace F_L\left(i\omega\right)\right\rbrace\left(t\right)=\mathcal{F}^{-1}\left\lbrace F(\omega)\right\rbrace\left(t\right)
+$$
+
+ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다.
+
+---
+
+### 9. Duality
+
+---
+
+### 10. Practice
 
 **필수, example1)**
 
-![](image-20240922-111343.png)
+![](image3-1.png)
 
 - sol
     
     $$
-    \mathcal{F}\left\lbrack f'\left(t\right)\right\rbrack=\left(j\omega\right)F\left(\omega\right)
+    \mathcal{F}\left\lbrack f'\left(t\right)\right\rbrack=\left(i\omega\right)F\left(\omega\right)
     $$
     
     $$
-    A\mathcal{F}\left\lbrack\delta\left(t+\frac{\tau}{2}\right)\right.-\left.\delta\left(t-\frac{\tau}{2}\right)\right\rbrack=A\left(e^{j\omega\frac{\tau}{2}}-e^{-j\omega\frac{\tau}{2}}\right)
+    A\mathcal{F}\left\lbrack\delta\left(t+\frac{\tau}{2}\right)\right.-\left.\delta\left(t-\frac{\tau}{2}\right)\right\rbrack=A\left(e^{i\omega\frac{\tau}{2}}-e^{-i\omega\frac{\tau}{2}}\right)
     $$
     
     $$
-    F\left(\omega\right)=A\left(\frac{e^{j\omega\frac{\tau}{2}}-e^{-j\omega\frac{\tau}{2}}}{j\omega}\right)=A\tau\frac{\sin\left(\omega\tau/2\right)}{\omega\tau/2}=\operatorname{A\tau\cdot sinc\left(\frac{\omega\tau}{2}\right)}
+    F\left(\omega\right)=A\left(\frac{e^{i\omega\frac{\tau}{2}}-e^{-i\omega\frac{\tau}{2}}}{i\omega}\right)=A\tau\frac{\sin\left(\omega\tau/2\right)}{\omega\tau/2}=\operatorname{A\tau\cdot sinc\left(\frac{\omega\tau}{2}\right)}
     $$
     
 
@@ -587,15 +835,15 @@ $$
 - sol
     
     $$
-    \mathcal{F}\left\lbrack f'\left(t\right)\right\rbrack=\left(j\omega\right)F\left(\omega\right)
+    \mathcal{F}\left\lbrack f'\left(t\right)\right\rbrack=\left(i\omega\right)F\left(\omega\right)
     $$
     
     $$
-    25\mathcal{F}\left\lbrack\delta\left(t+1\right)-2\delta\left(t\right)+\delta\left(t-1\right)\right\rbrack=25\left(e^{j\omega}-2+e^{-j\omega}\right)
+    25\mathcal{F}\left\lbrack\delta\left(t+1\right)-2\delta\left(t\right)+\delta\left(t-1\right)\right\rbrack=25\left(e^{i\omega}-2+e^{-i\omega}\right)
     $$
     
     $$
-    F\left(\omega\right)=\frac{50}{j\omega}\left(\frac{e^{j\omega}+e^{-j\omega}}{2}-1\right)=\frac{50}{j\omega}\left(\cos\omega-1\right)
+    F\left(\omega\right)=\frac{50}{i\omega}\left(\frac{e^{i\omega}+e^{-i\omega}}{2}-1\right)=\frac{50}{i\omega}\left(\cos\omega-1\right)
     $$
     
 
@@ -611,31 +859,6 @@ $$
 
 - sol
 
-**example5) @Seungmin Son** 
-
-$$
-\mathcal{F}\left\lbrack u\left(t-t'\right)\right\rbrack
-$$
-
-- sol
-
-**example2)**
-
-$$
-\mathcal{F}\left\lbrack\delta\left(t-t'\right)\right\rbrack
-$$
-
-- sol
-    
-    $$
-    F(\omega)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t-t'\right)e^{-j\omega t}\right\rbrack=e^{-j\omega t'}\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t-t'\right)\right\rbrack dt
-    $$
-    
-    $$
-    =e^{-j\omega t'}
-    $$
-    
-
 **example6)**
 
 ![](image-20240922-042149.png)
@@ -643,7 +866,7 @@ $$
 - sol (a)
     
     $$
-    \mathcal{F}\left\lbrack\frac{d}{dt}\operatorname{sgn}\left(t\right)\operatorname{}\right\rbrack=\left(j\omega\right)\mathcal{F}\left(\omega\right)
+    \mathcal{F}\left\lbrack\frac{d}{dt}\operatorname{sgn}\left(t\right)\operatorname{}\right\rbrack=\left(i\omega\right)\mathcal{F}\left(\omega\right)
     $$
     
     $$
@@ -651,7 +874,7 @@ $$
     $$
     
     $$
-    \mathcal{F}\left\lbrack\frac{d}{dt}\operatorname{sgn}\left(t\right)\operatorname{}\right\rbrack=\frac{2}{j\omega}
+    \mathcal{F}\left\lbrack\frac{d}{dt}\operatorname{sgn}\left(t\right)\operatorname{}\right\rbrack=\frac{2}{i\omega}
     $$
     
     ---
@@ -668,18 +891,18 @@ $$
     
     푸리에 변환은 푸리에 역변환과 형태가 동일함을 이용한다.
     
-    - j\omega=t\rightarrow dt=-jd\omega
+    - i\omega=t\rightarrow dt=-id\omega
     
     $$
-    \int_{-\infty}^{\infty}dt\left\lbrack\frac{\sin t}{t}e^{-j\omega t}\right\rbrack=-\int_{-j\infty}^{j\infty}ds\left\lbrack\frac{\sin s}{s}e^{st}\right\rbrack=-2\pi j\cdot\mathcal{L}^{-1}\left\lbrack\frac{\sin s}{s}\right\rbrack
-    $$
-    
-    $$
-    \mathcal{L}^{-1}\left\lbrack\frac{\sin s}{s}\right\rbrack=\mathcal{L}^{-1}\left\lbrack\frac{1}{s}\left(\frac{e^{-js}-e^{js}}{2j}\right)\right\rbrack=-\frac{1}{2j}\left(u\left(t-1\right)-u\left(t+1\right)\right)
+    \int_{-\infty}^{\infty}dt\left\lbrack\frac{\sin t}{t}e^{-i\omega t}\right\rbrack=-\int_{-i\infty}^{i\infty}ds\left\lbrack\frac{\sin s}{s}e^{st}\right\rbrack=-2\pi i\cdot\mathcal{L}^{-1}\left\lbrack\frac{\sin s}{s}\right\rbrack
     $$
     
     $$
-    \int_{-\infty}^{\infty}dt\left\lbrack\frac{\sin t}{t}e^{-j\omega t}\right\rbrack=\pi\left\lbrace u\left(-j\omega-1\right)-u\left(-j\omega+1\right)\right\rbrace
+    \mathcal{L}^{-1}\left\lbrack\frac{\sin s}{s}\right\rbrack=\mathcal{L}^{-1}\left\lbrack\frac{1}{s}\left(\frac{e^{-is}-e^{is}}{2i}\right)\right\rbrack=-\frac{1}{2i}\left(u\left(t-1\right)-u\left(t+1\right)\right)
+    $$
+    
+    $$
+    \int_{-\infty}^{\infty}dt\left\lbrack\frac{\sin t}{t}e^{-i\omega t}\right\rbrack=\pi\left\lbrace u\left(-i\omega-1\right)-u\left(-i\omega+1\right)\right\rbrace
     $$
     
     ---
@@ -687,17 +910,17 @@ $$
     복소적분을 사용하여 풀기
     
     $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-je^{it}}{t}e^{-j\omega t}\right\rbrack\right\rbrack=\operatorname{Re}\left\lbrack\oint_{C}-\int_{C_{R}}-\int_{C_{r}}\right\rbrack
+    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=\operatorname{Re}\left\lbrack\oint_{C}-\int_{C_{R}}-\int_{C_{r}}\right\rbrack
     $$
     
     $$
     \oint_{C}=0
     $$
     
-    - \int_{C_{}}dz\left\lbrack\frac{-je^{jz\left(1-\omega\right)}}{z}\right\rbrack=j\int_{C}dz\left\lbrack\frac{e^{jz\left(1-\omega\right)}}{z}\right\rbrack=-\int_{C}Re^{i\theta}d\theta\left\lbrack\frac{e^{jRe^{i\theta}\left(1-\omega\right)}}{Re^{i\theta}}\right\rbrack
+    - \int_{C_{}}dz\left\lbrack\frac{-ie^{iz\left(1-\omega\right)}}{z}\right\rbrack=i\int_{C}dz\left\lbrack\frac{e^{iz\left(1-\omega\right)}}{z}\right\rbrack=-\int_{C}Re^{i\theta}d\theta\left\lbrack\frac{e^{iRe^{i\theta}\left(1-\omega\right)}}{Re^{i\theta}}\right\rbrack
     
     $$
-    =-\int_{C}^{}d\theta\left\lbrack e^{jR\left(\cos\theta+j\sin\theta)\left(1-\omega\right)\right)}\right\rbrack
+    =-\int_{C}^{}d\theta\left\lbrack e^{iR\left(\cos\theta+i\sin\theta)\left(1-\omega\right)\right)}\right\rbrack
     $$
     
     if $\omega<1$, upper contour
@@ -706,7 +929,7 @@ $$
     - \int_{C_{r}}^{}=\lim_{R\rightarrow0}\left\lbrack-\int_{\pi}^0d\theta\left\lbrack1\right\rbrack\right\rbrack=\pi
     
     $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-je^{it}}{t}e^{-j\omega t}\right\rbrack\right\rbrack=\pi
+    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=\pi
     $$
     
     if $\omega>1$, lower contour
@@ -715,13 +938,13 @@ $$
     - \int_{C_{r}}^{}=\lim_{R\rightarrow0}\left\lbrack-\int_{\pi}^0d\theta\left\lbrack1\right\rbrack\right\rbrack=\pi
     
     $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-je^{it}}{t}e^{-j\omega t}\right\rbrack\right\rbrack=\pi
+    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=\pi
     $$
     
     if $\omega=1$, by Cauchy principal value, 0
     
     $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-je^{it}}{t}e^{-j\omega t}\right\rbrack\right\rbrack=0
+    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=0
     $$
     
 
@@ -747,29 +970,6 @@ $$
 
 ---
 
-### 8. Inverse Laplace & Fourier transform
-
-$$
-\mathcal{L}^{-1}\left\lbrack F\left(s\right)\right\rbrack=\frac{1}{2\pi i}\int_{\sigma-i\infty}^{\sigma+i\infty}ds\left\lbrack e^{st}F\left(s\right)\right\rbrack
-$$
-
-$$
-\mathcal{F}^{-1}\left\lbrack F(j\omega)\right\rbrack=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{j\omega t}d\omega
-$$
-
-$s=j\omega$를 라플라스 변환에 대입해 보자.
-
-$$
-\mathcal{L}^{-1}\left\lbrack F\left(j\omega\right)\right\rbrack=\mathcal{F}^{-1}\left\lbrack F\left(j\omega\right)\right\rbrack
-$$
-
-<aside>
-ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다.
-
-</aside>
-
----
-
 **example1)**
 
 ![](image-20240922-112425.png)
@@ -784,5 +984,5 @@ $$
 - sol (b)
     
     $$
-    \mathcal{F}^{-1}\left\lbrack\pi\delta\left(-js\right)+\frac{1}{s}+\frac{2\left(s+1\right)}{\left(s+1\right)^2+16}\right\rbrack=u\left(t\right)\left\lbrace1+2e^{-st}\cdot\cos4t\right\rbrace
+    \mathcal{F}^{-1}\left\lbrack\pi\delta\left(-is\right)+\frac{1}{s}+\frac{2\left(s+1\right)}{\left(s+1\right)^2+16}\right\rbrack=u\left(t\right)\left\lbrace1+2e^{-st}\cdot\cos4t\right\rbrace
     $$
