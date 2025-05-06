@@ -14,10 +14,19 @@ $$
 =\langle \omega| \delta \rangle
 $$
 
-{{< details summary="비대칭성" >}}
+{{< details summary="비대칭성, 중요" >}}
 
-$\langle\omega|t\rangle=e^{-i\omega t}$ 라고 하자.
-    
+비대칭성 기반 푸리에 변환의 정의를 사용하면, $\langle\omega|t\rangle=e^{-i\omega t}$ 임을 알 수 있다.
+
+$$
+\mathcal{F}\left\lbrace\delta\left(t\right)\right\rbrace\left(\omega\right)
+=\langle\omega|f\rangle
+=\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t|f\rangle
+=\int^{\infty}_{-\infty}dt \left[e^{-i\omega t}f\left(t\right)\right]
+$$
+
+따라서,
+
 $$
 \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle
 =\int^{\infty}_{-\infty}dt \langle\omega |t\rangle\langle t | \delta \rangle
@@ -31,7 +40,7 @@ $$
 
 {{< details summary="대칭성" >}}
 
-$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$ 라고 하자.
+$\langle\omega|t\rangle=\cfrac{1}{\sqrt{2\pi}}e^{-i\omega t}$
     
 $$
 \langle\omega\ | \left(\int^{\infty}_{-\infty}dt|t\rangle\langle t| \right) |\delta \rangle
@@ -53,8 +62,7 @@ $$
 
 {{< details summary="비대칭성" >}}
     
-$\langle t|\omega\rangle
-=e^{+i\omega t}$ 라고 하자.
+$\langle t|\omega\rangle=e^{+i\omega t}$
     
 $$
 \langle t| \left(\int^{\infty}_{-\infty}d\omega|\omega\rangle\langle \omega|\right)|\delta \rangle
@@ -69,8 +77,7 @@ $$
 
 {{< details summary="대칭성" >}}
     
-$\langle t|\omega\rangle
-=\cfrac{1}{\sqrt{2\pi}}e^{+i\omega t}$ 라고 하자.
+$\langle t|\omega\rangle=\cfrac{1}{\sqrt{2\pi}}e^{+i\omega t}$
     
 $$
 \langle t| \left(\int^{\infty}_{-\infty}d\omega|\omega\rangle\langle \omega|\right)|\delta \rangle
@@ -282,7 +289,7 @@ $$
 =\frac{1}{\left|a\right|}e^{i\frac{b}{a}\omega}\left\langle \frac{\omega}{a}\middle|f\right\rangle
 $$
 
-{{< details summary="proof)" >}}
+{{< details summary="proof" >}}
 
 (1) a>0
 
@@ -314,7 +321,7 @@ $$
 =e^{-i\omega t'}\left\langle \omega\middle|f\right\rangle
 $$
 
-{{< details summary="proof)" >}}
+{{< details summary="proof" >}}
     
 $$
 \mathcal{F}\left\lbrace f\left(t-t'\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t-t'\right)e^{-i\omega t}\right\rbrack=\int_{-\infty}^{\infty}d\tau\left\lbrack f\left(\tau\right)e^{-i\omega\left(\tau+t'\right)}\right\rbrack
@@ -337,7 +344,7 @@ $$
 =\langle \omega-a|f\rangle
 $$
 
-{{< details summary="proof)" >}}
+{{< details summary="proof" >}}
 
 $$
 \mathcal{F}\left\lbrace e^{iat}f\left(t\right)\right\rbrace\left(\omega\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-i\left(\omega-a\right)t}\right\rbrack=F\left(\omega-a\right)
@@ -411,7 +418,7 @@ $$
 =(i\omega)^n\langle\omega|f\rangle
 $$
 
-{{< details summary="proof)" >}}
+{{< details summary="proof" >}}
 
 $$
 \mathcal{F}\left\lbrace\frac{\partial^{n}}{\partial t^{n}}f\left(t\right)\right\rbrace\left(\omega\right)
@@ -450,7 +457,7 @@ $$
 =i^n(\hat{D}_\omega)^n \langle \omega|f\rangle
 $$
 
-{{< details summary="proof)" >}}
+{{< details summary="proof" >}}
 
 $$
 \mathcal{F}\left\lbrace t^{n}f\left(t\right)\right\rbrace\left(\omega\right)
@@ -479,7 +486,7 @@ $$
 = \frac{1}{i\omega} \langle \omega|f\rangle + \pi \langle 0|f\rangle \delta(\omega)
 $$
 
-{{< details summary="proof)" >}}
+{{< details summary="proof" >}}
 
 $$
 \mathcal{F}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(\omega\right)
@@ -495,6 +502,8 @@ $$
 ---
 
 ### 3. Inverse Laplace & Fourier transform
+
+비대칭성 기반의 푸리에 변환을 사용한다.
 
 $$
 \mathcal{L}^{-1}\left\lbrace F_L\left(s\right)\right\rbrace\left(t\right)
@@ -524,53 +533,55 @@ $$
 
 푸리에 변환의 쌍대성은 시간 영역과 주파수 영역 사이의 대칭적인 관계를 나타낸다. 함수 $f(t)$의 푸리에 변환이 $F(\omega)$일 때, $F(\omega)$를 시간 함수 $F(t)$로 간주하고 그 푸리에 변환을 구하면 원래 함수 $f(t)$와 관련된 형태가 나온다.
 
-$F(\omega) = \mathcal{F}\{f(t)\}(\omega)$라고 할 때, $\mathcal{F}\{F(t)\}(\omega)$를 구해보자.
-
-- **비대칭성 (Asymmetric Convention)**
+**비대칭성 (Asymmetric Convention)**
 
 $$
-\mathcal{F}\{F(t)\}(\omega)=2\pi f(-\omega)
+\mathcal{F}\{F(t)\}(\omega)
+=2\pi f(-\omega),\quad
+\langle\omega|F(t)\rangle
+=2\pi\langle-\omega|f\rangle
 $$
 
-$$
-\langle\omega|F(t)\rangle_{asym}=2\pi\langle-\omega|f\rangle_{asym}
-$$
+{{< details summary="proof" >}}
+
+$F(\omega)$를 시간 함수 $F(t)$로 간주하고 비대칭 푸리에 변환을 수행하면,
 
 $$
-F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
+\mathcal{F}\{F(t)\}(\omega)
+=\int_{-\infty}^{\infty} dt \left[ F(t) e^{-i\omega t} \right]
 $$
 
+역 푸리에 변환 정의에서 변수 $\omega$와 $t$를 교환하면,
+
 $$
-f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega') e^{i\omega' t} d\omega'
+f(\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} dt \left[ F(t) e^{it\omega } \right]
 $$
 
-$F(\omega)$를 시간 함수 $F(t)$로 간주하고 비대칭 푸리에 변환을 수행하면:
-$$\mathcal{F}\{F(t)\}(\omega) = \int_{-\infty}^{\infty} F(t) e^{-i\omega t} dt$$
-위 역 푸리에 변환 정의에서 변수 $\omega'$와 $t$를 교환하면 $f(\omega') = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(t) e^{it \omega'} dt$ 입니다.
-여기서 $\omega' = -\omega$를 대입하면:
-$$f(-\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(t) e^{-it \omega} dt$$
-이 식의 양변에 $2\pi$를 곱하면 $\int_{-\infty}^{\infty} F(t) e^{-it \omega} dt = 2\pi f(-\omega)$ 이고, 이는 $\mathcal{F}\{F(t)\}(\omega)$
+여기서 $\omega$ 대신에  $-\omega$를 대입하면,
 
-- **대칭성 (Symmetric Convention)**
+$$
+f(-\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} dt \left[ F(t) e^{-it \omega} \right] 
+$$
 
-대칭 푸리에 변환 정의는 다음과 같습니다:
-$$F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt$$
-대칭 역 푸리에 변환 정의는 다음과 같습니다:
-$$f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(\omega') e^{i\omega' t} d\omega'$$
+이 식의 양변에 $2\pi$를 곱하면,
 
-마찬가지로 $F(\omega)$를 시간 함수 $F(t)$로 간주하고 대칭 푸리에 변환을 수행하면:
-$$\mathcal{F}\{F(t)\}(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(t) e^{-i\omega t} dt$$
-위 역 푸리에 변환 정의에서 변수 $\omega'$와 $t$를 교환하면 $f(\omega') = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(t) e^{it \omega'} dt$ 입니다.
-여기서 $\omega' = -\omega$를 대입하면:
-$$f(-\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} F(t) e^{-it \omega} dt$$
-이 식의 양변에 $\sqrt{2\pi}$를 곱하면 $\int_{-\infty}^{\infty} F(t) e^{-it \omega} dt = \sqrt{2\pi} f(-\omega)$ 입니다.
-이를 $\mathcal{F}\{F(t)\}(\omega)$ 정의에 대입하면:
-$$\mathcal{F}\{F(t)\}(\omega) = \frac{1}{\sqrt{2\pi}} \left( \sqrt{2\pi} f(-\omega) \right) = f(-\omega)$$
+$$
+\mathcal{F}\{F(t)\}(\omega)=2\pi f(-\omega),\quad
+\langle\omega|F(t)\rangle=2\pi\langle-\omega|f\rangle
+$$
 
-따라서, 대칭 규약에서의 쌍대성 관계
-$$\mathcal{F}\{F(t)\}(\omega) = f(-\omega)$$
-브라-켓 표기법으로:
-$$\langle \omega | F(t) \rangle_{sym} = \langle -\omega | f \rangle_{sym}$$
+<hr>
+
+{{< /details >}}
+
+**대칭성 (Symmetric Convention)**
+
+$$
+\mathcal{F}\{F(t)\}(\omega)
+= f(-\omega), \quad
+\langle \omega | F(t) \rangle
+= \langle -\omega | f \rangle
+$$
 
 ---
 
@@ -824,179 +835,319 @@ $$
 
 ### 6. Practice2 - 비대칭성 기반 풀이
 
-**example1) 필수**
+**example1) 문제 자체가 중요**
 
 ![](image3-1.png)
 
-- sol
-    
-    $$
-    \mathcal{F}\left\lbrack f'\left(t\right)\right\rbrack=\left(i\omega\right)F\left(\omega\right)
-    $$
-    
-    $$
-    A\mathcal{F}\left\lbrack\delta\left(t+\frac{\tau}{2}\right)\right.-\left.\delta\left(t-\frac{\tau}{2}\right)\right\rbrack=A\left(e^{i\omega\frac{\tau}{2}}-e^{-i\omega\frac{\tau}{2}}\right)
-    $$
-    
-    $$
-    F\left(\omega\right)=A\left(\frac{e^{i\omega\frac{\tau}{2}}-e^{-i\omega\frac{\tau}{2}}}{i\omega}\right)=A\tau\frac{\sin\left(\omega\tau/2\right)}{\omega\tau/2}=\operatorname{A\tau\cdot sinc\left(\frac{\omega\tau}{2}\right)}
-    $$
-    
+{{< details summary="sol" >}}
+
+$$
+\langle \omega | \hat{D}_t | f \rangle
+= (i\omega)\langle \omega | f \rangle
+$$
+
+왼쪽항
+
+$$
+\left\langle \omega \middle| \frac{d}{dt} f \right\rangle
+= \left\langle \omega \middle| A\delta\left(t+\frac{\tau}{2}\right) - A\delta\left(t-\frac{\tau}{2}\right) \right\rangle
+$$
+
+$$
+= \left\langle \omega \middle| A\delta\left(t+\frac{\tau}{2}\right)\right\rangle - \left\langle \omega \middle| A\delta\left(t-\frac{\tau}{2}\right) \right\rangle
+= A\left( e^{i\frac{\tau}{2}\omega} - e^{-i\frac{\tau}{2}\omega} \right) \left\langle \omega \middle| \delta\right\rangle
+$$
+
+$$
+=A\left( e^{i\frac{\tau}{2}\omega} - e^{-i\frac{\tau}{2}\omega} \right)
+$$
+
+따라서,
+
+$$
+\langle\omega|f\rangle
+=\frac{A}{i\omega}\left( e^{i\frac{\tau}{2}\omega} - e^{-i\frac{\tau}{2}\omega} \right)
+=A\tau\frac{\sin\left(\omega\tau/2\right)}{\omega\tau/2}
+=A\tau\cdot \operatorname{sinc}\left(\frac{\omega\tau}{2}\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 **example2)**
 
-![](image-20240922-111525.png)
+![](image3-2.png)
 
-- sol
-    
-    $$
-    \mathcal{F}\left\lbrack f'\left(t\right)\right\rbrack=\left(i\omega\right)F\left(\omega\right)
-    $$
-    
-    $$
-    25\mathcal{F}\left\lbrack\delta\left(t+1\right)-2\delta\left(t\right)+\delta\left(t-1\right)\right\rbrack=25\left(e^{i\omega}-2+e^{-i\omega}\right)
-    $$
-    
-    $$
-    F\left(\omega\right)=\frac{50}{i\omega}\left(\frac{e^{i\omega}+e^{-i\omega}}{2}-1\right)=\frac{50}{i\omega}\left(\cos\omega-1\right)
-    $$
-    
+{{< details summary="sol" >}}
+
+$$
+\langle \omega | \hat{D}_t | f \rangle
+= (i\omega)\langle \omega | f \rangle
+$$
+
+왼쪽항
+
+$$
+\left\langle \omega \middle| \frac{d}{dt} f \right\rangle
+= \left\langle \omega \middle| 25\delta\left(t+1\right)- 50\delta\left(t\right)+25\delta\left(t-1\right) \right\rangle
+=50\left(\frac{e^{i\omega}+e^{-i\omega}}{2}-1\right)
+$$
+
+따라서,
+
+$$
+\langle\omega|f\rangle
+=\frac{50}{i\omega}\left(\frac{e^{i\omega}+e^{-i\omega}}{2}-1\right)
+=\frac{50}{i\omega}\left(\cos\omega-1\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 **example3)**
 
-![](image-20240922-125021.png)
+![](image3-3.png)
 
-- sol
+{{< details summary="sol" >}}
 
-**example4) @Seungmin Son** 
+$$
+\langle\omega|e^{at}u\rangle
+=\langle\omega+ia|u\rangle
+=\frac{1}{i\left(\omega+ia\right)}+\pi\delta\left(\omega+ia\right)
+$$
 
-![](image-20240922-111728.png)
+$$
+=\frac{1}{i\omega-a}
+$$
 
-- sol
+<hr>
 
-**example6)**
+{{< /details >}}
 
-![](image-20240922-042149.png)
+**example4)** 
 
-- sol (a)
-    
-    $$
-    \mathcal{F}\left\lbrack\frac{d}{dt}\operatorname{sgn}\left(t\right)\operatorname{}\right\rbrack=\left(i\omega\right)\mathcal{F}\left(\omega\right)
-    $$
-    
-    $$
-    \mathcal{F}\left\lbrack2\delta\operatorname{}\left(t\right)\operatorname{}\right\rbrack=2
-    $$
-    
-    $$
-    \mathcal{F}\left\lbrack\frac{d}{dt}\operatorname{sgn}\left(t\right)\operatorname{}\right\rbrack=\frac{2}{i\omega}
-    $$
-    
-    ---
-    
-    unit function 로 풀어 보기 [최수인 (Unlicensed)](https://hertz2hnu.atlassian.net/wiki/people/712020:1f3af0d6-22e5-4b45-9a8a-7a617da825a0?ref=confluence)
-    
-- sol (b)
-    
-    $$
-    \mathcal{F}\left\lbrack e^{-\left|a\right|t}u\left(t\right)+e^{\left|a\right|t}u\left(-t\right)\operatorname{}\right\rbrack=\frac{1}{s+a}-\frac{1}{s-a}=\frac{-2a}{s^2-a^2}=\frac{2a}{\omega^2+a^2}
-    $$
-    
-- sol (c)
-    
-    푸리에 변환은 푸리에 역변환과 형태가 동일함을 이용한다.
-    
-    - i\omega=t\rightarrow dt=-id\omega
-    
-    $$
-    \int_{-\infty}^{\infty}dt\left\lbrack\frac{\sin t}{t}e^{-i\omega t}\right\rbrack=-\int_{-i\infty}^{i\infty}ds\left\lbrack\frac{\sin s}{s}e^{st}\right\rbrack=-2\pi i\cdot\mathcal{L}^{-1}\left\lbrack\frac{\sin s}{s}\right\rbrack
-    $$
-    
-    $$
-    \mathcal{L}^{-1}\left\lbrack\frac{\sin s}{s}\right\rbrack=\mathcal{L}^{-1}\left\lbrack\frac{1}{s}\left(\frac{e^{-is}-e^{is}}{2i}\right)\right\rbrack=-\frac{1}{2i}\left(u\left(t-1\right)-u\left(t+1\right)\right)
-    $$
-    
-    $$
-    \int_{-\infty}^{\infty}dt\left\lbrack\frac{\sin t}{t}e^{-i\omega t}\right\rbrack=\pi\left\lbrace u\left(-i\omega-1\right)-u\left(-i\omega+1\right)\right\rbrace
-    $$
-    
-    ---
-    
-    복소적분을 사용하여 풀기
-    
-    $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=\operatorname{Re}\left\lbrack\oint_{C}-\int_{C_{R}}-\int_{C_{r}}\right\rbrack
-    $$
-    
-    $$
-    \oint_{C}=0
-    $$
-    
-    - \int_{C_{}}dz\left\lbrack\frac{-ie^{iz\left(1-\omega\right)}}{z}\right\rbrack=i\int_{C}dz\left\lbrack\frac{e^{iz\left(1-\omega\right)}}{z}\right\rbrack=-\int_{C}Re^{i\theta}d\theta\left\lbrack\frac{e^{iRe^{i\theta}\left(1-\omega\right)}}{Re^{i\theta}}\right\rbrack
-    
-    $$
-    =-\int_{C}^{}d\theta\left\lbrack e^{iR\left(\cos\theta+i\sin\theta)\left(1-\omega\right)\right)}\right\rbrack
-    $$
-    
-    if $\omega<1$, upper contour
-    
-    - \int_{C_{R}}=0,\text{ Jordan's lemma}
-    - \int_{C_{r}}^{}=\lim_{R\rightarrow0}\left\lbrack-\int_{\pi}^0d\theta\left\lbrack1\right\rbrack\right\rbrack=\pi
-    
-    $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=\pi
-    $$
-    
-    if $\omega>1$, lower contour
-    
-    - \int_{C_{R}}=0,\text{ Jordan's lemma}
-    - \int_{C_{r}}^{}=\lim_{R\rightarrow0}\left\lbrack-\int_{\pi}^0d\theta\left\lbrack1\right\rbrack\right\rbrack=\pi
-    
-    $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=\pi
-    $$
-    
-    if $\omega=1$, by Cauchy principal value, 0
-    
-    $$
-    \operatorname{Re}\left\lbrack\int_{-\infty}^{\infty}dt\left\lbrack\frac{-ie^{it}}{t}e^{-i\omega t}\right\rbrack\right\rbrack=0
-    $$
-    
+![](image3-4.png)
 
-**example7) @Seungmin Son** 
+{{< details summary="sol" >}}
 
-![](image-20240922-111834.png)
+$$
+\langle\omega|37.5e^{at}u\left(-t\right)\rangle
+=37.5\langle\omega+ia|u\left(-t\right)\rangle
+=37.5\langle-\omega-ia|u\left(t\right)\rangle
+$$
 
-- sol (a)
-- sol (b)
-- sol (c)
+$$
+=37.5\left\lbrace\frac{1}{i\left(-\omega-ia\right)}+\pi\delta\left(-\omega-ia\right) \right\rbrace
+$$
+
+$$
+=\frac{37.5}{-i\omega+a}
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example5)**
+
+![](image3-5.png)
+
+{{< details summary="sol" >}}
+
+$$
+\left\langle\omega\middle|\frac{d}{dt}f\right\rangle
+=\left\langle\omega\middle|2\delta(t)\right\rangle
+=2
+$$
+
+$$
+\left\langle\omega\middle|f\right\rangle
+=\frac{2}{i\omega}
+$$
+
+<hr>
+
+{{< /details >}}
+    
+**example6)** 
+
+![](image3-6.png)
+
+{{< details summary="sol(a)" >}}
+
+$$
+\left\langle\omega\middle|u(t)-u(t-1)\right\rangle
+=\left\langle\omega\middle|u\right\rangle-e^{-i\omega}\left\langle \omega\middle|u\right\rangle
+=(1-e^{-i\omega})\left\langle \omega\middle|u\right\rangle
+$$
+
+$$
+=(1-e^{-i\omega})\left\lbrace\frac{1}{i\omega}+\pi\delta(\omega)\right\rbrace
+$$
+
+<hr>
+
+{{< /details >}}
+
+{{< details summary="sol(b)" >}}
+
+$$
+\left\langle\omega\middle|e^{-2t}u\right\rangle
+=10\left\langle\omega-2i\middle|u\right\rangle
+=\frac{10}{2-i\omega}
+$$
+
+<hr>
+
+{{< /details >}}
+
+{{< details summary="sol(c)" >}}
+
+$$
+\left\langle\omega\middle|75t\lbrace u(t)-u(t-2)\rbrace\right\rangle
+=75i\frac{d}{d\omega}\left\langle\omega\middle|u(t)-u(t-2)\right\rangle
+$$
+
+$$
+=75i\frac{d}{d\omega}\left[\frac{1}{i\omega}+\pi\delta(\omega)-e^{-i2\omega}\left\lbrace \frac{1}{i\omega}+\pi\delta(\omega)\right\rbrace\right]
+$$
+
+$$
+=75i\frac{d}{d\omega}\left[\left\lbrace1-e^{-i2\omega}\right\rbrace\left\lbrace \frac{1}{i\omega}+\pi\delta(\omega)\right\rbrace\right]
+$$
+
+$$
+=\frac{150ie^{-i2\omega}}{\omega}-\frac{75(1-e^{-i2\omega})}{\omega^2}
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example7)**
+
+![](image3-7.png)
+
+{{< details summary="sol" >}}
+
+$$
+f'(t)=u(t+1)-2u(t)+u(t-1)
+$$
+
+$$
+f''(t)=\delta(t+1)-2\delta(t)+\delta(t-1)
+$$
+
+따라서,
+
+$$
+\left\langle\omega\middle|f''(t)\right\rangle
+=(i\omega)^2\left\langle\omega\middle|f\right\rangle
+$$
+
+$$
+\left\langle\omega\middle|f''(t)\right\rangle
+=\left\langle\omega\middle|\delta(t+1)-2\delta(t)+\delta(t-1)\right\rangle
+$$
+
+$$
+=e^{i\omega}+e^{-i\omega}-2
+$$
+
+푸리에 변환의 결과는
+
+$$
+\left\langle\omega\middle|f\right\rangle
+=\frac{1}{(i\omega)^2}(e^{i\omega}+e^{-i\omega}-2)
+=-\frac{2}{\omega^2}(\cos\omega-1)
+$$
+
+$$
+=\operatorname{sinc^2}\left(\frac{\omega}{2}\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 **example8)**
 
-![](image-20240922-112236.png)
+![](image3-8.png)
 
-- sol
+{{< details summary="sol" >}}
 
-**example9)** @Seungmin Son 
+공사중
 
-![](image-20240922-112330.png)
-
-- sol
+{{< /details >}}
 
 ---
 
-**example10)**
+**example9)**
 
-![](image-20240922-112425.png)
+![](image3-9.png)
 
-- sol
+{{< details summary="sol(a)" >}}
 
-**example11)** 
+$$
+\left\langle t\middle|F(s)\right\rangle
+=\left\langle t\middle|\frac{10s+4}{s^2+6s+8}\right\rangle
+=\left\langle t\middle|\frac{10(s+3)-26}{(s+3)^2-1}\right\rangle
+$$
 
-![](image-20240922-112648.png)
+$$
+=e^{-3t}\left\langle t\middle|\frac{10s-26}{s^2-1}\right\rangle
+=e^{-3t}(10\cosh t-26\sinh t)u(t)
+$$
 
-- sol (a)
-- sol (b)
+<hr>
+
+{{< /details >}}
+
+{{< details summary="sol(b)" >}}
+
+$$
+\left\langle t\middle|F(s)\right\rangle
+=\left\langle t\middle|\frac{-s^2+21}{-s^2+9}\right\rangle
+=\left\langle t\middle|1-\frac{12}{s^2-3^2}\right\rangle
+=\left\langle t\middle|1-4\frac{3}{s^2-3^2}\right\rangle
+$$
+
+$$
+=\delta(t)-4\sinh 3t\cdot u(t)
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example10)** 
+
+![](image3-10.png)
+
+{{< details summary="sol(a)" >}}
+
+$$
+\left\langle t\middle|\frac{6(3+2s)}{(1+s)(4+s)(2+s)}\right\rangle
+=\left\langle t\middle|\frac{2}{1+s}+\frac{3}{4+s}-\frac{5}{2+s}\right\rangle
+$$
+
+$$
+=(2e^{-t}+3e^{-2t}-5e^{-4t})u(t)
+$$
+
+<hr>
+
+{{< /details >}}
+
+{{< details summary="sol(b)" >}}
+
+공사중
+
+<hr>
+
+{{< /details >}}
     
     $$
     \mathcal{F}^{-1}\left\lbrack\pi\delta\left(-is\right)+\frac{1}{s}+\frac{2\left(s+1\right)}{\left(s+1\right)^2+16}\right\rbrack=u\left(t\right)\left\lbrace1+2e^{-st}\cdot\cos4t\right\rbrace
