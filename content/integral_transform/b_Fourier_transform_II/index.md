@@ -1,6 +1,6 @@
 +++
 title = "(b) Fourier transform II"
-weight = 7
+weight = 6
 +++
 
 ---
@@ -302,7 +302,7 @@ $$
 
 $$
 \mathcal{F}\left\lbrace f\left(at\right)\right\rbrace\left(\omega\right)
-=e^{i\frac{b}{a}}\int_{\infty}^{-\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=-\frac{1}{a}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
+=e^{i\frac{b}{a}\omega}\int_{\infty}^{-\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-i\frac{\omega}{a}\tau}\right\rbrack=-\frac{1}{a}e^{i\frac{b}{a}\omega}\mathcal{F}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{\omega}{a}\right)
 $$
 
 <br>
@@ -1111,7 +1111,7 @@ $$
 \left\langle t\middle|F(s)\right\rangle
 =\left\langle t\middle|\frac{-s^2+21}{-s^2+9}\right\rangle
 =\left\langle t\middle|1-\frac{12}{s^2-3^2}\right\rangle
-=\left\langle t\middle|1-4\frac{3}{s^2-3^2}\right\rangle
+=\left\langle t\middle|1-\frac{4\cdot3}{s^2-3^2}\right\rangle
 $$
 
 $$
@@ -1130,7 +1130,7 @@ $$
 
 $$
 \left\langle t\middle|\frac{6(3+2s)}{(1+s)(4+s)(2+s)}\right\rangle
-=\left\langle t\middle|\frac{2}{1+s}+\frac{3}{4+s}-\frac{5}{2+s}\right\rangle
+=\left\langle t\middle|\frac{2}{1+s}-\frac{5}{4+s}+\frac{3}{2+s}\right\rangle
 $$
 
 $$
@@ -1143,12 +1143,23 @@ $$
 
 {{< details summary="sol(b)" >}}
 
-공사중
+$$
+\left\langle t\middle|\pi\delta(-is)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
+=\left\langle t\middle|\frac{1}{|-i|}\pi\delta(s)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
+$$
+
+$s=i\omega$ 이다. $\delta(s)$ 는 $s\ne0$ 에서  $\delta(s)=0$ 이다.
+따라서,
+
+$$
+\left\langle t\middle|\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
+=\left\langle t\middle|\frac{1}{s}\right\rangle+2e^{-t}\left\langle t\middle|\frac{s}{s^2+4^2}\right\rangle
+$$
+
+$$
+=(1+2e^{-t}\cos4t)u(t)
+$$
 
 <hr>
 
 {{< /details >}}
-    
-    $$
-    \mathcal{F}^{-1}\left\lbrack\pi\delta\left(-is\right)+\frac{1}{s}+\frac{2\left(s+1\right)}{\left(s+1\right)^2+16}\right\rbrack=u\left(t\right)\left\lbrace1+2e^{-st}\cdot\cos4t\right\rbrace
-    $$

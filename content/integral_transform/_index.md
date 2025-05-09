@@ -1,5 +1,5 @@
 +++
-title = "Integral transformation"
+title = "Integral transform"
 weight = 4
 +++
 
