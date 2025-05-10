@@ -39,7 +39,7 @@ $$
 {{< details summary="sol" >}}
     
 $$
-F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad
+F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad
 \text{ROC: 모든 } s
 $$
 
@@ -123,21 +123,15 @@ $$
 
 그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
 
-라플라스 변환 적분을 분포적인 의미로 평가할 때, 특히 복소 평면의 허수축($\operatorname{Re}\{s\}=0$) 위에서 이 적분은 수렴하며 그 결과는 $f(t)=1$의 푸리에 변환과 같다.
-
 $$
 \left. \int_{-\infty}^{\infty}dt\left[e^{-st}\right] \right|_{\operatorname{Re}\left\lbrace s\right\rbrace=0} = \int_{-\infty}^{\infty}dt\left[e^{-j\omega t}\right] = 2\pi\delta(\omega)
 $$
 
-이는 허수축 상에서 라플라스 변환이 $2\pi\delta(\omega)$ 라는 분포의 형태로 존재함을 의미한다.
-
 $$
 \langle s|1\rangle
 =2\pi\delta\left(s\right),\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+\text{ROC: 모든 } s
 $$
-
-이 분포 라플라스 변환은 $s$ 평면 전체에서 정의되는 분포이며, 특히 $s=0$에 집중되어 있다. 푸리에 변환($s=i\omega$ 대입)은 바로 이 분포의 $\operatorname{Re}\{s\}=0$에서의 특성을 보여주는 것이다.
 
 <hr>
 
@@ -226,7 +220,7 @@ $$
 
 $$
 =\pi\delta(s-ia)+\pi\delta(s+ia),\quad
-\text{ROC: }\operatorname{Re}\lbrace s \rbrace=0
+\text{ROC: 모든 } s
 $$
 
 <hr>
@@ -306,7 +300,7 @@ $$
 
 $$
 =-i\pi\delta(s-ia)+i\pi\delta(s+ia),\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+\text{ROC: 모든 } s
 $$
 
 <hr>

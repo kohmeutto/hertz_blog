@@ -525,7 +525,13 @@ $$
 \langle t|F_L(i\omega)\rangle=\langle t|F\rangle
 $$
 
-ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다.
+ℹ️ 푸리에 역변환은 라플라스 역변환과 동일하다. 단, 위의 역 라플라스 변환을 사용하여, 역 푸리에 수행하기 위해서는, 아래와 같이 푸리에 변환 자체가 존재해야 한다.
+
+- ROC가 허수축을 포함하는 열린 영역인 경우: 표준 푸리에 변환 존재. (분포 푸리에 변환은 표준을 포함하는 더 큰 개념)
+- ROC가 $\operatorname{Re}\lbrace s\rbrace=0$ 시: 분포 푸리에 변환 존재 (표준 푸리에 변환은 정의되지 않음)
+- ROC가 $\operatorname{Re}\lbrace s\rbrace>0$ 또는 $\operatorname{Re}\lbrace s\rbrace<0$ 시: 분포 푸리에 변환 존재
+- 단, ROC **공집합** 시: 표준 & 분포 푸리에 변환이 존재 안 함
+
 
 ---
 
@@ -1098,6 +1104,11 @@ $$
 
 $$
 =e^{-3t}\left\langle t\middle|\frac{10s-26}{s^2-1}\right\rangle
+$$
+
+ROC 가 $\operatorname{Re}\lbrace s\rbrace>-2$ 이어야 푸리에 변환이 존재한다. 따라서, 
+
+$$
 =e^{-3t}(10\cosh t-26\sinh t)u(t)
 $$
 
@@ -1109,13 +1120,24 @@ $$
 
 $$
 \left\langle t\middle|F(s)\right\rangle
-=\left\langle t\middle|\frac{-s^2+21}{-s^2+9}\right\rangle
+=\left\langle t\middle|\frac{\left(\frac{s}{i}\right)^2+21}{\left(\frac{s}{i}\right)^2+9}\right\rangle
 =\left\langle t\middle|1-\frac{12}{s^2-3^2}\right\rangle
-=\left\langle t\middle|1-\frac{4\cdot3}{s^2-3^2}\right\rangle
+=\left\langle t\middle|1-\frac{12}{s^2-3^2}\right\rangle
 $$
 
 $$
-=\delta(t)-4\sinh 3t\cdot u(t)
+=\left\langle t\middle|1-\frac{12}{(s+3)(s-3)}\right\rangle
+=\left\langle t\middle|1+\frac{2}{s+3}-\frac{2}{s-3}\right\rangle
+$$
+
+ROC가 허수축을 포함하거나 허수축이 ROC의 경계가 되는 경우, 푸리에 변환이 존재한다.
+
+1: ROC=전체, 두번째 항: ROC>-3, 세번째 항: ROC<3
+
+따라서,
+
+$$
+=\delta(t)+2e^{-3t}u(t)+2e^{3t}u(-t)
 $$
 
 <hr>
@@ -1133,6 +1155,8 @@ $$
 =\left\langle t\middle|\frac{2}{1+s}-\frac{5}{4+s}+\frac{3}{2+s}\right\rangle
 $$
 
+ROC>-1 이다. 따라서,
+
 $$
 =(2e^{-t}+3e^{-2t}-5e^{-4t})u(t)
 $$
@@ -1145,19 +1169,23 @@ $$
 
 $$
 \left\langle t\middle|\pi\delta(-is)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
-=\left\langle t\middle|\frac{1}{|-i|}\pi\delta(s)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
+=\left\langle t\middle|\pi\delta(s)+\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
 $$
 
-$s=i\omega$ 이다. $\delta(s)$ 는 $s\ne0$ 에서  $\delta(s)=0$ 이다.
-따라서,
+ROC가 허수축을 포함하거나 허수축이 ROC의 경계가 되는 경우, 푸리에 변환이 존재한다.
+
+첫쨰항 전체 s, 둘째항 Re[s]>0 or Re[s]<0, 세째항 Re[s]>-1 이다.
 
 $$
-\left\langle t\middle|\frac{1}{s}+\frac{2(1+s)}{(1+s)^2+16}\right\rangle
-=\left\langle t\middle|\frac{1}{s}\right\rangle+2e^{-t}\left\langle t\middle|\frac{s}{s^2+4^2}\right\rangle
+=\left\langle t\middle|\pi\delta(s)\right\rangle+\left\langle t\middle|\frac{1}{s}\right\rangle+2e^{-t}\left\langle t\middle|\frac{s}{s^2+4^2}\right\rangle
 $$
 
 $$
-=(1+2e^{-t}\cos4t)u(t)
+=\frac{1}{2}+\frac{1}{2}\operatorname{sgn}(t)+2e^{-t}\cos4t \cdot u(t)
+$$
+
+$$
+=u(t)+2e^{-t}\cos4t \cdot u(t)
 $$
 
 <hr>

@@ -158,21 +158,26 @@ $$
 
 **(3) 주요 예시**
 
-- **디랙 델타 함수:** $\mathcal{F}\{\delta(t)\} = 1$
+- **디랙 델타 함수:** $\mathcal{F}\lbrace\delta(t)\rbrace = 1$
 
-- **단위 계단 함수:** $\mathcal{F}\{u(t)\} = \pi\delta(\omega) + \frac{1}{i\omega}$
+- **단위 계단 함수:** $\mathcal{F}\lbrace u(t)\rbrace = \pi\delta(\omega) + \frac{1}{i\omega}$
 
-- **상수 함수 ($A$):** $\mathcal{F}\{A\} = 2\pi A\delta(\omega)$
+- **상수 함수 ($A$):** $\mathcal{F}\lbrace A\rbrace = 2\pi A\delta(\omega)$
 
 ---
 
 ### 6. 라플라스 변환과의 관계
 
-라플라스 변환의 수렴 영역(ROC, Region of Convergence)이 $i\omega$ 축($\text{Re}\{s\}=0$)을 포함할 때, 라플라스 변환 $F(s)$에 $s=i\omega$를 대입한 결과 $F(i\omega)$가 표준 푸리에 변환과 같다. 즉, 이 경우 표준 푸리에 변환은 라플라스 변환의 특수한 경우로 볼 수 있다.
+$$
+\langle s|f\rangle|_{s=i\omega}=\langle \omega|f\rangle
+$$
 
-하지만 라플라스 변환의 ROC가 $i\omega$ 축을 포함하지 않는 신호들도 있다. (예: 단위 계단 함수 $u(t)$, 상수 함수). 이러한 신호의 경우, 표준 푸리에 변환은 존재하지 않지만 **분포의 푸리에 변환**은 존재할 수 있으며, 이는 단순히 라플라스 변환에 $s=i\omega$를 대입하는 것만으로는 얻을 수 없다.
+위 식을 만족하려면,
 
-따라서 라플라스 변환에 $s=i\omega$를 대입하여 푸리에 변환을 얻는 방법은 **ROC가 $i\omega$ 축을 포함하는 신호에 대해서만 유효**하다. 즉, 표준 푸리에 변환만 할 수 있다.
+- ROC가 허수축을 포함하는 열린 영역인 경우: 표준 푸리에 변환 존재. (분포 푸리에 변환은 표준을 포함하는 더 큰 개념)
+- ROC가 $\operatorname{Re}\lbrace s\rbrace=0$ 시: 분포 푸리에 변환 존재 (표준 푸리에 변환은 정의되지 않음)
+- ROC가 $\operatorname{Re}\lbrace s\rbrace>0$ 또는 $\operatorname{Re}\lbrace s\rbrace<0$ 시: 분포 푸리에 변환 존재
+- 단, ROC **공집합** 시: 표준 & 분포 푸리에 변환이 존재 안 함
 
 ---
 
