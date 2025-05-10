@@ -23,9 +23,7 @@ $$
 =\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack
 $$
 
-Region of Convergence(ROC) 는 라플라스 변환이 존재할 수 있는 s의 수렴영역 이다.
-
-아래 계산을 통해 **라플라스 변환의 극점과 ROC의 관계** 를 살펴보자.
+Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 아래 계산을 통해 **라플라스 변환의 극점과 ROC의 관계** 를 살펴보자.
 
 ---
 
@@ -112,7 +110,7 @@ $$
 
 {{< /details >}}
 
-**2-3) 상수 함수**
+**2-3) 상수 함수, 분포**
 
 $$
 \mathcal{L}\left\lbrace 1\right\rbrace\left(s\right)
@@ -121,7 +119,33 @@ $$
 
 {{< details summary="sol" >}}
     
-적분은 발산한다. 라플라스 변환은 존재하지 않는다.
+시간 신호 $f(t)=1$의 표준적인 양방향 라플라스 변환 적분 $\int_{-\infty}^{\infty}dt\left[e^{-st}\right]$는 어떤 열린 수렴 영역(ROC)에서도 수렴하지 않으므로, 표준적인 양방향 라플라스 변환은 존재하지 않는다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+라플라스 변환 적분을 분포적인 의미로 평가할 때, 특히 복소 평면의 허수축($\operatorname{Re}\{s\}=0$) 위에서 이 적분은 수렴하며 그 결과는 $f(t)=1$의 푸리에 변환과 같다.
+
+$$
+\left. \int_{-\infty}^{\infty}dt\left[e^{-st}\right] \right|_{\operatorname{Re}\left\lbrace s\right\rbrace=0} = \int_{-\infty}^{\infty}dt\left[e^{-j\omega t}\right] = 2\pi\delta(\omega)
+$$
+
+이는 허수축 상에서 라플라스 변환이 $2\pi\delta(\omega)$ 라는 분포의 형태로 존재함을 의미한다.
+
+$$
+\langle s|1\rangle
+=2\pi\delta\left(s\right),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+이 분포 라플라스 변환은 $s$ 평면 전체에서 정의되는 분포이며, 특히 $s=0$에 집중되어 있다. 푸리에 변환($s=i\omega$ 대입)은 바로 이 분포의 $\operatorname{Re}\{s\}=0$에서의 특성을 보여주는 것이다.
+
+<hr>
+
+공사중
+
+$$
+\langle \langle s|1\rangle|\Psi(s)\rangle
+$$
 
 <hr>
 
@@ -177,7 +201,7 @@ $$
 
 {{< /details >}}
 
-**3-3) cosine 함수**
+**3-3) cosine 함수, 분포**
 
 $$
 \mathcal{L}\left\lbrace\cos at\right\rbrace\left(s\right)
@@ -186,7 +210,24 @@ $$
 
 {{< details summary="sol" >}}
     
-위의 cosine 예에서 겹치는 ROC 영역이 없으므로, 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+위의 cosine 예에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s|\cos at\right\rangle
+= \left\langle s \middle|\frac{1}{2}\left(e^{+iat}+e^{-iat}\right)\right\rangle
+=\frac{1}{2} \left\langle s \middle|e^{+iat}\right\rangle+\frac{1}{2} \left\langle s \middle|e^{-iat}\right\rangle
+$$
+
+$$
+=\frac{1}{2} \left\langle s-ia \middle|1\right\rangle+\frac{1}{2} \left\langle s+ia \middle|1\right\rangle
+$$
+
+$$
+=\pi\delta(s-ia)+\pi\delta(s+ia),\quad
+\text{ROC: }\operatorname{Re}\lbrace s \rbrace=0
+$$
 
 <hr>
 
@@ -210,7 +251,7 @@ $$
 \text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
 $$
 
-극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.  
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.
 
 <hr>
 
@@ -240,7 +281,7 @@ $$
 
 {{< /details >}}
 
-**4-3) sine 함수**
+**4-3) sine 함수, 분포**
 
 $$
 \mathcal{L}\left\lbrace\sin at\right\rbrace\left(s\right)
@@ -249,7 +290,24 @@ $$
 
 {{< details summary="sol" >}}
     
-겹치는 ROC 영역이 없으므로, 라플라스 변환값이 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+위의 cosine 예에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s|\sin at\right\rangle
+= \left\langle s \middle|\frac{1}{2i}\left(e^{+iat}-e^{-iat}\right)\right\rangle
+=\frac{1}{2i} \left\langle s \middle|e^{+iat}\right\rangle-\frac{1}{2i}\left\langle s\middle|e^{-iat}\right\rangle
+$$
+
+$$
+=\frac{1}{2i}\left\langle s-ia\middle|1\right\rangle-\frac{1}{2i} \left\langle s+ia \middle|1\right\rangle
+$$
+
+$$
+=-i\pi\delta(s-ia)+i\pi\delta(s+ia),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
 
 <hr>
 
@@ -307,7 +365,7 @@ $$
 
 {{< /details >}}
 
-**5-3) cosh 함수**
+**5-3) cosh 함수, 분포**
 
 $$
 \mathcal{L}\left\lbrace\cosh at\right\rbrace\left(s\right)
@@ -316,7 +374,28 @@ $$
 
 {{< details summary="sol" >}}
     
-겹치는 ROC 영역이 존재하지 않으므로, 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+위의 cosh 에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s|\cosh at\right\rangle
+= \left\langle s \middle|\frac{1}{2}\left(e^{+at}+e^{-at}\right)\right\rangle
+=\frac{1}{2} \left\langle s \middle|e^{+at}\right\rangle+\frac{1}{2} \left\langle s \middle|e^{-at}\right\rangle
+$$
+
+$$
+=\frac{1}{2} \left\langle s-a \middle|1\right\rangle+\frac{1}{2} \left\langle s+a \middle|1\right\rangle
+$$
+
+$$
+=\pi\delta(s-a)+\pi\delta(s+a),\quad
+\text{ROC: } 공집합
+$$
+
+<br>
+
+여기서 중요한 것은 ROC 가 존재하지 않는다고 해서, 양방향 분포 라플라스 변환이 없다는 것을 의미하는 것이 아니다. ROC 는 말 그대로 수렴영역이다.
 
 <hr>
 
@@ -344,6 +423,8 @@ $$
 
 극점은 $\pm a$ 이다. 이 때, ROC 는 $|\operatorname{Re}\lbrace a\rbrace|$ 보다 큰 우측영역에서 형성된다.  
 
+<hr>
+
 {{< /details >}}
 
 **6-2) sinh 함수**
@@ -366,11 +447,13 @@ $$
 \text{ROC: } \operatorname{Re}\lbrace s \rbrace<-|\operatorname{Re}\lbrace a\rbrace|
 $$
 
-극점은 $\pm a$ 이다. 이 때, ROC 는 $-|\operatorname{Re}\lbrace a\rbrace|$ 보다 작은 좌측영역에서 형성된다.  
+극점은 $\pm a$ 이다. 이 때, ROC 는 $-|\operatorname{Re}\lbrace a\rbrace|$ 보다 작은 좌측영역에서 형성된다.
+
+<hr>
 
 {{< /details >}}
 
-**6-3) sinh 함수**
+**6-3) sinh 함수, 분포**
 
 $$
 \mathcal{L}\left\lbrace\sinh at\right\rbrace\left(s\right)
@@ -379,7 +462,28 @@ $$
 
 {{< details summary="sol" >}}
     
-겹치는 ROC 영역이 없다. 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+위의 cosh 에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s|\sinh at\right\rangle
+= \left\langle s \middle|\frac{1}{2}\left(e^{+at}-e^{-at}\right)\right\rangle
+=\frac{1}{2} \left\langle s \middle|e^{+at}\right\rangle-\frac{1}{2} \left\langle s \middle|e^{-at}\right\rangle
+$$
+
+$$
+=\frac{1}{2} \left\langle s-a\middle|1\right\rangle-\frac{1}{2} \left\langle s+a \middle|1\right\rangle
+$$
+
+$$
+=\pi\delta(s-a)-\pi\delta(s+a),\quad
+\text{ROC: } 공집합
+$$
+
+<br>
+
+여기서 중요한 것은 ROC 가 존재하지 않는다고 해서, 양방향 분포 라플라스 변환이 없다는 것을 의미하는 것이 아니다. ROC 는 말 그대로 수렴영역이다.
 
 {{< /details >}}
 
@@ -625,7 +729,6 @@ $$
 $$
 \mathcal{L}\left\lbrace t^{n}u\left(t\right)\right\rbrace\left(s\right)
 =\langle s|t^n\cdot u\rangle=\langle s|(\hat{t})^n|u\rangle=(-1)^n\frac{d^n}{ds^n}\langle s|u\rangle
-=\int_0^{\infty}dt\left\lbrack t^{n}e^{-st}\right\rbrack
 =\frac{n!}{s^{n+1}}
 $$
 
@@ -770,17 +873,49 @@ $$
 
 ---
 
-### 4. 라플라스 변환의 극점과 ROC
+### 4. 라플라스 변환, 분포 라플라스 변환, ROC 관계 요약
 
-라플라스 변환의 **극점은 라플라스 변환이 존재하지 않는 위치**이다. 이것은 원함수가 이 위치에 해당하는 $e^{-(\sigma+i\omega)t}$ 의 성분을 가지고 있다는 의미이다.
+**(1) ROC (수렴 영역)**
 
-- **단방향 라플라스 변환**
+-   **가장 중요:** 라플라스 변환 적분 $\int_{-\infty}^{\infty} dt [e^{-st}f(t)]$ 가 **수렴하는 복소 평면의 $s$ 값들의 집합**.
+-   여기서 수렴은 **표준적인 수렴**일 수도, **분포적인 수렴**일 수도 있다.
 
-단방향 라플라스 변환이 존재하려면 **$t=+\infty$** 에서 수렴해야 하므로, ROC는 $\operatorname{Re}\lbrace s\rbrace>\sigma_{max}$ 인 영역에 존재해야 한다. 정리하면, 다음과 같다. **단방향 라플라스 변환의 수렴 영역은 극점의 가장 큰 실수 값의 우측 영역이다. 극점이 없다면, 모든 영역에서 수렴한다.**
+**(2) 표준 라플라스 변환**
 
-- **양방향 라플라스 변환**
+-   정의: 적분이 **표준적인 의미로 수렴**할 때의 변환.
+-   대상: 주로 시간 무한대에서 지수적으로 감쇠하는 신호.
+-   **ROC 형태: 항상 열린 영역 (띠 또는 반평면).**
 
-양방향 라플라스 변환이 존재하려면 **$t=\pm\infty$** 에서 수렴해야 하므로, **ROC는 교집힙 영역** 에 존재해야 한다.
+**(3) 분포 라플라스 변환**
+
+-   정의: 표준 적분이 어떤 열린 영역에서도 수렴하지 않는 신호들을 다루기 위해 **분포 개념을 확장하여 정의된 변환**.
+-   대상: 표준 LT가 어려운 신호 (상수, 진동, 임펄스, 성장 신호 등) 포함.
+-   **존재:** 표준 LT보다 넓은 범위의 신호에 대해 존재함이 보장됨.
+
+**(4) 핵심 관계: 신호, ROC, 변환 형태**
+
+-   **ROC의 의미:** 근본적으로는 **원래 라플라스 변환 적분이 수렴하는 영역** (표준적 수렴이든 분포적 수렴이든)
+-   ROC 형태가 신호와 변환 성질을 알려준다.
+-   **A) 신호가 지수적으로 감쇠 (또는 유한 길이)**
+    -   **ROC:** **열린 영역** (표준 수렴).
+    -   변환: 표준 LT 존재 (ROC에서 해석 함수). 분포 LT도 존재.
+    -   FT: ROC에 허수축 포함 시 존재.
+
+-   **B) 신호가 진동 또는 상수 (성장 안함)**
+    -   **ROC:** **특정 선 (예: $\operatorname{Re}\lbrace s\rbrace=0$)** (분포적 수렴).
+    -   변환: 표준 LT는 열린 ROC 없음. **분포 LT는 존재**. 결과는 선 위 함수 또는 $s$ 영역 분포.
+    -   FT: ROC가 $\operatorname{Re}\{s\}=0$ 인 것 **<=> 분포 푸리에 변환 존재**.
+
+-   **C) 신호가 지수적으로 성장**
+    -   **ROC:** **열린 영역 (허수축 미포함)** (표준 수렴) **또는 공집합** (양쪽 성장).
+    -   변환: 단방향 성장은 표준 LT 존재. 양방향 성장(실수 cosh/sinh)은 표준 LT 없음. **분포 LT는 존재**하나, ROC는 그대로 (허수축 미포함 또는 공집합).
+    -   **FT:** **존재 안 함**.
+
+**(5) 결론**
+
+-   ROC는 **라플라스 변환 적분(표준 또는 분포적)이 유효한 영역**
+-   분포 LT에서도 ROC는 중요하며, **ROC 형태는 신호 시간 특성 및 FT 존재/형태의 핵심 정보**
+-   분포 LT는 표준 LT가 안 되는 신호까지 다루게 해주는 도구이며, ROC는 그 이해의 열쇠
 
 ---
 
