@@ -224,6 +224,11 @@ $$
 **example4)** 
 
 $$
+x\left(t\right)=3\operatorname{rect}\left(\frac{t}{\tau}\right)
+=3u\left(t+\frac{\tau}{2}\right)-3u\left(t-\frac{\tau}{2}\right)
+$$
+
+$$
 x\left(t\right)\ast h\left(t\right)=x\left(3t-2\right)
 $$
 
@@ -231,7 +236,110 @@ $$
 
 {{< details summary="sol" >}}
 
-공사중, 라플라스 변환 또는 푸리에 변환을 사용하여 풀 수 있다.
+푸리에 변환을 사용하여 풀 수 있다.
+
+<br><br>
+
+$$
+\langle \omega|x\ast h\rangle
+=\langle\omega|x(3t-2)\rangle
+$$
+
+오른쪽 항
+
+$$
+\langle\omega|x(3t-2)\rangle
+=e^{-i\frac{2}{3}\omega}\langle\omega|x(3t)\rangle
+=\frac{1}{3}e^{-i\frac{2}{3}\omega}\left\langle\frac{\omega}{3}\middle|x\right\rangle
+$$
+
+$$
+\left\langle\frac{\omega}{3}\middle|x\right\rangle
+=\left\langle\frac{\omega}{3}\middle|3u\left(t+\frac{\tau}{2}\right)-3u\left(t-\frac{\tau}{2}\right)\right\rangle
+$$
+
+$$
+=3\left( e^{+i\frac{\tau}{6}\omega}
+-e^{-i\frac{\tau}{6}\omega}\right)\left\langle\frac{\omega}{3}\middle|u\right\rangle
+=9\left( e^{+i\frac{\tau}{6}\omega}
+-e^{-i\frac{\tau}{6}\omega}\right)\left\langle\omega\middle|u\right\rangle
+$$
+
+$$
+\langle\omega|x(3t-2)\rangle
+=3e^{-i\frac{2}{3}\omega}\left( e^{+i\frac{\tau}{6}\omega}
+-e^{-i\frac{\tau}{6}\omega}\right)\left\langle\omega\middle|u\right\rangle
+$$
+
+왼쪽항
+
+$$
+\langle \omega|x\ast h\rangle=\langle \omega|x\rangle\langle \omega|h\rangle
+$$
+
+$$
+\langle\omega|x\rangle
+=\left\langle\omega\middle|3u\left(t+\frac{\tau}{2}\right)-3u\left(t-\frac{\tau}{2}\right)\right\rangle
+$$
+
+$$
+=3\left(e^{+i\frac{\tau}{2}\omega}
+-e^{-i\frac{\tau}{2}\omega}\right)\left\langle\omega|u\right\rangle
+$$
+
+따라서,
+
+$$
+\langle \omega|x\rangle\langle \omega|h\rangle
+=\langle\omega|x(3t-2)\rangle
+$$
+
+$$
+3\left( e^{+i\frac{\tau}{2}\omega}
+-e^{-i\frac{\tau}{2}\omega}\right)\left\langle\omega|u\right\rangle\langle \omega|h\rangle
+=3e^{-i\frac{2}{3}\omega}\left(e^{+i\frac{\tau}{6}\omega}
+-e^{-i\frac{\tau}{6}\omega}\right)\left\langle\omega\middle|u\right\rangle
+$$
+
+$$
+\langle \omega|h\rangle
+=e^{-i\frac{2}{3}\omega}\cdot\frac{e^{+i\frac{\tau}{6}\omega}
+-e^{-i\frac{\tau}{6}\omega}}{e^{+i\frac{\tau}{2}\omega}
+-e^{-i\frac{\tau}{2}\omega}}
+=e^{-i\tau\omega}\cdot\frac{1
+-e^{-i\frac{\tau}{3}\omega}}{1
+-e^{-i\tau\omega}}
+$$
+
+매크로니 급수를 사용한다.
+
+$$
+\frac{1}{1-e^{-i\tau\omega}}
+=\sum_{n=0}e^{-in\tau\omega}
+$$
+
+$$
+\langle \omega|h\rangle
+=e^{-i\tau\omega}\left(e^{-i\frac{\tau}{3}\omega}-e^{-i\frac{2}{3}\tau\omega}\right)\sum_{n=0}e^{-in\tau\omega}
+=\sum_{n=0}\left[e^{-i\left(\frac{4}{3}+n\right)\tau\omega}-e^{-i\left(\frac{5}{3}+n\right)\tau\omega}\right]
+$$
+
+역 푸리에 변환을 수행한다.
+
+$$
+\langle t|H(\omega)\rangle
+=\sum_{n=0}\left[\left\langle t\middle|e^{-i\left(\frac{4}{3}+n\right)\tau\omega}\right\rangle
+-\left\langle t\middle|e^{-i\left(\frac{5}{3}+n\right)\tau\omega}\right\rangle\right]
+$$
+
+$$
+=\sum_{n=0}\left[\left\langle t-\left(\frac{4}{3}+n\right)\tau\middle|1\right\rangle
+-\left\langle t-\left(\frac{5}{3}+n\right)\tau\middle|1\right\rangle\right]
+$$
+
+$$
+=\sum_{n=0}\left[\delta\left\lbrace t-\left(\frac{4}{3}+n\right)\tau\right\rbrace -\delta\left\lbrace t-\left(\frac{5}{3}+n\right)\tau\right\rbrace\right]
+$$
 
 {{< /details >}}
 
