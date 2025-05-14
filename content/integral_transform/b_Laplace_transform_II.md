@@ -543,11 +543,13 @@ $$
 
 $$
 \mathcal{L}\left\lbrace f\left(t-t'\right)u(t-t')\right\rbrace\left(s\right)
+=\langle s|e^{-\hat{s}t'}|f\cdot u\rangle
 =e^{-st'}\langle s|f\cdot u\rangle
 $$
 
 $$
 \mathcal{L}\left\lbrace f\left(t-t'\right)\right\rbrace\left(s\right)
+=\langle s|e^{-\hat{s}t'}|f\rangle
 =e^{-st'}\langle s|f\rangle
 $$
 
@@ -569,14 +571,29 @@ $$
 
 **4) frequency shifting**
 
+- 라플라스 변환
+
 $$
 \mathcal{L}\left\lbrace e^{at}f\left(t\right)u(t)\right\rbrace\left(s\right)
+=\langle s|e^{a\hat{t}}|f\cdot u\rangle
 =\langle s-a|f\cdot u\rangle
 $$
 
 $$
 \mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)
+=\langle s|e^{a\hat{t}}|f\rangle
 =\langle s-a|f\rangle
+=F(s-a)
+$$
+
+- 라플라스 역변환
+
+$$
+\mathcal{L^{-1}}\left\lbrace e^{as}F\left(s\right)\right\rbrace\left(t\right)
+=\langle t|e^{as}F(s)\rangle
+=\langle t|e^{a\hat{s}}|F\rangle
+=\langle t+a|F\rangle
+=f(t+a)
 $$
 
 {{< details summary="proof" >}}
@@ -797,6 +814,7 @@ $$
 $$
 f\left(\infty\right)=\lim_{s\to0}s\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
 =\lim_{s\to 0}s \langle s|f \rangle
+=\langle s|\hat{D}_t|f\rangle
 $$
 
 $$
@@ -836,6 +854,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace \frac{d}{dt} f\left(t\right)\right\rbrace\left(s\right)
+=\langle s|\hat{D}_t|f\rangle
 =s\langle s|f\rangle
 $$
 
