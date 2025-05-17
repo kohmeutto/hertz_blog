@@ -1,6 +1,6 @@
 +++
 title = "(a) Operators in quantum mechanics"
-weight = 9
+weight = 3
 +++
 
 ---
@@ -109,7 +109,7 @@ $$
 위 식으로 부터 병진연산자는 Unitary 연산자임을 알 수 있다. 또한, $\hat{\omega}$는 시간 진화를 일으키는 생성자임을 확인할 수 있다. 생성자 $\hat{\omega}=\hat{H}/\hbar$ 임을 사용하여, 양자역학적인 시간진화연산자를 유도할 수 있다. 아주 작은 시간 변화($\delta t$)에 대해서,
 
 $$
-\hat{T}(\epsilon)
+\hat{T}(\delta t)
 =e^{-\frac{i}{\hbar}\delta t\hat{H}},\quad
 \hat{T}(\delta t)|t\rangle
 =|t+\delta t\rangle

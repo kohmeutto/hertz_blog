@@ -1,6 +1,6 @@
 +++
 title = "(a) Operator & Generator"
-weight = 8
+weight = 2
 +++
 
 ---

@@ -1,6 +1,6 @@
 +++
 title = "(b) Laplace transform I"
-weight = 3
+weight = 1
 +++
 
 ---
