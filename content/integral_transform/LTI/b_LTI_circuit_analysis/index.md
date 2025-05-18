@@ -166,7 +166,7 @@ $$
 i(0)=1, Di(0)=3
 $$
 
-그린함수수를 구한다.
+그린함수를 구한다.
 
 $$
 G(t,t')=G(t)=\begin{cases}
@@ -175,11 +175,11 @@ c_{3}(t')e^{-t}+c_4e^{-4t} & 0\le t < t'
 \end{cases}
 $$
 
-**(1) t=0 에서**
+(1) t=0 에서
 
 **핵심** → $G(0)=0$, $DG(0)=0$ 로 설정하면, $c_3=c_4=0$ 이다.
 
-**(2) t=t' 에서**
+(2) t=t' 에서
 
 $$
 DG(t')=u(t')\to
@@ -207,19 +207,53 @@ $$
 특수해를 구한다.
 
 $$
-i_h
-=\int_{t'}^{t} dt' \left[G(t,t')f(t')\right]
-=-\frac{4}{3}\int_{t'}^{t} dt' \left[e^{t'-3t}-e^{4t'-6t}\right]
+i_p
+=\int_{0}^{t} dt' \left[G(t,t')f(t')\right]
+=-\frac{4}{3}\int_{0}^{t} dt' \left[e^{-t'-t}-e^{2t'-4t}\right]
 $$
 
 $$
-i_h
-=\int_{t'}^{t} dt' \left[G(t,t')f(t')\right]
-=-\frac{4}{3}\int_{t'}^{t} dt' \left[e^{t'-3t}-e^{4t'-6t}\right]
+=-\frac{4}{3}\left\{e^{-t}\int_{0}^{t} dt' \left[e^{t'}\right]-e^{-4t}\int_{0}^{t} dt' \left[e^{2t'}\right]\right\}
+$$
+
+$$
+=-\frac{4}{3}\left\{e^{-t}\left[e^{t'}\right]^{t}_{0}-\frac{e^{-4t}}{2}\left[e^{2t'}\right]^{t}_{0}\right\}
+$$
+
+$$
+=2e^{-2t}-\frac43e^{-t}-\frac23e^{-4t}
+$$
+
+일반해를 구한다.
+
+$$
+i_h=c_1e^{-t}+c_2e^{-4t}
+$$
+
+특수해의 초기조건은 모두 0이므로, 일반해에 초기조건을 적용하여, 계수를 구하면 된다.
+
+$$
+i_h(0)=1=C_1+C_2
+$$
+
+$$
+Di_h(0)=3=-C_1-4C_2
+$$
+
+$$
+C_1=\frac73,\quad C_2=-\frac43
+$$
+
+
+따라서, 최종해는 다음과 같이 쓸 수 있다.
+
+$$
+i=i_h+i_p=e^{-t}+2e^{-2t}-2e^{-4t}
 $$
 
 ---
 
 ### 5. Practice
 
+연구실 구성원들에게만 제공되는 자료입니다. [연습문제](https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/edit-v2/107446288)
 
