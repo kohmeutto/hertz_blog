@@ -166,7 +166,7 @@ $$
 i(0)=1, Di(0)=3
 $$
 
-특수해를 구한다.
+그린함수수를 구한다.
 
 $$
 G(t,t')=G(t)=\begin{cases}
@@ -204,7 +204,19 @@ G(t,t')=\begin{cases}
 \end{cases}
 $$
 
-공사중 (그린함수는 풀이가 너무 길어..)
+특수해를 구한다.
+
+$$
+i_h
+=\int_{t'}^{t} dt' \left[G(t,t')f(t')\right]
+=-\frac{4}{3}\int_{t'}^{t} dt' \left[e^{t'-3t}-e^{4t'-6t}\right]
+$$
+
+$$
+i_h
+=\int_{t'}^{t} dt' \left[G(t,t')f(t')\right]
+=-\frac{4}{3}\int_{t'}^{t} dt' \left[e^{t'-3t}-e^{4t'-6t}\right]
+$$
 
 ---
 
