@@ -11,6 +11,8 @@ weight = 2
 
 - **Non-causal: 이전 입력의 현재상태 + 현재 입력의 현재상태 + 미래 입력의 현재상태**
 
+<img src="image1.png" width="60%" height="auto">
+
 $$
 y\left(t\right)=x\left(t\right)\ast h\left(t\right)
 =h\left(t\right)\ast x\left(t\right)
@@ -24,7 +26,7 @@ $$
 
 드럼을 친다고 생각하자. 관측 시작 후, 현시점을 기준으로 **이전 드럼 입력의 현재 상태 + 현재 드럼 입력의 현재 상태** 나타날 것이다.
 
-<img src="image1.gif" width="60%" height="auto">
+<img src="image2.gif" width="60%" height="auto">
 
 위 그래프에 대한 이해를 명확하게 해야 한다.
 
@@ -39,13 +41,13 @@ $$
 
 ### 2. 숫자(리스트)로 이해하는 컨볼루션
 
-<img src="image2-1.png" width="60%" height="auto">
+<img src="image3-1.png" width="60%" height="auto">
 
-<img src="image2-2.png" width="60%" height="auto">
+<img src="image3-2.png" width="60%" height="auto">
 
-<img src="image2-3.png" width="60%" height="auto">
+<img src="image3-3.png" width="60%" height="auto">
 
-<img src="image2-4.png" width="60%" height="auto">
+<img src="image3-4.png" width="60%" height="auto">
 
 수학적으로 표현(절차)하면, 다음과 같다.
 
