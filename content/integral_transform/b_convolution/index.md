@@ -7,7 +7,9 @@ weight = 2
 
 ### 0. Convolution의 정의
 
-**이전 입력의 현재상태 + 현재 입력의 현재상태**
+- **Causal: 이전 입력의 현재상태 + 현재 입력의 현재상태**
+
+- **Non-causal: 이전 입력의 현재상태 + 현재 입력의 현재상태 + 미래 입력의 현재상태**
 
 $$
 y\left(t\right)=x\left(t\right)\ast h\left(t\right)
