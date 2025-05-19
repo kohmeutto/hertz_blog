@@ -1,6 +1,6 @@
 +++
-title = "(b) Convolution"
-weight = 2
+title = "(b) Convolutionㅍㅅ드드"
+weight = 1000
 +++
 
 ---
@@ -11,6 +11,8 @@ weight = 2
 
 - **Non-causal: 이전 입력의 현재상태 + 현재 입력의 현재상태 + 미래 입력의 현재상태**
 
+<img src="image1.png" width="60%" height="auto">
+
 $$
 y\left(t\right)=x\left(t\right)\ast h\left(t\right)
 =h\left(t\right)\ast x\left(t\right)
@@ -20,17 +22,32 @@ $$
 
 ---
 
+### 1. 그림으로 이해하는 컨볼루션
+
+드럼을 친다고 생각하자. 관측 시작 후, 현시점을 기준으로 **이전 드럼 입력의 현재 상태 + 현재 드럼 입력의 현재 상태** 나타날 것이다.
+
+<img src="image2.gif" width="60%" height="auto">
+
+위 그래프에 대한 이해를 명확하게 해야 한다.
+
+- τ=0은, 입력이 시스템과 반응하는 **최초 시점**을 의미한다. -- 드럼을 치는 순간
+- t-τ은, 반응하기 시작한 이전 입력이 **t초 만큼 시간이 흘럿다**는 것을 의미한다.
+- 빨간색 그래프는, **입력량**을 의미한다. -- 드럼을 치는 강도
+- 파란색은, **입력에 대한 응답**이다. -- 드럼의 소리가 시간에 따라 어떻게 변할지를 결정하는 함수
+- 검은색은, 입력과 그 **응답에 대한 결과**이다. -- 이전 드럼 입력의 현재 상태 + 현재 드럼 입력의 현재 상태
+- 0.5초는 별 의미가 없고 보기 편하게 하기 위해 그냥 응답에 대한 결과를 저 시점부터 그린다는 것이다.
+
+---
+
 ### 1. 숫자(리스트)와 그림으로 이해하는 컨볼루션
 
-<img src="image1-1.png" width="90%" height="auto">
+<img src="image3-1.png" width="90%" height="auto">
 
-<img src="image1-2.png" width="90%" height="auto">
+<img src="image3-2.png" width="90%" height="auto">
 
-<img src="image1-3.png" width="90%" height="auto">
+<img src="image3-3.png" width="90%" height="auto">
 
-<img src="image1-4.png" width="90%" height="auto">
-
-<img src="image2.png" width="60%" height="auto">
+<img src="image3-4.png" width="90%" height="auto">
 
 수학적으로 표현(절차)하면, 다음과 같다.
 
