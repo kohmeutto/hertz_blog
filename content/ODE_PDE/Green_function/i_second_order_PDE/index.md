@@ -15,7 +15,7 @@ $$
 p\left(x\right),q\left(x\right):\text{ continous}
 $$
 
-위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x'\right)$ 또는 $G\left(x,x'\right)$가 디렉 델타가 되어야 한다. $G\left(x,x'\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, $G\left(x,x'\right)$이 디렉 델타가 될 수 없다. 따라서, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x'\right)$ 이 디렉 델타가 되어야 한다.
+위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x'\right)$ 또는 $G\left(x,x'\right)$가 디렉 델타가 되어야 한다. $G\left(x,x'\right)$이 디렉 델타 라면, $x$에 대한 미분은 $\delta'$ 이므로, $G\left(x,x'\right)$이 디렉 델타가 될 수 없다. 따라서, $\partial_{x}\left(p\left(x\right)\partial_{x}\right)G\left(x,x'\right)$ 이 디렉 델타가 되어야 한다.
 
 $$
 \frac{\partial}{\partial x}\left(p\left(x\right)\frac{\partial}{\partial x}\right)G\left(x,x'\right)=\delta\left(x-x'\right)
@@ -69,7 +69,7 @@ LG\left(x,x')=\delta(x-x'\right)
 $$
 
 $$
-\int_{x_{>}'}^{x_{<}'}LG\left(x,x'\right)dx=\int_{x_{>}'}^{x_{<}'}\delta\left(x-x'\right)dx=1
+\int_{x_{>}'}^{x_{<}'}dx\left[LG\left(x,x'\right)\right]=\int_{x_{>}'}^{x_{<}'}dx\left[\delta\left(x-x'\right)\right]=1
 $$
 
 $$
@@ -77,19 +77,19 @@ $$
 $$
 
 $$
-p\left(x\right)\frac{\partial}{\partial x}\left.G\left(x,x'\right)\right|_{x_{<}'}-p\left(x\right)\frac{\partial}{\partial x}\left.G\left(x,x'\right)\right|_{x_{>}'}+\int_{x_{>}'}^{x_{<}'}dx\left\lbrack q\left(x\right)G\left(x,x'\right)\right\rbrack=1
+\left.p\left(x\right)\frac{\partial}{\partial x}G\left(x,x'\right)\right|_{x_{<}'}-\left.p\left(x\right)\frac{\partial}{\partial x}G\left(x,x'\right)\right|_{x_{>}'}+\int_{x_{>}'}^{x_{<}'}dx\left\lbrack q\left(x\right)G\left(x,x'\right)\right\rbrack=1
 $$
 
 여기에서,
 
 $$
-\int_{x_{>}'}^{x_{<}'}dx\left\lbrack q\left(x\right)G\left(x,x'\right)\right\rbrack=0
+\int_{x_{>}'}^{x_{<}'}dx\left[ q\left(x\right)G\left(x,x'\right)\right]=0
 $$
 
 따라서,
 
 $$
-p\left(x\right)\frac{\partial}{\partial x}\left.G\left(x,x'\right)\right|_{x_{<}'}-p\left(x\right)\frac{\partial}{\partial x}\left.G\left(x,x'\right)\right|_{x_{>}'}=1
+\left.p\left(x\right)\frac{\partial}{\partial x}G\left(x,x'\right)\right|_{x_{<}'}-\left.p\left(x\right)\frac{\partial}{\partial x}G\left(x,x'\right)\right|_{x_{>}'}=1
 $$
 
 $$

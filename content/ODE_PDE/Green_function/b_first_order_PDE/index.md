@@ -11,7 +11,7 @@ $$
 \frac{\partial}{\partial x}G\left(x,x'\right)+q\left(x\right)G\left(x,x'\right)=\delta\left(x-x'\right), \quad q\left(x\right):\text{ continuous}
 $$
 
-위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x'\right)$또는 $G\left(x,x'\right)$가 디렉 델타가 되어야 한다. $G\left(x,x'\right)$이 디렉 델타 라면, $x$에 대한 미분이 불가능 하기에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x'\right)$는 디렉 델타가 되어야 한다.
+위의 연산에 대해, 디렉 델타가 결과로 나오기 위해서는,$\partial_{x}G\left(x,x'\right)$또는 $G\left(x,x'\right)$가 디렉 델타가 되어야 한다. $G\left(x,x'\right)$이 디렉 델타 라면, $x$에 대한 미분 결과가 $\delta'$이 나오기 때문에, 이것은 디렉 델타가 될 수 없다. 따라서, $\partial_{x}G\left(x,x'\right)$는 디렉 델타가 되어야 한다.
 
 $$
 \frac{\partial}{\partial x}G\left(x,x'\right)=\delta\left(x-x'\right)
@@ -59,7 +59,7 @@ LG\left(x,x')=\delta(x-x'\right)
 $$
 
 $$
-\int_{x_{>}'}^{x_{<}'}LG\left(x,x'\right)dx=\int_{x_{>}'}^{x_{<}'}\delta\left(x-x'\right)dx=1
+\int_{x_{>}'}^{x_{<}'}dx\left[LG\left(x,x'\right)\right]=\int_{x_{>}'}^{x_{<}'}dx\delta\left(x-x'\right)=1
 $$
 
 $$
