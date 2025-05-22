@@ -29,7 +29,7 @@ $$
 
 $x'$과 **인접한 부분**에서 위 식을 적분하면, G(x,x')은 **연속 함수**가 나옴을 알 수 있다. 위 그린함수의 형태를 그려보면 다음과 같다.
 
-<img src="image1.png" width="70%" height="auto">
+<img src="image1.png" width="60%" height="auto">
 
 ℹ️ 선형연산자 L이 2차 미분일 경우,
 
@@ -179,9 +179,11 @@ $$
 
 {{< details summary="general solution" >}}
     
-(1) $x\ne x'$
-    
-Boundary condition 을 만족하는 해의 형태를 구한다.
+<img src="image2.png" width="70%" height="auto">
+
+<br>
+
+(1) $x\ne x'$ Boundary condition 을 만족하는 해의 형태를 구한다.
     
 $$
 G\left(0,x'\right)=G\left(\pi,x'\right)=0
@@ -224,6 +226,8 @@ G\left(x,x'\right)=
     \left(\cfrac{x}{\pi}-1\right)x' & x > x'
 \end{cases}
 $$
+
+<hr>
 
 {{< /details >}}
 
@@ -271,6 +275,8 @@ G\left(x,x'\right)=
 \end{cases}
 $$
 
+<hr>
+
 {{< /details >}}
 
 **example2)**
@@ -283,21 +289,47 @@ $$
 
 {{< details summary="general solution" >}}
 
-공사중 
+<img src="image2.png" width="70%" height="auto">
 
 <br>
 
-(1) $x\ne x'$ 
+(1) $x\ne x'$ Boundary condition 을 만족하는 해의 형태를 구한다.
 
-Boundary condition 을 만족하는 해의 형태를 구한다.
+$$
+G\left(x,x'\right)=
+\begin{cases}
+    c_1(x')\cos kx & x < x' \\
+    c_2(x')\cos (l-k)x & x > x'
+\end{cases}
+$$
 
-(2) $x=x'$
+(2) $x=x'$ Jump condition & 연속성을 적용한다.
 
-Jump condition 을 적용한다.
+$$
+-(l-k')c_2(x')\sin (l-k)x'+kc_1(x')\sin kx'=1
+$$
 
-연속성을 이용한다.
+$$
+c_2(x')\cos (l-k)x'=c_1(x')\cos kx'
+$$
+
+$$
+c_1\left(x'\right)
+=\frac{\cos k\left(x'-l\right)}{k\sin kl},\quad c_2\left(x'\right)
+=\frac{\cos kx'}{k\sin kl}
+$$
 
 따라서,
+
+$$
+G\left(x,x'\right)=
+\begin{cases}
+    \cfrac{\cos k\left(x'-l\right)}{k\sin kl}\cos kx & x < x' \\ 
+    \cfrac{\cos kx'}{k\sin kl}\cos k\left(x-l\right) & x > x'
+\end{cases}
+$$
+
+<hr>
 
 {{< /details >}}
 
@@ -331,8 +363,7 @@ $$
 $$
 G\left(x,x'\right)=
 \begin{cases}
-    \cfrac{\cos k\left(x'-l\right)}{k\sin kl}\cos kx & x < x'
-    \\ 
+    \cfrac{\cos k\left(x'-l\right)}{k\sin kl}\cos kx & x < x' \\ 
     \cfrac{\cos kx'}{k\sin kl}\cos k\left(x-l\right) & x > x'
 \end{cases}
 $$

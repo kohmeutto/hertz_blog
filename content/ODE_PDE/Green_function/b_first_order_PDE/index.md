@@ -25,7 +25,7 @@ $$
 
 위 그린함수의 형태를 그려보면 다음과 같다.
 
-<img src="image1.png" width="35%" height="auto">
+<img src="image1.png" width="60%" height="auto">
 
 ℹ️ 선형연산자 L이 1차 미분일 경우, $G\left(x,x'\right)$는 $x=x'$에서 불연속이다.
 
@@ -34,7 +34,7 @@ $$
 ### 2. Solution method
 
 $$
-L=\frac{d}{dx}+q\left(x\right)
+L=\frac{\partial}{\partial x}+q\left(x\right)
 $$
 
 (1) $x\ne x'$
@@ -89,20 +89,23 @@ $$
 해석범위는 $x\in\left\lbrack a,\infty\right)$이고, 초기값 $G\left(a,x'\right)=0$이다.  $G\left(x,x'\right)$을 구하여라.
 
 $$
-\frac{d}{dx}G\left(x,x'\right)=\delta\left(x-x'\right)
+\frac{\partial}{\partial x}G\left(x,x'\right)=\delta\left(x-x'\right)
 $$
 
 {{< details summary="sol" >}}
+
+<img src="image2.png" width="60%" height="auto">
+
+<br>
 
 (1) $x\ne x'$
 
 boundary condition 적용하면,
 
 $$
-G\left(x,x'\right)=
-\begin{cases}
-  0 & x < x'
-  \\ 
+G\left(x,x'\right)
+=\begin{cases}
+  0 & x < x' \\ 
   c_2 & x > x'
 \end{cases}
 $$
@@ -118,10 +121,9 @@ $$
 따라서,
 
 $$
-G\left(x,x'\right)=
-\begin{cases}
-  0 & x < x'
-  \\
+G\left(x,x'\right)
+=\begin{cases}
+  0 & x < x' \\
   1 & x > x'
 \end{cases}
 $$

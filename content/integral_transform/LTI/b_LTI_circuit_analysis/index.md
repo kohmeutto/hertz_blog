@@ -171,7 +171,7 @@ $$
 $$
 G(t,t')=G(t)=\begin{cases}
 c_{1}e^{-t}+c_2e^{-4t} & t > t'\\
-c_{3}(t')e^{-t}+c_4e^{-4t} & 0\le t < t'
+c_{3}e^{-t}+c_4e^{-4t} & 0\le t < t'
 \end{cases}
 $$
 
