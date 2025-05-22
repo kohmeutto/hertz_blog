@@ -5,9 +5,7 @@ weight = 4
 
 ---
 
-Find the general solution of the given differential equations. Don't evaluate the integral that defines $ y_{p}(x)$.
-
-**example1-1)**
+**example1) 특수해를 구하여라.**
 
 $$y''-16y=xe^{-2x}, \quad x\in(-∞,∞)$$
 
@@ -42,8 +40,7 @@ $$
 $$
 G\left(x,x'\right)=
 \begin{cases}
-    c_1\left(x'\right)e^{4x} & x < x'
-    \\
+    c_1\left(x'\right)e^{4x} & x < x' \\
     c_2\left(x'\right)e^{-4x} & x > x'
 \end{cases}
 $$
@@ -75,8 +72,6 @@ $$
 =-\frac{e^{4x}}{8}\int_{x}^{\infty}dx'\left\lbrack x'e^{-6x'}\right\rbrack-\frac{e^{-4x}}{8}\int_{-\infty}^{x}dx'\left\lbrack x'e^{2x'}\right\rbrack
 $$
     
-문제에서는 전개하지 않아도 된다 했으나, 위의 결과와 비교해 본다.
-    
 $$
 \int_{x}^{\infty}dx'\left\lbrack x'e^{-6x'}\right\rbrack=\left\lbrack-\frac16x'e^{-6x'}-\frac{1}{36}e^{-6x'}\right\rbrack_{x}^{\infty}=\frac16xe^{-6x}+\frac{1}{36}e^{-6x}
 $$
@@ -97,7 +92,7 @@ $$
 
 <hr>
 
-**example1-2)**
+**example2) 특수해를 구하여라.**
 
 $$y''+2y'+y=e^{-x}, x\in[0,∞)$$
 
@@ -159,8 +154,7 @@ $$
 $$
 G\left(x,x'\right)=
 \begin{cases}
-    0 & x < x'
-    \\
+    0 & x < x' \\
     e^{x'}\left(-x'+x\right)e^{-x} & x > x'
 \end{cases}
 $$
@@ -181,7 +175,7 @@ $$
 
 <hr>
 
-**example1-3)**
+**example3) 특수해를 구하여라. 단, 적분을 수행하지 않아도 된다.**
 
 $$y''+9y=x+\sin x,\quad x\in[0,∞)$$
 
@@ -199,6 +193,8 @@ $$
 y_{p2}=\frac{1}{D^2+9}\operatorname{Im}\left\lbrack e^{jx}\right\rbrack=\operatorname{Im}\left\lbrack\frac18e^{jx}\right\rbrack=\frac18\sin x
 $$
 
+<hr>
+
 {{< /details >}}
     
 {{< details summary="GF" >}}
@@ -208,24 +204,58 @@ $$
 $$
 \left(D^2+9\right)G\left(x,x'\right)=0
 $$
-    
+
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    0 & x < x' \\
+    c(x')(a\cos 3x+b\sin 3x) & x > x'
+\end{cases}
+$$
+
 (2) $x=x'$
 
-qqq
+<br>
+
+Continuous
+
+$$
+G\left(x,x'\right)
+=\begin{cases}
+    0 & x < x' \\
+    c(x')\sin 3(x-x') & x > x'
+\end{cases}
+$$
+
+Jump condition
+
+$$
+3c(x')=1\implies c(x')=\frac13
+$$
 
 (3) $y_{p}(x)$
 
-qqq
-
 <img src="image1-3.png" width="65%" height="auto">
 
+$$
+y_{p}=\int_0^{x}dx'\left\lbrack\frac13\sin3\left(x-x'\right)\cdot(x'+\sin x')\right\rbrack
+$$
+
+$$
+=\frac19x+\frac18\sin x-\frac{17}{216}\sin3x
+$$
+
+<br>
+
+위에서 구한 특수해와 다름을 확인히라. 바로 아래 문제를 풀면 그 이유에 대해 생각해 볼 수 있다.
+  
 {{< /details >}}
 
-<hr>
+---
 
-**example2) 중요**
+**example4) 최종해를 구하여라.**
 
-Solve the initial-value problem
+Solve the initial-value problem, $x\in[0,∞)$
 
 $$
 y''+4y=\sin2x,\quad y\left(0\right)=1,\quad y'\left(0\right)=-2
@@ -331,7 +361,7 @@ $$
 =-\frac{x}{4}\cos2x+\frac18\sin2x
 $$
     
-특수해
+일반해
 
 $$
 y_{h}=c_1\cos2x+c_2\sin2x
@@ -357,13 +387,17 @@ $$
 y=\cos2x-\frac78\sin2x-\frac{x}{4}\cos2x
 $$
 
+<br>
+
+특수해가 다르더라도, 최종해는 동일함을 알 수 있다. 이는 그린함수를 사용하여 특수해를 구할 떄, 경계가 0이라는 특정한 조건을 사용하기 때문이다. 그러나 결국 최종해에 실제 boundary 값이 적용되기 때문에, 최종해의 결과는 동일하다.
+
 {{< /details >}}
 
 <hr>
 
-**example3) 매우중요**
+**example5) 특수해를 구하여라.**
 
-Solve the initial-value problem
+Solve the initial-value problem,  $x\in[0,∞)$
 
 $$
 y''+4y=f\left(x\right),\quad y\left(0\right)=1,\quad y'\left(0\right)=-2
@@ -374,10 +408,7 @@ where the forcing function f is piecewise defined:
 $$
 f\left(x\right)
 =\begin{cases}
-    0 & x < 0
-    \\
-    \sin2x & 0 \le x \le 2\pi
-    \\
+    \sin2x & 0 \le x \le 2\pi \\
     0 & x > 2\pi
 \end{cases}
 $$
@@ -393,19 +424,9 @@ G\left(x,x'\right)
 \end{cases}
 $$
     
-(1) $x<0$
+<br>
     
-<img src="image3-1.png" width="65%" height="auto">
-
-$$
-y_{p}=\int_0^{2\pi}dx'\left\lbrack0\cdot\sin2x'\right\rbrack=0
-$$
-    
-적분범위를 유심히 살펴본다.
-
-<br><br>
-    
-(2) $0\le x\le2\pi$
+(1) $0\le x\le2\pi$
 
 <img src="image3-2.png" width="65%" height="auto">
     
@@ -417,7 +438,7 @@ $$
 =-\frac{x}{4}\cos2x+\frac18\sin2x
 $$
     
-(3) $2\pi < x$
+(2) $2\pi < x$
 
 <img src="image3-3.png" width="65%" height="auto">
     
@@ -437,7 +458,7 @@ $$
 
 <hr>    
 
-**example4)**
+**example6) 특수해를 구하여라.**
 
 Solve the boundary-value problem
 
@@ -489,12 +510,16 @@ $$
 $$
 =\sin2x\int_0^{x}dx'\left\lbrack\cos2x'\right\rbrack+\cos2x\int_{x}^{\frac{\pi}{2}}dx'\left\lbrack\sin2x'\right\rbrack
 $$
+
+$$
+=\frac12(1+\cos 2x)
+$$
     
 {{< /details >}}
 
 <hr>
 
-**example5)**
+**example7) 특수해를 구하여라.**
 
 Solve the boundary-value problem
 

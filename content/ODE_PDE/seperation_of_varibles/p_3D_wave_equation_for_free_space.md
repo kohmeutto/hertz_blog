@@ -16,7 +16,7 @@ $$
 - 파수 중첩의 해
 
 $$
-u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
+u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\vec{k}\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
 $$
 
 - 주파수 중첩의 해
@@ -76,9 +76,9 @@ u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\in
 $$
 
 $$
-=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}dk_{x}dk_{y}dk_{z}\left\lbrack c\left(k_{x},k_{y},k_{z}\right)e_{}^{i\left(k_{x}x+k_{y}y+k_{z}z\right)}\left(d_1e^{_{}-i\omega t}+d_2e^{_{}+i\omega t}\right)\right\rbrack
+=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}dk_{x}dk_{y}dk_{z}\left\lbrack c\left(k_{x},k_{y},k_{z}\right)e^{i\left(k_{x}x+k_{y}y+k_{z}z\right)}\left(d_1e^{-i\omega t}+d_2e^{+i\omega t}\right)\right\rbrack
 $$
 
 $$
-=\int_{-\infty}^{\infty}d^3\vec{k}\left\lbrack c_1\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\vec{k}\right)e_{}^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
+=\int_{-\infty}^{\infty}d^3\vec{k}\left\lbrack c_1\left(\vec{k}\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\vec{k}\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
 $$
