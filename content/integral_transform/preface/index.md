@@ -5,17 +5,11 @@ weight = 1
 
 ---
 
-아래 그림과 같이 적분 변환은 크게 2가지 관점으로 분류할 수 있다. 분류가 되었다고 해서, 2개는 서로 별개의 것이 아니라, 서로 연결되어 있음을 주의한다.
-
 <img src="image1.png" width="60%" height="auto">
 
 $$
-\left(Tf\right)\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack
+T\{f(t)\}\left(u\right)=\int_{t_1}^{t_2}dt\left\lbrack K\left(u,t\right)f\left(t\right)\right\rbrack
 $$
-
----
-
-### 1. Transformation
 
 - Fourier transformation using math
 
@@ -36,10 +30,6 @@ $$
 $$
 f\left(t\right)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}ds\left\lbrack F\left(s\right)e^{st}\right\rbrack
 $$
-
----
-
-### 2. Superposition
 
 - Convolution
 
