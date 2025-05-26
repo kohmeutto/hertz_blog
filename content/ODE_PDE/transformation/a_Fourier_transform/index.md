@@ -1,5 +1,5 @@
 +++
-title = "(a) Fourier transform for PDE"
+title = "(a) Fourier transform"
 weight = 4
 +++
 

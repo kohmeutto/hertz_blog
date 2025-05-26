@@ -1,5 +1,5 @@
 +++
-title = "(b) Phasor transform for ODE"
+title = "(b) Phasor transform"
 weight = 1
 +++
 
@@ -64,7 +64,31 @@ $$
 
 ---
 
-**example1)**
+**example1-1)**
+
+$$
+y''-y'-2y=e^{ix}
+$$
+
+{{< details summary="sol" >}}
+
+$$
+\left(-1-i-2\right)\underline{y_p}=1
+$$
+
+$$
+\underline{y_p}=-\frac{1}{3+i}=-\frac{3-i}{10}
+$$
+
+$$
+y_{p}=-\frac{3-i}{10}e^{ix}
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example1-2)**
 
 $$
 y''-y'-2y=\cos x
@@ -88,8 +112,27 @@ $$
 
 {{< /details >}}
 
+**example2-1)**
 
-**example2)**
+$$
+y''-3y'-4y=-ie^{i2x}
+$$
+
+{{< details summary="sol" >}}
+
+$$
+(-4-6i-4)\underline{y_p}=-1i
+$$
+
+$$
+y_p=\frac{i}{8+6i}e^{i2x}
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example2-2)**
 
 $$
 y''-3y'-4y=\sin 2x
@@ -102,7 +145,7 @@ $$
 $$
 
 $$
-y_p=\operatorname{Re}\left\lbrack\frac{-i}{-4-6i-4}e^{i2x}\right\rbrack=\operatorname{Re}\left\lbrack\frac{-8i+6}{100}\left(\cos x+i\sin x\right)\right\rbrack=\frac{3}{50}\cos x+\frac{2}{25}\sin x
+y_p=\operatorname{Re}\left\lbrack\frac{i}{8+6i}e^{i2x}\right\rbrack=\operatorname{Re}\left\lbrack\frac{8i-6}{100}\left(\cos x+i\sin x\right)\right\rbrack=-\frac{3}{50}\cos x-\frac{2}{25}\sin x
 $$
 
 <hr>
@@ -138,11 +181,11 @@ $$
 {{< details summary="sol" >}}
 
 $$
-(-9+25)\underline{y_p}=1
+(-9+25)\underline{y_p}=32
 $$
 
 $$
-y_p=\operatorname{Re}\left\lbrack\frac{1}{16}e^{i3x}\right\rbrack=\frac{1}{16}\cos 3x
+y_p=\operatorname{Re}\left\lbrack\frac{32}{16}e^{i3x}\right\rbrack=2\cos 3x
 $$
 
 <hr>
@@ -200,21 +243,23 @@ $$
 **example7)**
 
 $$
-x^2y''+11xy'+25y=3\sin3x
+x^2y''+xy'+25y=3\sin3x
 $$
 
 {{< details summary="sol" >}}
 
 $$
-\left(s^2-10s+25\right)\underline{y_p}=-1i
+\left(s^2+25\right)\underline{y_p}=-3i
 $$
 
 $$
-\underline{y_p}=\frac{1}{\left(s-5\right)^2\left|_{s=3i}\right.}=\frac{1}{34}
+\underline{y_p}=\frac{-3i}{\left(s-5i\right)\left(s+5i\right)\left|_{s=3i}\right.}
+=-\frac{3}{16}i
 $$
 
 $$
-y_{p}=\operatorname{Re}\left\lbrack\frac{1}{34}\left(\cos x+i\sin x\right)\right\rbrack=\frac{1}{34}\cos x
+y_{p}=\operatorname{Re}\left\lbrack-\frac{3}{16}i\left(\cos x+i\sin x\right)\right\rbrack
+=\frac{3}{16}\sin x
 $$
 
 {{< /details >}}

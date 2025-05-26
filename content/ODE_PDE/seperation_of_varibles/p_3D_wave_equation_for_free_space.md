@@ -5,13 +5,11 @@ weight = 3
 
 ---
 
-3차원 파동방정식의 해는 아래와 같다.
-
 $$
 \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)
 $$
 
-자유 공간에서,
+위 연산은 초기조건이 주어지지 않았으므로, 해는 유일하지 않음을 상기해라. 최종해는 가능한 모든 해를 포괄하는 일반적인 형태라는 것을 알아야 한다. 자유 공간에서, 
 
 - 파수 중첩의 해
 
@@ -19,10 +17,10 @@ $$
 u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d^3k\left\lbrack c_1\left(\vec{k}\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\vec{k}\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
 $$
 
-- 주파수 중첩의 해
+- 주파수 중첩의 해 (공간에 대해 직관적인 정보를 포함하지 못함, 대체로 잘 안쓰임)
 
 $$
-u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}+c_2\left(\omega\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)}\right\rbrack
+u\left(\vec{r},t\right)=\int_{-\infty}^{\infty}d\omega \left[ \int_{S^2} d\Omega_{\vec{k}} \left[ A\left(\omega, \hat{k}\right)e^{i\left(\vec{k}\cdot\vec{r}-\omega t\right)} + B\left(\omega, \hat{k}\right)e^{i\left(\vec{k}\cdot\vec{r}+\omega t\right)} \right]\right]
 $$
 
 ---
@@ -40,11 +38,11 @@ $$
 $$
 
 $$
-\frac{\partial^2}{\partial x^2}X\left(x\right)=-k_{x}^2X\left(x\right),\quad X\left(x;k_{x}\right)=a_1e^{-ik_{x}x}+a_2e^{+ik_{x}x}
+k^2=k_{x}^2+k_{y}^2+k_{z}^2
 $$
 
 $$
-k^2=k_{x}^2+k_{y}^2+k_{z}^2
+\frac{\partial^2}{\partial x^2}X\left(x\right)=-k_{x}^2X\left(x\right),\quad X\left(x;k_{x}\right)=a_1e^{-ik_{x}x}+a_2e^{+ik_{x}x}
 $$
 
 $$

@@ -1,5 +1,5 @@
 +++
-title = "(a) Laplace transform for PDE"
+title = "(a) Laplace transform"
 weight = 3
 +++
 

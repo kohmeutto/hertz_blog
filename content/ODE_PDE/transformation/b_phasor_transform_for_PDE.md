@@ -7,7 +7,7 @@ weight = 2
 
 **example1) Lossless wave equation**
 
-아래 미분방정식의 해는 단일 주기와 파장을 가진다.
+아래 미분방정식의 해는 **단일 주기를 가지며, 실수**이다.
 
 $$
 \nabla^2u\left(\vec{r},t\right)=\frac{1}{v^2}\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)
@@ -49,7 +49,7 @@ $$
 
 **example2) Lossy wave equation**
 
-아래 미분방정식의 해는 단일 주기와 파장을 가진다.
+아래 미분방정식의 해는 **단일 주기를 가지며, 실수**이다.
 
 $$
 \nabla^2u\left(\vec{r},t\right)=\mu\epsilon\frac{\partial^2}{\partial t^2}u\left(\vec{r},t\right)+\mu\sigma\frac{\partial}{\partial t}u\left(\vec{r},t\right)

@@ -63,4 +63,4 @@ $$
 u\left(x,t\right)=c\int_{-\infty}^{\infty}dk\left\lbrack e_{}^{-\left(Dtk^2-ixk\right)}\right\rbrack=c\sqrt{\frac{\pi}{Dt}}e^{-\frac{x^2}{4Dt}}
 $$
 
-푸리에 변환을 이용한 풀이는 [(a) Fourier transform for PDE]({{% ref "ODE_PDE/transformation/a_Fourier_transform_for_PDE/index.md" %}}) 을 참고한다.
+푸리에 변환을 이용한 풀이는 [(a) Fourier transform for PDE]({{% ref "ODE_PDE/transformation/a_Fourier_transform/index.md" %}}) 을 참고한다.

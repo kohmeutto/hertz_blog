@@ -26,7 +26,7 @@ $$
 $$
 
 $$
-G\left(\vec{r},\vec{r}'\right)=\frac{1}{2\pi\left|\vec{\rho}\right|}=\frac{1}{2\pi\left|\vec{r}-\vec{r}'\right|^2},\quad\vec{\rho}=\vec{r}-\vec{r}'
+G\left(\vec{r},\vec{r}'\right)=\frac{1}{2\pi\left|\vec{\rho}\right|}=\frac{1}{2\pi\left|\vec{r}-\vec{r}'\right|},\quad\vec{\rho}=\vec{r}-\vec{r}'
 $$
 
 ---
