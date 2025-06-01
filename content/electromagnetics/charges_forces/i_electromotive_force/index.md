@@ -138,6 +138,75 @@ $$
 
 ---
 
+### 4. Practice
+
+**example1)** The wire shown in Fig. is in free space and carries a current I = 10 [A]. A 30-cm-long metal rod moves at a
+constant velocity $\vec{v}=\hat{z}3$ [m/s]. Find $V_{12}$
+
+<img src="image1.png" width="40%" height="auto">
+
+{{< details summary="sol" >}}
+
+$$
+\vec{B}=\hat{\rho}\frac{\mu I}{2\pi\rho}
+$$
+
+움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
+
+$$
+V_{12}=\int_{2'}^{1'} d\vec{l}\cdot\left[\vec{v}\times\vec{B}\right]
+=-\int_{2'}^{1'} d\rho\left[v\cdot\frac{\mu I}{2\pi\rho}\right]
+=-\frac{15\mu}{\pi}\int_{0.4}^{0.1} d\rho\left[\frac{1}{\rho}\right]
+=\frac{15\mu}{\pi}\ln4
+$$
+
+<hr>
+
+{{< /details >}}
+
+**example2)** The rectangular loop shown in Fig. has a constant width l, but its length $x_0$ increases with time as a conducting bar slides at a uniform velocity u in a static magnetic field $B=\hat{z}B_0x$. Note that B increases linearly with x. The bar starts from x = 0 at t = 0. Find the motional emf between terminals 1 and 2 and the current I flowing through the resistor R. Assume that the loop resistance is ignored.
+
+<img src="image2.png" width="60%" height="auto">
+
+{{< details summary="sol1" >}}
+
+움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
+
+<br><br>
+
+$$
+V_{emf}=\int_{3'}^{4'} d\vec{l}\cdot\left[\vec{v}\times\vec{B}\right]
+=-\int_{3'}^{4'} dy\left[v\cdot B_0x\right]
+=-lB_0vx
+=-lB_0v^2t
+$$
+
+<hr>
+
+{{< /details >}}
+
+{{< details summary="sol2" >}}
+
+움직이는 물체에 대한 해석으로, 라그랑지안 관점에서 오일리안 기술법을 사용한다.
+
+<br><br>
+
+$$
+V_{emf}
+=-\frac{d\Phi_B}{dt}
+=-\frac{d}{dt}\int_{s'} d^2\vec{s}\cdot\vec{B}
+=-\frac{d}{dt}\int_{0}^{l}dy\int_{0}^{x}dx'[B_0x']
+$$
+
+$$
+=-l\frac{d}{dt}\left(\frac{B_0x^2}{2}\right)
+=-lB_0v^2t
+$$
+
+{{< /details >}}
+
+---
+
 [조금은 느리게 살자: 패러데이의 전자기 유도 법칙(Faraday's Law of Electromagnetic Induction)](https://ghebook.blogspot.com/2010/08/faradays-law-of-electromagnetic.html)
 
 [[수학, 계산] 벡터 항등식-2탄 계산 — Steemit](https://steemit.com/kr-math/@beoped/5jyraq-2)

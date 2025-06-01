@@ -11,7 +11,7 @@ weight = 2
 
 ### 1. Material derivative
 
-![](image-20241112-090038.png)
+![](image1.png)
 
 <br>
 
