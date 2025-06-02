@@ -1,6 +1,6 @@
 +++
 title = "(r) EMF & Voltage"
-weight = 5
+weight = 6
 +++
 
 ---
@@ -18,16 +18,16 @@ weight = 5
 
 <br>
 
-아래 식은 운동프레임에서 라그랑지안 관점의 유효 전기장(E')을 정지프레임에서의 오일리안 기술법으로 표현한 것이다.
+아래 식은 정지 프레임에서 전자기 유도를 설명하는 패러데이 법칙의 일반적인 형태" 또는 "물질 미분 개념을 통해 유도된 정지 프레임에서의 패러데이 법칙이다.
 
 $$
-\oint_{C}d\vec{l}\cdot\vec{E}'=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
+\oint_{C}d\vec{l}\cdot\vec{E}=-\frac{\partial}{\partial t}\Phi_{B}+\oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
 $$
 
 만약 **주변 자기장 $\vec{B}$ 자체가 시간에 따라 변하지 않는다면**, 즉 변압 기전력의 원인이 없다면, 식은 다음과 같이 간단해진다.
 
 $$
-\oint_{C}d\vec{l}\cdot\vec{E}' = \oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
+\oint_{C}d\vec{l}\cdot\vec{E} = \oint_{C}d\vec{l}\cdot\vec{v}\times\vec{B}
 $$
 
 $\vec{v} \times \vec{B}$ 는 자기장 속에서 움직이는 전하에게 작용하는 **자기력**을 단위 전하당 힘으로 나타낸 것이다. 이 힘이 전하들을 도체 안에서 움직이게 해서 기전력을 만들어낸다. 전하들은 이 자기력과 막대 내부에 형성된 정전기장에 의한 힘($q\vec{E}_{\text{electrostatic}}$)이 균형을 이룰 때까지 움직인다.
