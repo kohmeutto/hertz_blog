@@ -1,5 +1,5 @@
 +++
-title = "Charges and forces"
+title = "Electromotive force"
 weight = 2
 +++
 
