@@ -13,28 +13,28 @@ weight = 5
 
 Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변위벡터로 변환(mapping)하는 연산자이다.
 
-- **u 매개변수 공간** 에서, 미소변위벡터
+- **u 매개변수 공간** 매핑 위치에서, 미소변위벡터
 
 $$
-d\vec{u}=\begin{bmatrix}
+d\vec{u}_p=\begin{bmatrix}
     du_1 \\ du_2 \\ du_3
 \end{bmatrix}
 =\hat{u}_1du_1+\hat{u}_2du_2+\hat{u}_3du_3
 $$
 
-- **v 실 공간** 에서, **매핑된 위치** 에서의 미소변위벡터
+- **v 실 공간** 매핑 위치에서, 미소변위벡터
 
 $$
-d\vec{v}=\begin{bmatrix}
+d\vec{v}_p=\begin{bmatrix}
     dv_1 \\ dv_2 \\ dv_3
 \end{bmatrix}
 =\hat{v}_1dv_1+\hat{v}_2dv_2+\hat{v}_3dv_3
 $$
 
-- **변환(mapping) 연산자 작용, [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv**
+- **변환(mapping) 연산자 작용, **매핑 위치**에 해당하는  [u 매개변수 공간] 미소변화량벡터 du → [v 좌표계 공간] 미소변위벡터 dv**
 
 $$
-d\vec{v}=d\vec{u}\cdot\nabla_{u}\vec{v}
+d\vec{v}_{p}=[d\vec{u}\cdot\nabla_{u}\vec{v}]_p
 $$
 
 $$
@@ -79,14 +79,16 @@ $$
 ### 2. Scale factor
 
 $$
-d\vec{v}=du_1\frac{\partial\vec{v}}{\partial u_1}+du_2\frac{\partial\vec{v}}{\partial u_2}+du_3\frac{\partial\vec{v}}{\partial u_3}
+d\vec{v}_p=du_1\frac{\partial\vec{v}}{\partial u_1}+du_2\frac{\partial\vec{v}}{\partial u_2}+du_3\frac{\partial\vec{v}}{\partial u_3}
 $$
 
 **Jacobian 의 각 열벡터는 실 공간에 유도된 새로운 기저 벡터** 라고 하였다. 
 위의 기저를 normalize 하고, 실 공간의 미소길이벡터 $d\vec{v}$ 를 표현해 보자.
 
 $$
-d\vec{v}=\hat{e}_1h_1du_1+\hat{e}_2h_2du_2+\hat{e}_3h_3du_3
+d\vec{v}_p
+=\vec{h}_1du_1+\vec{h}_2du_2+\vec{h}_3du_3
+=\hat{e}_1h_1du_1+\hat{e}_2h_2du_2+\hat{e}_3h_3du_3
 $$
 
 $$
@@ -104,19 +106,19 @@ $$
 - **매개변수 공간** 에서, 미소변위벡터
 
 $$
-d\vec{l}_C=\left[d\rho,d\phi,dz\right]^T
+d\vec{l}_{C}=\left[d\rho,d\phi,dz\right]^T
 $$
 
-- **실 공간** 에서, **매핑된 위치** 에서의 미소변위벡터
+- **실 공간** 에서, 미소변위벡터
 
 $$
-d\vec{l}_D=\left[dx,dy,dz\right]^T
+d\vec{l}_{D}=\left[dx,dy,dz\right]^T
 $$
 
-- **Mapping, [원통좌표계 매개변수 공간] → [데카르트좌표계 실 공간]**
+- **Mapping, 매핑 위치 에서의 [원통좌표계 매개변수 공간] → [데카르트좌표계 실 공간]**
 
 $$
-d\vec{l}_D=\left(d\vec{l}_C\cdot\nabla\right)\vec{l}_D
+d\vec{l}_{D,p}=\left[\left(d\vec{l}_C\cdot\nabla\right)\vec{l}_D\right]_p
 $$
 
 $$
@@ -210,11 +212,11 @@ $$
 **정리하면,**
 
 $$
-d\vec{l}_C\xrightarrow{\text{mapping: }\cdot\nabla_{C}}d\vec{l}_D
+d\vec{l}_{C,p}\xrightarrow{\text{mapping: }\cdot\nabla_{C}}d\vec{l}_{D,p}
 $$
 
 $$
-d\vec{l}_D
+d\vec{l}_{D,p}
 =\begin{bmatrix}
     \cos\phi' \\ \sin\phi' \\ 0
 \end{bmatrix}d\rho
@@ -228,12 +230,6 @@ $$
 
 $$
 =\hat{\rho}d\rho+\hat{\phi}\rho' d\phi+\hat{z}dz
-$$
-
-$$
-=\hat{x}dx
-+\hat{y}dy
-+\hat{z}dz
 $$
 
 $$
@@ -256,16 +252,16 @@ $$
 d\vec{l}_S=\left[dr,d\theta,d\phi\right]^T
 $$
 
-- **실 공간** 에서, **매핑된 위치** 에서의 미소변위벡터
+- **실 공간** 에서, 미소변위벡터
 
 $$
 d\vec{l}_D=\left[dx,dy,dz\right]^T
 $$
 
-- **Mapping, [원통좌표계 매개변수 공간] → [데카르트좌표계 실 공간]**
+- **Mapping, 매핑 위치 에서의 [원통좌표계 매개변수 공간] → [데카르트좌표계 실 공간]**
 
 $$
-d\vec{l}_D=\left(d\vec{l}_S\cdot\nabla\right)\vec{l}_D
+d\vec{l}_{D,p}=\left[\left(d\vec{l}_S\cdot\nabla\right)\vec{l}_{D}\right]_{p}
 $$
 
 $$
@@ -359,11 +355,11 @@ $$
 **정리하면,**
 
 $$
-d\vec{l}_S\xrightarrow{\text{mapping: }\cdot\nabla_{S}}d\vec{l}_D
+d\vec{l}_{S,p}\xrightarrow{\text{mapping: }\cdot\nabla_{S}}d\vec{l}_{D,p}
 $$
 
 $$
-d\vec{l}_D
+d\vec{l}_{D,p}
 =\begin{bmatrix}
     \sin\theta'\cos\phi' \\
     \sin\theta'\sin\phi' \\
@@ -383,12 +379,6 @@ $$
 
 $$
 =\hat{r}dr+\hat{\theta}r' d\theta+\hat{\phi}r'\sin\theta'd\phi
-$$
-
-$$
-=\hat{x}dx
-+\hat{y}dy
-+\hat{z}dz
 $$
 
 아래 이미지의 이해는 매우 중요하다.
