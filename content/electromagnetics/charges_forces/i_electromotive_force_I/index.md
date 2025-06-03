@@ -42,12 +42,12 @@ weight = 4
   
 $$
 \nabla\times\vec{E}
-=-\frac{d}{dt}\vec{B}=-\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{B}
+=-\frac{D}{Dt}\vec{B}=-\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{B}
 $$
 
 $$
 \nabla\times\vec{H}
-=\vec{J}+\frac{d}{dt}\vec{D}=\vec{J}+\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{D}
+=\vec{J}+\frac{D}{Dt}\vec{D}=\vec{J}+\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{D}
 $$
 
 ---

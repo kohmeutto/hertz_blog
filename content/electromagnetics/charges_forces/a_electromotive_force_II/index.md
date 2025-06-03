@@ -41,11 +41,11 @@ weight = 5
 - J'은 운동 프레임이서 측정되는 전류밀도이다.
   
 $$
-\nabla\times\vec{E}'=-\frac{d}{dt}\vec{B}'=-\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{B}'
+\nabla\times\vec{E}'=-\frac{D}{Dt}\vec{B}'=-\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{B}'
 $$
 
 $$
-\nabla\times\vec{H}'=\vec{J}'+\frac{d}{dt}\vec{D}'=\vec{J}'+\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{D}'
+\nabla\times\vec{H}'=\vec{J}'+\frac{D}{Dt}\vec{D}'=\vec{J}'+\left(\frac{\partial}{\partial t}+\vec{v}\cdot\nabla\right)\vec{D}'
 $$
 
 ---
