@@ -183,13 +183,13 @@ $$
 
 $$
 V_{emf}
-=-\frac{d\Phi_B}{dt}
-=-\frac{d}{dt}\int_{s} d^2\vec{s}\cdot\vec{B}
-=-\frac{d}{dt}\int_{0}^{l}dy\int_{0}^{x}dx[B_0x]
+=-\frac{D\Phi_B}{Dt}
+=-\frac{D}{Dt}\int_{s} d^2\vec{s}\cdot\vec{B}
+=-\frac{D}{Dt}\int_{0}^{l}dy\int_{0}^{x}dx[B_0x]
 $$
 
 $$
-=-l\frac{d}{dt}\left(\frac{B_0x^2}{2}\right)
+=-l\frac{D}{Dt}\left(\frac{B_0x^2}{2}\right)
 =-lB_0v^2t
 $$
 
