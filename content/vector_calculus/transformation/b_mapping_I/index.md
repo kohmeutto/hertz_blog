@@ -13,7 +13,7 @@ weight = 3
 
 아래 그림에서 왼쪽은 원통 매개변수 공간이다. 매개변수 공간이란 실제 공간이 아니다. 따라서, 저 매개변수 공간의 좌표를 실제 공간의 좌표로 변환(mapping)해야 한다. 
 
-<img src="image1.png" width="70%" height="auto">
+<img src="image1.png" width="65%" height="auto">
 
 ---
 
