@@ -254,13 +254,7 @@ $$
 
 $$
 d\vec{l}_{D}'=\left(d\vec{l}_S'\cdot\nabla_S\right)\vec{l}_{D}'
-$$
-
-$$
 = \vec{h}_r' dr' + \vec{h}_\theta' d\theta' + \vec{h}_\phi' d\phi'
-$$
-
-$$
 =\hat{r}' h_r' dr'+\hat{\theta}'h_\theta' d\theta'+\hat{\phi}' h_\phi' d\phi'
 $$
 
