@@ -29,19 +29,19 @@ weight = 4
 
 $$
 \begin{bmatrix}
-    d\rho\\ d\phi\\ dz
+    d\rho'\\ d\phi'\\ dz'
 \end{bmatrix} \rightarrow
 \begin{bmatrix}
-    d\rho \\ \rho d\phi \\ dz
+    d\rho' \\ \rho'd\phi' \\ dz'
 \end{bmatrix},\quad
-\hat{u}_\rho d\rho+\hat{u}_\phi d\phi+\hat{u}_z dz \rightarrow
-\hat{\rho}d\rho+\hat{\phi}\rho d\phi+\hat{z}z
+\hat{u}_\rho d\rho'+\hat{u}_\phi d\phi'+\hat{u}_z dz' \rightarrow
+\hat{\rho}'d\rho'+\hat{\phi}'\rho'd\phi'+\hat{z}'z'
 $$
 
 보정 계수를 $h_1, h_2, h_3$ 라고 하면,
 
 $$
-h_1=1,\quad h_2=\rho',\quad h_3=1
+h_1'=1,\quad h_2'=\rho',\quad h_3'=1
 $$
 
 ---
@@ -59,17 +59,17 @@ $$
 
 $$
 \begin{bmatrix}
-    dr \\ d\theta \\ d\phi
+    dr' \\ d\theta' \\ d\phi'
 \end{bmatrix} \rightarrow
 \begin{bmatrix}
-    dr \\ r'd\theta \\ r'\sin\theta' d\phi
+    dr' \\ r'd\theta' \\ r'\sin\theta' d\phi'
 \end{bmatrix}, \quad
 \hat{u}_rdr+\hat{u}_\theta d\theta+\hat{u}_\phi d\phi \rightarrow
-\hat{r}dr+\hat{\theta}r'd\theta+\hat{\phi}r'\sin\theta' d\phi
+\hat{r}'dr'+\hat{\theta}'r'd\theta'+\hat{\phi}'r'\sin\theta' d\phi'
 $$
 
-보정 계수를 $h_1, h_2, h_3$ 라고 하면,
+보정 계수를 $h_1', h_2', h_3'$ 라고 하면,
 
 $$
-h_1=1,\quad h_2=r',\quad h_3=r'\sin\theta'
+h_1'=1,\quad h_2'=r',\quad h_3'=r'\sin\theta'
 $$
