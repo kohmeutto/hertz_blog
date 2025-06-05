@@ -176,7 +176,7 @@ $$
 만약 u좌표계의 기저가 표준기저라고 하면,
 
 $$
-\sum_{i=1}^3\sum_{j=1}^3c_{i}\langle v_{j}|u_{i}\rangle]
+\sum_{i=1}^3\sum_{j=1}^3c_{i}\langle v_{j}|u_{i}\rangle
 =\begin{bmatrix}
     v_1\left\lbrack1\right\rbrack & v_1\left\lbrack2\right\rbrack & v_1\left\lbrack3\right\rbrack \\
     v_2\left\lbrack1\right\rbrack & v_2\left\lbrack2\right\rbrack & v_2\left\lbrack3\right\rbrack \\
