@@ -307,7 +307,7 @@ $$
     A_{r} \\ A_{\theta} \\ A_{\phi}
 \end{bmatrix}
 =\begin{bmatrix}
-    r \\ 0 \\ r\sin\theta
+    r \\ 0 \\ -r\sin\theta
 \end{bmatrix}
 $$
 
