@@ -198,9 +198,7 @@ $$
 
 아래 예제를 풀어보자.
 
-**example1)**
-
-Express vector $\vec{A}=\hat{x}\left(x+y\right)+\hat{y}\left(y-x\right)+\hat{z}z$  in spherical coordinates.
+**example1)** Express vector $\vec{A}=\hat{x}\left(x+y\right)+\hat{y}\left(y-x\right)+\hat{z}z$  in spherical coordinates.
 
 {{< details summary="sol" >}}
 
