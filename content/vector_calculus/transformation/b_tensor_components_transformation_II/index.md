@@ -11,32 +11,18 @@ weight = 7
 
 ### 0. 정리
 
-<img src="image1.png" width="50%" height="auto">
-
-- **데카르트 → 원통, 원통 → 구**
+**기저 집합, 데카르트 기준 원통 기저, 원통 기준 구 기저** 
 
 $$
-M_{CD}=\begin{bmatrix}
-    \cos\phi & \sin\phi & 0 \\
-    -\sin\phi & \cos\phi & 0 \\
-    0 & 0 & 1
-\end{bmatrix}, \quad 
-M_{CS}=\begin{bmatrix}
-    \sin\theta & 0 & \cos\theta \\
-    \cos\theta & 0 & -\sin\theta \\
-    0 & 1 & 0
-\end{bmatrix}
-$$
-
-- **원통 → 데카르트, 구 → 원통**
-
-$$
-M_{DC}=\begin{bmatrix}
+B_{D}^{C}
+=\begin{bmatrix}
     \cos\phi & -\sin\phi & 0 \\
     \sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
 \end{bmatrix},\quad
-M_{CS}=\begin{bmatrix}
+
+B_{C}^{S}
+=\begin{bmatrix}
     \sin\theta & \cos\theta & 0 \\
     0 & 0 & 1 \\
     \cos\theta & -\sin\theta & 0
@@ -211,55 +197,63 @@ $$
 
 ### 3. 데카르트 좌표계(D) → 구좌표계(S)
 
-데카르트 좌표계에서 구좌표계로의 **좌표 변환 행렬** $M_{SD}$ 는
+아래 예제를 풀어보자.
+
+**example1)**
+
+Express vector $\vec{A}=\hat{x}\left(x+y\right)+\hat{y}\left(y-x\right)+\hat{z}z$  in spherical coordinates.
+
+{{< details summary="sol" >}}
 
 $$
-M_{SD}=M_{SC}M_{CD}
+\hat{x}\left(x+y\right)+\hat{y}\left(y-x\right)+\hat{z}z=\hat{r}A_r+\hat{\theta}A_\theta+\hat{\phi}A_\phi
 $$
 
 $$
-M_{SD}=\begin{bmatrix}
-    \sin\theta & 0 & \cos\theta \\
-    \cos\theta & 0 & -\sin\theta \\
-    0 & 1 & 0
-\end{bmatrix}
 \begin{bmatrix}
-    \cos\phi & \sin\phi & 0 \\
-    -\sin\phi & \cos\phi & 0 \\
+    x+y \\
+    y-x \\
+    z
+\end{bmatrix}
+=\begin{bmatrix}
+    \cos\phi & -\sin\phi & 0 \\
+    \sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
 \end{bmatrix}
+\begin{bmatrix}
+    A_\rho \\
+    A_\phi \\
+    A_z
+\end{bmatrix}
 $$
 
-구좌표계에서 데카르트 좌표계로의 **좌표 변환 행렬** $M_{DS}$ 는
-
 $$
-M_{DS}=M_{DC}M_{CS}
-$$
-
-$$
-M_{DS}=\begin{bmatrix}
+\begin{bmatrix}
+    A_\rho \\
+    A_\phi \\
+    A_z
+\end{bmatrix}
+=\begin{bmatrix}
     \sin\theta & \cos\theta & 0 \\
     0 & 0 & 1 \\
     \cos\theta & -\sin\theta & 0
 \end{bmatrix}
 \begin{bmatrix}
-    \cos\phi & -\sin\phi & 0 \\
-    \sin\phi & \cos\phi & 0 \\
-    0 & 0 & 1
+    A_r \\
+    A_\theta \\
+    A_\phi
 \end{bmatrix}
 $$
 
+따라서,
 
----
-
-**example1)**
-
-Express vector $\vec{A}=\hat{x}\left(x+y\right)+\hat{y}\left(y-x\right)+\hat{z}z$ in spherical coordinates.
-
-{{< details summary="sol" >}}
-    
 $$
-M_{SD}=\begin{bmatrix}
+\begin{bmatrix}
+    A_r \\
+    A_\theta \\
+    A_\phi
+\end{bmatrix}
+=\begin{bmatrix}
     \sin\theta & 0 & \cos\theta \\
     \cos\theta & 0 & -\sin\theta \\
     0 & 1 & 0
@@ -269,19 +263,14 @@ M_{SD}=\begin{bmatrix}
     -\sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
 \end{bmatrix}
-=\begin{bmatrix}
-    \sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\
-    \cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\
-    -\sin\phi & \cos\phi & 0
-\end{bmatrix}
-$$
-
-좌표변환을 수행한다.
-
-$$
 \begin{bmatrix}
-    A_{R} \\ A_{\theta} \\ A_{\phi}
+    x+y \\
+    y-x \\
+    z
 \end{bmatrix}
+$$
+
+$$
 =\begin{bmatrix}
     \sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\
     \cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\
@@ -318,10 +307,10 @@ $$
 
 $$
 \begin{bmatrix}
-    A_{R} \\ A_{\theta} \\ A_{\phi}
+    A_{r} \\ A_{\theta} \\ A_{\phi}
 \end{bmatrix}
 =\begin{bmatrix}
-    R \\ 0 \\ r\sin\theta
+    r \\ 0 \\ r\sin\theta
 \end{bmatrix}
 $$
 
