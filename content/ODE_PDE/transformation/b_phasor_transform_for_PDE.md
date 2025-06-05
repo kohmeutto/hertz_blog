@@ -37,10 +37,14 @@ $$
 u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack
 $$
     
-만약, 1차원의 x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면,
+만약, 1차원의 +x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면,
+
+$$
+\underline u\left(x\right)=Ae^{+ik x}
+$$
     
 $$
-u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\int d\omega\left\lbrack c_1\left(\omega\right)e^{i\left(kx-\omega t\right)}+c_2\left(\omega\right)e^{-i\left(kx+\omega t\right)}\right\rbrack\right\rbrack
+u\left(x,t\right)=\operatorname{Re}\left\lbrack\int d\omega\left[c\left(\omega\right)e^{i\left(kx-\omega t\right)}\right\rbrack\right]
 $$
 
 {{< /details >}}
@@ -73,30 +77,40 @@ $$
 \left(\nabla^2+\omega^2\mu\underline{\epsilon}\right)\underline u\left(\vec{r}\right)=0
 $$
 
-$\underline{k}^2=\omega^2\mu\underline{\epsilon}$, $\underline{k}=k+i\kappa$  라고 하면,
+$\underline{\gamma}^2=-\omega^2\mu\underline{\epsilon}$, $\underline{\gamma}=-\alpha+i\beta$  라고 하면,
    
 $$
-\left(\nabla^2+\underline{k}^2\right)\underline u\left(\vec{r}\right)=0
+\left(\nabla^2-\underline{\gamma}^2\right)\underline u\left(\vec{r}\right)=0
 $$
     
 $$
-k=\omega\sqrt{\frac{\mu\epsilon}{2}}\left(\sqrt{1+\left(\frac{\sigma}{\omega\epsilon}\right)^2}+1\right)^{1/2}
+\alpha=\omega\sqrt{\frac{\mu\epsilon}{2}}\left(\sqrt{1+\left(\frac{\sigma}{\omega\epsilon}\right)^2}+1\right)^{1/2}
 $$
     
 $$
-\kappa=\omega\sqrt{\frac{\mu\epsilon}{2}}\left(\sqrt{1+\left(\frac{\sigma}{\omega\epsilon}\right)^2}-1\right)^{1/2}
+\beta=\omega\sqrt{\frac{\mu\epsilon}{2}}\left(\sqrt{1+\left(\frac{\sigma}{\omega\epsilon}\right)^2}-1\right)^{1/2}
 $$
     
 만약, 도전율이 매우 크다면(양도체),
     
 $$
-k=\kappa=\sqrt{\pi f\mu \sigma}
+\alpha=\beta=\sqrt{\pi f\mu \sigma}
 $$
     
 따라서,
     
 $$
 u\left(\vec{r},t\right)=\operatorname{Re}\left\lbrack\underline u\left(\vec{r}\right)e^{-i\omega t}\right\rbrack
+$$
+
+만약, 1차원의 +x방향으로 움직이고, 여러 주파수가 중첩이 되어 있다고 하면,
+
+$$
+\underline u\left(x\right)=Ae^{-\alpha x}e^{+i\beta x}
+$$
+
+$$
+u\left(x,t\right)=\operatorname{Re}\left[e^{-\alpha x}\int d\omega\left\lbrack c\left(\omega\right)e^{i\left(\beta x-\omega t\right)}\right\rbrack\right]
 $$
 
  {{< /details >}}
