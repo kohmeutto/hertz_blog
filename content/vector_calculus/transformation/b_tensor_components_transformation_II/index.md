@@ -20,7 +20,6 @@ B_{D}^{C}
     \sin\phi & \cos\phi & 0 \\
     0 & 0 & 1
 \end{bmatrix},\quad
-
 B_{C}^{S}
 =\begin{bmatrix}
     \sin\theta & \cos\theta & 0 \\
