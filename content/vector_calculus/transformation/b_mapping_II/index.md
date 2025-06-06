@@ -23,20 +23,14 @@ weight = 4
 - 왼쪽 그림과 같이, 매개변수 공간으로 표현한다면, 원래의 길이(scale)와 다르므로 보정해야 한다. 이 보정 계수를 scale factor 라고 한다.
 - 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 **물리적 의미를 가지는 미소변위벡터로 변환(mapping)** 한다.
 
-<img src="image1.png" width="50%" height="auto">
-
-<img src="image2.png" width="50%" height="auto">
-
 $$
-\begin{bmatrix}
-    d\rho'\\ d\phi'\\ dz'
-\end{bmatrix} \rightarrow
-\begin{bmatrix}
-    d\rho' \\ \rho'd\phi' \\ dz'
-\end{bmatrix},\quad
 \hat{u}_\rho d\rho'+\hat{u}_\phi d\phi'+\hat{u}_z dz' \rightarrow
 \hat{\rho}'d\rho'+\hat{\phi}'\rho'd\phi'+\hat{z}'z'
 $$
+
+<img src="image1.png" width="50%" height="auto">
+
+<img src="image2.png" width="50%" height="auto">
 
 보정 계수를 $h_1, h_2, h_3$ 라고 하면,
 
@@ -51,22 +45,16 @@ $$
 - 왼쪽 그림과 같이, 매개변수 공간으로 표현한다면, 원래의 길이(scale)와 다르므로 보정해야 한다. 이 보정 계수를 scale factor 라고 한다.
 - 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 **물리적 의미를 가지는 미소변위벡터로 변환(mapping)** 한다.
 
+$$
+\hat{u}_rdr+\hat{u}_\theta d\theta+\hat{u}_\phi d\phi \rightarrow
+\hat{r}'dr'+\hat{\theta}'r'd\theta'+\hat{\phi}'r'\sin\theta' d\phi'
+$$
+
 <img src="image3.png" width="50%" height="auto">
 
 <img src="image4.png" width="50%" height="auto">
 
 <img src="image5.png" width="50%" height="auto">
-
-$$
-\begin{bmatrix}
-    dr' \\ d\theta' \\ d\phi'
-\end{bmatrix} \rightarrow
-\begin{bmatrix}
-    dr' \\ r'd\theta' \\ r'\sin\theta' d\phi'
-\end{bmatrix}, \quad
-\hat{u}_rdr+\hat{u}_\theta d\theta+\hat{u}_\phi d\phi \rightarrow
-\hat{r}'dr'+\hat{\theta}'r'd\theta'+\hat{\phi}'r'\sin\theta' d\phi'
-$$
 
 보정 계수를 $h_1', h_2', h_3'$ 라고 하면,
 

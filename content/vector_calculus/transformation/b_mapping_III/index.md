@@ -16,18 +16,14 @@ Jacobian은 매개변수 공간의 미소변위벡터를 실 공간의 미소변
 - **u 매개변수 공간** 매핑 위치에서, 미소변위벡터
 
 $$
-d\vec{u}'=\begin{bmatrix}
-    du_1' \\ du_2' \\ du_3'
-\end{bmatrix}
+d\vec{u}'
 =\hat{u}_1du_1'+\hat{u}_2du_2'+\hat{u}_3du_3'
 $$
 
 - **v 실 공간** 매핑 위치에서, 미소변위벡터
 
 $$
-d\vec{v}'=\begin{bmatrix}
-    dv_1' \\ dv_2' \\ dv_3'
-\end{bmatrix}
+d\vec{v}'
 =\hat{v}_1'dv_1'+\hat{v}_2'dv_2'+\hat{v}_3'dv_3'
 $$
 
@@ -85,14 +81,14 @@ $$
 
 $$
 d\vec{v}'
-=\vec{h}_1'du_1'+\vec{h}_2'du_2'+\vec{h}_3'du_3'
-=\hat{h}_1'h_1du_1+\hat{h}_2'h_2du_2+\hat{h}_3'h_3du_3
+=\vec{h}_1du_1'+\vec{h}_2du_2'+\vec{h}_3du_3'
+=\hat{h}_1h_1du_1'+\hat{h}_2h_2du_2'+\hat{h}_3h_3du_3'
 $$
 
 $$
-\vec{h}_{j}'=\frac{\partial\vec{v}'}{\partial u_{j}'},\quad
-h_{j}'=\left|\vec{h}_{j}'\right|,\quad
-\hat{h}_{j}'=\frac{\vec{h}_{j}'}{h_{j}'}
+\vec{h}_{j}=\frac{\partial\vec{v}'}{\partial u_{j}'},\quad
+h_{j}=\left|\vec{h}_{j}\right|,\quad
+\hat{h}_{j}=\frac{\vec{h}_{j}}{h_{j}}
 $$
 
 이전 챕터에서 학습한 바, scale factor $h_j'$ 를 매개변수 공간 $u_j$ 방향의 미소 변화량에 곱하면, 실 공간에서의 미소 길이가 된다.
@@ -124,7 +120,7 @@ $$
 하나하나 씩 살펴보자.
 
 $$
-\vec{h}_{\rho}'
+\vec{h}_{\rho}
 =\begin{bmatrix}
     \cfrac{\partial x'}{\partial \rho'} \\
     \cfrac{\partial y'}{\partial \rho'} \\
@@ -140,7 +136,7 @@ $$
     \sin\phi' \\
     0
 \end{bmatrix} \implies
-h_\rho'=1,
+h_\rho=1,
 \hat{\rho}'
 =\begin{bmatrix}
     \cos\phi' \\
@@ -150,7 +146,7 @@ h_\rho'=1,
 $$
 
 $$
-\vec{h}_{\phi}'
+\vec{h}_{\phi}
 =\begin{bmatrix}
     \cfrac{\partial x'}{\partial \phi'} \\
     \cfrac{\partial y'}{\partial \phi'} \\
@@ -166,7 +162,7 @@ $$
     \cos\phi' \\
     0
 \end{bmatrix} \implies
-h_\phi' = \rho',
+h_\phi=\rho',
 \hat{\phi}'
 =\begin{bmatrix}
     -\sin\phi' \\
@@ -176,7 +172,7 @@ h_\phi' = \rho',
 $$
 
 $$
-\vec{h}_{z}'
+\vec{h}_{z}
 =\begin{bmatrix}
     \cfrac{\partial x'}{\partial z'} \\
     \cfrac{\partial y'}{\partial z'} \\
@@ -192,7 +188,7 @@ $$
     0 \\
     1
 \end{bmatrix} \implies
-h_z' = 1,
+h_z=1,
 \hat{z}'
 =\begin{bmatrix}
     0 \\
@@ -261,7 +257,7 @@ $$
 하나하나 씩 살펴보자.
 
 $$
-\vec{h}_{r}'
+\vec{h}_{r}
 =\begin{bmatrix}
     \cfrac{\partial x'}{\partial r'} \\
     \cfrac{\partial y'}{\partial r'} \\
@@ -277,7 +273,7 @@ $$
     \sin\theta'\sin\phi' \\
     \cos\theta'
 \end{bmatrix} \implies
-h_r'=1,
+h_r=1,
 \hat{r}'
 =\begin{bmatrix}
     \sin\theta'\cos\phi' \\
@@ -287,7 +283,7 @@ h_r'=1,
 $$
 
 $$
-\vec{h}_{\theta}'
+\vec{h}_{\theta}
 =\begin{bmatrix}
     \cfrac{\partial x'}{\partial \theta'} \\
     \cfrac{\partial y'}{\partial \theta'} \\
@@ -303,7 +299,7 @@ $$
     \cos\theta'\sin\phi' \\
     -\sin\theta'
 \end{bmatrix} \implies
-h_\theta' = r',
+h_\theta= r',
 \hat{\theta}'
 =\begin{bmatrix}
     \cos\theta'\cos\phi' \\
@@ -313,7 +309,7 @@ h_\theta' = r',
 $$
 
 $$
-\vec{h}_{\phi}'
+\vec{h}_{\phi}
 =\begin{bmatrix}
     \cfrac{\partial x'}{\partial \phi'} \\
     \cfrac{\partial y'}{\partial \phi'} \\
@@ -329,8 +325,8 @@ $$
     \cos\phi' \\
     0
 \end{bmatrix} \implies
-h_\phi' = r'\sin\theta',
-\hat{\phi}
+h_\phi= r'\sin\theta',
+\hat{\phi}'
 =\begin{bmatrix}
     -\sin\phi' \\
     \cos\phi' \\
