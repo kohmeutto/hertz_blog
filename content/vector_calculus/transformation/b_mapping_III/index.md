@@ -113,8 +113,8 @@ $$
 
 $$
 d\vec{l}_{D}'=\left(d\vec{l}_C'\cdot\nabla_{C}\right)\vec{l}_D'
-= \vec{h}_\rho' d\rho' + \vec{h}_\phi' d\phi' + \vec{h}_z' dz'
-=\hat{\rho}' h_\rho' d\rho'+\hat{\phi}'h_\phi' d\phi'+\hat{z}' h_z' dz'
+=\vec{h}_\rho d\rho'+\vec{h}_\phi d\phi'+\vec{h}_z dz'
+=\hat{\rho}' h_\rho d\rho'+\hat{\phi} h_\phi d\phi' + \hat{z}' h_z dz'
 $$
 
 하나하나 씩 살펴보자.
@@ -250,8 +250,8 @@ $$
 
 $$
 d\vec{l}_{D}'=\left(d\vec{l}_S'\cdot\nabla_S\right)\vec{l}_{D}'
-= \vec{h}_r' dr' + \vec{h}_\theta' d\theta' + \vec{h}_\phi' d\phi'
-=\hat{r}' h_r' dr'+\hat{\theta}'h_\theta' d\theta'+\hat{\phi}' h_\phi' d\phi'
+=\vec{h}_r dr'+\vec{h}_\theta d\theta'+\vec{h}_\phi d\phi'
+=\hat{r}'h_r dr'+\hat{\theta}'h_\theta d\theta'+\hat{\phi}'h_\phi d\phi'
 $$
 
 하나하나 씩 살펴보자.

@@ -35,7 +35,7 @@ $$
 보정 계수를 $h_1, h_2, h_3$ 라고 하면,
 
 $$
-h_1'=1,\quad h_2'=\rho',\quad h_3'=1
+h_1=1,\quad h_2=\rho',\quad h_3=1
 $$
 
 ---
@@ -56,8 +56,8 @@ $$
 
 <img src="image5.png" width="50%" height="auto">
 
-보정 계수를 $h_1', h_2', h_3'$ 라고 하면,
+보정 계수를 $h_1, h_2, h_3$ 라고 하면,
 
 $$
-h_1'=1,\quad h_2'=r',\quad h_3'=r'\sin\theta'
+h_1=1,\quad h_2=r',\quad h_3=r'\sin\theta'
 $$

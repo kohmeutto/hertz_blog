@@ -1,6 +1,6 @@
 +++
 title = "Operators"
-weight = 2
+weight = 4
 +++
 
 ---
