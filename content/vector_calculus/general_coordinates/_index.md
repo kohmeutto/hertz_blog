@@ -1,6 +1,6 @@
 +++
 title = "General coordinates"
-weight = 2
+weight = 3
 +++
 
 ---
