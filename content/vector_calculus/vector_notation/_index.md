@@ -1,6 +1,6 @@
 +++
 title = "Vector notation"
-weight = 1
+weight = 4
 +++
 
 ---

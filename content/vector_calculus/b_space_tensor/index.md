@@ -1,5 +1,5 @@
 +++
-title = "(b) Space & Coordinate & Vector & Tensor"
+title = "(b) Space & Tensor"
 weight = 2
 +++
 
