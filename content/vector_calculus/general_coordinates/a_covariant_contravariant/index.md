@@ -4,8 +4,8 @@ weight = 1
 +++
 
 ---
-
-이 챕터를 학습하려면, 이전 **Transformation**을 반드시 숙지해야 한다.
+ 
+이 챕터는 일반 좌표계에서 벡터를 표현하는 새로운 방식을 소개한다. **Orthogonal coordinates** 에 대한 기본적인 이해가 있다면 학습에 도움이 될 것이다
 
 ---
 
@@ -175,4 +175,6 @@ $$
 =v_i
 $$
 
+---
 
+[[일반 상대성이론] 공변(Covariant)과 반변(Contravariant)](https://m.blog.naver.com/jmj_0309/222311484066)
