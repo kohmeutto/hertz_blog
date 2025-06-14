@@ -1,5 +1,5 @@
 +++
-title = "(b) Gradient"
+title = "(i) Gradient"
 weight = 4
 +++
 

@@ -1,5 +1,5 @@
 +++
-title = "(b) Gradient"
+title = "(b) Curl"
 weight = 3
 +++
 
