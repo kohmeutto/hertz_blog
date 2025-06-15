@@ -41,7 +41,7 @@ $$
 
 여기에서, $\partial\vec{v}/\partial u^i$는 매개변수 $u^i$ 대한 벡터 궤적 $\vec{v}$ 의 **접선 벡터**를 의미하며, 이것이 **자연기저벡터(공변기저벡터)** $\vec{h}_i$를 의미한다.
 
-<img src="image1.png" width="50%" height="auto">
+<img src="image2.png" width="50%" height="auto">
 
 ---
 
@@ -57,7 +57,7 @@ $$
 
 여기에서 주의해야할 사항은, **$v_i$ 는 실공간에서 벡터를 반변 기저 벡터로 표현했을 때의 공변 성분이다.**
 
-<img src="image2.png" width="50%" height="auto">
+<img src="image2.png" width="80%" height="auto">
 
 ---
 
