@@ -9,6 +9,10 @@ weight = 1
 
 ---
 
+<img src="image1.png" width="60%" height="auto">
+
+---
+
 ### 1. 일반좌표계에서의 표기법
 
 **일반 좌표계에서 벡터의 "좌표값"은 벡터를 해당 좌표축 벡터의 방향으로 평행하게 분해했을 때의 각 축에 대한 스케일링 계수** 이다.
@@ -41,8 +45,6 @@ $$
 
 여기에서, $\partial\vec{v}/\partial u^i$는 매개변수 $u^i$ 대한 벡터 궤적 $\vec{v}$ 의 **접선 벡터**를 의미하며, 이것이 **자연기저벡터(공변기저벡터)** $\vec{h}_i$를 의미한다.
 
-<img src="image1.png" width="60%" height="auto">
-
 ---
 
 ### 3. 반변기저벡터
@@ -56,8 +58,6 @@ d\vec{v}=\vec{h}^idv_i=dv_i\nabla_v u^i
 $$
 
 여기에서 주의해야할 사항은, **$v_i$ 는 실공간에서 벡터를 반변 기저 벡터로 표현했을 때의 공변 성분이다.**
-
-<img src="image2.png" width="60%" height="auto">
 
 ---
 
@@ -143,7 +143,7 @@ $$
 
 ### 7. 공변, 반변 성분 추출
 
-<img src="image3.png" width="50%" height="auto">
+<img src="image2.png" width="50%" height="auto">
 
 **(1) 반변성분추출**
 

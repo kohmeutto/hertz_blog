@@ -24,8 +24,8 @@ weight = 4
 - 간단하게 설명하면, 매개변수 공간에서 표현한 미소변화량을 **물리적 의미를 가지는 미소변위벡터로 변환(mapping)** 한다.
 
 $$
-\hat{u}_\rho d\rho+\hat{u}_\phi d\phi+\hat{u}_z dz \rightarrow
-\hat{\rho}d\rho+\hat{\phi}\rho d\phi+\hat{z}z
+\hat{u}_\rho d\rho'+\hat{u}_\phi d\phi'+\hat{u}_z dz' \rightarrow
+\hat{\rho}'d\rho'+\hat{\phi}'\rho'd\phi'+\hat{z}'z'
 $$
 
 <img src="image1.png" width="50%" height="auto">
@@ -35,7 +35,7 @@ $$
 보정 계수를 $h_1, h_2, h_3$ 라고 하면,
 
 $$
-h_1=1,\quad h_2=\rho,\quad h_3=1
+h_1=1,\quad h_2=\rho',\quad h_3=1
 $$
 
 ---
@@ -47,7 +47,7 @@ $$
 
 $$
 \hat{u}_rdr+\hat{u}_\theta d\theta+\hat{u}_\phi d\phi \rightarrow
-\hat{r}dr+\hat{\theta}rd\theta+\hat{\phi}r\sin\theta d\phi
+\hat{r}'dr'+\hat{\theta}'r'd\theta'+\hat{\phi}'r'\sin\theta' d\phi'
 $$
 
 <img src="image3.png" width="50%" height="auto">
@@ -59,5 +59,5 @@ $$
 보정 계수를 $h_1, h_2, h_3$ 라고 하면,
 
 $$
-h_1=1,\quad h_2=r,\quad h_3=r\sin\theta
+h_1=1,\quad h_2=r',\quad h_3=r'\sin\theta'
 $$
