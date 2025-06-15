@@ -66,7 +66,7 @@ $$
 
 ---
 
-### 3. Gradient for scalar in an arbitrary space
+### 3. Gradient for scalar
 
 일반적으로, 임의의 공간 $q$ 에서, gradient가 무엇인지 살펴보자. 위의 정의에서 보다싶이 gradient 는 다음과 같이 표현된다.
 
@@ -116,20 +116,20 @@ $df=0$이 되려면, $d\vec{q}$ 와 $\nabla_q f$ 는 서로 수직이어야 한�
 전미분 연산자를 사용하여, 미소변위벡터를 표현해 보자.
 
 $$
-d\vec{r}
-=d\vec{u}\cdot\nabla_u\vec{r}
-=du^i\frac{\partial \vec{r}}{\partial u^i}
+d\vec{v}
+=d\vec{u}\cdot\nabla_u\vec{v}
+=du^i\frac{\partial \vec{v}}{\partial u^i}
 =\vec{h}_idu^i
 $$
 
-이것을 매개변수공간의 벡터와 실공간으로 해석하면, $d\vec{u}$ 는 매개변수 공간의 미소변위벡터이다. '$\cdot\nabla_u\vec{r}$'는 이 매개변수공간의 미소변위벡터를 **실공간의 미소변위벡터 $d\vec{r}$ 로 변환**하는 연산자로 볼 수 있으며, 2계 tensor 형태인 Jacobian 행렬이다.
+이것을 매개변수공간의 벡터와 실공간으로 해석하면, $d\vec{u}$ 는 매개변수 공간의 미소변위벡터이다. '$\cdot\nabla_u\vec{v}$'는 이 매개변수공간의 미소변위벡터를 **실공간의 미소변위벡터 $d\vec{v}$ 로 변환**하는 연산자로 볼 수 있으며, 2계 tensor 형태인 Jacobian 행렬이다.
 
 $$
 \vec{h}_i
-=\frac{\partial \vec{r}}{\partial u^i}
+=\frac{\partial \vec{v}}{\partial u^i}
 $$
 
-위 식의 의미를 자세하게 살펴보자. Jacobian 행렬의 각 열벡터에 해당하며, 이는 **매개변수 공간의 기저(직교 단위 벡터) $\hat{u}_i$가 실공간에서 $\partial \vec{r}/\partial u^i$ 의 기저로 변환되었음**을 나타낸다. $\partial \vec{r}/\partial u^i$ 의 기하학적 의미는 상당히 중요하다. 실공간에서, 매개변수 $u^i$의 변화에 따라, $\vec{r}$는 이동 궤적을 형성하게 된다. **$\partial \vec{r}/\partial u^i$는 이동 궤적의 접선 벡터임**을 알 수 있다. 추후, **공변기저백터로 사용**된다. 아래 이미지의 벡터 표기는 궤적에 대한 접선벡터를 보여준다.
+위 식의 의미를 자세하게 살펴보자. Jacobian 행렬의 각 열벡터에 해당하며, 이는 **매개변수 공간의 기저(직교 단위 벡터) $\hat{u}_i$가 실공간에서 $\partial \vec{v}/\partial u^i$ 의 기저로 변환되었음**을 나타낸다. $\partial \vec{v}/\partial u^i$ 의 기하학적 의미는 상당히 중요하다. 실공간에서, 매개변수 $u^i$의 변화에 따라, $\vec{v}$는 이동 궤적을 형성하게 된다. **$\partial \vec{v}/\partial u^i$는 이동 궤적의 접선 벡터임**을 알 수 있다. 추후, **공변기저백터로 사용**된다. 아래 이미지의 벡터 표기는 궤적에 대한 접선벡터를 보여준다.
 
 <img src="image2.png" width="50%" height="auto">
 
