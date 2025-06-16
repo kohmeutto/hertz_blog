@@ -7,8 +7,8 @@ weight = 6
 
 ### 1. Divergence
 
-- **어떤 위치에서, Flux의 발산 변화를 만드는** **근원을 구하고자 할 때**, 쓰는 연산자(도구).
-- 근원의 크기에 비례하여, **Flux**의 값이 변화한다.
+- **어떤 위치에서, 벡터장의 발산 변화를 만드는** **근원을 구하고자 할 때**, 쓰는 연산자(도구).
+- 근원의 크기에 비례하여, **벡터장**의 값이 변화한다.
 
 **(1) 첫번째 Maxwell equation**
 
@@ -41,17 +41,50 @@ $$
 =\int_{\triangle s}d^2\vec{s}\cdot\vec{A}
 $$
 
+여기에서 공통된 부분을 제거하면, 위에서 제시한 유용한 관계식을 얻을 수 있다. (수학적으로 엄밀한 연산자 정의라기보다는, Divergence 정리를 간략하게 표현하는 매우 유용한 방법이다.)
+
 ---
 
-### 3. Divergence for an orthogonal coordinate
+### 3. Divergence 연산의 해석 영역
+
+<img src="image1.png" width="40%" height="auto">
+
+$$
+\int_{V'}d^3V\nabla\cdot\vec{D}
+=\int_{V'}d^3V\left[\rho_v\right]
+=Q
+$$
+
+첫번째 항을 살펴보면,
+
+$$
+\int_{V'}d^3V\nabla\cdot\vec{D}
+=\int_{\text{흰색}}d^3V\nabla\cdot\vec{D}+\int_{\text{전하영역}}d^3V\nabla\cdot\vec{D}
+=0+\int_{\text{전하영역}}d^3V\left[\rho_v\right]
+=Q
+$$
+
+발산 정리를 적용하자.
+
+$$
+\int_{V'}d^3\vec{V}\nabla\cdot\vec{D}
+=\oint_{s'}d^2\vec{s}\cdot\vec{D}
+=Q
+$$
+
+위를 비교해 보면, **원천(근원)을 동일하게 포함한 상태에서, 해석 영역 (폐)면를 어떻게 잡던간에 적분결과는 동일**하다.
+
+---
+
+### 4. Divergence for an orthogonal coordinate
 
 **매개변수 공간 → 실공간 직교좌표계**
 
 $$
 \nabla_u\cdot\vec{A}
-:=\frac{\partial}{\partial u_i}A_i\implies
+=\frac{\partial}{\partial u_i}A_i\implies
 \nabla\cdot\vec{A}
-:=\frac{1}{h_1h_2h_3}\frac{\partial}{\partial u_i}\left(A_i\prod_{j\ne i}h_j\right)
+=\frac{1}{h_1h_2h_3}\frac{\partial}{\partial u_i}\left(A_i\prod_{j\ne i}h_j\right)
 $$
 
 proof)
