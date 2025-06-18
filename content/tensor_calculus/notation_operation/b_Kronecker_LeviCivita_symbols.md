@@ -42,9 +42,7 @@ $$
 
 ---
 
-**example1)**
-
-Evaluate $\delta_{jj}$
+**example1)** Evaluate $\delta_{jj}$
 
 sol)
 
@@ -52,9 +50,7 @@ $$
 \delta_{jj}=\delta_{11}+\delta_{22}+\delta_{33}=3
 $$
 
-**example2)**
-
-Simplify $\delta_{ij}\delta_{jk}$
+**example2)** Simplify $\delta_{ij}\delta_{jk}$
 
 sol)
 
@@ -74,6 +70,22 @@ $$
     & \quad\,0,\,\,\text{otherwise}\end{aligned}\right.
 $$
 
+**(1) unit vector expression**
+
+$$
+\vec{a}\times\vec{b}
+=a_i\hat{u}_i\times b_{j}\hat{u}_j
+=a_ib_{j}\hat{u}_i\times\hat{u}_j
+$$
+
+$$
+=a_ib_{j}\varepsilon_{ijk}\hat{u}_k
+=\varepsilon_{ijk}a_ib_{j}\hat{u}_k,\quad
+\text{since, }\hat{u}_{i}\times\hat{u}_{j}=\epsilon_{ijk}\hat{u}_{k}
+$$
+
+**(2) index expression**
+
 The relationship between  and the cross product is as follows:
 
 $$
@@ -82,12 +94,30 @@ $$
 \to a_2b_3-a_3b_2
 $$
 
+**(3) Determinent**
+
 There is also a relation between  and the determinant of a 3 x 3 matrix. This can be written
 
 $$
 \left|M\right|
 =\varepsilon_{ijk}M_{1i}M_{2j}M_{3k}
 $$
+
+---
+
+**example1)** Simplify $\varepsilon_{ijk}\varepsilon_{ijk}$
+
+sol)
+
+$$
+\varepsilon_{ijk}\varepsilon_{ijk}=1^2+\left(-1\right)^2+1^2+\left(-1\right)^2+1^2+\left(-1\right)^2=6
+$$
+
+---
+
+### 4. Scalar triple product
+
+**(1) vectors**
 
 An expression for the scalar triple product $\vec{a}\cdot\vec{b}\times\vec{c}$ can be deduced in suffix notation as follows:
 
@@ -117,37 +147,19 @@ $$
 =\epsilon_{ijk}a_{i}b_{j}c_{k}
 $$
 
-since,
+**(2) Levi-Civita' tenser**
+
+The dot product and the cross product are interchangeable.
 
 $$
-\hat{u}_{i}\times\hat{u}_{j}=\epsilon_{ijk}\hat{u}_{k}
-$$
-
----
-
-### 4. Scalar triple product
-
-$$
-\varepsilon_{ijk}=\left(\hat{u}_{i}\times\hat{u}_{j}\right)\cdot\hat{u}_{k}
-$$
-
-**example1)**
-
-Simplify $\varepsilon_{ijk}\varepsilon_{ijk}$
-
-sol)
-
-$$
-\varepsilon_{ijk}\varepsilon_{ijk}=1^2+\left(-1\right)^2+1^2+\left(-1\right)^2+1^2+\left(-1\right)^2=6
+\varepsilon_{ijk}
+=\hat{u}_{i}\cdot\left(\hat{u}_{j}\times\hat{u}_{k}\right)
+=\left(\hat{u}_{i}\times\hat{u}_{j}\right)\cdot\hat{u}_{k}
 $$
 
 ---
 
 ### 5. Relation betweenand $\varepsilon_{ijk}$ & $\delta_{ij}$
-
-$$
-\varepsilon_{ijk}\varepsilon_{klm}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}
-$$
 
 $$
 \varepsilon_{ijk}\varepsilon_{lmn}
@@ -156,11 +168,25 @@ $$
     \delta_{im} & \delta_{jm} & \delta_{km} \\
     \delta_{in} & \delta_{jn} & \delta_{kn}
 \end{matrix}\right|
+=\left|\begin{matrix}
+    \delta_{il} & \delta_{im} & \delta_{in} \\
+    \delta_{jl} & \delta_{jm} & \delta_{jn} \\
+    \delta_{kl} & \delta_{km} & \delta_{kn}
+\end{matrix}\right|
 $$
 
-**example1)**
+$$
+\varepsilon_{ijk}\varepsilon_{klm}
+=\left|\begin{matrix}
+    \delta_{il} & \delta_{jl} \\
+    \delta_{im} & \delta_{jm}
+\end{matrix}\right|
+=\delta_{il}\delta_{jm}-\delta_{jl}\delta_{im}
+$$
 
-Simplify $\delta_{ij}\varepsilon_{ijk}$
+---
+
+**example1)** Simplify $\delta_{ij}\varepsilon_{ijk}$
 
 sol)
 
@@ -168,10 +194,7 @@ $$
 \delta_{ij}\varepsilon_{ijk}=\varepsilon_{jjk}=0
 $$
 
-
-**example2)**
-
-Show $\vec{a}\times\left(\vec{b}\times\vec{c}\right)=\vec{b}\left(\vec{a}\cdot\vec{c}\right)-\vec{c}\left(\vec{a}\cdot\vec{b}\right)$
+**example2)** Show $\vec{a}\times\left(\vec{b}\times\vec{c}\right)=\vec{b}\left(\vec{a}\cdot\vec{c}\right)-\vec{c}\left(\vec{a}\cdot\vec{b}\right)$
 
 sol)
 

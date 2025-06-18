@@ -1,5 +1,5 @@
 +++
-title = "Vector notation"
+title = "Notation & Operation"
 weight = 2
 +++
 
