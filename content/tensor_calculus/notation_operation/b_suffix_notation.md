@@ -138,7 +138,7 @@ $$
 \operatorname{Tr}\left(\vec{A}\vec{B}\right)
 =A_{ik}B_{ki}
 =B_{ki}A_{ik}
-=Tr\left(\vec{B}\vec{A}\right)
+=\operatorname{Tr}\left(\vec{B}\vec{A}\right)
 $$
 
 ---
