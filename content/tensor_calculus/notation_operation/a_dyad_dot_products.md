@@ -28,6 +28,7 @@ $$
 Dyad와 dyad의 내적은 **일반적인 행렬 곱**을 의미한다. 이중 bar, $\bar{\bar{A}}$는 2차텐서를 의미한다.
 
 $$
+(1)
 \bar{\bar{A}}\cdot\bar{\bar{B}}
 =\left[\begin{matrix}
     A_{11} & A_{12} & \cdots \\
@@ -42,6 +43,7 @@ $$
 $$
 
 $$
+(2)
 \left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}
 $$
 
@@ -62,11 +64,7 @@ $$
 Dyad와 dyad의 이중 점 곱은, **동일 위치 원소 곱에 대한 합**이다. 
 
 $$
-\bar{\bar{A}}:\bar{\bar{B}}
-=A_{11}B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
-$$
-
-$$
+(1)
 \left(\vec{a}\otimes\vec{b}\right):\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
 $$
 
@@ -82,6 +80,22 @@ $$
     
 $$
 =a_{i}b_{j}c_{k}d_{l}\delta_{ik}\delta_{jl}=a_{i}c_{i}b_{j}d_{j}=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
+$$
+
+$$
+(2)
+\bar{\bar{A}}:\bar{\bar{B}}
+=A_{11}B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
+$$
+
+proof)
+
+$$
+\bar{\bar{A}}:\bar{\bar{B}}
+=A_{ij}\hat{u}_i\hat{u}_jB_{kl}
+
+
+B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
 $$
 
 ---

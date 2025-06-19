@@ -123,10 +123,41 @@ $$
 **example1)** 다음에 주어진 tensor를 대칭과 비대칭 부분으로 나누어 표시하시오.
 
 $$
-\vec{A}
+\bar{\bar{A}}
 =\left[\begin{matrix}
     1  & -2 & 1 \\
     -1 &  2 & 0 \\
     1  &  1 & -1
+\end{matrix}\right]
+$$
+
+sol)
+
+$$
+\bar{\bar{A}}^T
+=\left[\begin{matrix}
+    1  & -1 & 1 \\
+    -2 &  2 & 1 \\
+    1  &  0 & -1
+\end{matrix}\right]
+$$
+
+$$
+\operatorname{sym}\bar{\bar{A}}
+=\frac{1}{2}\left(\bar{\bar{A}}+\bar{\bar{A}}^T\right)
+=\frac{1}{2}\left[\begin{matrix}
+    2  & -3 & 2 \\
+    -3 &  4 & 1 \\
+    2  &  1 & -2
+\end{matrix}\right]
+$$
+
+$$
+\operatorname{skew}\bar{\bar{A}}
+=\frac{1}{2}\left(\bar{\bar{A}}-\bar{\bar{A}}^T\right)
+=\frac{1}{2}\left[\begin{matrix}
+    0  & -1 & 0 \\
+    1 &  4 & -1 \\
+    0  &  1 & 0
 \end{matrix}\right]
 $$
