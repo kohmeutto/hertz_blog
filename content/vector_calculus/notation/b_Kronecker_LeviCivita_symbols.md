@@ -1,6 +1,6 @@
 +++
 title = "(b) Kronecker & Levi-Civit`a Symbols"
-weight = 3
+weight = 2
 +++
 
 ---

@@ -41,7 +41,20 @@ $$
 
 ---
 
-### 2. 대각합
+### 2. 2차 단위 텐서 점곱
+
+$$
+\bar{\bar{I}}:\bar{\bar{I}}
+=\hat{u}_i\hat{u}_i:\hat{u}_j\hat{u}_j
+=(\hat{u}_i\cdot\hat{u}_j)(\hat{u}_i\hat{u}_j)
+=\delta_{ij}\delta_{ij}
+=\delta_{ii}
+=3
+$$
+
+---
+
+### 3. 대각합
 
 $$
 \bar{\bar{A}}:\bar{\bar{I}}
@@ -97,3 +110,4 @@ $$
 =A_{ji}B_{ji}
 $$
 
+---

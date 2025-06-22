@@ -1,6 +1,6 @@
 +++
 title = "(b) Suffix notation"
-weight = 2
+weight = 1
 +++
 
 ---
