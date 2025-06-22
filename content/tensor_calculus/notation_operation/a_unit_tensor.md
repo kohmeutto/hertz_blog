@@ -69,6 +69,31 @@ $$
 (3)
 \bar{\bar{A}}:\bar{\bar{B}}
 =\operatorname{tr}\left\lbrace \bar{\bar{A}}^T\cdot\bar{\bar{B}}\right\rbrace
-=\bar{\bar{A}}\cdot\cdot\bar{\bar{B}}^T
-=\left(\bar{\bar{A}}\cdot\bar{\bar I}\right)\cdot\bar{\bar{B}}^T
+=\operatorname{tr}\left\lbrace \bar{\bar{A}}\cdot\bar{\bar{B}^T}\right\rbrace
+=\operatorname{tr}\left\lbrace \bar{\bar{B}}^T\cdot\bar{\bar{A}}\right\rbrace
+=\operatorname{tr}\left\lbrace \bar{\bar{B}}\cdot\bar{\bar{A}^T}\right\rbrace
 $$
+
+$$
+(4)
+\operatorname{tr}\left\lbrace \bar{\bar{A}}^2\right\rbrace
+=\operatorname{tr}\left\lbrace \bar{\bar{A}}\cdot\bar{\bar{A}}\right\rbrace
+=\bar{\bar{A}}:\bar{\bar{A}}
+$$
+
+proof3)
+
+$$
+\bar{\bar{A}}:\bar{\bar{B}}
+=A_{ij}B_{ij}
+$$
+
+$$
+\bar{\bar{A}}^T\cdot\bar{\bar{B}}
+=A^T_{ij}B_{jk}\implies
+\operatorname{tr}\left\lbrace\bar{\bar{A}}^T\cdot\bar{\bar{B}}\right\rbrace
+=\operatorname{tr}\left\lbrace A^T_{ij}B_{jk}\right\rbrace
+=A^T_{ij}B_{ji}
+=A_{ji}B_{ji}
+$$
+
