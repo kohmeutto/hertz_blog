@@ -1,5 +1,5 @@
 +++
-title = "Notation & Operation"
+title = "Notation & Basic operations"
 weight = 2
 +++
 
