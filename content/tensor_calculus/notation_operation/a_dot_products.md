@@ -1,5 +1,5 @@
 +++
-title = "(a) Dyad II"
+title = "(a) Dot products"
 weight = 2
 +++
 

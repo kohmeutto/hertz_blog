@@ -1,5 +1,5 @@
 +++
-title = "(a) Dyad I"
+title = "(a) Dyad"
 weight = 1
 +++
 
