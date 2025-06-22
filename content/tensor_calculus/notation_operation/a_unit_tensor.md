@@ -68,6 +68,7 @@ $$
 $$
 (3)
 \bar{\bar{A}}:\bar{\bar{B}}
+=\operatorname{tr}\left\lbrace \bar{\bar{A}}^T\cdot\bar{\bar{B}}\right\rbrace
 =\bar{\bar{A}}\cdot\cdot\bar{\bar{B}}^T
 =\left(\bar{\bar{A}}\cdot\bar{\bar I}\right)\cdot\bar{\bar{B}}^T
 $$

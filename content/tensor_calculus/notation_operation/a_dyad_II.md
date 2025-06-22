@@ -1,5 +1,5 @@
 +++
-title = "(a) Dyad & dot products"
+title = "(a) Dyad 2"
 weight = 4
 +++
 
@@ -47,7 +47,7 @@ $$
 \left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}
 $$
 
-proof)
+proof2)
     
 $$
 \left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=a_{i}\hat{u}_{i}b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}d_{l}\hat{u}_{l}
@@ -68,7 +68,13 @@ $$
 \left(\vec{a}\otimes\vec{b}\right):\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
 $$
 
-proof)
+$$
+(2)
+\bar{\bar{A}}:\bar{\bar{B}}
+=A_{11}B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
+$$
+
+proof1)
     
 $$
 \left(\vec{a}\otimes\vec{b}\right):\left(\vec{c}\otimes\vec{d}\right)=a_{i}\hat{u}_{i}b_{j}\hat{u}_{j}:c_{k}\hat{u}_{k}d_{l}\hat{u}_{l}
@@ -82,20 +88,17 @@ $$
 =a_{i}b_{j}c_{k}d_{l}\delta_{ik}\delta_{jl}=a_{i}c_{i}b_{j}d_{j}=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
 $$
 
-$$
-(2)
-\bar{\bar{A}}:\bar{\bar{B}}
-=A_{11}B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
-$$
-
-proof)
+proof2)
 
 $$
 \bar{\bar{A}}:\bar{\bar{B}}
-=A_{ij}\hat{u}_i\hat{u}_jB_{kl}
+=A_{ij}\hat{u}_i\hat{u}_j:B_{kl}\hat{u}_{kl}\hat{u}_{kl}
+=A_{ij}B_{kl}\left(\hat{u}_i\cdot\hat{u}_k\right)\left(\hat{u}_j\cdot\hat{u}_l\right)
+$$
 
-
-B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
+$$
+=A_{ij}B_{kl}\delta_{ik}\delta_{jl}
+=A_{ij}B_{ij}
 $$
 
 ---
@@ -113,7 +116,22 @@ $$
 ### 5. 양쪽 점 곱
 
 $$
-\bar{\bar{A}}\cdot\cdot\bar{\bar{B}}
-=\bar{\bar{A}}:\bar{\bar{B}}^T
-=\bar{\bar{A}}^T:\bar{\bar{B}}
+\vec{a}\cdot\bar{\bar{A}}\cdot\vec{b}
+=\vec{a}\vec{b}:\bar{\bar{A}}
+=\bar{\bar{A}}:\vec{a}\vec{b}
+$$
+
+proof)
+
+$$
+a_i\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k\cdot b_l\hat{u}_l
+=a_ib_lA_{jk}(\hat{u}_i\cdot \hat{u}_j)(\hat{u}_k\cdot \hat{u}_l)
+=a_ib_lA_{jk}\delta_{ij}\delta_{kl}
+=a_iA_{ik}b_k
+$$
+
+$$
+a_ib_l\hat{u}_i\hat{u}_l:A_{jk}\hat{u}_j\hat{u}_k
+=a_ib_lA_{jk}(\hat{u}_i\cdot \hat{u}_j)(\hat{u}_k\cdot \hat{u}_l)
+=a_iA_{ik}b_k
 $$
