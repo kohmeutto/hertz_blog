@@ -1,6 +1,6 @@
 +++
 title = "Tensor calculus"
-weight = 6
+weight = 7
 +++
 
 ---

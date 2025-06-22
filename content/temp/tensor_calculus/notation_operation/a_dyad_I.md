@@ -1,6 +1,6 @@
 +++
-title = "(a) Dyad I"
-weight = 1
+title = "(a) Dyad 1"
+weight = 3
 +++
 
 ---

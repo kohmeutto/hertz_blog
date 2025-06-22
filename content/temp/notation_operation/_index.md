@@ -1,5 +1,5 @@
 +++
-title = "General coordinates"
+title = "Notation & Operation"
 weight = 2
 +++
 
