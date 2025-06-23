@@ -183,21 +183,19 @@ $$
 
 $$
 -i\frac{d}{dx}\langle x|=\langle x|\hat{k},\quad
-i\frac{d}{dx}|x\rangle=\hat{k}|x\rangle
+-i\frac{d}{dx}|x\rangle=\hat{k}|x\rangle
 $$
 
 따라서, 위치 공간에서 운동량 연산자는 다음과 같이 대응된다.
 
 $$
 -i\hbar\frac{d}{dx}\langle x|=\langle x|\hat{p},\quad
-i\hbar\frac{d}{dx}|x\rangle=\hat{p}|x\rangle
+-i\hbar\frac{d}{dx}|x\rangle=\hat{p}|x\rangle
 $$
 
 ℹ️ 주의사항
 
 $$
-\left(\frac{d}{dx}\langle x|\right)^\dagger
-=\frac{d}{dx}|x\rangle,\quad
 \left(\frac{d}{dx}\right)^\dagger
 =-\frac{d}{dx}
 $$
@@ -214,14 +212,14 @@ $$
 
 $$
 i\frac{d}{dk}\langle k|=\langle k|\hat{x},\quad
--i\frac{d}{dk}|k\rangle=\hat{x}|k\rangle
+i\frac{d}{dk}|k\rangle=\hat{x}|k\rangle
 $$
 
 따라서, 운동량 공간에서 위치 연산자는 다음과 같이 대응된다.
 
 $$
 i\hbar\frac{d}{dp}\langle p|=\langle p|\hat{x},\quad
--i\hbar\frac{d}{dp}|p\rangle=\hat{x}|p\rangle
+i\hbar\frac{d}{dp}|p\rangle=\hat{x}|p\rangle
 $$
 
 ---
