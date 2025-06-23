@@ -1,6 +1,6 @@
 +++
 title = "(b) Gradient for scalar"
-weight = 5
+weight = 1
 +++
 
 ---

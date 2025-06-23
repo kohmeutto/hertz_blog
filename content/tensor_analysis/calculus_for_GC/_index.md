@@ -1,5 +1,5 @@
 +++
-title = "Tensor calculus"
+title = "Calculus for GC"
 weight = 7
 +++
 

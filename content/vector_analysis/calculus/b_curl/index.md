@@ -1,6 +1,6 @@
 +++
 title = "(b) Curl"
-weight = 7
+weight = 3
 +++
 
 ---

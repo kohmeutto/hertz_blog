@@ -1,5 +1,5 @@
 +++
-title = "Vector calculus"
+title = "Vector analysis"
 weight = 6
 +++
 

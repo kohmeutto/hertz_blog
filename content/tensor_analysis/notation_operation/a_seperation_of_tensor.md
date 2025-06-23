@@ -112,3 +112,70 @@ $$
     0  &  1 & 0
 \end{matrix}\right]
 $$
+
+---
+
+### 2. Isotropic(등방) & deviatoric(일탈) tensor
+
+임의의 텐서는 등방 & 일탈 텐서의 합으로 표시할 수 있다.
+
+$$
+\bar{\bar{A}}=\bar{\bar{A}}^i+\bar{\bar{A}}^d
+$$
+
+**(1) 등방 텐서**
+
+$$
+\bar{\bar{A}}^i=\frac13\operatorname{tr}\left\lbrace
+\bar{\bar{A}}\right\rbrace\bar{\bar{I}}
+$$
+
+**(2) 일탈 텐서**
+
+$$
+\bar{\bar{A}}^d=\bar{\bar{A}}-\frac13\operatorname{tr}\left\lbrace
+\bar{\bar{A}}\right\rbrace\bar{\bar{I}}
+$$
+
+$$
+A^d_{ij}=A_{ij}-\frac13 A_{kk}\delta_{ij}
+$$
+
+---
+
+**example1)** 다음에 주어진 tensor의 일탈 tensor를 구하시오.
+
+$$
+\bar{\bar{A}}
+=\left[\begin{matrix}
+    1  & -2 & 1 \\
+    -1 &  2 & 0 \\
+    1  &  1 & -1
+\end{matrix}\right]
+$$
+
+sol)
+
+$$
+\bar{\bar{A}}^d=\bar{\bar{A}}-\frac13\operatorname{tr}\left\lbrace
+\bar{\bar{A}}\right\rbrace\bar{\bar{I}}
+=\left[\begin{matrix}
+    1  & -2 & 1 \\
+    -1 &  2 & 0 \\
+    1  &  1 & -1
+\end{matrix}\right]
+-\frac13\cdot 2\cdot
+\left[\begin{matrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{matrix}\right]
+$$
+
+$$
+=\left[\begin{matrix}
+    \frac13 & -2 & 1 \\
+    -1 & \frac43 & 0 \\
+    1 & 1 & -\frac53
+\end{matrix}\right]
+$$

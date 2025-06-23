@@ -1,5 +1,5 @@
 +++
-title = "General coordinates"
+title = "Calculus"
 weight = 2
 +++
 

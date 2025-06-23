@@ -1,6 +1,6 @@
 +++
 title = "(b) Divergence"
-weight = 6
+weight = 2
 +++
 
 ---
