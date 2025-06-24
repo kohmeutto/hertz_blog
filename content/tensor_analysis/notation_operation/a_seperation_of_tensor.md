@@ -54,7 +54,7 @@ $$
 $$
 
 $$
-\bar{\bar{A}}=\operatorname{sym}\bar{\bar{A}}^T-\operatorname{skew}\bar{\bar{A}}^T
+\bar{\bar{A}}^T=\operatorname{sym}\bar{\bar{A}}^T-\operatorname{skew}\bar{\bar{A}}^T
 $$
 
 따라서,
