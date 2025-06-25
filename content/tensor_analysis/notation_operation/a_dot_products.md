@@ -31,14 +31,14 @@ $$
 (1)
 \bar{\bar{A}}\cdot\bar{\bar{B}}
 =\left[\begin{matrix}
-    A_{11} & A_{12} & \cdots \\
-    A_{21} & A_{22} & \cdots \\
-    \vdots & \vdots & \ddots
+    A_{11} $ A_{12} $ \cdots \\
+    A_{21} $ A_{22} $ \cdots \\
+    \vdots $ \vdots $ \ddots
 \end{matrix}\right]
 \left[\begin{matrix}
-    B_{11} & B_{12} & \cdots \\
-    B_{21} & B_{22} & \cdots \\
-    \vdots & \vdots & \ddots
+    B_{11} $ B_{12} $ \cdots \\
+    B_{21} $ B_{22} $ \cdots \\
+    \vdots $ \vdots $ \ddots
 \end{matrix}\right]
 $$
 
@@ -135,3 +135,20 @@ a_ib_l\hat{u}_i\hat{u}_l:A_{jk}\hat{u}_j\hat{u}_k
 =a_ib_lA_{jk}(\hat{u}_i\cdot \hat{u}_j)(\hat{u}_k\cdot \hat{u}_l)
 =a_iA_{ik}b_k
 $$
+
+---
+
+### 6.  점곱(Dot Product)의 교환 가능성
+
+점곱(dot product)의 **교환 가능성(commutative property)** 은 연산되는 대상의 종류(스칼라, 벡터, 텐서)에 따라 달라진다.
+
+| 연산 대상 | 기호 | 결과 타입 | 교환 가능성 | 비고 |
+| :------------------------- | :--------------- | :---------- | :------------------- | :------------------------------------------------------- |
+| 스칼라 $\cdot$ 스칼라 | $a \cdot b$ | 스칼라 | **가능** | $a \cdot b = b \cdot a$ |
+| 스칼라 $\cdot$ 벡터 | $c\vec{a}$ | 벡터 | **가능** | $c\vec{a} = \vec{a}c$ (점은 주로 생략) |
+| 벡터 $\cdot$ 벡터 | $\vec{a} \cdot \vec{b}$ | 스칼라 | **가능** | $\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}$ (가장 흔한 점곱) |
+| 텐서 $\cdot$ 벡터 | $\bar{\bar{T}} \cdot \vec{v}$ | 벡터 | **일반적으로 불가능** | $\bar{\bar{T}} \cdot \vec{v} \neq \vec{v} \cdot \bar{\bar{T}}$ (텐서가 대칭일 때만 같음) |
+| 벡터 $\cdot$ 텐서 | $\vec{v} \cdot \bar{\bar{T}}$ | 벡터 | **일반적으로 불가능** | $\vec{v} \cdot \bar{\bar{T}} \neq \bar{\bar{T}} \cdot \vec{v}$ (텐서가 대칭일 때만 같음) |
+| 텐서 $\cdot$ 텐서 | $\bar{\bar{S}} \cdot \bar{\bar{T}}$ | 2차 텐서 | **일반적으로 불가능** | 일반적인 행렬 곱셈과 동일 |
+| 텐서 이중 점곱 (Frobenius) | $\bar{\bar{S}} : \bar{\bar{T}}$ | 스칼라 | **가능** | $S_{ij}T_{ij}$ (모든 성분 곱의 합) |
+| 텐서 이중 점곱 (Trace) | $\bar{\bar{S}} \cdot \cdot \bar{\bar{T}}$ | 스칼라 | **가능** | $S_{ij}T_{ji}$ (행렬 곱의 대각합, $\operatorname{tr}\bar{\bar{S}}\bar{\bar{T}}$) |
