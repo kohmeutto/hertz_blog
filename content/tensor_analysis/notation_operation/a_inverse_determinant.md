@@ -136,12 +136,33 @@ $$
 
 ### 4. 역행렬(inverse matrix)
 
+임의의 정방행렬을 아래와 같이 표현하였을 때,
+
 $$
 \bar{\bar{A}}
 =[A_{ij}]
 =\left[\begin{matrix}
     A_{11} & A_{12} & A_{13} & \cdots \\
     \vdots &        &        & \vdots \\
-    A_{n1} & \cdots & \cdots &        
+    A_{n1} & \cdots & \cdots & A_{nn}
+\end{matrix}\right]
+$$
+
+역행렬은 다음과 같이 구한다.
+
+$$
+\bar{\bar{A}}^{-1}
+=\frac{\left[\hat{A}_{ij}\right]^T}{\operatorname{det}\bar{\bar{A}}}
+$$
+
+2X2, 2차 텐서에 대한 역행렬은 다음과 같이 쓸 수 있다.
+
+$$
+\bar{\bar{A}}^{-1}
+=\frac{1}{\operatorname{det}\bar{\bar{A}}}
+\left[\begin{matrix}
+    \hat{A}_{11} & \hat{A}_{21} & \hat{A}_{31} \\
+    \hat{A}_{12} & \hat{A}_{22} & \hat{A}_{32} \\
+    \hat{A}_{13} & \hat{A}_{23} & \hat{A}_{33}
 \end{matrix}\right]
 $$
