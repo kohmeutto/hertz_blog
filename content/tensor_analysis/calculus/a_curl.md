@@ -5,9 +5,7 @@ weight = 3
 
 ---
 
-(1) **데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간**에 대한 gradient 이다. 
-
-(2) curl 은 텐서의 차수에 변화를
+**데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간**에 대한 curl 이다. 
 
 ---
 
@@ -22,8 +20,8 @@ $$
 $$
 
 $$
-[\nabla\times\vec{f}]_k
-=\varepsilon_{ijk}\partial_i f_j
+[\nabla\times\vec{f}]_i
+=\varepsilon_{ijk}\partial_j f_k
 $$
 
 ---
@@ -41,7 +39,7 @@ $$
 
 ### 3. High tensor curl
 
-중복 지수 법칙에 위배하지 않아야 함을 주의한다.
+중복 지수 규칙에 위배하지 않아야 함을 주의한다.
 
 $$
 \nabla\times\bar{\bar{A}}
@@ -52,8 +50,8 @@ $$
 $$
 
 $$
-[\nabla\times\bar{\bar{A}}]_{lk}
-=\varepsilon_{ijl}\partial_i A_{jk}
+[\nabla\times\bar{\bar{A}}]_{il}
+=\varepsilon_{ijk}\partial_j A_{kl}
 $$
 
 ---
