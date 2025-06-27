@@ -11,14 +11,23 @@ $$
 \left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)
 $$
 
-proof)
-    
+proof) 벡터 표기법
+
 $$
 \left(\vec{a}\otimes\vec{b}\right)\cdot\vec{c}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\otimes\hat{u}_{j}\cdot\hat{u}_{k}\right)
 $$
     
 $$
-=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)=a_{i}b_{j}c_{j}\hat{u}_{i}=\vec{a}\left(\vec{b}\cdot\vec{c}\right)
+=a_{i}b_{j}c_{k}\left(\hat{u}_{i}\delta_{jk}\right)
+=a_{i}b_{j}c_{j}\hat{u}_{i}
+=\vec{a}\left(\vec{b}\cdot\vec{c}\right)
+$$
+
+proof) 성분 표기법
+
+$$
+[\vec{a}\vec{b}]_{ij}\vec{c}_j=a_{i}b_{j}c_{j}\implies
+\vec{a}\left(\vec{b}\cdot\vec{c}\right)
 $$
 
 ---
@@ -31,14 +40,14 @@ $$
 (1)
 \bar{\bar{A}}\cdot\bar{\bar{B}}
 =\left[\begin{matrix}
-    A_{11} $ A_{12} $ \cdots \\
-    A_{21} $ A_{22} $ \cdots \\
-    \vdots $ \vdots $ \ddots
+    A_{11} & A_{12} & \cdots \\
+    A_{21} & A_{22} & \cdots \\
+    \vdots & \vdots & \ddots
 \end{matrix}\right]
 \left[\begin{matrix}
-    B_{11} $ B_{12} $ \cdots \\
-    B_{21} $ B_{22} $ \cdots \\
-    \vdots $ \vdots $ \ddots
+    B_{11} & B_{12} & \cdots \\
+    B_{21} & B_{22} & \cdots \\
+    \vdots & \vdots & \ddots
 \end{matrix}\right]
 $$
 
@@ -47,7 +56,7 @@ $$
 \left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}
 $$
 
-proof2)
+proof2) 벡터 표기법
     
 $$
 \left(\vec{a}\otimes\vec{b}\right)\cdot\left(\vec{c}\otimes\vec{d}\right)=a_{i}\hat{u}_{i}b_{j}\hat{u}_{j}\cdot c_{k}\hat{u}_{k}d_{l}\hat{u}_{l}
@@ -55,6 +64,14 @@ $$
     
 $$
 =a_{i}b_{j}c_{k}d_{l}\hat{u}_{i}\delta_{jk}\hat{u}_{l}=a_{i}b_{j}c_{j}d_{l}\hat{u}_{i}\hat{u}_{l}=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}
+$$
+
+proof2) 성분 표기법
+    
+$$
+[\vec{a}\vec{b}]_{ij}[\vec{c}\vec{d}]_{jk}
+=a_{i}b_{j}c_{j}d_{k}
+=\left(\vec{b}\cdot\vec{c}\right)\vec{a}\vec{d}
 $$
 
 ---
@@ -74,7 +91,7 @@ $$
 =A_{11}B_{11}+A_{12}B_{12}+A_{21}B_{21}+\cdots
 $$
 
-proof1)
+proof1) 벡터 표기법
     
 $$
 \left(\vec{a}\otimes\vec{b}\right):\left(\vec{c}\otimes\vec{d}\right)=a_{i}\hat{u}_{i}b_{j}\hat{u}_{j}:c_{k}\hat{u}_{k}d_{l}\hat{u}_{l}
@@ -86,6 +103,14 @@ $$
     
 $$
 =a_{i}b_{j}c_{k}d_{l}\delta_{ik}\delta_{jl}=a_{i}c_{i}b_{j}d_{j}=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
+$$
+
+proof1) 성분 표기법
+    
+$$
+[\vec{a}\vec{b}]_{ij}[\vec{c}\vec{d}]_{ij}
+=a_{i}b_{j}c_{i}d_{j}
+=\left(\vec{a}\cdot\vec{c}\right)\left(\vec{b}\cdot\vec{d}\right)
 $$
 
 proof2)
@@ -121,7 +146,7 @@ $$
 =\bar{\bar{A}}:\vec{a}\vec{b}
 $$
 
-proof)
+proof) 벡터 표기법
 
 $$
 a_i\hat{u}_i\cdot A_{jk}\hat{u}_j\hat{u}_k\cdot b_l\hat{u}_l
@@ -134,6 +159,14 @@ $$
 a_ib_l\hat{u}_i\hat{u}_l:A_{jk}\hat{u}_j\hat{u}_k
 =a_ib_lA_{jk}(\hat{u}_i\cdot \hat{u}_j)(\hat{u}_k\cdot \hat{u}_l)
 =a_iA_{ik}b_k
+$$
+
+proof) 성분 표기법
+
+$$
+[\vec{a}]_i[\bar{\bar{A}}]_{ij}][\vec{b}]_{j}
+=a_ib_jA_{ij}\implies
+a_iA_{ik}b_k=\vec{a}\vec{b}:\bar{\bar{A}}
 $$
 
 ---

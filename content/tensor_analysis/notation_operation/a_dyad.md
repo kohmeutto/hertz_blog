@@ -20,14 +20,24 @@ $$
 \end{matrix}\right]
 $$
 
+$$
+[\vec{a}\vec{b}]_{ij}
+=a_ib_j
+$$
+
 ---
 
-### 2. 기저 벡터 표기법
+### 2. 표기법 & 교환법칙이 성립하지 않음
 
 Dyad는 2차 tensor로서 성분과 기저 dyad로 구성된다.
 
 $$
 \vec{a}\otimes\vec{b}=a_{i}\hat{u}_{i}\otimes b_{j}\hat{u}_{j}=a_{i}b_{j}\left(\hat{u}_{i}\otimes\hat{u}_{j}\right)=\text{성분}\cdot\text{(기저 dyad)}
+$$
+
+$$
+[\vec{a}\vec{b}]_{ij}
+=a_ib_j
 $$
 
 일반적으로 dyad는 교환 법칙이 성립되지 않는다.
