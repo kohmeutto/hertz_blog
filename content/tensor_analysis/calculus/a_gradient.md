@@ -55,16 +55,11 @@ $$
 
 ---
 
-### 3. Conjugate vector gradient (잘못되었다고 생각 함)
+### 3. Conjugate vector gradient
 
 $$
 \vec{f}\nabla
-=\frac{\partial f_i}{\partial u_j}\hat{u}_i\hat{u}_j
-$$
-
-$$
-[\nabla\vec{f}]^{T}
-=\vec{f}\nabla
+= f_i\frac{\partial}{\partial u_j}\hat{u}_i\hat{u}_j
 $$
 
 ---
