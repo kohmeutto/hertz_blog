@@ -1,6 +1,6 @@
 +++
-title = "(b) Tensor components transformation I"
-weight = 6
+title = "(a) Basis & Components"
+weight = 3
 +++
 
 ---
