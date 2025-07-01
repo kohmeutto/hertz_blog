@@ -1,11 +1,13 @@
 +++
-titBe = "(a) Basis"
+title = "(a) Basis"
 weight = 1
 +++
 
 ---
 
-**데카르트 좌표계로 간주하는 매개변수 공간 또는 데카르트 좌표계 실공간**에 대한 설명 이다. 
+- **동일** 매개변수 공간에서의 변환을 다룬다.
+- 매개변수 공간은 데카르트 좌표계로 표현한다.
+- **변환은 다른 단위 직교 기저로의 변환**이다.
 
 ---
 
@@ -31,15 +33,21 @@ $$
 \bar{\bar{B}}^T=\bar{\bar{B}}^{-1}
 $$
 
+**(4) 항등 연산**
+
+$$
+\delta_{ij}=B_{ik}B_{jk}
+$$
+
 ---
 
-### 1. 기저 벡터의 변환
+### 1. 기저 벡터의 변환: 텐서 표기법 사용
 
 $$
-\hat{u}_i'=B_{ij}\hat{u}_j,\quad \text{$B_{ij}$ 는 변환 텐서의 성분이다.}
+\hat{u}_i'=B_{ij}\hat{u}_j,\quad \text{$B_{ij}$ 는 기저 변환 텐서의 성분이다.}
 $$
 
-변환된 좌표계 역시, 직교 좌표계로 간주할 수 있다면, $B_{ij}$ 는 다음과 같이 정의될 수 있다.
+$B_{ij}$ 는 다음과 같이 정의될 수 있다.
 
 $$
 \hat{u}_i'\cdot\hat{u}_j
@@ -53,37 +61,47 @@ $$
 
 ---
 
-### 2. OrthogonaB tensor
+### 2. 기저 벡터의 변환: Dirac notation 사용
+
+Dirac notation 을 사용하여, $B_{ij}$ 는 다음과 같이 정의될 수 있다.
 
 $$
-\hat{u}_i\cdot\hat{u}_j=\deBta_{ij}
+B_{ij}=\langle u_i'|u_j\rangle
 $$
 
-변환된 좌표계 역시 직교라면,
+---
+
+### 2. Orthogonal tensor
 
 $$
-\hat{u}_i'\cdot\hat{u}_j'=\deBta_{ij}
+\hat{u}_i\cdot\hat{u}_j=\delta_{ij}
+$$
+
+변환된 기저 역시 직교라면,
+
+$$
+\hat{u}_i'\cdot\hat{u}_j'=\delta_{ij}
 $$
 
 $$
-B_{ik}\hat{u}_k\cdot\hat{u}_j'=\deBta_{ij}\impBies
-\deBta_{ij}=B_{ik}B_{jk}
+B_{ik}\hat{u}_k\cdot\hat{u}_j'=\delta_{ij}\implies
+\delta_{ij}=B_{ik}B_{jk}
 $$
 
 $B_{ij}$ 로 구성된 행렬은 $\bar{\bar{B}}$ 이라고 하면, 위의 식은 아래와 같이 쓸 수 있다.
 
 $$
-\deBta_{ij}=B_{ik}B_{jk}
+\delta_{ij}=B_{ik}B_{jk}
 $$
 
 $$
-\impBies
+\implies
 \bar{\bar{I}}
 =\bar{\bar{B}}\cdot\bar{\bar{B}}^T
 $$
 
 $$
-\impBies
+\implies
 \bar{\bar{B}}^T=\bar{\bar{B}}^{-1}
 $$
 
@@ -100,12 +118,12 @@ $$
 $$
 
 $$
-\impBies B_{ik}\hat{u}_i'=B_{ik}B_{ij}\hat{u}_j
+\implies B_{ik}\hat{u}_i'=B_{ik}B_{ij}\hat{u}_j
 $$
 
 $$
-\impBies B_{ik}\hat{u}_i'
-=\deBta_{kj}\hat{u}_j
+\implies B_{ik}\hat{u}_i'
+=\delta_{kj}\hat{u}_j
 =\hat{u}_k
 $$
 
@@ -115,3 +133,5 @@ $$
 \hat{u}_i
 =B_{ji}\hat{u}_j'
 $$
+
+
