@@ -1,6 +1,6 @@
 +++
 title = "(a) Derivative"
-weight = 5
+weight = 4
 +++
 
 ---
@@ -48,7 +48,7 @@ sol)
 
 $$
 \left[\frac{\partial \varphi'}{\partial x_i'}\right]
-=\left[C_{ij}\frac{\partial \varphi'}{\partial x_j'}\right]
+=\left[C_{ij}\frac{\partial \varphi}{\partial x_j}\right]
 =\begin{bmatrix}
    \cos90^\circ  & \sin90^\circ & 0 \\
    -\sin90^\circ & \cos90^\circ & 0 \\
@@ -89,9 +89,9 @@ $$
 $$
 \nabla'\cdot\vec{f}'
 =\partial_i' f_i'
-=C_{ki}C_{ki}\partial_i f_i
-=\delta_{kk}\partial_i f_i
-=\partial_i f_i
+=C_{im}C_{in}\partial_m f_n
+=\delta_{mn}\partial_m f_n
+=\partial_n f_n
 $$
 
 divergence는 좌표계에 관계없이 불변량임을 알 수 있다.
@@ -109,7 +109,7 @@ $$
 $$
 [\nabla'\times\vec{f}']_k
 =\varepsilon_{ijk}\frac{\partial f_j'}{\partial u_i'}
-=\varepsilon_{ijk}C_{il}C_{km}\frac{\partial f_m}{\partial u_l}
+=\varepsilon_{ijk}C_{il}C_{jm}\frac{\partial f_m}{\partial u_l}
 $$
 
 $$

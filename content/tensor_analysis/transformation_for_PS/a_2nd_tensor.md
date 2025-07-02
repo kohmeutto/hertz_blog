@@ -1,6 +1,6 @@
 +++
 title = "(a) 2nd tensor"
-weight = 3
+weight = 2
 +++
 
 ---
