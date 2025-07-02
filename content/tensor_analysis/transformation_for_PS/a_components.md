@@ -137,6 +137,81 @@ u_{i}'
 =\langle u_i'|\vec{r}
 $$
 
+
+
+
+렉 표기법을 이용한 항등 연산 증명
+요청하신 항등 연산 δ 
+ij
+​
+ =C 
+ki
+​
+ C 
+kj
+​
+  (이는 행렬 곱 C 
+T
+ C=I 에 해당)을 디렉 표기법으로 증명하겠습니다.
+
+증명:
+
+두 개의 **정규 직교 기저(orthonormal basis)**인 $\{|u_i\rangle\}$ (옛 기저)와 $\{|u_k'\rangle\}$ (새 기저)가 있다고 가정합니다.
+성분 변환 행렬의 성분은 다음과 같이 정의됩니다:
+C 
+ki
+​
+ =⟨u 
+k
+′
+​
+ ∣u 
+i
+​
+ ⟩
+
+우리가 증명하려는 것은 $\sum_k C_{ki}C_{kj} = \delta_{ij}$ 입니다.
+
+C_{ki} 와 C_{kj} 의 정의를 좌변에 대입합니다:
+$\sum_k C_{ki}C_{kj} = \sum_k \langle u_k'|u_i \rangle \langle u_k'|u_j \rangle$
+
+이제, 완비성 관계(Completeness Relation), 즉 항등 연산자( 
+I
+^
+ )의 분해를 사용합니다. 정규 직교 기저 $\{|u_k'\rangle\}$ 에 대해 항등 연산자 $\hat{I}$는 다음과 같이 표현될 수 있습니다:
+$\hat{I} = \sum_k |u_k'\rangle\langle u_k'|$
+
+우변의 $\delta_{ij}$는 옛 기저 벡터들의 내적 $\langle u_i|u_j \rangle$와 같습니다.
+$\langle u_i|u_j \rangle$ 에 항등 연산자 $\hat{I}$를 삽입할 수 있습니다:
+$\delta_{ij} = \langle u_i|u_j \rangle = \langle u_i| \hat{I} |u_j \rangle$
+
+이제 항등 연산자를 완비성 관계로 대체합니다:
+$\delta_{ij} = \langle u_i| \left( \sum_k |u_k'\rangle\langle u_k'| \right) |u_j \rangle$
+
+내적의 선형성에 따라 합 기호는 밖으로 나올 수 있습니다:
+$\delta_{ij} = \sum_k \langle u_i|u_k' \rangle \langle u_k'|u_j \rangle$
+
+마지막으로, 내적의 성질 $\langle a|b \rangle = \langle b|a \rangle*$ 를 사용합니다.
+$\langle u_i|u_k' \rangle = \langle u_k'|u_i \rangle^* = (C_{ki})^*$
+
+만약 변환 행렬의 성분들이 실수라면 (예: 회전 변환이나 좌표계 변환), (C 
+ki
+​
+ ) 
+∗
+ =C 
+ki
+​
+  가 됩니다.
+
+따라서,
+$\delta_{ij} = \sum_k C_{ki} C_{kj}$
+
+증명 완료.
+이 증명은 직교 변환 행렬의 핵심적인 성질인 C 
+T
+ C=I 가 기저 벡터의 정규직교성 및 완비성으로부터 직접적으로 유래함을 보여줍니다.
+
 ---
 
 **example1)** 원통좌표계에서의 변위 벡터 $\vec{v}=\hat{\rho}v_\rho+\hat{\phi}v_\phi+\hat{z}v_z$ 를 직각좌표계에서의 성분으로 표현하라.
