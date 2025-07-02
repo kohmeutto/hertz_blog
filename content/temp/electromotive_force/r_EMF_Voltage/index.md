@@ -1,6 +1,6 @@
 +++
 title = "(r) EMF & Voltage"
-weight = 7
+weight = 6
 +++
 
 ---
