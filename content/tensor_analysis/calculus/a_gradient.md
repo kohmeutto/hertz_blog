@@ -5,12 +5,6 @@ weight = 1
 
 ---
 
-- 매개변수공간에 대한 gradient 이다. 
-- 매개변수 공간을 데카르트 좌표계로 표현하고 다룬다. 
-- Gradient 연산은 tensor의 차수를 하나 더 증가시킨다.
-
----
-
 ### 1. Scalar gradient 
 
 $$
