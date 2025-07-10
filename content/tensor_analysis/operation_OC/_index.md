@@ -1,5 +1,5 @@
 +++
-title = "Notation & Basic operation"
+title = "Operation for OC"
 weight = 1
 +++
 

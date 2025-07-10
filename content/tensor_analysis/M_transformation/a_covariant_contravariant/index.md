@@ -28,11 +28,9 @@ $$
 
 ### 2. 공변기저벡터
 
-아래 2가지 관점은 동등하며, 서로를 통해 완전한 의미를 가진다. **관점 1**은 q좌표계의 기하학적 틀을 제공한다. **관점 2**는 그 기하학적 틀 위에서, 물리적 대상을 어떻게 분석하고 표현할 것인지에 대한 도구를 제공한다.
-
 <img src="image1.png" width="65%" height="auto">
 
-**[관점 1] 매개변수 공간($q$)에서 실공간으로의 매핑**
+**매개변수 공간($q$)에서 실공간으로의 매핑**
 
 데카르트 좌표계처럼 다룰 수 있는 매개변수 공간의 미소변위벡터($d\vec{q}$)는 아래와 같이 표현할 수 있다. 여기에서, $\hat{q}_j$가 $\hat{e}_k$ 와 같은 물리적 공간의 벡터가 아니라, 매개변수 공간 내에서 $q^j$ 축 방향의 단위 변화를 나타내는 **추상적인 기저 벡터** 이다.
 
@@ -70,21 +68,6 @@ $$
 \vec{g}_j=\frac{\partial x^k}{\partial q^j}\hat{e}_k
 $$
 
-**[관점 2] 동일 실공간에서 $q$좌표계로의 표현**
-
-실공간의 데카르트 좌표계에서 원점으로부터 임의의 거리 만큼 떨어진 공간상의 한 점 P를 고려하면, 그 점에 대한 위치벡터는 다음과 같이 표현할 수 있다.
-
-$$
-\vec{x}=x^j\hat{e}_j
-$$
-
-점 P에서 미소변위벡터 $d\vec{x}$는 다음과 같다.
-
-$$
-d\vec{x}
-=dx^j\hat{e}_j
-$$
-
 $q$ **좌표계에서 $d\vec{x}$를 표현하기 위함**이다. 다만, $q$ **좌표계의 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 '설명'** 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.
 
 $$
@@ -92,8 +75,6 @@ d\vec{x}
 =dq^j\vec{g}_j
 =dq^jg_j^k\hat{e}_k
 $$
-
-위 식을 **관점 1**의 결과와 비교하면 아래와 같다.
 
 $$
 g^k_j
@@ -108,7 +89,7 @@ $$
 
 <img src="image2.png" width="65%" height="auto">
 
-**[관점 1] 매개변수 공간($q$)에서 실공간으로의 매핑**
+**실공간에서 매개변수 공간($q$)으로의 매핑**
 
 실공간의 미소변위벡터 $d\vec{x}$를 매개변수공간의 $q^i$로 mapping 해 보자. 여기에서, 매개변수 공간의 (추상적) 단위 기저 벡터는 이미 알고 있기에 구하는 의미가 없다. 매개변수공간으로 mapping 된 각 단위 벡터의 성분은 아래와 같이 구할 수 있다. 
 
@@ -125,15 +106,6 @@ dq^i
 =d\vec{x}\cdot \vec{g}^i
 $$
 
-**[관점 2] 동일 실공간에서 $q$좌표계로의 표현**
-
-점 P에서 미소변위벡터 $d\vec{x}$는 다음과 같다.
-
-$$
-d\vec{x}
-=dx^j\hat{e}_j
-$$
-
 $q$ **좌표계에서 $d\vec{x}$를 표현하기 위함**이다. 다만, $q$ **좌표계의 반변 기저를 우리가 익숙한 $\hat{e}_k$ (데카르트 기저)를 통해 '설명'** 하고 싶다. 따라서, 변환 텐서를 사용하여 데카르트 기저로 표현해 보자.
 
 $$
@@ -141,8 +113,6 @@ d\vec{x}
 =dq_j\vec{g}^j
 =dq_jg_k^j\hat{e}_k
 $$
-
-위 식을 **관점 1**의 결과와 비교하면 아래와 같다.
 
 $$
 g_k^j
@@ -181,25 +151,15 @@ $$
 ### 5. 공변기저벡터와 반변기저벡터의 내적: 쌍대성
 
 $$
-\vec{g}_i\cdot\vec{g}^j=\delta_i^j
+\vec{g}_i\cdot\vec{g}^j
+=\langle g_i|g^j\rangle
+=\delta_i^j
 $$
 
 proof)
 
 $$
-\vec{g}_i
-=g_i^k\hat{e}_k
-=\frac{\partial x^k}{\partial q^i}\hat{e}_k
-$$
-
-$$
-\vec{g}^j
-=g^j_l\hat{e}_l
-=\frac{\partial q^j}{\partial x^l}\hat{e}_l
-$$
-
-$$
-\vec{g}_i\cdot\vec{g}^j
+\langle g_i|g^j\rangle
 =\frac{\partial x^k}{\partial q^i}\hat{e}_k\cdot
 \frac{\partial q^j}{\partial x^l}\hat{e}_l
 =\frac{\partial x^k}{\partial q^i}
@@ -212,7 +172,33 @@ $$
 
 ---
 
-### 6. 공변, 반변 성분 추출
+### 6. 공변기저벡터와 반변기저벡터의 dyad: 단위 tensor
+
+$$
+\bar{\bar{I}}
+=\vec{g}_i\vec{g}^i
+=|g^i\rangle\langle g_i|
+$$
+
+proof)
+
+$$
+\langle g_i|g^j\rangle\langle g_j|g^i\rangle
+=\delta_i^j\delta^i_j
+=\delta_i^i
+=1
+$$
+
+따라서,
+
+$$
+|g^j\rangle\langle g_j|
+=\bar{\bar{I}}
+$$
+
+---
+
+### 7. 공변, 반변 성분 추출
 
 <img src="image3.png" width="50%" height="auto">
 
@@ -234,7 +220,7 @@ $$
 **(2) 공변성분추출**
 
 $$
-\vec{x}\cdot\vec{g}_i=v_i
+\vec{x}\cdot\vec{g}_i=x_i
 $$
 
 proof)

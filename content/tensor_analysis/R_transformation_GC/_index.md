@@ -1,5 +1,5 @@
 +++
-title = "Operation for GC"
+title = "R. transformation for GC"
 weight = 5
 +++
 

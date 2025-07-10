@@ -1,5 +1,5 @@
 +++
-title = "(b) Components transformation"
+title = "(b) Representation transformation"
 weight = 4
 +++
 
