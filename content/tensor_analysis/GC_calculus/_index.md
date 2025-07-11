@@ -1,5 +1,5 @@
 +++
-title = "Calculus for GC"
+title = "[GC] Calculus"
 weight = 7
 +++
 

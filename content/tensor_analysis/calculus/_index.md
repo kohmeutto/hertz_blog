@@ -1,5 +1,5 @@
 +++
-title = "Calculus for OC"
+title = "Calculus"
 weight = 2
 +++
 

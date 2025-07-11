@@ -1,5 +1,5 @@
 +++
-title = "Operation for OC"
+title = "Operation"
 weight = 1
 +++
 

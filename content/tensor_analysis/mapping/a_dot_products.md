@@ -1,6 +1,6 @@
 +++
 title = "(a) Dot products"
-weight = 2
+weight = 4
 +++
 
 ---

@@ -81,12 +81,14 @@ $$
 \bar{u}^i
 =\langle\bar{g}^i|g^{j}\rangle u_j
 =\frac{\partial \bar{q}^i}{\partial q^k}g^{kj}u_j
+=\bar{g}^{ik}\frac{\partial q^i}{\partial q^k}u_j
 $$
 
 $$
 u_i
 =\langle g_i|\bar{g}_j\rangle\bar{u}^j
-=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}\bar{u}_j
+=g_{ik}\frac{\partial q^k}{\partial \bar{q}^j}\bar{u}^j
+=\frac{\partial \bar{q}^k}{\partial q^i}\bar{g}_{ik}\bar{u}^j
 $$
 
 proof1)
