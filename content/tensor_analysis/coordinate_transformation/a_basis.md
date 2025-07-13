@@ -105,7 +105,7 @@ $$
 \bar{q}^i
 =\langle\bar{g}^i|g^{j}\rangle q_j
 =\frac{\partial \bar{q}^i}{\partial q^k}g^{kj}q_j
-=\bar{g}^{ik}\frac{\partial q^i}{\partial q^k}q_j
+=\bar{g}^{ik}\frac{\partial q^j}{\partial q^k}q_j
 $$
 
 $$
