@@ -1,5 +1,5 @@
 +++
-title = "(b) Representation transformation"
+title = "(b) Basis transformation"
 weight = 4
 +++
 
