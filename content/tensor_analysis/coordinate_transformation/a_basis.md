@@ -98,9 +98,9 @@ $$
 
 $$
 |\bar{g}_i\rangle
-=\langle\bar{g}_i|g_{j}\rangle|\bar{g}^j\rangle
-=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}|\bar{g}^j\rangle
-=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}|\bar{g}^j\rangle
+=\langle\bar{g}_i|g_{j}\rangle|g^j\rangle
+=\frac{\partial q^k}{\partial\bar{q}^i}g_{kj}|g^j\rangle
+=\bar{g}_{ij}\frac{\partial \bar{q}^k}{\partial q^j}|g^j\rangle
 ,\quad
 \bar{q}^i
 =\langle\bar{g}^i|g^{j}\rangle q_j
