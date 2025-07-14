@@ -124,7 +124,7 @@ $$
 |\bar{g}^i\rangle
 =\langle\bar{g}^i|g^{j}\rangle|g_j\rangle
 =\frac{\partial\bar{q}^i}{\partial q^k}g^{kj}|g_j\rangle
-=\bar{g}^{ik}\frac{\partial q^j}{\partial q^k}|g_j\rangle
+=\bar{g}^{ik}\frac{\partial q^j}{\partial\bar{q}^k}|g_j\rangle
 ,\quad
 \bar{q}_i
 =\langle\bar{g}_i|g_{j}\rangle q^j
@@ -136,7 +136,7 @@ $$
 |g^i\rangle
 =\langle g^i|\bar{g}^{j}\rangle|\bar{g}_j\rangle
 =g^{ik}\frac{\partial\bar{q}^j}{\partial q^k}|\bar{g}_j\rangle
-=\frac{\partial q^j}{\partial \bar{q}^k}\bar{g}^{kj}|\bar{g}_j\rangle
+=\frac{\partial q^i}{\partial \bar{q}^k}\bar{g}^{kj}|\bar{g}_j\rangle
 ,\quad
 q_i
 =\langle g_i|\bar{g}_j\rangle\bar{q}^j
@@ -182,8 +182,8 @@ $$
 $$
 \bar{q}_i
 =\langle\bar{g}_i|g_{j}\rangle q^j
-=\left\langle \bar{g}_i\middle|g_{j}\right\rangle q^j
-=\bar{g}_{ik}\frac{\partial \bar{q}^k}{\partial q^j}q^j
+=\left\langle\bar{g}_i\middle|\frac{\partial\bar{q}^k}{\partial q^j}\bar{g}_{k}\right\rangle q^j
+=\frac{\partial\bar{q}^k}{\partial q^j}\bar{g}_{ik}q^j
 $$
 
 ---
