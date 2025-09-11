@@ -111,6 +111,10 @@ $$
 {{< /details >}}
     
 {{< details summary="GF" >}}
+
+$$
+\left\lbrace D\left(e^{2x}D\right)+e^{2x}\right\rbrace y=e^{x}
+$$
     
 (1) $x\ne x'$
     
@@ -142,11 +146,13 @@ $$
 jump condition
     
 $$
-1=\frac{\partial}{\partial x}\left\lbrack c_2\left(x'\right)\left(-x'+x\right)e^{-x}\right\rbrack_{x=x'}=c_2\left(x'\right)e^{-x'}
+1
+=e^{2x'}\frac{\partial}{\partial x}\left\lbrack c_2\left(x'\right)\left(-x'+x\right)e^{-x}\right\rbrack_{x=x'}
+=c_2\left(x'\right)e^{x'}
 $$
     
 $$
-c_2\left(x'\right)=e^{x'}
+c_2\left(x'\right)=e^{-x'}
 $$
     
 따라서,
@@ -155,7 +161,7 @@ $$
 G\left(x,x'\right)=
 \begin{cases}
     0 & x < x' \\
-    e^{x'}\left(-x'+x\right)e^{-x} & x > x'
+    e^{-x'}\left(-x'+x\right)e^{-x} & x > x'
 \end{cases}
 $$
     
@@ -164,7 +170,9 @@ $$
 <img src="image1-2.png" width="65%" height="auto">
     
 $$
-y_{p}=\int_0^{x}dx'\left\lbrack e^{x'}\left(-x'+x\right)e^{-x}\cdot e^{-x'}\right\rbrack=-e^{-x}\int_0^{x}dx'\left\lbrack x'\right\rbrack+xe^{x}\int_0^{x}dx'
+y_{p}
+=\int_0^{x}dx'\left\lbrack e^{-x'}\left(-x'+x\right)e^{-x}\cdot e^{x'}\right\rbrack
+=-e^{-x}\int_0^{x}dx'\left\lbrack x'\right\rbrack+xe^{-x}\int_0^{x}dx'
 $$
     
 $$
