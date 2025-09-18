@@ -30,7 +30,7 @@ $$
 \langle a|b\rangle \text{ 는 } \vec{a}\cdot\vec{b} \text{ 에 대응한다.}
 $$
 
-유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복수수 까지 확장된 힐버트 공간에서는,
+유클리드 공간의 $\vec{a}\cdot:=\vec{a}^T$ 인 것처럼 복소수 까지 확장된 힐버트 공간에서는,
 
 $$
 \langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger 
