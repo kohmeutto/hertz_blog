@@ -1,5 +1,5 @@
 +++
-title = "(a) Bra"
+title = "(b) Bra"
 weight = 3
 +++
 
@@ -38,9 +38,31 @@ $$
 
 ---
 
-### 2. 항등 연산자
+### 2. 단위 기저 벡터의 내적
 
-**(1) 유한차원**
+**(1) 이산기저  (Discrete Basis)**
+
+유한차원 또는 셀 수 있는 무한차원 공간(예: 스핀, 양자화된 에너지 준위)의 정규직교 기저 |uᵢ⟩의 내적은 **크로네커 델타(Kronecker Delta)** 로 정의된다.
+
+$$
+\langle u_i|u_j\rangle
+=\delta_ij
+$$
+
+**(2) 연속 기저 (Continuous Basis)**
+
+셀 수 없는 무한차원 공간(예: 위치, 운동량)의 기저 |x⟩의 내적은 **디랙 델타 함수(Dirac Delta Function)** 로 정의된다.
+
+$$
+\langle x'|x\rangle
+=\delta(x'-x)
+$$
+
+---
+
+### 3. 항등 연산자
+
+**(1) 이산기저  (Discrete Basis)**
 
 $$
 \hat{I} = \sum_i |u_i\rangle \langle u_i|
@@ -69,7 +91,7 @@ $$
 \hat{I} = \sum_i |u_i\rangle \langle u_i|
 $$
 
-**(2) 무한차원**
+**(2) 연속 기저 (Continuous Basis)**
 
 $$
 \hat{I} = \int dx |x\rangle \langle x|
@@ -90,7 +112,7 @@ $$
 
 ---
 
-### 3. 함수의 내적
+### 4. 함수의 내적
 
 힐버트 공간에서, 함수 f(x)와 함수 g(x)의 내적을 표현할 때,
 
@@ -108,7 +130,7 @@ $$
 
 ---
 
-### 4. 내적 연산의 특성
+### 5. 내적 연산의 특성
 
 힐버트 공간 상태 벡터를 $|\psi_n\rangle$ 라 하고, $a_n$ 를 임의의 복소수 스칼라($a_n \in \mathbf{C}$)라고 하자. 아래와 같이 표현할 수 있다.
 
