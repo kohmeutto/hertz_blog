@@ -68,15 +68,89 @@ $$
 
 ---
 
-### 3. 사영 연산자 (Projection operator)
+### 3. 이산 기저의 사영 연산자 (Projection operator)
 
-**(1) 사영연산자의 유일한 조건**
+벡터 공간에서 사영 연산자를 만드는 방법은 **벡터 $|u_i⟩$** 와 그에 대응하는 **듀얼 벡터(dual vector) $⟨u^i|$** 의 **외부곱(outer product)** 을 이용하는 것이다.
 
+$$
+\hat{P}_i=|u_i\rangle\langle u^i|
+$$
 
+이산기저 기저 $|u^j⟩$ 와 그에 대응하는 듀얼 기저(dual vector) $⟨u_i|$ 은 다음을 만족해야 한다.
 
-**(2) 직교사영**
+$$
+\langle u_i|u^j\rangle=\delta_i^j
+$$
 
+**특성1) 이산 기저의 사영연산자는 반드시 멱등성을 만족한다.**
 
+$$
+\hat{P}_i^n=\hat{P}_i
+$$
 
-**(3) [핵심] 정규직교사영**
+proof)
 
+$$
+\hat{P}_i^2
+=(|u_i\rangle\langle u^i|)(|u_i\rangle\langle u^j|)
+=|u_i\rangle\delta_i^i\langle u^j|
+=|u_i\rangle\langle u^i|
+=\hat{P}
+$$
+
+**특성2) 완전한(complete) 이산 기저의 사영연산자의 모든 합은 항등연산자이다.**
+
+$$
+\hat{I}=\sum_i|u_i\rangle\langle u^i|
+$$
+
+proof)
+
+$$
+|\psi\rangle
+=\sum_i\langle u^i|\psi\rangle|u_i\rangle
+=\sum_i|u_i\rangle\langle u^i|\psi\rangle
+=\hat{I}|\psi\rangle
+$$
+
+---
+
+### 4. 연속 기저의 사영 연산자 "밀도" (Projection operator "density")
+
+벡터 공간에서 사영 연산자를 만드는 방법은 **벡터 $|x⟩$** 와 그에 대응하는 **듀얼 벡터(dual vector) $⟨x|$** 의 **외부곱(outer product)** 을 이용하는 것이다.
+
+$$
+\hat{P}_x=|x\rangle\langle x|
+$$
+
+연속기저 기저 $|x'⟩$ 와 그에 대응하는 듀얼 기저(dual vector) $⟨x|$ 은 다음을 만족해야 한다.
+
+$$
+\langle x|x'\rangle=\delta(x-x')
+$$
+
+**비교) 개별 사영 연산자 밀도는 멱등성을 만족하지 않는다.**
+
+$$
+\hat{P}_x^2
+=(|x\rangle\langle x|)(|x\rangle\langle x|)
+=|x\rangle\delta(0)\langle x|
+=|x\rangle\langle x|\cdot\infty
+\ne \hat{P}_x
+$$
+
+**특성) 완전한(complete) 연속 기저의 사영연산자 밀도의 모든 합(적분)은 항등연산자이다.**
+
+$$
+\hat{I}
+=\int^\infty_{-\infty}dx|x\rangle\langle x|
+$$
+
+proof)
+
+$$
+|\psi\rangle
+=\int^\infty_{-\infty}dx\langle x|\psi\rangle|x\rangle
+=\int^\infty_{-\infty}dx|x\rangle\langle x|\psi\rangle
+=\hat{I}|\psi\rangle
+$$
