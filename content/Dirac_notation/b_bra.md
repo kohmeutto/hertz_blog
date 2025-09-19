@@ -46,7 +46,7 @@ $$
 
 $$
 \langle u_i|u_j\rangle
-=\delta_ij
+=\delta_{ij}
 $$
 
 **(2) 연속 기저 (Continuous Basis)**
