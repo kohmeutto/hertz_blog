@@ -1,5 +1,5 @@
 +++
-title = "Notation & Basic operations"
+title = "Einstein notation"
 weight = 2
 +++
 

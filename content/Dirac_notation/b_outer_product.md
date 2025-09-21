@@ -82,6 +82,8 @@ $$
 \langle u_i|u^j\rangle=\delta_i^j
 $$
 
+만약, 기저 $|u_i⟩$ 가 **정규직교 기저(orthogonal basis)** 라면, 위 식으로 부터 듀얼 기저는 $⟨u_i|$ 가 된다. 
+
 **특성1) 이산 기저의 사영연산자는 반드시 멱등성을 만족한다.**
 
 $$
@@ -95,7 +97,7 @@ $$
 =(|u_i\rangle\langle u^i|)(|u_i\rangle\langle u^j|)
 =|u_i\rangle\delta_i^i\langle u^j|
 =|u_i\rangle\langle u^i|
-=\hat{P}
+=\hat{P}_i
 $$
 
 **특성2) 완전한(complete) 이산 기저의 사영연산자의 모든 합은 항등연산자이다.**

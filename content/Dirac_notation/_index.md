@@ -1,6 +1,6 @@
 +++
 title = 'Dirac notation'
-weight = 2
+weight = 3
 +++
 
 ---
