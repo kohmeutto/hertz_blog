@@ -52,8 +52,10 @@ $$
 
 ### 3. 스칼라 곱의 표현
 
-힐버트 공간 상태 벡터를 $|\psi\rangle$ 라 하고, $a$ 를 임의의 복소수 스칼라($a \in \mathbb{C}$)라고 하자. 아래와 같이 표현할 수 있다.
+힐버트 공간 상태 벡터를 $|\psi\rangle$ 라 하고, $a$ 를 임의의 복소수 스칼라($a \in \mathbb{C}$)라고 하자. 관습적으로 아래와 같이 표현할 수 있다.
 
 $$
-|a\psi\rangle = a|\psi\rangle
+a|\psi\rangle=|a\psi\rangle 
 $$
+
+ket 안에는 이름(문자, 숫자, 그림 등등) 이 들어간다. $a\psi$ 는 $a|\psi\rangle$ 의 결과에 대한 이름이다.
