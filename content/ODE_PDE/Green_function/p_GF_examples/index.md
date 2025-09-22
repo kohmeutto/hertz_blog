@@ -94,7 +94,7 @@ $$
 
 **example2) 특수해를 구하여라.**
 
-$$y''+2y'+y=e^{-x}, x\in[0,∞)$$
+$$y''+2y'+y=e^{-x}, x\in[0,∞), y'(0)=0$$
 
 {{< details summary="IOPM-E" >}}
 
