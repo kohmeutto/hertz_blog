@@ -94,8 +94,8 @@ proof)
 
 $$
 \hat{P}_i^2
-=(|u_i\rangle\langle u^i|)(|u_i\rangle\langle u^j|)
-=|u_i\rangle\delta_i^i\langle u^j|
+=(|u_i\rangle\langle u^j|)(|u_i\rangle\langle u^j|)
+=|u_i\rangle\delta^j_{.i}\langle u^j|
 =|u_i\rangle\langle u^i|
 =\hat{P}_i
 $$
