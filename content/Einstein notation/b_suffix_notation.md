@@ -13,7 +13,7 @@ weight = 1
 
 (3) 각 항에서, dummy index는 최대 2번만 중복해서 쓸 수 있다. (3번 이상 불가)
 
-(4) 하나의 방정식에서, free index는 같아야 한다.
+(4) 하나의 방정식에서 각 항(term)은 모두 동일한 free index를 가져야 한다.
 
 (5) 대칭 행렬이 아니라면, $a_{ij}\ne a_{ji}$ 이다.
 
@@ -120,11 +120,11 @@ $$
 
 **example 4)**
 
-Show that the product of two N x N matrices A and B, G = AB can be written in suffix notation as $C_{ij}=A_{ik}B_{kj}$.
+Show that the product of two N x N matrices A and B, C = AB can be written in suffix notation as $C_{ij}=A_{ik}B_{kj}$.
 
 $$
-\vec{C}=\vec{AB}\rightarrow C_{ij}
-=\left\lbrack\vec{AB}\right\rbrack_{ij}
+C=AB\rightarrow C_{ij}
+=\left\lbrack AB\right\rbrack_{ij}
 =A_{ik}B_{kj}
 $$
 
@@ -135,10 +135,10 @@ Show that the trace of the matrix AB (defined as the sum of the elements on the 
 proof)
 
 $$
-\operatorname{Tr}\left(\vec{A}\vec{B}\right)
+\operatorname{Tr}\left(AB\right)
 =A_{ik}B_{ki}
 =B_{ki}A_{ik}
-=\operatorname{Tr}\left(\vec{B}\vec{A}\right)
+=\operatorname{Tr}\left(BA\right)
 $$
 
 ---
@@ -153,7 +153,7 @@ $$
 
 proof)
 
-하나의 방정식에서, free index는 같아야 한다. 를 만족하지 않으므로 문제가 성립 불가능
+"하나의 방정식에서 각 항(term)은 모두 동일한 free index를 가져야 한다."를 만족하지 않으므로 문제가 성립 불가능
 
 **example2)** 
 
