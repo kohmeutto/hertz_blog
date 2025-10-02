@@ -75,7 +75,7 @@ M_{ij}=a_{i}b_{j}
 $$
 
 $$
-M_{ij}x_{i}=a_{i}b_{j}x_{i}=\left(\vec{a\cdot\vec{x}}\right)b_{j}
+M_{ij}x_{i}=a_{i}b_{j}x_{i}=\left(\vec{a}\cdot\vec{x}\right)b_{j}
 $$
 
 ---
@@ -95,7 +95,7 @@ Write the suffix notation expression  in ordinary vector notation.
 $$
 a_{j}b_{i}c_{j}
 \rightarrow
-\left(\vec{a\cdot\vec{c}}\right)\vec{b}
+\left(\vec{a}\cdot\vec{c}\right)\vec{b}
 $$
 
 **example 3)**
@@ -161,15 +161,7 @@ $$
 M_{ij}x_{i}y_{j}\ne M_{ij}y_{i}x_{j}
 $$
 
-proof)
-
-대칭 행렬이 아닌 경우에는,
-
-$$
-M_{ij}\ne M_{ji}
-$$
-
-따라서,
+proof1)
 
 $$
 M_{ij}x_{i}y_{j}
@@ -183,38 +175,111 @@ M_{ij}y_{i}x_{j}
 =\left(\vec{a}\cdot\vec{y}\right)\left(\vec{b}\cdot\vec{x}\right)
 $$
 
+proof2)
+
+$$
+M_{ij}x_{i}y_{j}=(My)_ix_i
+$$
+
+$$
+M_{ij}y_{i}x_{j}=(Mx)_iy_i
+$$
+
+여기에서, $(My)$와 $(Mx)$는 하나의 벡터 이름이다.
+
 **example3)** 
 
 $$
-\left(a_{ij}+a_{ji}\right)x_{i}y_{j}\ne2a_{ij}x_{i}y_{j}
+\left(a_{ij}+a_{ji}\right)x_{i}y_{j}
+\ne 2a_{ij}x_{i}y_{j}
 $$
 
-proof)
+proof1)
 
-대칭 행렬이 아닌 경우에는,
+$a_{ij}=\alpha_i\beta_j$ 라 하면, 왼쪽항은
 
 $$
-a_{ij}\ne a_{ji}
+\left(\alpha_i\beta_j+\alpha_j\beta_i\right)x_{i}y_{j}
+=\alpha_i x_i\beta_j y_j+\alpha_j y_j \beta_i x_i
 $$
+
+$$
+=(\vec{\alpha}\cdot\vec{x})(\vec{\beta}\cdot\vec{y})+(\vec{\alpha}\cdot\vec{y})(\vec{\beta}\cdot\vec{x})
+$$
+
+오른쪽항은
+
+$$
+2a_{ij}x_{i}y_{j}
+=2\alpha_i\beta_jx_iy_j
+=2(\vec{\alpha}\cdot\vec{x})(\vec{\beta}\cdot\vec{y})
+$$
+
+proof2)
+
+왼쪽항은
+
+$$
+\left(a_{ij}+a_{ji}\right)x_{i}y_{j}
+=(ay)_ix_i+(ax)_jy_j
+$$
+
+오른쪽항은
+
+$$
+2a_{ij}x_{i}y_{j}
+=2(ay)_ix_{i}
+$$
+
+여기에서, $(ay)$와 $(ax)$는 하나의 벡터 이름이다.
 
 ---
 
 ### 6. Identities
+
+**example1)**
 
 $$
 a_{ij}\left(x_{i}+y_{i}\right)
 =a_{ij}x_{i}+a_{ij}y_{i}
 $$
 
+proof)
+
+$$
+a_{ij}\left(x_{i}+y_{i}\right)
+=(xa)_j+(ya)_{j}
+$$
+
+**example2)**
+
 $$
 a_{ij}x_{i}x_{j}
 =a_{ji}x_{i}x_{j}
 $$
 
+proof)
+
+$$
+a_{ij}x_{i}x_{j}
+=x_i(ax)_i
+$$
+
+$$
+a_{ji}x_{i}x_{j}
+=x_j(ax)_j
+$$
+
+**example3)**
+
 $$
 \left(a_{ij}+a_{ji}\right)x_{i}x_{j}
 =2a_{ij}x_{i}x_{j}
 $$
+
+proof)
+
+예제2 에 의해서, 같음을 알 수 있다.
 
 ---
 

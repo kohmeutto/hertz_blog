@@ -34,3 +34,17 @@ u^i(|v\rangle)
 =\langle u^i|v\rangle
 =v_i
 $$
+
+범함수(브라 벡터)를 적용하여 전개하면,
+
+$$
+v_2
+=\langle u^2|v\rangle
+=v_1\langle u^2|u_1\rangle+v_2\langle u^2|u_2\rangle+v_3\langle u^2|u_3\rangle+\cdots
+$$
+
+위 식을 만족하기 위해서는,
+
+$$
+\langle u^i|u_j\rangle=\delta^i_j
+$$

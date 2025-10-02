@@ -91,7 +91,15 @@ The relationship between  and the cross product is as follows:
 $$
 \left\lbrack\vec{a}\times\vec{b}\right\rbrack_{i}
 =\varepsilon_{ijk}a_{j}b_{k}
-\to a_2b_3-a_3b_2
+\to
+\left|\begin{matrix}
+\hat{u}_1 & \hat{u}_2 & \hat{u}_3 \\
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3
+\end{matrix}\right|
+=\hat{u}_1(a_2b_3-a_3b_2)
++\hat{u}_2(a_3b_1-a_3b_1)
++\hat{u}_3(a_1b_2-a_2b_1)
 $$
 
 **(3) Determinent**
@@ -101,6 +109,17 @@ There is also a relation between  and the determinant of a 3 x 3 matrix. This ca
 $$
 \left|M\right|
 =\varepsilon_{ijk}M_{1i}M_{2j}M_{3k}
+=\left|\begin{matrix}
+M_{11} & M_{12} & M_{13} \\
+M_{21} & M_{22} & M_{23} \\
+M_{31} & M_{32} & M_{33} \\
+\end{matrix}\right|
+$$
+
+$$
+=M_{11}(M_{22}M_{33}-M_{23}M_{32})
++M_{12}(M_{23}M_{31}-M_{21}M_{33})
++M_{13}(M_{21}M_{32}-M_{22}M_{31})
 $$
 
 ---
@@ -147,6 +166,8 @@ $$
 =\epsilon_{ijk}a_{i}b_{j}c_{k}
 $$
 
+이 삼중곱의 크기는 3개의 벡터가 만드는 평행육면체의 부피를 의미한다.
+
 **(2) Levi-Civita' tenser**
 
 The dot product and the cross product are interchangeable.
@@ -160,6 +181,8 @@ $$
 ---
 
 ### 5. Relation betweenand $\varepsilon_{ijk}$ & $\delta_{ij}$
+
+증명과정은 매우 복잡(노가다)하다. 암기한다.
 
 $$
 \varepsilon_{ijk}\varepsilon_{lmn}
