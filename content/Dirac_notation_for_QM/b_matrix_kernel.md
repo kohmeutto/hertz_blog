@@ -1,6 +1,6 @@
 +++
 title = "(b) Matrix & Kernel"
-weight = 5
+weight = 4
 +++
 
 ---

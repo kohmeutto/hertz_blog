@@ -1,6 +1,6 @@
 +++
 title = "(b) Ket"
-weight = 2
+weight = 1
 +++
 
 ---

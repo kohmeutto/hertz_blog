@@ -1,6 +1,6 @@
 +++
 title = "(b) Outer product"
-weight = 4
+weight = 3
 +++
 
 ---

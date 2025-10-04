@@ -1,6 +1,6 @@
 +++
 title = "(b) Bra"
-weight = 3
+weight = 2
 +++
 
 ---

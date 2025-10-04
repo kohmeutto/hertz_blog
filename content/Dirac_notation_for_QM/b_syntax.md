@@ -1,6 +1,6 @@
 +++
 title = "(b) Syntax"
-weight = 6
+weight = 5
 +++
 
 ---
