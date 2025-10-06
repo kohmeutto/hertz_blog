@@ -1,5 +1,5 @@
 +++
-title = "(b) Column vector of matrix I - Basis"
+title = "(b) Column vector of matrix"
 weight = 6
 +++
 

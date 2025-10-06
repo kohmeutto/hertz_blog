@@ -1,11 +1,39 @@
 +++
-title = "(b) Column vector of matrix II - Determinant"
-weight = 7
+title = "(b) Linear transformation & Determinent"
+weight = 1
 +++
 
 ---
 
-### 1. 행렬식의 의미
+### 1. 행렬 연산(선형 변환)의 의미
+
+<img src="image1.png" width="60%" height="auto">
+
+행렬의 열벡터는 **변환된 기저의 집합** 이라고 하였다. **행렬연산(선형변환)의 결과는 이 변환된 기저가 만드는 공간에 속해** 있다.
+
+$$
+A\vec{u}
+=\begin{bmatrix}
+    A_{11} & A_{12} \\
+    A_{21} & A_{22} 
+\end{bmatrix}
+\begin{bmatrix}
+    u_1 \\ u_2 
+\end{bmatrix}
+=u_1\begin{bmatrix}
+    A_{11} \\ A_{21} 
+\end{bmatrix}
++u_2\begin{bmatrix}
+    A_{12} \\ A_{22} 
+\end{bmatrix}
+$$
+
+- **행벡터간의 선형독립** : 행벡터가 선형 독립이면, 공간의 차원이 유지된다.
+- **행벡터간의 종속** : 행벡터가 종속이면, 공간의 차원은 축소된다.
+
+---
+
+### 2. 행렬식의 의미
 
 - X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X'=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X'으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다.
 - **행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값** 으로 볼 수 있다.
@@ -25,37 +53,37 @@ $$
 
 ---
 
-### 2. 2D 변환
+### 3. 2D 변환
 
-<img src="image1.png" width="60%" height="auto">
+<img src="image2.png" width="60%" height="auto">
 
 ---
 
-### 3. 2D 변환 & det(A)=0
+### 4. 2D 변환 & det(A)=0
 
-<img src="image2.png" width="60%" height="auto">
+<img src="image3.png" width="60%" height="auto">
 
 - det(A)=0, 넓이 보정값은 0
 - det(A)=0, 차원 축소를 의미한다. **2D->1D or dot**
 
 ---
 
-### 4. 3D 변환
+### 5. 3D 변환
 
-<img src="image3.png" width="60%" height="auto">
+<img src="image4.png" width="60%" height="auto">
 
 ---
 
-### 5. 3D 변환 & det(A)=0
+### 6. 3D 변환 & det(A)=0
 
-<img src="image4.png" width="60%" height="auto">
+<img src="image5.png" width="60%" height="auto">
 
 - det(A)=0, 부피 보정값은 0
 - det(A)=0, 차원 축소를 의미한다. **3D->2D or 1D or dot**
 
 ---
 
-### 6. 중요 특성
+### 7. 중요 특성
 
 $$
 \left|AB\right|=\left|A\right|\left|B\right|
@@ -63,7 +91,7 @@ $$
 
 ---
 
-### 7. det(A)=0, 선형 독립 & 선형 종속
+### 8. det(A)=0, 선형 독립 & 선형 종속
 
 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을
 
@@ -93,11 +121,7 @@ $$
 \text{det}(A)=0
 $$
 
-
-
-
-
-
 ---
 
 [다크 프로그래머 :: [선형대수학 #2] 역행렬과 행렬식(determinant)](https://darkpgmr.tistory.com/104)
+
