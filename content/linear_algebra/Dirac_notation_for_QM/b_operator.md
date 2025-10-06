@@ -1,24 +1,44 @@
 +++
-title = "(b) Outer product"
+title = "(b) Operator"
 weight = 3
 +++
 
 ---
 
-### 1. 수학적 정의과 계산
+### 1. Bra vs. 연산자
+
+**(1) Ket 벡터 $|f\rangle$: 본질**
+
+추상적인 Ket 벡터 **$∣f\rangle$** 는 그 자체로 하나의 완벽한 **'설계도' 또는 'DNA'** 와 같다. 이 설계도 안에는 함수에 대한 모든 정보(특정 지점에서의 값, 변화율, 에너지, 운동량 등)가 잠재적으로 전부 담겨 있다.
+
+**(2) Bra 벡터 $\langle v|$: 추출 연산자 (Extraction Operator)**
+
+- **역할** : $|f\rangle$가 가진 수많은 정보 중에서, 특정 정보 하나($v\rangle$ 성분)만을 **추출(extract)** 하여 하나의 숫자로 보여주는 연산자이다.
+- **비유** : 전체 DNA($|f\rangle$)에서 눈 색깔 유전자($\langle v|$)정보만 쏙 뽑아내어 갈색이라는 값(스칼라)을 읽어내는 **유전자 분석기** 와 같다.
+- **결과** : $\langle v∣f\rangle$ → **스칼라 (숫자)**
+
+**(3) $\hat{A}$: 변환 연산자 (Transformation Operator)**
+
+- **역할** : 연산자 $\hat{A}$는 벡터 $|f\rangle$의 정보를 추출하는 것을 넘어, 그 상태 자체를 완전히 **변환(transform)** 시켜 새로운 상태 벡터 $|g\rangle$를 만들어내는 연산자이다.
+- **비유** : DNA($|f\rangle$)에 어떤 약품($\hat{A}$)을 처리하여, 유전 정보가 바뀐 새로운 DNA($|g\rangle$)를 만들어내는 **유전자 편집기** 와 같다.
+- **결과**: $\hat{A}|f\rangle$ → **Ket (새로운 벡터)**
+
+---
+
+### 2. 연산자의 수학적 정의와 표현
 
 **(1) 유한차원**
 
-유한차원에서, Ket-Bra → matrix 연산으로 정의된다. 예를 들어, 두 개의 2차원 벡터 |a⟩와 |b⟩가 있다.
+유한차원에서, Ket-Bra → matrix 연산으로 표현된다. 예를 들어, 두 개의 2차원 벡터 |a⟩와 |b⟩가 있다.
 
 $$
 |a\rangle
-=\left[\begin{matrix}
+\to\left[\begin{matrix}
     a_1 \\ 
     a_2
 \end{matrix}\right],\quad
 |b\rangle
-=\left[\begin{matrix}
+\to\left[\begin{matrix}
     b_1 \\ 
     b_2
 \end{matrix}\right]
@@ -29,7 +49,7 @@ outer product의 결과는 matrix이며, **matrix는 연산자** 로 간주할 �
 $$
 \hat{A}
 =|a\rangle\langle b|
-=\left[\begin{matrix}
+\to\left[\begin{matrix}
     a_1 \\ 
     a_2
 \end{matrix}\right]
@@ -82,7 +102,7 @@ $$
 \langle u_i|u^j\rangle=\delta_i^j
 $$
 
-만약, 기저 $|u_i⟩$ 가 **정규직교 기저(orthogonal basis)** 라면, 위 식으로 부터 듀얼 기저는 $⟨u_i|$ 가 된다. 
+만약, 기저 $|u_i⟩$ 가 **정규직교 기저(orthononal basis)** 라면, 위 식으로 부터 듀얼 기저는 $⟨u_i|$ 가 된다. 
 
 **특성1) 이산 기저의 사영연산자는 반드시 멱등성을 만족한다.**
 
@@ -94,8 +114,8 @@ proof)
 
 $$
 \hat{P}_i^2
-=(|u_i\rangle\langle u^j|)(|u_i\rangle\langle u^j|)
-=|u_i\rangle\delta^j_{.i}\langle u^j|
+=(|u_i\rangle\langle u^i|)(|u_j\rangle\langle u^j|)
+=|u_i\rangle\delta^i_{.j}\langle u^j|
 =|u_i\rangle\langle u^i|
 =\hat{P}_i
 $$

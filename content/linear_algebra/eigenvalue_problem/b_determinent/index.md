@@ -1,5 +1,5 @@
 +++
-title = "(b) Linear transformation & Determinent"
+title = "(b) Determinent"
 weight = 1
 +++
 
