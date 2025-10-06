@@ -1,39 +1,11 @@
 +++
 title = "(b) Determinent"
-weight = 1
+weight = 1.2
 +++
 
 ---
 
-### 1. 행렬 연산(선형 변환)의 의미
-
-<img src="image1.png" width="60%" height="auto">
-
-행렬의 열벡터는 **변환된 기저의 집합** 이라고 하였다. **행렬연산(선형변환)의 결과는 이 변환된 기저가 만드는 공간에 속해** 있다.
-
-$$
-A\vec{u}
-=\begin{bmatrix}
-    A_{11} & A_{12} \\
-    A_{21} & A_{22} 
-\end{bmatrix}
-\begin{bmatrix}
-    u_1 \\ u_2 
-\end{bmatrix}
-=u_1\begin{bmatrix}
-    A_{11} \\ A_{21} 
-\end{bmatrix}
-+u_2\begin{bmatrix}
-    A_{12} \\ A_{22} 
-\end{bmatrix}
-$$
-
-- **행벡터간의 선형독립** : 행벡터가 선형 독립이면, 공간의 차원이 유지된다.
-- **행벡터간의 종속** : 행벡터가 종속이면, 공간의 차원은 축소된다.
-
----
-
-### 2. 행렬식의 의미
+### 1. 행렬식의 의미
 
 - X를 [x, y]$^{T}$, [x, y, z]$^{T}$ 등과 같이 좌표를 나타내는 벡터라고 했을 때, 행렬 A를 X'=AX와 같이 사용하면 행렬 A는 입력좌표 X를 X'으로 변환시켜주는 일종의 선형변환(linear transformation)으로 해석할 수 있다.
 - **행렬식은 부피 또는 선형변환의 넓이 또는 부피의 보정 값** 으로 볼 수 있다.
@@ -53,37 +25,37 @@ $$
 
 ---
 
-### 3. 2D 변환
+### 2. 2D 변환
 
-<img src="image2.png" width="60%" height="auto">
+<img src="image1.png" width="60%" height="auto">
 
 ---
 
-### 4. 2D 변환 & det(A)=0
+### 3. 2D 변환 & det(A)=0
 
-<img src="image3.png" width="60%" height="auto">
+<img src="image2.png" width="60%" height="auto">
 
 - det(A)=0, 넓이 보정값은 0
 - det(A)=0, 차원 축소를 의미한다. **2D->1D or dot**
 
 ---
 
-### 5. 3D 변환
+### 4. 3D 변환
 
-<img src="image4.png" width="60%" height="auto">
+<img src="image3.png" width="60%" height="auto">
 
 ---
 
-### 6. 3D 변환 & det(A)=0
+### 5. 3D 변환 & det(A)=0
 
-<img src="image5.png" width="60%" height="auto">
+<img src="image4.png" width="60%" height="auto">
 
 - det(A)=0, 부피 보정값은 0
 - det(A)=0, 차원 축소를 의미한다. **3D->2D or 1D or dot**
 
 ---
 
-### 7. 중요 특성
+### 6. 중요 특성
 
 $$
 \left|AB\right|=\left|A\right|\left|B\right|
@@ -91,7 +63,7 @@ $$
 
 ---
 
-### 8. det(A)=0, 선형 독립 & 선형 종속
+### 7. det(A)=0, 선형 독립 & 선형 종속
 
 det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을
 
@@ -99,10 +71,10 @@ det(A)=0인 A(행렬, 연산자)는 피연산되는 모든 벡터들을
 - 같은 동일한 점으로 재배치 한다.
 - 같은 방향 또는 하나의 점으로 재배치 하므로, **det(A)=0 은, 행렬 A의 각 열벡터가 종속 성분이 있음을 의미한다.**
 
-행렬 A의 각 열벡터를 $v_{1}, v_{2}, v_{3}, \cdots$ 라고 하자. 
+행렬 A의 각 열벡터를 $|v_1\rangle$, $|v_2\rangle$, $|v_3\rangle$ 라고 하자. 각 열벡터가 독립 또는 종속임을 판별하기 위해 아래와 같은 식을 세울 수 있다.
 
 $$
-c_1v_{1}+c_2v_{2}+c_3v_{3}+\cdots=0
+c_1|v_1\rangle+c_2|v_2\rangle+c_3|v_3\rangle=0
 $$
 
 $$
