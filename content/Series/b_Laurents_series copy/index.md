@@ -47,8 +47,8 @@ $$
 $$
 \langle m|n\rangle
 =\delta_{mn}
-=C\oint dz {g_m^\ast(z)(z-z_0)^n}
-=C\oint dz (z-z_0)^{k}
+=\oint dz w(x){g_m^\ast(z)(z-z_0)^n}
+=\oint dz (z-z_0)^{k}
 $$
 
 코시의 적분 정리에 의해서,
@@ -64,21 +64,20 @@ $$
 따라서,
 
 $$
-C
-=\frac{1}{2\pi i}
+w(x)
+=\frac{1}{2\pi i}\cdot\frac{1}{z-z_0}
 $$
 
 $$
 \langle m|n\rangle
-=\frac{1}{2\pi i}\oint dz \{ (z-z_0)^{-m-1}(z-z_0)^n \}
-=\frac{1}{2\pi i}\oint dz \{ (z-z_0)^{-m-1}\langle z|n\rangle\}
+=\frac{1}{2\pi i}\oint \frac{dz}{z-z_0} \{ (z-z_0)^{-m}(z-z_0)^n \}
 $$
 
 쌍대기저는 아래와 같이 표현할 수 있다.
 
 $$
 \langle m|
-=\frac{1}{2\pi i}\oint dz (z-z_0)^{-m-1}\langle z|
+=\frac{1}{2\pi i}\oint \frac{dz}{z-z_0} (z-z_0)^{-m}\langle z|
 $$
 
 또한, $b_n$은 다음과 같다.
@@ -86,7 +85,7 @@ $$
 $$
 b_n
 =\langle n|f\rangle
-=\frac{1}{2\pi i}\oint dz (z-z_0)^{-n-1}f(z)
+=\frac{1}{2\pi i}\oint \frac{dz}{z-z_0} (z-z_0)^{-n}f(z)
 $$
 
 ---
@@ -125,14 +124,14 @@ $$
 (2) $n>0$
 
 $$
-b_n=\frac{1}{2\pi i}\oint dz f(z)(z-z_0)^{-n-1}
+b_n=\frac{1}{2\pi i}\oint \frac{dz}{z-z_0} f(z)(z-z_0)^{-n}
 $$
 
 $n>0$에서, 경로 $\mathbf{C}$ 내부 모든 곳에서 해석적이면, 코시의 도함수 공식을 사용할 수 있다.
 
 $$
 \frac{f^n(z_0)}{n!}
-=\frac{1}{2\pi i}\oint dz f(z)(z-z_0)^{-n-1}
+=\frac{1}{2\pi i}\oint \frac{dz}{z-z_0} (z-z_0)^{-n} f(z)
 $$
 
 ---
