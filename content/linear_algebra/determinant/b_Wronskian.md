@@ -7,21 +7,26 @@ weight = 2
 
 ### 1. 론스키안(Wronskian) 행렬 & 행렬식
 
-이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. **연속 무한 기저로 표현되는** 경우 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$)독립과 종속을 판별하기 위해, **론스키안 행렬** 을 구성한다.
+이산 유한 벡터(기저)의 경우, 독립과 종속을 판별하기 위해, 일반적인 행렬을 구성하여, 행렬식(determinent)를 사용하였다. **연속 무한 기저로 표현되는** 경우, 
+
+- **함수 벡터**의 ($|f_1\rangle$, $|f_2\rangle$, $\cdots$, $|f_n\rangle$)독립과 종속을 판별하기 위해, 
+- **함수**의 ($f_1(x)$, $f_2(x)$, $\cdots$, $f_n(x)$)독립과 종속을 판별하기 위해,
+
+**론스키안 행렬** 을 구성한다.
 
 $$
 W
 =\begin{bmatrix}
-\langle x|f_1\rangle & \langle x|f_2\rangle & \langle x|f_3\rangle & \cdots \\
-\langle x|\hat{D}|f_1\rangle & \langle x|\hat{D}|f_2\rangle & \langle x|\hat{D}|f_3\rangle & \cdots \\
-\langle x|\hat{D}^2|f_1\rangle & \langle x|\hat{D}^2|f_2\rangle & \langle x|\hat{D}^2|f_3\rangle & \cdots \\
-\vdots & \vdots & \vdots & \ddots \\
+\langle x|f_1\rangle & \langle x|f_2\rangle & \cdots &\langle x|f_n\rangle \\
+\langle x|\hat{D}|f_1\rangle & \langle x|\hat{D}|f_2\rangle &  \cdots & \langle x|\hat{D}|f_n\rangle &\\
+\vdots & \vdots & \ddots & \vdots \\
+\langle x|\hat{D}^{n-1}|f_1\rangle & \langle x|\hat{D}^{n-1}|f_2\rangle & \cdots & \langle x|\hat{D}^{n-1}|f_n\rangle 
 \end{bmatrix}
 =\begin{bmatrix}
-f_1(x) & f_2(x) & f_3(x) & \cdots \\
-f'_1(x) & f'_2(x) & f'_3(x) & \cdots \\
-f''_1(x) & f''_2(x) & f''_3(x) & \cdots \\
-\vdots & \vdots & \vdots & \ddots \\
+f_1(x) & f_2(x) & \cdots & f_n(x) \\
+f'_1(x) & f'_2(x) & \cdots & f'_n(x) \\
+\vdots & \vdots & \ddots & \vdots \\
+f^{(n-1)}_1(x) & f^{(n-1)}_2(x) & \cdots & f^{(n-1)}_n(x) \\
 \end{bmatrix}
 $$
 
@@ -93,3 +98,9 @@ $$
 **상태 벡터 $|f_n\rangle$는 '값' 정보와 함께 '어떻게 움직이는가'에 대한 '변화율(미분)' 정보도 잠재적으로 포함하고 있다.** 서로 다른 두 벡터의 관계를 정확히 알려면, 이 두 가지 정보를 모두 캐내야 한다. 
 
 ---
+
+### 2. 로랑 급수 기저의 독립
+
+---
+
+### 3. 푸리에 급수 기저의 독립

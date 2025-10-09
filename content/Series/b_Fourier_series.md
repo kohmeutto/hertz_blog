@@ -221,3 +221,35 @@ $$
 <hr>
 
 {{< /details >}}
+
+---
+
+### 3. 푸리에 급수는 로랑 급수의 "특별한 경우" 이다.
+
+원점에서의 로랑 급수는 아래와 같이 표현한다.
+
+$$
+f(z)=\sum_{n=-\infty}^{\infty} b_n z^n,
+\quad\text{where, }
+b_n
+=\frac{1}{2\pi i}\oint \frac{dz}{z}z^{-n}f(z)
+$$
+
+크기가 1인 단위원 이다.
+
+$$
+z=e^{i\omega_0 t}=e^{i\theta}
+$$
+
+$$
+f(z)=\sum_{n=-\infty}^{\infty} b_n z^n
+=\sum_{n=-\infty}^{\infty} b_n e^{i\omega_0 nt}
+$$
+
+$$
+b_n
+=\frac{1}{2\pi i}\oint \frac{dz}{z}z^{-n}f(z)
+=\frac{1}{2\pi i}\int_0^{2\pi} \frac{ie^{i\theta}d\theta}{e^{i\theta}}e^{-in\theta}f(z)
+=\frac{1}{T}\int_T dt e^{-i\omega_0 n t}f(z)
+$$
+

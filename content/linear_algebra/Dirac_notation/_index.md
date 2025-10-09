@@ -1,5 +1,5 @@
 +++
-title = 'Dirac notation for QM'
+title = 'Dirac notation'
 weight = 5
 +++
 

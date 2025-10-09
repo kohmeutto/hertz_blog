@@ -1,5 +1,5 @@
 +++
-title = "Vector"
+title = "Euclidean vector"
 weight = 1
 +++
 
