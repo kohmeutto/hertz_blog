@@ -17,23 +17,13 @@ weight = 2
 
 ---
 
-### 2. 정의와 물리적 의미
+### 2. 정의
 
-**(1) 정의 (고유값과 고유벡터)**
-
-연산자 $\hat{A}$에 대하여, 0이 아닌 벡터 $|v\rangle$와 스칼라 $\lambda$가 다음의 **고유값 방정식(eigenvalue equation)** 을 만족할 때, $|v\rangle$를 $\hat{A}$의 **고유벡터(Eigenvector)**, $\lambda$를 **고유값(Eigenvalue)** 이라고 한다.
+연산자 $\hat{A}$에 대하여, 0이 아닌 벡터 $|\lambda\rangle$와 스칼라 $\lambda$가 다음의 **고유값 방정식(eigenvalue equation)** 을 만족할 때, $|\lambda\rangle$를 $\hat{A}$의 **고유벡터(Eigenvector)**, $\lambda$를 **고유값(Eigenvalue)** 이라고 한다.
 
 $$
-\hat{A}|v\rangle = \lambda|v\rangle
+\hat{A}|\lambda\rangle = \lambda|\lambda\rangle
 $$
-
-**(2) 물리적 의미**
-
-이 방정식은 양자역학에서 **측정(measurement)** 행위를 설명하는 근본적인 식이다. 연산자 $\hat{A}$가 허미션이면,
-
-- **연산자 $\hat{A}$**: 측정 가능한 **물리량(Observable)**.
-- **고유벡터 $|v\rangle$**: 안정적인 **고유 상태(Eigenstate)**.
-- **고유값 $\lambda$**: 그 상태에서의 **측정값**.
 
 ---
 
@@ -41,7 +31,7 @@ $$
 
 **(1) 특성 방정식**
 
-고유값 방정식을 변형하면 $(\hat{A} - \lambda I)|v\rangle = 0$ 이 된다. 0이 아닌 고유벡터 해가 존재하려면, 행렬 $(\hat{A} - \lambda \hat{I})$의 행렬식이 0이어야 한다. 이로부터 **특성 방정식(characteristic equation)** 을 얻는다.
+고유값 방정식을 변형하면 $(\hat{A} - \lambda \hat{I})|v\rangle = 0$ 이 된다. 0이 아닌 고유벡터 해가 존재하려면, 행렬 $(\hat{A} - \lambda \hat{I})$의 행렬식이 0이어야 한다. 이로부터 **특성 방정식(characteristic equation)** 을 얻는다.
 
 $$
 \det(\hat{A} - \lambda \hat{I}) = 0
@@ -72,7 +62,94 @@ $$
 
 ---
 
-### 4. 고유벡터의 공간, 열공간과의 관계
+### 4. 고유벡터의 선형독립
+
+**고유값이 다르면, 각 고유값에 해당하는 고유벡터는 선형독립이다.** 단, 고유값이 같으면, 같은 고유값에 대한 고유벡터는 선형독립이 아닐 수 있다.
+
+proof)
+
+증명의 핵심 아이디어는 특정 고유벡터 $|lambda_j\rangle$를 제외한 **나머지 모든 고유벡터들을 정확히 0으로 만드는 '필터' 연산자**를 대수적으로 구성하는 것이다. 이 필터를 통과시키면 오직 우리가 목표로 하는 $|\lambda_j\rangle$에 대한 항만 살아남게 되어, 그 계수가 반드시 0임을 보일 수 있다.
+
+**(1) 일반적인 선형 결합 설정**
+
+먼저, 고유값 $\lambda_i$에 대응하는 고유벡터(고유켓) $|\lambda_i\rangle$의 일반적인 선형 결합이 0이 된다고 설정한다. 아래 식은 이산적인 합(summation)과 연속적인 적분(integral)을 모두 대표하는 일반적인 표현이다.
+
+$$
+\sum_i c_i |\lambda_i\rangle = |0\rangle
+$$
+
+만약 기저가 연속적이라면, 위 식은 $\int d\lambda \, c(\lambda) |\lambda\rangle = |0\rangle$ 의 형태로 생각할 수 있다. 증명의 논리는 동일하게 적용된다.
+
+최종 목표는 모든 계수 $c_i$가 (또는 함수 $c(\lambda)$가) 반드시 0임을 보이는 것이다.
+
+**(2) '선택적 제거 필터' 연산자 구성**
+
+수많은 고유벡터 중에서, 검증하고자 하는 특정 고유벡터 $|v_j\rangle$ 하나만 남기고 나머지는 모두 제거하는 필터 연산자 $P_j$를 다음과 같이 정의한다.
+
+$$
+P_j \equiv \prod_{i \neq j} (\hat{A} - \lambda_i \hat{I})
+$$
+
+이 연산자는 $(\hat{A}-\lambda_1\hat{I})$, $(\hat{A}-\lambda_2\hat{I})$, ... 와 같은 항들의 곱으로 이루어져 있다. 가장 중요한 점은, **오직 $(\hat{A}-\lambda_j\hat{I})$ 항만 의도적으로 제외하고** 곱했다는 것이다.
+
+**(3) 필터의 작동 방식**
+
+이 필터 $P_j$가 임의의 고유벡터 $|v_m\rangle$에 어떻게 작용하는지 확인해 보자.
+
+> **CASE 1** : 제거 대상 벡터 ($m \neq j$)
+
+ 필터 $P_j$의 곱셈 안에는 $(\hat{A}-\lambda_m\hat{I})$ 항이 반드시 포함되어 있다. 따라서,
+    
+$$
+P_j |v_m\rangle = \left( \prod_{i \neq j, m} (\hat{A}-\lambda_i\hat{I}) \right) (\hat{A}-\lambda_m\hat{I}) |v_m\rangle
+$$
+
+여기서 $(\hat{A}-\lambda_m\hat{I})|v_m\rangle = \hat{A}|v_m\rangle - \lambda_m|v_m\rangle = \lambda_m|v_m\rangle - \lambda_m|v_m\rangle = |0\rangle$ 이므로,
+
+$$
+P_j |lambda_m\rangle = |0\rangle \quad (\text{for } m \neq j)
+$$
+
+즉, 이 필터는 목표인 $|\lambda_j\rangle$를 제외한 **모든 다른 고유벡터를 정확히 0으로 소멸시킨다.**
+
+> **CASE 2: 살아남는 벡터 ($m = j$)**
+
+필터 $P_j$에는 $(\hat{A}-\lambda_j\hat{I})$ 항이 없으므로, $|lambda_j\rangle$는 0이 되지 않고 살아남는다.
+    
+$$
+P_j |\lambda_j\rangle = \left( \prod_{i \neq j} (\hat{A}-\lambda_i\hat{I}) \right) |\lambda_j\rangle = \left( \prod_{i \neq j} (\lambda_j-\lambda_i) \right) |\lambda_j\rangle
+$$
+
+모든 고유값 $\lambda_i$는 $\lambda_j$와 다르므로, 괄호 안의 스칼라 값은 **0이 아니다.**
+
+**(4) 필터를 적용하여 증명 완료**
+
+이제 처음 설정했던 선형 결합 식 $\sum_i c_i |\lambda_i\rangle = |0\rangle$ 의 양변에 우리가 만든 필터 $P_j$를 적용한다.
+
+$$
+P_j \left( \sum_i c_i |\lambda_i\rangle \right) = P_j|0\rangle
+$$
+$$
+\sum_i c_i (P_j|\lambda_i\rangle) = |0\rangle
+$$
+
+필터의 작동 방식에 의해, $i \neq j$인 모든 항 $(P_j|\lambda_i\rangle)$은 0이 되어 사라지고, 오직 $i=j$인 항만 살아남는다.
+
+$$
+c_j (P_j |v_j\rangle) = |0\rangle
+$$
+
+위에서 계산한 **CASE 2**의 결과를 대입하면,
+
+$$
+c_j \underbrace{\left( \prod_{i \neq j} (\lambda_j-\lambda_i) \right)}_{\text{0이 아닌 스칼라}} \underbrace{|v_j\rangle}_{\text{0이 아닌 벡터}} = |0\rangle
+$$
+
+이 등식이 성립하려면, 세 항의 곱이 0이 되어야 한다. 하지만 스칼라 부분과 벡터 부분은 0이 아니므로, 유일한 가능성은 계수 **$c_j=0$** 이어야 한다는 것이다.
+
+---
+
+### 5. 고유벡터의 공간, 열공간과의 관계
 
 고유값이 0이 아닌($\lambda \neq 0$) 모든 고유벡터 $|v\rangle$는 반드시 행렬 $A$의 **열공간(Column Space)** 에 속한다.
 
