@@ -124,7 +124,7 @@ $$
 (2) $n>0$
 
 $$
-b_n=\frac{1}{2\pi i}\oint \frac{dz}{z-z_0} f(z)(z-z_0)^{-n}
+b_n=\frac{1}{2\pi i}\oint \frac{dz}{z-z_0} (z-z_0)^{-n}f(z)
 $$
 
 $n>0$에서, 경로 $\mathbf{C}$ 내부 모든 곳에서 해석적이면, 코시의 도함수 공식을 사용할 수 있다.
