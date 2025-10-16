@@ -1,15 +1,11 @@
 +++
-title = "(b) Convolution"
-weight = 2
+title = "(b) Convolution II"
+weight = 2.5
 +++
 
 ---
 
-### 0. Convolution의 정의
-
-- **Causal: 이전 입력의 현재상태 + 현재 입력의 현재상태**
-
-- **Non-causal: 이전 입력의 현재상태 + 현재 입력의 현재상태 + 미래 입력의 현재상태**
+### 1. Convolution
 
 $$
 y\left(t\right)=x\left(t\right)\ast h\left(t\right)
@@ -18,9 +14,23 @@ y\left(t\right)=x\left(t\right)\ast h\left(t\right)
 =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right]
 $$
 
+proof)
+
+추상적인 벡터를 구체적으로 다루기 위해, $|t\rangle$ 기저로 사영한다.
+
+$$
+\langle t|f\ast h\rangle
+=\langle t|\int_{-\infty}^{\infty}d\tau \psi(\tau) |h(t-\tau)\rangle
+=\int_{-\infty}^{\infty}d\tau \psi(\tau) \langle t|h(t-\tau)\rangle
+$$
+
+$$
+=\int_{-\infty}^{\infty}d\tau \psi(\tau)h(t-\tau)
+$$
+
 ---
 
-### 1. 숫자(리스트)와 그림으로 이해하는 컨볼루션
+### 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션
 
 <img src="image1-1.png" width="90%" height="auto">
 
@@ -60,13 +70,23 @@ $$
 
 ---
 
-### 3. 주의사항
+### 3. Impulse response
 
-많은 곳에서 convolution 은 LTI(선형 시불변 시스템)에서만 이루어지는 연산이라고 되어있다. 이는 잘못된 설명이다. **정확한 설명은, convolution 은 선형/비선형과 상관없이 수학적 표현일 뿐**이다. **컨볼루션 연산 자체가 선형연산일 뿐이다.**
+임펄스 응답 $h(t)$는 시스템 $\mathcal{H}$에 **순간적인 충격(임펄스 $\delta(t)$)을 가했을 때 나오는 출력**을 말한다.
 
-[참조] [Is convolution only defined for lti systems? - Quora](https://www.quora.com/Is-convolution-only-defined-for-lti-systems)
+$$
+\langle t|\delta\ast h\rangle
+=\delta(t)\ast h(t)
+=\int^{\infty}_{-\infty} d\tau \delta(t-\tau) h(\tau)
+=h(t)
+$$
 
-Convolution is not only defined for Linear Time-Invariant (LTI) systems. While convolution is commonly associated with LTI systems in the context of signal processing and control theory, it is a fundamental operation in mathematics and has applications in various fields beyond LTI systems. Convolution can be defined for a wide range of functions and systems, including non-linear and time-varying systems. In mathematics, convolution is used in areas such as probability theory, image processing, and differential equations. Therefore, while it is often discussed in the context of LTI systems, convolution has broader applications across different domains.
+위 식을 잘 살펴보면, '$\delta(t)\ast$' 는 **어떠한 함수(시스템)를 sampling 하는 연산자**라는 것을 알수 있다.
+
+이 $h(t)$가 시스템 전체를 '대표'하고 모든 입력에 대한 출력을 예측하는 데 사용될 수 있는 것은 **오직 LTI(선형 시불변) 시스템의 경우에만 해당**한다.
+
+* **LTI 시스템의 경우:** 임펄스 응답 $h(t)$는 시스템의 모든 특성을 담고 있어, 어떤 입력 $x(t)$가 들어오더라도 출력 $y(t)$를 **합성곱**($x(t) \ast h(t)$)으로 **정확히 예측**할 수 있다. 이것이 LTI 시스템의 핵심이다.
+* **LTI 시스템이 아닌 경우:** 임펄스 입력에 대한 출력이 나타나긴 하지만, 이 출력이 $h(t)$처럼 시스템 전체를 대표하거나 다른 입력에 대한 출력을 합성곱으로 예측하는 데 사용될 수는 없다.
 
 ---
 

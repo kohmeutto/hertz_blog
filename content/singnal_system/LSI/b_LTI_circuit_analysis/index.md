@@ -1,6 +1,6 @@
 +++
-title = "(b) LTI & Circuit analysis"
-weight = 3
+title = "(b) LSI & Circuit analysis"
+weight = 10
 +++
 
 ---

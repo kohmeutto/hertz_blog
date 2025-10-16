@@ -1,5 +1,5 @@
 +++
-title = "Integral transform"
+title = "Linear operators & System"
 weight = 4
 +++
 

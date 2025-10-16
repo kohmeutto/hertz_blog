@@ -1,16 +1,21 @@
 +++
 title = "(b) Causality"
-weight = 2
+weight = 3
 +++
 
 ---
 
-- Causality 의 의미에 대해 살펴본다
-- LTI system + Causality 특성을 살펴본다. 
+### 1. LSI vs. LSI+causality
+
+- **LSI**: **L**inearity(선형성) + **S**hift 
+**I**nvarient(이동 불변) 의 축약어 이다.
+- **LSI+causality**: LSI 특성 + causality(인과성) 이다.
+
+모든 선형 시스템이 causality 특성을 가지는것이 아니라는 의미이다. 예로, 이상적인 필터는 LSI 특성을 가지지만, 비인과적이다.
 
 ---
 
-### 1. Causality(인과성)
+### 2. Causality(인과성)
 
 인과성은 시스템의 또 다른 중요한 특성이다. 인과적인(causal) **시스템은 현재의 출력이 오직 현재 또는 과거의 입력에 의해서만 결정되는 시스템**을 말한다. 미래의 입력이 현재 출력에 영향을 미치지 않는다. 
 
@@ -20,7 +25,7 @@ weight = 2
 
 ---
 
-### 2. LTI system + Causality
+### 3. LTI system + Causality
 
 LTI 시스템의 경우, 인과성은 임펄스 응답 $h(t)$의 특성으로 나타난다. 인과적인 LTI 시스템의 임펄스 응답은 **$t < 0$ 인 모든 시간에서 0이어야 한다.** convolution의 교환법칙을 사용하면 위 조건을 쉽게 증명할 수 있다. 아래는 교환법칙이 적용된 식을 그림으로 표현하였다.
 
@@ -41,7 +46,7 @@ $$
 
 ---
 
-### 3. Practice
+### 4. Practice
 
 (1) $y(t)=x(3t)$, non-causal
 

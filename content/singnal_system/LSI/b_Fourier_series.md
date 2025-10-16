@@ -1,13 +1,13 @@
 +++
 title = "(b) Fourier series"
-weight = 2
+weight = 9
 +++
 
 ---
 
 ### 1. 푸리에 급수
 
-**주기 함수** 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos n\omega_0 t\rangle$, $|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, 기저의 좌표값을 푸리에 급수라고 한다.
+**주기 함수** 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos_n\rangle=|\cos n\omega_0 t\rangle$, $|\sin_n\rangle=|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, $\langle t|f\rangle=f(t)$ 푸리에 급수라고 한다.
 
 $$
 f(t)
@@ -32,19 +32,19 @@ $$
 
 $$
 a_n
-=\langle\cos n\omega_0 t|f\rangle
+=\langle \cos_n|f\rangle
 =\frac{2}{T}\int_T dt \cos (n\omega_0t)f(t)
 $$
 
 $$
 b_n
-=\langle\sin n\omega_0 t|f\rangle
+=\langle \sin_n|f\rangle
 =\frac{2}{T}\int_T dt \sin (n\omega_0t)f(t)
 $$
 
 $$
 c_n
-=\langle e^{jn\omega_0t}|f\rangle
+=\langle \exp_n|f\rangle
 =\frac{1}{T}\int_T dt e^{-jn\omega_0t}f(t)
 $$
 
@@ -64,12 +64,29 @@ proof)
 
 $$
 |f\rangle
-=a_0|1\rangle + \sum_{n=1}^{\infty} \left\{ a_n |\cos n\omega_0 t\rangle + b_n |\sin n\omega_0 t\rangle \right\}
+=a_0|1\rangle + \sum_{n=1}^{\infty} \left\{ a_n |\cos_ n\rangle + b_n |\sin_n\rangle \right\}
 $$
 
-각 계수를 구하기 위해서, 각 기저에 대한 쌍대기저(범함수)를 알아야 한다.
+각 계수를 구하기 위해서, 각 기저를 정규직교기저로 만들기 위한 쌍대 기저를 알아야 한다. 우선 각 기저 $|\cos_n\rangle$, $|\sin_n\rangle$가 서로 독립임을 확인한다. Wronskian 방법을 사용하면,
+
+$$
+W
+=\begin{bmatrix}
+\cos n\omega_0 t & \sin n\omega_0  t \\
+-\omega_0n\sin n\omega_0t & \omega_0 n\cos n\omega_0 t
+\end{bmatrix}\implies
+|W|\ne0
+$$
+
+따라서, 서로 독립이다. 이번에는 각 기저를 orthonormal 하게 만들기 위한, 내적의 정의와, 쌍대기저를 구해야 한다.
 
 (1) $a_0$, $\langle 1|$
+
+$$
+\langle 1|1\rangle
+=\int_T dt w_(t)\cdot (1^\ast \cdot 1)=1\implies
+w(t)=\frac{1}{T}
+$$
 
 $$
 \langle 1|
@@ -82,42 +99,60 @@ a_0
 =\frac{1}{T}\int_T dt f(t)
 $$
 
-(2) $a_n$, $\langle \cos n\omega_0 t|$
+(2) $a_n$, $\langle \cos_n|$
 
 $$
-\langle \cos n\omega_0 t|
+\langle \cos_n|\cos_n\rangle
+=\int_T dt w(t)\cdot (\cos^2 n\omega_0 t)=1\implies
+w(t)=\frac{2}{T}
+$$
+
+$$
+\langle \cos_n|
 =\frac{2}{T}\int_T dt \cos (n\omega_0t) \langle t|
 $$
 
 $$
 a_n
-=\langle \cos n\omega_0 t|f\rangle
-=\frac{1}{T}\int_T dt \cos (n\omega_0t) f(t)
+=\langle \cos_n|f\rangle
+=\frac{2}{T}\int_T dt \cos (n\omega_0t) f(t)
 $$
 
 (3) $b_n$, $\langle \sin n\omega_0 t|$
 
 $$
-\langle \sin n\omega_0 t|
+\langle \sin_n|\sin_n\rangle
+=\int_T dt w(t)\cdot (\sin^2 n\omega_0 t)=1\implies
+w(t)=\frac{2}{T}
+$$
+
+$$
+\langle \sin_n|
 =\frac{2}{T}\int_T dt \sin (n\omega_0t) \langle t|
 $$
 
 $$
 b_n
-=\langle \sin n\omega_0 t|f\rangle
+=\langle \sin_n|f\rangle
 =\frac{2}{T}\int_T dt \sin (n\omega_0t) f(t)
 $$
 
-(4) $c_n$, $\langle e^{jn\omega_0t}|$
+(4) $c_n$, $\langle \exp_n|$
 
 $$
-\langle e^{jn\omega_0t}|
+\langle \exp_n|\exp_n\rangle
+=\int_T dt w(t)\cdot e^{-jn\omega_0 t}e^{jn\omega_0 t}=1\implies
+w(t)=\frac{1}{T}
+$$
+
+$$
+\langle \exp_n|
 =\frac{1}{T}\int_T dt e^{-jn\omega_0t} \langle t|
 $$
 
 $$
 c_n
-=\langle e^{jn\omega_0t}|f\rangle
+=\langle \exp_n|f\rangle
 =\frac{1}{T}\int_T dt e^{-jn\omega_0t} f(t)
 $$
 

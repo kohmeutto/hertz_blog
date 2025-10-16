@@ -1,6 +1,6 @@
 +++
 title = "(b) Fourier transform II"
-weight = 4
+weight = 7
 +++
 
 ---

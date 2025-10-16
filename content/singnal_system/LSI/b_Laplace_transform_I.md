@@ -1,9 +1,60 @@
 +++
 title = "(b) Laplace transform I"
-weight = 1
+weight = 4
 +++
 
 ---
+
+이 문서는 **LSI 연산자의 스팩트럼 분해** 를 다룬다. 개별 신호의 스팩트럼 분해는 다음 문서에 나온다.
+
+---
+
+### 1. Eigenfunction & eigenvalue for convolution
+
+$$
+\text{eigenvalue}: \lambda=\int_{-\infty}^{\infty} dt h(t) e^{-st}
+$$
+
+$$
+\text{eigenvector}: |s\rangle=|e^{st}\rangle
+$$
+
+proof)
+
+$$
+|h\rangle\ast|e^{st}\rangle
+=\int^{\infty}_{-\infty}d\tau h(\tau) |e^{s(t-\tau)}\rangle
+=\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle
+$$
+
+스팩트럼 분해에 의해서, 임의의 벡터는 고유벡터로 표현할 수 있다.
+
+$$
+|h\rangle = \int ds F(s)|s\rangle
+$$
+
+고유기저에 대한 좌표는
+
+$$
+F(s)
+=\langle s|h\rangle
+=\langle s|\hat{I}|h\rangle
+=\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle
+=\int dt\langle s|t\rangle\langle t|h\rangle
+$$
+
+$$
+=\int dt e^{-st} h(t)
+$$
+
+---
+
+### 2. 라플라스 변환
+
+**라플라스 변환**은 LSI 연산자의 **eigenvalue**(고유값)을 찾아 내는 방법이다.
+
+---
+
 
 ### 0. 정리
 

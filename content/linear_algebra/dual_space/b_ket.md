@@ -1,5 +1,5 @@
 +++
-title = "(b) State & Ket"
+title = "(b) Ket"
 weight = 1
 +++
 

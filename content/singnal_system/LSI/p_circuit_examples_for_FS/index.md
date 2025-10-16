@@ -1,6 +1,6 @@
 +++
 title = "(p) Circuit examples for FS"
-weight = 3
+weight = 10
 +++
 
 ---

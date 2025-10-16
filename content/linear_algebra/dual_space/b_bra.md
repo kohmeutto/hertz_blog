@@ -1,5 +1,5 @@
 +++
-title = "(b) Linear functional & Dual space & Bra"
+title = "(b) Bra"
 weight = 2
 +++
 

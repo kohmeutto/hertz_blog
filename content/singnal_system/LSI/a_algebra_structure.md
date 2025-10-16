@@ -1,6 +1,6 @@
 +++
 title = "(a) Algebra structure"
-weight = 1
+weight = 9
 +++
 
 ---
