@@ -5,14 +5,12 @@ weight = 4
 
 ---
 
-이 문서는 **LSI 연산자의 스팩트럼 분해** 를 다룬다. 개별 신호의 스팩트럼 분해는 다음 문서에 나온다.
+### 1. Eigenvector & eigenvalue of LSI systems
 
----
-
-### 1. Eigenfunction & eigenvalue for convolution
+연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
 
 $$
-\text{eigenvalue}: \lambda=\int_{-\infty}^{\infty} dt h(t) e^{-st}
+\text{eigenvalue}: \lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
 $$
 
 $$
@@ -27,110 +25,100 @@ $$
 =\left(\int^{\infty}_{-\infty}d\tau e^{-s\tau}h(\tau) \right)|e^{st}\rangle
 $$
 
-스팩트럼 분해에 의해서, 임의의 벡터는 고유벡터로 표현할 수 있다.
+$$
+\lambda=H(s)=\int_{-\infty}^{\infty} dt h(t) e^{-st}
+$$
+
+---
+
+### 2. State vector & operator
+
+벡터 $|h\rangle$는 **'설계도(DNA)'** 이고, 연산자 $|h\rangle\ast$는 **'설계도대로 작동하는 기계'** 이다.
+
+proof)
+
+연산자는 스팩트럼 분해에 의해서,
 
 $$
-|h\rangle = \int ds F(s)|s\rangle
+|h\rangle\ast = \int ds H(s)|s\rangle\langle s|
+$$
+
+시스템 벡터는 고유벡터로 표현할 수 있다.
+
+$$
+|h\rangle = \int ds \langle s|h\rangle|s\rangle
 $$
 
 고유기저에 대한 좌표는
 
 $$
-F(s)
-=\langle s|h\rangle
+\langle s|h\rangle
 =\langle s|\hat{I}|h\rangle
 =\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle
 =\int dt\langle s|t\rangle\langle t|h\rangle
 $$
 
 $$
-=\int dt e^{-st} h(t)
+=\int dt e^{-st} h(t)=H(s)
+$$
+
+위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 완전하게 동일함을 알 수 있다.
+
+---
+
+### 3. 라플라스 변환
+
+아래는 동일한 것을 다른 관점으로 설명한 것이다.
+
+(1) 관점1: **라플라스 변환**은 convolution으로 모두 귀결되는 LSI 연산자의 **eigenvalue**(고유값)을 찾아 내는 방법이다.
+
+$$
+H(s)=L\left\lbrace h\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$
+
+(2) 관점2: **라플라스 변환**은 벡터의 **좌표**를 찾아 내는 방법이다.
+
+$$
+H(s)=\langle s|h\rangle=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
 $$
 
 ---
 
-### 2. 라플라스 변환
-
-**라플라스 변환**은 LSI 연산자의 **eigenvalue**(고유값)을 찾아 내는 방법이다.
-
----
-
-
-### 0. 정리
-
-(1) $L:=h(t)\ast$ 라고 하자. 이 연산자에 대한 eigenfunction은 $e^{st}$ 이다
+### 4. 대수방정식
 
 $$
-e^{st},\quad s\in\mathbb{C}
+y''-7y'=7e^{t}\implies
+|f_1\rangle+|f_2\rangle=|f_3\rangle
 $$
 
-(2) 이 eigenfuction에 대한 eigenvalue를 라플라스 변환이라고 한다.
+(1) 관점1: **라플라스 변환**은 convolution으로 모두 귀결되는 LSI 연산자의 **eigenvalue**(고유값)을 찾아 내는 방법이다.
 
 $$
-\lambda_{s}=\int_{-\infty}^{\infty}dt\left[ h\left(t\right)e^{-st}\right]
-$$
-
----
-
-### 1. Eigenfunction & Eigenvalue
-
-**모든 합성곱에 대한 공통적인 eigenfunction이 존재한다.** **eigenfunction**의 의미는 연산자를 통과하였을 때, '기본성질이 변하지않는 함수`를 의미한다.
-
-이 eigenfunction은
-
-$$
-e^{st},\quad s\in\mathbb{C}
-$$
-
-이 eigenfunction에 대한 eigenvalue는
-
-$$
-h\left(t\right) \ast e^{st}=\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right) e^{s\left(t-\tau\right)}\right]
-=\left\lbrace\int_{-\infty}^{\infty}d\tau\left[h\left(\tau\right)e^{-s\tau}\right]\right\rbrace e^{st}
-=\lambda_{s}e^{st}
+|f_1\rangle\ast|s\rangle+|f_2\rangle\ast|s\rangle=|f_3\rangle\ast|s\rangle
 $$
 
 $$
-\lambda_{s}=H\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+\lambda_1|s\rangle+\lambda_2|s\rangle=\lambda_3|s\rangle
+$$
+
+$$
+\lambda_1+\lambda_2=\lambda_3
+$$
+
+(2) 관점2: **라플라스 변환**은 벡터의 **좌표**를 찾아 내는 방법이다.
+
+$$
+\langle s|f_1\rangle+\langle s|f_2\rangle=\langle s|f_3\rangle
+$$
+
+$$
+\lambda_1+\lambda_2=\lambda_3
 $$
 
 ---
 
-### 2. Laplace transformation
+### 5. 주의사항
 
-위 eigenvalue를 라플라스 변환이라고 한다. 즉, **라플라스 변환**은 연산자의 입력 $e^{st}$에 대한 **eigenvalue**(고유값)을 찾아 내는 방법이다.
+Laplace transform은 다양한 함수에 적용할 수 있는 강력한 수학적 도구이다. 하지만, 이 변환을 사용하여 시스템의 출력을 전달 함수와의 곱, 즉 $Y(s) = H(s)X(s)$로 간단하게 계산하는 것은 시스템이 반드시 선형 이동 불변(LSI)일 때만 유효하다.
 
-$$
-\lambda_{s}=L\left\lbrace h\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
-$$
-
----
-
-### 3. 대수방정식
-
-eigenfuction과 eigenvalue를 이용한다는 것은, 복잡한 식을 단순하게 바꿀 수 있는 편리한 도구를 사용한다는 말과 같다.
-convolution에 대한, eigenfuction, $e^{st}$ 은 모두 동일하므로, $e^{st}$은 나눠져서 사라지게 된다.
-
-**즉, eigenvalue에 대한 대수 방정식으로 바뀐다.** 아래의 예를 보면, 쉽게 이해할 수 있다.
-
-$$
-y''-7y'=7e^{t}
-$$
-
-$$
-\implies y''\ast e^{st}-7y'\ast e^{st}=7e^{t}\ast e^{st}
-$$
-
-$$
-\implies\lambda_1e^{st}+\lambda_2e^{st}=\lambda_3e^{st}
-$$
-
-$$
-\implies\lambda_1+\lambda_2=\lambda_3
-$$
-
----
-
-### 4. 주의사항
-
-**Laplace transform**은 함수 $h\left(t\right)$ 이 **선형/비선형 인지 상관없이** 수학적으로 수행할 수 있다.
+비선형 시스템은 중첩의 원리를 만족하지 않으므로, 임펄스 응답 h(t)와 전달 함수 H(s)라는 개념 자체가 시스템 전체를 대표할 수 없다. 따라서 이 문서에서 다루는 모든 시스템 분석 기법은 LSI 시스템을 전제로 한다.

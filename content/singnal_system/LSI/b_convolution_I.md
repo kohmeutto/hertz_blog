@@ -95,3 +95,34 @@ $$
 $$
 
 이로써, 모든 LSI 연산자의 입출력 관계는 입력과 임펄스 응답의 합성곱이라는 단 하나의 형태로 귀결됨이 증명되었다.
+
+---
+
+### 3. Convolution
+
+LSI 연산자라면,
+
+$$
+\hat{H}=|h\rangle\ast=\int d\tau |h(t-\tau)\rangle\langle\tau|
+$$
+
+위 식은 선형연산자가 하는 역할을 보여준다. 현재 위치(시간) 상태를 추출 $\langle\tau|$ 하고, 그 위치(시간)에 있는 연산자의 상태 $|h(t-\tau)\rangle$ 로 변환한다. 
+
+proof)
+
+$$
+|h\rangle\ast|\psi\rangle
+=\int_{-\infty}^{\infty}d\tau \psi(\tau) |h(t-\tau)\rangle
+=\int_{-\infty}^{\infty}d\tau |h(t-\tau)\rangle\psi(\tau)
+=\int_{-\infty}^{\infty}d\tau |h(t-\tau)\rangle\langle\tau|\psi\rangle
+$$
+
+따라서,
+
+$$
+|h\rangle\ast=\int d\tau |h(t-\tau)\rangle\langle\tau|
+$$
+
+---
+
+**example)** $|f\rangle+$ 연산자는 선형인가.

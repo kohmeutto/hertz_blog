@@ -11,11 +11,15 @@ weight = 5
 
 ### 1. 라플라스 변환
 
+(1) 양방향 라플라스 변환
+
 $$
 \mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
 =\langle s|f\cdot u\rangle
 =\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack
 $$
+
+(2) 단방향 라플라스 변환, causal system
 
 $$
 \mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
