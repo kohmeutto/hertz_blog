@@ -176,3 +176,6 @@ $$
 =\int^\infty_{-\infty}dx|x\rangle\langle x|\psi\rangle
 =\hat{I}|\psi\rangle
 $$
+
+
+---

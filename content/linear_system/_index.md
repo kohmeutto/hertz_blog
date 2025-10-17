@@ -1,5 +1,5 @@
 +++
-title = "Linear operators & System"
+title = "Linear system"
 weight = 4
 +++
 

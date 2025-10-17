@@ -5,7 +5,18 @@ weight = 2
 
 ---
 
-### 1. LSI operators
+**LSI 연산자 정리**
+
+(1) $\hat{H}|x'\rangle=|h(x-x')\rangle$
+
+(2) $\hat{H}=|h\rangle\ast=\int dx' |h(x-x')\rangle\langle x'|$
+
+(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$
+
+---
+
+
+### 1. 대표적인 LSI operators
 
 LSI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. **예외 없이 모든 LSI 연산자들은 합성곱(Convolution)으로 표현** 될 수 있다는 공통점을 가진다.
 
@@ -95,33 +106,6 @@ $$
 $$
 
 이로써, 모든 LSI 연산자의 입출력 관계는 입력과 임펄스 응답의 합성곱이라는 단 하나의 형태로 귀결됨이 증명되었다.
-
----
-
-### 3. Convolution
-
-LSI 연산자라면,
-
-$$
-\hat{H}=|h\rangle\ast=\int d\tau |h(t-\tau)\rangle\langle\tau|
-$$
-
-위 식은 선형연산자가 하는 역할을 보여준다. 현재 위치(시간) 상태를 추출 $\langle\tau|$ 하고, 그 위치(시간)에 있는 연산자의 상태 $|h(t-\tau)\rangle$ 로 변환한다. 
-
-proof)
-
-$$
-|h\rangle\ast|\psi\rangle
-=\int_{-\infty}^{\infty}d\tau \psi(\tau) |h(t-\tau)\rangle
-=\int_{-\infty}^{\infty}d\tau |h(t-\tau)\rangle\psi(\tau)
-=\int_{-\infty}^{\infty}d\tau |h(t-\tau)\rangle\langle\tau|\psi\rangle
-$$
-
-따라서,
-
-$$
-|h\rangle\ast=\int d\tau |h(t-\tau)\rangle\langle\tau|
-$$
 
 ---
 

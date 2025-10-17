@@ -1,5 +1,5 @@
 +++
-title = "(b) Convolution II"
+title = "(b) Convolution"
 weight = 2.5
 +++
 

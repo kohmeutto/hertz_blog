@@ -5,6 +5,17 @@ weight = 4
 
 ---
 
+**LSI 연산자 정리**
+
+(1) $\hat{H}|x'\rangle=|h(x-x')\rangle$
+
+(2) $\hat{H}=|h\rangle\ast=\int dx' |h(x-x')\rangle\langle x'|$
+
+(3) $\hat{H}=|h\rangle\ast=\int ds H(s)|s\rangle\langle s|$
+
+---
+
+
 ### 1. Eigenvector & eigenvalue of LSI systems
 
 연산자 $|h\rangle\ast$ 의 고유값과 고유벡터
