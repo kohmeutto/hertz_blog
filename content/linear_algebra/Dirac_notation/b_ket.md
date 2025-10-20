@@ -42,12 +42,6 @@ $$
 |f\rangle = \int dx f(x) |x\rangle
 $$
 
-- 관용적 표현으로, 아래와 같이 쓸 수 있다.
-
-$$
-|f\rangle=|f(x)\rangle
-$$
-
 ---
 
 ### 3. 스칼라 곱의 표현

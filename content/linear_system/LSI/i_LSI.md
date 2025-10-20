@@ -5,6 +5,46 @@ weight = 1
 
 ---
 
+### 1. LSI
+
+Linear + Shift Invarience
+
+---
+
+### 2. Linearity(선형성)=Superpostion
+
+Superposition은 Linearity 와 동치이다. 따라서, 두가지 용어를 system 에서 혼용해서 사용해도 같은 의미임을 상기하라.
+
+$$
+\text{Superposition}=\text{Addictivity}+\text{Scaling}
+$$
+
+$$
+\hat{H}(a|\psi_1\rangle+b|\psi_2\rangle)
+=a\hat{H}|\psi_1\rangle+b\hat{H}|\psi_2\rangle
+$$
+
+---
+
+### 3. Copy-shift invarience
+
+(1) LSI 연산자는 copy-shift 연산자와 교환가능하다. 
+
+- 이동 불변 시스템이란 시스템을 작동시키는 근본적인 규칙(rule)이 이동(시간,공간) 등에 따라 변하지 않는다는 의미한다. 
+- 따라서 동일한 모양의 입력을 언제 넣든지 상관없이, 출력은 항상 **똑같은 모양으로 나온다.**
+
+$$
+|\varphi(t)\rangle=\hat{H}|\psi(t)\rangle
+\implies
+\hat{S}_\tau|\varphi(t)\rangle
+=\hat{S}_\tau\hat{H}|\psi(t)\rangle
+=\hat{H}\hat{S}_\tau|\psi(t)\rangle
+$$
+
+(2) 변화량은 0이다.
+
+---
+
 **LSI 연산자 정리**
 
 (1) $\hat{H}|x'\rangle=|h(x-x')\rangle$

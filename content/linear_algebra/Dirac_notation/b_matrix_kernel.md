@@ -111,35 +111,29 @@ $$
 =\iint du du' (\gamma_u\gamma_{u'})^{-1} K(u,u') |u\rangle\langle u'|
 $$
 
-$|f(x)\rangle=\int dx f(x) |x\rangle$로 표현하는것과 마찬가지로,
-
-$$
-\hat{A}
-=\int du' \gamma'_u\left( \int du \gamma_u K(u,u') |u\rangle \right) \langle u'|
-=\int du' \gamma_{u'}^{-1}|\gamma_uK_u(u,u')\rangle \langle u'|
-$$
-
-
 **(2) 커널을 이용한 연산**
 
-연산자 Â가 벡터 |ψ⟩에 작용하여 새로운 벡터 |φ⟩를 만드는 과정($|\phi\rangle = \hat{A}|\psi\rangle$)은, 적분 커널을 이용하여 다음과 같이 표현된다.
-
 $$
-\phi(x)=\int dx' K_x(x,x') \psi(x')
+\varphi(u)=\int du' K(u,u') \psi(u')
 $$
 
 proof)
 
 $$
-|\phi(x)\rangle = \hat{A}|\psi\rangle
-= \int dx' |K_x(x,x')\rangle \langle x'|\psi\rangle
-= \int dx' |K_x(x,x')\rangle \psi(x')
+\langle u|\varphi\rangle = \langle u|\hat{A}|\psi\rangle
+=\iint du'' du' (\gamma_{u''}\gamma_{u'})^{-1} K(u'',u') \langle u|u''\rangle\langle u'|\psi\rangle
 $$
 
-의 양변에 $\langle x|$를 내적하면,
+$$
+=\iint du'' du' (\gamma_{u''}\gamma_{u'})^{-1}\gamma_u\gamma_{u'} K(u'',u') \delta(u-u'')\psi(u')
+$$
 
 $$
-\phi(x) = \int dx' K_x(x,x') \psi(x')
+=\int du' (\gamma_{u}\gamma_{u'})^{-1}\gamma_u\gamma_{u'} K(u,u') \psi(u')
+$$
+
+$$
+=\int du' K(u,u') \psi(u')
 $$
 
 ---
@@ -151,36 +145,3 @@ $$
 - 사영연산자: 특정기저로 사영시킨다.
 - 상수값: 특정기저로 사영한 결과에 어떠한 상수를 곱해 변환한다.
 
----
-
-### 4. 임펄스 기저에 대한 연산자의 작용
-
-**(1) 이산기저**
-
-$$
-\hat{H}|n\rangle=|h_{ln}\rangle
-$$
-
-proof)
-
-$$
-\hat{H}|n\rangle
-=\sum_m |h_{lm}\rangle \langle m|n\rangle
-=\sum_m |h_{lm}\rangle \delta_{mn}
-=|h_{ln}\rangle
-$$
-
-**(2) 연속기저**
-
-$$
-\hat{H}|\tau\rangle=|h(x,\tau)\rangle
-$$
-
-proof)
-
-$$
-\hat{H}|\tau\rangle
-=\int dx' |h_x(x,x')\rangle \langle x'|\tau\rangle
-=\int dx' |h_x(x,x')\rangle \delta(x'-\tau)
-=|h_x(x,\tau)\rangle
-$$
