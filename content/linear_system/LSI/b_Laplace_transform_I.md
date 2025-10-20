@@ -57,23 +57,19 @@ $$
 시스템 벡터는 고유벡터로 표현할 수 있다.
 
 $$
-|h\rangle = \int ds \langle s|h\rangle|s\rangle
+|h\rangle
+= \int ds \langle s^d|h\rangle|s\rangle
+= \frac{1}{2\pi i}\int ds H(s)|s\rangle
 $$
 
 고유기저에 대한 좌표는
 
 $$
-\langle s|h\rangle
-=\langle s|\hat{I}|h\rangle
-=\langle s|\left(\int dt|t\rangle\langle t|\right)|h\rangle
-=\int dt\langle s|t\rangle\langle t|h\rangle
+\langle s^d|h\rangle
+=\frac{1}{2\pi i}H(s)
 $$
 
-$$
-=\int dt e^{-st} h(t)=H(s)
-$$
-
-위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 완전하게 동일함을 알 수 있다.
+위 두 식을 비교하면 연산자 $|h\rangle\ast$의 고유값과 $|h\rangle$의 좌표가 유사함을 알 수 있다.
 
 ---
 
@@ -128,7 +124,27 @@ $$
 
 ---
 
-### 5. 주의사항
+### 5. 라플라스 역변환
+
+$|s\rangle$에 대한 기저를 $|t\rangle$에 대한 기저로 옮기는 것이다.
+
+$$
+\langle t|h\rangle
+= \langle t|\left(\int ds H(s)|s\rangle \right)
+= \int ds H(s)\langle t|s\rangle
+= \int ds H(s)e^{st}
+$$
+
+브라연산자는 모두 선형이므로(필수 조건이며, 선택적인 성질이 아님)
+
+$$
+\langle s|\left(\int dt |t\rangle\langle t|\right)|h\rangle=\int_{-\infty}^{\infty}dt\left[h\left(t\right)e^{-st}\right]
+$$
+
+
+---
+
+### 6. 주의사항
 
 Laplace transform은 다양한 함수에 적용할 수 있는 강력한 수학적 도구이다. 하지만, 이 변환을 사용하여 시스템의 출력을 전달 함수와의 곱, 즉 $Y(s) = H(s)X(s)$로 간단하게 계산하는 것은 시스템이 반드시 선형 이동 불변(LSI)일 때만 유효하다.
 

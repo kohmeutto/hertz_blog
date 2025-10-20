@@ -19,13 +19,9 @@ proof)
 추상적인 벡터를 구체적으로 다루기 위해, $|t\rangle$ 기저로 사영한다.
 
 $$
-\langle t|f\ast h\rangle
-=\langle t|\int_{-\infty}^{\infty}d\tau \psi(\tau) |h(t-\tau)\rangle
-=\int_{-\infty}^{\infty}d\tau \psi(\tau) \langle t|h(t-\tau)\rangle
-$$
-
-$$
-=\int_{-\infty}^{\infty}d\tau \psi(\tau)h(t-\tau)
+\langle t|(|h\rangle\ast |f\rangle)
+=\langle t|\left(\int_{-\infty}^{\infty}d\tau |h(t-\tau)\langle\tau|\right)|f\rangle
+=\int_{-\infty}^{\infty}d\tau h(t-\tau)f(\tau)
 $$
 
 ---

@@ -12,13 +12,7 @@ weight = 9
 $$
 f(t)
 =a_0+\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t + b_n\sin n\omega_0 t\}
-$$
-
-$$
 =\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t}
-$$
-
-$$
 =d_0+\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t + \varphi_n)
 $$
 
@@ -26,37 +20,25 @@ where,
 
 $$
 a_0
-=\langle 1|f\rangle
-=\frac{1}{T}\int_T dt f(t)
-$$
-
-$$
+=\langle 1^d|f\rangle
+=\frac{1}{T}\langle1|f\rangle,\quad
 a_n
-=\langle \cos_n|f\rangle
-=\frac{2}{T}\int_T dt \cos (n\omega_0t)f(t)
-$$
-
-$$
+=\langle \cos_n^d|f\rangle
+=\frac{2}{T}\langle \cos_n|f\rangle,\quad
 b_n
-=\langle \sin_n|f\rangle
-=\frac{2}{T}\int_T dt \sin (n\omega_0t)f(t)
+=\langle \sin_n^d|f\rangle
+=\frac{2}{T}\langle \sin_n|f\rangle
 $$
 
 $$
 c_n
-=\langle \exp_n|f\rangle
-=\frac{1}{T}\int_T dt e^{-jn\omega_0t}f(t)
+=\langle \exp_n^d|f\rangle
+=\frac{1}{T}\exp_n|f\rangle
 $$
 
 $$
-d_0=c_0
-$$
-
-$$
-d_n=2|c_n|
-$$
-
-$$
+d_0=c_0,\quad
+d_n=2|c_n|,\quad
 \varphi_n=\operatorname{ang}\{c_n\}
 $$
 
@@ -78,82 +60,82 @@ W
 |W|\ne0
 $$
 
-따라서, 서로 독립이다. 이번에는 각 기저를 orthonormal 하게 만들기 위한, 내적의 정의와, 쌍대기저를 구해야 한다.
+따라서, 서로 독립이다. 이번에는 각 기저의 쌍대기저를 구해야 한다.
 
-(1) $a_0$, $\langle 1|$
-
-$$
-\langle 1|1\rangle
-=\int_T dt w_(t)\cdot (1^\ast \cdot 1)=1\implies
-w(t)=\frac{1}{T}
-$$
+(1) $a_0$, $\langle 1^d|$
 
 $$
-\langle 1|
-=\frac{1}{T}\int_T dt \langle t|
+\langle 1^d|1\rangle
+=\frac{1}{\gamma}\int_T dt 1^\ast \cdot 1=1\implies
+\gamma=\frac{1}{T}
+$$
+
+$$
+\langle 1^d|
+=\frac{1}{T}\langle 1|
 $$
 
 $$
 a_0
-=\langle 1|f\rangle
-=\frac{1}{T}\int_T dt f(t)
+=\langle 1^d|f\rangle
+=\frac{1}{T}\langle1|f\rangle
 $$
 
-(2) $a_n$, $\langle \cos_n|$
+(2) $a_n$, $\langle \cos_n^d|$
 
 $$
-\langle \cos_n|\cos_n\rangle
-=\int_T dt w(t)\cdot (\cos^2 n\omega_0 t)=1\implies
-w(t)=\frac{2}{T}
+\langle \cos_n^d|\cos_n\rangle
+=\frac{1}{\gamma}\int_T dt \cos^2 n\omega_0 t=1\implies
+\gamma=\frac{2}{T}
 $$
 
 $$
-\langle \cos_n|
-=\frac{2}{T}\int_T dt \cos (n\omega_0t) \langle t|
+\langle \cos_n^d|
+=\frac{2}{T}\langle \cos_n|
 $$
 
 $$
 a_n
-=\langle \cos_n|f\rangle
-=\frac{2}{T}\int_T dt \cos (n\omega_0t) f(t)
+=\langle \cos_n^d|f\rangle
+=\frac{2}{T}\langle \cos_n|f\rangle
 $$
 
-(3) $b_n$, $\langle \sin n\omega_0 t|$
+(3) $b_n$, $\langle \sin n^d|$
 
 $$
-\langle \sin_n|\sin_n\rangle
-=\int_T dt w(t)\cdot (\sin^2 n\omega_0 t)=1\implies
-w(t)=\frac{2}{T}
+\langle \sin_n^d|\sin_n\rangle
+=\frac{1}{\gamma}\int_T dt \sin^2 n\omega_0 t=1\implies
+\gamma=\frac{2}{T}
 $$
 
 $$
-\langle \sin_n|
-=\frac{2}{T}\int_T dt \sin (n\omega_0t) \langle t|
+\langle \sin_n^d|
+=\frac{2}{T}\langle \sin_n|
 $$
 
 $$
 b_n
-=\langle \sin_n|f\rangle
-=\frac{2}{T}\int_T dt \sin (n\omega_0t) f(t)
+=\langle \sin_n^d|f\rangle
+=\frac{2}{T}\langle \sin_n|f\rangle
 $$
 
-(4) $c_n$, $\langle \exp_n|$
+(4) $c_n$, $\langle \exp_n^d|$
 
 $$
-\langle \exp_n|\exp_n\rangle
-=\int_T dt w(t)\cdot e^{-jn\omega_0 t}e^{jn\omega_0 t}=1\implies
-w(t)=\frac{1}{T}
+\langle \exp_n^d|\exp_n\rangle
+=\frac{1}{\gamma}\int_T dt e^{-jn\omega_0 t}e^{jn\omega_0 t}=1\implies
+\gamma=\frac{1}{T}
 $$
 
 $$
-\langle \exp_n|
-=\frac{1}{T}\int_T dt e^{-jn\omega_0t} \langle t|
+\langle \exp_n^d|
+=\frac{1}{T}\langle \exp_n|
 $$
 
 $$
 c_n
-=\langle \exp_n|f\rangle
-=\frac{1}{T}\int_T dt e^{-jn\omega_0t} f(t)
+=\langle \exp_n^d|f\rangle
+=\frac{1}{T}\langle \exp_n|f\rangle
 $$
 
 

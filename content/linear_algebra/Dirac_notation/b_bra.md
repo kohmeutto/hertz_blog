@@ -36,133 +36,117 @@ $$
 \langle a|:=|a\rangle^{\ast T}:=|a \rangle^\dagger 
 $$
 
+위와 같은 것을 아래와 같이 부른다.
+
+- ket a의 bra 벡터
+- ket a의 허미션 켤레
+- ket a의 쌍대 벡터
+
 ---
 
-### 2. 단위 기저 벡터의 내적
+### 2. 모든 Bra 벡터는 선형연산자 이다. 이것은 반드시 만족한다.
+
+$$
+\langle f| (a_1|\psi_1\rangle+a_2|\psi_2\rangle)
+=a_1\langle f| \psi_1\rangle+a_2\langle f| \psi_2\rangle
+$$
+
+---
+
+### 3. 쌍대 기저
+
+어떤 벡터 $|v\rangle$의 특정 성분, 예를 들어 $v_3$ 를 어떻게 알아낼 수 있을까. 바로 이 질문에 답하기 위해 쌍대공간과 Bra가 그 진가를 발휘한다. Ket 공간의 기저 {$|u\rangle$}가 주어지면, 그에 완벽하게 짝을 이루는 특별한 Bra들의 집합이 쌍대공간 안에 존재한다. 이를 **쌍대 기저(Dual Basis)** 부른다.
 
 **(1) 이산기저  (Discrete Basis)**
 
-유한차원 또는 셀 수 있는 무한차원 공간(예: 스핀, 양자화된 에너지 준위)의 **정규직교 기저** |uᵢ⟩의 내적은 **크로네커 델타(Kronecker Delta)** 로 정의된다.
+$$
+\langle u^i|u_j\rangle
+=\delta^i_j
+$$
+
+$$
+|v\rangle
+=\sum_i v_i|u_i\rangle
+=v_1|u_1\rangle+v_2|u_2\rangle+v_3|u_3\rangle+\cdots
+$$
+
+$$
+v_2
+=\langle u^2|v\rangle
+$$
+
+**(2) 연속 기저 (Continuous Basis)**
+
+$$
+\langle u^d|u'\rangle
+=\delta(u-u')
+$$
+
+$$
+|f\rangle = \int du f(u)|u\rangle
+$$
+
+$$
+\langle u^d|f\rangle
+= \langle u^d|\left(\int du' f(u')|u'\rangle\right)
+= \int du' f(u')\langle u^d|u'\rangle
+= \int du f(u)\delta(u-u')
+= f(u)
+$$
+
+
+---
+
+### 4. 쌍대 벡터 vs. 쌍대 기저, 정규직교기저
+
+$|u\rangle$ 기저가 있다. **엄연히 쌍대 벡터와 쌍대 기저는 서로 다른 정의**이다. 혼동되지 않도록 학습한다.
+
+- 쌍대 벡터: 리츠의 표현정리는 만족하는 $\langle u|=|u\rangle^\dagger$
+- 쌍대 기저(Dual basis): $\langle u^d|u\rangle=\delta$ 를 만족하는 $\langle u^d|$
+
+$$
+\langle u'|u\rangle = 2\pi\delta(u-u') \ne \delta(u-u')
+$$
+
+$$
+\langle u^d|u\rangle = \delta(u^d-u) = \delta(u-u^d)
+$$
+
+**쌍대벡터=쌍대기저**가 같은 경우가 있으며, 아래를 만족할 경우, $|u\rangle$는 **정규직교기저**라고 한다.
+
+$$
+\langle u^d|=\langle u|=|u\rangle^\dagger:\text{정규직교기저}
+$$
+
+$|u\rangle$가 **정규직교기저** 라면,
 
 $$
 \langle u_i|u_j\rangle
-=\delta_{ij}
-$$
-
-**(2) 연속 기저 (Continuous Basis)**
-
-셀 수 없는 무한차원 공간(예: 위치, 운동량)의 기저 |x⟩의 내적은 **디랙 델타 함수(Dirac Delta Function)** 로 정의된다.
-
-$$
-\langle x'|x\rangle
-=\delta(x'-x)
-$$
-
----
-
-### 3. 항등 연산자
-
-**(1) 이산기저  (Discrete Basis)**
-
-$$
-\hat{I} = \sum_i |u_i\rangle \langle u_i|
-$$
-
-proof)
-
-$$
-|\psi\rangle = \sum_i u_i|u_i\rangle
-$$
-
-여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 단위 기저 벡터와 내적을 하면,
-
-$$
-u_i=\langle u_i|\psi\rangle
+=\langle u^i|u_j\rangle
+=\delta_{ij}:\text{이산정규직교기저}
 $$
 
 $$
-|\psi\rangle = \sum_i \langle u_i|\psi\rangle|u_i\rangle
-= \sum_i |u_i\rangle \langle u_i|\psi\rangle
-$$
-
-따라서,
-
-$$
-\hat{I} = \sum_i |u_i\rangle \langle u_i|
-$$
-
-**(2) 연속 기저 (Continuous Basis)**
-
-$$
-\hat{I} = \int dx |x\rangle \langle x|
-$$
-
-proof)
-
-$$
-|\psi\rangle = \int dx \langle x|\psi\rangle |x\rangle 
-= \int dx |x\rangle \langle x|\psi\rangle 
-$$
-
-따라서,
-
-$$
-\hat{I} = \int dx |x\rangle \langle x|
+\langle u'|u\rangle
+=\langle u^d|u\rangle
+=\delta(u'-u)
+=\delta(u-u'):\text{연속정규직교기저}
 $$
 
 ---
 
-### 4. 함수의 내적
+### 5. 계량텐서(Metric tensor), 가중함수(Weight function) 
 
-힐버트 공간에서, 함수 f(x)와 함수 g(x)의 내적을 표현할 때,
+쌍대기저와 쌍대벡터의 경우 서로 변환 관계가 있다.
 
-$$
-\langle f|g\rangle = \int dx  f^{*}(x) g(x)
-$$
-
-proof)
+**(1) 이산기저**
 
 $$
-\langle f|g\rangle = \langle f|\hat{I}|g\rangle
-= \langle f| \left( \int dx |x\rangle \langle x| \right) |g\rangle
-= \int dx f^{*}(x) g(x)
+\langle u^i|=\sum_j (G^{-1})^{ij} \langle u_j|
 $$
 
----
-
-### 5. 내적 연산의 특성
-
-힐버트 공간 상태 벡터를 $|\psi_n\rangle$ 라 하고, $a_n$ 를 임의의 복소수 스칼라($a_n \in \mathbb{C}$)라고 하자. 아래와 같이 표현할 수 있다.
-
-**(1) Ket의 스칼라 곱**
+**(2) 연속기저**
 
 $$
-\langle a\psi| = a^\ast \langle\psi|
-$$
-
-**(2) 내적 연산1**
-
-$$
-\operatorname{In}\{|\psi_1\rangle,|a_2\psi_2\rangle+|a_3\psi_3\rangle\}
-=a_2\langle \psi_1|\psi_2\rangle+a_3\langle \psi_1|\psi_3\rangle
-$$
-
-주의사항 (잘못된 표기)
-
-$$
-a_2|\psi_2\rangle+a_3|\psi_3\rangle\ne|a_2\psi_2+a_3\psi_3\rangle
-$$
-
-**(3) 내적 연산2**
-
-$$
-\operatorname{In}\{|a_1\psi_1\rangle,|\psi_2\rangle+|\psi_3\rangle\}
-=a_1^\ast\langle \psi_1|\psi_2\rangle+a_1^\ast\langle \psi_1|\psi_3\rangle
-$$
-
-**(4) Dagger (complex conjugate)**
-
-$$
-\langle \psi_1|\psi_2\rangle^\dagger
-=\langle \psi_2|\psi_1\rangle
+\langle u^d|=\frac{1}{\gamma(u)} \langle u|
 $$

@@ -1,5 +1,5 @@
 +++
-title = "Dual space"
+title = "Hilbert vector"
 weight = 3
 +++
 

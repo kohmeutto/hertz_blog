@@ -20,3 +20,4 @@ defaultContentLanguage = 'en'
   math = true
   mathJaxInitialize = '{ "chtml": { "displayAlign": "left", "displayIndent": "3.5em" }}'
   themeVariant = "relearn-light"
+

@@ -5,6 +5,11 @@ weight = 4
 
 ---
 
+- '행렬'이라는 용어는 이산적인 시스템을 다루기 위한 수학적 도구이다.
+- '커널'이라는 용어는 연속적인 시스템을 다루기 위한 수학적 도구이다.
+
+---
+
 ### 1. 이산기저와 행렬
 
 **(1) 단위기저(orthonormal basis) 벡터**
@@ -89,13 +94,16 @@ $$
 
 ### 2. 연속 기저와 적분 커널 (Integral Kernel)
 
-연산자 $\hat{A}$의 적분 커널 $K(u, u)$는 다음과 같이 정의된다.
+'적분 커널'은 연속 기저에서 연산자를 나타내는, 행렬의 일반화된 개념이다. 행렬이 이산적인 인덱스 i, j에 의해 정의되는 숫자들의 집합($A_{ij}$)이라면, 커널은 연속적인 인덱스 $x'$, $x$에 의해 정의되는 함수 $K(x', x)$ 이다.
+
+**(1) 커널의 정의**
+
+연산자 Â의 적분 커널 $K(x', x)$는 다음과 같이 정의된다. 이는 이산 기저의 행렬 성분 $A_{ij}=\langle u_i| \hat{A} |u_j\rangle$에 정확히 대응된다.
 
 $$
-\hat{A}
-=\iint du du' (\gamma_u\gamma_{u'})^{-1} K(u,u') |u\rangle\langle u'| \quad
+\hat{A}=\iint dx dx' K(x,x') |x\rangle\langle x'| \quad
 \text{where }
-K(u,u')=\langle u|\hat{A}|u'\rangle
+K(x,x')=\langle x|\hat{A}|x'\rangle
 $$
 
 proof)
@@ -103,20 +111,20 @@ proof)
 $$
 \hat{A}
 =\hat{I}\hat{A}\hat{I}
-=\left(\int du \gamma_u^{-1}|u\rangle\langle u|\right)\hat{A}\left(\int du'\gamma_{u'}^{-1}|u'\rangle\langle u'|\right)
-=\iint du du' (\gamma_u\gamma_{u'})^{-1}|u\rangle\langle u|\hat{A}|u'\rangle \langle u'|
+=\left(\int dx|x\rangle\langle x|\right)\hat{A}\left(\int dx'|x'\rangle\langle x'|\right)
+=\iint dx dx'|x\rangle\langle x|\hat{A}|x'\rangle \langle x'|
 $$
 
 $$
-=\iint du du' (\gamma_u\gamma_{u'})^{-1} K(u,u') |u\rangle\langle u'|
+=\iint dx dx' K(x,x') |x\rangle\langle x'|
 $$
 
 $|f(x)\rangle=\int dx f(x) |x\rangle$로 표현하는것과 마찬가지로,
 
 $$
 \hat{A}
-=\int du' \gamma'_u\left( \int du \gamma_u K(u,u') |u\rangle \right) \langle u'|
-=\int du' \gamma_{u'}^{-1}|\gamma_uK_u(u,u')\rangle \langle u'|
+=\int dx' \left( \int dx K(x,x') |x\rangle \right) \langle x'|
+=\int dx' |K_x(x,x')\rangle \langle x'|
 $$
 
 
