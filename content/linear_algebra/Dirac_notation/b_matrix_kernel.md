@@ -89,51 +89,55 @@ $$
 
 ### 2. 연속 기저와 적분 커널 (Integral Kernel)
 
-연산자 $\hat{A}$의 적분 커널 $K(u, u)$는 다음과 같이 정의된다.
+**(1) 적분 커널**
 
 $$
-\hat{A}
-=\iint du du' (\gamma_u\gamma_{u'})^{-1} K(u,u') |u\rangle\langle u'| \quad
-\text{where }
-K(u,u')=\langle u|\hat{A}|u'\rangle
+h(u,u')=\langle u^d|\hat{H}|u'\rangle
 $$
 
 proof)
 
-$$
-\hat{A}
-=\hat{I}\hat{A}\hat{I}
-=\left(\int du \gamma_u^{-1}|u\rangle\langle u|\right)\hat{A}\left(\int du'\gamma_{u'}^{-1}|u'\rangle\langle u'|\right)
-=\iint du du' (\gamma_u\gamma_{u'})^{-1}|u\rangle\langle u|\hat{A}|u'\rangle \langle u'|
-$$
+$|f\rangle=\int dx f(x) |x\rangle$과 마찬가지로, $\hat{H}$를 아래와 같이 놓자.
 
 $$
-=\iint du du' (\gamma_u\gamma_{u'})^{-1} K(u,u') |u\rangle\langle u'|
+\hat{H}=\iint du du' h(u,u') |u\rangle\langle u'^d| 
+$$
+
+또따른 식은 아래와 같다.
+
+$$
+\hat{H}
+=\hat{I}\hat{H}\hat{I}=\left(\int du |u\rangle\langle u^d|\right)\hat{H}\left(\int du' |u'\rangle\langle u'^d|\right)
+=\iint du du' |u\rangle\langle u^d|\hat{H}|u'\rangle\langle u'^d|
+$$
+
+따라서, 연산자 $\hat{H}$의 적분 커널 $h(u, u)$는 다음과 같이 정의된다.
+
+$$
+h(u,u')
+=\langle u^d|\hat{H}|u'\rangle
 $$
 
 **(2) 커널을 이용한 연산**
 
 $$
-\varphi(u)=\int du' K(u,u') \psi(u')
+\varphi(u)=\int du' h(u,u') \psi(u')
 $$
 
 proof)
 
 $$
-\langle u|\varphi\rangle = \langle u|\hat{A}|\psi\rangle
-=\iint du'' du' (\gamma_{u''}\gamma_{u'})^{-1} K(u'',u') \langle u|u''\rangle\langle u'|\psi\rangle
+\langle u^d|\varphi\rangle
+=\langle u^d|\hat{H}|\psi\rangle
+=\iint du'' du' h(u'',u') \langle u^d|u''\rangle\langle u'^d|\psi\rangle
 $$
 
 $$
-=\iint du'' du' (\gamma_{u''}\gamma_{u'})^{-1}\gamma_u\gamma_{u'} K(u'',u') \delta(u-u'')\psi(u')
+=\iint du'' du' h(u'',u') \delta(u-u'') \langle u'^d|\psi\rangle
 $$
 
 $$
-=\int du' (\gamma_{u}\gamma_{u'})^{-1}\gamma_u\gamma_{u'} K(u,u') \psi(u')
-$$
-
-$$
-=\int du' K(u,u') \psi(u')
+=\int du' h(u,u') \psi(u')
 $$
 
 ---
