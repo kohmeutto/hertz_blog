@@ -24,7 +24,7 @@ a_0
 =\frac{1}{T}\langle1|f\rangle,\quad
 a_n
 =\langle \cos_n^d|f\rangle
-=\frac{2}{T}\langle \cos_n|f\rangle,\quad
+=\frac{2}{T}\langle \cos_n^d|f\rangle,\quad
 b_n
 =\langle \sin_n^d|f\rangle
 =\frac{2}{T}\langle \sin_n|f\rangle
@@ -33,7 +33,7 @@ $$
 $$
 c_n
 =\langle \exp_n^d|f\rangle
-=\frac{1}{T}\exp_n|f\rangle
+=\frac{1}{T}\langle\exp_n|f\rangle
 $$
 
 $$
@@ -49,25 +49,30 @@ $$
 =a_0|1\rangle + \sum_{n=1}^{\infty} \left\{ a_n |\cos_ n\rangle + b_n |\sin_n\rangle \right\}
 $$
 
-각 계수를 구하기 위해서, 각 기저를 정규직교기저로 만들기 위한 쌍대 기저를 알아야 한다. 우선 각 기저 $|\cos_n\rangle$, $|\sin_n\rangle$가 서로 독립임을 확인한다. Wronskian 방법을 사용하면,
+각 계수를 구하기 위해서, 각 기저의 쌍대 기저를 알아야 한다. 우선 각 기저 $|\cos_n\rangle$, $|\sin_n\rangle$가 서로 직교 독립임을 확인한다. Gram 방법을 사용하면,
 
 $$
 W
 =\begin{bmatrix}
-\cos n\omega_0 t & \sin n\omega_0  t \\
--\omega_0n\sin n\omega_0t & \omega_0 n\cos n\omega_0 t
-\end{bmatrix}\implies
+\langle \cos_n|\cos_n\rangle & \langle \cos_n|\sin_n\rangle \\
+\langle \sin_n|\cos_n\rangle & \langle \sin_n|\sin_n\rangle
+\end{bmatrix}
+=\begin{bmatrix}
+T/2 & 0 \\ 0 & T/2 \end{bmatrix}\implies
 |W|\ne0
 $$
 
-따라서, 서로 독립이다. 이번에는 각 기저의 쌍대기저를 구해야 한다.
+따라서, 서로 직교 독립이다. 이번에는 각 기저의 쌍대기저를 구해야 한다.
 
 (1) $a_0$, $\langle 1^d|$
 
 $$
 \langle 1^d|1\rangle
-=\frac{1}{\gamma}\int_T dt 1^\ast \cdot 1=1\implies
-\gamma=\frac{1}{T}
+=\gamma^{-1}|\langle 1|1\rangle
+=\frac{1}{\gamma}\langle1|\int_T dt |t\rangle\langle t|1\rangle
+=\frac{1}{\gamma}\int_T dt
+=1\implies
+\gamma=T
 $$
 
 $$
@@ -86,7 +91,7 @@ $$
 $$
 \langle \cos_n^d|\cos_n\rangle
 =\frac{1}{\gamma}\int_T dt \cos^2 n\omega_0 t=1\implies
-\gamma=\frac{2}{T}
+\gamma=\frac{T}{2}
 $$
 
 $$
@@ -105,7 +110,7 @@ $$
 $$
 \langle \sin_n^d|\sin_n\rangle
 =\frac{1}{\gamma}\int_T dt \sin^2 n\omega_0 t=1\implies
-\gamma=\frac{2}{T}
+\gamma=\frac{T}{2}
 $$
 
 $$
@@ -124,7 +129,7 @@ $$
 $$
 \langle \exp_n^d|\exp_n\rangle
 =\frac{1}{\gamma}\int_T dt e^{-jn\omega_0 t}e^{jn\omega_0 t}=1\implies
-\gamma=\frac{1}{T}
+\gamma=T
 $$
 
 $$

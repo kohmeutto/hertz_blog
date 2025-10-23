@@ -74,31 +74,34 @@ $$
 **(1) 이산기저**
 
 $$
-\langle f|g\rangle = \sum_{i,j} w^{ij} f_i g_j,\quad\text{where } w^{ij}=(\gamma^{-1})^{ij}
+\langle f|g\rangle = \sum_{i,j} \gamma_u f_i g_j
 $$
+
+여기에서, $\gamma_u$는 실수값이어야 한다. 이것은 내적의 값이 실수여야하 하지 때문이다. 
 
 proof)
 
 $$
-\langle f|g\rangle = \langle f| \left(\sum_{i,j} (\gamma^{-1})^{ij} |u_i\rangle\langle u_j| \right) |g\rangle
-=\sum_{i,j} (\gamma^{-1})^{ij} f_i g_j
+\langle f|g\rangle
+= \langle f| \left(\sum_{i,j} |u_i\rangle\langle u^j| \right) |g\rangle
+= \langle f| \left(\sum_{i,j} \gamma_u^\ast|u^i\rangle\langle u^j| \right) |g\rangle
+=\sum_{i,j} \gamma_u f_i^\ast g_j
 $$
 
 **(2) 연속기저**
 
 $$
-\langle f|g\rangle = \int du \,w(u) f^\ast(u) g(u),\quad\text{where } w(u)=\gamma^{-1}(u)
+\langle f|g\rangle = \int du \gamma_u f^\ast(u) g(u),
 $$
 
 proof)
 
 $$
 \langle f|g\rangle
-=\langle f|\left(\int du \gamma^{-1}|u\rangle\langle u| \right)|g\rangle
-=\int du \gamma^{-1}\langle f|u\rangle\langle u|g\rangle
-=\int du \gamma^{-1} f^\ast(u) g(u)
+=\langle f|\left(\int du |u\rangle\langle u^d| \right)|g\rangle
+=\int du \gamma_u^\ast\langle f|u^d\rangle\langle u^d|g\rangle
+=\int du \gamma_u f^\ast(u) g(u)
 $$
-
 
 ---
 

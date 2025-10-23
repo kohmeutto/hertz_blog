@@ -1,5 +1,5 @@
 +++
-title = "(b) Operator II"
+title = "(b) Operator"
 weight = 3
 +++
 
@@ -177,5 +177,43 @@ $$
 =\hat{I}|\psi\rangle
 $$
 
-
 ---
+
+
+### 1. 항등 연산자
+
+**(1) 이산기저  (Discrete Basis)**
+
+$$
+\hat{I} = \sum_i |u_i\rangle \langle u^i|
+$$
+
+proof)
+
+$$
+|\psi\rangle = \sum_i u_i|u_i\rangle
+$$
+
+여기에서, $|u_i\rangle$ 는 단위 기저 벡터이다. 듀얼 기저 벡터와 내적을 하면,
+
+$$
+u_i=\langle u^i|\psi\rangle
+$$
+
+$$
+|\psi\rangle = \sum_i \langle u^i|\psi\rangle|u_i\rangle
+= \sum_i |u_i\rangle \langle u^i|\psi\rangle
+$$
+
+**(2) 연속 기저 (Continuous Basis)**
+
+$$
+\hat{I} = \int du |u\rangle \langle u^d|
+$$
+
+proof)
+
+$$
+|\psi(u)\rangle = \int du \langle u^d|\psi\rangle |u\rangle 
+= \int du |u\rangle \langle u^d|\psi\rangle 
+$$

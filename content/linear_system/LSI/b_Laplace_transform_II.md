@@ -5,29 +5,25 @@ weight = 5
 
 ---
 
-양방향 라플라스 변환은 사용 빈도가 낮으나, 푸리에 변환과의 관계를 이해하고 표준 푸리에 역변환이 라플라스 변환의 틀 안에서 어떻게 설명되는지 파악하는 데 유용하다.
-
----
-
 ### 1. 라플라스 변환
 
-(1) 양방향 라플라스 변환
+(1) 단방향 라플라스 변환
 
 $$
 \mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
-=\langle s|f\cdot u\rangle
+=\langle s^L|f\cdot u\rangle
 =\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack
 $$
 
-(2) 단방향 라플라스 변환, causal system
+(2) 양방향 라플라스 변환, causal system
 
 $$
 \mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
-=\langle s|f\rangle
+=\langle s^L|f\rangle
 =\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack
 $$
 
-Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 아래 계산을 통해 **라플라스 변환의 극점과 ROC의 관계** 를 살펴보자.
+Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 **라플라스 변환의 극점과 ROC의 관계** 를 살펴보자.
 
 ---
 
@@ -37,13 +33,13 @@ Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 아
 
 $$
 \mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)
-=\langle s|\delta\rangle
+=\langle s^L|\delta\rangle
 $$
 
 {{< details summary="sol" >}}
     
 $$
-F(s)=\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad
+\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad
 \text{ROC: 모든 } s
 $$
 
@@ -55,7 +51,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace\delta\left(t\right)u(t)\right\rbrace\left(s\right)
-=\langle s|\delta u\rangle
+=\langle s^L|\delta \cdot u\rangle
 $$
 
 {{< details summary="sol" >}}
@@ -74,7 +70,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s\right)
-=\langle s|u\rangle
+=\langle s^L|u\rangle
 $$
 
 {{< details summary="sol" >}}
@@ -96,7 +92,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace u\left(-t\right)\right\rbrace\left(s\right)
-=\langle s|u(-t)\rangle
+=\langle s^L|u(-t)\rangle
 $$
 
 {{< details summary="sol" >}}
@@ -118,12 +114,12 @@ $$
 
 $$
 \mathcal{L}\left\lbrace 1\right\rbrace\left(s\right)
-=\langle s|1\rangle
+=\langle s^L|1\rangle
 $$
 
 {{< details summary="sol" >}}
     
-시간 신호 $f(t)=1$의 표준적인 양방향 라플라스 변환 적분 $\int_{-\infty}^{\infty}dt\left[e^{-st}\right]$는 어떤 열린 수렴 영역(ROC)에서도 수렴하지 않으므로, 표준적인 양방향 라플라스 변환은 존재하지 않는다.
+시간 신호 $f(t)=1$의 표준적인 양방향 라플라스 변환 적분 $\int_{-\infty}^{\infty}dt\left[e^{-st}\right]$는 어떤 열린 수렴 영역(ROC)에서도 수렴하지 않으므로, 표준적인 양방향 라플라스 변환은 존재하지 않는다. 
 
 그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
 
@@ -134,15 +130,7 @@ $$
 $$
 \langle s|1\rangle
 =2\pi\delta\left(s\right),\quad
-\text{ROC: 모든 } s
-$$
-
-<hr>
-
-공사중
-
-$$
-\langle \langle s|1\rangle|\Psi(s)\rangle
+\text{ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
 $$
 
 <hr>
@@ -153,13 +141,13 @@ $$
 
 $$
 \mathcal{L}\left\lbrace\cos at\cdot u\left(t\right)\right\rbrace\left(s\right)
-=\langle s|\cos at\cdot u(t)\rangle
+=\langle s^L|\cos at\cdot u(t)\rangle
 $$
 
 {{< details summary="sol" >}}
     
 $$
-F(s)=\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
 $$
     
 $$
@@ -177,7 +165,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace\cos at\cdot u\left(-t\right)\right\rbrace\left(s\right)
-=\langle s|\cos at\cdot u(-t)\rangle
+=\langle s^L|\cos at\cdot u(-t)\rangle
 $$
 
 {{< details summary="sol" >}}
@@ -203,7 +191,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace\cos at\right\rbrace\left(s\right)
-=\langle s|\cos at\rangle
+=\langle s^L|\cos at\rangle
 $$
 
 {{< details summary="sol" >}}
@@ -213,18 +201,18 @@ $$
 그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
 
 $$
-\left\langle s|\cos at\right\rangle
-= \left\langle s \middle|\frac{1}{2}\left(e^{+iat}+e^{-iat}\right)\right\rangle
-=\frac{1}{2} \left\langle s \middle|e^{+iat}\right\rangle+\frac{1}{2} \left\langle s \middle|e^{-iat}\right\rangle
+\left\langle s^L|\cos at\right\rangle
+= \left\langle s^L \middle|\frac{1}{2}\left(e^{+iat}+e^{-iat}\right)\right\rangle
+=\frac{1}{2} \left\langle s^L \middle|e^{+iat}\right\rangle+\frac{1}{2} \left\langle s^L \middle|e^{-iat}\right\rangle
 $$
 
 $$
-=\frac{1}{2} \left\langle s-ia \middle|1\right\rangle+\frac{1}{2} \left\langle s+ia \middle|1\right\rangle
+=\frac{1}{2} \left\langle (s-ia)^L \middle|1\right\rangle+\frac{1}{2} \left\langle (s+ia)^L \middle|1\right\rangle
 $$
 
 $$
 =\pi\delta(s-ia)+\pi\delta(s+ia),\quad
-\text{ROC: 모든 } s
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
 $$
 
 <hr>
@@ -235,13 +223,13 @@ $$
 
 $$
 \mathcal{L}\left\lbrace\sin at\cdot u\left(t\right)\right\rbrace\left(s\right)
-=\langle s|\sin at\cdot u(t)\rangle
+=\langle s^L|\sin at\cdot u(t)\rangle
 $$
 
 {{< details summary="sol" >}}
     
 $$
-F(s)=\int_0^{\infty}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+\int_0^{\infty}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
 $$
     
 $$
@@ -259,7 +247,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace\sin at\cdot u\left(-t\right)\right\rbrace\left(s\right)
-=\langle s|\sin at\cdot u(-t)\rangle
+=\langle s^L|\sin at\cdot u(-t)\rangle
 $$
 
 {{< details summary="sol" >}}
@@ -283,7 +271,7 @@ $$
 
 $$
 \mathcal{L}\left\lbrace\sin at\right\rbrace\left(s\right)
-=\langle s|\sin at\rangle
+=\langle s^L|\sin at\rangle
 $$
 
 {{< details summary="sol" >}}
@@ -293,13 +281,13 @@ $$
 그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
 
 $$
-\left\langle s|\sin at\right\rangle
+\left\langle s^L|\sin at\right\rangle
 = \left\langle s \middle|\frac{1}{2i}\left(e^{+iat}-e^{-iat}\right)\right\rangle
-=\frac{1}{2i} \left\langle s \middle|e^{+iat}\right\rangle-\frac{1}{2i}\left\langle s\middle|e^{-iat}\right\rangle
+=\frac{1}{2i} \left\langle s^L\middle|e^{+iat}\right\rangle-\frac{1}{2i}\left\langle s^L\middle|e^{-iat}\right\rangle
 $$
 
 $$
-=\frac{1}{2i}\left\langle s-ia\middle|1\right\rangle-\frac{1}{2i} \left\langle s+ia \middle|1\right\rangle
+=\frac{1}{2i}\left\langle (s-ia)^L\middle|1\right\rangle-\frac{1}{2i} \left\langle (s+ia)^L \middle|1\right\rangle
 $$
 
 $$

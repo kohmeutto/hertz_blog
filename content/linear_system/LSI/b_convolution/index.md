@@ -14,16 +14,6 @@ y\left(t\right)=x\left(t\right)\ast h\left(t\right)
 =\int_{-\infty}^{\infty}d\tau\left[x\left(t-\tau\right)h\left(\tau\right)\right]
 $$
 
-proof)
-
-추상적인 벡터를 구체적으로 다루기 위해, $|t\rangle$ 기저로 사영한다.
-
-$$
-\langle t|(|h\rangle\ast |f\rangle)
-=\langle t|\left(\int_{-\infty}^{\infty}d\tau |h(t-\tau)\langle\tau|\right)|f\rangle
-=\int_{-\infty}^{\infty}d\tau h(t-\tau)f(\tau)
-$$
-
 ---
 
 ### 2. 숫자(리스트)와 그림으로 이해하는 컨볼루션
