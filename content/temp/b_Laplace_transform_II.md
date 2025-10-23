@@ -10,20 +10,472 @@ weight = 5
 (1) 단방향 라플라스 변환
 
 $$
-\langle s^L|f\cdot u\rangle
+\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
+=\langle s^L|f\cdot u\rangle
 =\int_0^{\infty}dt\left[e^{-st}f\left(t\right)u(t)\right\rbrack
 $$
 
 (2) 양방향 라플라스 변환, causal system
 
 $$
-\langle s^L|f\rangle
+\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(s\right)
+=\langle s^L|f\rangle
 =\int_{-\infty}^{\infty}dt\left[e^{-st}f\left(t\right)\right\rbrack
 $$
 
+Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다. 중요 계산을 통해 **라플라스 변환의 극점과 ROC의 관계** 를 살펴보자.
+
 ---
 
-### 2. 중요 Properties
+### 2. 중요변환
+
+**1-1) 디렉 델타 함수**
+
+$$
+\mathcal{L}\left\lbrace\delta\left(t\right)\right\rbrace\left(s\right)
+=\langle s^L|\delta\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack=1\cdot\int_{-\infty}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1,\quad
+\text{ROC: 모든 } s
+$$
+
+<hr>
+
+{{< /details >}}
+
+**1-2) 디렉 델타 함수**
+
+$$
+\mathcal{L}\left\lbrace\delta\left(t\right)u(t)\right\rbrace\left(s\right)
+=\langle s^L|\delta \cdot u\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)e^{-st}\right\rbrack
+=1\cdot\int_{0-}^{\infty}dt\left\lbrack\delta\left(t\right)\right\rbrack=1, \quad
+\text{ROC: 모든 } s
+$$
+
+<hr>
+
+{{< /details >}}
+
+**2-1) 단위 계단 함수**
+
+$$
+\mathcal{L}\left\lbrace u\left(t\right)\right\rbrace\left(s\right)
+=\langle s^L|u\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\right\rbrack=\frac{1}{s},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+<br>
+
+극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다.
+
+<hr>
+
+{{< /details >}}
+
+**2-2) 단위 계단 함수**
+
+$$
+\mathcal{L}\left\lbrace u\left(-t\right)\right\rbrace\left(s\right)
+=\langle s^L|u(-t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_{-\infty}^{0}dt\left\lbrack e^{-st}\right\rbrack=-\frac{1}{s},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace < 0
+$$
+
+<br>
+
+극점은 0에서 존재한다. 이 때, ROC는 왼쪽영역에서 형성된다.
+
+<hr>
+
+{{< /details >}}
+
+**2-3) 상수 함수, 분포**
+
+$$
+\mathcal{L}\left\lbrace 1\right\rbrace\left(s\right)
+=\langle s^L|1\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+시간 신호 $f(t)=1$의 표준적인 양방향 라플라스 변환 적분 $\int_{-\infty}^{\infty}dt\left[e^{-st}\right]$는 어떤 열린 수렴 영역(ROC)에서도 수렴하지 않으므로, 표준적인 양방향 라플라스 변환은 존재하지 않는다. 
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left. \int_{-\infty}^{\infty}dt\left[e^{-st}\right] \right|_{\operatorname{Re}\left\lbrace s\right\rbrace=0} = \int_{-\infty}^{\infty}dt\left[e^{-j\omega t}\right] = 2\pi\delta(\omega)
+$$
+
+$$
+\langle s|1\rangle
+=2\pi\delta\left(s\right),\quad
+\text{ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
+$$
+
+<hr>
+
+{{< /details >}}
+
+**3-1) cosine 함수**
+
+$$
+\mathcal{L}\left\lbrace\cos at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s^L|\cos at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{s}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.  
+
+<hr>
+
+{{< /details >}}
+
+**3-2) cosine 함수**
+
+$$
+\mathcal{L}\left\lbrace\cos at\cdot u\left(-t\right)\right\rbrace\left(s\right)
+=\langle s^L|\cos at\cdot u(-t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_{-\infty}^0 dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack
+=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace
+=-\frac{s}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다.
+
+<hr>
+
+{{< /details >}}
+
+**3-3) cosine 함수, 분포**
+
+$$
+\mathcal{L}\left\lbrace\cos at\right\rbrace\left(s\right)
+=\langle s^L|\cos at\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+위의 cosine 예에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s^L|\cos at\right\rangle
+= \left\langle s^L \middle|\frac{1}{2}\left(e^{+iat}+e^{-iat}\right)\right\rangle
+=\frac{1}{2} \left\langle s^L \middle|e^{+iat}\right\rangle+\frac{1}{2} \left\langle s^L \middle|e^{-iat}\right\rangle
+$$
+
+$$
+=\frac{1}{2} \left\langle (s-ia)^L \middle|1\right\rangle+\frac{1}{2} \left\langle (s+ia)^L \middle|1\right\rangle
+$$
+
+$$
+=\pi\delta(s-ia)+\pi\delta(s+ia),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+
+{{< /details >}}
+
+**4-1) sine 함수**
+
+$$
+\mathcal{L}\left\lbrace\sin at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s^L|\sin at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+\int_0^{\infty}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Im}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{a}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.
+
+<hr>
+
+{{< /details >}}
+
+**4-2) sine 함수**
+
+$$
+\mathcal{L}\left\lbrace\sin at\cdot u\left(-t\right)\right\rbrace\left(s\right)
+=\langle s^L|\sin at\cdot u(-t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_{-\infty}^{0}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_{-\infty}^{0}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Im}\left\lbrace\int_{-\infty}^{0}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=-\frac{a}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다.  
+
+<hr>
+
+{{< /details >}}
+
+**4-3) sine 함수, 분포**
+
+$$
+\mathcal{L}\left\lbrace\sin at\right\rbrace\left(s\right)
+=\langle s^L|\sin at\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+위의 cosine 예에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s^L|\sin at\right\rangle
+= \left\langle s \middle|\frac{1}{2i}\left(e^{+iat}-e^{-iat}\right)\right\rangle
+=\frac{1}{2i} \left\langle s^L\middle|e^{+iat}\right\rangle-\frac{1}{2i}\left\langle s^L\middle|e^{-iat}\right\rangle
+$$
+
+$$
+=\frac{1}{2i}\left\langle (s-ia)^L\middle|1\right\rangle-\frac{1}{2i} \left\langle (s+ia)^L \middle|1\right\rangle
+$$
+
+$$
+=-i\pi\delta(s-ia)+i\pi\delta(s+ia),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+
+{{< /details >}}
+
+**5-1) cosh 함수**
+
+$$
+\mathcal{L}\left\lbrace\cosh at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s^L|\cosh at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\cosh at\right\rbrack
+=\int_0^{\infty}dt\left\lbrack e^{-st}\cdot\frac{e^{+at}+e^{-at}}{2}\right\rbrack
+$$
+    
+$$
+=\frac{1}{2}\int_0^{\infty}dt\left\lbrack e^{-(s-a)t}+e^{-(s+a)t} \right\rbrack
+=\frac{s}{s^2-a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>|\operatorname{Re}\lbrace a\rbrace|
+$$
+
+극점은 $\pm a$ 이다. 이 때, ROC 는 $|\operatorname{Re}\lbrace a\rbrace|$ 보다 큰 우측영역에서 형성된다. 
+
+<hr>
+
+{{< /details >}}
+
+**5-2) cosh 함수**
+
+$$
+\mathcal{L}\left\lbrace\cosh at\cdot u\left(-t\right)\right\rbrace\left(s\right)
+=\langle s^L|\cosh at\cdot u(-t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_{-\infty}^{0}dt\left\lbrack e^{-st}\cosh at\right\rbrack
+=\int_{-\infty}^{0}dt\left\lbrack e^{-st}\cdot\frac{e^{+at}+e^{-at}}{2}\right\rbrack
+$$
+    
+$$
+=\frac{1}{2}\int_{-\infty}^{0}dt\left\lbrack e^{-(s-a)t}+e^{-(s+a)t} \right\rbrack
+=-\frac{s}{s^2-a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<-|\operatorname{Re}\lbrace a\rbrace|
+$$
+
+극점은 $\pm a$ 이다. 이 때, ROC 는 $-|\operatorname{Re}\lbrace a\rbrace|$ 보다 작은 좌측영역에서 형성된다. 
+
+<hr>
+
+{{< /details >}}
+
+**5-3) cosh 함수, 분포**
+
+$$
+\mathcal{L}\left\lbrace\cosh at\right\rbrace\left(s\right)
+=\langle s^L|\cosh at\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+위의 cosh 에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s^L|\cosh at\right\rangle
+= \left\langle s^L \middle|\frac{1}{2}\left(e^{+at}+e^{-at}\right)\right\rangle
+=\frac{1}{2} \left\langle s^L \middle|e^{+at}\right\rangle+\frac{1}{2} \left\langle s^L \middle|e^{-at}\right\rangle
+$$
+
+$$
+=\frac{1}{2} \left\langle (s-a)^L \middle|1\right\rangle+\frac{1}{2} \left\langle (s+a)^L \middle|1\right\rangle
+$$
+
+$$
+=\pi\delta(s-a)+\pi\delta(s+a),\quad
+\text{ROC: } 공집합
+$$
+
+<br>
+
+여기서 중요한 것은 ROC 가 존재하지 않는다. 따라서, 위에서 구한 라플리스 변환은 아무런 의미가 없으며, 라플라스 변환은 존재하지 않는다.
+
+<hr>
+
+{{< /details >}}
+
+**6-1) sinh 함수**
+
+$$
+\mathcal{L}\left\lbrace\sinh at\cdot u\left(t\right)\right\rbrace\left(s\right)
+=\langle s^L|\sinh at\cdot u(t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\sinh at\right\rbrack
+=\int_0^{\infty}dt\left\lbrack e^{-st}\cdot\frac{e^{+at}-e^{-at}}{2}\right\rbrack
+$$
+    
+$$
+=\frac{1}{2}\int_0^{\infty}dt\left\lbrack e^{-(s-a)t}-e^{-(s+a)t} \right\rbrack
+=\frac{a}{s^2-a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>|\operatorname{Re}\lbrace a\rbrace|
+$$
+
+극점은 $\pm a$ 이다. 이 때, ROC 는 $|\operatorname{Re}\lbrace a\rbrace|$ 보다 큰 우측영역에서 형성된다.  
+
+<hr>
+
+{{< /details >}}
+
+**6-2) sinh 함수**
+
+$$
+\mathcal{L}\left\lbrace\sinh at\cdot u\left(-t\right)\right\rbrace\left(s\right)
+=\langle s^L|\sinh at\cdot u(-t)\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_{-\infty}^{0}dt\left\lbrack e^{-st}\sinh at\right\rbrack
+=\int_{-\infty}^{0}dt\left\lbrack e^{-st}\cdot\frac{e^{+at}-e^{-at}}{2}\right\rbrack
+$$
+    
+$$
+=\frac{1}{2}\int_{-\infty}^{0}dt\left\lbrack e^{-(s-a)t}-e^{-(s+a)t} \right\rbrack
+=-\frac{a}{s^2-a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<-|\operatorname{Re}\lbrace a\rbrace|
+$$
+
+극점은 $\pm a$ 이다. 이 때, ROC 는 $-|\operatorname{Re}\lbrace a\rbrace|$ 보다 작은 좌측영역에서 형성된다.
+
+<hr>
+
+{{< /details >}}
+
+**6-3) sinh 함수, 분포**
+
+$$
+\mathcal{L}\left\lbrace\sinh at\right\rbrace\left(s\right)
+=\langle s^L|\sinh at\rangle
+$$
+
+{{< details summary="sol" >}}
+    
+위의 cosh 에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
+
+$$
+\left\langle s|\sinh at\right\rangle
+= \left\langle s \middle|\frac{1}{2}\left(e^{+at}-e^{-at}\right)\right\rangle
+=\frac{1}{2} \left\langle s \middle|e^{+at}\right\rangle-\frac{1}{2} \left\langle s \middle|e^{-at}\right\rangle
+$$
+
+$$
+=\frac{1}{2} \left\langle s-a\middle|1\right\rangle-\frac{1}{2} \left\langle s+a \middle|1\right\rangle
+$$
+
+$$
+=\pi\delta(s-a)-\pi\delta(s+a),\quad
+\text{ROC: } 공집합
+$$
+
+<br>
+
+여기서 중요한 것은 ROC 가 존재하지 않는다. 따라서, 위에서 구한 라플리스 변환은 아무런 의미가 없으며, 라플라스 변환은 존재하지 않는다.
+
+{{< /details >}}
+
+---
+
+### 3. Properties
 
 
 **1) linearity**
@@ -31,88 +483,22 @@ $$
 적분연산자 자체가 선형연산자이다.
 
 $$
-\langle s^L|af\cdot u+bg\cdot u\rangle
-=a\langle s^L|f\cdot u\rangle+b\langle s^L|g\cdot u\rangle
+\mathcal{L}\left\lbrace af\left(t\right)u\left(t\right)+bg\left(t\right)u\left(t\right)\right\rbrace\left(s\right)=a\langle s|f\cdot u\rangle+b\langle s|f\cdot u\rangle
 $$
 
 $$
-\langle s^L|af+bg\rangle
-=a\langle s^L|f\rangle+b\langle s^L|g\rangle
+\mathcal{L}\left\lbrace af\left(t\right)+bg\left(t\right)\right\rbrace\left(s\right)=a\langle s|f\rangle+b\langle s|f\rangle
 $$
 
-**2) time shifting**
+**2) time scaling**
 
 $$
-\langle s^L|f(t-\tau)u(t-\tau)\rangle
-=\langle s^L|\hat{S}_\tau|f\cdot u\rangle
-=e^{-s\tau}\langle s^L|f\cdot u\rangle
-$$
-
-$$
-\langle s^L|f(t-\tau)\rangle
-=\langle s^L|\hat{S}_\tau|f\rangle
-=e^{-s\tau}\langle s^L|f\rangle
-$$
-
-{{< details summary="proof" >}}
-
-$$
-\langle s^L|\hat{S}_\tau
-=\langle s^L|\left(\int dt |t\rangle\langle t|\right)\hat{S}_\tau
-=\int dt \langle s^L|t\rangle\langle t-\tau|
-=\int dt e^{-st}\langle t-\tau|
-$$
-
-$$
-=\int dt' e^{-s(t'+\tau)}\langle t'|
-=e^{-s\tau}\int dt' e^{-st'}\langle t'|
-$$
-
-$$
-=e^{-s\tau}\langle s^L|
-$$
-
-<hr>
-
-{{< /details >}}
-
-**3) amplitude scaling**
-
-$$
-\langle s^L|f\left(at\right)u\left(at\right)\rangle
-=\frac{1}{|a|}\left\langle \left(\frac{s}{a}\right)^L \middle|f\cdot u\right\rangle
-$$
-
-$$
-\langle s^L|f\left(at\right)\rangle
-=\frac{1}{|a|}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle
-$$
-
-{{< details summary="proof" >}}
-
-$$
-\langle s^L|f\left(at\right)u\left(at\right)\rangle
-=\int dt e^{-st}f(at)u(at)
-=\int dk \frac{1}{a} e^{-\frac{s}{a}k} f(k)u(k)
-$$
-
-$$
-=\frac{1}{|a|}\left\langle \left(\frac{s}{a}\right)^L \middle|f\cdot u\right\rangle
-$$
-
-<hr>
-
-{{< /details >}}
-
-**4) amplitude scaling & time shifting**
-
-$$
-\langle s^L|f\left(at-b\right)u\left(at-b\right)\rangle=\frac{1}{a} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle,\quad
+\mathcal{L}\left\lbrace f\left(at-b\right)u\left(at-b\right)\right\rbrace\left(s\right)=\langle s|f\left(at-b\right)u\left(at-b\right)\rangle=\frac{1}{a} e^{-\frac{b}{a}s}\left\langle \frac{s}{a} \middle|f\right\rangle,\quad
 \text{단, } a>0, b>0
 $$
 
 $$
-\langle s|f\left(at-b\right)\rangle=\frac{1}{|a|}e^{-\frac{b}{a}s}\left\langle \frac{s}{a} \middle|f\right\rangle
+\mathcal{L}\left\lbrace f\left(at-b\right)\right\rbrace\left(s\right)=\langle s|f\left(at-b\right)\rangle=\frac{1}{|a|}e^{-\frac{b}{a}s}\left\langle \frac{s}{a} \middle|f\right\rangle
 $$
 
 {{< details summary="proof, 단방향" >}}
@@ -145,7 +531,35 @@ $$
 
 {{< /details >}}
 
+**3) time shifting**
 
+$$
+\mathcal{L}\left\lbrace f\left(t-t'\right)u(t-t')\right\rbrace\left(s\right)
+=\langle s|e^{-\hat{s}t'}|f\cdot u\rangle
+=e^{-st'}\langle s|f\cdot u\rangle
+$$
+
+$$
+\mathcal{L}\left\lbrace f\left(t-t'\right)\right\rbrace\left(s\right)
+=\langle s|e^{-\hat{s}t'}|f\rangle
+=e^{-st'}\langle s|f\rangle
+$$
+
+{{< details summary="proof" >}}
+
+$$
+\mathcal{L}\left\lbrace f\left(t-t'\right)\right\rbrace\left(s\right)
+=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t-t'\right)e^{-st}\right\rbrack
+=\int_{-\infty}^{\infty}d\tau\left\lbrack f\left(\tau\right)e^{-s\left(\tau+t'\right)}\right\rbrack
+$$
+    
+$$
+=e^{-st'}F\left(s\right)
+$$
+
+<hr>
+
+{{< /details >}}
 
 **4) frequency shifting**
 
