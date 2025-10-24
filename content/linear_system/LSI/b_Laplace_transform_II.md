@@ -107,87 +107,67 @@ $$
 **4) amplitude scaling & time shifting**
 
 $$
-\langle s^L|f\left(at-b\right)u\left(at-b\right)\rangle=\frac{1}{a} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle,\quad
-\text{단, } a>0, b>0
+\langle s^L|f\left(at-b\right)u\left(at-b\right)\rangle=\frac{1}{|a|} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\cdot u\right\rangle
 $$
 
 $$
-\langle s|f\left(at-b\right)\rangle=\frac{1}{|a|}e^{-\frac{b}{a}s}\left\langle \frac{s}{a} \middle|f\right\rangle
+\langle s^L|f\left(at-b\right)\rangle
+=\frac{1}{|a|} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\right\rangle
 $$
 
-{{< details summary="proof, 단방향" >}}
+{{< details summary="proof" >}}
+
+라플라스 변환은 연산자→괄호→Ket 순이다.
+
+<br><br>
 
 $$
-\mathcal{L}\left\lbrace f\left(at-b\right)u\left(at-b\right)\right\rbrace\left(s\right)=e^{-\frac{b}{a}s}\int_0^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=\frac{1}{a}e^{-\frac{b}{a}s}F\left(\frac{s}{a}\right)
+\langle s^L|f\left(at-b\right)u\left(at-b\right)\rangle
+=\left\langle
+s^L\middle|
+f\left(a\left(t-\frac{b}{a}\right)\right)
+u\left(a\left(t-\frac{b}{a}\right)\right)
+\right\rangle
 $$
 
-<hr>
-
-{{< /details >}}
-
-{{< details summary="proof, 양방향" >}}
-
-(1) a>0
-
 $$
-\mathcal{L}\left\lbrace f\left(at-b\right)\right\rbrace\left(s\right)
-=e^{-\frac{b}{a}s}\int_{-\infty}^{\infty}\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=\frac{1}{a}e^{-\frac{b}{a}s}\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{s}{a}\right)
-$$
-
-(2) a<0
-
-$$
-\mathcal{L}\left\lbrace f\left(at-b\right)\right\rbrace\left(s\right)
-=e^{-\frac{b}{a}s}\int_{-\infty}^{\infty}-\frac{1}{a}d\tau\left\lbrack f\left(\tau\right)e^{-\frac{s}{a}\tau}\right\rbrack=-\frac{1}{a}e^{-\frac{b}{a}s}\mathcal{L}\left\lbrace f\left(t\right)\right\rbrace\left(\frac{s}{a}\right)
+=e^{-\frac{b}{a}s}\left\langle s^L\middle|f(at)u(at)\right\rangle
+=\frac{1}{|a|} e^{-\frac{b}{a}s}\left\langle \left(\frac{s}{a}\right)^L \middle|f\cdot u\right\rangle
 $$
 
 <hr>
 
 {{< /details >}}
 
-
-
-**4) frequency shifting**
-
-- 라플라스 변환
+**5) frequency shifting**
 
 $$
-\mathcal{L}\left\lbrace e^{at}f\left(t\right)u(t)\right\rbrace\left(s\right)
+\langle s^L|e^{at}\cdot f\cdot u\rangle
 =\langle s|e^{a\hat{t}}|f\cdot u\rangle
 =\langle s-a|f\cdot u\rangle
 $$
 
 $$
-\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)
-=\langle s|e^{a\hat{t}}|f\rangle
-=\langle s-a|f\rangle
-=F(s-a)
-$$
-
-- 라플라스 역변환
-
-$$
-\mathcal{L^{-1}}\left\lbrace e^{as}F\left(s\right)\right\rbrace\left(t\right)
-=\langle t|e^{as}F(s)\rangle
-=\langle t|e^{a\hat{s}}|F\rangle
-=\langle t+a|F\rangle
-=f(t+a)
+\langle s^L|e^{at}\cdot f\rangle
+=\langle s^L|e^{a\hat{t}}|f\rangle
+=\langle (s-a)^L|f\rangle
 $$
 
 {{< details summary="proof" >}}
     
 $$
-\mathcal{L}\left\lbrace e^{at}f\left(t\right)\right\rbrace\left(s\right)=\int_{-\infty}^{\infty}dt\left\lbrack f\left(t\right)e^{-\left(s-a\right)t}\right\rbrack=F\left(s-a\right)
+\int_{-\infty}^{\infty}dt\left\lbrack e^{-\left(s-a\right)t}f\left(t\right)\right\rbrack
+=\langle (s-a)^L|f\rangle
 $$
 
 <hr>
 
 {{< /details >}}
 
-**5) convolution**
+**6) convolution**
 
 $$
-\mathcal{L}\left\lbrace h\left(t\right)u(t)\ast f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|h\cdot u\ast f\cdot u\rangle=\langle s|h\cdot u\rangle\langle s|f\cdot u\rangle
+\mathcal{L}\left\lbrace h\left(t\right)u(t)\ast f\left(t\right)u(t)\right\rbrace\left(s\right)=\langle s|(h\cdot u)\ast (f\cdot u)\rangle=\langle s|h\cdot u\rangle\langle s|f\cdot u\rangle
 $$
 
 $$
@@ -228,14 +208,14 @@ $$
 
 {{< /details >}}
 
-**6) 시간영역미분**
+**7) 시간영역미분**
 
 $$
-\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)u(t)\right\rbrace\left(s\right)=s^{n}\langle s|f\cdot u\rangle-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
+\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)u(t)\right\rangle=s^{n}\langle s^L|f\cdot u\rangle-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
 $$
 
 $$
-\mathcal{L}\left\lbrace\frac{d^{n}}{dt^{n}}f\left(t\right)\right\rbrace\left(s\right)=s^{n}\langle s|f\rangle
+\left\langle s^L\middle|\frac{d^n}{dt^n}f(t)\right\rangle=s^{n}\langle s^L|f\rangle
 $$
 
 {{< details summary="proof" >}}
@@ -273,35 +253,36 @@ $$
 
 {{< /details >}}    
 
-**7) 시간영역적분**
+**8) 시간영역적분**
 
 $$
-\mathcal{L}\left\lbrace\int_0^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\langle s|u\ast f\rangle
-=\langle s|u\rangle \langle s|f\rangle
+\left\langle s^L\middle|\int_0^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rangle
+=\langle s^L|u\ast f\rangle
+=\langle s^L|u\rangle\langle s^L|f\rangle
 =\frac{1}{s}\langle s|f\rangle
 $$
 
 $$
-\mathcal{L}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\langle s|u\ast f\rangle
-=\langle s|u\rangle \langle s|f\rangle
+\left\langle s^L\middle|\int_{-\infty}^{t}dt'\left\lbrack f\left(t'\right)\right\rbrack\right\rangle
+=\langle s^L|u\ast f\rangle
+=\langle s^L|u\rangle\langle s^L|f\rangle
 =\frac{1}{s}\langle s|f\rangle
 $$
 
 {{< details summary="proof" >}}
 
 $$
-\mathcal{L}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack u\left(t-t'\right)f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}F\left(s\right)
+\mathcal{L}\left\lbrace\int_{-\infty}^{t}dt'\left\lbrack u\left(t-t'\right)f\left(t'\right)\right\rbrack\right\rbrace\left(s\right)=\mathcal{L}\left\lbrace u\left(t\right)\ast f\left(t\right)\right\rbrace\left(s\right)=\frac{1}{s}\langle s|f\rangle
 $$
 
 <hr>
 
 {{< /details >}}    
 
-**8) s-영역미분**
+**9) s-영역미분**
 
 $$
-\mathcal{L}\left\lbrace t^{n}f\left(t\right)u(t)\right\rbrace\left(s\right)
-=\langle s|t^n\cdot fu\rangle=\langle s|(\hat{t})^n|fu\rangle=(-1)^n\frac{d^n}{ds^n}\langle s|fu\rangle
+\langle s^L|t^n\cdot f\cdot u\rangle=\langle s|(\hat{t})^n|f\cdot u\rangle=(-1)^n\frac{d^n}{ds^n}\langle s|f\cdot u\rangle
 $$
 
 $$
