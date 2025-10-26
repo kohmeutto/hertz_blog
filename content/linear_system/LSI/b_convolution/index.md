@@ -7,6 +7,10 @@ weight = 2.5
 
 ### 1. Convolution
 
+- **(이전입력+현재입력+미래입력)의 현재상태**: LSI convolution
+- **(이전입력+현재입력)의 현재상태**: LSI + causal convolution
+
+
 $$
 y\left(t\right)=x\left(t\right)\ast h\left(t\right)
 =h\left(t\right)\ast x\left(t\right)

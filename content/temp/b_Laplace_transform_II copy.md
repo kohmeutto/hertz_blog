@@ -219,17 +219,6 @@ $$
 =s^{n}\langle s^L|f\cdot u\rangle-s^{n-1}f\left(0\right)-s^{n-2}f^{\left(1\right)}\left(0\right)-s^{n-3}f^{\left(2\right)}\left(0\right)-\cdots
 $$
 
-$$
-\left\langle s^L\middle|f'\cdot u\right\rangle
-=s\langle s^L|f\cdot u\rangle-f(0)
-$$
-
-$$
-\left\langle s^L\middle|f''\cdot u\right\rangle
-=s\langle s^L|f\cdot u\rangle-sf(0)-f'(0)
-$$
-
-
 함수 $f(t)$의 "진화(evolution)" $f^{(n)}$ 를 $t=0$에서 "자른 $u(t)$ " 신호의 변환이다. **초기값 문제(Initial Value Problem)** 를 푸는 데 특화된 공식이다.
 
 {{< details summary="proof" >}}
@@ -413,7 +402,7 @@ $$
 \langle s^L|\hat{D}|f\cdot u \rangle
 =\langle s^L|f'(t)u(t)+f(t)\delta(t)\rangle
 =\langle s^L| \underbrace{f'(t)u(t)}_{\text{진화 성분}}+\underbrace{f(0)\delta(t)}_{\text{초기 성분}}\rangle
-=\langle s^L|f'\cdot u \rangle+f\left(0\right)
+=s\langle s^L|f'\cdot u \rangle+f\left(0\right)
 $$
 
 $$
@@ -439,56 +428,68 @@ $$
 
 {{< /details >}}    
 
-**(12) final value**
+**12) final value**
 
 - 단방향 라플라스 변환
 
 $$
 f\left(\infty\right)
-=\lim_{s\to 0}\langle s^L|\hat{D}|f\cdot u \rangle
-=\lim_{s\to 0}s \langle s^L|f\cdot u \rangle
+=\lim_{s\to 0}\langle s|\hat{D}|f\cdot u \rangle
+=\lim_{s\to 0}s \langle s|f\cdot u \rangle
 $$
-
-{{< details summary="proof" >}}
-
-$$
-\langle s^L|f'\cdot u\rangle=s\langle s^L|f\cdot u\rangle-f(0)
-$$
-
-$$
-\lim_{s\to0}\langle s^L|f'\cdot u\rangle+\lim_{s\to0}f(0)=\lim_{s\to0}s\langle s^L|f\cdot u\rangle
-$$
-
-$$
-\lim_{s\to0}\langle s^L|f'\cdot u\rangle
-=\int_0^{\infty}dtf'(t)=f(\infty)-f(0)
-$$
-
-따라서,
-
-$$
-f\left(\infty\right)
-=\lim_{s\to 0}\langle s^L|\hat{D}|f\cdot u \rangle
-=\lim_{s\to 0}s \langle s^L|f\cdot u \rangle
-$$
-
-<hr>
-
-{{< /details >}}
 
 - 양방향 라플라스 변환
 
 $$
-\text{Causal: }
 f\left(\infty\right)
-=\lim_{s\to0}\langle s^L|\hat{D}_t|f\rangle
-=\lim_{s\to 0}s \langle s^L|f \rangle
+=\lim_{s\to0}\langle s|\hat{D}_t|f\rangle
+=\lim_{s\to 0}s \langle s|f \rangle
 $$
 
 $$
-\text{Anti-causal: }
 f\left(-\infty\right)
-=-\lim_{s\to0}\langle s^L|\hat{D}_t|f\rangle
-=-\lim_{s\to 0}s \langle s^L|f\rangle
+=-\lim_{s\to0}\langle s|\hat{D}_t|f\rangle
+=-\lim_{s\to 0}s \langle s|f\rangle
 $$
 
+{{< details summary="proof" >}}
+
+<b>단방향 라플라스 변환.</b>
+
+단, sF(s)의 모든 극점이 복소 평면의 좌반부(Re{s}<0)에 위치
+
+$$
+\mathcal{L}\left\lbrace \frac{d}{dt} f\left(t\right)u(t)\right\rbrace\left(s\right)=s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)
+$$
+
+$$
+\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\quad
+$$
+
+$$
+\lim_{s\to 0}\int^{\infty}_{0}dt\left[e^{-st}f'\right(t\left)\right]=\lim_{s\to 0}\left[s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(\infty\right)-f\left(0\right)=\lim_{s\to 0}\left[s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)-f\left(0\right)\right]
+$$
+
+$$
+f\left(\infty\right)=\lim_{s\to0}s\mathcal{L}\left\lbrace f\left(t\right)u(t)\right\rbrace\left(s\right)
+$$
+
+<hr>
+
+<b>양방향 라플라스 변환</b>
+
+?~
+
+{{< /details >}}
+
+---
+
+### 5. Practice
+
+연구실 구성원들에게만 허용된 자료 입니다. [연습문제](https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/53608611/b+LTI+System)
+
+---
