@@ -7,8 +7,8 @@ weight = 2.5
 
 ### 1. Convolution
 
-- **(이전입력+현재입력+미래입력)의 현재상태**: LSI convolution
-- **(이전입력+현재입력)의 현재상태**: LSI + causal convolution
+- **(이전입력+현재입력+미래입력)의 현재상태**: convolution for LSI + non-causal 
+- **(이전입력+현재입력)의 현재상태**: convolution for LSI + causal 
 
 
 $$

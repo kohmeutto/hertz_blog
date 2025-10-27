@@ -5,6 +5,14 @@ weight = 5.5
 
 ---
 
+- 수렴여부에 따라, 분포 라플라스 변환, 표준 라플라스 변환이 존재한다.
+- 일반적인 라플라스 변환의 적용은 표준 라플라스 변환을 사용한다.
+- **99%의 공학 문제는 안정적인 신호를 다루므로 표준 라플라스로 충분하다.**
+- 여기에 나온, **표준 라플라스 변환은 모두 암기** 해야 한다.
+- 분포 라플라스 변환에서, **허수축의 경우 푸리에 변환과 동일** 하다.
+
+---
+
 ### 1. 중요 변환
 
 - Region of Convergence(ROC) 는 적분값이 수렴하는 s의 영역 이다.
@@ -13,7 +21,7 @@ weight = 5.5
 **1-1) 디렉 델타 함수**
 
 $$
-\langle s^L|\delta\rangle=1
+\langle s^L|\delta\rangle=1,\quad\text{표준 ROC: 모든 } s
 $$
 
 <img src="image1-1.png" width="85%" height="auto">
@@ -32,7 +40,7 @@ $$
 **1-2) 디렉 델타 함수**
 
 $$
-\langle s^L|\delta \cdot u\rangle=1
+\langle s^L|\delta \cdot u\rangle=1\quad\text{표준 ROC: 모든 } s
 $$
 
 <img src="image1-2.png" width="85%" height="auto">
@@ -49,56 +57,10 @@ $$
 
 {{< /details >}}
 
-**2-1) 단위 계단 함수**
+**2-1) 상수 함수, 분포**
 
 $$
-\langle s^L|u\rangle=\frac{1}{s}
-$$
-
-<img src="image2-1.png" width="85%" height="auto">
-
-{{< details summary="sol" >}}
-    
-$$
-F(s)=\int_0^{\infty}dt\left\lbrack e^{-st}\right\rbrack=\frac{1}{s},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
-$$
-
-<br>
-
-극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다.
-
-<hr>
-
-{{< /details >}}
-
-**2-2) 단위 계단 함수**
-
-$$
-\langle s^L|u(-t)\rangle=-\frac{1}{s}
-$$
-
-<img src="image2-2.png" width="85%" height="auto">
-
-{{< details summary="sol" >}}
-    
-$$
-\int_{-\infty}^{0}dt\left\lbrack e^{-st}\right\rbrack=-\frac{1}{s},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace < 0
-$$
-
-<br>
-
-극점은 0에서 존재한다. 이 때, ROC는 왼쪽영역에서 형성된다.
-
-<hr>
-
-{{< /details >}}
-
-**2-3) 상수 함수, 분포**
-
-$$
-\langle s^L|1\rangle=2\pi\delta(s)|_{\operatorname{Re\{s\}=0}}
+\langle s^L|1\rangle=2\pi\delta(\omega),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
 $$
 
 <img src="image2-3.png" width="85%" height="auto">
@@ -123,63 +85,76 @@ $$
 
 {{< /details >}}
 
-**3-1) cosine 함수**
+**2-2) 단위 계단 함수**
 
 $$
-\langle s^L|\cos at\cdot u(t)\rangle
-=\frac{s}{s^2+a^2}
+\langle s^L|u\rangle=\frac{1}{s},\quad\text{표준 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace>0
 $$
 
-<img src="image3-1.png" width="85%" height="auto">
+$$
+\langle s^L|u\rangle
+=\pi\delta(\omega)+\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
+$$
+
+<img src="image2-1.png" width="85%" height="auto">
 
 {{< details summary="sol" >}}
     
 $$
-\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
-$$
-    
-$$
-=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{s}{s^2+a^2},\quad
+\int_0^{\infty}dt\left\lbrack e^{-st}\right\rbrack=\frac{1}{s},\quad
 \text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
 $$
 
-극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.  
+극점은 0에서 존재한다. 이 때, ROC는 우측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\lim_{\sigma\to 0}\langle s^L|u\rangle
+=\lim_{\sigma\to 0}\left\langle s^L\middle|\frac{1}{2}+\frac{1}{2}\text{sgn}\right\rangle
+=\pi\delta(\omega)+\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
 
 <hr>
 
 {{< /details >}}
 
-**3-2) cosine 함수**
+**2-3) 단위 계단 함수**
 
 $$
-\langle s^L|\cos at\cdot u(-t)\rangle
-=-\frac{s}{s^2+a^2}
+\langle s^L|u(-t)\rangle=-\frac{1}{s},\quad\text{표준 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace<0
 $$
 
-<img src="image3-2.png" width="85%" height="auto">
+$$
+\langle s^L|u(-t)\rangle
+=\pi\delta(\omega)-\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
+$$
+
+<img src="image2-2.png" width="85%" height="auto">
+
 {{< details summary="sol" >}}
     
 $$
-F(s)=\int_{-\infty}^0 dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack
-=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
-$$
-    
-$$
-=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace
-=-\frac{s}{s^2+a^2},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+\int_{-\infty}^{0}dt\left\lbrack e^{-st}\right\rbrack=-\frac{1}{s},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace < 0
 $$
 
-극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다.
+극점은 0에서 존재한다. 이 때, ROC는 좌측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\lim_{\sigma\to 0}\langle s^L|u(-t)\rangle
+=\lim_{\sigma\to 0}\left\langle s^L\middle|\frac{1}{2}-\frac{1}{2}\text{sgn}\right\rangle
+=\pi\delta(\omega)-\operatorname{p.v.}\left(\frac{1}{i\omega}\right),\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
 
 <hr>
 
 {{< /details >}}
 
-**3-3) cosine 함수, 분포**
+**3-1) cosine 함수, 분포**
 
 $$
-\langle s^L|\cos at\rangle
+\langle s^L|\cos at\rangle=\pi\delta(\omega-a)+\pi\delta(\omega+a),\quad\text{분포 ROC: }\operatorname{Re}\left\lbrace s\right\rbrace=0
 $$
 
 <img src="image3-3.png" width="85%" height="auto">
@@ -201,8 +176,104 @@ $$
 $$
 
 $$
-=\pi\delta(s-ia)+\pi\delta(s+ia),\quad
+=\pi\delta(\omega-a)+\pi\delta(\omega+a),\quad
 \text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+
+{{< /details >}}
+
+**3-2) cosine 함수**
+
+$$
+\langle s^L|\cos at\cdot u(t)\rangle
+=\frac{s}{s^2+a^2},\quad
+\text{표준 ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+$$
+\langle s^L|\cos at\cdot u(t)\rangle
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)-\frac{i\omega}{\omega^2-a^2},
+\quad\text{분포 ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<img src="image3-1.png" width="85%" height="auto">
+
+{{< details summary="sol" >}}
+    
+$$
+\int_0^{\infty}dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Re}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{s}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\langle s^L|\cos at\cdot u\rangle
+=\left\langle s^L\middle|\frac{1}{2}(e^{iat}\cdot u+e^{-iat}\cdot u)\right\rangle
+=\frac{1}{2}\left\langle (s+ia)^L\middle|u\right\rangle+\frac{1}{2}\left\langle (s-ia)^L\middle|u\right\rangle
+$$
+
+$$
+=\frac{\pi}{2}\delta(i\omega+ia)+\frac{1}{2i(\omega+a)}+\frac{\pi}{2}\delta(i\omega-ia)+\frac{1}{2i(\omega-a)} 
+$$
+
+$$
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)-\frac{i\omega}{\omega^2-a^2},\quad\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+
+{{< /details >}}
+
+**3-3) cosine 함수**
+
+$$
+\langle s^L|\cos at\cdot u(-t)\rangle
+=-\frac{s}{s^2+a^2},\quad\text{표준 ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$
+
+$$
+\langle s^L|\cos at\cdot u(-t)\rangle
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)+\frac{i\omega}{\omega^2-a^2},\quad\text{분포 ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<img src="image3-2.png" width="85%" height="auto">
+{{< details summary="sol" >}}
+    
+$$
+F(s)=\int_{-\infty}^0 dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack
+=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace
+=-\frac{s}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다. 이 극점을 포함한 허수축에서 분포 수렴을 확인한다.
+
+$$
+\langle s^L|\cos at\cdot u(-t)\rangle
+=\left\langle s^L\middle|\frac{1}{2}(e^{iat}\cdot u(-t)+e^{-iat}\cdot u(-t))\right\rangle
+$$
+
+$$
+=\frac{1}{2}\left\langle (s+ia)^L\middle|u(-t)\right\rangle+\frac{1}{2}\left\langle (s-ia)^L\middle|u(-t)\right\rangle
+$$
+
+$$
+=\frac{\pi}{2}\delta(i\omega+ia)-\frac{1}{2i(\omega+a)}+\frac{\pi}{2}\delta(i\omega-ia)-\frac{1}{2i(\omega-a)} 
+$$
+
+$$
+=\frac{\pi}{2}\delta(\omega+a)+\frac{\pi}{2}\delta(\omega-a)+\frac{i\omega}{\omega^2-a^2},\quad\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
 $$
 
 <hr>

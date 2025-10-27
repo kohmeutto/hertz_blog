@@ -65,11 +65,3 @@ $$
 $$
 \langle x|x'\rangle=\delta(x-x'),\quad \langle t|t'\rangle=\delta(t-t')
 $$
-
-- 이산 임펄스 기저와 달리, 여러가지 함수의 형태의 연속 임펄스 기저도 존재한다. 예로, 컨볼루션연산자의 기저 $|s\rangle$
-- 시간, 위치와 같은 기저 이외의 **임펄스 기저는 반드시 직교하나, 정규화가 안되어 있을 수 있다.**
-
-$$
-\langle s|s'\rangle=2\pi i\delta(s-s')
-$$
-
