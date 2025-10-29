@@ -23,20 +23,20 @@ $$
 =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]
 $$
 
-**(1) 비대칭 푸리에 변환 & 변환 연산자**
+**(1) 비정규 직교 기저 푸리에 변환 & 변환 연산자**
 
 - **수학, 공학, 특히 신호 처리에서** 비대칭성 기반 정의가 더 많이 사용된다.
 - 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문
 
 $$
-\langle \omega^A|f\rangle
+\langle \omega|f\rangle
 =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0}
 =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]
 $$
 
-**(2) 대칭 푸리에 변환 & 변환 연산자**
+**(2) 정규 직교 기저 푸리에 변환 & 변환 연산자**
 
-- **물리학, 특히 양자역학에서 정규 직교성 기반 정의**가 압도적으로 많이 사용된다.
+- **물리학, 특히 양자역학에서 정규 직교성 기반 정의**가 필수적으로 많이 사용된다.
 - 에너지 보존과 확률 진폭 해석의 중요성 때문
 
 $$
@@ -45,16 +45,25 @@ $$
 =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]
 $$
 
-비대칭 푸리에 변환과 대칭 푸리에 변환과의 관계는 아래와 같다.
-
-$$
-\langle \omega^A|f\rangle
-=\sqrt{2\pi}\langle\omega|f\rangle
-$$
-
 ---
 
 ### 2. Basis
+
+**(1) 비정규 직교 기저**
+
+$$
+\langle t|\omega\rangle
+=\langle t|s\rangle|_{\operatorname{Re}[s]=0}=e^{i\omega t},\quad \langle\omega|t\rangle=e^{-i\omega t}
+$$
+
+$$
+\langle\omega^d|
+=\frac{1}{2\pi}\langle\omega|
+$$
+
+이것은 푸리에 변환의 결과가, $|\omega\rangle$의 기저를 사용한 좌표 $\langle \omega^d|f\rangle$ 에 $1/(2\pi)$ 배 임을 알 수 있다. 
+
+**(2) 정규 직교 기저**
 
 대칭 푸리에 변환을 기준으로 설명한다.
 
@@ -96,7 +105,41 @@ $$
 
 ---
 
-### 3. 푸리에 변환의 물리적 의미
+### 3. 푸리에 역변환
+
+**(1) 비정규 직교 기저**
+
+$$
+\langle t|f\rangle
+=\frac{1}{2\pi}\int d\omega f(\omega) e^{i\omega t}
+$$
+
+proof)
+
+$$
+\langle t|f\rangle=\int d\omega \langle \omega^d|f\rangle \langle t|\omega\rangle
+=\frac{1}{2\pi}\int d\omega \langle \omega|f\rangle \langle t|\omega\rangle
+=\frac{1}{2\pi}\int d\omega f(\omega) e^{i\omega t}
+$$
+
+**(2) 정규 직교 기저**
+
+$$
+\langle t|f\rangle
+=\frac{1}{\sqrt{2\pi}}\int d\omega f(\omega) e^{i\omega t}
+$$
+
+proof)
+
+$$
+\langle t|f\rangle=\int d\omega \langle \omega^d|f\rangle \langle t|\omega\rangle
+=\int d\omega \langle \omega|f\rangle \langle t|\omega\rangle
+=\frac{1}{\sqrt{2\pi}}\int d\omega f(\omega) e^{i\omega t}
+$$
+
+---
+
+### 4. 푸리에 변환의 물리적 의미
 
 **함수는 여러 주파수 성분들이 중첩** 되어 있다고 볼 수 있다. 푸리에 변환은 **감쇄하지 않는 정현파의 각주파수 성분 크기를 구하는 것** 이다. 아래는 cosine과 sine 함수를 나타내며, 빨간색은 주파수 성분의 크기이다.
 
