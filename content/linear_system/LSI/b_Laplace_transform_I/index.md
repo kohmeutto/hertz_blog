@@ -72,8 +72,8 @@ proof)
 
 $$
 \langle s|s'\rangle
-=\int dt e^{s^\ast t}e^{st}
-= \int dt e^{(s^\ast+s)t}
+=\int dt e^{s^\ast t}e^{s't}
+= \int dt e^{(s^\ast+s')t}
 $$
 
 - if $\sigma\ne 0$, 발산하기 때문에, 적분값이 존재하지 않음, $\delta$ 함수가 아니므로,  $|s\rangle\$은 비직교 기저
@@ -137,7 +137,7 @@ $$
 =\int_{-\infty}^{\infty}dt\left[e^{-st}h\left(t\right)\right]
 $$
 
-(2) 관점2: **라플라스 변환**은 벡터의 **좌표**를 찾아 내는 방법이다. 직관적으로 표현하기 위해, 아래와 같이 사용한다.
+(2) 관점2: **라플라스 변환**은 벡터의 **좌표**를 찾아 내는 방법이다. 즉, **라플라스 변환은 s-영역 좌표의 $2\pi i$ 배** 이다. 직관적으로 표현하기 위해, 아래와 같이 사용한다.
 
 $$
 \langle s^d|h\rangle

@@ -7,7 +7,7 @@ weight = 1
 
 ### 1. LSI
 
-Linear + Shift Invarience
+Linear + Shift Invariance
 
 ---
 
@@ -26,7 +26,7 @@ $$
 
 ---
 
-### 3. Copy-shift invarience
+### 3. Copy-shift invariance
 
 - 이동 불변 시스템이란 시스템을 작동시키는 근본적인 규칙(rule)이 이동(시간,공간) 등에 따라 변하지 않는다는 의미한다. 
 - 따라서 동일한 모양의 입력을 언제 넣든지 상관없이, 출력은 항상 **똑같은 모양으로 나온다.**
