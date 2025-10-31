@@ -247,7 +247,7 @@ $$
 {{< details summary="sol" >}}
     
 $$
-F(s)=\int_{-\infty}^0 dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack
+\int_{-\infty}^0 dt\left\lbrack\cos at\cdot e^{-st}\right\rbrack
 =\operatorname{Re}\left\lbrace\int_{-\infty}^0 dt\left\lbrack e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
 $$
     
@@ -280,60 +280,12 @@ $$
 
 {{< /details >}}
 
-**4-1) sine 함수**
-
-$$
-\langle s^L|\sin at\cdot u(t)\rangle
-$$
-
-<img src="image4-1.png" width="85%" height="auto">
-
-{{< details summary="sol" >}}
-    
-$$
-\int_0^{\infty}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
-$$
-    
-$$
-=\operatorname{Im}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{a}{s^2+a^2},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
-$$
-
-극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다.
-
-<hr>
-
-{{< /details >}}
-
-**4-2) sine 함수**
-
-$$
-\langle s^L|\sin at\cdot u(-t)\rangle
-$$
-
-<img src="image4-2.png" width="85%" height="auto">
-
-{{< details summary="sol" >}}
-    
-$$
-\int_{-\infty}^{0}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_{-\infty}^{0}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
-$$
-    
-$$
-=\operatorname{Im}\left\lbrace\int_{-\infty}^{0}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=-\frac{a}{s^2+a^2},\quad
-\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
-$$
-
-극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다.  
-
-<hr>
-
-{{< /details >}}
-
-**4-3) sine 함수, 분포**
+**4-1) sine 함수, 분포**
 
 $$
 \langle s^L|\sin at\rangle
+=-i\pi\delta(\omega-a)+i\pi\delta(\omega+a),\quad
+\text{분포 ROC: } \operatorname{Re}\lbrace s \rbrace=0
 $$
 
 <img src="image4-3.png" width="85%" height="auto">
@@ -355,7 +307,7 @@ $$
 $$
 
 $$
-=-i\pi\delta(s-ia)+i\pi\delta(s+ia),\quad
+=-i\pi\delta(\omega-a)+i\pi\delta(\omega+a),\quad
 \text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
 $$
 
@@ -363,7 +315,140 @@ $$
 
 {{< /details >}}
 
-**5-1) cosh 함수**
+**4-2) sine 함수**
+
+$$
+\langle s^L|\sin at\cdot u(t)\rangle=\frac{a}{s^2+a^2},\quad \text{표준 ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+$$
+\langle s^L|\sin at\cdot u(t)\rangle
+=-i\frac{\pi}{2}\delta(\omega-a)+i\frac{\pi}{2}\delta(\omega+a)-\frac{a}{\omega^2-a^2},\quad \text{분포 ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<img src="image4-1.png" width="85%" height="auto">
+
+{{< details summary="sol" >}}
+    
+$$
+\int_0^{\infty}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_0^{\infty}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Im}\left\lbrace\int_0^{\infty}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace=\frac{a}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace>0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 우측영역에서 형성된다. 극점을 포함하는 허수축에서 분포라플라스 변환이 존재한다.
+
+$$
+\langle s^L|\sin at\cdot u\rangle
+=\left\langle s^L\middle|\frac{1}{2i}(e^{iat}\cdot u-e^{-iat}\cdot u)\right\rangle
+$$
+
+$$
+=\frac{1}{2i}\left\langle (s-ia)^L\middle|u\right\rangle-\frac{1}{2i}\left\langle (s+ia)^L\middle|u\right\rangle
+$$
+
+$$
+=\frac{1}{2i}\left\lbrace\pi\delta(i\omega-ia)+\frac{1}{i\omega-ia}\right\rbrace-
+\frac{1}{2i}\left\lbrace\pi\delta(i\omega+ia)+\frac{1}{i\omega+ia}\right\rbrace
+$$
+
+$$
+=-i\frac{\pi}{2}\delta(\omega-a)+i\frac{\pi}{2}\delta(\omega+a)-\frac{a}{\omega^2-a^2},\quad\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+
+{{< /details >}}
+
+**4-3) sine 함수**
+
+$$
+\langle s^L|\sin at\cdot u(-t)\rangle
+=-\frac{a}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$
+
+$$
+\langle s^L|\sin at\cdot u(-t)\rangle
+=-i\frac{\pi}{2}\delta(\omega-a)+i\frac{\pi}{2}\delta(\omega+a)+\frac{a}{\omega^2-a^2},\quad\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<img src="image4-2.png" width="85%" height="auto">
+
+{{< details summary="sol" >}}
+    
+$$
+\int_{-\infty}^{0}dt\left\lbrack\sin at\cdot e^{-st}\right\rbrack=\operatorname{Im}\left\lbrack\int_{-\infty}^{0}dt\left\lbrace e^{iat}\cdot e^{-st}\right\rbrack\right\rbrace
+$$
+    
+$$
+=\operatorname{Im}\left\lbrace\int_{-\infty}^{0}dt\left\lbrack e^{-\left(s-ia\right)t}\right\rbrack\right\rbrace
+=-\frac{a}{s^2+a^2},\quad
+\text{ROC: } \operatorname{Re}\lbrace s \rbrace<0
+$$
+
+극점은 $\pm ia$ 이다. 이 때, ROC 는 좌측영역에서 형성된다. 극점을 포함하는 허수축에서 분포라플라스 변환이 존재한다.
+
+$$
+\langle s^L|\sin at\cdot u(-t)\rangle
+=\left\langle s^L\middle|\frac{1}{2i}(e^{iat}\cdot u(-t)-e^{-iat}\cdot u(-t))\right\rangle
+$$
+
+$$
+=\frac{1}{2i}\left\langle (s-ia)^L\middle|u(-t)\right\rangle-\frac{1}{2i}\left\langle (s+ia)^L\middle|u(-t)\right\rangle
+$$
+
+$$
+=\frac{1}{2i}\left\lbrace\pi\delta(i\omega-ia)-\frac{1}{i\omega-ia}\right\rbrace-
+\frac{1}{2i}\left\lbrace\pi\delta(i\omega+ia)-\frac{1}{i\omega+ia}\right\rbrace
+$$
+
+$$
+=-i\frac{\pi}{2}\delta(\omega-a)+i\frac{\pi}{2}\delta(\omega+a)+\frac{a}{\omega^2-a^2},\quad\text{ROC: } \operatorname{Re}\lbrace s \rbrace=0
+$$
+
+<hr>
+
+{{< /details >}}
+
+
+**5-1) cosh 함수, 분포**
+
+$$
+\langle s^L|\cosh at\rangle,\quad\text{존재하지 않는다.}
+$$
+
+<img src="image5-3.png" width="85%" height="auto">
+
+{{< details summary="sol" >}}
+
+$$
+\left\langle s^L|\cosh at\right\rangle
+= \left\langle s^L \middle|\frac{1}{2}\left(e^{+at}+e^{-at}\right)\right\rangle
+=\frac{1}{2} \left\langle s^L \middle|e^{+at}\right\rangle+\frac{1}{2} \left\langle s^L \middle|e^{-at}\right\rangle
+$$
+
+$$
+=\frac{1}{2} \left\langle (s-a)^L \middle|1\right\rangle+\frac{1}{2} \left\langle (s+a)^L \middle|1\right\rangle
+$$
+
+$$
+=\pi\delta(s-a)+\pi\delta(s+a),\quad
+\text{ROC: } 공집합
+$$
+
+<br>
+    
+위의 cosh 에서 겹치는 ROC 영역이 없으므로, 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
+
+<hr>
+
+{{< /details >}}
+
+**5-2) cosh 함수**
 
 $$
 \langle s^L|\cosh at\cdot u(t)\rangle
@@ -390,7 +475,7 @@ $$
 
 {{< /details >}}
 
-**5-2) cosh 함수**
+**5-3) cosh 함수**
 
 $$
 \langle s^L|\cosh at\cdot u(-t)\rangle
@@ -412,43 +497,6 @@ $$
 $$
 
 극점은 $\pm a$ 이다. 이 때, ROC 는 $-|\operatorname{Re}\lbrace a\rbrace|$ 보다 작은 좌측영역에서 형성된다. 
-
-<hr>
-
-{{< /details >}}
-
-**5-3) cosh 함수, 분포**
-
-$$
-\langle s^L|\cosh at\rangle
-$$
-
-<img src="image5-3.png" width="85%" height="auto">
-
-{{< details summary="sol" >}}
-    
-위의 cosh 에서 겹치는 ROC 영역이 없으므로, 표준 라플라스 변환은 존재하지 않는다. 또한 직관적으로보면, 적분은 발산한다.
-
-그럼에도 불구하고, <b>분포(Distribution)의 영역에서는 양방향 라플라스 변환이 존재</b>한다.
-
-$$
-\left\langle s^L|\cosh at\right\rangle
-= \left\langle s^L \middle|\frac{1}{2}\left(e^{+at}+e^{-at}\right)\right\rangle
-=\frac{1}{2} \left\langle s^L \middle|e^{+at}\right\rangle+\frac{1}{2} \left\langle s^L \middle|e^{-at}\right\rangle
-$$
-
-$$
-=\frac{1}{2} \left\langle (s-a)^L \middle|1\right\rangle+\frac{1}{2} \left\langle (s+a)^L \middle|1\right\rangle
-$$
-
-$$
-=\pi\delta(s-a)+\pi\delta(s+a),\quad
-\text{ROC: } 공집합
-$$
-
-<br>
-
-여기서 중요한 것은 ROC 가 존재하지 않는다. 따라서, 위에서 구한 라플리스 변환은 아무런 의미가 없으며, 라플라스 변환은 존재하지 않는다.
 
 <hr>
 
