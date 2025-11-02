@@ -10,7 +10,7 @@ weight = 8
 **1) Dirac delta function - time to frequency domain**
 
 $$
-\langle \omega^A| \delta \rangle=1\quad,
+\langle \omega^A| \delta \rangle=1,\quad
 \langle \omega^S| \delta \rangle=\frac{1}{\sqrt{2\pi}}
 $$
 

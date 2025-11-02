@@ -5,30 +5,83 @@ weight = 9
 
 ---
 
-### 1. 푸리에 급수
+### 1. 푸리에 급수의 본질
 
-**주기 함수** 의 상태 벡터 $|f\rangle$를 $|1\rangle$, $|\cos_n\rangle=|\cos n\omega_0 t\rangle$, $|\sin_n\rangle=|\sin n\omega_0 t\rangle$을 사용한 이산기저로도 표현할 수 있으며, $\langle t|f\rangle=f(t)$ 푸리에 급수라고 한다.
+$|f\rangle$이 이산 무한 기저 $|\omega_{n,A}\rangle$로 표현가능하다면,
+
+$$
+|f\rangle
+=\sum_{n=-\infty}^{\infty} c_n |\omega_{n,A}\rangle
+$$
+
+여기에서,
+
+$$
+\langle t^A|\omega_{n,A}\rangle
+=e^{in\omega_0t},\quad
+\langle \omega_{n}^{A}|t_A\rangle
+=e^{-in\omega_0t}
+$$
+
+쌍대기저를 구하면,
+
+$$
+\int_T dt\{\langle \omega_{n}^{A}|t_A\rangle\langle t^A|\omega_{n,A}\rangle\}
+=\int_T dt\{e^{-in\omega_0t}e^{+in\omega_0t}\}
+=T
+$$
+
+$$
+\int_T dt\{\langle \omega_{n}^{A}|t_A\rangle\langle t^A|\omega_{m,A}\rangle\}
+=\int_T dt\{e^{-in\omega_0t}e^{+im\omega_0t}\}
+=0
+$$
+
+$$
+\langle\omega_n^{A}|\omega_{m,A}\rangle=T\delta_{nm}
+$$
+
+따라서,  $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.
+
+$$
+\langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}|
+$$
+
+위 식을 사용하여, $|f\rangle$을 $|t^A\rangle$로 사영하였을 때, 좌표를 구해보자.
 
 $$
 f(t)
-=a_0+\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t + b_n\sin n\omega_0 t\}
-=\sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t}
+=\langle t^A|f\rangle
+=\sum_n c_n \langle t^A|\omega_{n,A}\rangle
+=\sum_n c_n e^{in\omega_0t}
+$$
+
+$$
+c_n
+=\langle\omega_n^{A,d}|f\rangle
+=\frac{1}{T}\int_T dt \{e^{-in\omega_0t}f(t)\}
+$$
+
+---
+
+### 2. 푸리에 급수의 형태와 직관적 이해
+
+위에서는 푸리에 변환으로 부터, 푸리에 급수의 본질을 이해하였다. 그러나, 푸리에 급수는 직관적으로 테일러 급수 같이 이해할 수 있다. 주기함수일 경우, 주파수의 정수배인 정현파 함수의 합으로 표현할 수 있다.
+
+$$
+f(t)
+=\sum_{n=-\infty}^{\infty} c_n e^{in\omega_0 t}
+$$
+
+$$
 =d_0+\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t + \varphi_n)
 $$
 
-where,
+$$
+=a_0+\sum_{n=1}^{\infty} \{a_n\cos n\omega_0 t + b_n\sin n\omega_0 t\}
+$$
 
-$$
-a_0
-=\langle 1^d|f\rangle
-=\frac{1}{T}\langle1|f\rangle,\quad
-a_n
-=\langle \cos_n^d|f\rangle
-=\frac{2}{T}\langle \cos_n^d|f\rangle,\quad
-b_n
-=\langle \sin_n^d|f\rangle
-=\frac{2}{T}\langle \sin_n|f\rangle
-$$
+where,
 
 $$
 c_n
@@ -42,29 +95,68 @@ d_n=2|c_n|,\quad
 \varphi_n=\operatorname{ang}\{c_n\}
 $$
 
+$$
+a_0
+=\langle 1^d|f\rangle
+=\frac{1}{T}\langle1|f\rangle,\quad
+a_n
+=\langle \cos_n^d|f\rangle
+=\frac{2}{T}\langle \cos_n|f\rangle,\quad
+b_n
+=\langle \sin_n^d|f\rangle
+=\frac{2}{T}\langle \sin_n|f\rangle
+$$
+
 proof)
 
-$$
-|f\rangle
-=a_0|1\rangle + \sum_{n=1}^{\infty} \left\{ a_n |\cos_ n\rangle + b_n |\sin_n\rangle \right\}
-$$
-
-각 계수를 구하기 위해서, 각 기저의 쌍대 기저를 알아야 한다. 우선 각 기저 $|\cos_n\rangle$, $|\sin_n\rangle$가 서로 직교 독립임을 확인한다. Gram 방법을 사용하면,
+(1) $c_n$, $\langle \exp_n^d|$
 
 $$
-W
-=\begin{bmatrix}
-\langle \cos_n|\cos_n\rangle & \langle \cos_n|\sin_n\rangle \\
-\langle \sin_n|\cos_n\rangle & \langle \sin_n|\sin_n\rangle
-\end{bmatrix}
-=\begin{bmatrix}
-T/2 & 0 \\ 0 & T/2 \end{bmatrix}\implies
-|W|\ne0
+\langle \exp_n^d|\exp_n\rangle
+=\frac{1}{\gamma}\int_T dt e^{-in\omega_0 t}e^{in\omega_0 t}=1\implies
+\gamma=T
 $$
 
-따라서, 서로 직교 독립이다. 이번에는 각 기저의 쌍대기저를 구해야 한다.
+$$
+\langle \exp_n^d|
+=\frac{1}{T}\langle \exp_n|
+$$
 
-(1) $a_0$, $\langle 1^d|$
+$$
+c_n
+=\langle \exp_n^d|f\rangle
+=\frac{1}{T}\langle \exp_n|f\rangle
+$$
+
+(2) $d_0$, $d_n$, $\varphi_n$
+
+$$
+f(t)
+=d_0+\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t + \varphi_n)
+=d_0+\sum_{n=1}^{\infty}d_n\frac{e^{+i(n\omega_0t+\varphi_n)}+e^{-i(n\omega_0t+\varphi_n)}}{2}
+$$
+
+$$
+f(t)
+=\sum_{n=-\infty}^{\infty}c_ne^{in\omega_0t}
+=c_0+\sum_{n=1}^{\infty}\left\{c_ne^{in\omega_0t}+c_{-n}e^{-in\omega_0t}\right\}
+$$
+
+$$
+d_0=c_0
+$$
+
+$$
+c_n=\frac{e^{j\varphi_n}}{2}d_n,\quad
+c_{-n}=\frac{e^{-j\varphi_n}}{2}d_n=c_n^\ast\implies
+d_n=2|c_n|
+$$
+
+$$
+\varphi_n=\operatorname{ang}\{c_n\}
+$$
+
+(3) $a_0$, $\langle 1^d|$
 
 $$
 \langle 1^d|1\rangle
@@ -86,7 +178,7 @@ a_0
 =\frac{1}{T}\langle1|f\rangle
 $$
 
-(2) $a_n$, $\langle \cos_n^d|$
+(4) $a_n$, $\langle \cos_n^d|$
 
 $$
 \langle \cos_n^d|\cos_n\rangle
@@ -105,7 +197,7 @@ a_n
 =\frac{2}{T}\langle \cos_n|f\rangle
 $$
 
-(3) $b_n$, $\langle \sin n^d|$
+(5) $b_n$, $\langle \sin_n^d|$
 
 $$
 \langle \sin_n^d|\sin_n\rangle
@@ -124,57 +216,9 @@ b_n
 =\frac{2}{T}\langle \sin_n|f\rangle
 $$
 
-(4) $c_n$, $\langle \exp_n^d|$
-
-$$
-\langle \exp_n^d|\exp_n\rangle
-=\frac{1}{\gamma}\int_T dt e^{-jn\omega_0 t}e^{jn\omega_0 t}=1\implies
-\gamma=T
-$$
-
-$$
-\langle \exp_n^d|
-=\frac{1}{T}\langle \exp_n|
-$$
-
-$$
-c_n
-=\langle \exp_n^d|f\rangle
-=\frac{1}{T}\langle \exp_n|f\rangle
-$$
-
-
-(5) $d_0$, $d_n$, $\varphi_n$
-
-$$
-f(t)
-=d_0+\sum_{n=1}^{\infty}d_n\cos (n\omega_0 t + \varphi_n)
-=d_0+\sum_{n=1}^{\infty}d_n\frac{e^{+j(n\omega_0t+\varphi_n)}+e^{-j(n\omega_0t+\varphi_n)}}{2}
-$$
-
-$$
-f(t)
-=\sum_{n=-\infty}^{\infty}c_ne^{jn\omega_0t}
-=c_0+\sum_{n=1}^{\infty}\left\{c_ne^{jn\omega_0t}+c_{-n}e^{-jn\omega_0t}\right\}
-$$
-
-$$
-d_0=c_0
-$$
-
-$$
-c_n=\frac{e^{j\varphi_n}}{2}d_n,\quad
-c_{-n}=\frac{e^{-j\varphi_n}}{2}d_n=c_n^\ast\implies
-d_n=2|c_n|
-$$
-
-$$
-\varphi_n=\operatorname{ang}\{c_n\}
-$$
-
 ---
 
-### 2. 주기함수
+### 3. 주기함수
 
 푸리에 급수는 임의의 주기함수를 정현함수의 합으로 표현할 수 있음을 보여준다. 그렇다면, 주기함수임을 어떻게 판별할 수 있는가이다. 푸리에 급수에서 메인 주파수의 **정수배**에 해당하는 정현파가 합성됨을 주목하라.
 
@@ -244,7 +288,7 @@ $$
 
 ---
 
-### 3. 푸리에 급수는 로랑 급수의 "특별한 경우" 이다.
+### 4. 푸리에 급수는 로랑 급수의 "특별한 경우" 이다.
 
 원점에서의 로랑 급수는 아래와 같이 표현한다.
 

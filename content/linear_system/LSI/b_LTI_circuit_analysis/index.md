@@ -245,9 +245,4 @@ $$
 i=i_h+i_p=e^{-t}+2e^{-2t}-2e^{-4t}
 $$
 
----
-
-### 5. Practice
-
-연구실 구성원들에게만 제공되는 자료입니다. [연습문제](https://hertz2hnu.atlassian.net/wiki/spaces/AJpAH3tcG9Jk/pages/edit-v2/107446288)
 

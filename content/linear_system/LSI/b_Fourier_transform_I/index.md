@@ -111,7 +111,8 @@ $$
 **(1) 비정규 직교 기저**
 
 $$
-\langle t^A|f\rangle
+f(t)
+=\langle t^A|f\rangle
 =\frac{1}{2\pi}\int d\omega f(\omega) e^{i\omega t}
 $$
 
@@ -125,7 +126,8 @@ $$
 **(2) 정규 직교 기저**
 
 $$
-\langle t^S|f\rangle
+f(t)
+=\langle t^S|f\rangle
 =\frac{1}{\sqrt{2\pi}}\int d\omega f(\omega) e^{i\omega t}
 $$
 

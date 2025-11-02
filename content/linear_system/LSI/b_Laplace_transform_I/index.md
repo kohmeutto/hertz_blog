@@ -151,7 +151,8 @@ $$
 $|s\rangle$에 대한 기저를 $|t\rangle$에 대한 기저로 옮기는 것이다.
 
 $$
-\langle t|h\rangle
+h(t)
+= \langle t|h\rangle
 = \langle t|\left(\int ds \langle s^d|h\rangle|s\rangle \right)
 = \frac{1}{2\pi i}\int ds \langle s^L|h\rangle e^{st}
 $$
