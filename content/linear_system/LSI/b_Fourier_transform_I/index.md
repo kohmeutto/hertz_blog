@@ -29,7 +29,7 @@ $$
 - 비대칭적인 형태가 수학적 이론 전개에 편리하기 때문
 
 $$
-\langle \omega|f\rangle
+\langle \omega^A|f\rangle
 =\langle s^L|f\rangle|_{\operatorname{Re}[s]=0}
 =\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]
 $$
@@ -40,7 +40,7 @@ $$
 - 에너지 보존과 확률 진폭 해석의 중요성 때문
 
 $$
-\langle \omega|f\rangle
+\langle \omega^S|f\rangle
 =\frac{1}{\sqrt{2\pi}}\langle s^L|f\rangle|_{\operatorname{Re}[s]=0}
 =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]
 $$
@@ -52,45 +52,46 @@ $$
 **(1) 비정규 직교 기저**
 
 $$
-\langle t|\omega\rangle
-=\langle t|s\rangle|_{\operatorname{Re}[s]=0}=e^{i\omega t},\quad \langle\omega|t\rangle=e^{-i\omega t}
+\langle t^A|\omega_A\rangle
+=\langle t|s\rangle|_{\operatorname{Re}[s]=0}
+=e^{i\omega t},\quad \langle\omega^A|t_A\rangle=e^{-i\omega t}
 $$
 
 $$
-\langle\omega^d|
-=\frac{1}{2\pi}\langle\omega|
+\langle\omega^{A,d}|
+=\frac{1}{2\pi}\langle\omega^{A}|
 $$
 
-이것은 푸리에 변환의 결과가, **$|\omega\rangle$의 기저를 사용한 좌표 $\langle \omega^d|f\rangle$ 에 $2\pi$ 배** 임을 알 수 있다. 
+이것은 푸리에 변환의 결과가, **$|\omega_A\rangle$의 기저를 사용한 좌표 $\langle \omega^{A,d}|f\rangle$ 에 $2\pi$ 배** 임을 알 수 있다. 
 
 **(2) 정규 직교 기저**
 
 대칭 푸리에 변환을 기준으로 설명한다.
 
 $$
-\langle \omega|f\rangle
+\langle \omega^{S}|f\rangle
 =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} dt \left[ e^{-i\omega t} f(t) \right]
 $$
 
 $$
-\langle \omega|f\rangle
-=\langle \omega|\hat{I}|f\rangle
-=\int_{-\infty}^{\infty} dt \langle \omega|t\rangle\langle t|f\rangle
+\langle \omega^S|f\rangle
+=\langle \omega^S|\hat{I}|f\rangle
+=\int_{-\infty}^{\infty} dt \langle \omega^S|t_S\rangle\langle t^S|f\rangle
 $$
 
 위 두개의 식을 비교하면,
 
 $$
-\langle \omega|t\rangle=\frac{1}{\sqrt{2\pi}}e^{-i\omega t},\quad
-\langle t|\omega\rangle=\frac{1}{\sqrt{2\pi}}e^{+i\omega t}
+\langle \omega^S|t_S\rangle=\frac{1}{\sqrt{2\pi}}e^{-i\omega t},\quad
+\langle t^S|\omega_S\rangle=\frac{1}{\sqrt{2\pi}}e^{+i\omega t}
 $$
 
-$\langle \omega|\omega'\rangle$ 이 무엇인지 확인해 보자.
+$\langle \omega^S|\omega'_S\rangle$ 이 무엇인지 확인해 보자.
 
 $$
-\langle \omega|\omega'\rangle
-=\langle \omega|\hat{I}|\omega'\rangle
-=\int_{-\infty}^{\infty} dt \langle \omega|t\rangle\langle t|\omega'\rangle
+\langle \omega^S|\omega'_S\rangle
+=\langle \omega^S|\hat{I}|\omega'_S\rangle
+=\int_{-\infty}^{\infty} dt \langle \omega^S|t\rangle\langle t|\omega'_S\rangle
 =\frac{1}{2\pi}\int_{-\infty}^{\infty} dt e^{-i(\omega-\omega')t}
 =\delta(\omega-\omega')
 $$
@@ -98,10 +99,10 @@ $$
 따라서, 
 
 $$
-\langle \omega^d|=\langle \omega|
+\langle \omega^{S,d}|=\langle \omega^S|
 $$
 
-즉, $|\omega\rangle$ 은 **정규직교기저** 이다.
+즉, $|\omega_S\rangle$ 은 **정규직교기저** 이다.
 
 ---
 
@@ -110,31 +111,29 @@ $$
 **(1) 비정규 직교 기저**
 
 $$
-\langle t|f\rangle
+\langle t^A|f\rangle
 =\frac{1}{2\pi}\int d\omega f(\omega) e^{i\omega t}
 $$
 
 proof)
 
 $$
-\langle t|f\rangle=\int d\omega \langle \omega^d|f\rangle \langle t|\omega\rangle
-=\frac{1}{2\pi}\int d\omega \langle \omega|f\rangle \langle t|\omega\rangle
-=\frac{1}{2\pi}\int d\omega f(\omega) e^{i\omega t}
+\langle t^A|f\rangle=\int d\omega \langle \omega^{A,d}|f\rangle \langle t^A|\omega_A\rangle
+=\frac{1}{2\pi}\int d\omega \langle \omega^{A}|f\rangle e^{i\omega t}
 $$
 
 **(2) 정규 직교 기저**
 
 $$
-\langle t|f\rangle
+\langle t^S|f\rangle
 =\frac{1}{\sqrt{2\pi}}\int d\omega f(\omega) e^{i\omega t}
 $$
 
 proof)
 
 $$
-\langle t|f\rangle=\int d\omega \langle \omega^d|f\rangle \langle t|\omega\rangle
-=\int d\omega \langle \omega|f\rangle \langle t|\omega\rangle
-=\frac{1}{\sqrt{2\pi}}\int d\omega f(\omega) e^{i\omega t}
+\langle t^S|f\rangle=\int d\omega \langle \omega^{S,d}|f\rangle \langle t^S|\omega_S\rangle
+=\frac{1}{\sqrt{2\pi}}\int d\omega \langle\omega^{S}|f\rangle e^{i\omega t}
 $$
 
 ---
@@ -151,10 +150,10 @@ $$
 
 ---
 
-### 6. 푸리에 변환의 존재 조건
+### 5. 푸리에 변환의 존재 조건
 
 $$
-\langle s^L|f\rangle|_{s=i\omega}=\langle \omega|f\rangle
+\langle s^L|f\rangle|_{s=i\omega}\to\langle \omega|f\rangle
 $$
 
 위 식을 만족하려면, ROC가 허수축을 포함해야 한다.
