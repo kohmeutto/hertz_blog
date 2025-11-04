@@ -387,13 +387,13 @@ $$
 **(10) s-영역 적분**
 
 $$
-\left\langle s^L\middle|\frac{1}{t}\cdot f\cdot u \right\rangle
+\left\langle s^L\middle|t^{-1}\cdot f\cdot u \right\rangle
 =\left\langle s^L\middle|\hat{t}^{-1}|f\cdot u \right\rangle
 =\int^{\infty}_{s} ds'\left\langle s'^L\middle|f\cdot u \right\rangle
 $$
 
 $$
-\left\langle s^L\middle|\frac{1}{t}\cdot f\ \right\rangle
+\left\langle s^L\middle|t^{-1}\cdot f\ \right\rangle
 =\left\langle s^L|\hat{t}^{-1}|f \right\rangle
 =\int^{\infty}_{s} ds'\left\langle s'^L|f\right\rangle
 $$

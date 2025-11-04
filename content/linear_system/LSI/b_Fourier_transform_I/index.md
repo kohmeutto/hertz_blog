@@ -52,9 +52,9 @@ $$
 **(1) 비정규 직교 기저**
 
 $$
-\langle t^A|\omega_A\rangle
+\langle t|\omega\rangle_A
 =\langle t|s\rangle|_{\operatorname{Re}[s]=0}
-=e^{i\omega t},\quad \langle\omega^A|t_A\rangle=e^{-i\omega t}
+=e^{i\omega t},\quad \langle\omega^A|t\rangle=e^{-i\omega t}
 $$
 
 $$
@@ -82,16 +82,16 @@ $$
 위 두개의 식을 비교하면,
 
 $$
-\langle \omega^S|t_S\rangle=\frac{1}{\sqrt{2\pi}}e^{-i\omega t},\quad
-\langle t^S|\omega_S\rangle=\frac{1}{\sqrt{2\pi}}e^{+i\omega t}
+\langle \omega^S|t\rangle=\frac{1}{\sqrt{2\pi}}e^{-i\omega t},\quad
+\langle t|\omega\rangle_S=\frac{1}{\sqrt{2\pi}}e^{+i\omega t}
 $$
 
-$\langle \omega^S|\omega'_S\rangle$ 이 무엇인지 확인해 보자.
+$\langle \omega^S|\omega'\rangle$ 이 무엇인지 확인해 보자.
 
 $$
-\langle \omega^S|\omega'_S\rangle
-=\langle \omega^S|\hat{I}|\omega'_S\rangle
-=\int_{-\infty}^{\infty} dt \langle \omega^S|t\rangle\langle t|\omega'_S\rangle
+\langle \omega^S|\omega'\rangle
+=\langle \omega^S|\hat{I}|\omega'\rangle
+=\int_{-\infty}^{\infty} dt \langle \omega^S|t\rangle\langle t|\omega'\rangle
 =\frac{1}{2\pi}\int_{-\infty}^{\infty} dt e^{-i(\omega-\omega')t}
 =\delta(\omega-\omega')
 $$
@@ -102,7 +102,7 @@ $$
 \langle \omega^{S,d}|=\langle \omega^S|
 $$
 
-즉, $|\omega_S\rangle$ 은 **정규직교기저** 이다.
+즉, $|\omega\rangle_S$ 은 **정규직교기저** 이다.
 
 ---
 
@@ -112,14 +112,14 @@ $$
 
 $$
 f(t)
-=\langle t^A|f\rangle
-=\frac{1}{2\pi}\int d\omega f(\omega) e^{i\omega t}
+=\langle t|f\rangle_A
+=\frac{1}{2\pi}\int d\omega \langle \omega^A|f\rangle_A e^{i\omega t}
 $$
 
 proof)
 
 $$
-\langle t^A|f\rangle=\int d\omega \langle \omega^{A,d}|f\rangle \langle t^A|\omega_A\rangle
+\langle t|f\rangle_A=\int d\omega \langle \omega^{A,d}|f\rangle \langle t|\omega\rangle
 =\frac{1}{2\pi}\int d\omega \langle \omega^{A}|f\rangle e^{i\omega t}
 $$
 
@@ -127,14 +127,14 @@ $$
 
 $$
 f(t)
-=\langle t^S|f\rangle
-=\frac{1}{\sqrt{2\pi}}\int d\omega f(\omega) e^{i\omega t}
+=\langle t|f\rangle_S
+=\frac{1}{\sqrt{2\pi}}\int d\omega \langle \omega^S|f\rangle_A e^{i\omega t}
 $$
 
 proof)
 
 $$
-\langle t^S|f\rangle=\int d\omega \langle \omega^{S,d}|f\rangle \langle t^S|\omega_S\rangle
+\langle t|f\rangle_S=\int d\omega \langle \omega^{S,d}|f\rangle \langle t|\omega\rangle
 =\frac{1}{\sqrt{2\pi}}\int d\omega \langle\omega^{S}|f\rangle e^{i\omega t}
 $$
 

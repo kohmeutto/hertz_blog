@@ -60,7 +60,7 @@ $$
 
 ---
 
-### 2. "$|s\rangle$" & "$\langle s^L|$" & "$\langle s^d|$"
+### 2. "$|s\rangle_L$" & "$\langle s^L|$" & "$\langle s^{L,d}|$"
 
 **(1) $|s\rangle\$ 은 비직교 기저**
 
@@ -71,7 +71,7 @@ $$
 proof)
 
 $$
-\langle s|s'\rangle
+\langle s|s'\rangle_L
 =\int dt e^{s^\ast t}e^{s't}
 = \int dt e^{(s^\ast+s')t}
 $$
@@ -79,11 +79,11 @@ $$
 - if $\sigma\ne 0$, 발산하기 때문에, 적분값이 존재하지 않음, $\delta$ 함수가 아니므로,  $|s\rangle\$은 비직교 기저
 - if $\sigma= 0$, 분포수렴하기 때문에, 적분값은 $2\pi\delta(\omega-\omega')$, $\delta$ 함수이나, 1이 아닌 상수가 곱해져 있으므로, 비정규 직교기저
 
-**(2) $\langle s^L|$ & $\langle s^d|$**
+**(2) $\langle s^L|$ & $\langle s^{L,d}|$**
 
 $$
 \langle s^L|s'\rangle=2\pi i\delta(s-s'),\quad
-\langle s^d|=\frac{1}{2\pi i}\langle s^L|
+\langle s^{L,d}|=\frac{1}{2\pi i}\langle s^L|
 $$
 
 proof)
@@ -99,7 +99,7 @@ $$
 따라서, 기저 $|s\rangle$에 대한 dual basis 는
 
 $$
-\langle s^d|=\frac{1}{2\pi i}\langle s^L|
+\langle s^{L,d}|=\frac{1}{2\pi i}\langle s^L|
 $$
 
 ---
@@ -120,7 +120,7 @@ $$
 
 $$
 |h\rangle
-= \int ds (\langle s^d|h\rangle)|s\rangle
+= \int ds (\langle s^{L,d}|h\rangle)|s\rangle
 = \frac{1}{2\pi i}\int ds (\langle s^L|h\rangle)|s\rangle
 $$
 
@@ -140,7 +140,7 @@ $$
 (2) 관점2: **라플라스 변환**은 벡터의 **좌표**를 찾아 내는 방법이다. 즉, **라플라스 변환은 s-영역 좌표의 $2\pi i$ 배** 이다. 직관적으로 표현하기 위해, 아래와 같이 사용한다.
 
 $$
-\langle s^d|h\rangle
+\langle s^{L,d}|h\rangle
 =\frac{1}{2\pi i}\langle s^L|h\rangle
 $$
 
@@ -153,7 +153,7 @@ $|s\rangle$에 대한 기저를 $|t\rangle$에 대한 기저로 옮기는 것이
 $$
 h(t)
 = \langle t|h\rangle
-= \langle t|\left(\int ds \langle s^d|h\rangle|s\rangle \right)
+= \langle t|\left(\int ds \langle s^{L,d}|h\rangle|s\rangle \right)
 = \frac{1}{2\pi i}\int ds \langle s^L|h\rangle e^{st}
 $$
 

@@ -1,6 +1,6 @@
 +++
-title = "LSV"
-weight = 3
+title = "LScI"
+weight = 2
 +++
 
 ---

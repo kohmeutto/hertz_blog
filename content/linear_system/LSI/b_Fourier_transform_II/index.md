@@ -17,8 +17,8 @@ $$
 **2) Dirac delta function - frequency to time domain**
 
 $$
-\langle t^A| \delta \rangle=\frac{1}{2\pi},\quad
-\langle t^S| \delta \rangle=\frac{1}{\sqrt{2\pi}}
+\langle t| \delta \rangle_A=\frac{1}{2\pi},\quad
+\langle t| \delta \rangle_S=\frac{1}{\sqrt{2\pi}}
 $$
 
 **3) DC, Constant**

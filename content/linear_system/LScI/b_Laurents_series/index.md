@@ -1,6 +1,6 @@
 +++
 title = "(b) Lourent's series"
-weight = 1
+weight = 10
 +++
 
 ---

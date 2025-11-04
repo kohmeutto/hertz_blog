@@ -7,38 +7,38 @@ weight = 9
 
 ### 1. 푸리에 급수의 본질
 
-$|f\rangle$이 이산 무한 기저 $|\omega_{n,A}\rangle$로 표현가능하다면,
+$|f\rangle$이 이산 무한 기저 $|\omega_{n}\rangle_A$로 표현가능하다면,
 
 $$
 |f\rangle
-=\sum_{n=-\infty}^{\infty} c_n |\omega_{n,A}\rangle
+=\sum_{n=-\infty}^{\infty} c_n |\omega_{n}\rangle_A
 $$
 
 여기에서,
 
 $$
-\langle t^A|\omega_{n,A}\rangle
+\langle t|\omega_{n}\rangle_A
 =e^{in\omega_0t},\quad
-\langle \omega_{n}^{A}|t_A\rangle
+\langle \omega_{n}^{A}|t\rangle
 =e^{-in\omega_0t}
 $$
 
 쌍대기저를 구하면,
 
 $$
-\int_T dt\{\langle \omega_{n}^{A}|t_A\rangle\langle t^A|\omega_{n,A}\rangle\}
+\int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t|\omega_{n}\rangle\}
 =\int_T dt\{e^{-in\omega_0t}e^{+in\omega_0t}\}
 =T
 $$
 
 $$
-\int_T dt\{\langle \omega_{n}^{A}|t_A\rangle\langle t^A|\omega_{m,A}\rangle\}
+\int_T dt\{\langle \omega_{n}^{A}|t\rangle\langle t^A|\omega_{m}\rangle\}
 =\int_T dt\{e^{-in\omega_0t}e^{+im\omega_0t}\}
 =0
 $$
 
 $$
-\langle\omega_n^{A}|\omega_{m,A}\rangle=T\delta_{nm}
+\langle\omega_n^{A}|\omega_{m}\rangle=T\delta_{nm}
 $$
 
 따라서,  $|\omega_{n,A}\rangle$는 비정규 직교 기저임을 알 수 있다. 듀얼기저는 아래와 같다.
@@ -47,12 +47,12 @@ $$
 \langle\omega_n^{A,d}|=\frac{1}{T}\langle\omega_n^{A}|
 $$
 
-위 식을 사용하여, $|f\rangle$을 $|t^A\rangle$로 사영하였을 때, 좌표를 구해보자.
+위 식을 사용하여, $|f\rangle$을 $|t\rangle$로 사영하였을 때, 좌표를 구해보자.
 
 $$
 f(t)
-=\langle t^A|f\rangle
-=\sum_n c_n \langle t^A|\omega_{n,A}\rangle
+=\langle t|f\rangle_A
+=\sum_n c_n \langle t|\omega_{n}\rangle_A
 =\sum_n c_n e^{in\omega_0t}
 $$
 
@@ -147,8 +147,8 @@ d_0=c_0
 $$
 
 $$
-c_n=\frac{e^{j\varphi_n}}{2}d_n,\quad
-c_{-n}=\frac{e^{-j\varphi_n}}{2}d_n=c_n^\ast\implies
+c_n=\frac{e^{i\varphi_n}}{2}d_n,\quad
+c_{-n}=\frac{e^{-i\varphi_n}}{2}d_n=c_n^\ast\implies
 d_n=2|c_n|
 $$
 
