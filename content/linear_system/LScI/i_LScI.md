@@ -41,108 +41,54 @@ $$
 - '똑같은 형태로 나온다.'의 의미는 단지 출력의 축척이 변할 뿐이다.
 
 $$
-h(u-\tau,u)=h(u,u+\tau)\implies h(u,\tau)=h(u-\tau)
+h(u, u')
+= \frac{1}{|u|}h_M(u'/u)
 $$
 
 proof)
 
-LScI 연산자 $\hat{M}$의 커널(kernel) $h(u,u')=\langle u^d|\hat{M}|u'\rangle$을 전개해 본다.
-스케일링 연산자 $\hat{Z}_a$는 $\langle u^d|\hat{Z}_a|f \rangle=f(au)$ 로 정의한다.
-
 $$
-\langle u^d|\hat{Z}_a\hat{M}|f\rangle
-= \langle u^d|\hat{Z}_a|(\hat{M}f)\rangle
-= (\hat{M}f)(ax)
-= \int du' h(au, u') f(u')
+\langle u^d|\hat{Z}_a\hat{M}|u'\rangle
+= \langle (au)^d|\hat{M}|u'\rangle
+= h(au, u')
 $$
 
 $$
-\langle x | \hat{M} \hat{Z}_a | f \rangle
-= \langle x | \hat{M} | (\hat{Z}_a f) \rangle
-= \int dx' h(x, x') (\hat{Z}_a f)(x')
-= \int dx' h(x, x') f(ax')
+\langle u^d|\hat{M}\hat{Z}_a|u'\rangle
+= \frac{1}{|a|}\langle u^d|\hat{M}|u'/a\rangle
+= \frac{1}{|a|}h(u, u'/a)
 $$
 
-$u=ax'$로 치환하면, $x' = u/a$, $dx' = du/a$ 이다.
-
-따라서,
+$u=1$로 놓고, $h_M$을 $u'$과 $a$ 비율에만 의존하는 함수라고 하면,
 
 $$
-h(u-\tau,u')=h(u,u'+\tau)\implies
-h(x,y)=h(x+s,y+s)
-$$
-
-여기에서 어떤 $s$를 선택해도, 위 식은 반드시 만족해야 한다. $s$에 $-y$를 대입하면,
-
-
-$$
-h(x,y)=h(x-y,0)
-$$
-
-함수 $h$ 의 값은, 첫 번째 인자가 $x-y$ 이고 두 번째 인자가 $0$일 때의 값과 항상 같다. 즉, 함수 $h$ 의 값은 오직 $x-y$ 라는 **차이 값에만 의존한다** 는 것이 증명되었다.
-
----
-
-### 4. 모든 LSI 연산자는 합성곱 귀결된다.
-
-LSI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. **"예외 없이 모든" LSI 연산자들은 합성곱(Convolution)으로 표현** 될 수 있다는 공통점을 가진다.
-
-- 미분 (Differentiation)
-
-$$
-|\psi'\rangle=\hat{D}|\psi\rangle
-$$
-
-$$
-\psi'(x)=\langle x|\psi'\rangle=\langle x|\hat{D}|\psi\rangle=\frac{d}{dx}\psi(x)
-$$
-
-
-- 적분 (Integration)
-
-$$
-|g\rangle=\hat{D}^{-1}|f\rangle
-$$
-
-$$
-g(x)=\langle x|g\rangle=\langle x|\hat{D}^{-1}|f\rangle=\int dx f(x)
-$$
-
-- 이동 (Shift / Delay)
-
-$$
-\hat{S}_{\tau}|\psi(t)\rangle
-$$
-
-- 진폭 스케일링 (Amplitude scaling)
-
-$$
-|a\psi\rangle=a|\psi\rangle
+h(a, u')
+= \frac{1}{|a|}h(1, u'/a)
+= \frac{1}{|a|}h_M(u'/a)
 $$
 
 ---
 
-### 5. Convolution의 유도
+### 4. Mellin Convolution
 
-아래 형태는 선형이기만 하면 어떤 변환이든 표현할 수 있다. 하지만 아직 이동 불변(Shift-Invariance) 조건은 포함하지 않았다.
-
-$$
-\hat{H}=\iint du du' h(u,u')|u\rangle\langle u'^d|
-$$
-
-이 일반적인 형태에 **"LSI 시스템"** 이라는 강력한 제약 조건을 걸어본다. 이동 불변은 위에서 보다 싶이, 평행이동을 의미한다.
+LSI가 '일반 컨볼루션'으로 귀결되듯이, 모든 LScI 연산자는 **'멜린 컨볼루션'** 으로 귀결된다. 아래 형태는 선형이기만 하면 어떤 변환이든 표현할 수 있다. 하지만 아직 이동 불변(Scale-invariance) 조건은 포함하지 않았다.
 
 $$
-\hat{H}
-=\iint du'' du' h(u''-u')|u''\rangle\langle u'^d|
+\hat{M}=\iint du du' h(u,u')|u\rangle\langle u'^d|
+$$
+
+이 일반적인 형태에 **"LScI 시스템"** 이라는 강력한 제약 조건을 걸어본다.
+
+$$
+\hat{M}
+=\iint du du' \frac{1}{|u|}h_M(u'/u)|u\rangle\langle u'^d|
 $$
 
 임의의 벡터와 연산을 수행해보자.
 
 $$
-\langle u^d|\hat{H}|f\rangle
-=\iint du'' du' h(u''-u')\delta(u-u'')f(u')
-=\int du' h(u-u') f(u')
+\hat{M}|f\rangle
+=\iint du du' \frac{1}{|u|}h_M(u'/u)|u\rangle\langle u'^d|f\rangle
 $$
 
 $$
@@ -250,3 +196,6 @@ $$
 **example2)** 미분 연산자를 컨볼루션으로 표현하라.
 
 **example3)** 적분 연산자를 컨볼루션으로 표현하라.
+
+LScI 연산자 $\hat{M}$의 커널(kernel) $h(u,u')=\langle u^d|\hat{M}|u'\rangle$을 전개해 본다.
+스케일링 연산자 $\hat{Z}_a$는 $\langle u^d|\hat{Z}_a|f \rangle=f(au)$ 로 정의한다.
