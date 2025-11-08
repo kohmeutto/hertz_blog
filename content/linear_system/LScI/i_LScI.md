@@ -28,8 +28,9 @@ $$
 
 ### 3. Scale invariance
 
-- 축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다. 
-- 따라서 동일한 '형태'의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 '형태'로 나온다.
+- 축척 불변 시스템이란 시스템을 작동시키는 근본적인 규칙이 축척(입력의 확대/축소)에 따라 변하지 않는다는 의미이다.
+- **'순수한 축척($a>0$)'** 에 대한 것으로, 양수만 포함한다. 음수를 포함하는 순간, 그것은 '축척' 이론이 아니라 '축척 + 반사'라는 훨씬 더 복잡한 이론이 되어버린다.
+- 축척 불변성은 동일한 '형태'의 입력을 어떤 축척으로 넣든지 상관없이, 출력은 항상 똑같은 '형태'로 나온다.
 - LScI 연산자 $\hat{M}$은 스케일링(scaling) 연산자 $\hat{Z}_a$와 교환가능함을 의미한다.
 
 $$
@@ -42,7 +43,7 @@ $$
 
 $$
 h(u, u')
-= \frac{1}{|u|}h_M(u'/u)
+= \frac{1}{u'}h_M(u/u')
 $$
 
 proof)
@@ -55,23 +56,29 @@ $$
 
 $$
 \langle u^d|\hat{M}\hat{Z}_a|u'\rangle
-= \frac{1}{|a|}\langle u^d|\hat{M}|u'/a\rangle
-= \frac{1}{|a|}h(u, u'/a)
+= \frac{1}{a}\langle u^d|\hat{M}|u'/a\rangle
+= \frac{1}{a}h(u, u'/a)
 $$
 
-$u=1$로 놓고, $h_M$을 $u'$과 $a$ 비율에만 의존하는 함수라고 하면,
+$a$는 임의의 스케일 상수이므로 $u'$ 값을 대입할 수 있다. 
 
 $$
-h(a, u')
-= \frac{1}{|a|}h(1, u'/a)
-= \frac{1}{|a|}h_M(u'/a)
+h(u'u, u')
+= \frac{1}{u'}h(u, 1)
+$$
+
+$u$에 대한 함수 $h_M(u)$ 를 $h_M(u):=h(u, 1)$ 이라고 새롭게 정의한다. (즉, 입력($u'$)이 1일 때의 시스템 응답을 $h_M$으로 정의)
+
+$$
+h(u, u')
+= \frac{1}{u'}h_M(u/u')
 $$
 
 ---
 
 ### 4. Mellin Convolution
 
-LSI가 '일반 컨볼루션'으로 귀결되듯이, 모든 LScI 연산자는 **'멜린 컨볼루션'** 으로 귀결된다. 아래 형태는 선형이기만 하면 어떤 변환이든 표현할 수 있다. 하지만 아직 이동 불변(Scale-invariance) 조건은 포함하지 않았다.
+LSI가 '일반 컨볼루션'으로 귀결되듯이, 모든 LScI 연산자는 **'멜린 컨볼루션'** 으로 귀결된다. 아래 형태는 선형이기만 하면 어떤 변환이든 표현할 수 있다.
 
 $$
 \hat{M}=\iint du du' h(u,u')|u\rangle\langle u'^d|
@@ -81,121 +88,30 @@ $$
 
 $$
 \hat{M}
-=\iint du du' \frac{1}{|u|}h_M(u'/u)|u\rangle\langle u'^d|
+=\iint du du' \frac{1}{u'}h_M(u/u')|u\rangle\langle u'^d|
 $$
 
 임의의 벡터와 연산을 수행해보자.
 
 $$
-\hat{M}|f\rangle
-=\iint du du' \frac{1}{|u|}h_M(u'/u)|u\rangle\langle u'^d|f\rangle
+\langle u^d|\hat{M}|f\rangle
+=\iint du'' du' \frac{1}{u'}h_M(u''/u')\langle u^d|u''\rangle\langle u'^d|f\rangle
 $$
 
 $$
-=:h(u)\ast f(u)
-=\langle u^d|(|h\rangle\ast|f\rangle)
-=\langle u^d|(|h\rangle\ast)|f\rangle
+=\iint du'' du' \frac{1}{u'}h_M(u''/u')\delta(u-u'') f(u')
+=\int\frac{du'}{u'}h_M(u/u')f(u')
+$$
+
+$$
+=:h(u)\circledast f(u)
+=\langle u^d|(|h\rangle\circledast|f\rangle)
+=\langle u^d|(|h\rangle\circledast)|f\rangle
 $$
 
 따라서,
 
 $$
-\hat{H} = |h\rangle\ast
+\hat{H} = |h\rangle\circledast
 $$
 
----
-
-### 6. 연산자의 합성
-
-이 내용은 선형 부품(작은 선형 시스템)이 모였을 때 만들어지는 회로 전체(큰 시스템)을 왜 선형시스템으로 볼 수 있는지에 대한 설명이 가능하다.
-
-**(1) 선형연산자 + 선형연산자 = 선형연산자**
-
-- 직렬합성(Series Combination)
-
-$$
-\hat{T}=\hat{L}_2\hat{L}_1
-$$
-
-$$
-\hat{T}(a_1|\psi_1\rangle+a_2|\psi_2\rangle)=\hat{L}_2\hat{L}_1(a_1|\psi_1\rangle+a_2|\psi_2\rangle)
-$$
-
-$$
-=\hat{L}_2(a_1\hat{L}_1|\psi_1\rangle+a_2\hat{L}_1|\psi_2\rangle)
-$$
-
-$$
-=a_1\hat{L}_2\hat{L}_1|\psi_1\rangle+a_2\hat{L}_2\hat{L}_1|\psi_2\rangle
-$$
-
-$$
-=a_1\hat{T}_1|\psi_1\rangle+a_2\hat{T}_1|\psi_2\rangle
-$$
-
-- 병렬합성(Parallel Combination)
-
-$$
-\hat{T}=\hat{L}_1+\hat{L}_2
-$$
-
-$$
-\hat{T}(a_1|\psi_1\rangle+a_2|\psi_2\rangle)=(\hat{L}_1+\hat{L}_2)(a_1|\psi_1\rangle+a_2|\psi_2\rangle)
-$$
-
-$$
-=(a_1\hat{L}_1|\psi_1\rangle+a_2\hat{L}_1|\psi_2\rangle)+(a_1\hat{L}_2|\psi_1\rangle+a_2\hat{L}_2|\psi_2\rangle)
-$$
-
-$$
-=a_1(\hat{L}_1+\hat{L}_2)|\psi_1\rangle+a_2(\hat{L}_1+\hat{L}_2)|\psi_2\rangle
-$$
-
-$$
-=a_1\hat{T}_1|\psi_1\rangle+a_2\hat{T}_1|\psi_2\rangle
-$$
-
-**(2) 선형연산자 + 비선형연산자 = 비선형연산자**
-
-- 직렬합성(Series Combination)
-
-$$
-\hat{T}=\hat{L}\hat{N}
-$$
-
-$$
-\hat{T}(a_1|\psi_1\rangle+a_2|\psi_2\rangle)=\hat{L}\hat{N}(a_1|\psi_1\rangle+a_2|\psi_2\rangle)
-$$
-
-$$
-\ne a_1\hat{T}_1|\psi_1\rangle+a_2\hat{T}_1|\psi_2\rangle
-$$
-
-- 병렬합성(Parallel Combination)
-
-$$
-\hat{T}=\hat{L}+\hat{N}
-$$
-
-$$
-\hat{T}(a_1|\psi_1\rangle+a_2|\psi_2\rangle)=(\hat{L}+\hat{N})(a_1|\psi_1\rangle+a_2|\psi_2\rangle)
-$$
-
-$$
-=(a_1\hat{L}|\psi_1\rangle+a_2\hat{L}|\psi_2\rangle)+\hat{N}(a_1|\psi_1\rangle+a_2|\psi_2\rangle)
-$$
-
-$$
-\ne a_1\hat{T}_1|\psi_1\rangle+a_2\hat{T}_1|\psi_2\rangle
-$$
-
----
-
-**example1)** $|f\rangle+$ 연산자는 선형인가.
-
-**example2)** 미분 연산자를 컨볼루션으로 표현하라.
-
-**example3)** 적분 연산자를 컨볼루션으로 표현하라.
-
-LScI 연산자 $\hat{M}$의 커널(kernel) $h(u,u')=\langle u^d|\hat{M}|u'\rangle$을 전개해 본다.
-스케일링 연산자 $\hat{Z}_a$는 $\langle u^d|\hat{Z}_a|f \rangle=f(au)$ 로 정의한다.

@@ -7,11 +7,13 @@ weight = 6
 
 ### 1. 연산자 자체의 표현
 
-'축척'은 본질적으로 **연속적인 공간(continuous space)** 에서만 닫혀있는(closed) 연산이다.
+- '축척'은 본질적으로 **연속적인 공간(continuous space)** 에서만 닫혀있는(closed) 연산이다.
+- shift가 $(-\infty, \infty)$라는 '덧셈'의 전체 공간에서 정의되듯이, 축척은 $(0, \infty)$라는 '곱셈'의 전체 공간에서 정의되어야 한다.
+- 음수를 포함하는 순간, 그것은 '축척' 이론이 아니라 '축척 + 반사'라는 훨씬 더 복잡한 이론이 되어버린다.
 
 $$
 \hat{Z}_a
-=\int^{\infty}_{-\infty}du \frac{1}{|a|}|u/a\rangle\langle u^d|
+=\int^{\infty}_{0}du \frac{1}{a}|u/a\rangle\langle u^d|
 $$
 
 ---
@@ -20,16 +22,16 @@ $$
 
 $$
 \hat{Z}_a|u\rangle
-=\frac{1}{|a|}|u/a\rangle
+=\frac{1}{a}|u/a\rangle
 $$
 
 proof)
 
 $$
 \hat{Z}_a|u\rangle
-=\int^{\infty}_{-\infty}du' \frac{1}{|a|}|u'/a\rangle\langle u'^d|u\rangle
+=\int^{\infty}_{-\infty}du' \frac{1}{a}|u'/a\rangle\langle u'^d|u\rangle
 =\int^{\infty}_{-\infty}du' \frac{1}{|a|}|u'/a\rangle\delta(u'-u)
-=\frac{1}{|a|}|u/a\rangle
+=\frac{1}{a}|u/a\rangle
 $$
 
 ---
@@ -44,12 +46,12 @@ proof)
 
 $$
 \langle u^d|\hat{Z}_a
-=\langle u^d|\int du' \frac{1}{|a|}|u'/a\rangle\langle u'^d|
-=\langle u^d|\int du' \frac{1}{|a|}\langle u^d|u'/a\rangle\langle u'^d|
+=\langle u^d|\int du' \frac{1}{a}|u'/a\rangle\langle u'^d|
+=\langle u^d|\int du' \frac{1}{a}\langle u^d|u'/a\rangle\langle u'^d|
 $$
 
 $$
-=\int du'\frac{1}{|a|}\delta(u-u'/a)\langle u'^d|
+=\int du'\frac{1}{a}\delta(u-u'/a)\langle u'^d|
 =\int du'\delta(au-u')\langle u'^d|
 =\langle (au)^d|
 $$
@@ -76,6 +78,6 @@ $$
 \langle u^d|\hat{Z}_a|u'\rangle
 =\langle (au)^d|u'\rangle
 =\delta(au-u')
-=\frac{1}{|a|}\delta(u-u'/a)
+=\frac{1}{a}\delta(u-u'/a)
 $$
 

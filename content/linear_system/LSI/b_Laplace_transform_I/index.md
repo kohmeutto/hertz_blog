@@ -64,10 +64,6 @@ $$
 
 **(1) $|s\rangle\$ 은 비직교 기저**
 
-- if $\sigma\ne 0$, $|s\rangle\$ 은 비직교 기저이다.
-- if $\sigma= 0$, $|s\rangle\$ 은 직교 기저이다.
- 
-
 proof)
 
 $$
@@ -76,8 +72,7 @@ $$
 = \int dt e^{(s^\ast+s')t}
 $$
 
-- if $\sigma\ne 0$, 발산하기 때문에, 적분값이 존재하지 않음, $\delta$ 함수가 아니므로,  $|s\rangle\$은 비직교 기저
-- if $\sigma= 0$, 분포수렴하기 때문에, 적분값은 $2\pi\delta(\omega-\omega')$, $\delta$ 함수이나, 1이 아닌 상수가 곱해져 있으므로, 비정규 직교기저
+$s^\ast+s$의 실수부가 $\sigma\ne 0$ 라면, 적분값이 존재하지 않음, $|s\rangle\$은 비직교 기저
 
 **(2) $\langle s^L|$ & $\langle s^{L,d}|$**
 
