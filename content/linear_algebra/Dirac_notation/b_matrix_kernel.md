@@ -7,35 +7,12 @@ weight = 4
 
 ### 1. 이산기저와 행렬
 
-**(1) 단위기저(orthonormal basis) 벡터**
-
-연산자 $\hat{A}$의 행렬성분 $A_{ij}$는 다음과 같이 정의된다.
+**(1) 듀얼기저(dual basis) 벡터**
 
 $$
-\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|, \quad
+\hat{A}=\sum_{i,j}A_{ij}|u_i\rangle\langle u^j|, \quad
 \text{where }
-A_{ij}=\langle u_i| \hat{A} |u_j\rangle
-$$
-
-proof)
-
-$$
-\hat{A}
-=\hat{I}\hat{A}\hat{I}
-=\left(\sum_i|u_i\rangle\langle u_i|\right)\hat{A}\left(\sum_j|u_j\rangle\langle u_j|\right)
-=\sum_{i,j}|u_i\rangle\langle u_i|\hat{A}|u_j\rangle\langle u_j|
-$$
-
-$$
-=\sum_{i,j}A_{ij}|u_i\rangle\langle u_j|
-$$
-
-**(2) 듀얼기저(dual basis) 벡터**
-
-$$
-\hat{A}=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|, \quad
-\text{where }
-A^i_{.j}=\langle u^i| \hat{A} |u_j\rangle
+A_{ij}=\langle u^i| \hat{A} |u_j\rangle
 $$
 
 proof)
@@ -48,7 +25,7 @@ $$
 $$
 
 $$
-=\sum_{i,j}A^i_{.j}|u_i\rangle\langle u^j|
+=\sum_{i,j}A_{ij}|u_i\rangle\langle u^j|
 $$
 
 **(3) 행렬을 이용한 연산**
@@ -66,19 +43,19 @@ $$
 $$
 
 
-의 양변에 $\langle u_i|$를 내적하면,
+의 양변에 $\langle u^i|$를 내적하면,
 
 $$
-\phi_i = \langle u_i|\hat{A}|\psi\rangle
+\phi_i = \langle u^i|\hat{A}|\psi\rangle
 $$
 
-여기에 항등 연산자 $\hat{I} = \sum_j |u_j\rangle \langle u_j|$를 삽입하면,
+여기에 항등 연산자 $\hat{I} = \sum_j |u_j\rangle \langle u^j|$를 삽입하면,
 
 $$
 \phi_i
-=\langle u_i|\hat{A}\hat{I}|\psi\rangle
-=\langle u_i|\hat{A}\left(\sum_j |u_j\rangle \langle u_j|\right) |\psi\rangle
-=\sum_j \langle u_i|\hat{A}|u_j\rangle \psi_j
+=\langle u^i|\hat{A}\hat{I}|\psi\rangle
+=\langle u^i|\hat{A}\left(\sum_j |u_j\rangle \langle u^j|\right) |\psi\rangle
+=\sum_j \langle u^i|\hat{A}|u_j\rangle \psi_j
 $$
 
 $$
