@@ -89,7 +89,7 @@ $$
 
 $$
 \langle u^i|u_j\rangle
-=\delta^i_j
+=\delta_{ij}
 $$
 
 $$

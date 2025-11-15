@@ -1,5 +1,5 @@
 +++
-title = "(a) Mellin transform I"
+title = "(b) Mellin transform I"
 weight = 2
 +++
 
