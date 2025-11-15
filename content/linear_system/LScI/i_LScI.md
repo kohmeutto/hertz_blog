@@ -21,7 +21,7 @@ $$
 
 $$
 \hat{M}(a|\psi_1\rangle+b|\psi_2\rangle)
-=a\hat{M}|\psi_1\rangle+b\hat{H}|\psi_2\rangle
+=a\hat{M}|\psi_1\rangle+b\hat{M}|\psi_2\rangle
 $$
 
 ---
@@ -76,7 +76,44 @@ $$
 
 ---
 
-### 4. Mellin Convolution
+### 4. 모든 LScI 연산자는 합성곱 귀결된다.
+
+LScI(선형 이동 불변) 연산자의 대표적인 (일부)예시들은 다음과 같다. **"예외 없이 모든" LScI 연산자들은 멜린 합성곱(Mellin convolution)으로 표현** 될 수 있다는 공통점을 가진다.
+
+**(1) 스케일링 생성 연산자 (Generator of Scaling)**
+
+$$
+\hat{M} = u\frac{d}{du}
+$$
+
+proof)
+
+LScI(선형 축척 불변) 연산자인지, 위의 교환자 증명방법이 엄밀하지만, 좀 더 직관적으로 증명한다.
+
+$$
+u\frac{d}{du} \psi(u)=(u)\psi'(u)
+$$
+
+$$
+u\frac{d}{du} \psi(au)=(au)\psi'(au)
+$$
+
+따라서, 축척불변이다.
+
+
+**(2) 스케일링 연산자 (Scaling operator)**
+
+$$
+\hat{M} = \hat{Z}_a
+$$
+
+proof)
+
+스케일링 연산자 그룹은 아벨(Abelian) 그룹이므로, 모든 스케일링 연산자는 서로 교환 가능하다. $[\hat{Z}_b, \hat{Z}_a] = 0$.따라서 $\hat{Z}_a$ 자체도 LScI 연산자이다.
+
+---
+
+### 5. Mellin Convolution
 
 LSI가 '일반 컨볼루션'으로 귀결되듯이, 모든 LScI 연산자는 **'멜린 컨볼루션'** 으로 귀결된다. 아래 형태는 선형이기만 하면 어떤 변환이든 표현할 수 있다.
 
@@ -112,6 +149,6 @@ $$
 따라서,
 
 $$
-\hat{H} = |h\rangle\circledast
+\hat{M} = |h\rangle\circledast
 $$
 

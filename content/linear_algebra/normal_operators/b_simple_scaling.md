@@ -1,5 +1,5 @@
 +++
-title = "(b) Scaling"
+title = "(b) Simple scaling"
 weight = 6
 +++
 
@@ -29,8 +29,8 @@ proof)
 
 $$
 \hat{Z}_a|u\rangle
-=\int^{\infty}_{-\infty}du' \frac{1}{a}|u'/a\rangle\langle u'^d|u\rangle
-=\int^{\infty}_{-\infty}du' \frac{1}{|a|}|u'/a\rangle\delta(u'-u)
+=\int^{\infty}_{0}du' \frac{1}{a}|u'/a\rangle\langle u'^d|u\rangle
+=\int^{\infty}_{0}du' \frac{1}{|a|}|u'/a\rangle\delta(u'-u)
 =\frac{1}{a}|u/a\rangle
 $$
 
@@ -47,7 +47,7 @@ proof)
 $$
 \langle u^d|\hat{Z}_a
 =\langle u^d|\int du' \frac{1}{a}|u'/a\rangle\langle u'^d|
-=\langle u^d|\int du' \frac{1}{a}\langle u^d|u'/a\rangle\langle u'^d|
+=\int du' \frac{1}{a}\langle u^d|u'/a\rangle\langle u'^d|
 $$
 
 $$
@@ -80,4 +80,8 @@ $$
 =\delta(au-u')
 =\frac{1}{a}\delta(u-u'/a)
 $$
+
+---
+
+### 6. Unitary가 될 조건
 
