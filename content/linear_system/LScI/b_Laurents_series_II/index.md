@@ -1,5 +1,5 @@
 +++
-title = "(b) Lourent's series"
+title = "(b) Lourent's series II"
 weight = 10
 +++
 
