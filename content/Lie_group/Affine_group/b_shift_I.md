@@ -1,6 +1,6 @@
 +++
-title = "(b) Copy-shift"
-weight = 5
+title = "(b) Copy-shift I"
+weight = 1
 +++
 
 ---
@@ -12,7 +12,6 @@ weight = 5
 $$
 \hat{S}_l
 =\sum_{n}|n+l\rangle\langle n^d|
-=\sum_{n}\gamma_n^{-1}|n+l\rangle\langle n|
 $$
 
 **(2) 연속기저**
@@ -20,7 +19,6 @@ $$
 $$
 \hat{S}_\tau
 =\int^{\infty}_{-\infty}du |u+\tau\rangle\langle u^d|
-=\int^{\infty}_{-\infty}du \gamma_u^{-1}|u+\tau\rangle\langle u|
 $$
 
 ---
@@ -112,6 +110,12 @@ $$
 **(1) 이산기저**
 
 $$
+\langle n|^d\hat{S}_l|\psi_n\rangle=\psi_{n-l}
+$$
+
+proof)
+
+$$
 |\varphi\rangle=\hat{S}_l|\psi\rangle
 $$
 
@@ -126,6 +130,14 @@ $$
 $$
 
 **(2) 연속기저**
+
+$$
+\langle u^d|\hat{S}_\tau|\psi\rangle
+=\hat{S}_\tau\psi(u)
+=\psi(u-\tau)
+$$
+
+proof)
 
 $$
 |\varphi\rangle=\hat{S}_\tau|\psi\rangle
@@ -158,4 +170,3 @@ $$
 =\langle u^d|u'+\tau\rangle
 =\delta(u-u'-\tau)
 $$
-

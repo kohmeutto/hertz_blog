@@ -1,6 +1,6 @@
 +++
 title = "Normal operators"
-weight = 9
+weight = 10
 +++
 
 ---
