@@ -1,6 +1,6 @@
 +++
 title = "Lie group"
-weight = 2
+weight = 11
 +++
 
 ---

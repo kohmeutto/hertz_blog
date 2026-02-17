@@ -1,5 +1,5 @@
 +++
-title = "Linear algebra"
+title = "Vector & Operator"
 weight = 1
 +++
 

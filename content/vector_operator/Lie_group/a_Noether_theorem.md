@@ -1,7 +1,9 @@
 +++
 title = "(b) Noether's theorem"
-weight = 9
+weight = 16
 +++
+
+---
 
 ### 1. Conservation
 

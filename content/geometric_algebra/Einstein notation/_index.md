@@ -1,6 +1,6 @@
 +++
 title = "Einstein notation"
-weight = 2
+weight = 1
 +++
 
 ---

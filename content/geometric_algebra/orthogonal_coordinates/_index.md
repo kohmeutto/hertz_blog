@@ -1,6 +1,6 @@
 +++
 title = "Orthogonal coordinates"
-weight = 3
+weight = 4
 +++
 
 ---

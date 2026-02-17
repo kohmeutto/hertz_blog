@@ -1,6 +1,6 @@
 +++
 title = "(b) Simple scaling"
-weight = 6
+weight = 13
 +++
 
 ---

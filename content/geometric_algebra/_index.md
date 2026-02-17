@@ -1,5 +1,5 @@
 +++
-title = "Vector analysis"
+title = "Geometric algebra"
 weight = 6
 +++
 

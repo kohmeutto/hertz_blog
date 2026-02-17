@@ -1,6 +1,6 @@
 +++
 title = "(i) Total derivative & Gradient"
-weight = 2
+weight = 3
 +++
 
 ---
