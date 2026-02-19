@@ -1,6 +1,6 @@
 +++
 title = "(b) Riesz representation theorem"
-weight = 4
+weight = 5
 +++
 
 ---
