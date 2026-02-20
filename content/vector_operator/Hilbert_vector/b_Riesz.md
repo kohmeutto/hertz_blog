@@ -16,7 +16,7 @@ weight = 5
 
 ### 2. 리즈 표현 정리(Riesz Representation Theorem)
 
-**(1) Bra 연산자 $\langle f|$은 내적연산자와 동일**
+**1) Bra 연산자 $\langle f|$은 내적연산자와 동일**
 
 $$
 \langle f|v\rangle=(|f\rangle,|v\rangle)
@@ -46,7 +46,7 @@ $$
 
 $$
 \langle f|v\rangle = \alpha\langle f|g\rangle\implies
-\alpha=\frac{\langle f|g\rangle}{\langle f|v\rangle}
+\alpha=\frac{\langle f|v\rangle}{\langle f|g\rangle}
 $$
 
 $|g\rangle$와 $|k\rangle$의 수직임을 사용하여,
@@ -73,7 +73,7 @@ $$
 
 위 식은 범함수의 연산이 내적으로 표현될 수 있음을 보여준다.
 
-**(2) 쌍대(파트너) 벡터의 유일성**
+**2) 쌍대(파트너) 벡터의 유일성**
 
 ket 벡터 $|f\rangle$의 **쌍대(파트너) 벡터**는 Bra 벡터 $\langle f|$이며, 유일하다. **이 역 또한 성립** 한다.
 
