@@ -70,89 +70,120 @@ $$
 
 ---
 
-### 3. 경계항의 일반화: 심플레틱 행렬
+### 3. 미분연산자의 경계항: Fundamental Residue
 
-이전 챕터에서 수반 연산자는 측정의 관점을 바꾸는 도구라고 하였다. 이 관점의 전환 과정에서 발생하는 부산물들을 어떻게 체계적으로 관리할 것인가가 본 장의 핵심이다. 앞서 정의한 **'미분 부품'** 을 확장하면, 임의의 차수에 대한 경계항 $J$를 다음과 같이 일반화할 수 있다.
+**1) 정의 (Definition)**
 
-$$
-\langle \phi | L \psi \rangle - \langle L^\dagger \phi | \psi \rangle = [ \langle \Phi | \Omega | \Psi \rangle ]_a^b
-$$
-
-$k$차 미분 연산자에서 시스템의 상태를 완벽히 규정하기 위해서는 0차(함숫값)부터 $k-1$차 미분치까지의 모든 정보가 필요하다. 따라서 상태 벡터 $\vec{\Psi}$는 다음과 같은 $k \times 1$ 열벡터로 정의된다. 이는 시스템의 현재 위치뿐만 아니라, 모든 고차 미분 정보를 포함하는 **고차원 위상 공간(High-dimensional Phase Space)** 의 좌표이다.
+임의의 선형 연산자 $\hat{L}$에 대하여, 시스템 경계에서의 비대칭성을 추출하는 **레지듀 변환(Residue Transform) $\hat{R}$** 은 다음과 같이 브라-켓 안에서 정의된다.
 
 $$
-\vec{\Phi} = \begin{bmatrix} \phi \\ \phi' \\ \phi'' \\ \vdots \\ \phi^{(k-1)} \end{bmatrix}, \quad
-\vec{\Psi} = \begin{bmatrix} \psi \\ \psi' \\ \psi'' \\ \vdots \\ \psi^{(k-1)} \end{bmatrix}
+\langle \phi | \hat{R} \hat{L} | \psi \rangle = \langle \phi | \hat{L} | \psi \rangle - \langle \hat{L}^\dagger \phi | \psi \rangle
 $$
 
-상태 벡터들 사이에서 '배턴 터치'를 수행하는 $\mathbf{\Omega}$는 $k \times k$ 행렬이며, $+1$, $-1$이 번갈아 나타난다. (계수 $p$가 있다면 여기에 $p$가 곱해진다.) 모양은 주대각선이 아니라 '부대각선(Anti-diagonal)' 방향으로 성분들이 배치되는 반대칭(Skew-symmetric) 행렬이 된다. $k=4$ (4차 미분 연산자)일 때 $J$를 조립해 보면, 상태 벡터는 $4 \times 1$이 되고 $\mathbf{\Omega}$는 다음과 같은 $4 \times 4$ 행렬이 강제된다.
+- 연산자 $\hat{L}$이 물리적 상태에 작용할 때 발생하는 **'정보의 총 유출량'**이자, 경계면을 통과하는 플럭스(Flux)의 총합을 의미한다.
+- 시스템이 자기 수반(Self-adjoint)이고 경계 조건이 닫혀 있다면 $\langle \phi | \hat{R} \hat{L} | \psi \rangle = 0$이다. 즉, $\hat{R} \hat{L}$은 시스템의 **'대칭성이 깨진 정도'** 를 직접적으로 읽어내는 대수적 센서이다.
+
+**2) 조립 법칙 (The Assembly Theorem)**
+
+두 연산자의 직렬 결합 $\hat{L} = \hat{A}\hat{B}$에 대한 레지듀 변환은 마치 미분의 곱 법칙(Leibniz Rule)과 유사한 구조를 가진다.
 
 $$
-J = \begin{bmatrix} \phi^\ast & \phi^{\ast'} & \phi^{\ast''} & \phi^{\ast'''} \end{bmatrix} 
-\underbrace{\begin{bmatrix} 
-0 & 0 & 0 & 1 \\
-0 & 0 & -1 & 0 \\
-0 & 1 & 0 & 0 \\
--1 & 0 & 0 & 0 
-\end{bmatrix}}_{\mathbf{\Omega}}
-\begin{bmatrix} \psi \\ \psi' \\ \psi'' \\ \psi''' \end{bmatrix}
+\hat{R} (\hat{A} \hat{B}) = (\hat{R} \hat{A}) \hat{B} + \hat{A} (\hat{R} \hat{B})
 $$
-
 
 proof)
 
-**(1) 적분에서 연산자 대수로: 미분 취하기**
+브라-켓 표기법을 통해 조립된 시스템의 레지듀를 전개한다.
 
 $$
-\langle \phi|\hat{D}^k\psi\rangle-\langle (-\hat{D})^k\phi|\psi\rangle
-=J(\phi,\psi)
+\langle \phi | \hat{R} (\hat{A} \hat{B}) | \psi \rangle = \langle \phi | \hat{A} \hat{B} | \psi \rangle - \langle \hat{B}^\dagger \hat{A}^\dagger \phi | \psi \rangle
 $$
 
-여기서 적분 기호를 제거하고 연산자 자체의 구조를 직접 들여다보기 위해, 양변에 미분 연산($D$)을 취한다.
+중간 상태 $\langle \hat{A}^\dagger \phi | \hat{B} \psi \rangle$를 더하고 빼서 항을 분리한다.
 
 $$
-\phi^{\ast}\hat{D}^k\psi-\psi(-\hat{D})^k\phi^{\ast}=DJ(\phi,\psi)
+= \left( \langle \phi | \hat{A} (\hat{B} \psi) \rangle - \langle \hat{A}^\dagger \phi | \hat{B} \psi \rangle \right) + \left( \langle \hat{A}^\dagger \phi | \hat{B} \psi \rangle - \langle \hat{B}^\dagger (\hat{A}^\dagger \phi) | \psi \rangle \right)
 $$
 
-**(2) 망원 급수를 통한 유도**
+각 괄호는 $\hat{R} \hat{A}$와 $\hat{R} \hat{B}$의 정의와 일치하므로 최종 식을 얻는다.
 
 $$
-D^k - \bar{D}^k = (D - \bar{D}) \sum_{j=0}^{k-1} D^{k-1-j} \bar{D}^j
+= \langle \phi | \hat{R} \hat{A} | \hat{B} \psi \rangle + \langle \hat{A}^\dagger \phi | \hat{R} \hat{B} | \psi \rangle
+= \langle \phi | (\hat{R} \hat{A}) \hat{B} | \psi \rangle + \langle \phi | \hat{A} (\hat{R} \hat{B}) | \psi \rangle
 $$
 
-위의 연산자 구조를 입히면, $J$의 정체가 나오게 된다.
+이 정리는 아무리 복잡한 고차 연산자라도 기계적인 분배 법칙을 통해 하위 레지듀 블록으로 쪼개어 분석할 수 있음을 수학적으로 보장한다.
+
+**3) 보존 법칙: 가산성 (Additivity)**
+
+병렬로 연결된 연산자 $\hat{L} = \hat{L}_1 + \hat{L}_2$에 대하여, 레지듀 변환은 선형성을 유지한다.
 
 $$
-\phi^{\ast}\hat{D}^k\psi-\psi(-\hat{D})^k\phi^{\ast} = D \left[ \sum_{j=0}^{k-1} ((-D)^j \phi^{\ast}) \cdot (D^{k-1-j} \psi) \right]
+\hat{R} (\hat{L}_1 + \hat{L}_2) = \hat{R} \hat{L}_1 + \hat{R} \hat{L}_2
 $$
 
-J에 대해 정리하면,
+proof)
+
+레지듀 변환의 정의와 수반 연산자의 선형성을 이용한다.
 
 $$
-J = \sum_{j=0}^{k-1} (-1)^j \phi^{\ast(j)} \psi^{(k-1-j)}
-$$
- 
-**(3) 상태 벡터 확장**
-
-미분 차수가 1일 때($k=1$), 스칼라 이다.
-
-$$
-J=[\phi^\ast]1[\psi]
+\langle \phi | \hat{R} (\hat{L}_1 + \hat{L}_2) | \psi \rangle = \langle \phi | (\hat{L}_1 + \hat{L}_2) | \psi \rangle - \langle (\hat{L}_1 + \hat{L}_2)^\dagger \phi | \psi \rangle
 $$
 
-미분 차수가 2 이상일 때 ($k=2~$), 심플레틱 행렬이 탄생하게 된다. 이것은 이전 챕터에서 다룬 **'미분 내제(론스키안)'** 와 완전히 일치한다. 이를 상태 벡터로 사영하면 다음과 같은 행렬 구조가 강제된다.
-
 $$
-J = \phi^\ast \psi' - \phi^{\ast'} \psi
-= \begin{bmatrix}
-\phi^\ast & \phi^{\ast'}
-\end{bmatrix} \begin{bmatrix}
-0 & 1 \\ -1 & 0
-\end{bmatrix} \begin{bmatrix}
-\psi \\ \psi'
-\end{bmatrix}
+= \left( \langle \phi | \hat{L}_1 | \psi \rangle - \langle \hat{L}_1^\dagger \phi | \psi \rangle \right) + \left( \langle \phi | \hat{L}_2 | \psi \rangle - \langle \hat{L}_2^\dagger \phi | \psi \rangle \right)
 $$
 
-여기서 나타나는 **$\mathbf{\Omega} = \begin{bmatrix} 0 & 1 ; -1 & 0 \end{bmatrix}$** 이 바로 심플레틱 행렬이다.
+$$
+= \langle \phi | \hat{R} \hat{L}_1 | \psi \rangle + \langle \phi | \hat{R} \hat{L}_2 | \psi \rangle
+$$
+
+다물리(Multiphysics) 시스템에서 전체 경계 조건은 각 물리 현상이 독립적으로 만드는 레지듀 센서의 단순 합산으로 구성될 수 있다. 이는 시스템 모델링의 **모듈화(Modularity)** 를 가능케 하는 핵심 근거가 된다.
 
 ---
+
+### 4. 적용1: 1차 미분 혼합형, L=p(x)d/dx+q(x)
+
+이 형태는 반도체에서의 드리프트(Drift)나 유체 역학의 대류(Advection)에 해당한다.
+
+**1) formal adjoint**
+
+$$
+L^{\dagger}=\hat{D}^{\dagger}p^{\ast}+q^{\ast}
+$$
+
+**2) residue**
+
+조립 법칙을 적용한다.
+
+$$
+\hat{R} \hat{L} = \hat{R}(p\hat{D} + q) = \hat{R}(p\hat{D}) + \hat{R}q
+$$
+
+여기서 $\hat{R}q = 0$이므로,
+
+$$
+\hat{R}(p\hat{D}) = (\hat{R}p)\hat{D} + p(\hat{R}\hat{D})
+$$
+
+스칼라 함수 $p$는 미분이 포함되지 않은 단순 곱 연산자이므로 $\hat{R}p = 0$이다.
+
+$$
+\hat{R} \hat{L} = p\hat{R}\hat{D}
+$$
+
+브라-켓을 적용한다.
+
+$$
+\langle \phi | \hat{R} \hat{L} | \psi \rangle = \langle \phi | p \hat{R}\hat{D} | \psi \rangle = \langle p^* \phi | \hat{R}\hat{D} | \psi \rangle
+$$
+
+미분 센서 $\hat{R}\hat{D}$의 정의($[\phi^* \psi]_a^b$)를 적용하면:
+
+$$
+\hat{R} \hat{L} = [ (p^* \phi)^* \psi ]_a^b = [ p \phi^* \psi ]_a^b
+$$
+
+---
+
+### 5. 적용2: 스텀-리우빌, L=-1/w(x){d/dx p(x) d/dx+q(x)}
