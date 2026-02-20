@@ -119,7 +119,7 @@ $$
 
 proof) 이 증명은 고유값/고유벡터 챕터를 학습하고 다시 살펴보도록
 
-연산자 $\hat{A}$의 임의의 고윳값을 $\lambda$, 그에 대응하는 고유 벡터를 $|v\rangle$라고 하자 ($|v\rangle \neq 0$). ㅉ고유 방정식에 의해 다음이 성립한다.
+연산자 $\hat{A}$의 임의의 고윳값을 $\lambda$, 그에 대응하는 고유 벡터를 $|v\rangle$라고 하자 ($|v\rangle \neq 0$). 고유 방정식에 의해 다음이 성립한다.
 
 $$
 \hat{A} |v\rangle = \lambda |v\rangle

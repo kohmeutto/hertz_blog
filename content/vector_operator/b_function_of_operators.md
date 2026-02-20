@@ -1,6 +1,6 @@
 +++
 title = "(b) Function of operators"
-weight = 3
+weight = 11
 +++
 
 ---
