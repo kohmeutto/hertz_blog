@@ -97,6 +97,36 @@ $$
 
 ---
 
+### 3. 조건수
+
+조건수(Condition Number) $\kappa(T)$는 선형 연산자 $T$가 정의된 공간에서 입력의 미세한 변화(perturbation)가 가 출력에 어느 정도의 오차를 유발하는지를 나타내는 민감도 지수이다. 바나흐 공간(Banach space) $V, W$ 사이의 가역적 선형 연산자 $T: V \to W$에 대하여, 조건수 $\kappa(T)$는 다음과 같이 정의다.
+
+$$\
+\kappa(T) = \|T\| \cdot \|T^{-1}\|
+$$
+
+여기서 $\|T\|$는 연산자 노름(Operator Norm)을 의미한다. 만약 $T$가 가역적이지 않다면 조건수는 $\infty$로 정의된다. 이 수치는 $T$라는 연산자가 벡터의 크기를 최대 얼마큼 늘릴 수 있는지($\|T\|$)와, 역연산 $T^{-1}$이 벡터를 최대 얼마큼 늘릴 수 있는지($\|T^{-1}\|$)의 곱으로 이해할 수 있다.
+
+상대 오차의 전파 (Error Propagation)연산자 방정식 $Tx = b$를 생각한다. 입력 $b$에 오차 $\delta b$가 발생하여 해가 $x + \delta x$가 되었다고 가정하면 다음과 같은 관계가 성립한다.
+
+$$
+T(x + \delta x) = b + \delta b \implies T \delta x = \delta b \implies \delta x = T^{-1} \delta b
+$$
+
+노름의 성질에 의해,
+
+$$
+\|\delta x\| \le \|T^{-1}\| \|\delta b\|, \quad \|b\| = \|Tx\| \le \|T\| \|x\| \implies \frac{1}{\|x\|} \le \frac{\|T\|}{\|b\|} 
+$$
+
+위 식들을 결합하면 상대 오차에 대한 상한선을 도출할 수 있다.
+
+$$
+\frac{\|\delta x\|}{\|x\|} \le (\|T\| \|T^{-1}\|) \frac{\|\delta b\|}{\|b\|} = \kappa(T) \frac{\|\delta b\|}{\|b\|}
+$$
+
+---
+
 ### 4. 연산자 힐링
 
 **1) 연산자 힐링의 목표 (Operator-level Objective)**
