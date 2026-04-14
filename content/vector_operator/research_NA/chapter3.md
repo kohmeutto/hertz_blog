@@ -161,9 +161,9 @@ $$
 \ln(c_i) - \ln(c_j) = \ln\left(\frac{(\hat{G}\hat{J})_{ji}}{(\hat{G}\hat{J})_{ij}}\right) \equiv b_{ij}
 $$
 
-새로운 변수 $x_i = \ln(c_i)$를 도입하면, 이 식은 노드 간의 비대칭 플럭스 비율을 스칼라 포텐셜 장으로 맵핑하는 $\hat{S}x = b$ 형태의 과결정(overdetermined) 선형 연립방정식이 된다. 해의 유일성을 위해 디리클레 경계(Dirichlet boundary) 노드 집합 $\mathcal{B}$에 대하여 $c_k = 1.0$($x_k = 0$)의 기준점(anchoring) 조건을 적용한다. 최소자승법(least squares method)을 통해 해를 산출하고 지수 함수를 취해($c_i = e^{x_i}$) 대각 행렬 $\hat{C}$를 얻는다. 이는 시스템 내부에서 발생하는 비대칭적인 표류(Drift) 흐름을 상쇄하고, 자코비안 행렬이 대칭성을 회복하도록 균형 가중치를 부여하는 역할을 한다.
+치환 변수 $x_i = \ln(c_i)$를 도입하면, 본 식은 노드 간의 비대칭 플럭스 비율을 스칼라 포텐셜 장으로 맵핑하는 $\hat{S}x = b$ 형태의 과결정(overdetermined) 선형 연립방정식이 된다. 해의 유일성 확보를 위해 디리클레 경계 노드 집합 $\mathcal{B}$에 대하여 $c_k = 1.0$($x_k = 0$)의 기준점(anchoring) 조건을 부과한다. 최소자승법(least squares method)으로 해를 산출하고 지수 함수($c_i = e^{x_i}$)를 취해 대각 행렬 $\hat{C}$를 확립한다.
 
-**2) 벌크-경계 소산 정리의 이산화**
+**2) 자코비안 분해**
 
 대수적 변환이 적용된 유효 자코비안 $\tilde{J}$는 2.4절의 연산자 분해 방식($L = H + A$)에 따라 대칭 성분(Hermitian part, $\hat{H}$)과 다차원 공간의 교차 결합에 의해 발생하는 반대칭 성분(anti-Hermitian part, $\hat{A}_{raw}$)의 합으로 분리된다.
 
@@ -199,4 +199,4 @@ $$
 \hat{J}_{pure} = \tilde{J} - \hat{A}_{int}
 $$
 
-본 연구의 뉴턴-랩슨 해법은 원본 자코비안 $\hat{J}$ 대신, 구성된 대칭 전제조건자 $\hat{J}_{pure}$를 탐색 행렬로 사용하여 변화량 $\delta u$를 산출하는 부정확 뉴턴법(Inexact Newton Method)을 취한다. 이 과정에서 선형 탐색 행렬은 근사되나 우변의 물리적 벡터 $F(u)$는 원형 그대로 보존된다. 수렴 조건($\delta u \to 0$)에 도달할 경우 $\hat{J}_{pure} \delta u = -F(u)$ 관계에 의해 항등적으로 $F(u^*) = 0$ 이 만족된다. 이는 제안된 대수적 정화 과정이 선형 탐색의 조건수(condition number)만을 안정화시킬 뿐, 최종적으로 도달하는 고정점(fixed point)의 물리적 무결성(exact solution)을 보장함을 입증한다.
+본 연구는 원본 자코비안 $\hat{J}$ 대신, 대칭 전제조건자 $\hat{J}_{pure}$를 탐색 행렬로 사용하여 변화량 $\delta u$를 산출하는 부정확 뉴턴법(Inexact Newton Method)을 적용한다. 선형 탐색 행렬은 대칭화되나 우변의 물리적 잔차 벡터 $F(u)$는 원본 상태를 유지한다. 알고리즘이 수렴 조건($\delta u \to 0$)에 도달하면, $\hat{J}_{pure} \delta u = -F(u)$ 관계식에 의해 항등적으로 $F(u^*) = 0$ 이 성립한다. 이는 제안된 대수적 대칭화 과정이 선형 탐색의 수치적 안정성만을 개선할 뿐, 최종 고정점(fixed point)의 물리적 엄밀성(exact solution)을 보장함을 증명한다.
