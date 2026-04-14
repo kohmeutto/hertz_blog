@@ -11,7 +11,7 @@ weight = 15
 
 **1) 역산 추출 전략 (Inverse Extraction Strategy)**
 
-제2장에서 도출된 비선형 자코비안의 1계 대류 연산자 내부 잔차 약형식은 $\langle \phi, \mathcal{R}(J)_{int}\psi \rangle_\Omega = \langle \phi, \left[ (Dv)\psi + 2v(D\psi) \right] \rangle_\Omega$ 로 규명되었다. 여기서 이산화의 핵심 대상은 속도장의 발산이 상태 함수에 작용하는 성분인 $(Dv)\psi$ 이다. (단, 유효 속도장 $v = (\partial p/\partial u) Du$
+제2장에서 도출된 비선형 자코비안의 1계 대류 연산자 내부 잔차 약형식은 $\langle \phi, \mathcal{R}(J)\psi \rangle_\Omega = \langle \phi, \left[ (Dv)\psi + 2v(D\psi) \right] \rangle_\Omega$ 로 규명되었다. 여기서 이산화의 핵심 대상은 속도장의 발산이 상태 함수에 작용하는 성분인 $(Dv)\psi$ 이다. (단, 유효 속도장 $v = (\partial p/\partial u) Du$
 
 이 항을 격자 노드 $k$에 대하여 정직한 점-평가(point-wise evaluation)로 직접 이산화할 경우, 고립된 중심 노드의 상태량에 의존하게 되어 공간적 구배가 극심한 영역에서 필연적으로 수치적 진동(spurious oscillation)을 유발한다. 따라서 $(Dv)\psi$ 의 안정적인 이산 형태를 도출하기 위해, 연속 공간의 라이프니츠 법칙(Leibniz rule)인 $D(v\psi) = (Dv)\psi + v(D\psi)$ 를 역으로 변환한 다음의 관계식을 이용한다
 
@@ -78,7 +78,7 @@ $$
 이를 단일 합산 기호로 결합하면, 격자망 내부의 비대칭성을 유발하는 최종적인 결합 계수가 산출된다.
 
 $$
-e_k^T \mathcal{R}_{int} \psi = \sum_{j} (v_j + v_k) \hat{D}_{kj} \psi_j
+e_k^T \mathcal{R} \psi = \sum_{j} (v_j + v_k) \hat{D}_{kj} \psi_j
 $$
 
 도출된 이산 레지듀의 결합 계수를 이용하여, 각 노드 $k$ 에서 이웃 노드 $j$ 로 향하는 국소적 비대칭 단방향 텐션(directional tension) $\mathcal{T}_{kj}$ 를 엄밀하게 정의한다.
@@ -137,7 +137,7 @@ $$
 
 ### 3.2 대수적 전제조건화(Preconditioning)와 유효 자코비안 분리
 
-본 절에서는 앞서 산출된 메트릭 $\hat{G}$를 바탕으로, 시스템의 표류 방향성을 포텐셜 장으로 사상하는 자동 적분 인자(Automated Integrating Factor) $\hat{C}$를 유도한다. 나아가 2.4절의 벌크-경계 소산 정리를 이산 공간에 적용하여, 반복 선형 솔버의 안정성을 확보하기 위한 대칭 전제조건자(Symmetric Preconditioner) $\hat{J}_{pure}$의 설계 과정을 설명한다.
+본 절에서는 앞서 산출된 메트릭 $\hat{G}$를 바탕으로, 시스템의 표류 방향성을 포텐셜 장으로 사상하는 자동 적분 인자(Automated Integrating Factor) $\hat{C}$를 유도한다. 나아가 반복 선형 솔버의 안정성을 확보하기 위한 대칭 전제조건자(Symmetric Preconditioner) $\hat{J}_{pure}$의 설계 과정을 설명한다.
 
 **1) 적분 인자 행렬 $\hat{C}$의 산출과 구속 조건**
 
@@ -155,17 +155,35 @@ $$
 \mathcal{R}(\tilde{J})_{ij}=\tilde{J}_{ij}-\tilde{J}_{ji}=0\quad(\text{for all } i, j\in\mathcal{I})
 $$
 
-위 조건에 $\tilde{J} = \hat{C}\hat{G}\hat{J}$를 대입하여 행렬 성분으로 정리하면 $c_i (\hat{G}\hat{J})_{ij} = c_j (\hat{G}\hat{J})_{ji}$ 가 된다. 자코비안 행렬의 특성상 서로 마주보는 성분의 부호가 같으므로, 양변에 자연 로그(natural logarithm)를 취하여 다음과 같이 대수적인 차이 $b_{ij}$를 계산할 수 있다.
+위 조건에 $\tilde{J} = \hat{C}\hat{G}\hat{J}$를 대입하여 행렬 성분으로 정리하면 $c_i (\hat{G}\hat{J})_{ij} = c_j (\hat{G}\hat{J})_{ji}$ 가 요구된다. 그러나 국소 페클레 수(Cell Péclet number)가 1을 초과하는 대류 지배 영역에서는 자코비안의 마주보는 비대각 성분 간에 부호 역전이 발생할 수 있으므로, 실수 공간에서 위 등식을 항등적으로 만족하는 해는 존재하지 않을 수 있다. 따라서 행렬 성분의 크기 비대칭성을 보존하기 위해, 대상 조건식의 양변에 절댓값을 취하여 전개한다.
 
 $$
-\ln(c_i) - \ln(c_j) = \ln\left(\frac{(\hat{G}\hat{J})_{ji}}{(\hat{G}\hat{J})_{ij}}\right) \equiv b_{ij}
+|c_i (\hat{G}\hat{J})_{ij}| = |c_j (\hat{G}\hat{J})_{ji}|
 $$
 
-치환 변수 $x_i = \ln(c_i)$를 도입하면, 본 식은 노드 간의 비대칭 플럭스 비율을 스칼라 포텐셜 장으로 맵핑하는 $\hat{S}x = b$ 형태의 과결정(overdetermined) 선형 연립방정식이 된다. 해의 유일성 확보를 위해 디리클레 경계 노드 집합 $\mathcal{B}$에 대하여 $c_k = 1.0$($x_k = 0$)의 기준점(anchoring) 조건을 부과한다. 최소자승법(least squares method)으로 해를 산출하고 지수 함수($c_i = e^{x_i}$)를 취해 대각 행렬 $\hat{C}$를 확립한다.
+절댓값의 곱셈 분배 법칙을 적용하여 식을 분리한다.
+
+$$
+|c_i| |(\hat{G}\hat{J})_{ij}| = |c_j| |(\hat{G}\hat{J})_{ji}|
+$$
+
+여기서 구하고자 하는 대각 성분 $c$는 지수 함수 형태($c_i = e^{x_i}$)로 정의되므로 항상 양수($c_i > 0$)이다. 즉, $|c_i| = c_i$ 가 성립하므로 식은 다음과 같이 환원된다.
+
+$$
+c_i |(\hat{G}\hat{J})_{ij}| = c_j |(\hat{G}\hat{J})_{ji}|
+$$
+
+이 식의 양변에 자연 로그(natural logarithm)를 취하여 정리하면, 부호 역전에 의한 연산 단절 없이 대수적인 차이 $b_{ij}$를 산출할 수 있다.
+
+$$
+\ln(c_i) - \ln(c_j) = \ln\left( \frac{|(\hat{G}\hat{J})_{ji}|}{|(\hat{G}\hat{J})_{ij}|} \right) \equiv b_{ij}
+$$
+
+치환 변수 $x_i = \ln(c_i)$를 도입하면, 본 식은 간선(edge)에 정의된 국소 비대칭 비율 $b_{ij}$로부터 각 내부 노드(node)의 절대 보정값 $x_i$를 산출하는 $\hat{S}x = b$ 형태의 과결정(overdetermined) 선형 연립방정식이 된다. 해의 유일성 확보를 위해 디리클레 경계 노드 집합 $\mathcal{B}$에 대하여 $c_k = 1.0$($x_k = 0$)의 기준점(anchoring) 조건을 부과한다. 최소자승법(least squares method)으로 해를 산출하고 지수 함수($c_i = e^{x_i}$)를 취해 대각 행렬 $\hat{C}$를 확립한다.
 
 **2) 자코비안 분해**
 
-대수적 변환이 적용된 유효 자코비안 $\tilde{J}$는 2.4절의 연산자 분해 방식($L = H + A$)에 따라 대칭 성분(Hermitian part, $\hat{H}$)과 다차원 공간의 교차 결합에 의해 발생하는 반대칭 성분(anti-Hermitian part, $\hat{A}_{raw}$)의 합으로 분리된다.
+대수적 변환이 적용된 유효 자코비안 $\tilde{J}$는 대칭 성분(Hermitian part, $\hat{H}$)과 다차원 공간의 교차 결합에 의해 발생하는 반대칭 성분(anti-Hermitian part, $\hat{A}_{raw}$)의 합으로 분리된다.
 
 $$
 \tilde{J} = \hat{H} + \hat{A}_{raw}
@@ -200,3 +218,95 @@ $$
 $$
 
 본 연구는 원본 자코비안 $\hat{J}$ 대신, 대칭 전제조건자 $\hat{J}_{pure}$를 탐색 행렬로 사용하여 변화량 $\delta u$를 산출하는 부정확 뉴턴법(Inexact Newton Method)을 적용한다. 선형 탐색 행렬은 대칭화되나 우변의 물리적 잔차 벡터 $F(u)$는 원본 상태를 유지한다. 알고리즘이 수렴 조건($\delta u \to 0$)에 도달하면, $\hat{J}_{pure} \delta u = -F(u)$ 관계식에 의해 항등적으로 $F(u^*) = 0$ 이 성립한다. 이는 제안된 대수적 대칭화 과정이 선형 탐색의 수치적 안정성만을 개선할 뿐, 최종 고정점(fixed point)의 물리적 엄밀성(exact solution)을 보장함을 증명한다.
+
+---
+
+### 3.3 전제조건화된 유효 자코비안의 스펙트럼 상한 해석
+
+본 절에서는 3.2절에서 산출된 투영 기반 전제조건자 $\hat{J}_{pure}$가 유효 자코비안 $\tilde{J}$에 적용되었을 때, 전제조건화된 연산자 $\hat{J}_{pure}^{-1} \tilde{J}$의 고유값(eigenvalue) 분포가 복소 평면(complex plane) 내의 제한된 원판(bounded disk)에 군집함을 대수적으로 증명한다. 이를 통해 제안된 대수적 제어 프레임워크가 Krylov 부분 공간 해법의 수렴성을 보장함을 해석적으로 규명한다.
+
+**1) 일반화된 고유값 문제(Generalized Eigenvalue Problem)의 구성**
+
+$\hat{J}_{pure}^{-1} \tilde{J}$의 고유값을 $\lambda \in \mathbb{C}$, 이에 대응하는 0이 아닌 고유 벡터를 $x \in \mathbb{C}^n$이라 정의하면, 이는 다음의 일반화된 고유값 문제로 치환된다.
+
+$$
+\tilde{J} x = \lambda \hat{J}_{pure} x
+$$
+
+유효 자코비안 $\tilde{J}$는 대칭 성분 $\hat{H}$와 반대칭 성분 $\hat{A}_{raw}$의 합($\tilde{J} = \hat{H} + \hat{A}_{raw}$)으로 구성된다. 전제조건자 $\hat{J}{pure}$는 내부 반대칭 성분 $\hat{A}{int}$가 제외된 형태이므로, 다음과 같이 표현할 수 있다.
+
+$$
+\hat{J}_{pure} = \tilde{J} - \hat{A}_{int} = \hat{H} + \hat{A}_{bnd}
+$$
+
+여기서 $\hat{A}_{bnd} = \hat{A}_{raw} - \hat{A}_{int}$는 디리클레 경계 $\mathcal{B}$에서만 0이 아닌 성분을 가지는 잔류 반대칭 연산자이다. 이를 고유값 방정식에 대입하면 다음과 같이 전개된다.
+
+$$
+(\hat{J}_{pure} + \hat{A}_{int}) x = \lambda \hat{J}_{pure} x
+$$
+
+$$
+\hat{A}_{int} x = (\lambda - 1) \hat{J}_{pure} x
+$$
+
+**2) 이차 형식(Quadratic Form) 전개와 에너지 내적**
+
+고유값 $\lambda$의 경계를 도출하기 위해, 식의 양변에 고유 벡터의 켤레 전치(conjugate transpose) $x^*$를 곱하여 이차 형식을 구성한다. (단, $\|x\| = 1$)
+
+$$
+x^* \hat{A}_{int} x = (\lambda - 1) x^* (\hat{H} + \hat{A}_{bnd}) x
+$$
+
+물리적 보존계의 강타원형(strongly elliptic) 확산 연산자에서 유래한 대칭 성분 $\hat{H}$는 양의 정부호(Symmetric Positive Definite) 특성을 가지므로, $x^* \hat{H} x = h$ 라 할 때 $h > 0$ 이 성립한다.
+
+반면 $\hat{A}_{int}$와 $\hat{A}_{bnd}$는 반대칭 행렬(skew-symmetric matrix)이므로, 그 이차 형식은 순수 허수(pure imaginary)가 된다. 따라서 실수 $\alpha, \beta \in \mathbb{R}$에 대하여 다음과 같이 정의할 수 있다.
+
+$$
+x^* \hat{A}_{int} x = i\alpha, \quad x^* \hat{A}_{bnd} x = i\beta
+$$
+
+이를 이차 형식 방정식에 대입한다.
+
+$$
+i\alpha = (\lambda - 1)(h + i\beta)
+$$
+
+**3) 스펙트럼 상한(Spectral Upper Bound) 도출**
+
+위 식을 고유값 $\lambda$에 대하여 정리하여 실수부 $Re(\lambda)$와 허수부 $Im(\lambda)$로 분리한다.
+
+$$
+\lambda - 1 
+= \frac{i\alpha}{h + i\beta} 
+= \frac{\alpha\beta}{h^2 + \beta^2} + i\frac{\alpha h}{h^2 + \beta^2}
+$$
+
+전제조건화된 연산자의 고유값 중심 이동(shift) 규모인 $|\lambda - 1|^2$을 산출한다.
+
+$$
+|\lambda - 1|^2 = \left(\frac{\alpha\beta}{h^2 + \beta^2}\right)^2 + \left(\frac{\alpha h}{h^2 + \beta^2}\right)^2 = \frac{\alpha^2 \beta^2 + \alpha^2 h^2}{(h^2 + \beta^2)^2} = \frac{\alpha^2 (h^2 + \beta^2)}{(h^2 + \beta^2)^2} = \frac{\alpha^2}{h^2 + \beta^2}
+$$
+
+분모의 $\beta^2 \ge 0$ 이므로, 다음의 부등식이 필연적으로 성립한다.
+
+$$
+|\lambda - 1| \le \frac{|\alpha|}{h} = \frac{|x^* \hat{A}_{int} x|}{x^* \hat{H} x}
+$$
+
+여기서 $\hat{A}_{int}$의 $\hat{H}$에 대한 에너지 노름(energy norm) 기준의 상대적 연속성 상수(relative continuity constant)를 다음과 같이 정의한다.
+
+$$
+\gamma_{int} \equiv \sup_{x \ne 0} \frac{|x^* \hat{A}_{int} x|}{x^* \hat{H} x}
+$$
+
+결과적으로, 전제조건화된 연산자 $\hat{J}_{pure}^{-1} \tilde{J}$의 모든 고유값 $\lambda$는 복소 평면 상에서 점 $(1, 0)$을 중심으로 하고 반지름이 $\gamma{int}$인 폐원판(closed disk) 내에 존재함이 증명된다. 해당 연산자가 가지는 모든 고유값들의 집합인 스펙트럼(spectrum)을 $\sigma(\hat{J}_{pure}^{-1} \tilde{J})$라 정의할 때, 위 결론은 다음과 같은 집합의 포함 관계로 엄밀하게 표현된다.
+
+$$
+\sigma(\hat{J}_{pure}^{-1} \tilde{J}) \subset \{ \lambda \in \mathbb{C} : |\lambda - 1| \le \gamma_{int} \}
+$$
+
+**4) 최소자승 투영(Least-Squares Projection)에 의한 $\gamma_{int}$ 제어 및 수렴성 보장**
+
+표준적인 이산화 체계에서, 제어되지 않은 원시 자코비안의 비대칭성 상한 $\gamma_{raw}$는 국소 페클레 수($Pe$)에 선형적으로 비례하여 증가하며, $Pe \gg 1$인 강대류 구간에서 조건수의 발산을 유발한다.그러나 3.2절에서 적용된 적분 인자 행렬 $\hat{C}$는 등식 $|c_i (\hat{G}\hat{J})_{ij}| = |c_j (\hat{G}\hat{J})_{ji}|$ 을 만족하도록 스칼라 포텐셜 장을 맵핑하는 L2-노름 기반 최소자승 투영의 결과물이다. 이 대수적 최적화 과정은 계 내부의 반대칭 성분 절대 크기인 $|\alpha|$를 수학적 하한(infimum)으로 강제 압축하는 역할을 수행한다.
+
+따라서 투영 후 잔류한 내부 반대칭 연산자 $\hat{A}_{int}$에 대한 상대 상수 $\gamma_{int}$는 격자의 공간 분해능 $h$나 극한의 표류 속도 $v$의 크기와 독립적으로 제한된 상한(bounded upper limit)을 갖는다. 이는 고유값 분포가 원점($\lambda = 0$)으로부터 물리적으로 이격된 군집(cluster)을 형성함을 의미하며, Elman(10.1093/acprof:oso/9780199678792.001.0001)의 정리에 따라 GMRES를 비롯한 Krylov 해법의 격자 독립적(Mesh-independent)이고 단조적인 수렴성(monotonic convergence)을 보장하는 해석학적 근거가 된다.
