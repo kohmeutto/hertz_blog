@@ -1,5 +1,5 @@
 +++
-title = "Derivation 1"
+title = "Derivation"
 weight = 2
 +++
 
