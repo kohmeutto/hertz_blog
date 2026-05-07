@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research_NA :: 수리전자물리학</title>
+    <link>http://localhost:1313/research/research_na/index.html</link>
+    <description>Preresearch&#xD;Paper_kr&#xD;Paper_eng&#xD;Paper_eng_2&#xD;Paper_eng_3&#xD;Paper_eng_4&#xD;Paper_eng_5</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/research/research_na/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Preresearch</title>
+      <link>http://localhost:1313/research/research_na/preresearch/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/preresearch/index.html</guid>
+      <description>(b) Theory1&#xD;(b) Theory 2</description>
+    </item>
+    <item>
+      <title>Paper_kr</title>
+      <link>http://localhost:1313/research/research_na/paper_kor/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/paper_kor/index.html</guid>
+      <description>Control of Convective Asymmetry in Nonlinear Discrete Systems Using Graph Laplacian and Algebraic Projection&#xD;Kibeom Kim1, Young Jun Yoon2*&#xA;1kohmeutto@gmail.com&#xA;2School of Electronic and Mechanical Engineering, Gyeongkuk National University, Andong, Republic of Korea (yjyoon@gknu.ac.kr)&#xA;*Correspondence: Young Jun Yoon&#xA;Abstract&#xD;매질 불연속성과 대류 성분을 포함하는 비선형 편미분 방정식의 이산화 시스템은 자코비안(Jacobian) 연산자의 비정규성(non-normality)을 유발하여 비선형 해법의 스펙트럼 편향 및 수렴성 저하의 원인이 된다. 시스템 안정화를 위한 경험적 완화 계수 도입이나 수치적 확산 오차의 적용은 이산화 과정의 수학적 일관성을 변화시키며, 그래프 라플라시안 기반의 기하학적 정칙성 확보만으로는 고유벡터 기저의 비직교성을 상쇄하는 데 한계가 있다. 이에 본 연구는 경험적 파라미터 조정을 배제하고, 선형 연립방정식 차원에서의 대수적 투영(algebraic projection)을 통해 대류적 비대칭성을 제어하는 수치해석 기법을 제안한다.</description>
+    </item>
+    <item>
+      <title>Paper_eng</title>
+      <link>http://localhost:1313/research/research_na/paper_eng/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/paper_eng/index.html</guid>
+      <description>Algebraic Purification of Operator Residue in Singular Perturbation Systems&#xD;Kibeom Kim1, Young Jun Yoon2*&#xA;1Independent Researcher, Republic of Korea (kohmeutto@gmail.com)&#xA;2School of Electronic and Mechanical Engineering, Gyeongkuk National University, Andong, Republic of Korea (yjyoon@gknu.ac.kr)&#xA;*Correspondence: Young Jun Yoon&#xA;Keywords: Algebraic purification, Jacobian non-normality, Discrete commutator error, Local asymmetry indicator, Finite volume method&#xA;Abstract&#xD;Finite-volume discretization of quasilinear elliptic equations with state-dependent diffusion induces non-normality in the Jacobian. Specifically, the derivative of the diffusion coefficient with respect to the state variable is multiplied by the gradient of the state. This product acts as an effective drift and generates an advection-like skew-symmetric component. Consequently, this asymmetry reduces the numerical stability of both direct and iterative linear solvers.</description>
+    </item>
+    <item>
+      <title>Paper_eng_2</title>
+      <link>http://localhost:1313/research/research_na/paper_eng_2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/paper_eng_2/index.html</guid>
+      <description>A Symmetrizing Preconditioner for Finite-Volume Jacobians of Quasilinear Elliptic Equations&#xD;Kibeom Kim1, Young Jun Yoon2*&#xA;1Independent Researcher, Republic of Korea (kohmeutto@gmail.com)&#xA;2School of Electronic and Mechanical Engineering, Gyeongkuk National University, Andong, Republic of Korea (yjyoon@gknu.ac.kr)&#xA;*Correspondence: Young Jun Yoon&#xA;Keywords: Symmetrizing preconditioner; Quasilinear elliptic equations; Discrete Hodge decomposition; Inexact Newton method; Finite volume method&#xA;Abstract&#xD;Finite-volume discretization of quasilinear elliptic equations with state-dependent diffusion induces non-normality in the Jacobian. Specifically, the derivative of the diffusion coefficient with respect to the state variable is multiplied by the gradient of the state. This product acts as an effective drift and generates an advection-like skew-symmetric component. Consequently, this asymmetry reduces the numerical stability of both direct and iterative linear solvers.</description>
+    </item>
+    <item>
+      <title>Paper_eng_3</title>
+      <link>http://localhost:1313/research/research_na/paper_eng_3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/paper_eng_3/index.html</guid>
+      <description>A Preconditioning Procedure for Finite-Volume Jacobians of Steady Quasilinear Elliptic Problems with Discontinuous Diffusion&#xD;Kibeom Kim1, Young Jun Yoon2*&#xA;1Independent Researcher, Republic of Korea (kohmeutto@gmail.com)&#xA;2School of Electronic and Mechanical Engineering, Gyeongkuk National University, Andong, Republic of Korea (yjyoon@gknu.ac.kr)&#xA;*Correspondence: Young Jun Yoon&#xA;Keywords: Preconditioning; Quasilinear elliptic problem; Discrete Hodge decomposition; Inexact Newton method; Finite volume method</description>
+    </item>
+    <item>
+      <title>Paper_eng_4</title>
+      <link>http://localhost:1313/research/research_na/paper_eng_4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/paper_eng_4/index.html</guid>
+      <description>A Preconditioning Procedure for Finite-Volume Jacobians of Steady Quasilinear Elliptic Problems with Discontinuous Diffusion&#xD;Kibeom Kim1, Young Jun Yoon2*&#xA;1Independent Researcher, Republic of Korea (kohmeutto@gmail.com)&#xA;2School of Electronic and Mechanical Engineering, Gyeongkuk National University, Andong, Republic of Korea (yjyoon@gknu.ac.kr)&#xA;*Correspondence: Young Jun Yoon&#xA;Keywords: Preconditioning; Quasilinear elliptic problem; Discrete Hodge decomposition; Inexact Newton method; Finite volume method</description>
+    </item>
+    <item>
+      <title>Paper_eng_5</title>
+      <link>http://localhost:1313/research/research_na/paper_eng_5/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/paper_eng_5/index.html</guid>
+      <description>A Preconditioning Procedure for Finite-Volume Jacobians of Steady Quasilinear Elliptic Problems with Discontinuous Diffusion&#xD;Kibeom Kim1, Young Jun Yoon2*&#xA;1Independent Researcher, Republic of Korea (kohmeutto@gmail.com)&#xA;2School of Electronic and Mechanical Engineering, Gyeongkuk National University, Andong, Republic of Korea (yjyoon@gknu.ac.kr)&#xA;*Correspondence: Young Jun Yoon&#xA;Keywords: Preconditioning; Quasilinear elliptic problem; Discrete Hodge decomposition; Inexact Newton method; Finite volume method</description>
+    </item>
+  </channel>
+</rss>

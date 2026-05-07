@@ -74,13 +74,12 @@ $$
 
 **1) 정의 (Definition)**
 
-임의의 선형 연산자 $\hat{L}$에 대하여, 시스템 경계에서의 비대칭성을 추출하는 **레지듀 변환(Residue Transform)** 슈퍼 연산자(Super-operator) $\mathcal{R}$은 다음과 같이 브라-켓 안에서 정의된다. $\mathcal{R}$ 은 연산자 공간 $\mathcal{B}(\mathcal{H})$ 에서 정의된 사상(Mapping)으로, 다음과 같은 내적 관계를 통해 그 작용이 규정된다.
+임의의 선형 연산자 $\hat{L}$에 대하여, 시스템 경계에서의 비대칭성을 추출하는 **레지듀 변환(Residue Transform)** 슈퍼 연산자(Super-operator) $\mathcal{R}$은 다음과 같이 **브라-켓 안** 에서 정의된다. $\mathcal{R}$ 은 연산자 공간 $\mathcal{B}(\mathcal{H})$ 에서 정의된 사상(Mapping)으로, 다음과 같은 내적 관계를 통해 그 작용이 규정된다.
 
 $$
 \langle \phi | \mathcal{R} \hat{L} | \psi \rangle = \langle \phi | \hat{L} \psi \rangle - \langle \hat{L}^\dagger \phi | \psi \rangle
 $$
 
-- 여기서 $\mathcal{R}\hat{L}$ 은 연산자 $\hat{L}$ 의 경계 레지듀를 나타내는 단일 선형 연산자이며, 표기의 간결성을 위해 슈퍼 연산자의 작용에 대한 괄호는 생략한다.
 - 연산자 $\hat{L}$이 물리적 상태에 작용할 때 발생하는 **'정보의 총 유출량'** 이자, 경계면을 통과하는 플럭스(Flux)의 총합을 의미한다.
 - 시스템이 자기 수반(Self-adjoint)이고 경계 조건이 닫혀 있다면 $\langle \phi | \mathcal{R} \hat{L} | \psi \rangle = 0$이다. 즉, $\mathcal{R} \hat{L}$은 시스템의 **'대칭성이 깨진 정도'** 를 직접적으로 읽어내는 대수적 센서이다.
 
@@ -103,6 +102,12 @@ $$
 
 $$
 \mathcal{R} (\hat{A} \hat{B}) = (\mathcal{R} \hat{A}) \hat{B} + \hat{A} (\mathcal{R} \hat{B})
+$$
+
+주의: 이 등식은 brа-ket 사이에서 평가될 때 성립한다. 즉, 
+
+$$
+\langle \phi | \mathcal{R} (\hat{A} \hat{B}) | \psi \rangle = \langle \phi | (\mathcal{R} \hat{A}) \hat{B} + \hat{A} (\mathcal{R} \hat{B}) | \psi \rangle
 $$
 
 proof)

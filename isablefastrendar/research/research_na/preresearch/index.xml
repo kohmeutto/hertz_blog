@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Preresearch :: 수리전자물리학</title>
+    <link>http://localhost:1313/research/research_na/preresearch/index.html</link>
+    <description>(b) Theory1&#xD;(b) Theory 2</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/research/research_na/preresearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(b) Theory1</title>
+      <link>http://localhost:1313/research/research_na/preresearch/theory1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/preresearch/theory1/index.html</guid>
+      <description>1. 연산자 Adjoint의 물리 &amp; 공학적 의미&#xD;측정 대상을 바꿀 것(연산자)인가. 측정 관점을 바꿀 것인가(수반 연산자), 수반 연산자는 대상의 변화($\hat{A}$)를 관찰자의 변화($\hat{A}^\dagger$)로 번역해주는 대칭의 거울이다. 우리는 이 거울을 통해 대상을 직접 건드리지 않고도(Ket), 우리의 시선(Bra)을 정교하게 교정함으로써 우주의 진리에 도달한다.&#xA;1) 범함수(Functional)라는 측정 기계&#xA;브라 $\langle v|$는 수학적으로 켓을 넣으면 숫자를 뱉는 기계 이다.예를 들어, 이 시스템의 에너지는 얼마인가?라고 묻는 기계가 $\langle v|$라고 가정해 보자.</description>
+    </item>
+    <item>
+      <title>(b) Theory 2</title>
+      <link>http://localhost:1313/research/research_na/preresearch/theory2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/preresearch/theory2/index.html</guid>
+      <description>1. Derivation of Global Conservation Identities&#xD;앞에서 언급된 바와 같이, 임의의 선형 연산자 $\hat{L}$에 대하여, 시스템의 경계 비대칭성을 추출하는 레지듀 변환 $\mathcal{R}$ 은 힐베르트 공간 내에서 다음과 같이 정의된다. 이 정의는 모든 유도 과정의 출발점이자, 시스템의 ‘객관적 실재’와 ‘예측’ 사이의 간극을 규정하는 공리이다.&#xA;$$&#xD;\langle \phi \mid \mathcal{R}\hat{L} \mid \psi \rangle \equiv \langle \phi \mid \hat{L} \psi \rangle - \langle \hat{L}^\dagger \phi \mid \psi \rangle&#xD;$$1) Operator Conservation Law</description>
+    </item>
+  </channel>
+</rss>

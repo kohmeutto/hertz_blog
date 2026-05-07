@@ -1,54 +1,50 @@
 <!DOCTYPE html>
-<html id="R-html" lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.145.0">
-    <meta name="generator" content="Relearn 9.0.3+8bb66fa674351f3a0b0917a7552caac686eca920">
-    <meta name="description" content="1. 정규 연산자의 정의$$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
-2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.
-만약 $|v\rangle$가 정규 행렬 $\hat{A}$의 고유값 $\lambda$에 대한 고유벡터라면, $|v\rangle$는 동시에 $\hat{A}^\dagger$의 고유값 $\lambda^*$에 대한 고유벡터이기도 하다.">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="1. 정규 연산자의 정의연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 즉 교환자가 0일 때 정규 연산자(Normal Operator) 라고 한다. $$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
+2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="(b) Normal operators :: 수리전자물리학">
-    <meta name="twitter:description" content="1. 정규 연산자의 정의$$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
-2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.
-만약 $|v\rangle$가 정규 행렬 $\hat{A}$의 고유값 $\lambda$에 대한 고유벡터라면, $|v\rangle$는 동시에 $\hat{A}^\dagger$의 고유값 $\lambda^*$에 대한 고유벡터이기도 하다.">
+    <meta name="twitter:description" content="1. 정규 연산자의 정의연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 즉 교환자가 0일 때 정규 연산자(Normal Operator) 라고 한다. $$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
+2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.">
     <meta property="og:url" content="http://localhost:1313/vector_operator/normal_operators/b_normal_operators/index.html">
     <meta property="og:site_name" content="수리전자물리학">
     <meta property="og:title" content="(b) Normal operators :: 수리전자물리학">
-    <meta property="og:description" content="1. 정규 연산자의 정의$$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
-2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.
-만약 $|v\rangle$가 정규 행렬 $\hat{A}$의 고유값 $\lambda$에 대한 고유벡터라면, $|v\rangle$는 동시에 $\hat{A}^\dagger$의 고유값 $\lambda^*$에 대한 고유벡터이기도 하다.">
+    <meta property="og:description" content="1. 정규 연산자의 정의연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 즉 교환자가 0일 때 정규 연산자(Normal Operator) 라고 한다. $$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
+2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Vector & Operator">
     <meta itemprop="name" content="(b) Normal operators :: 수리전자물리학">
-    <meta itemprop="description" content="1. 정규 연산자의 정의$$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
-2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.
-만약 $|v\rangle$가 정규 행렬 $\hat{A}$의 고유값 $\lambda$에 대한 고유벡터라면, $|v\rangle$는 동시에 $\hat{A}^\dagger$의 고유값 $\lambda^*$에 대한 고유벡터이기도 하다.">
-    <meta itemprop="wordCount" content="1700">
+    <meta itemprop="description" content="1. 정규 연산자의 정의연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 즉 교환자가 0일 때 정규 연산자(Normal Operator) 라고 한다. $$[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$$이 조건을 만족하는 연산자는 항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장 된다.
+2. 핵심 특성 및 증명1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.">
+    <meta itemprop="wordCount" content="1718">
     <title>(b) Normal operators :: 수리전자물리학</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1775177435" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1775177435" defer></script>
-    <script src="/js/search-lunr.js?1775177435" defer></script>
-    <script src="/js/search.js?1775177435" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1778067057" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1778067057" defer></script>
+    <script src="/js/search-lunr.js?1778067057" defer></script>
+    <script src="/js/search.js?1778067057" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1775177435";
+      window.relearn.index_js_url="/searchindex.en.js?1778067057";
     </script>
-    <script src="/js/lunr/lunr.min.js?1775177435" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1775177435" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1775177435" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1775177435" defer></script>
+    <script src="/js/lunr/lunr.min.js?1778067057" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1778067057" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1778067057" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1778067057" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1775177435" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1775177435" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1775177435" rel="stylesheet">
-    <link href="/css/theme.css?1775177435" rel="stylesheet">
-    <link href="/css/format-html.css?1775177435" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1778067057" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1778067057" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1778067057" rel="stylesheet">
+    <link href="/css/theme.css?1778067057" rel="stylesheet">
+    <link href="/css/format-html.css?1778067057" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -59,6 +55,10 @@
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.disableInlineCopyToClipboard=false;
       window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // translations
       window.T_Copy_to_clipboard = `Copy text to clipboard`;
       window.T_Copied_to_clipboard = `Text copied to clipboard!`;
@@ -70,10 +70,10 @@
       window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
       // variant stuff
       window.relearn.themevariants = [ 'relearn-light' ];
-      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.customvariantname = "my-custom-variant";
       window.relearn.changeVariant = function(variant) {
         var oldVariant = document.documentElement.dataset.rThemeVariant;
-        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
         document.documentElement.dataset.rThemeVariant = variant;
         if (oldVariant != variant) {
           document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
@@ -81,16 +81,15 @@
         }
       }
       window.relearn.markVariant = function() {
-        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
         document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
       }
       window.relearn.initVariant = function() {
-        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
-        if( !variant ||
-            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
-            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
           variant = window.relearn.themevariants[0];
-          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
         }
         document.documentElement.dataset.rThemeVariant = variant;
       }
@@ -98,18 +97,18 @@
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-origin="/vector_operator/normal_operators/b_normal_operators/index.html">
+  <body class="mobile-support html" data-url="/vector_operator/normal_operators/b_normal_operators/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
-      <nav id="R-topbar" class="default-animation">
-        <div class="topbar-wrapper default-animation">
-          <div class="topbar-sidebar-divider default-animation"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
           <div class="topbar-area topbar-area-start" data-area="start">
-            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
             </div>
-            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
@@ -132,13 +131,13 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/normal_operators/index.html"><span itemprop="name">Normal operators</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">(b) Normal operators</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/normal_operators/b_adjoint_derivation/index.html" title="(b) Adjoint derivation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/normal_operators/b_hermitian/index.html" title="(b) Hermitian (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
-            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
               <div class="topbar-content">
                 <div class="topbar-content-wrapper">
@@ -161,6 +160,8 @@
 
 <hr>
 <h3 id="1-정규-연산자의-정의">1. 정규 연산자의 정의<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 즉 교환자가 0일 때 <strong>정규 연산자(Normal Operator)</strong> 라고 한다.
+</p>
 $$
 [\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0
 $$<p>이 조건을 만족하는 연산자는 <strong>항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장</strong> 된다.</p>
@@ -196,13 +197,15 @@ $$
 $$<p>$\lambda_1 \neq \lambda_2$ 이므로 반드시 $\langle v_1|v_2\rangle = 0$ 이어야 한다.</p>
 <p><strong>3) 특성 3: 에르미트/반-에르미트 부분의 교환 가능성</strong></p>
 <blockquote>
-<p><strong>정리</strong>: 연산자 $\hat{A}$가 정규 연산자인 것은, 그 에르미트 부분 $\hat{H} = \frac{1}{2}(\hat{A}+\hat{A}^\dagger)$와 반-에르미트 부분 $\hat{S} = \frac{1}{2}(\hat{A}-\hat{A}^\dagger)$가 서로 교환 가능한 것($[\hat{H}, \hat{S}]=0$)과 동치이다.</p></blockquote>
+<p><strong>정리</strong>: 연산자 $\hat{A}$가 정규 연산자인 것은, 그 에르미트 부분 $\hat{H} = \frac{1}{2}(\hat{A}+\hat{A}^\dagger)$와 반-에르미트 부분 $\hat{S} = \frac{1}{2}(\hat{A}-\hat{A}^\dagger)$가 서로 교환 가능한 것($[\hat{H}, \hat{S}]=0$)과 동치이다.</p>
+</blockquote>
 <blockquote>
 <p><strong>증명</strong>:</p>
 <ol>
 <li>$\hat{A}=\hat{H}+\hat{S}$ 이고 $\hat{A}^\dagger=\hat{H}-\hat{S}$ 이다.</li>
 <li>교환자 $[\hat{A}, \hat{A}^\dagger]$를 계산한다.</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 $$
 \begin{align*}
 [\hat{A}, \hat{A}^\dagger] &= (\hat{H} + \hat{S})(\hat{H} - \hat{S}) - (\hat{H} - \hat{S})(\hat{H} + \hat{S}) \\
@@ -213,22 +216,27 @@ $$
 $$<blockquote>
 <ol start="3">
 <li>따라서 $[\hat{A}, \hat{A}^\dagger]=0$인 것은 $[\hat{S}, \hat{H}]=0$, 즉 $[\hat{H}, \hat{S}]=0$인 것과 동치이다.</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <h4 id="특성-4-연산자와-수반의-동일한"><strong>특성 4: 연산자와 수반의 동일한 &lsquo;크기&rsquo;</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
 <blockquote>
-<p><strong>정리</strong>: 연산자 $\hat{A}$가 정규 연산자인 것은, 모든 벡터 $|v\rangle$에 대해 $||\hat{A}|v\rangle|| = ||\hat{A}^\dagger|v\rangle||$ 인 것과 동치이다.</p></blockquote>
+<p><strong>정리</strong>: 연산자 $\hat{A}$가 정규 연산자인 것은, 모든 벡터 $|v\rangle$에 대해 $||\hat{A}|v\rangle|| = ||\hat{A}^\dagger|v\rangle||$ 인 것과 동치이다.</p>
+</blockquote>
 <blockquote>
-<p><strong>증명</strong>: $ ||\hat{A}|v\rangle||^2 = \langle v|\hat{A}^\dagger\hat{A}|v\rangle$ 이고 $ ||\hat{A}^\dagger|v\rangle||^2 = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 이다. 따라서 두 크기가 같은 것은 $\langle v|\hat{A}^\dagger\hat{A}|v\rangle = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 와 동치이며, 이는 $\langle v|[\hat{A}^\dagger, \hat{A}]|v\rangle=0$을 의미한다. 모든 벡터에 대해 이 식이 성립하려면 연산자 $[\hat{A}^\dagger, \hat{A}]$가 0이어야 하므로, $\hat{A}$가 정규 연산자임과 동치이다.</p></blockquote>
+<p><strong>증명</strong>: $ ||\hat{A}|v\rangle||^2 = \langle v|\hat{A}^\dagger\hat{A}|v\rangle$ 이고 $ ||\hat{A}^\dagger|v\rangle||^2 = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 이다. 따라서 두 크기가 같은 것은 $\langle v|\hat{A}^\dagger\hat{A}|v\rangle = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 와 동치이며, 이는 $\langle v|[\hat{A}^\dagger, \hat{A}]|v\rangle=0$을 의미한다. 모든 벡터에 대해 이 식이 성립하려면 연산자 $[\hat{A}^\dagger, \hat{A}]$가 0이어야 하므로, $\hat{A}$가 정규 연산자임과 동치이다.</p>
+</blockquote>
 <h4 id="특성-5-영공간과-열공간의-직교성"><strong>특성 5: 영공간과 열공간의 직교성</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
 <blockquote>
-<p><strong>정리</strong>: 정규 연산자 $\hat{A}$의 영공간($N(A)$)은 그 열공간($C(A)$)과 항상 서로 수직이다.</p></blockquote>
+<p><strong>정리</strong>: 정규 연산자 $\hat{A}$의 영공간($N(A)$)은 그 열공간($C(A)$)과 항상 서로 수직이다.</p>
+</blockquote>
 <blockquote>
 <p><strong>증명</strong>:</p>
 <ol>
 <li><strong>보편적 원리</strong>: 선형대수학의 기본 정리에 따라, 모든 행렬에 대해 영공간은 **행공간(Row Space, $C(A^T)$)**과 수직이다: $N(A) \perp C(A^T)$.</li>
 <li><strong>정규 연산자의 특성</strong>: 정규 연산자는 <strong>열공간과 행공간이 같다</strong>: $C(A) = C(A^T)$. (이는 특성 1로부터 유도된다. 영공간의 직교 보공간은 행공간($N(A)^\perp=C(A^T)$)이고, 좌측 영공간의 직교 보공간은 열공간($N(A^\dagger)^\perp=C(A)$)이다. 특성 1에서 $N(A)=N(A^\dagger)$이므로, 그 직교 보공간인 $C(A^T)$와 $C(A)$도 같다.)</li>
 <li><strong>결론</strong>: 따라서, 1번과 2번을 종합하면, 정규 연산자에 대해서는 $N(A) \perp C(A)$가 성립함이 증명된다. ✅</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <h3 id="비교-비정규-연산자">비교: 비정규 연산자<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>정규 연산자가 아닌 경우, 완비적인 고유벡터 기저를 갖지 못할 수 있다. 이러한 행렬을 &lsquo;불완전 행렬(defective matrix)&lsquo;이라고 한다. 이들은 공간을 순수하게 늘리거나 줄이는 것이 아닌, &lsquo;찌그러뜨리는(shear)&rsquo; 변환을 포함하여 안정적인 불변 방향이 부족하다.</p>
 <ul>
@@ -296,7 +304,9 @@ $$
 \underbrace{\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle}_{\text{Internal Friction}} = \frac{1}{2} \underbrace{\left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right)}_{\text{Net Energy Gap}} + \underbrace{\langle \psi \mid \mathcal{R}_W (\hat{H}, \hat{A}) \mid \psi \rangle}_{\text{Residue Wronskian}}
 $$<p>proof)</p>
 <p>해밀토니안 소산 구조를 설정한다. 임의의 연산자 $\hat{L}$ 에 대하여, 허미션 파트 $\hat{H}$ 와 반-허미션 파트 $\hat{A}$ 는 다음과 같이 정의된다.</p>
-$$\hat{L} = \hat{H} + \hat{A}$$$$\hat{L}^\dagger = \hat{H} - \hat{A} \quad (\text{단, } \hat{H}^\dagger = \hat{H}, \hat{A}^\dagger = -\hat{A})$$<p>교환자의 내적 전개 (Expansion of Commutator)를 한다. 에너지로 비유를 하면, 순간 내부 마찰에 의해 에너지가 열로 전환되고 있는 소산율(Dissipation Rate)의 기댓값을 의미한다. 예시가 아닌 식 자체로의 본질적인 해석은 시스템의 동역학적 불일치를 보여주는 핵심 지표이다.</p>
+$$\hat{L} = \hat{H} + \hat{A}$$<p>
+</p>
+$$\hat{L}^\dagger = \hat{H} - \hat{A} \quad (\text{단, } \hat{H}^\dagger = \hat{H}, \hat{A}^\dagger = -\hat{A})$$<p>교환자의 내적 전개 (Expansion of Commutator)를 한다. 에너지로 비유를 하면, 순간 내부 마찰에 의해 에너지가 열로 전환되고 있는 소산율(Dissipation Rate)의 기댓값을 의미한다. 예시가 아닌 식 자체로의 본질적인 해석은 시스템의 동역학적 불일치를 보여주는 핵심 지표이다.</p>
 $$
 \langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle = \langle \psi \mid \hat{H}\hat{A} \mid \psi \rangle - \langle \psi \mid \hat{A}\hat{H} \mid \psi \rangle
 $$<p>여기서 우리가 이전에 정의한 <strong>레지듀 변환($\mathcal{R}$)</strong> 을 사용한다. 연산자를 브라(Bra) 쪽으로 넘길 때 발생하는 경계 오차를 보정해주는 규칙이다.</p>
@@ -346,83 +356,83 @@ $$<ul>
     <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
       <div id="R-header-wrapper" class="default-animation">
-        <a id="R-logo" class="R-default direction-row" href="/index.html">
-          <span class="logo-title default-animation">수리전자물리학</span>
-        </a>
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
             <label class="a11y-only" for="R-search-by">Search</label>
             <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-fw fa-times" title="Clear search"></i></button>
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
           </div>
         </form></search>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <div class="R-menu-divider default-animation">
-          <hr class="padding default-animation">
+          <hr class="padding">
         </div>
-        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
           <ul class="space collapsible-menu">
-            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
           </ul>
         </div>
         <div class="R-menu-divider default-animation">
-          <hr class="padding default-animation">
+          <hr class="padding">
         </div>
-        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
           <ul class="">
           </ul>
         </div>
         <div class="R-menu-divider default-animation">
-          <hr class="padding default-animation">
+          <hr class="padding">
         </div>
       </div>
       <div id="R-content-wrapper" class="highlightable">
-        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="parent " data-nav-id="/vector_operator/index.html"><a class="padding default-animation" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
-            <li class="alwaysopen " data-nav-id="/vector_operator/euclidean_vector/index.html"><a class="padding default-animation" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/hilbert_vector/index.html"><a class="padding default-animation" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/dirac_notation/index.html"><a class="padding default-animation" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/determinant_norm/index.html"><a class="padding default-animation" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/eigenvalue_problem/index.html"><a class="padding default-animation" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/commutator/index.html"><a class="padding default-animation" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
-            <li class="parent alwaysopen " data-nav-id="/vector_operator/normal_operators/index.html"><a class="padding default-animation" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu">
-            <li class="" data-nav-id="/vector_operator/normal_operators/b_adjoint_decomposition/index.html"><a class="padding" href="/vector_operator/normal_operators/b_adjoint_decomposition/index.html">(b) Adjoint &amp; Decomposition</a></li>
-            <li class="" data-nav-id="/vector_operator/normal_operators/b_adjoint_derivation/index.html"><a class="padding" href="/vector_operator/normal_operators/b_adjoint_derivation/index.html">(b) Adjoint derivation</a></li>
-            <li class="active " data-nav-id="/vector_operator/normal_operators/b_normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/b_normal_operators/index.html">(b) Normal operators</a></li>
-            <li class="" data-nav-id="/vector_operator/normal_operators/b_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_hermitian/index.html">(b) Hermitian</a></li>
-            <li class="" data-nav-id="/vector_operator/normal_operators/b_anti_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_anti_hermitian/index.html">(b) anti-Hermitian</a></li>
-            <li class="" data-nav-id="/vector_operator/normal_operators/b_unitary/index.html"><a class="padding" href="/vector_operator/normal_operators/b_unitary/index.html">(b) Unitary</a></li>
-            <li class="" data-nav-id="/vector_operator/normal_operators/b_symplectic_matrix/index.html"><a class="padding" href="/vector_operator/normal_operators/b_symplectic_matrix/index.html">(a) Symplectic matrix</a></li></ul></li>
-            <li class="" data-nav-id="/vector_operator/b_function_of_operators/index.html"><a class="padding" href="/vector_operator/b_function_of_operators/index.html">(b) Function of operators</a></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/lie_group/index.html"><a class="padding default-animation" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/numerial_analysis/index.html"><a class="padding default-animation" href="/vector_operator/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/research_na/index.html"><a class="padding default-animation" href="/vector_operator/research_na/index.html">Research_NA</a><ul id="R-subsections-302336cd3102d0268cf92834564071db" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/research_sbd/index.html"><a class="padding default-animation" href="/vector_operator/research_sbd/index.html">research_SBD</a><ul id="R-subsections-e18a822b16ff9efc545c6b23dfc7556b" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/vector_operator/research_pin/index.html"><a class="padding default-animation" href="/vector_operator/research_pin/index.html">Reserch_PIN</a><ul id="R-subsections-6ddf49e7c174abf7ead60452e1632a62" class="collapsible-menu"></ul></li></ul></li>
-            <li class="" data-nav-id="/linear_system/index.html"><a class="padding default-animation" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/ode_pde/index.html"><a class="padding default-animation" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/geometric_algebra/index.html"><a class="padding default-animation" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/tensor_analysis/index.html"><a class="padding default-animation" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/electromagnetics/index.html"><a class="padding default-animation" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/temp/index.html"><a class="padding default-animation" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/hilbert_vector/index.html"><a class="padding" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant_norm/index.html"><a class="padding" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_adjoint_decomposition/index.html"><a class="padding" href="/vector_operator/normal_operators/b_adjoint_decomposition/index.html">(b) Adjoint &amp; Decomposition</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_adjoint_derivation/index.html"><a class="padding" href="/vector_operator/normal_operators/b_adjoint_derivation/index.html">(b) Adjoint derivation</a></li>
+            <li class="active " data-nav-url="/vector_operator/normal_operators/b_normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/b_normal_operators/index.html">(b) Normal operators</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_hermitian/index.html">(b) Hermitian</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_anti_hermitian/index.html"><a class="padding" href="/vector_operator/normal_operators/b_anti_hermitian/index.html">(b) anti-Hermitian</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_unitary/index.html"><a class="padding" href="/vector_operator/normal_operators/b_unitary/index.html">(b) Unitary</a></li>
+            <li class="" data-nav-url="/vector_operator/normal_operators/b_symplectic_matrix/index.html"><a class="padding" href="/vector_operator/normal_operators/b_symplectic_matrix/index.html">(a) Symplectic matrix</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/function_of_operators/index.html"><a class="padding" href="/vector_operator/function_of_operators/index.html">Function of operators</a><ul id="R-subsections-5eb318e1d6b9e2dd96b6cde7d44cfef6" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/numerial_analysis/index.html"><a class="padding" href="/vector_operator/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/research/index.html"><a class="padding" href="/research/index.html">Researches</a><ul id="R-subsections-bf769cd5c0601629d8bb28e4a133e31a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
           </ul>
         </div>
-        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
           <ul class="space collapsible-menu">
           </ul>
         </div>
-        <div id="R-footer-margin" class="default-animation"></div>
+        <div id="R-footer-margin"></div>
         <div class="R-menu-divider default-animation">
-          <hr class="padding default-animation">
+          <hr class="padding">
         </div>
-        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
           <ul class="">
           </ul>
         </div>
-<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
     <script>
@@ -436,9 +446,9 @@ $$<ul>
         }
       }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1775177435"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1775177435" defer></script>
-    <script src="/js/theme.js?1775177435" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1778067057"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1778067057" defer></script>
+    <script src="/js/theme.js?1778067057" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

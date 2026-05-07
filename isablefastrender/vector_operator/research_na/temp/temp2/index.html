@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.155.0">
+    <meta name="generator" content="Relearn 8.2.0+f69a085322cc70b3e14577c0823c5bc781ec6bb2">
+    <meta name="description" content="본 절에서는 비선형 시스템의 자코비안(Jacobian) 행렬이 이산 공간에서 조건수(condition number) 악화를 유발하는 수학적 근원을 해석적으로 규명한다. 이를 위해 임의의 선형 연산자 $L$에 대한 레지듀 변환(residue transform)의 수학적 정의를 수립하고, 프레셰 도함수(Fréchet derivative)의 항별 레지듀 소멸 증명을 통해 비대칭성을 유발하는 1계 대류 연산자(Advection operator)의 내부 잔차 약형식을 엄밀하게 도출한다.
+2.1 연산자 레지듀 변환미분 연산자의 대수적 특성을 분석하기 위해, 완비된 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$ 상에서 상태 함수 $\phi, \psi \in \mathcal{H}$ 에 대한 보편적 내적 $\langle \phi, \psi \rangle = \int_\Omega \phi^* \psi d\Omega$ 를 정의한다.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="temp 2 :: 수리전자물리학">
+    <meta name="twitter:description" content="본 절에서는 비선형 시스템의 자코비안(Jacobian) 행렬이 이산 공간에서 조건수(condition number) 악화를 유발하는 수학적 근원을 해석적으로 규명한다. 이를 위해 임의의 선형 연산자 $L$에 대한 레지듀 변환(residue transform)의 수학적 정의를 수립하고, 프레셰 도함수(Fréchet derivative)의 항별 레지듀 소멸 증명을 통해 비대칭성을 유발하는 1계 대류 연산자(Advection operator)의 내부 잔차 약형식을 엄밀하게 도출한다.
+2.1 연산자 레지듀 변환미분 연산자의 대수적 특성을 분석하기 위해, 완비된 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$ 상에서 상태 함수 $\phi, \psi \in \mathcal{H}$ 에 대한 보편적 내적 $\langle \phi, \psi \rangle = \int_\Omega \phi^* \psi d\Omega$ 를 정의한다.">
+    <meta property="og:url" content="http://localhost:1313/vector_operator/research_na/temp/temp2/index.html">
+    <meta property="og:site_name" content="수리전자물리학">
+    <meta property="og:title" content="temp 2 :: 수리전자물리학">
+    <meta property="og:description" content="본 절에서는 비선형 시스템의 자코비안(Jacobian) 행렬이 이산 공간에서 조건수(condition number) 악화를 유발하는 수학적 근원을 해석적으로 규명한다. 이를 위해 임의의 선형 연산자 $L$에 대한 레지듀 변환(residue transform)의 수학적 정의를 수립하고, 프레셰 도함수(Fréchet derivative)의 항별 레지듀 소멸 증명을 통해 비대칭성을 유발하는 1계 대류 연산자(Advection operator)의 내부 잔차 약형식을 엄밀하게 도출한다.
+2.1 연산자 레지듀 변환미분 연산자의 대수적 특성을 분석하기 위해, 완비된 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$ 상에서 상태 함수 $\phi, \psi \in \mathcal{H}$ 에 대한 보편적 내적 $\langle \phi, \psi \rangle = \int_\Omega \phi^* \psi d\Omega$ 를 정의한다.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Vector & Operator">
+    <meta itemprop="name" content="temp 2 :: 수리전자물리학">
+    <meta itemprop="description" content="본 절에서는 비선형 시스템의 자코비안(Jacobian) 행렬이 이산 공간에서 조건수(condition number) 악화를 유발하는 수학적 근원을 해석적으로 규명한다. 이를 위해 임의의 선형 연산자 $L$에 대한 레지듀 변환(residue transform)의 수학적 정의를 수립하고, 프레셰 도함수(Fréchet derivative)의 항별 레지듀 소멸 증명을 통해 비대칭성을 유발하는 1계 대류 연산자(Advection operator)의 내부 잔차 약형식을 엄밀하게 도출한다.
+2.1 연산자 레지듀 변환미분 연산자의 대수적 특성을 분석하기 위해, 완비된 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$ 상에서 상태 함수 $\phi, \psi \in \mathcal{H}$ 에 대한 보편적 내적 $\langle \phi, \psi \rangle = \int_\Omega \phi^* \psi d\Omega$ 를 정의한다.">
+    <meta itemprop="wordCount" content="928">
+    <title>temp 2 :: 수리전자물리학</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1776575297" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1776575297" defer></script>
+    <script src="/js/search-lunr.js?1776575297" defer></script>
+    <script src="/js/search.js?1776575297" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1776575297";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1776575297" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1776575297" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1776575297" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1776575297" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1776575297" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1776575297" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1776575297" rel="stylesheet">
+    <link href="/css/theme.css?1776575297" rel="stylesheet">
+    <link href="/css/format-html.css?1776575297" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/vector_operator\/research_na\/temp\/temp2\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy text to clipboard`;
+      window.T_Copied_to_clipboard = `Text copied to clipboard!`;
+      window.T_Link_copied_to_clipboard = `Link copied to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      window.T_Browser_unsupported_feature = `This browser doesn't support this feature`;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/vector_operator/research_na/temp/temp2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#21-연산자-레지듀-변환">2.1 연산자 레지듀 변환</a></li>
+        <li><a href="#22-비선형-자코비안-연산자의-프레셰-도함수-유도">2.2 비선형 자코비안 연산자의 프레셰 도함수 유도</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">수리전자물리학</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/index.html"><span itemprop="name">Vector &amp; Operator</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/vector_operator/research_na/index.html"><span itemprop="name">Research_NA</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">temp 2</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/research_na/references/index.html" title="references (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/vector_operator/research_na/temp/temp3/index.html" title="temp 3 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable vector_operator" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="temp-2">temp 2</h1>
+
+<hr>
+<p>본 절에서는 비선형 시스템의 자코비안(Jacobian) 행렬이 이산 공간에서 조건수(condition number) 악화를 유발하는 수학적 근원을 해석적으로 규명한다. 이를 위해 임의의 선형 연산자 $L$에 대한 레지듀 변환(residue transform)의 수학적 정의를 수립하고, 프레셰 도함수(Fréchet derivative)의 항별 레지듀 소멸 증명을 통해 비대칭성을 유발하는 1계 대류 연산자(Advection operator)의 내부 잔차 약형식을 엄밀하게 도출한다.</p>
+<hr>
+<h3 id="21-연산자-레지듀-변환">2.1 연산자 레지듀 변환<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>미분 연산자의 대수적 특성을 분석하기 위해, 완비된 복소 힐베르트 공간(complex Hilbert space) $\mathcal{H}$ 상에서 상태 함수 $\phi, \psi \in \mathcal{H}$ 에 대한 보편적 내적 $\langle \phi, \psi \rangle = \int_\Omega \phi^* \psi d\Omega$ 를 정의한다.</p>
+<p>시스템의 전역적 자기 수반성(self-adjointness)이 보존되지 않는 경우, 임의의 연산자 $L$과 그 형식적 수반 연산자(formal adjoint operator) $L^\dagger$ 사이에는 대수적 괴리가 발생한다. 본 프레임워크에서는 이 비정규성을 정량화하기 위해, 레지듀 변환 연산자 $\mathcal{R}$을 오직 우측 상태 함수 $\psi$에만 작용하는 단방향 연산자로 확립한다.</p>
+$$
+\mathcal{R}(L) \equiv L - L^\dagger
+$$<p>내적 공간의 약형식(weak form) 전개는 다음과 같다.</p>
+$$
+\langle \phi, \mathcal{R}(L) \psi \rangle \equiv \langle \phi, (L - L^\dagger) \psi \rangle = \langle \phi, L \psi \rangle - \langle \phi, L^\dagger \psi \rangle
+$$<p>이 레지듀 연산자는 선형 연산자의 기본적인 가산성(additivity)과 동차성(homogeneity)을 보존한다. 물리계의 실수 스칼라 계수 $\alpha, \beta \in \mathbb{R}$ 와 임의의 선형 연산자 $A, B$ 의 선형 결합에 대하여, 수반 연산자의 분배 법칙 $(\alpha A + \beta B)^\dagger = \alpha A^\dagger + \beta B^\dagger$ 을 적용하면 다음이 성립한다.</p>
+$$\mathcal{R}(\alpha A + \beta B) = (\alpha A + \beta B) - (\alpha A + \beta B)^\dagger = \alpha(A - A^\dagger) + \beta(B - B^\dagger)
+$$$$
+= \alpha \mathcal{R}(A) + \beta \mathcal{R}(B)
+$$<hr>
+<h3 id="22-비선형-자코비안-연산자의-프레셰-도함수-유도">2.2 비선형 자코비안 연산자의 프레셰 도함수 유도<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copy link to clipboard"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>강타원형(strongly elliptic) 보존계 지배 방정식 $F(u) = D(p(u)Du) - q(u) = 0$ 의 프레셰 도함수(Fréchet derivative)인 자코비안 $J = \partial F / \partial u$ 를 전개한다. 상태 변수 $u$에 가해진 미소 섭동 $\delta u$ 에 대하여, 물성 $p(u)$와 소스 $q(u)$를 1차 테일러 전개하고 $O(\delta u^2)$ 을 소거하면 자코비안 연산자 방정식 $J \delta u = F(u + \delta u) - F(u)$ 는 다음과 같이 도출된다.</p>
+$$
+J \delta u = \underbrace{D(p(u) D\delta u)}_{L_2: \text{2계 항}} + \underbrace{D \left( \frac{\partial p}{\partial u} Du \delta u \right)}_{L_1: \text{1계 항}} \underbrace{- \frac{\partial q}{\partial u} \delta u}_{L_0: \text{0계 항}}
+$$<p>여기서 상태 변수 구배($Du$)와 물성 변화율($\partial p/\partial u$)의 곱을 유효 표류 속도(Effective Drift Velocity) $v \equiv (\partial p/\partial u) (Du)$ 로 정의하면, 1계 항은 $L_1 = D(v \cdot)$ 형태의 대류 연산자(Advection operator)로 환원된다.</p>
+<p>전체 자코비안 $J = L_2 + L_1 + L_0$ 의 비대칭성을 규명하기 위해, 앞서 증명된 선형성에 의거하여 레지듀 연산자를 각 항에 개별적으로 분배 적용한다.</p>
+$$
+\mathcal{R}(J) = \mathcal{R}(L_2) + \mathcal{R}(L_1) + \mathcal{R}(L_0)
+$$<p>콤팩트 지지(compact support) 검사 함수 공간 $C_c^\infty(\Omega)$에서의 부분 적분(경계 항 소멸)을 통해 각 항의 레지듀를 평가한다.</p>
+<p><strong>1) 0계 소스 항 ($L_0$)</strong></p>
+<p>$L_0 = -\partial q/\partial u$ 는 순수 실수 스칼라 함수이다. 스칼라 곱은 공간 내적에서 교환 법칙이 성립하므로 $\langle \phi, L_0 \psi \rangle = \langle L_0 \phi, \psi \rangle$ 이다. 따라서 형식적 수반 연산자 $L_0^\dagger = L_0$ 이 되며, 레지듀 사상 결과는 항등적으로 소멸한다.</p>
+$$
+\mathcal{R}(L_0) = L_0 - L_0^\dagger = 0
+$$<p><strong>2) 2계 주항 ($L_2$)</strong></p>
+<p>$L_2 = D(pD \cdot)$ 에 대하여 약형식 전개를 수행한다.</p>
+$$
+\langle \phi, D(pD\psi) \rangle = -\langle D\phi, pD\psi \rangle
+$$<p>여기서 물성 $p$는 실수 스칼라이므로 $pD\psi$ 에 곱해지나 $D\phi$ 에 곱해지나 동일하다. 한 번 더 부분 적분을 수행하여 미분 연산자를 이동시킨다.</p>
+$$
+-\langle pD\phi, D\psi \rangle = \langle D(pD\phi), \psi \rangle
+$$<p>결과적으로 $L_2^\dagger = D(pD \cdot) = L_2$ 이며, 2계 확산 연산자는 완전한 형식적 자기 수반성을 가지므로 레지듀는 소멸한다.</p>
+$$
+\mathcal{R}(L_2) = L_2 - L_2^\dagger = 0
+$$<p><strong>3) 1계 대류 연산자의 내부 잔차 약형식 도출</strong></p>
+<p>0계 항과 2계 항의 레지듀가 대수적으로 소멸함에 따라, 전체 자코비안의 비정규성을 지배하는 연산자는 오직 1계 대류 연산자 $L_1$ 으로 귀결된다.</p>
+$$
+\mathcal{R}(J) = \mathcal{R}(L_1)
+$$<p>살아남은 1계 대류 연산자 $L_1 = D(v \cdot)$ 에 레지듀 사상 $\mathcal{R}(L) = L - L^\dagger$ 를 적용한다.부분 적분에 의해 대류 연산자의 형식적 수반 연산자는 $\langle \phi, D(v\psi) \rangle = \langle -vD\phi, \psi \rangle$ 로부터 $L_1^\dagger = -vD$ 로 결정된다. 이를 대입하여 1계 레지듀 사상을 전개한다.</p>
+$$
+\mathcal{R}(L_1)\psi = (L_1 - L_1^\dagger)\psi = D(v\psi) - (-vD\psi) = D(v\psi) + v(D\psi)
+$$<p>여기에 연속 공간의 라이프니츠 법칙(Leibniz rule) $D(v\psi) = (Dv)\psi + v(D\psi)$ 를 첫 번째 항에 적용하여 분해한다.</p>
+$$
+\mathcal{R}(L_1)\psi = \left[ (Dv)\psi + v(D\psi) \right] + v(D\psi) = (Dv)\psi + 2v(D\psi)
+$$<p>이를 내적 공간의 약형식으로 최종 표현하면, 비선형 자코비안 행렬에서 발생하는 내부 잔차(Internal Residue)의 대수적 실체가 다음과 같이 규명된다.</p>
+$$
+\langle \phi, \mathcal{R}(J)\psi \rangle_\Omega = \langle \phi, \left[ (Dv)\psi + 2v(D\psi) \right] \rangle_\Omega
+$$<p>이 도출된 1계 대류 잔차 약형식은 3장에서 이산 공간의 교환자 오차(commutator error)를 분석하고 위상 공간을 재배치하는 국소 비대칭 지표 산출의 엄밀한 대수적 근거로 활용된다.</p>
+<p>이러한 대수적 비대칭성의 본질을 물리적으로 규명하기 위해, 추상 연산자 $D$ 로 기술된 자코비안을 $d$ 차원 연속 공간 $\Omega \subset \mathbb{R}^d$ 상의 미분 연산자 $\nabla$ (Gradient) 및 $\nabla \cdot$ (Divergence)로 사상(mapping)하여 연속계의 텐서 특성을 해석한다.연속 공간 상에서 유효 표류 속도는 $v = \frac{\partial p}{\partial u} \nabla u$ 로 사상된다. 벡터 미적분학의 항등식에 따라, 해당 연속계 벡터장 $v$ 의 와도(vorticity)를 산출하면 다음과 같이 전개된다.</p>
+$$
+\nabla \times v = \nabla \times \left( \frac{\partial p}{\partial u} \nabla u \right) = \nabla \left( \frac{\partial p}{\partial u} \right) \times \nabla u + \frac{\partial p}{\partial u} (\nabla \times \nabla u)
+$$<p>스칼라 구배의 회전은 항등적으로 영($\nabla \times \nabla u \equiv 0$)이므로, 최종 와도는 다음과 같이 결정된다.</p>
+$$
+\nabla \times v = \nabla \left( \frac{\partial p}{\partial u} \right) \times \nabla u
+$$<p>결과적으로, 이산계 행렬 내부에 갇혀 선형 솔버의 발산을 유발하는 비대칭성(Asymmetry)은 단순한 수치적 섭동(numerical perturbation)이 아니다. 이는 연속계 지배 방정식 내에 존재하는 상태 변수 구배($\nabla u$)와 물성 변화율 구배($\nabla(\partial p/\partial u)$) 벡터 간의 공간적 비평행성(non-parallelism)이 유발하는 필연적인 물리적 회전 텐서($\nabla \times v \ne 0$)에 기인함이 해석적으로 증명된다. 본 증명은 유효 표류 속도의 발산량($Dv$)과 동질적 이류 작용($2vD$)이 결합될 때 시스템 내부의 비대칭성이 폭발함을 수학적으로 확정짓는다.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">수리전자물리학</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-url="/vector_operator/index.html"><a class="padding" href="/vector_operator/index.html">Vector &amp; Operator</a><ul id="R-subsections-f7c3032b524a5ff2f898ca9ef0ca3912" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/vector_operator/euclidean_vector/index.html"><a class="padding" href="/vector_operator/euclidean_vector/index.html">Euclidean vector</a><ul id="R-subsections-b4642da29014384b2c31d1d16e79f70d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/hilbert_vector/index.html"><a class="padding" href="/vector_operator/hilbert_vector/index.html">Hilbert vector</a><ul id="R-subsections-ac4e9b1913f72014f203d1b98bf1576f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/dirac_notation/index.html"><a class="padding" href="/vector_operator/dirac_notation/index.html">Dirac notation</a><ul id="R-subsections-95650e5688a8b1848e0c0a80ef2d502d" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/determinant_norm/index.html"><a class="padding" href="/vector_operator/determinant_norm/index.html">Determinant &amp; Norm</a><ul id="R-subsections-de0f2e5f182c9c66ad0a0dbc6827ad26" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/eigenvalue_problem/index.html"><a class="padding" href="/vector_operator/eigenvalue_problem/index.html">Eigenvalue problem</a><ul id="R-subsections-0cc074cf5a6f5d1d2b6704f3550bd2b0" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/commutator/index.html"><a class="padding" href="/vector_operator/commutator/index.html">Commutator</a><ul id="R-subsections-7b9942c7b1ae16c146cbd41853492205" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/normal_operators/index.html"><a class="padding" href="/vector_operator/normal_operators/index.html">Normal operators</a><ul id="R-subsections-905b25b2f9d7f1b3be7bf4cd30cb4890" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/vector_operator/b_function_of_operators/index.html"><a class="padding" href="/vector_operator/b_function_of_operators/index.html">(b) Function of operators</a></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/lie_group/index.html"><a class="padding" href="/vector_operator/lie_group/index.html">Lie group</a><ul id="R-subsections-151dfc93cd20c62e45fd76f3a25c4a49" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/numerial_analysis/index.html"><a class="padding" href="/vector_operator/numerial_analysis/index.html">Numerial analysis</a><ul id="R-subsections-0dfb73d541d14b8fb9702931ae53cfe1" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/vector_operator/research_na/index.html"><a class="padding" href="/vector_operator/research_na/index.html">Research_NA</a><ul id="R-subsections-302336cd3102d0268cf92834564071db" class="collapsible-menu">
+            <li class="" data-nav-url="/vector_operator/research_na/theory1/index.html"><a class="padding" href="/vector_operator/research_na/theory1/index.html">(b) Theory1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/theory2/index.html"><a class="padding" href="/vector_operator/research_na/theory2/index.html">(b) Theory 2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/outline/index.html"><a class="padding" href="/vector_operator/research_na/outline/index.html">OUTLINE</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter1/index.html"><a class="padding" href="/vector_operator/research_na/chapter1/index.html">CHAPTER 1</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter2/index.html"><a class="padding" href="/vector_operator/research_na/chapter2/index.html">CHAPTER 2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter3/index.html"><a class="padding" href="/vector_operator/research_na/chapter3/index.html">CHAPTER 3</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter4/index.html"><a class="padding" href="/vector_operator/research_na/chapter4/index.html">CHAPTER 4</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/chapter5/index.html"><a class="padding" href="/vector_operator/research_na/chapter5/index.html">CHAPTER 5</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/appendix/index.html"><a class="padding" href="/vector_operator/research_na/appendix/index.html">Appendix</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/references/index.html"><a class="padding" href="/vector_operator/research_na/references/index.html">references</a></li>
+            <li class="active " data-nav-url="/vector_operator/research_na/temp/temp2/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp2/index.html">temp 2</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp3/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp3/index.html">temp 3</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/temp/temp4/index.html"><a class="padding" href="/vector_operator/research_na/temp/temp4/index.html">temp 4</a></li>
+            <li class="" data-nav-url="/vector_operator/research_na/kor/index.html"><a class="padding" href="/vector_operator/research_na/kor/index.html">Papaer_kr</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/research_sbd/index.html"><a class="padding" href="/vector_operator/research_sbd/index.html">research_SBD</a><ul id="R-subsections-e18a822b16ff9efc545c6b23dfc7556b" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/vector_operator/research_pin/index.html"><a class="padding" href="/vector_operator/research_pin/index.html">Reserch_PIN</a><ul id="R-subsections-6ddf49e7c174abf7ead60452e1632a62" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/linear_system/index.html"><a class="padding" href="/linear_system/index.html">Linear system</a><ul id="R-subsections-9095feccd9c40c3ed7214f0288d9a6e4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/ode_pde/index.html"><a class="padding" href="/ode_pde/index.html">ODE &amp; PDE</a><ul id="R-subsections-1bd4b0347f4404fecaa4cbeb8c412bef" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/geometric_algebra/index.html"><a class="padding" href="/geometric_algebra/index.html">Geometric algebra</a><ul id="R-subsections-0bd4773a8cd46b9efb9e610fc2712891" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/tensor_analysis/index.html"><a class="padding" href="/tensor_analysis/index.html">Tensor analysis</a><ul id="R-subsections-ba512638989383b70cc4d060433a8192" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/electromagnetics/index.html"><a class="padding" href="/electromagnetics/index.html">Electromagnetics</a><ul id="R-subsections-da14210fc3b2ae144e3adf451214f586" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/temp/index.html"><a class="padding" href="/temp/index.html">Temps</a><ul id="R-subsections-a639066184a268294d198d8eec999e8d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{ \"chtml\": { \"displayAlign\": \"left\", \"displayIndent\": \"3.5em\" }}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1776575297"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1776575297" defer></script>
+    <script src="/js/theme.js?1776575297" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research :: 수리전자물리학</title>
+    <link>http://localhost:1313/research/index.html</link>
+    <description>research_SBD&#xD;Research_NA&#xD;Reserch_PIN</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>research_SBD</title>
+      <link>http://localhost:1313/research/research_sbd/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_sbd/index.html</guid>
+      <description>Preresearch&#xD;Paper_kr&#xD;Paper_eng</description>
+    </item>
+    <item>
+      <title>Research_NA</title>
+      <link>http://localhost:1313/research/research_na/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_na/index.html</guid>
+      <description>Preresearch&#xD;Paper_kr&#xD;Paper_eng&#xD;Paper_eng_2</description>
+    </item>
+    <item>
+      <title>Reserch_PIN</title>
+      <link>http://localhost:1313/research/research_pin/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research_pin/index.html</guid>
+      <description>Outline&#xD;Derivation1&#xD;Derivation2</description>
+    </item>
+  </channel>
+</rss>
