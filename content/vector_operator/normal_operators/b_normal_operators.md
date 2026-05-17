@@ -7,12 +7,17 @@ weight = 1.5
 
 ### 1. 정규 연산자의 정의
 
-연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 즉 교환자가 0일 때 **정규 연산자(Normal Operator)** 라고 한다.
-$$
-[\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0
-$$
+연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 노름 보존 조건을 만족하는 경우, **정규 연산자(Normal Operator)** 라고 한다.
 
-이 조건을 만족하는 연산자는 **항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장** 된다.
+- [$\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$
+
+- 무한 차원을 포괄하는 보편적/해석학적 조건: 정의역 일치 $\mathcal{D}(\hat{A}) = \mathcal{D}(\hat{A}^\dagger)$ 및 노름 보존 $\|\hat{A}\psi\| = \|\hat{A}^\dagger\psi\|$
+
+이 조건을 만족하는 연산자는 **항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장** 된다. 고유값이 $\lambda_i$, 고유상태벡터가 $|\lambda_i\rangle$ 라고 할 때,
+
+$$\hat{A} = \sum_i \lambda_i |\lambda_i\rangle \langle \lambda^i| \quad \text{or} \quad \hat{A} = \int d\lambda\, \lambda |\lambda\rangle \langle \lambda^d|$$
+
+$$\hat{A}^\dagger = \sum_i \lambda_i^\ast |\lambda_i\rangle \langle \lambda^i| \quad \text{or} \quad \hat{A}^\dagger = \int d\lambda\, \lambda^\ast |\lambda\rangle \langle \lambda^d|$$
 
 ---
 
@@ -72,206 +77,65 @@ $$
  
 $\lambda_1 \neq \lambda_2$ 이므로 반드시 $\langle v_1|v_2\rangle = 0$ 이어야 한다.
 
-**3) 특성 3: 에르미트/반-에르미트 부분의 교환 가능성**
+**3) 특성 3: 고유값이 중복되더라도 고유벡터는 선형 독립이며 상호 직교하도록 구성할 수 있다.**
 
-> **정리**: 연산자 $\hat{A}$가 정규 연산자인 것은, 그 에르미트 부분 $\hat{H} = \frac{1}{2}(\hat{A}+\hat{A}^\dagger)$와 반-에르미트 부분 $\hat{S} = \frac{1}{2}(\hat{A}-\hat{A}^\dagger)$가 서로 교환 가능한 것($[\hat{H}, \hat{S}]=0$)과 동치이다.
-
-> **증명**:
-> 1. $\hat{A}=\hat{H}+\hat{S}$ 이고 $\hat{A}^\dagger=\hat{H}-\hat{S}$ 이다.
-> 2. 교환자 $[\hat{A}, \hat{A}^\dagger]$를 계산한다.
->
-$$
-\begin{align*}
-[\hat{A}, \hat{A}^\dagger] &= (\hat{H} + \hat{S})(\hat{H} - \hat{S}) - (\hat{H} - \hat{S})(\hat{H} + \hat{S}) \\
-&= (\hat{H}^2 - \hat{H}\hat{S} + \hat{S}\hat{H} - \hat{S}^2) - (\hat{H}^2 + \hat{H}\hat{S} - \hat{S}\hat{H} - \hat{S}^2) \\
-&= -\hat{H}\hat{S} + \hat{S}\hat{H} - \hat{H}\hat{S} + \hat{S}\hat{H} \\
-&= 2(\hat{S}\hat{H} - \hat{H}\hat{S}) = 2[\hat{S}, \hat{H}]
-\end{align*}
-$$
-> 3. 따라서 $[\hat{A}, \hat{A}^\dagger]=0$인 것은 $[\hat{S}, \hat{H}]=0$, 즉 $[\hat{H}, \hat{S}]=0$인 것과 동치이다.
-
-#### **특성 4: 연산자와 수반의 동일한 '크기'**
-
-> **정리**: 연산자 $\hat{A}$가 정규 연산자인 것은, 모든 벡터 $|v\rangle$에 대해 $||\hat{A}|v\rangle|| = ||\hat{A}^\dagger|v\rangle||$ 인 것과 동치이다.
-
-> **증명**: $ ||\hat{A}|v\rangle||^2 = \langle v|\hat{A}^\dagger\hat{A}|v\rangle$ 이고 $ ||\hat{A}^\dagger|v\rangle||^2 = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 이다. 따라서 두 크기가 같은 것은 $\langle v|\hat{A}^\dagger\hat{A}|v\rangle = \langle v|\hat{A}\hat{A}^\dagger|v\rangle$ 와 동치이며, 이는 $\langle v|[\hat{A}^\dagger, \hat{A}]|v\rangle=0$을 의미한다. 모든 벡터에 대해 이 식이 성립하려면 연산자 $[\hat{A}^\dagger, \hat{A}]$가 0이어야 하므로, $\hat{A}$가 정규 연산자임과 동치이다.
-
-#### **특성 5: 영공간과 열공간의 직교성**
-
-> **정리**: 정규 연산자 $\hat{A}$의 영공간($N(A)$)은 그 열공간($C(A)$)과 항상 서로 수직이다.
-
-> **증명**:
-> 1. **보편적 원리**: 선형대수학의 기본 정리에 따라, 모든 행렬에 대해 영공간은 **행공간(Row Space, $C(A^T)$)**과 수직이다: $N(A) \perp C(A^T)$.
-> 2. **정규 연산자의 특성**: 정규 연산자는 **열공간과 행공간이 같다**: $C(A) = C(A^T)$. (이는 특성 1로부터 유도된다. 영공간의 직교 보공간은 행공간($N(A)^\perp=C(A^T)$)이고, 좌측 영공간의 직교 보공간은 열공간($N(A^\dagger)^\perp=C(A)$)이다. 특성 1에서 $N(A)=N(A^\dagger)$이므로, 그 직교 보공간인 $C(A^T)$와 $C(A)$도 같다.)
-> 3. **결론**: 따라서, 1번과 2번을 종합하면, 정규 연산자에 대해서는 $N(A) \perp C(A)$가 성립함이 증명된다. ✅
-
-### 비교: 비정규 연산자
-
-
-정규 연산자가 아닌 경우, 완비적인 고유벡터 기저를 갖지 못할 수 있다. 이러한 행렬을 '불완전 행렬(defective matrix)'이라고 한다. 이들은 공간을 순수하게 늘리거나 줄이는 것이 아닌, '찌그러뜨리는(shear)' 변환을 포함하여 안정적인 불변 방향이 부족하다.
-
-- **예제 (비정규 행렬)**: $\hat{A} = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$
-    - $\hat{A}^\dagger = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}$
-    - $[\hat{A}, \hat{A}^\dagger] = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \neq 0$ 이므로 정규 행렬이 아니다.
-    - 이 행렬의 고유벡터는 $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ 방향 하나뿐이므로, 2차원 공간의 기저를 이룰 수 없다.
-
----
-### 가역성 (Invertibility)
-
-정규 연산자의 가역성은 고유값에 의해 결정된다. "가역적이다"라는 것은 "역변환이 존재한다"는 의미이며, 이는 "0으로 소멸되는 정보(영공간)가 없다"는 것과 같다.
-
-- **가역적 정규 연산자 (Invertible Normal Operator)**
-    - **조건**: **모든 고유값이 0이 아닐 때**.
-    - **증명**: 행렬식은 고유값의 곱($\det(A) = \prod \lambda_i$)과 같다. 모든 고유값이 0이 아니면, 행렬식은 0이 아니므로 역행렬이 존재한다. 이 경우 영공간은 $\{0\}$ 뿐이다.
-    - **물리적 의미**: 변환 과정에서 정보의 손실이 없으며, 0이 아닌 상태를 0 상태로 보내지 않는다.
-    - **예제**: $\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$는 정규(에르미트) 행렬이며, 고유값은 $1, -1$이므로 가역적이다.
-
-- **비가역적 정규 연산자 (Non-invertible Normal Operator)**
-    - **조건**: **적어도 하나의 고유값이 0일 때**.
-    - **증명**: 고유값 중 0이 하나라도 포함되면, 행렬식($\det(A) = \prod \lambda_i$)은 0이 된다. 따라서 역행렬이 존재하지 않으며, 고유값 0에 해당하는 고유벡터들이 0이 아닌 영공간을 형성한다.
-    - **물리적 의미**: 변환 과정에서 특정 상태(영공간)의 정보가 '소멸'된다.
-    - **예제**: $\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$는 정규(에르미트) 행렬이며, 고유값은 $0, 2$이므로 비가역적이다.
-
----
-
-### 심화(논문): : Derivation of Global Conservation Identities
-
-앞선 챕터에서 언급된 바와 같이, 임의의 선형 연산자 $\hat{L}$에 대하여, 시스템의 경계 비대칭성을 추출하는 **레지듀 변환 $\mathcal{R}$** 은 힐베르트 공간 내에서 다음과 같이 정의된다. 이 정의는 모든 유도 과정의 출발점이자, 시스템의 '객관적 실재'와 '예측' 사이의 간극을 규정하는 공리이다.
-
-$$
-\langle \phi \mid \mathcal{R}\hat{L} \mid \psi \rangle \equiv \langle \phi \mid \hat{L} \psi \rangle - \langle \hat{L}^\dagger \phi \mid \psi \rangle
-$$
-
-**1) Operator Conservation Law**
-
-아래 식은 연산자의 비정규성(Non-normality)이 상태 함수의 노름 변화와 경계 플럭스에 의해 어떻게 결정되는지 보여준다.
-
-$$
-\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \langle \psi \mid \mathcal{R}_W(\hat{L}^\dagger, \hat{L}) \mid \psi \rangle
-$$
-
-$$
-\mathcal{R}_\mathcal{W} = \begin{vmatrix} \mathcal{R}\hat{L}^\dagger & \mathcal{R}\hat{L} \\ \hat{L}^\dagger & \hat{L} \end{vmatrix}
-$$
+고유값이 중복(축퇴)되는 경우, 정규 연산자는 대수적 다중도와 기하적 다중도가 일치하여 결함(Defective) 구조를 갖지 않으므로 대응하는 고유벡터들은 선형 독립을 유지한다. 이 독립적인 기저들을 직교화하여 상호 직교하는 고유벡터군으로 재구성할 수 있다.
 
 proof)
 
-교환자 기댓값의 전개상태 $|\psi\rangle$에 대한 교환자 $[\hat{L}^\dagger, \hat{L}]$의 기댓값은 다음과 같다. 순수 수학적 정의이지만 직관적으로 이해하기 위해, "소자의 공간이 뒤틀린 것($[\hat{L}^\dagger, \hat{L}]$)이라면, 그 길을 지나가던 전자($|\psi\rangle$)가 겪은 변화의 기댓값이다." 라고 비유적으로 해석할 수 있다. 
+정규 연산자 $\hat{A}$가 $k$번 중복되는 고유값 $\lambda$를 가진다고 가정할 때, 이 고유값에 대응하는 $k$개의 선형 독립인 고유벡터 집합 $\{|u_1\rangle, |u_2\rangle, \dots, |u_k\rangle\}$이 존재하여 고유 공간(Eigenspace) $V_\lambda$를 형성한다.
+
+이 공간 $V_\lambda$ 내의 임의의 선형 결합 또한 $\hat{A}$에 대해 동일한 고유값 $\lambda$를 가지는 고유벡터가 된다.
 
 $$
-\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \langle \psi \mid \hat{L}^\dagger \hat{L} \mid \psi \rangle - \langle \psi \mid \hat{L} \hat{L}^\dagger \mid \psi \rangle
+\hat{A}\sum_{j=1}^k c_j |u_j\rangle = \sum_{j=1}^k c_j \hat{A} |u_j\rangle = \lambda \sum_{j=1}^k c_j |u_j\rangle
 $$
 
-레지듀 정의의 적용첫 번째 항 $\langle \psi \mid \hat{L}^\dagger (\hat{L}\psi) \rangle$에 대해, $\hat{L}^\dagger$를 브라 쪽으로 넘기기 위해 레지듀 정의를 적용한다.
+따라서 이 부분 공간에 속한 기저 벡터들에 그람-슈미트 직교화(Gram-Schmidt orthogonalization)를 적용하여 새로운 직교 기저 집합 $\{|e_1\rangle, |e_2\rangle, \dots, |e_k\rangle\}$를 구성한다.
 
 $$
-\langle \psi \mid \hat{L}^\dagger (\hat{L}\psi) \rangle = \langle \hat{L}\psi \mid \hat{L}\psi \rangle + \langle \psi \mid \mathcal{R}\hat{L}^\dagger \mid \hat{L}\psi \rangle = \|\hat{L}\psi\|^2 + \langle \psi \mid \mathcal{R}\hat{L}^\dagger \mid \hat{L}\psi \rangle
+|e_1\rangle = |u_1\rangle
 $$
 
 $$
-\langle \psi \mid \hat{L} (\hat{L}^\dagger \psi) \rangle = \langle \hat{L}^\dagger \psi \mid \hat{L}^\dagger \psi \rangle + \langle \psi \mid \mathcal{R}\hat{L} \mid \hat{L}^\dagger \psi \rangle = \|\hat{L}^\dagger \psi\|^2 + \langle \psi \mid \mathcal{R}\hat{L} \mid \hat{L}^\dagger \psi \rangle
+|e_j\rangle = |u_j\rangle - \sum_{i=1}^{j-1} \frac{\langle e_i|u_j\rangle}{\langle e_i|e_i\rangle} |e_i\rangle \quad (j = 2, \dots, k)
 $$
 
-두 항을 결합한다.
+새로 구성된 직교 기저 $\{|e_j\rangle\}$ 역시 고유 공간 $V_\lambda$에 속하므로 $\hat{A}$의 고유벡터 조건을 만족하며 상호 직교한다. 특성 2에 의해 다른 고유값을 가지는 고유벡터들과는 이미 직교성이 보장되므로, 이를 통해 전체 상태 공간에 대한 정규직교 기저(Orthonormal basis)가 완성된다.
 
-$$
-\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \underbrace{\langle \psi \mid \mathcal{R}\hat{L}^\dagger \mid \hat{L}\psi \rangle - \langle \psi \mid \mathcal{R}\hat{L} \mid \hat{L}^\dagger \psi \rangle}_{\text{Residue Wronskian}}
-$$
+**4) 특성 4: 영공간(Null space)과 열공간(Column space)의 직교성**
 
-여기서 **레지듀 론스키안(Residue Wronskian) $\mathcal{R}_\mathcal{W}$** 를 다음과 같이 정의함으로써 첫 번째 최종 식을 얻는다.
-
-$$
-\mathcal{R}_\mathcal{W} = \begin{vmatrix} \mathcal{R}\hat{L}^\dagger & \mathcal{R}\hat{L} \\ \hat{L}^\dagger & \hat{L} \end{vmatrix}$$
-
-$$
-\langle \psi \mid [\hat{L}^\dagger, \hat{L}] \mid \psi \rangle = \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \langle \psi \mid \mathcal{R}_W(\hat{L}^\dagger, \hat{L}) \mid \psi \rangle
-$$
-
-**2) Bulk-Boundary Dissipation Theorem**
-
-아래 식은 하이젠베르크 운동 방정식에 기반하여 시스템의 에너지 변화(소산)를 정량화한다. 즉, 시스템 내부의 저항적 변화량(Internal Friction)은 벌크 영역의 에너지 비대칭성과 경계면에서의 유출입량의 합으로 결정된다.
-
-$$
-\underbrace{\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle}_{\text{Internal Friction}} = \frac{1}{2} \underbrace{\left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right)}_{\text{Net Energy Gap}} + \underbrace{\langle \psi \mid \mathcal{R}_W (\hat{H}, \hat{A}) \mid \psi \rangle}_{\text{Residue Wronskian}}
-$$
+정규 연산자의 영공간 $\ker(\hat{A})$과 열공간(치역, $\text{ran}(\hat{A})$)은 서로 직교한다. 
 
 proof)
 
-해밀토니안 소산 구조를 설정한다. 임의의 연산자 $\hat{L}$ 에 대하여, 허미션 파트 $\hat{H}$ 와 반-허미션 파트 $\hat{A}$ 는 다음과 같이 정의된다.
-
-$$\hat{L} = \hat{H} + \hat{A}$$
-$$\hat{L}^\dagger = \hat{H} - \hat{A} \quad (\text{단, } \hat{H}^\dagger = \hat{H}, \hat{A}^\dagger = -\hat{A})$$
-
-교환자의 내적 전개 (Expansion of Commutator)를 한다. 에너지로 비유를 하면, 순간 내부 마찰에 의해 에너지가 열로 전환되고 있는 소산율(Dissipation Rate)의 기댓값을 의미한다. 예시가 아닌 식 자체로의 본질적인 해석은 시스템의 동역학적 불일치를 보여주는 핵심 지표이다.
- 
-$$
-\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle = \langle \psi \mid \hat{H}\hat{A} \mid \psi \rangle - \langle \psi \mid \hat{A}\hat{H} \mid \psi \rangle
-$$
-  
-여기서 우리가 이전에 정의한 **레지듀 변환($\mathcal{R}$)** 을 사용한다. 연산자를 브라(Bra) 쪽으로 넘길 때 발생하는 경계 오차를 보정해주는 규칙이다.
+먼저, 정규 연산자의 영공간은 수반 연산자의 영공간과 완전히 일치함을 증명한다.
+정규 연산자의 노름 보존 조건에 의해 임의의 벡터 $|v\rangle$에 대해 다음이 성립한다.
 
 $$
-\langle \psi \mid \hat{H}(\hat{A}\psi) \rangle = \langle \hat{H}^\dagger \psi \mid \hat{A}\psi \rangle + \langle \psi \mid \mathcal{R}\hat{H} \mid \hat{A}\psi \rangle$$
-
-$$\langle \psi \mid \hat{A}(\hat{H}\psi) \rangle = \langle \hat{A}^\dagger \psi \mid \hat{H}\psi \rangle + \langle \psi \mid \mathcal{R}\hat{A} \mid \hat{H}\psi \rangle$$
-
-두 식을 빼면 다음과 같다.
-
-$$
-\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle = \left( \langle \hat{H} \psi \mid \hat{A} \psi \rangle + \langle \hat{A} \psi \mid \hat{H} \psi \rangle \right) + \left( \langle \psi \mid \mathcal{R} \hat{H} (\hat{A}\psi) \rangle - \langle \psi \mid \mathcal{R} \hat{A} (\hat{H}\psi) \rangle \right)
+\|\hat{A}v\| = \|\hat{A}^\dagger v\|
 $$
 
-위 식에서 첫번째 괄호는 복소 내적의 성질을 이용해 다음과 같이 변환된다.
+만약 $|v\rangle \in \ker(\hat{A})$ 라면 $\hat{A}|v\rangle = 0$ 이므로 $\|\hat{A}v\| = 0$ 이다.
+따라서 $\|\hat{A}^\dagger v\| = 0$ 이 되어 $\hat{A}^\dagger|v\rangle = 0$ 을 만족하므로 $|v\rangle \in \ker(\hat{A}^\dagger)$ 이다. 역의 과정도 동일하게 성립하므로 최종적으로 $\ker(\hat{A}) = \ker(\hat{A}^\dagger)$ 이다.
+
+다음으로 일반적인 연산자에서 열공간 $\text{ran}(\hat{A})$의 임의의 벡터 $|w\rangle$와 $\ker(\hat{A}^\dagger)$의 임의의 벡터 $|u\rangle$의 내적을 계산한다.
+$|w\rangle \in \text{ran}(\hat{A})$ 이므로 특정 벡터 $|v\rangle$에 대해 $|w\rangle = \hat{A}|v\rangle$ 로 표현된다.
 
 $$
-\langle \hat{H} \psi \mid \hat{A} \psi \rangle + \langle \hat{A} \psi \mid \hat{H} \psi \rangle = 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
+\langle u|w\rangle = \langle u|\hat{A}v\rangle = \langle \hat{A}^\dagger u|v\rangle
 $$
 
-여기서 $\hat{L} = \hat{H} + \hat{A}$ 와 $\hat{L}^\dagger = \hat{H} - \hat{A}$ 의 노름(Norm) 차이를 계산해 본다.
+$|u\rangle \in \ker(\hat{A}^\dagger)$ 이므로 $\hat{A}^\dagger|u\rangle = 0$ 이다.
 
 $$
-\|\hat{L}\psi\|^2 = \|\hat{H}\psi + \hat{A}\psi\|^2 = \|\hat{H}\psi\|^2 + \|\hat{A}\psi\|^2 + 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
+\langle \hat{A}^\dagger u|v\rangle = \langle 0|v\rangle = 0
 $$
 
-$$\|\hat{L}^\dagger\psi\|^2 = \|\hat{H}\psi - \hat{A}\psi\|^2 = \|\hat{H}\psi\|^2 + \|\hat{A}\psi\|^2 - 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
-$$
+즉, 임의의 연산자에서 열공간 $\text{ran}(\hat{A})$과 수반 연산자의 영공간 $\ker(\hat{A}^\dagger)$은 항상 직교한다.
 
-따라서, 두 노름의 차이는 다음과 같이 정의된다.
-
-$$
-\frac{1}{2} \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) = 2 \text{Re} \langle \hat{H} \psi \mid \hat{A} \psi \rangle
-$$
-
-이것이 바로 시스템의 벌크 영역에서 발생하는 Net Energy Gap (순수 에너지 불균형) 항이다. 유도 과정에서 남은 경계 보정 항들을 묶어 레지듀 론스키안 $\mathcal{R}_W$로 정의한다.
+여기에 앞서 증명한 $\ker(\hat{A}) = \ker(\hat{A}^\dagger)$ 조건을 대입하면, 정규 연산자에 대하여 영공간과 열공간의 직교성이 완벽하게 성립함이 증명된다.
 
 $$
-\langle \psi \mid \mathcal{R}_W (\hat{H}, \hat{A}) \mid \psi \rangle = \langle \psi \mid \mathcal{R}\hat{H} \mid \hat{A} \psi \rangle - \langle \psi \mid \mathcal{R}\hat{A} \mid \hat{H} \psi \rangle
+\text{ran}(\hat{A}) \perp \ker(\hat{A})
 $$
-
-이 항은 연산자의 비가환성(Non-commutativity)이 경계면(Boundary)에서 어떻게 소산으로 나타나는지를 수학적으로 포착한다. 위의 과정들을 병합하면 최종 정리 형태가 도출된다.
-
-$$
-\langle \psi \mid [\hat{H}, \hat{A}] \mid \psi \rangle = \frac{1}{2} \left( \|\hat{L}\psi\|^2 - \|\hat{L}^\dagger \psi\|^2 \right) + \langle \psi \mid \mathcal{R}_W (\hat{H}, \hat{A}) \mid \psi \rangle
-$$
-
-**3) 레지듀 론스키안의 물리적 의미**
-
-레지듀 론스키안은 단순한 수학적 잔여항이 아니라, 시스템의 **실재(Reality)** 와 이를 수용하는 경계의 관측(Observation) 사이의 위상적 불일치를 정량화하는 지표이다. 이를 **'위상적 틀어짐(Topological Skewness)'** 의 관점에서 기술한다.
-
-(1) 열벡터 구조와 위상 공간의 축 정의
-
-레지듀 론스키안 행렬 $\mathcal{R}_\mathcal{W}$를 구성하는 두 열벡터는 시스템을 기술하는 두 개의 독립적인 위상 축(Basis)으로 해석된다.
-
-$$
-\mathcal{R}_\mathcal{W} = \begin{vmatrix} \mathbf{v}_1 & \mathbf{v}_2 \end{vmatrix} = \begin{vmatrix} \mathcal{R}\hat{L}^\dagger & \mathcal{R}\hat{L} \\ \hat{L}^\dagger & \hat{L} \end{vmatrix}
-$$
-
-- 제1열 ($\mathbf{v}_1$, 관측 축): 전극(Contact)이 전자를 받아들이기 위해 설정한 **수용 조건(Lens Profile)** 이다. 이는 시스템이 외부와 소통하는 관측의 기준선을 의미한다.
-- 제2열 ($\mathbf{v}_2$, 실재 축): 채널(Channel) 내부에서 전자가 실제로 보여주는 **물리적 거동(Object Profile)** 이다. 이는 관측자와 무관하게 존재하는 시스템의 실재를 의미한다.
-
-(2) 행렬식(Determinant)과 에너지 소산의 메커니즘
-
-행렬식 $\mathcal{R}_\mathcal{W}$은 두 위상 축이 이루는 평행사변형의 면적을 의미하며, 이는 곧 '관측'과 '실재'가 경계면에서 얼마나 어긋나 있는지를 나타내는 **'위상적 마찰 계수'** 가 된다.
-
-- 정합 상태 ($\text{det} \approx 0$): 관측 축과 실재 축이 평행하거나 직교성을 유지하여, 전자가 자신의 파동 형태를 바꾸지 않고 전극으로 부드럽게 전이되는 상태이다.
-- 뒤틀림 상태 ($\text{det} \neq 0$): 두 축 사이의 각도가 좁아지며 위상 공간이 찌그러지는 상태이다. 전자는 전극의 수용 조건에 맞추기 위해 자신의 양자 상태를 억지로 변형시켜야 하며, 이 과정에서 발생하는 **'수학적 불일치의 총량'** 이 물리적인 **에너지 소산(Dissipation)** 으로 치환된다.

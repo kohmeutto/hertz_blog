@@ -47,3 +47,31 @@ $$
 - **고유함수 및 고유값**: $\hat{P}e^{ikx} = (\hbar k)e^{ikx}$.
     - 고유함수는 평면파 $e^{ikx}$이다.
     - 고유값(측정 가능한 운동량)은 $\hbar k$이며, $k$가 실수이므로 항상 실수이다.
+
+---
+
+### 4. Decomposition of Operators
+
+임의의 연산자 $\hat{A}$는 복잡하고 혼란스러워 보일 수 있다. 그러나 수반 연산자($\hat{A}^\dagger$)라는 거울을 이용하면, 모든 연산자는 예외 없이 질서를 상징하는 대칭 성분과 변화를 상징하는 반대칭 성분으로 유일하게 분해된다. 이를 카르테시안 분해(Cartesian Decomposition) 또는 **토플리츠 분해(Toeplitz Decomposition)** 라고 한다.
+
+임의의 연산자 $\hat{A}$를 에르미트 부분($\hat{H}$)과 반-에르미트 부분($\hat{S}$)의 합으로 정의하자.
+
+$$
+\hat{A} = \hat{H} + \hat{S}
+$$
+
+이때, $\hat{H}$는 에르미트 성질($\hat{H}^\dagger = \hat{H}$)을, $\hat{S}$는 반-에르미트 성질($\hat{S}^\dagger = -\hat{S}$)을 가져야 한다. 수반 연산자의 성질을 이용해 양변에 수반 작용을 가하면,
+
+$$
+\hat{A}^\dagger = (\hat{H} + \hat{S})^\dagger = \hat{H}^\dagger + \hat{S}^\dagger = \hat{H} - \hat{S}
+$$
+
+위 두 식을 더하고 빼서 정리하면, 우리는 $\hat{A}$를 구성하는 두 조각의 **유일한 해(Unique Solution)** 를 도출하게 된다.
+
+$$
+\text{Hermitian Part: } \hat{H} = \frac{1}{2}(\hat{A} + \hat{A}^\dagger)
+$$
+
+$$
+\text{Anti-Hermitian Part: } \hat{S} = \frac{1}{2}(\hat{A} - \hat{A}^\dagger)
+$$

@@ -1,6 +1,6 @@
 +++
 title = "Numerial analysis"
-weight = 13
+weight = 14
 +++
 
 ---

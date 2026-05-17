@@ -1,6 +1,6 @@
 +++
 title = "Geometric algebra"
-weight = 6
+weight = 4
 +++
 
 ---
