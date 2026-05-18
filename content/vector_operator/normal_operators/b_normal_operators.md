@@ -21,121 +21,168 @@ $$\hat{A}^\dagger = \sum_i \lambda_i^\ast |\lambda_i\rangle \langle \lambda^i| \
 
 ---
 
-### 2. 핵심 특성 및 증명
+### 2. 특성 1: 우/좌 고유벡터의 켤레 대응
 
-**1) 특성 1: $\hat{A}$와 $\hat{A}^\dagger$는 고유벡터를 공유한다.**
+$|v\rangle$ 가 $\hat{A}$ 의 고유벡터 (eigenvalue $\lambda$) 이면, **같은 $|v\rangle$ 가 $\hat{A}^\dagger$ 의 고유벡터** (eigenvalue $\lambda^*$) 이다.
 
-만약 $|v\rangle$가 정규 행렬 $\hat{A}$의 고유값 $\lambda$에 대한 고유벡터라면, $|v\rangle$는 동시에 $\hat{A}^\dagger$의 고유값 $\lambda^*$에 대한 고유벡터이기도 하다.
- 
 $$
 \hat{A}|v\rangle = \lambda|v\rangle \iff \hat{A}^\dagger|v\rangle = \lambda^*|v\rangle
 $$
 
-proof)
-
-앞선 챕터에서, 교환자가 0이면, 고유벡터를 공유한다는 사실을 증명하였다. 이번에는 고유값이 켤레로 나타남을 증명해 보자.
-
-$$
-\langle v|\hat{A}|v\rangle = \lambda\langle v|v\rangle
-$$
-
-$$
-\langle v|\hat{A}^{\dagger}|v\rangle = (\lambda^{\ast}\langle v|)|v\rangle = \lambda^{\ast}\langle v|v\rangle
-$$
-
-따라서,
-
-$$
-\hat{A}^\dagger|v\rangle = \lambda^*|v\rangle
-$$
-
-**2) 특성 2: 서로 다른 고유값의 고유벡터는 직교한다.**
-
-$$
-\hat{A}|v_1\rangle = \lambda_1|v_1\rangle \text{ 이고 } \hat{A}|v_2\rangle = \lambda_2|v_2\rangle \text{ 일 때, } \lambda_1 \neq \lambda_2 \text{ 이면 } \langle v_1|v_2\rangle=0 \text{ 이다.}
-$$
+(단일 벡터에 대한 진술이므로 듀얼 마커 없이 $\langle v|$ 사용.)
 
 proof)
 
-$$
-\langle v_1|\hat{A}|v_2\rangle = \lambda_2\langle v_1|v_2\rangle
-$$
-
-**특성 1**을 이용하면,
+$|w\rangle := (\hat{A}^\dagger - \lambda^*)|v\rangle$ 로 정의하고, $\|w\|^2 = 0$ 을 보여 $|w\rangle = 0$, 즉 $\hat{A}^\dagger|v\rangle = \lambda^*|v\rangle$ 을 도출한다.
 
 $$
-\langle v_1|\hat{A}|v_2\rangle
-= \langle \hat{A}^\dagger v_1|v_2\rangle
-= \langle \lambda_1^*v_1|v_2\rangle = \lambda_1\langle v_1|v_2\rangle
+\|w\|^2 = \langle v|(\hat{A} - \lambda)(\hat{A}^\dagger - \lambda^*)|v\rangle
 $$
 
-두 결과가 같아야 하므로,
+전개:
 
 $$
-(\lambda_1 - \lambda_2)\langle v_1|v_2\rangle = 0
-$$ 
- 
-$\lambda_1 \neq \lambda_2$ 이므로 반드시 $\langle v_1|v_2\rangle = 0$ 이어야 한다.
+= \langle v|\hat{A}\hat{A}^\dagger|v\rangle - \lambda^*\langle v|\hat{A}|v\rangle - \lambda\langle v|\hat{A}^\dagger|v\rangle + |\lambda|^2\|v\|^2
+$$
 
-**3) 특성 3: 고유값이 중복되더라도 고유벡터는 선형 독립이며 상호 직교하도록 구성할 수 있다.**
+고유값 방정식 $\hat{A}|v\rangle = \lambda|v\rangle$ 으로부터 $\langle v|\hat{A}|v\rangle = \lambda\|v\|^2$. 내적의 sesquilinear 성에서 $\langle v|\hat{A}^\dagger|v\rangle = \overline{\langle v|\hat{A}|v\rangle} = \lambda^*\|v\|^2$. 대입:
 
-고유값이 중복(축퇴)되는 경우, 정규 연산자는 대수적 다중도와 기하적 다중도가 일치하여 결함(Defective) 구조를 갖지 않으므로 대응하는 고유벡터들은 선형 독립을 유지한다. 이 독립적인 기저들을 직교화하여 상호 직교하는 고유벡터군으로 재구성할 수 있다.
+$$
+= \langle v|\hat{A}\hat{A}^\dagger|v\rangle - 2|\lambda|^2\|v\|^2 + |\lambda|^2\|v\|^2 = \langle v|\hat{A}\hat{A}^\dagger|v\rangle - |\lambda|^2\|v\|^2
+$$
+
+여기서 **strict normal 조건** $\hat{A}\hat{A}^\dagger = \hat{A}^\dagger\hat{A}$ 을 적용:
+
+$$
+= \langle v|\hat{A}^\dagger\hat{A}|v\rangle - |\lambda|^2\|v\|^2 = \|\hat{A}|v\rangle\|^2 - |\lambda|^2\|v\|^2 = |\lambda|^2\|v\|^2 - |\lambda|^2\|v\|^2 = 0
+$$
+
+따라서 $\|w\|^2 = 0 \implies |w\rangle = 0 \implies \hat{A}^\dagger|v\rangle = \lambda^*|v\rangle$.
+
+---
+
+### 3. 특성 2: 서로 다른 고유값의 고유벡터는 biorthogonal
+
+$\hat{A}|v_i\rangle = \lambda_i|v_i\rangle$, $\hat{A}|v_j\rangle = \lambda_j|v_j\rangle$, $\lambda_i \neq \lambda_j$ 이면
+
+$$
+\langle v^i|v_j\rangle = 0
+$$
+
+여기서 $\langle v^i|$ 는 $|v_i\rangle$ 의 듀얼 기저 (위첨자 = 반변 인덱스).
+
+strict normal in 표준 L² (Hermitian 등) 의 경우 $\langle v^i| = \langle v_i|$ 이므로, 위 결과는 표준 교재의 $\langle v_i|v_j\rangle = 0$ 으로 자동 환원.
 
 proof)
 
-정규 연산자 $\hat{A}$가 $k$번 중복되는 고유값 $\lambda$를 가진다고 가정할 때, 이 고유값에 대응하는 $k$개의 선형 독립인 고유벡터 집합 $\{|u_1\rangle, |u_2\rangle, \dots, |u_k\rangle\}$이 존재하여 고유 공간(Eigenspace) $V_\lambda$를 형성한다.
+$\langle v^i|\hat{A}|v_j\rangle$ 을 두 방향으로 평가한다.
 
-이 공간 $V_\lambda$ 내의 임의의 선형 결합 또한 $\hat{A}$에 대해 동일한 고유값 $\lambda$를 가지는 고유벡터가 된다.
-
-$$
-\hat{A}\sum_{j=1}^k c_j |u_j\rangle = \sum_{j=1}^k c_j \hat{A} |u_j\rangle = \lambda \sum_{j=1}^k c_j |u_j\rangle
-$$
-
-따라서 이 부분 공간에 속한 기저 벡터들에 그람-슈미트 직교화(Gram-Schmidt orthogonalization)를 적용하여 새로운 직교 기저 집합 $\{|e_1\rangle, |e_2\rangle, \dots, |e_k\rangle\}$를 구성한다.
+**(우측 작용)** $\hat{A}|v_j\rangle = \lambda_j|v_j\rangle$ 사용:
 
 $$
-|e_1\rangle = |u_1\rangle
+\langle v^i|\hat{A}|v_j\rangle = \lambda_j\,\langle v^i|v_j\rangle
 $$
 
+**(좌측 작용)** 특성 1 에 의해 $|v_i\rangle$ 가 $\hat{A}^\dagger$ 의 고유벡터 (eigenvalue $\lambda_i^*$). 자연 내적에서 $\langle v^i| = \langle v_i|$ 이므로 $\langle v^i|$ 가 $\hat{A}$ 의 좌고유벡터 (eigenvalue $\lambda_i$):
+
 $$
-|e_j\rangle = |u_j\rangle - \sum_{i=1}^{j-1} \frac{\langle e_i|u_j\rangle}{\langle e_i|e_i\rangle} |e_i\rangle \quad (j = 2, \dots, k)
+\langle v^i|\hat{A} = \lambda_i\,\langle v^i|
 $$
 
-새로 구성된 직교 기저 $\{|e_j\rangle\}$ 역시 고유 공간 $V_\lambda$에 속하므로 $\hat{A}$의 고유벡터 조건을 만족하며 상호 직교한다. 특성 2에 의해 다른 고유값을 가지는 고유벡터들과는 이미 직교성이 보장되므로, 이를 통해 전체 상태 공간에 대한 정규직교 기저(Orthonormal basis)가 완성된다.
+이를 사용:
 
-**4) 특성 4: 영공간(Null space)과 열공간(Column space)의 직교성**
+$$
+\langle v^i|\hat{A}|v_j\rangle = \lambda_i\,\langle v^i|v_j\rangle
+$$
 
-정규 연산자의 영공간 $\ker(\hat{A})$과 열공간(치역, $\text{ran}(\hat{A})$)은 서로 직교한다. 
+두 결과를 같게 놓으면:
+
+$$
+(\lambda_i - \lambda_j)\,\langle v^i|v_j\rangle = 0
+$$
+
+$\lambda_i \neq \lambda_j$ 이므로 $\langle v^i|v_j\rangle = 0$.
+
+---
+
+### 4. 특성 3: 비결함성 — 중복 고유값에서도 완비 고유 기저
+
+strict normal 연산자는 **Jordan block 을 가지지 않는다**. 즉, 중복 고유값 $\lambda$ 에 대해 대수적 다중도와 기하적 다중도가 일치하여, 고유 공간 $V_\lambda$ 의 차원이 다중도와 같다.
+
+proof) **일반화 고유공간이 고유공간과 일치함**.
+
+핵심: $(\hat{A} - \lambda)^2 |v\rangle = 0$ 인 임의의 $|v\rangle$ 에 대해 $(\hat{A} - \lambda)|v\rangle = 0$ 임을 보이면, 일반화 고유공간 (높은 차수의 nilpotent 작용으로 0 이 되는 벡터들) 이 고유공간 (1차 작용으로 0) 과 일치함이 따라온다.
+
+$|w\rangle := (\hat{A} - \lambda)|v\rangle$ 로 놓으면 $(\hat{A} - \lambda)|w\rangle = (\hat{A} - \lambda)^2|v\rangle = 0$, 즉 $|w\rangle$ 가 고유값 $\lambda$ 의 고유벡터. **특성 1** 에 의해
+
+$$
+\hat{A}^\dagger|w\rangle = \lambda^*|w\rangle \implies (\hat{A}^\dagger - \lambda^*)|w\rangle = 0
+$$
+
+이제 $\|w\|^2$ 를 계산:
+
+$$
+\|w\|^2 = \langle w|w\rangle = \langle w|(\hat{A} - \lambda)|v\rangle
+$$
+
+b_adjoint.md §2 의 수반 관계로 $\hat{A} - \lambda$ 를 bra 쪽으로 옮기면:
+
+$$
+= \langle (\hat{A}^\dagger - \lambda^*)w|v\rangle = \langle 0|v\rangle = 0
+$$
+
+따라서 $|w\rangle = 0$, 즉 $(\hat{A} - \lambda)|v\rangle = 0$. **Jordan block 부재 증명 완료**.
+
+**다중도 = 고유공간 차원**: 위 결과로 고유값 $\lambda$ 의 대수적 다중도 ($k$) 만큼의 선형 독립 고유벡터가 $V_\lambda$ 에 존재.
+
+**Biorthogonalization**: $V_\lambda$ 의 $k$ 개의 선형 독립 고유벡터 $\{|u_1\rangle, \ldots, |u_k\rangle\}$ 에 Gram-Schmidt 직교화 (자연 내적에서) 를 적용하면 biorthogonal 기저 $\{|e_1\rangle, \ldots, |e_k\rangle\}$ 가 얻어진다.
+
+$$
+|e_1\rangle = |u_1\rangle, \quad |e_j\rangle = |u_j\rangle - \sum_{i=1}^{j-1}\frac{\langle e^i|u_j\rangle}{\langle e^i|e_i\rangle}|e_i\rangle
+$$
+
+(여기서 $\langle e^i|$ 는 듀얼 기저, 위첨자 인덱스.) 특성 2 에 의해 다른 고유값과의 biorthogonality 가 자동 보장. 결과적으로 전체 공간의 biorthogonal 완비 기저가 완성된다.
+
+---
+
+### 5. 특성 4: 영공간과 열공간의 직교성
+
+strict normal 연산자에서 **영공간(null space)** 과 **열공간(range)** 은 직교한다.
+
+$$
+\ker(\hat{A}) \perp \text{ran}(\hat{A})
+$$
+
+즉, $|u\rangle \in \ker(\hat{A})$, $|w\rangle \in \text{ran}(\hat{A})$ 이면 $\langle u|w\rangle = 0$. 여기서 $|u\rangle, |w\rangle$ 는 부분공간의 단일 원소이므로 듀얼 마커 없이 $\langle u|, \langle w|$ 사용.
 
 proof)
 
-먼저, 정규 연산자의 영공간은 수반 연산자의 영공간과 완전히 일치함을 증명한다.
-정규 연산자의 노름 보존 조건에 의해 임의의 벡터 $|v\rangle$에 대해 다음이 성립한다.
+**(단계 1)** $\ker(\hat{A}) = \ker(\hat{A}^\dagger)$.
+
+노름 보존 조건 $\|\hat{A}|v\rangle\| = \|\hat{A}^\dagger|v\rangle\|$ 으로부터:
 
 $$
-\|\hat{A}v\| = \|\hat{A}^\dagger v\|
+|v\rangle \in \ker(\hat{A}) \iff \|\hat{A}|v\rangle\| = 0 \iff \|\hat{A}^\dagger|v\rangle\| = 0 \iff |v\rangle \in \ker(\hat{A}^\dagger)
 $$
 
-만약 $|v\rangle \in \ker(\hat{A})$ 라면 $\hat{A}|v\rangle = 0$ 이므로 $\|\hat{A}v\| = 0$ 이다.
-따라서 $\|\hat{A}^\dagger v\| = 0$ 이 되어 $\hat{A}^\dagger|v\rangle = 0$ 을 만족하므로 $|v\rangle \in \ker(\hat{A}^\dagger)$ 이다. 역의 과정도 동일하게 성립하므로 최종적으로 $\ker(\hat{A}) = \ker(\hat{A}^\dagger)$ 이다.
+이는 strict normal 의 직접 결과 (특성 1 의 특수 사례: $\lambda = 0$).
 
-다음으로 일반적인 연산자에서 열공간 $\text{ran}(\hat{A})$의 임의의 벡터 $|w\rangle$와 $\ker(\hat{A}^\dagger)$의 임의의 벡터 $|u\rangle$의 내적을 계산한다.
-$|w\rangle \in \text{ran}(\hat{A})$ 이므로 특정 벡터 $|v\rangle$에 대해 $|w\rangle = \hat{A}|v\rangle$ 로 표현된다.
+**(단계 2)** 임의의 연산자에서 $\text{ran}(\hat{A}) \perp \ker(\hat{A}^\dagger)$.
 
-$$
-\langle u|w\rangle = \langle u|\hat{A}v\rangle = \langle \hat{A}^\dagger u|v\rangle
-$$
-
-$|u\rangle \in \ker(\hat{A}^\dagger)$ 이므로 $\hat{A}^\dagger|u\rangle = 0$ 이다.
+$|w\rangle = \hat{A}|v\rangle \in \text{ran}(\hat{A})$, $|u\rangle \in \ker(\hat{A}^\dagger)$ 이면 b_adjoint.md §2 의 수반 관계로:
 
 $$
-\langle \hat{A}^\dagger u|v\rangle = \langle 0|v\rangle = 0
+\langle u|w\rangle = \langle u|\hat{A}|v\rangle = \langle \hat{A}^\dagger u|v\rangle = \langle 0|v\rangle = 0
 $$
 
-즉, 임의의 연산자에서 열공간 $\text{ran}(\hat{A})$과 수반 연산자의 영공간 $\ker(\hat{A}^\dagger)$은 항상 직교한다.
+이 부분은 **strict normal 조건을 사용하지 않으며**, 모든 연산자에 대해 성립.
 
-여기에 앞서 증명한 $\ker(\hat{A}) = \ker(\hat{A}^\dagger)$ 조건을 대입하면, 정규 연산자에 대하여 영공간과 열공간의 직교성이 완벽하게 성립함이 증명된다.
+**결합**: 단계 1 의 $\ker(\hat{A}) = \ker(\hat{A}^\dagger)$ 와 단계 2 의 $\text{ran}(\hat{A}) \perp \ker(\hat{A}^\dagger)$ 를 합치면
 
 $$
 \text{ran}(\hat{A}) \perp \ker(\hat{A})
 $$
+
+가 성립.
+
+**의미**: 영공간 위의 사영과 열공간 위의 사영이 직합 분해를 이루며, $\mathcal{H} = \ker(\hat{A}) \oplus \text{ran}(\hat{A})$. 이 분해가 일반화된 그린함수 (영공간 사영 제거 후 역연산자 구성) 의 정확한 수학적 기반이다.

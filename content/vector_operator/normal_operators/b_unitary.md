@@ -5,152 +5,382 @@ weight = 4
 
 ---
 
-## 2.4 유니타리 연산자 (Unitary Operator)
+### 1. Unitary 연산자
 
-**정의**: 연산자 $\hat{U}$의 에르미트 켤레 $\hat{U}^\dagger$가 $\hat{U}$의 역행렬과 같을 때, 즉 $\hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I}$일 때, 이를 **유니타리 연산자**라고 한다. 이 연산자 역시 정규 연산자의 조건을 만족한다.
+**1) 정의**
 
-**물리적 의미**: 유니타리 연산자는 상태 벡터의 길이(norm), 즉 **확률을 보존**하는 모든 물리적 변환을 나타낸다. 양자 시스템의 **시간 변화(time evolution)**나 **기저 변환(change of basis)** 등은 반드시 유니타리 연산자로 기술되어야 한다.
+연산자 $\hat{U}$ 가 자신의 에르미트 켤레 $\hat{U}^\dagger$ 와 다음 관계를 만족할 때, 이를 **유니타리 (Unitary) 연산자** 라 한다.
 
----
-### 핵심 특성 및 증명
+$$
+\hat{U}^\dagger\hat{U} = \hat{U}\hat{U}^\dagger = \hat{I}
+$$
 
-#### **1. 내적 보존**
-> **정리**: 유니타리 연산자는 내적을 보존한다. 즉, 임의의 두 벡터 $|v\rangle, |w\rangle$에 대하여 $\langle \hat{U}v|\hat{U}w\rangle = \langle v|w\rangle$가 성립한다.
+즉 $\hat{U}^\dagger = \hat{U}^{-1}$, 에르미트 켤레가 역원과 같다. 이 조건은 정규 연산자의 조건 $[\hat{U}, \hat{U}^\dagger] = 0$ 을 자동으로 만족한다.
 
-> **증명**: $\langle \hat{U}v|\hat{U}w\rangle = \langle v|\hat{U}^\dagger\hat{U}|w\rangle = \langle v|\hat{I}|w\rangle = \langle v|w\rangle$.
-> **물리적 의미**: 이 성질 덕분에, 유니타리 변환 후에도 상태의 총 확률($\langle\psi|\psi\rangle=1$)이 1로 보존된다.
+**2) 물리적 의미**
 
-#### **2. 생성자를 통한 지수 함수 표현**
-
-## 질문의 핵심: 가정인가, 유도인가?
-
-양자역학이나 군론(Group Theory)을 공부하다 보면 유니타리 연산자 $U$를 다음과 같이 당연하다는 듯이 표현하는 경우를 자주 봅니다.
-
-$$ U = e^{i\hat{H}} $$
-
-이때 "왜 처음부터 저런 형태를 가정하는 거지? 오히려 유니타리 연산자의 정의로부터 저 지수 함수 형태를 유도해야 하는 것이 아닌가?" 라는 의문이 들 수 있습니다. 이는 매우 정확하고 핵심을 찌르는 질문입니다.
-
-결론부터 말하면, 지수 함수 형태는 **가정이 아니라 유니타리 연산자의 정의와 '연속성'이라는 조건으로부터 필연적으로 유도되는 결과**입니다. 이 글에서는 그 과정을 상세히 유도해 보겠습니다.
+유니타리 연산자는 상태 벡터의 노름을 보존하는 모든 변환을 나타낸다. 양자역학에서 확률 보존이 필요한 모든 변환 — 시간 진화, 회전, 위상 변환, 기저 변환 — 이 유니타리 연산자로 기술된다.
 
 ---
 
-### 1. 유니타리 연산자의 정의와 의미
+### 2. 고유값은 단위 원 위에 있다
 
-먼저 정의부터 시작하겠습니다. 어떤 연산자 $U$가 **유니타리(Unitary)**하다는 것은 다음을 만족한다는 의미입니다.
+유니타리 연산자의 고유값은 모두 절댓값이 1 인 복소수이다. 복소 평면에서 단위 원 위에 위치한다.
 
-$$ U^\dagger U = U U^\dagger = I $$
+$$
+\sigma(\hat{U}) \subset \{e^{i\theta} : \theta \in \mathbb{R}\} = S^1
+$$
 
-여기서 $U^\dagger$는 $U$의 **에르미트 켤레(Hermitian conjugate)**이고, $I$는 **항등 연산자(Identity operator)**입니다.
+proof)
 
-이것의 물리적/기하학적 의미는 **벡터의 내적(inner product)을 보존한다**는 것입니다. 즉, 어떤 두 벡터 $|\psi\rangle$와 $|\phi\rangle$를 유니타리 연산자 $U$로 변환했을 때, 변환된 두 벡터 사이의 내적은 원래 내적과 같습니다.
+$\hat{U}|v\rangle = \lambda|v\rangle$ 가정. 양변에 $\langle v|\hat{U}^\dagger$ 를 내적:
 
-$$ \langle U\phi | U\psi \rangle = \langle \phi | U^\dagger U | \psi \rangle = \langle \phi | I | \psi \rangle = \langle \phi | \psi \rangle $$
+$$
+\langle v|\hat{U}^\dagger\hat{U}|v\rangle = \lambda^*\lambda\,\langle v|v\rangle
+$$
 
-양자역학에서는 내적의 크기 제곱이 확률을 의미하므로, 유니타리 변환은 **확률을 보존하는 변환**이라는 중요한 의미를 가집니다.
+정의 $\hat{U}^\dagger\hat{U} = \hat{I}$ 에서 좌변이 $\langle v|v\rangle$. 따라서
 
----
+$$
+|\lambda|^2\,\langle v|v\rangle = \langle v|v\rangle
+$$
 
-### 2. 정의로부터 지수 함수 형태 유도
-
-## 질문의 핵심: 가정인가, 유도인가?
-
-양자역학이나 군론(Group Theory)을 공부하다 보면 유니타리 연산자 $U$를 다음과 같이 당연하다는 듯이 표현하는 경우를 자주 봅니다.
-
-$$ U = e^{i\hat{H}} $$
-
-이때 "왜 처음부터 저런 형태를 가정하는 거지? 오히려 유니타리 연산자의 정의로부터 저 지수 함수 형태를 유도해야 하는 것이 아닌가?" 라는 의문이 들 수 있습니다. 이는 매우 정확하고 핵심을 찌르는 질문입니다.
-
-결론부터 말하면, 지수 함수 형태는 **가정이 아니라 유니타리 연산자의 정의와 '연속성'이라는 조건으로부터 필연적으로 유도되는 결과**입니다. 이 글에서는 그 과정을 상세히 유도해 보겠습니다.
+$\langle v|v\rangle \neq 0$ 이므로 $|\lambda|^2 = 1$. 이를 만족하는 복소수는 $\lambda = e^{i\theta}$ ($\theta \in \mathbb{R}$) 의 형태.
 
 ---
 
-### 1. 유니타리 연산자의 정의와 의미
+### 3. 세 가지 정규 연산자의 통합
 
-먼저 정의부터 시작하겠습니다. 어떤 연산자 $U$가 **유니타리(Unitary)**하다는 것은 다음을 만족한다는 의미입니다.
+Hermitian, anti-Hermitian, unitary 의 고유값 위치를 정리하면 다음과 같다.
 
-$$ U^\dagger U = U U^\dagger = I $$
+| 연산자 | 정의 | 고유값 위치 | 복소 평면 |
+|---|---|---|---|
+| Hermitian | $\hat{H}^\dagger = \hat{H}$ | $\lambda \in \mathbb{R}$ | 실수 직선 |
+| Anti-Hermitian | $\hat{A}^\dagger = -\hat{A}$ | $\lambda \in i\mathbb{R}$ | 허수 축 |
+| Unitary | $\hat{U}^\dagger\hat{U} = \hat{I}$ | $\vert\lambda\vert = 1$ | 단위 원 |
 
-여기서 $U^\dagger$는 $U$의 **에르미트 켤레(Hermitian conjugate)**이고, $I$는 **항등 연산자(Identity operator)**입니다.
+세 가지 정의가 모두 한 단계 안에 고유값의 복소 평면 위에서의 위치를 결정한다. 이는 각 정의가 본질적으로 spectrum 의 기하학적 제약을 표현하기 때문이다.
 
-이것의 물리적/기하학적 의미는 **벡터의 내적(inner product)을 보존한다**는 것입니다. 즉, 어떤 두 벡터 $|\psi\rangle$와 $|\phi\rangle$를 유니타리 연산자 $U$로 변환했을 때, 변환된 두 벡터 사이의 내적은 원래 내적과 같습니다.
-
-$$ \langle U\phi | U\psi \rangle = \langle \phi | U^\dagger U | \psi \rangle = \langle \phi | I | \psi \rangle = \langle \phi | \psi \rangle $$
-
-양자역학에서는 내적의 크기 제곱이 확률을 의미하므로, 유니타리 변환은 **확률을 보존하는 변환**이라는 중요한 의미를 가집니다.
-
----
-
-### 2. 정의로부터 지수(Exponential) 형태 유도
-
-"왜 $e^{i\hat{H}}$ 형태가 되는가?"라는 질문에 답해 보겠습니다. 핵심 아이디어는 **연속적인 변환은 무한히 작은 변환(infinitesimal transformation)들을 계속해서 더해나가는 과정**으로 볼 수 있다는 것입니다.
-
-#### 단계 1: 항등 연산자에서 아주 약간 벗어난 변환 고려
-
-어떤 변환이 아무것도 바꾸지 않는다면 그건 항등 연산자 $I$입니다. 여기서 아주 약간, 즉 **무한소(infinitesimal)**만큼 변환하는 유니타리 연산자 $U_{inf}$를 생각해 봅시다. 이 연산자는 $I$와 거의 같을 것이므로 다음과 같이 쓸 수 있습니다.
-
-$$ U_{inf} = I + i\epsilon \hat{G} $$
-
--   $\epsilon$은 아주 작은 실수($\epsilon \ll 1$)입니다.
--   $\hat{G}$는 이 무한소 변환을 특징짓는 어떤 연산자입니다. 이를 **생성자(Generator)**라고 부릅니다.
--   `i`는 왜 붙였을까? 일단 붙여놓고 계산하면 $\hat{G}$가 물리적으로 좋은 성질(에르미트)을 갖게 되기 때문인데, 잠시 후에 그 이유가 명확해집니다.
-
-#### 단계 2: 유니타리 조건 적용
-
-$U_{inf}$는 유니타리 연산자이므로 $U_{inf}^\dagger U_{inf} = I$를 만족해야 합니다. 위 식을 대입해서 조건을 확인해 봅시다.
-
-먼저 $U_{inf}^\dagger$를 구하면:
-$$ U_{inf}^\dagger = (I + i\epsilon \hat{G})^\dagger = I^\dagger - i\epsilon \hat{G}^\dagger = I - i\epsilon \hat{G}^\dagger $$
-
-($I$는 에르미트이므로 $I^\dagger=I$ 이고, $(i\epsilon)^*$ = $-i\epsilon$ 이므로 부호가 바뀝니다.)
-
-이제 $U_{inf}^\dagger U_{inf} = I$ 에 대입합니다.
-$$ (I - i\epsilon \hat{G}^\dagger)(I + i\epsilon \hat{G}) = I $$
-$$ I + i\epsilon \hat{G} - i\epsilon \hat{G}^\dagger - \epsilon^2 \hat{G}^\dagger \hat{G} = I $$
-
-여기서 $\epsilon$은 무한히 작은 값이므로, $\epsilon^2$ 항은 다른 항들에 비해 무시할 수 있을 정도로 작습니다. 따라서 $\epsilon^2$ 항을 무시하면 (1차 근사):
-
-$$ I + i\epsilon (\hat{G} - \hat{G}^\dagger) \approx I $$
-$$ i\epsilon (\hat{G} - \hat{G}^\dagger) = 0 $$
-
-이 식이 성립하려면,
-
-$$ \hat{G} = \hat{G}^\dagger $$
-
-결론적으로, 무한소 유니타리 변환의 생성자 $\hat{G}$는 반드시 **에르미트 연산자(Hermitian Operator)**여야 합니다. (만약 처음에 `i`를 붙이지 않고 $U_{inf} = I + \epsilon \hat{K}$로 시작했다면, $\hat{K} = -\hat{K}^\dagger$ 라는 조건, 즉 반-에르미트(anti-Hermitian) 연산자라는 결론을 얻게 됩니다. 물리학에서는 에르미트 연산자가 관측 가능한 물리량에 해당하므로, 생성자를 에르미트 연산자로 만들기 위해 관습적으로 `i`를 붙여주는 것입니다.)
-
-#### 단계 3: 무한소 변환을 유한한 변환으로 확장
-
-이제 작은 변환이 아닌, 유한한(finite) 크기의 변환을 만들어 봅시다. 유한한 변환은 무한소 변환을 아주 많이, $N$번 반복 적용하는 것으로 생각할 수 있습니다.
-
-어떤 파라미터 $\theta$에 의해 결정되는 유한한 변환 $U(\theta)$가 있다고 합시다. 이 변환을 $N$개의 작은 조각으로 나누면, 각 조각은 $\delta\theta = \theta/N$ 만큼의 변환에 해당합니다. $N$을 무한대로 보내면 $\delta\theta$는 무한소 $\epsilon$이 됩니다.
-
-따라서 유한한 변환 $U(\theta)$는 무한소 변환을 $N$번 곱한 것과 같습니다.
-
-$$ U(\theta) = \lim_{N\to\infty} \left( I + i\frac{\theta}{N} \hat{G} \right)^N $$
-
-이것이 바로 **지수 함수의 정의**입니다.
-
-$$ \lim_{N\to\infty} \left( 1 + \frac{x}{N} \right)^N = e^x $$
-
-따라서, 우리는 유니타리 연산자를 다음과 같은 형태로 쓸 수 있습니다.
-
-$$ U(\theta) = e^{i\theta \hat{G}} $$
-
-여기서 $\theta$는 변환의 크기를 나타내는 실수 파라미터(예: 회전 각도, 시간)이며, $\hat{G}$는 그 변환의 종류를 결정하는 **에르미트 연산자인 생성자(Hermitian Generator)**입니다. 양자역학에서는 보통 생성자를 $\hat{H}$ (해밀토니안) 등으로 표기합니다.
+복소 평면의 세 가지 특별한 부분 집합 — 실수 직선, 허수 축, 단위 원 — 이 세 가지 정규 연산자에 대응한다. §5, §6 에서 이 세 집합 사이의 매핑이 곧 세 연산자 사이의 변환임을 본다.
 
 ---
 
-### 결론
+### 4. 기본 성질
 
-$U = e^{i\hat{H}}$ 라는 형태는 임의의 가정이 아니라,
-1.  **유니타리($U^\dagger U = I$)라는 근본적인 성질**과
-2.  변환이 **연속적**이라는 개념이 결합하여
-3.  필연적으로 만들어내는 **수학적 귀결**입니다.
+**1) 내적 보존**
 
-이처럼 근본적인 원리로부터 개념을 유도해 나가는 것은 물리와 수학을 더 깊이 이해하는 가장 올바른 방법입니다.
+임의의 두 벡터 $|v\rangle, |w\rangle$ 에 대해
 
+$$
+\langle\hat{U}v|\hat{U}w\rangle = \langle v|w\rangle
+$$
+
+proof) 
+
+$$
+\langle\hat{U}v|\hat{U}w\rangle = \langle v|\hat{U}^\dagger\hat{U}|w\rangle = \langle v|\hat{I}|w\rangle = \langle v|w\rangle
+$$
+
+특히 노름 보존 $\|\hat{U}v\| = \|v\|$. 이 성질이 양자역학에서 확률 보존 (총 확률 $\langle\psi|\psi\rangle = 1$ 의 유지) 에 대응한다.
+
+**2) 정수 거듭제곱**
+
+$\hat{U}^n$ 도 유니타리이다 ($n$ 정수). 1-parameter 군 구조의 기초.
+
+$$
+(\hat{U}^n)^\dagger\,\hat{U}^n = (\hat{U}^\dagger)^n\,\hat{U}^n = \hat{I}^n = \hat{I}
+$$
+ 
+---
+
+### 5. Hermitian 과의 변환 1: 지수 매핑
+
+복소 평면의 매핑 관점에서 실수 직선과 단위 원 사이에는 자연스러운 일대일 대응이 존재한다.
+
+$$
+x \in \mathbb{R} \quad \longleftrightarrow \quad e^{ix} \in S^1
+$$
+
+이 매핑을 정규 연산자에 functional calculus 로 적용하면 Hermitian 과 unitary 사이의 변환이 도출된다.
+
+**1) Hermitian 에서 Unitary 로**
+
+$\hat{H}$ 가 자기수반 (Hermitian) 이면
+
+$$
+\boxed{\hat{U} = e^{i\hat{H}}}
+$$
+
+가 유니타리이다.
+
+proof) $\hat{H}$ 의 spectral 분해 $\hat{H} = \sum_n \lambda_n|v_n\rangle\langle v_n|$, $\lambda_n \in \mathbb{R}$. Functional calculus 로
+
+$$
+e^{i\hat{H}} = \sum_n e^{i\lambda_n}|v_n\rangle\langle v_n|
+$$
+
+각 $e^{i\lambda_n}$ 이 단위 원 위에 있다. 유니타리 검증:
+
+$$
+(e^{i\hat{H}})^\dagger\,e^{i\hat{H}} = \sum_{nm} e^{-i\lambda_n}\,e^{i\lambda_m}\,|v_n\rangle\langle v_n|v_m\rangle\langle v_m| = \sum_n |v_n\rangle\langle v_n| = \hat{I}
+$$
+
+직교성 $\langle v_n|v_m\rangle = \delta_{nm}$ 사용.
+
+**2) Unitary 에서 Hermitian 으로 (역방향)**
+
+모든 유니타리 $\hat{U}$ 는 $\hat{U} = e^{i\hat{H}}$ 형태로 표현 가능. 자기수반 $\hat{H}$ 를 다음과 같이 구성한다.
+
+$\hat{U}$ 의 spectral 분해 $\hat{U} = \sum_n e^{i\theta_n}|v_n\rangle\langle v_n|$ (각 고유값을 $e^{i\theta_n}$, $\theta_n \in [0, 2\pi)$ 형태로). 그러면
+
+$$
+\hat{H} := \sum_n \theta_n\,|v_n\rangle\langle v_n|
+$$
+
+가 Hermitian 이며 ($\theta_n$ 실수), $e^{i\hat{H}} = \sum_n e^{i\theta_n}|v_n\rangle\langle v_n| = \hat{U}$ 이다.
+
+**3) 일대일 대응의 의미**
+
+지수 매핑 $\hat{H} \mapsto e^{i\hat{H}}$ 가 Hermitian 연산자들의 집합과 unitary 연산자들의 집합 사이의 (다중값 보정 후) 일대일 대응을 형성한다. 이 대응은
+
+- 정의 수준에서: $\hat{U} = e^{i\hat{H}}$
+- Spectrum 수준에서: $\lambda \in \mathbb{R} \leftrightarrow e^{i\lambda} \in S^1$
+- 기저 수준에서: 같은 고유벡터 $|v_n\rangle$
+
+세 차원 모두에서 자연스럽게 작동한다.
+
+**4) 무한소 그림과의 연결**
+
+$\hat{H}$ 가 작은 한계에서 $e^{i\hat{H}} \approx \hat{I} + i\hat{H}$ 의 1차 전개. 이를 통해 $\hat{H}$ 가 unitary 변환의 **생성자 (generator)** 로 해석된다. 그러나 이 무한소 전개는 지수 매핑의 한 가지 표현일 뿐이며, $\hat{U} = e^{i\hat{H}}$ 의 도출 자체는 spectral 수준에서 이미 완결된다.
 
 ---
-### 예제
-- **시간 변화 연산자**: $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$. 여기서 생성자는 에르미트 연산자인 해밀토니안 $\hat{H}$이다.
-- **회전 연산자**: $\hat{R}(\theta) = e^{-i\hat{J}\theta/\hbar}$. 여기서 생성자는 에르미트 연산자인 각운동량 연산자 $\hat{J}$이다.
+
+### 6. Hermitian 과의 변환 2: Cayley 변환
+
+지수 매핑 외에 또 다른 자연스러운 매핑이 있다.
+
+$$
+z \mapsto \frac{z - i}{z + i}
+$$
+
+이 Möbius 변환은 실수 직선을 단위 원 (점 $z = -i$ 의 image 점인 $\infty$ 의 image 점 $z = 1$ 제외) 으로 매핑한다. 이를 functional calculus 로 올린 것이 **Cayley 변환** 이다.
+
+**1) 정의**
+
+$$
+\boxed{\hat{U} = (\hat{H} - i\hat{I})(\hat{H} + i\hat{I})^{-1}}
+$$
+
+여기서 $(\hat{H} + i\hat{I})^{-1}$ 은 $\hat{H}$ 의 resolvent 의 한 평가 ($z = -i$). $\hat{H}$ 의 고유값이 모두 실수이므로 $\hat{H} + i\hat{I}$ 의 고유값 $\lambda + i \neq 0$, 따라서 역연산자가 잘 정의된다.
+
+역변환:
+
+$$
+\hat{H} = i(\hat{I} + \hat{U})(\hat{I} - \hat{U})^{-1}
+$$
+
+(단, $\hat{U}$ 가 고유값 1 을 갖지 않는 경우에만.)
+
+**2) Spectral 검증**
+
+$\hat{H}$ 의 spectral 분해를 사용하면
+
+$$
+\hat{U} = \sum_n \frac{\lambda_n - i}{\lambda_n + i}|v_n\rangle\langle v_n|
+$$
+
+각 $(\lambda_n - i)/(\lambda_n + i)$ 의 절댓값:
+
+$$
+\left|\frac{\lambda_n - i}{\lambda_n + i}\right|^2 = \frac{\lambda_n^2 + 1}{\lambda_n^2 + 1} = 1
+$$
+
+단위 원 위. Unitary 의 spectrum 조건 만족.
+
+**3) 지수 매핑과의 비교**
+
+| | 지수 매핑 | Cayley 변환 |
+|---|---|---|
+| 함수 | $z \mapsto e^{iz}$ | $z \mapsto (z-i)/(z+i)$ |
+| 매핑 | $\mathbb{R} \to S^1$ | $\mathbb{R} \to S^1 \setminus \{1\}$ |
+| 다중값성 | $\theta_n \in [0, 2\pi)$ 선택 필요 | 일대일 (점 1 제외) |
+| 무한 차원 | 유계 self-adjoint 만 직접 적용 | 비유계 self-adjoint 도 잘 정의 |
+| 사용 맥락 | 양자역학 1-parameter 군 | 작용소 이론, von Neumann |
+
+두 매핑 모두 실수 직선과 단위 원 사이의 일대일 대응을 형성하며, 서로 다른 응용 맥락에서 우위를 가진다. Cayley 변환의 강점은 자기수반 작용소가 비유계 (예: 위치 연산자, 운동량 연산자) 인 경우에도 잘 정의된 unitary 를 도출한다는 점이다.
+
+---
+
+### 7. Stone 정리: 시간 진화와 Hamiltonian
+
+§1 부터 §6 까지는 한 쌍의 Hermitian-unitary 사이의 정적 관계를 다뤘다. 이 절에서는 **시간에 따라 연속적으로 변하는 unitary 들** 의 모음을 다루며, 이로부터 양자역학의 가장 기본적인 식 — Schrödinger 방정식 — 이 어떻게 도출되는지를 본다.
+
+**1) 동기: 시간이 흐르는 시스템**
+
+양자역학에서 시간은 연속적으로 흐르는 변수이다. 시각 $t = 0$ 에서 상태 $|\psi(0)\rangle$ 이었던 시스템이 시각 $t$ 에서 어떤 상태 $|\psi(t)\rangle$ 이 되는지를 unitary 변환으로 기술한다.
+
+$$
+|\psi(t)\rangle = \hat{U}(t)\,|\psi(0)\rangle
+$$
+
+시간 $t$ 가 매 순간 다른 값을 가지므로, 다뤄야 할 객체는 **한 개의 unitary 가 아니라 시간 $t$ 마다 하나씩 대응되는 unitary 들의 모음**
+
+$$
+\{\hat{U}(t)\}_{t \in \mathbb{R}}
+$$
+
+이다. $t = 0$ 의 unitary $\hat{U}(0)$, $t = 1$ 의 unitary $\hat{U}(1)$, $t = 2.5$ 의 unitary $\hat{U}(2.5)$, ... 모두가 이 모음의 원소.
+
+이러한 unitary 들의 모음이 시간 변수의 자연스러운 성질을 반영해야 한다.
+
+**2) 시간 진화 unitary 들이 만족하는 세 성질**
+
+(a) **$t = 0$ 에서 항등** :
+
+$$
+\hat{U}(0) = \hat{I}
+$$
+
+시간이 0 만큼 흐르면 시스템이 변하지 않는다.
+
+(b) **시간 합성 규칙**:
+
+$$
+\hat{U}(t + s) = \hat{U}(t)\,\hat{U}(s)
+$$
+
+먼저 $s$ 만큼 시간이 흐르고, 그 후 $t$ 만큼 시간이 흐르는 것은, 처음부터 $t + s$ 만큼 시간이 흐르는 것과 같다.
+
+(c) **연속성**:
+
+$t$ 가 연속적으로 변할 때 $\hat{U}(t)|v\rangle$ 도 연속적으로 변한다. 즉 시간이 약간 흐르면 시스템도 약간 변한다 (도약하지 않는다).
+
+위 세 조건을 만족하는 unitary 들의 모음을 **1-parameter unitary 군** 이라 한다. (a) 와 (b) 가 군 (group) 의 조건이고, parameter 가 한 개 ($t$) 라는 점에서.
+
+**3) Stone 정리**
+
+위 세 조건을 만족하는 모든 1-parameter unitary 군 $\{\hat{U}(t)\}$ 는 **하나의 Hermitian 연산자** $\hat{H}$ 와 일대일 대응되며, 다음 관계를 만족한다.
+
+$$
+\boxed{\hat{U}(t) = e^{-it\hat{H}/\hbar}}
+$$
+
+여기서 $\hbar$ 는 물리에서 자주 등장하는 상수 (수학적 결과로는 $\hbar = 1$ 로 두어도 무방). $\hat{H}$ 는 unitary 군에 의해 **유일하게** 결정된다.
+
+이 정리가 말하는 사실: 시간에 따라 연속적으로 변하는 무수히 많은 unitary 변환들의 전체 집합이 사실은 **단 하나의 Hermitian 연산자** 로 압축된다. 시간을 0 으로 두고 미분 한 번을 취하면 모든 시각 $t$ 의 unitary 가 복원되는 것이다.
+
+**4) Hamiltonian 의 등장**
+
+$\hat{U}(t) = e^{-it\hat{H}/\hbar}$ 의 형태로부터 $\hat{H}$ 의 의미가 직접 나온다. 작은 시간 $t$ 에서 1차 전개:
+
+$$
+\hat{U}(t) \approx \hat{I} - \frac{it}{\hbar}\hat{H} + O(t^2)
+$$
+
+매 순간 시스템의 **변화율** 을 결정하는 연산자가 $\hat{H}$. 이를 **(infinitesimal) 생성자** 라 한다. 시스템에 본질적으로 어떤 변화의 "엔진" 이 있고, 그 엔진을 표현하는 것이 $\hat{H}$.
+
+수학적으로 $\hat{H}$ 는 $\hat{U}(t)$ 의 시각 $t = 0$ 에서의 미분으로 정의된다.
+
+$$
+\hat{H} = i\hbar\,\frac{d\hat{U}(t)}{dt}\bigg|_{t=0}
+$$
+
+양자역학에서 이 $\hat{H}$ 가 시스템의 **에너지** 를 나타내는 연산자 — **Hamiltonian** — 이다. 즉 시간 진화의 생성자가 곧 에너지 연산자. 이 일치가 우연이 아니라 Stone 정리의 직접 귀결이다.
+
+**5) Schrödinger 방정식의 도출**
+
+상태 $|\psi(t)\rangle = \hat{U}(t)|\psi(0)\rangle$ 의 양변을 $t$ 에 대해 미분.
+
+$$
+\frac{d|\psi(t)\rangle}{dt} = \frac{d\hat{U}(t)}{dt}\,|\psi(0)\rangle
+$$
+
+$\hat{U}(t) = e^{-it\hat{H}/\hbar}$ 의 미분:
+
+$$
+\frac{d\hat{U}(t)}{dt} = -\frac{i}{\hbar}\hat{H}\,\hat{U}(t)
+$$
+
+대입:
+
+$$
+\frac{d|\psi(t)\rangle}{dt} = -\frac{i}{\hbar}\hat{H}\,\hat{U}(t)|\psi(0)\rangle = -\frac{i}{\hbar}\hat{H}\,|\psi(t)\rangle
+$$
+
+양변에 $i\hbar$ 를 곱하면
+
+$$
+\boxed{i\hbar\,\frac{d|\psi(t)\rangle}{dt} = \hat{H}|\psi(t)\rangle}
+$$
+
+이것이 **Schrödinger 방정식**. 시간 변수에 대해 연속적으로 변하는 unitary 라는 수학적 구조 (Stone 정리) 의 직접적 귀결이다.
+
+**6) 기존 무한소 도출과의 관계**
+
+기존 교재에서 자주 보는 도출 — $\hat{U}(\epsilon) = \hat{I} + i\epsilon\hat{G}$ 의 무한소 전개에서 시작해서 unitarity 조건으로 $\hat{G}$ 가 Hermitian 임을 도출 — 은 위 (4) 항의 1차 전개 ($\hat{U}(t) \approx \hat{I} - it\hat{H}/\hbar$) 와 본질적으로 같은 식이다.
+
+차이는 출발점과 도달점:
+
+- **무한소 도출**: 무한소 전개에서 출발 → 1차 항이 Hermitian 이라는 조건 도출
+- **Stone 정리**: 1-parameter 군의 연속성과 군 성질에서 출발 → 모든 시각의 unitary 가 단일 Hermitian 연산자에서 도출됨
+
+둘은 같은 결과의 두 가지 관점이지만, Stone 정리가 spectral 측면에서 본질적 사실 (시간 진화 전체가 단일 Hermitian 에 압축) 을 명확히 보여준다. §1-§6 에서 정리한 정적 관계 (Hermitian 과 unitary 사이의 변환) 가 시간 의존 버전으로 자연스럽게 확장된 것.
+
+---
+
+### 8. 예
+
+**1) 시간 진화 연산자**
+
+양자 시스템의 시간 진화
+
+$$
+\hat{U}(t) = e^{-i\hat{H}t/\hbar}
+$$
+
+생성자 $\hat{H}$ 는 자기수반 Hamiltonian (에너지 연산자). Stone 정리의 직접 응용.
+
+검증: $\hat{H}$ 의 고유 상태 $|n\rangle$ (에너지 $E_n$) 에 대해
+
+$$
+\hat{U}(t)|n\rangle = e^{-iE_nt/\hbar}|n\rangle
+$$
+
+각 고유 상태가 위상 $e^{-iE_nt/\hbar}$ 로 회전. 확률 $|\langle n|\psi(t)\rangle|^2$ 가 시간에 보존됨을 확인 가능.
+
+**2) 회전 연산자**
+
+3D 공간에서 축 $\hat{\mathbf{n}}$ 주위 각도 $\theta$ 회전
+
+$$
+\hat{R}(\theta) = e^{-i\theta\,\hat{\mathbf{n}}\cdot\hat{\mathbf{J}}/\hbar}
+$$
+
+생성자 $\hat{\mathbf{n}}\cdot\hat{\mathbf{J}}$ 는 각운동량 연산자 (자기수반). 회전 각도 $\theta$ 가 1-parameter 군의 parameter.
+
+**3) 위상 회전**
+
+전체 위상 $\hat{P}(\phi) = e^{i\phi\hat{I}}$. 생성자가 항등 연산자 $\hat{I}$ (가장 단순한 자기수반).
+
+**4) 푸리에 변환**
+
+푸리에 변환 $\mathcal{F}: L^2(\mathbb{R}) \to L^2(\mathbb{R})$ 도 unitary. $\mathcal{F}^4 = \hat{I}$ 의 관계가 성립 (4 번 적용하면 항등).
+
+Spectral 분해: $\mathcal{F}$ 의 고유값은 $\{1, i, -1, -i\}$ (단위 원 위 네 점), 각각의 고유 함수는 Hermite 함수. Spectrum 이 단위 원 위에 있다는 일반 unitary 의 성질을 명시적으로 확인할 수 있는 예.
+
+---
+
+### 9. 정리
+
+유니타리 연산자의 핵심을 한 줄로 요약하면 다음과 같다.
+
+**Spectrum 이 단위 원 위에 있는 정규 연산자.**
+
+Hermitian (spectrum 이 실수 직선) 과 anti-Hermitian (허수 축) 의 자연스러운 동반자이며, 복소 평면의 세 가지 특별한 부분 집합 — 실수 직선, 허수 축, 단위 원 — 이 세 정규 연산자에 대응된다.
+
+Hermitian 과 unitary 사이의 두 가지 자연스러운 변환:
+
+- **지수 매핑**: $\hat{U} = e^{i\hat{H}}$. 양자역학 1-parameter 군 (Stone 정리).
+- **Cayley 변환**: $\hat{U} = (\hat{H} - i\hat{I})(\hat{H} + i\hat{I})^{-1}$. 비유계 자기수반 작용소.
+
+두 변환 모두 복소 평면 매핑 (실수 직선 ↔ 단위 원) 의 functional calculus 형태이며, 정규 연산자의 spectral 측면이 변환의 본질을 결정한다.
