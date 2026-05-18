@@ -207,25 +207,40 @@ $$
 
 ---
 
-### 7. 시간 역행과 NEGF 와의 연결
+### 7. 시간 역행
 
-NEGF 의 시간 진화 (b_contraction.md §5-(4)) 는 contraction:
+§6-(3) 에서 본 generator 부호 변경 ($\hat{Z} \to -\hat{Z}$) 이 시간 역행에 직접 대응한다. 좀 더 자세히 본다.
+
+**1) Contraction semigroup 의 양의 시간 도메인**
+
+연속 1-parameter contraction semigroup $\{\hat{T}(t)\}_{t \geq 0}$ (b_contraction.md §6) 는 generator $\hat{X}$ 와 $\hat{T}(t) = e^{t\hat{X}}$ 의 관계. Generator $\hat{X}$ 의 spectrum 이 좌반평면 ($\text{Re}\,\lambda_n \leq 0$) 이면 contraction 이 유지된다.
+
+이 semigroup 은 $t \geq 0$ 에서만 정의된다. 시간 역행 ($t < 0$) 은 일반적으로 정의되지 않는다 — contraction 의 역원이 dilation 이며 역시간 진화는 일반적으로 비물리적.
+
+**2) 시간 역행 dilation**
+
+수학적으로 $\hat{T}(t)$ 를 음의 시간으로 분석적 확장하면
 
 $$
-\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}, \quad t > 0
+\hat{T}(t) = e^{t\hat{X}}, \quad t < 0
 $$
 
-$\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Delta} - i\hat{\Gamma}/2$, $\hat{\Gamma} \geq 0$ 이므로 generator 의 spectrum 이 하반평면. $t > 0$ 에서 $\hat{Z}(t) = -t\hat{H}_{\text{eff}}/\hbar$ 가 상반평면 → contraction.
+$\hat{X}$ 의 spectrum 이 좌반평면이므로 $t\hat{X}$ 의 spectrum 이 ($t < 0$) 우반평면. Spectral 매핑
 
-음의 시간 ($t < 0$) 으로 확장하면 $\hat{Z}(t)$ 의 spectrum 이 하반평면으로 이동 → **$\hat{T}(t)$ 가 dilation**.
+$$
+|e^{t\lambda_n}| = e^{t\,\text{Re}\,\lambda_n}
+$$
 
-물리적 의미: 시간을 거꾸로 진행시키면 환경으로 누출된 정보가 시스템으로 되돌아오는 것 같은 거동 — 비물리적이지만 수학적으로 명확히 정의됨. 이는 열린 시스템 진화의 비가역성 (b_contraction.md §6) 의 반영. 실제로는 음의 시간 진화가 가능한 시스템은 매우 제한되며, 일반적으로 NEGF 의 contraction semigroup 은 $t \geq 0$ 에서만 정의된다.
+$t < 0$, $\text{Re}\,\lambda_n \leq 0$ 이면 $t\,\text{Re}\,\lambda_n \geq 0$, 따라서 $|e^{t\lambda_n}| \geq 1$ — **dilation**.
 
-**게인 매체로의 응용**
+**3) 비가역성의 표현**
 
-$\hat{\Gamma} < 0$ (음의 정부호) 인 경우 — 환경이 시스템에 입자를 공급 — 의 가상적 시스템에서는 $t > 0$ 에서도 dilation. 게인 매체 (레이저 등) 의 단순화된 수학적 모형.
+이 시간 역행 dilation 거동은 contraction semigroup 의 양의 시간 도메인의 자연스러운 수학적 확장이지만, 물리적으로는 환경에서 시스템으로 정보가 흘러들어오는 비물리적 시나리오. Contraction semigroup 이 $t \geq 0$ 에서만 정의되는 이유는 열린 시스템의 **비가역성** 의 표현.
 
-이 경우 $\hat{H}_{\text{eff}}$ 의 spectrum 이 상반평면, $\hat{T}(t)$ 의 spectrum 이 단위 원 외부 → dilation.
+수학적 정리:
+- $t > 0$: contraction (노름 감쇠)
+- $t = 0$: 항등
+- $t < 0$: dilation (노름 증가, 비물리적)
 
 ---
 
@@ -253,12 +268,6 @@ $\hat{P}_\mathcal{H}$ 는 $\mathcal{H}$ 로의 사영. 즉 contraction 의 거�
 | 용도 | Contraction 의 쌍대 | Contraction 의 unitary 모델링 |
 
 두 용어가 같은 단어이지만 다른 개념. 본 절의 dilation 은 spectrum 의 기하학적 위치로 정의된 정규 연산자의 한 종류. Nagy-Foias 의 dilation 은 contraction 을 더 큰 공간의 unitary 로 끌어올리는 (lifting) 과정.
-
-**3) NEGF 와의 연결**
-
-Nagy-Foias 정리가 NEGF 의 본질적 그림과 직접 연결된다. NEGF 의 비-unitary $\hat{H}_{\text{eff}}$ 시간 진화는 더 큰 시스템 (system + environment) 의 unitary 시간 진화를 시스템 부분으로 사영한 것. Nagy-Foias 의 abstract 정리가 이 그림을 일반화.
-
-자세한 내용: open quantum systems 또는 NEGF 챕터에서.
 
 ---
 
@@ -292,23 +301,24 @@ $\gamma_1, \gamma_2 > 0$. 두 고유값 $e^{\gamma_1/2}, e^{\gamma_2/2}$ 모두 
 
 대칭성: b_contraction.md §8-(2) 의 damped 시스템과 역원 관계. 한쪽이 contraction (감쇠) 이면 반대쪽이 dilation (증폭).
 
-**3) NEGF 시간 진화의 시간 역행**
+**3) Contraction semigroup 의 음의 시간 확장**
 
 §7 의 결과를 명시적으로 본다.
 
-NEGF 시간 진화 $\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}$ 에서 $t < 0$ 으로 분석적 확장:
+Contraction semigroup $\hat{T}(t) = e^{t\hat{X}}$ ($t \geq 0$, $\hat{X}$ 의 spectrum 좌반평면) 의 음의 시간 분석적 확장. 공통 고유 기저에서
 
 $$
-\hat{T}(t)|\psi_n\rangle = e^{-i\epsilon_n t/\hbar}\,e^{-\gamma_n t/(2\hbar)}|\psi_n\rangle
+\hat{T}(t)|v_n\rangle = e^{t\lambda_n}|v_n\rangle, \quad \lambda_n = \alpha_n + i\beta_n,\;\alpha_n \leq 0
 $$
 
-$t < 0$ 에서 $e^{-\gamma_n t/(2\hbar)} > 1$. 진폭이 시간 거꾸로 갈수록 지수적으로 증가.
+진폭 $|e^{t\lambda_n}| = e^{t\alpha_n}$.
 
-이 dilation 거동은 contraction semigroup 의 양의 시간 도메인 ($t \geq 0$) 의 자연스러운 확장이지만, 물리적으로는 환경에서 시스템으로 정보가 흘러들어오는 비물리적 시나리오. NEGF 의 contraction semigroup 이 $t \geq 0$ 에서만 정의되는 이유 — 비가역성의 표현.
+세 가지 시간 영역:
 
-수학적 정리:
-- $t > 0$: contraction ($e^{-\gamma_n t/(2\hbar)} < 1$), 정상적 시간 진화
-- $t = 0$: 항등 ($e^0 = 1$)
-- $t < 0$: dilation ($e^{-\gamma_n t/(2\hbar)} > 1$), 비물리적 시간 역행
+| 시간 | $t\alpha_n$ | 진폭 거동 | 종류 |
+|---|---|---|---|
+| $t > 0$ | $\leq 0$ | $\leq 1$ (감쇠) | Contraction |
+| $t = 0$ | $0$ | $= 1$ | 항등 |
+| $t < 0$ | $\geq 0$ | $\geq 1$ (증가) | Dilation |
 
-이 분류가 contraction-dilation-unitary 의 통합된 그림에서 NEGF 시간 진화의 정확한 위치.
+이 분류가 contraction-dilation-unitary 의 통합된 그림에서 1-parameter semigroup 의 정확한 위치. 음의 시간 도메인의 dilation 거동은 양의 시간 contraction 의 수학적 역원이며, 물리적으로는 비가역성으로 인해 일반적으로 정의되지 않는다.

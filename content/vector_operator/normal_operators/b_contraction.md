@@ -23,7 +23,7 @@ $$
 
 Contraction 연산자는 작용 후 벡터의 노름이 감소하는 변환을 표현한다. 양자역학에서 노름의 제곱이 확률을 의미하므로, contraction 변환은 **확률이 감소하는 변환** 을 기술한다.
 
-이는 unitary (확률 보존) 와 대비된다. 환경과 결합된 시스템 (열린 시스템) 에서 시스템 외부로 확률이 누출되는 현상이 자연스러운 예 — NEGF 의 시간 진화가 대표적.
+이는 unitary (확률 보존) 와 대비된다. 환경과 결합된 시스템 (열린 시스템) 에서 시스템 외부로 확률이 누출되는 현상이 자연스러운 예이다.
 
 ---
 
@@ -163,34 +163,6 @@ $$
 
 $\hat{H}_2 = 0$ 이면 $\hat{Z}$ 가 Hermitian 으로 환원되고 $e^{i\hat{Z}}$ 가 unitary (단위 원 경계). 그 사이 — 일부 고유값은 단위 원 위, 일부는 내부 — 의 경우도 가능.
 
-**4) NEGF 의 시간 진화와의 직접 연결**
-
-NEGF 의 effective Hamiltonian (가환 경우, 정규)
-
-$$
-\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Delta} - \frac{i}{2}\hat{\Gamma}
-$$
-
-$\hat{H}_s + \hat{\Delta}$ 가 Hermitian, $\hat{\Gamma} \geq 0$ 이 Hermitian.
-
-시간 진화 연산자
-
-$$
-\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar} = e^{i\hat{Z}(t)}, \quad \hat{Z}(t) = -\frac{t}{\hbar}\hat{H}_{\text{eff}}
-$$
-
-$\hat{Z}(t)$ 의 Hermitian / anti-Hermitian 분해:
-
-$$
-\hat{Z}(t) = -\frac{t}{\hbar}(\hat{H}_s + \hat{\Delta}) + i\,\frac{t}{2\hbar}\hat{\Gamma}
-$$
-
-$t > 0$ 에서 허수 부분의 계수 $t\hat{\Gamma}/(2\hbar) \geq 0$ — 상반평면 정규 연산자.
-
-따라서 $\hat{T}(t) = e^{i\hat{Z}(t)}$ 가 contraction. NEGF 의 시간 진화가 정확히 §5-(2) 의 contraction 표현의 한 사례.
-
-이 결과는 NEGF 의 열린 시스템 시간 진화가 contraction 구조를 가진다는 사실의 명시적 도출이다.
-
 ---
 
 ### 6. 1-Parameter Contraction Semigroup
@@ -227,8 +199,6 @@ $$
 
 Generator 의 spectrum 이 **닫힌 좌반평면** 에 위치. 양의 무한대로 발산하는 진폭이 없도록 강제하는 조건.
 
-NEGF 의 케이스에서: $\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}$, generator $\hat{X} = -i\hat{H}_{\text{eff}}/\hbar$. $\hat{H}_{\text{eff}}$ 의 spectrum 이 하반평면 ($\text{Im}\,\lambda_n \leq 0$) 이면 $-i\hat{H}_{\text{eff}}/\hbar$ 의 spectrum 이 좌반평면 ($\text{Re}\,\lambda_n \leq 0$) — Hille-Yoshida 조건 만족.
-
 ---
 
 ### 7. 닫힌 시스템과 열린 시스템
@@ -246,10 +216,6 @@ NEGF 의 케이스에서: $\hat{T}(t) = e^{-i\hat{H}_{\text{eff}}t/\hbar}$, gene
 | 물리적 의미 | 확률 보존 | 환경으로 확률 누출 |
 
 두 시스템이 정규 연산자 framework 안의 두 극단 (단위 원 위 vs 단위 원판 내부). 각자의 generator 가 다른 spectrum 위치 (실수 직선 vs 하반평면) 를 갖는 정규 연산자.
-
-이 비교가 NEGF 의 수학적 위치를 명확히 한다. NEGF 의 시간 진화는 정규 contraction semigroup 의 특수한 경우 — $\hat{H}_{\text{eff}}$ 의 Hermitian/anti-Hermitian 부분이 가환할 때.
-
-비가환 경우 (일반 NEGF) 는 비정규 영역으로 들어가며, 별도 framework (다음 챕터) 가 필요하다.
 
 ---
 
@@ -277,24 +243,28 @@ $$
 
 $\gamma_1, \gamma_2 > 0$. 두 고유값 $e^{-\gamma_1/2}, e^{-\gamma_2/2}$ 모두 단위 원판 내부 (양의 실수 직선의 한 부분).
 
-물리적 의미: $|0\rangle, |1\rangle$ 두 상태가 각각 다른 비율로 환경으로 누출. 노름 감쇠 비율이 다름. 
+물리적 의미: $|0\rangle, |1\rangle$ 두 상태가 각각 다른 비율로 환경으로 누출. 노름 감쇠 비율이 다름.
 
-NEGF 와의 연결: 두 lead 와 결합된 2-level system 의 시간 진화의 한 모형. $\gamma_{1,2}$ 가 각 상태의 lifetime 의 역수.
+**3) 비-Hermitian Normal 연산자의 contraction 거동**
 
-**3) NEGF 시간 진화 (가환 케이스)**
+$\hat{Z} = \hat{H}_1 + i\hat{H}_2$ ($\hat{H}_1, \hat{H}_2$ Hermitian, 가환, $\hat{H}_2 \geq 0$) 의 공통 고유 기저 $\{|v_n\rangle\}$, 각각의 고유값 $\epsilon_n$ 과 $\kappa_n$ ($\kappa_n \geq 0$).
 
-§5-(4) 에서 도출한 결과를 명시적으로 본다.
+$\hat{Z}$ 의 고유값 $\lambda_n = \epsilon_n + i\kappa_n$ — 상반평면 정규.
 
-시스템 $\hat{H}_s$ 의 고유 상태 $\{\psi_n, \epsilon_n\}$, 가환 결합 $\hat{\Gamma}$ 의 같은 고유 기저에서의 고유값 $\gamma_n$.
-
-시간 진화:
+$\hat{T} = e^{i\hat{Z}}$ 의 spectrum:
 
 $$
-\hat{T}(t)|\psi_n\rangle = e^{-i\epsilon_n t/\hbar}\,e^{-\gamma_n t/(2\hbar)}|\psi_n\rangle
+e^{i\lambda_n} = e^{i\epsilon_n}\,e^{-\kappa_n}
 $$
 
-진폭 $e^{-\gamma_n t/(2\hbar)}$ 으로 시간에 따라 감쇠. 평균 수명 $\tau_n = \hbar/\gamma_n$.
+크기 $|e^{i\lambda_n}| = e^{-\kappa_n} \leq 1$. Strict contraction 조건은 $\kappa_n > 0$ 모든 $n$.
 
-거듭제곱 거동: $\hat{T}(t)^k = \hat{T}(kt)$ 이므로 $t \to \infty$ 한계에서 모든 상태가 0 으로 수렴 — 결국 시스템 전체가 환경으로 누출.
+거듭제곱 $\hat{T}^m = e^{im\hat{Z}}$ 의 spectrum:
 
-이 결과가 NEGF 의 산란 영역의 입자가 시간이 지나면 결국 모두 환경 (lead) 으로 빠져나간다는 사실의 수학적 표현. 정상상태에서는 lead 가 동시에 입자를 주입하기 때문에 평형이 형성되며, 이것이 lesser self-energy $\hat{\Sigma}^<$ 가 표현하는 정보 (NEGF 챕터 참조).
+$$
+(e^{i\lambda_n})^m = e^{im\epsilon_n}\,e^{-m\kappa_n}
+$$
+
+위상 회전 $e^{im\epsilon_n}$ (단위 원) 과 노름 감쇠 $e^{-m\kappa_n}$ 의 곱. $m \to \infty$ 한계에서 $\hat{T}^m \to 0$ (strict contraction).
+
+이 결과가 §4-(1) (거듭제곱 0 으로 수렴) 의 명시적 검증.
