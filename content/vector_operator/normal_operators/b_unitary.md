@@ -25,11 +25,13 @@ $$
 
 ### 2. 고유값은 단위 원 위에 있다
 
-유니타리 연산자의 고유값은 모두 절댓값이 1 인 복소수이다. 복소 평면에서 단위 원 위에 위치한다.
+유니타리 연산자의 고유값은 모두 절댓값이 1 인 복소수이다.
 
 $$
 \sigma(\hat{U}) \subset \{e^{i\theta} : \theta \in \mathbb{R}\} = S^1
 $$
+
+복소 평면에서 단위 원 위에 위치한다.
 
 proof)
 
@@ -75,83 +77,348 @@ $$
 \langle\hat{U}v|\hat{U}w\rangle = \langle v|w\rangle
 $$
 
-proof) 
-
-$$
-\langle\hat{U}v|\hat{U}w\rangle = \langle v|\hat{U}^\dagger\hat{U}|w\rangle = \langle v|\hat{I}|w\rangle = \langle v|w\rangle
-$$
+proof) $\langle\hat{U}v|\hat{U}w\rangle = \langle v|\hat{U}^\dagger\hat{U}|w\rangle = \langle v|\hat{I}|w\rangle = \langle v|w\rangle$.
 
 특히 노름 보존 $\|\hat{U}v\| = \|v\|$. 이 성질이 양자역학에서 확률 보존 (총 확률 $\langle\psi|\psi\rangle = 1$ 의 유지) 에 대응한다.
 
-**2) 정수 거듭제곱**
+**2) 서로 다른 고유값의 고유벡터 직교성**
 
-$\hat{U}^n$ 도 유니타리이다 ($n$ 정수). 1-parameter 군 구조의 기초.
+$\hat{U}|v_i\rangle = \lambda_i|v_i\rangle, \hat{U}|v_j\rangle = \lambda_j|v_j\rangle, \lambda_i \neq \lambda_j$ 이면
+
+$$
+\langle v_i|v_j\rangle = 0
+$$
+
+이는 b_normal_operators.md §3 의 특성 2 의 직접 적용. (Unitary 가 정규 연산자이고, 표준 내적에서 듀얼 기저가 자연 켤레와 일치하므로 $\langle v^i| = \langle v_i|$.)
+
+**3) 정수 거듭제곱**
+
+$\hat{U}^n$ 도 유니타리이다 ($n$ 정수).
 
 $$
 (\hat{U}^n)^\dagger\,\hat{U}^n = (\hat{U}^\dagger)^n\,\hat{U}^n = \hat{I}^n = \hat{I}
 $$
- 
+
+이 성질이 §7 의 1-parameter 군 구조의 기초.
+
 ---
 
 ### 5. Hermitian 과의 변환 1: 지수 매핑
 
-복소 평면의 매핑 관점에서 실수 직선과 단위 원 사이에는 자연스러운 일대일 대응이 존재한다.
+§3 에서 Hermitian 과 unitary 가 spectrum 위치만 다른 (실수 직선 vs 단위 원) 정규 연산자임을 봤다. 그러면 자연스러운 질문이 생긴다 — 실수 직선과 단위 원 사이에 명확한 일대일 대응이 있다면, 그 대응이 Hermitian 과 unitary 사이의 변환을 줄 것 아닌가?
+
+답은 그렇다. 이 절에서 그 변환을 단계적으로 도출한다. 준비로 두 가지가 필요하다.
+
+(a) 복소 평면에서 실수 직선과 단위 원을 잇는 함수.
+(b) 그 함수를 연산자에 적용하는 방법 — **functional calculus**.
+
+두 준비를 차례로 다룬 후 변환을 도출한다.
+
+**1) 복소 평면 매핑: $x \mapsto e^{ix}$**
+
+지수 함수 $f(x) = e^{ix}$ 는 실수를 받아 복소수를 반환한다. Euler 공식
 
 $$
-x \in \mathbb{R} \quad \longleftrightarrow \quad e^{ix} \in S^1
+e^{ix} = \cos x + i\sin x
 $$
 
-이 매핑을 정규 연산자에 functional calculus 로 적용하면 Hermitian 과 unitary 사이의 변환이 도출된다.
+으로부터 $|e^{ix}|^2 = \cos^2 x + \sin^2 x = 1$, 따라서 $e^{ix}$ 가 복소 평면의 **단위 원 위에 위치**.
 
-**1) Hermitian 에서 Unitary 로**
+구체적 예:
+- $f(0) = 1$
+- $f(\pi/2) = i$
+- $f(\pi) = -1$
+- $f(3\pi/2) = -i$
+- $f(2\pi) = 1$ (한 바퀴 돌아옴)
 
-$\hat{H}$ 가 자기수반 (Hermitian) 이면
+실수 $x$ 가 점점 커지면 단위 원 위의 점이 반시계 방향으로 돌고, $x$ 가 $2\pi$ 만큼 늘어나면 한 바퀴 돈다.
+
+이 함수가 실수 직선과 단위 원 사이의 자연스러운 매핑.
+
+**2) 함수를 연산자에 적용한다는 것 — functional calculus**
+
+위의 함수 $f(x) = e^{ix}$ 를 이제 연산자에 적용해야 한다. 그런데 "함수 $f(x)$ 를 연산자 $\hat{A}$ 에 적용한다" 는 것이 어떤 의미인가? 자명하지 않다. 단계적으로 본다.
+
+**(a) 다항식의 경우**
+
+다항식은 자명하다. 예를 들어 $p(x) = x^2 + 3x + 1$ 이면
 
 $$
-\boxed{\hat{U} = e^{i\hat{H}}}
+p(\hat{A}) = \hat{A}^2 + 3\hat{A} + \hat{I}
 $$
 
-가 유니타리이다.
+연산자의 덧셈, 곱셈, 항등원이 모두 잘 정의되므로 어떤 다항식이든 연산자에 자연스럽게 적용된다. 이는 의문의 여지가 없다.
 
-proof) $\hat{H}$ 의 spectral 분해 $\hat{H} = \sum_n \lambda_n|v_n\rangle\langle v_n|$, $\lambda_n \in \mathbb{R}$. Functional calculus 로
+**(b) 일반 함수: spectral decomposition 으로 정의**
 
-$$
-e^{i\hat{H}} = \sum_n e^{i\lambda_n}|v_n\rangle\langle v_n|
-$$
+지수함수, sin, cos 같은 비다항식 함수는 위처럼 직접 적용할 수 없다 ($\hat{A}$ 의 곱과 합으로 표현되지 않음). 다음과 같이 새로 정의해야 한다.
 
-각 $e^{i\lambda_n}$ 이 단위 원 위에 있다. 유니타리 검증:
+핵심 아이디어: $\hat{A}$ 가 정규 연산자라면 spectral 분해
 
 $$
-(e^{i\hat{H}})^\dagger\,e^{i\hat{H}} = \sum_{nm} e^{-i\lambda_n}\,e^{i\lambda_m}\,|v_n\rangle\langle v_n|v_m\rangle\langle v_m| = \sum_n |v_n\rangle\langle v_n| = \hat{I}
+\hat{A} = \sum_n \lambda_n |v_n\rangle\langle v_n|
 $$
 
-직교성 $\langle v_n|v_m\rangle = \delta_{nm}$ 사용.
+이 가능하다 (b_normal_operators.md §1). 각 항은 고유값 $\lambda_n$ 과 고유 사영 연산자 $|v_n\rangle\langle v_n|$ 의 곱.
 
-**2) Unitary 에서 Hermitian 으로 (역방향)**
+이 표현에서 $f(\hat{A})$ 를 다음과 같이 정의:
 
-모든 유니타리 $\hat{U}$ 는 $\hat{U} = e^{i\hat{H}}$ 형태로 표현 가능. 자기수반 $\hat{H}$ 를 다음과 같이 구성한다.
+$$
+\boxed{f(\hat{A}) := \sum_n f(\lambda_n)\,|v_n\rangle\langle v_n|}
+$$
 
-$\hat{U}$ 의 spectral 분해 $\hat{U} = \sum_n e^{i\theta_n}|v_n\rangle\langle v_n|$ (각 고유값을 $e^{i\theta_n}$, $\theta_n \in [0, 2\pi)$ 형태로). 그러면
+**각 고유값 $\lambda_n$ 에 함수 $f$ 를 적용하고, 같은 고유 사영 연산자로 다시 합친 것**. 이를 **functional calculus** 라 한다.
+
+이 정의는 직관적으로 "고유값에 함수를 넣는 것" 의 정확한 표현. 추가로 고유 사영 (basis 정보) 을 그대로 유지한다는 점이 핵심.
+
+**(c) 다항식의 경우와 일치 확인**
+
+위 정의가 자명한 다항식 경우와 일치하는지 확인. $\hat{A}^2$ 을 spectral 분해로 직접 계산:
+
+$$
+\hat{A}^2 = \sum_n \lambda_n |v_n\rangle\langle v_n|\,\sum_m \lambda_m |v_m\rangle\langle v_m| = \sum_{nm} \lambda_n\lambda_m \langle v_n|v_m\rangle\,|v_n\rangle\langle v_m|
+$$
+
+직교성 $\langle v_n|v_m\rangle = \delta_{nm}$ 으로 $n = m$ 항만 남음:
+
+$$
+\hat{A}^2 = \sum_n \lambda_n^2 |v_n\rangle\langle v_n|
+$$
+
+마찬가지로 $\hat{A}^k = \sum_n \lambda_n^k |v_n\rangle\langle v_n|$. 따라서
+
+$$
+p(\hat{A}) = \hat{A}^2 + 3\hat{A} + \hat{I} = \sum_n (\lambda_n^2 + 3\lambda_n + 1)\,|v_n\rangle\langle v_n| = \sum_n p(\lambda_n)\,|v_n\rangle\langle v_n|
+$$
+
+§5-2-(b) 의 일반 정의와 일치. ✓ 즉 functional calculus 의 정의가 다항식 경우의 자연스러운 일반화.
+
+**3) 왜 Hermitian 에 적용하는가**
+
+위 정의 $f(\hat{A}) = \sum_n f(\lambda_n)|v_n\rangle\langle v_n|$ 이 잘 정의되려면 **각 $f(\lambda_n)$ 이 잘 정의** 되어야 한다. 즉 모든 고유값 $\lambda_n$ 이 **함수 $f$ 의 정의역 안에 있어야** 한다.
+
+이 점이 결정적이다. 함수마다 정의역이 다르므로, 어떤 종류의 연산자에 적용 가능한지가 결정된다.
+
+우리가 다루는 함수 $f(x) = e^{ix}$ 의 정의역은 **실수** (인자 $x$ 는 실수, 출력 $e^{ix}$ 는 복소수 단위 원). 따라서 $e^{i\hat{A}}$ 가 잘 정의되려면 $\hat{A}$ 의 모든 고유값이 실수여야 한다.
+
+§2 에서 도출한 결과: **Hermitian 의 고유값 = 모두 실수**. 따라서
+
+$$
+\hat{H}^\dagger = \hat{H} \implies \lambda_n \in \mathbb{R} \implies e^{i\lambda_n} \text{ 잘 정의} \implies e^{i\hat{H}} \text{ 잘 정의}
+$$
+
+이게 핵심 답이다 — Hermitian 의 고유값이 실수 함수 $e^{ix}$ 의 정의역에 정확히 들어맞기 때문에, $e^{i\hat{H}}$ 가 자연스럽게 정의된다.
+
+비교: 다른 연산자 종류에는 어떻게 되는가?
+
+- **Anti-Hermitian** $\hat{A}^\dagger = -\hat{A}$: 고유값이 순허수. 실수 함수 $e^{ix}$ 에 직접 못 넣음. 대신 $f(y) = e^y$ 같은 함수가 자연스러우며, 그 결과도 unitary (그러나 매개 변수가 다름).
+- **일반 정규 연산자**: 고유값이 임의 복소수. 적용 가능한 함수가 복소 평면 전체에 정의된 것 (예: 다항식, 전해석 함수) 에 제한.
+
+함수의 정의역이 연산자 종류와 매핑되는 그림이 자연스럽게 등장.
+
+**4) Hermitian → Unitary 의 도출**
+
+이제 모든 준비가 끝났다. $\hat{H}$ 가 Hermitian 이면
+
+$$
+\hat{H} = \sum_n \lambda_n |v_n\rangle\langle v_n|, \quad \lambda_n \in \mathbb{R}
+$$
+
+이 spectral 분해에 functional calculus 정의를 적용:
+
+$$
+\boxed{\hat{U} = e^{i\hat{H}} = \sum_n e^{i\lambda_n}\,|v_n\rangle\langle v_n|}
+$$
+
+각 $e^{i\lambda_n}$ 이 단위 원 위 ($|e^{i\lambda_n}| = 1$). 이는 §3 에서 본 unitary 의 spectrum 조건이므로 $\hat{U}$ 가 unitary 임이 강하게 시사된다 — 직접 검증.
+
+$$
+\hat{U}^\dagger\,\hat{U} = \sum_{nm} e^{-i\lambda_n}\,e^{i\lambda_m}\,|v_n\rangle\langle v_n|v_m\rangle\langle v_m|
+$$
+
+직교성 $\langle v_n|v_m\rangle = \delta_{nm}$ 으로 $n = m$ 항만 남음:
+
+$$
+= \sum_n e^{-i\lambda_n}\,e^{i\lambda_n}\,|v_n\rangle\langle v_n| = \sum_n |v_n\rangle\langle v_n| = \hat{I}
+$$
+
+(마지막에 완비성 사용.) Unitary 조건 만족. ✓
+
+**5) 역방향: Unitary → Hermitian**
+
+모든 unitary $\hat{U}$ 는 $\hat{U} = e^{i\hat{H}}$ 형태로 표현 가능. $\hat{U}$ 의 spectral 분해
+
+$$
+\hat{U} = \sum_n e^{i\theta_n}\,|v_n\rangle\langle v_n|
+$$
+
+(각 고유값을 $e^{i\theta_n}, \theta_n \in [0, 2\pi)$ 형태로.) 그러면
 
 $$
 \hat{H} := \sum_n \theta_n\,|v_n\rangle\langle v_n|
 $$
 
-가 Hermitian 이며 ($\theta_n$ 실수), $e^{i\hat{H}} = \sum_n e^{i\theta_n}|v_n\rangle\langle v_n| = \hat{U}$ 이다.
+가 Hermitian ($\theta_n$ 실수), 그리고
 
-**3) 일대일 대응의 의미**
+$$
+e^{i\hat{H}} = \sum_n e^{i\theta_n}\,|v_n\rangle\langle v_n| = \hat{U}
+$$
 
-지수 매핑 $\hat{H} \mapsto e^{i\hat{H}}$ 가 Hermitian 연산자들의 집합과 unitary 연산자들의 집합 사이의 (다중값 보정 후) 일대일 대응을 형성한다. 이 대응은
+확인. ✓
 
-- 정의 수준에서: $\hat{U} = e^{i\hat{H}}$
-- Spectrum 수준에서: $\lambda \in \mathbb{R} \leftrightarrow e^{i\lambda} \in S^1$
-- 기저 수준에서: 같은 고유벡터 $|v_n\rangle$
+**6) 일대일 대응의 세 차원**
 
-세 차원 모두에서 자연스럽게 작동한다.
+지수 매핑 $\hat{H} \mapsto e^{i\hat{H}}$ 가 Hermitian 연산자들의 집합과 unitary 연산자들의 집합 사이의 (다중값 보정 후) 일대일 대응을 형성한다. 이 대응이 세 차원에서 동시에 작동한다.
 
-**4) 무한소 그림과의 연결**
+- **정의 수준**: $\hat{U} = e^{i\hat{H}}$
+- **Spectrum 수준**: $\lambda \in \mathbb{R} \leftrightarrow e^{i\lambda} \in S^1$
+- **기저 수준**: 같은 고유벡터 $|v_n\rangle$
 
-$\hat{H}$ 가 작은 한계에서 $e^{i\hat{H}} \approx \hat{I} + i\hat{H}$ 의 1차 전개. 이를 통해 $\hat{H}$ 가 unitary 변환의 **생성자 (generator)** 로 해석된다. 그러나 이 무한소 전개는 지수 매핑의 한 가지 표현일 뿐이며, $\hat{U} = e^{i\hat{H}}$ 의 도출 자체는 spectral 수준에서 이미 완결된다.
+세 가지 모두 자연스럽게 정렬된다.
+
+**7) 무한소 그림과의 연결**
+
+$\hat{H}$ 가 작은 한계에서 $e^{i\hat{H}} \approx \hat{I} + i\hat{H}$ 의 1차 전개. 이로부터 $\hat{H}$ 가 unitary 변환의 **생성자 (generator)** 로 해석되며, §7 에서 1-parameter unitary 군 형태로 자세히 다룬다. 이 무한소 표현은 지수 매핑의 한 측면일 뿐이며, $\hat{U} = e^{i\hat{H}}$ 의 도출 자체는 위 §5-(4) 에서 spectral 수준에서 이미 완결된다.
+
+**8) 비-Hermitian 으로의 확장 — 열린 시스템**
+
+지금까지 §5 의 도출은 **Hermitian 과 unitary 사이의 대응** 에 한정되었다. 그러나 자연스러운 질문이 생긴다 — 만약 입력 연산자가 Hermitian 이 아니라면 어떻게 되는가? 예를 들어 NEGF 에서 등장하는 effective Hamiltonian
+
+$$
+\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Sigma}^R
+$$
+
+은 Hermitian 이 아니다 (self-energy $\hat{\Sigma}^R$ 의 허수 부분 때문). 이 경우 functional calculus 가 작동하는가? 작동한다면 결과는 어떤 의미를 갖는가?
+
+이 질문이 양자역학의 닫힌 시스템과 열린 시스템 사이의 본질적 차이로 이어진다. 단계적으로 본다.
+
+**(a) Functional calculus 의 진짜 정의역 조건**
+
+§5-3 에서 "$e^{ix}$ 의 정의역이 실수이므로 Hermitian 에 적용 가능" 이라고 했다. 그러나 이는 진짜 조건의 일부일 뿐이다.
+
+함수 $e^z$ 는 사실 **복소 평면 전체에 정의된 함수** 이다 (entire function). 즉 임의의 복소수 $z$ 에 대해 $e^z$ 가 잘 정의된다. 예를 들어:
+
+- $e^{1} = e \approx 2.718$ (양의 실수)
+- $e^{i\pi} = -1$ (단위 원 위)
+- $e^{1 + i\pi} = -e$ (음의 실수)
+- $e^{-1 - i\pi/2} = -i/e$ (일반 복소수)
+
+따라서 functional calculus 의 진짜 조건은 다음과 같다.
+
+$$
+\boxed{\text{모든 } \lambda_n \in \text{(함수 } f \text{ 의 정의역)}}
+$$
+
+$e^z$ 의 정의역이 복소수 전체이므로, **어떤 정규 연산자 $\hat{A}$ 든지 $e^{i\hat{A}}$ 가 잘 정의된다** — Hermitian 이든, anti-Hermitian 이든, 비-Hermitian normal 이든.
+
+§5-3 의 도출은 사실 더 좁은 조건을 추가로 부과했다 — **결과가 unitary 여야 한다는 요구**. 이 추가 요구가 입력을 Hermitian 으로 한정시켰다. 이 요구를 풀어주면 더 일반적 그림이 나온다.
+
+**(b) 입력 종류별 결과 분류**
+
+$e^{i\hat{A}} = \sum_n e^{i\lambda_n}|v_n\rangle\langle v_n|$ 에서 각 $e^{i\lambda_n}$ 의 위치가 $\hat{A}$ 의 고유값 종류로 결정된다.
+
+| 입력 $\hat{A}$ | 고유값 $\lambda_n$ | $e^{i\lambda_n}$ 의 위치 | $e^{i\hat{A}}$ 의 종류 |
+|---|---|---|---|
+| Hermitian | 실수 | 단위 원 위 | Unitary |
+| Anti-Hermitian | 순허수 | 양의 실수 | Hermitian (양의 정부호) |
+| 비-Hermitian normal | 일반 복소수 | 일반 복소수 | 일반 가역 (unitary 아님) |
+
+세 경우 모두 functional calculus 가 잘 작동한다. 다만 결과의 성질이 다르다.
+
+세 번째 행이 NEGF 에 해당하는 케이스. 자세히 본다.
+
+**(c) NEGF 의 $\hat{H}_{\text{eff}}$**
+
+NEGF 의 effective Hamiltonian 을 구체적으로 분해.
+
+$$
+\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Sigma}^R = \hat{H}_s + \hat{\Delta} - \frac{i}{2}\hat{\Gamma}
+$$
+
+여기서:
+- $\hat{H}_s$: 시스템의 Hermitian Hamiltonian (환경 없을 때의 에너지)
+- $\hat{\Delta} = \text{Re}\,\hat{\Sigma}^R$: 환경 결합으로 인한 에너지 shift (Hermitian)
+- $\hat{\Gamma} = -2\,\text{Im}\,\hat{\Sigma}^R$: 환경 결합 강도 (Hermitian, 양의 정부호)
+
+Hermitian 부분 ($\hat{H}_s + \hat{\Delta}$) 와 anti-Hermitian 부분 ($-i\hat{\Gamma}/2$) 의 합. 두 부분이 가환하는 단순 경우 (예: wide-band 한계), $\hat{H}_{\text{eff}}$ 가 **비-Hermitian normal** 이다.
+
+이 가환 경우의 고유값:
+
+$$
+\lambda_n = \epsilon_n - \frac{i\gamma_n}{2}
+$$
+
+- 실수부 $\epsilon_n$ = 평균 에너지
+- 허수부 $-\gamma_n/2$ = lifetime 의 표현 ($\gamma_n > 0$, 환경으로의 손실 비율)
+
+복소 평면에서 보면 $\lambda_n$ 들이 **실수 직선이 아닌 하반평면의 한 영역** 에 위치. 단위 원도 아니다.
+
+**(d) 비-unitary 시간 진화**
+
+이 $\hat{H}_{\text{eff}}$ 에 functional calculus 를 적용해 "시간 진화" 연산자를 만들어보자.
+
+$$
+e^{-i\hat{H}_{\text{eff}}t/\hbar} = \sum_n e^{-i\lambda_n t/\hbar}|v_n\rangle\langle v_n|
+$$
+
+각 지수를 계산:
+
+$$
+e^{-i\lambda_n t/\hbar} = e^{-i(\epsilon_n - i\gamma_n/2)t/\hbar} = e^{-i\epsilon_n t/\hbar}\cdot e^{-\gamma_n t/(2\hbar)}
+$$
+
+두 인자의 성격이 완전히 다르다.
+
+첫 번째 인자 $e^{-i\epsilon_n t/\hbar}$:
+- 절댓값 1 (단위 원 위)
+- 시간에 따라 위상 회전
+- Unitary 변환
+
+두 번째 인자 $e^{-\gamma_n t/(2\hbar)}$:
+- 실수 (1 보다 작음, $\gamma_n > 0, t > 0$ 이므로)
+- 시간에 따라 진폭 감쇠
+- **Unitary 가 아님**
+
+두 인자의 곱이므로 전체 $e^{-i\hat{H}_{\text{eff}}t/\hbar}$ 가 **비-unitary**.
+
+**(e) 비-unitary 의 물리적 의미: 확률 누출**
+
+Unitary 변환은 노름 (확률) 을 보존한다. 시각 $t$ 에서의 상태
+
+$$
+|\psi(t)\rangle = e^{-i\hat{H}_{\text{eff}}t/\hbar}|\psi(0)\rangle
+$$
+
+의 노름 제곱을 계산해보자. 단순화를 위해 초기 상태가 한 고유 상태라 하자 ($|\psi(0)\rangle = |v_n\rangle$).
+
+$$
+|\psi(t)\rangle = e^{-i\epsilon_n t/\hbar}\,e^{-\gamma_n t/(2\hbar)}|v_n\rangle
+$$
+
+$$
+\|\psi(t)\|^2 = |e^{-i\epsilon_n t/\hbar}|^2\,|e^{-\gamma_n t/(2\hbar)}|^2\,\|v_n\|^2 = 1\cdot e^{-\gamma_n t/\hbar}\cdot 1 = e^{-\gamma_n t/\hbar}
+$$
+
+시간에 따라 확률이 $e^{-\gamma_n t/\hbar}$ 의 비율로 감소. 평균 수명 $\tau_n = \hbar/\gamma_n$.
+
+이 확률 감소는 어디로 가는가? 환경으로 입자가 빠져나간다. NEGF 의 $\hat{\Gamma}$ 가 정확히 그 손실 비율을 표현하는 객체이다.
+
+**(f) 닫힌 vs 열린 시스템 정리**
+
+| | 닫힌 시스템 | 열린 시스템 (NEGF) |
+|---|---|---|
+| Hamiltonian | $\hat{H}$ Hermitian | $\hat{H}_{\text{eff}} = \hat{H}_s + \hat{\Sigma}^R$ 비-Hermitian |
+| Spectrum 위치 | 실수 직선 | 복소 평면 (허수부 $\leq 0$) |
+| 시간 진화 | $e^{-i\hat{H}t/\hbar}$ unitary | $e^{-i\hat{H}_{\text{eff}}t/\hbar}$ 비-unitary |
+| 노름 | $\Vert\psi(t)\Vert$ = 일정 | $\Vert\psi(t)\Vert$ 시간에 감쇠 |
+| 물리적 의미 | 확률 보존 | 환경으로 확률 누출 |
+| Spectrum 함수 $A(E)$ | 델타 함수 | Lorentzian (broadening) |
+
+§5-(1)~(7) 의 Hermitian-unitary 대응은 **닫힌 시스템** 의 framework. 환경이 없으므로 시스템 안에서 확률이 보존되며, 모든 상태가 영원한 수명을 가진다.
+
+NEGF 의 비-Hermitian-비unitary 시간 진화는 그 framework 의 **자연스러운 확장**. 환경 결합이 있으면 시스템에서 환경으로 확률이 누출되며, 모든 상태가 유한 수명을 가진다. 이 확장이 functional calculus 의 일반 정의역 조건 (입력의 spectrum 이 함수 정의역 안에 있기만 하면 됨) 에서 자연스럽게 도출된다.
+
+핵심 통찰: **Functional calculus 자체는 닫힌 시스템과 열린 시스템을 차별하지 않는다**. 입력 연산자의 spectrum 이 복소 평면 어디에 있든 잘 작동하며, 다만 결과의 unitary 여부 (확률 보존 여부) 가 spectrum 위치에 의해 결정될 뿐이다. 양자역학의 두 영역 (닫힌 / 열린 시스템) 이 같은 수학 framework 의 두 측면이라는 점에서, NEGF 가 닫힌 시스템 양자역학의 자연스러운 일반화임이 명확해진다.
 
 ---
 
@@ -213,81 +480,179 @@ $$
 
 ### 7. Stone 정리: 시간 진화와 Hamiltonian
 
-§1 부터 §6 까지는 한 쌍의 Hermitian-unitary 사이의 정적 관계를 다뤘다. 이 절에서는 **시간에 따라 연속적으로 변하는 unitary 들** 의 모음을 다루며, 이로부터 양자역학의 가장 기본적인 식 — Schrödinger 방정식 — 이 어떻게 도출되는지를 본다.
+§1 부터 §6 까지는 한 쌍의 Hermitian-unitary 사이의 정적 관계를 다뤘다. 이 절에서는 시간에 따라 연속적으로 변하는 unitary 들의 모음을 다루며, 이로부터 양자역학의 가장 기본적인 식 — Schrödinger 방정식 — 이 어떻게 도출되는지를 본다.
 
-**1) 동기: 시간이 흐르는 시스템**
+이 흐름의 핵심 도구가 **1-parameter 군** 과 그 **generator** 의 개념. 이는 Lie 군 이론에서 오는 용어이지만, 양자역학의 시간 진화를 다루는 데 자연스럽게 등장한다. 먼저 이 개념들을 직관적으로 도입한다.
 
-양자역학에서 시간은 연속적으로 흐르는 변수이다. 시각 $t = 0$ 에서 상태 $|\psi(0)\rangle$ 이었던 시스템이 시각 $t$ 에서 어떤 상태 $|\psi(t)\rangle$ 이 되는지를 unitary 변환으로 기술한다.
+**1) 배경: 군과 연속 변환**
+
+수학에서 **군 (group)** 은 합성 가능한 변환들의 모음이다. 예를 들어 평면을 회전시키는 모든 회전들의 모음은 군을 이룬다. 두 회전을 차례로 하면 또 다른 회전이 되고 (합성), 회전을 안 하는 변환도 회전의 한 경우이며 (항등원), 모든 회전은 반대 방향 회전으로 되돌릴 수 있다 (역원).
+
+여기에 **연속성** 을 추가하면 더 풍부한 구조가 된다. 회전의 경우, 회전 각도를 0 도, 1 도, 1.5 도, ... 로 연속적으로 변화시킬 수 있다. 각도가 연속적으로 변하면 회전 변환도 연속적으로 변한다. 이런 연속적으로 변하는 변환들의 군을 **Lie 군** 이라 한다.
+
+양자역학에서 다루는 변환들 — 시간 진화, 회전, 위상 변환 — 도 같은 구조를 가진다. 시간이 연속적으로 흐르므로 시간 진화 unitary 도 연속적으로 변하고, 회전 각도가 연속이므로 회전 unitary 도 연속적으로 변한다.
+
+**2) 1-parameter 군의 정의**
+
+가장 단순한 Lie 군은 **한 개의 연속 parameter 로 표현되는 변환들의 모음** 이다.
+
+예: 평면을 한 축 ($z$ 축) 주위로 회전시키는 변환은 한 개의 각도 $\theta$ 로 결정된다. 모든 가능한 $\theta \in \mathbb{R}$ 에 대해 회전 $R_z(\theta)$ 가 존재하며, 이들이 합성 규칙
+
+$$
+R_z(\theta_1)\,R_z(\theta_2) = R_z(\theta_1 + \theta_2)
+$$
+
+을 만족한다. 이러한 변환들의 모음 $\{R_z(\theta)\}_{\theta \in \mathbb{R}}$ 이 **1-parameter 군 (one-parameter group)** 의 예.
+
+일반적 정의: 실수 parameter $t \in \mathbb{R}$ 로 인덱싱된 연산자들의 모음 $\{\hat{U}(t)\}_{t \in \mathbb{R}}$ 이 다음 세 조건을 만족할 때 1-parameter 군이라 한다.
+
+(a) **$t = 0$ 에서 항등원**: $\hat{U}(0) = \hat{I}$. parameter 가 0 이면 변환 없음.
+
+(b) **합성 규칙**: $\hat{U}(t + s) = \hat{U}(t)\hat{U}(s)$. 두 변환의 합성이 parameter 의 덧셈으로 환원.
+
+(c) **연속성**: $t$ 가 연속적으로 변할 때 $\hat{U}(t)$ 도 연속적으로 변함 (도약 없음).
+
+위 세 조건은 군의 두 핵심 성질 (항등원, 합성) + Lie 군의 추가 조건 (연속성) 의 직접 표현. 합성 규칙 (b) 가 군의 합성 성질을 parameter 의 덧셈으로 압축한 것이며, 1-parameter 군의 가장 특징적 식이다.
+
+**3) 양자 시간 진화의 1-parameter 군 구조**
+
+양자역학의 시간 진화가 이 구조를 정확히 따른다. 시각 $t$ 에서의 시간 진화 unitary $\hat{U}(t)$ 의 의미
 
 $$
 |\psi(t)\rangle = \hat{U}(t)\,|\psi(0)\rangle
 $$
 
-시간 $t$ 가 매 순간 다른 값을 가지므로, 다뤄야 할 객체는 **한 개의 unitary 가 아니라 시간 $t$ 마다 하나씩 대응되는 unitary 들의 모음**
+를 떠올리면 세 조건이 자연스럽게 만족됨을 확인할 수 있다.
+
+(a) $\hat{U}(0) = \hat{I}$: 시간이 0 만큼 흐르면 시스템이 변하지 않음.
+
+(b) $\hat{U}(t + s) = \hat{U}(t)\hat{U}(s)$: 먼저 $s$ 만큼 시간이 흐르고 그 후 $t$ 만큼 흐르는 것은 총 $t + s$ 만큼 흐르는 것과 같음.
+
+(c) 연속성: 시간이 약간 흐르면 시스템도 약간 변함 (도약 없음).
+
+따라서 시간 진화 unitary 들의 모음 $\{\hat{U}(t)\}$ 가 1-parameter 군을 이룬다. 추가로 각 $\hat{U}(t)$ 가 unitary 이므로, 이를 **1-parameter unitary 군** 이라 한다.
+
+**4) Generator: 1-parameter 군의 "기울기"**
+
+1-parameter 군 $\{\hat{U}(t)\}$ 의 가장 중요한 객체는 그 **generator (생성자)** 이다. 직관적으로 generator 는 군의 $t = 0$ 에서의 미분 — 즉 변환의 "기울기" 또는 "변화율" — 이다.
 
 $$
-\{\hat{U}(t)\}_{t \in \mathbb{R}}
+\hat{X} := \frac{d\hat{U}(t)}{dt}\bigg|_{t=0}
 $$
 
-이다. $t = 0$ 의 unitary $\hat{U}(0)$, $t = 1$ 의 unitary $\hat{U}(1)$, $t = 2.5$ 의 unitary $\hat{U}(2.5)$, ... 모두가 이 모음의 원소.
+(이 미분이 잘 정의된다는 사실이 위 (c) 의 연속성 조건의 결과.)
 
-이러한 unitary 들의 모음이 시간 변수의 자연스러운 성질을 반영해야 한다.
-
-**2) 시간 진화 unitary 들이 만족하는 세 성질**
-
-(a) **$t = 0$ 에서 항등** :
+Generator $\hat{X}$ 가 있으면, **모든 시각 $t$ 의 $\hat{U}(t)$ 가 그것으로부터 복원** 된다.
 
 $$
-\hat{U}(0) = \hat{I}
+\hat{U}(t) = e^{t\hat{X}}
 $$
 
-시간이 0 만큼 흐르면 시스템이 변하지 않는다.
-
-(b) **시간 합성 규칙**:
+증명 스케치: 합성 규칙 (b) 와 $\hat{U}(t + \delta t) = \hat{U}(t)\hat{U}(\delta t)$ 의 무한소 전개 $\hat{U}(\delta t) \approx \hat{I} + \delta t\,\hat{X}$ 에서 미분 방정식
 
 $$
-\hat{U}(t + s) = \hat{U}(t)\,\hat{U}(s)
+\frac{d\hat{U}(t)}{dt} = \hat{X}\,\hat{U}(t)
 $$
 
-먼저 $s$ 만큼 시간이 흐르고, 그 후 $t$ 만큼 시간이 흐르는 것은, 처음부터 $t + s$ 만큼 시간이 흐르는 것과 같다.
+가 도출되며, 초기 조건 $\hat{U}(0) = \hat{I}$ 와 합쳐 해가 $\hat{U}(t) = e^{t\hat{X}}$.
 
-(c) **연속성**:
+핵심: **1-parameter 군 전체의 정보가 단일 연산자 $\hat{X}$ 에 압축** 된다. 무한히 많은 $t$ 값의 무한히 많은 $\hat{U}(t)$ 들이, 하나의 generator $\hat{X}$ 만 알면 모두 복원 가능.
 
-$t$ 가 연속적으로 변할 때 $\hat{U}(t)|v\rangle$ 도 연속적으로 변한다. 즉 시간이 약간 흐르면 시스템도 약간 변한다 (도약하지 않는다).
+여기까지는 unitarity 와 무관한 일반 결과. 모든 연속 1-parameter 군에 대해 성립.
 
-위 세 조건을 만족하는 unitary 들의 모음을 **1-parameter unitary 군** 이라 한다. (a) 와 (b) 가 군 (group) 의 조건이고, parameter 가 한 개 ($t$) 라는 점에서.
+**5) Unitarity 가 generator 에 부과하는 조건**
 
-**3) Stone 정리**
+이제 $\hat{U}(t)$ 가 unitary 라는 조건을 추가한다.
 
-위 세 조건을 만족하는 모든 1-parameter unitary 군 $\{\hat{U}(t)\}$ 는 **하나의 Hermitian 연산자** $\hat{H}$ 와 일대일 대응되며, 다음 관계를 만족한다.
+$$
+\hat{U}^\dagger(t)\,\hat{U}(t) = \hat{I} \quad \forall t
+$$
+
+양변을 $t$ 에 대해 미분:
+
+$$
+\frac{d\hat{U}^\dagger(t)}{dt}\,\hat{U}(t) + \hat{U}^\dagger(t)\,\frac{d\hat{U}(t)}{dt} = 0
+$$
+
+$t = 0$ 에서 평가 ($\hat{U}(0) = \hat{I}$, $d\hat{U}/dt|_0 = \hat{X}$, $d\hat{U}^\dagger/dt|_0 = \hat{X}^\dagger$):
+
+$$
+\hat{X}^\dagger + \hat{X} = 0
+$$
+
+즉
+
+$$
+\boxed{\hat{X}^\dagger = -\hat{X}}
+$$
+
+**Unitary 1-parameter 군의 generator 는 anti-Hermitian** 이다. 이게 unitarity 가 부과하는 직접적 제약.
+
+이 결과는 단계 4 의 일반 결과 (어떤 1-parameter 군이든 generator 있음) 가 unitarity 조건에 의해 좁혀진 형태. 일반 generator 가 임의 연산자였다면, unitary 1-parameter 군의 generator 는 anti-Hermitian 으로 강제된다.
+
+**6) 양자역학 관습: $i$ 흡수해서 Hermitian 으로**
+
+수학적으로는 $\hat{U}(t) = e^{t\hat{X}}, \hat{X}^\dagger = -\hat{X}$ 가 완전한 표현. 그러나 양자역학에서는 다음 관습을 따른다.
+
+$\hat{X}$ 를 다음으로 재정의:
+
+$$
+\hat{X} = -\frac{i}{\hbar}\hat{H}
+$$
+
+새 정의에서 $\hat{H}$ 의 성질. $\hat{X}^\dagger = -\hat{X}$ 에 대입:
+
+$$
+\left(-\frac{i}{\hbar}\hat{H}\right)^\dagger = -\left(-\frac{i}{\hbar}\hat{H}\right)
+$$
+
+좌변 $= +\frac{i}{\hbar}\hat{H}^\dagger$, 우변 $= +\frac{i}{\hbar}\hat{H}$. 따라서
+
+$$
+\boxed{\hat{H}^\dagger = \hat{H}}
+$$
+
+$\hat{H}$ 는 **Hermitian**. 새 표기에서 1-parameter unitary 군:
+
+$$
+\hat{U}(t) = e^{-it\hat{H}/\hbar}
+$$
+
+왜 이 관습을 따르는가? 두 가지 이유.
+
+(a) **측정 가능량과의 통일**: 양자역학에서 측정 가능한 물리량은 Hermitian 연산자. 시간 진화의 generator 가 곧 시스템의 **에너지** (관측 가능량) 이므로 Hermitian 으로 표기하는 것이 자연스러움. 이 Hermitian generator $\hat{H}$ 가 시스템의 **Hamiltonian** 이다.
+
+(b) **고유값의 물리적 의미**: $\hat{H}$ 의 고유값이 직접 시스템의 가능한 에너지 값 (실수). Anti-Hermitian generator 의 고유값은 순허수이므로 매번 $i$ 를 곱해야 함.
+
+두 표기의 비교:
+
+| Anti-Hermitian generator | Hermitian generator (양자역학 관습) |
+|---|---|
+| $\hat{U}(t) = e^{t\hat{X}}$ | $\hat{U}(t) = e^{-it\hat{H}/\hbar}$ |
+| $\hat{X}^\dagger = -\hat{X}$ | $\hat{H}^\dagger = \hat{H}$ |
+| 고유값: 순허수 | 고유값: 실수 (에너지) |
+
+수학적으로 두 표기는 등가. 같은 정보를 두 가지 방식으로 표현.
+
+**7) Stone 정리**
+
+위에서 도출한 결과들을 정리하면 다음이 된다.
+
+**모든 연속 1-parameter unitary 군 $\{\hat{U}(t)\}$ 는 하나의 Hermitian 연산자 $\hat{H}$ 와 일대일 대응되며, 다음 형태로 표현된다.**
 
 $$
 \boxed{\hat{U}(t) = e^{-it\hat{H}/\hbar}}
 $$
 
-여기서 $\hbar$ 는 물리에서 자주 등장하는 상수 (수학적 결과로는 $\hbar = 1$ 로 두어도 무방). $\hat{H}$ 는 unitary 군에 의해 **유일하게** 결정된다.
-
-이 정리가 말하는 사실: 시간에 따라 연속적으로 변하는 무수히 많은 unitary 변환들의 전체 집합이 사실은 **단 하나의 Hermitian 연산자** 로 압축된다. 시간을 0 으로 두고 미분 한 번을 취하면 모든 시각 $t$ 의 unitary 가 복원되는 것이다.
-
-**4) Hamiltonian 의 등장**
-
-$\hat{U}(t) = e^{-it\hat{H}/\hbar}$ 의 형태로부터 $\hat{H}$ 의 의미가 직접 나온다. 작은 시간 $t$ 에서 1차 전개:
-
-$$
-\hat{U}(t) \approx \hat{I} - \frac{it}{\hbar}\hat{H} + O(t^2)
-$$
-
-매 순간 시스템의 **변화율** 을 결정하는 연산자가 $\hat{H}$. 이를 **(infinitesimal) 생성자** 라 한다. 시스템에 본질적으로 어떤 변화의 "엔진" 이 있고, 그 엔진을 표현하는 것이 $\hat{H}$.
-
-수학적으로 $\hat{H}$ 는 $\hat{U}(t)$ 의 시각 $t = 0$ 에서의 미분으로 정의된다.
+이를 **Stone 정리** 라 한다. $\hat{H}$ 는 1-parameter 군에 의해 유일하게 결정되며, $\hat{U}(t)$ 의 $t = 0$ 에서의 미분에서 얻어진다.
 
 $$
 \hat{H} = i\hbar\,\frac{d\hat{U}(t)}{dt}\bigg|_{t=0}
 $$
 
-양자역학에서 이 $\hat{H}$ 가 시스템의 **에너지** 를 나타내는 연산자 — **Hamiltonian** — 이다. 즉 시간 진화의 생성자가 곧 에너지 연산자. 이 일치가 우연이 아니라 Stone 정리의 직접 귀결이다.
+이 정리의 메시지: 시간에 따라 연속적으로 변하는 무수히 많은 unitary 변환 전체의 정보가 단 하나의 Hermitian 연산자 (Hamiltonian) 로 압축된다.
 
-**5) Schrödinger 방정식의 도출**
+**8) Schrödinger 방정식의 도출**
 
 상태 $|\psi(t)\rangle = \hat{U}(t)|\psi(0)\rangle$ 의 양변을 $t$ 에 대해 미분.
 
@@ -313,18 +678,21 @@ $$
 \boxed{i\hbar\,\frac{d|\psi(t)\rangle}{dt} = \hat{H}|\psi(t)\rangle}
 $$
 
-이것이 **Schrödinger 방정식**. 시간 변수에 대해 연속적으로 변하는 unitary 라는 수학적 구조 (Stone 정리) 의 직접적 귀결이다.
+이것이 **Schrödinger 방정식**. 시간 변수에 대해 연속적으로 변하는 unitary 라는 수학적 구조 (1-parameter unitary 군, Stone 정리) 의 직접적 귀결.
 
-**6) 기존 무한소 도출과의 관계**
+**9) 기존 무한소 도출과의 관계**
 
-기존 교재에서 자주 보는 도출 — $\hat{U}(\epsilon) = \hat{I} + i\epsilon\hat{G}$ 의 무한소 전개에서 시작해서 unitarity 조건으로 $\hat{G}$ 가 Hermitian 임을 도출 — 은 위 (4) 항의 1차 전개 ($\hat{U}(t) \approx \hat{I} - it\hat{H}/\hbar$) 와 본질적으로 같은 식이다.
+기존 교재에서 자주 보는 도출 — $\hat{U}(\epsilon) = \hat{I} + i\epsilon\hat{G}$ 의 무한소 전개에서 시작해서 unitarity 조건으로 $\hat{G}$ 가 Hermitian 임을 도출 — 은 위에서 정리한 framework 의 한 단면이다. 구체적으로:
 
-차이는 출발점과 도달점:
+- 무한소 전개 $\hat{U}(\epsilon) \approx \hat{I} - i\epsilon\hat{H}/\hbar$ 는 단계 (6) 의 $\hat{U}(t) = e^{-it\hat{H}/\hbar}$ 의 작은 $t$ 1차 근사.
+- "$\hat{G}$ 가 Hermitian" 의 도출은 단계 (5)-(6) 의 안티-Hermitian → Hermitian 변환의 1차 표현.
 
-- **무한소 도출**: 무한소 전개에서 출발 → 1차 항이 Hermitian 이라는 조건 도출
-- **Stone 정리**: 1-parameter 군의 연속성과 군 성질에서 출발 → 모든 시각의 unitary 가 단일 Hermitian 연산자에서 도출됨
+차이는 단순한 출발점:
 
-둘은 같은 결과의 두 가지 관점이지만, Stone 정리가 spectral 측면에서 본질적 사실 (시간 진화 전체가 단일 Hermitian 에 압축) 을 명확히 보여준다. §1-§6 에서 정리한 정적 관계 (Hermitian 과 unitary 사이의 변환) 가 시간 의존 버전으로 자연스럽게 확장된 것.
+- **무한소 도출**: 작은 $t$ 의 전개에서 시작 → 1차 조건 도출 → 무한 곱으로 지수함수
+- **1-parameter 군 + Stone 정리**: 군의 연속성 자체에서 출발 → generator 의 일반 도출 → unitarity 가 anti-Hermitian 강제 → 양자역학 관습으로 Hermitian
+
+두 도출의 결과는 동일하지만, 후자가 더 근본적인 수학 구조 (Lie 군) 를 명시하므로 양자역학의 전체 그림을 일관되게 드러낸다.
 
 ---
 
