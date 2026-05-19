@@ -64,6 +64,41 @@ $$
 
 $\mathcal{B}_A[\phi,\psi]$는 브라 $\phi$에 대해 켤레 선형(Conjugate linear)이고 켓 $\psi$에 대해 선형(Linear)인 반-쌍선형(Sesquilinear) 형식을 취한다. 미분 작용소의 차수가 높아질수록 부분 적분 횟수가 증가하며, $\mathcal{B}_A$에는 $\phi, \psi$ 및 그 도함수들이 결합된 형태로 나타난다.
 
+**1) 1차 미분**
+
+$$
+\hat{D} = \frac{d}{dx}
+$$
+
+약형의 좌변 $\langle\phi|\hat{L}\psi\rangle$ 을 직접 계산할 때, 미분 연산자에 대해 부분 적분이 자연스럽게 등장한다.
+
+$$
+\langle\phi|\hat{D}\psi\rangle = \int_a^b dx\,\phi^*(x)\,\frac{d\psi(x)}{dx}
+= \bigl[\phi^*(x)\psi(x)\bigr]_a^b - \int_a^b dx\,\frac{d\phi^*(x)}{dx}\,\psi(x)
+$$
+
+두 부분으로 분리.
+
+- 첫 항 $\bigl[\phi^*\psi\bigr]_a^b$: 적분 구간의 양 끝점 ($x = a, b$) 에서 평가된 boundary term.
+
+$$
+\bigl[\phi^*(x)\psi(x)\bigr]_a^b = \mathcal{R}\hat{D}[\phi,\psi]
+$$
+
+- 둘째 항: 미분이 $\phi$ 쪽으로 옮겨진 적분.
+
+$$
+-\int_a^b dx\,\frac{d\phi^*}{dx}\,\psi = \langle(-\hat{D})\phi|\psi\rangle
+$$
+
+따라서 종합하면
+
+$$
+\langle\phi|\hat{D}\psi\rangle = \langle(-\hat{D})\phi|\psi\rangle + \mathcal{R}\hat{D}[\phi,\psi]
+$$
+
+$\hat{D}$ 를 브라 쪽으로 옮기면 작용소가 $-\hat{D}$ 로 변하고, 그 변환 과정에서 boundary term $\bigl[\phi^*\psi\bigr]_a^b$ 가 추가로 등장한다. 2차 이상 미분의 경계적분항 $\mathcal{R}$은 다음 챕터에서 다룬다.
+
 ---
 
 ### 4. 주요 성질 (Algebra of Adjoints)
@@ -77,24 +112,15 @@ $$
 $$
 
 **2) 반선형성 (Anti-linearity)**
+
+쌍대 공간의 복소 대수 구조에 따라 스칼라 계수는 켤레 복소수로 변환된다.
+
 $$
 (\alpha \hat{A} + \beta \hat{B})^\dagger = \alpha^\ast \hat{A}^\dagger + \beta^\ast \hat{B}^\dagger
 $$
-쌍대 공간의 복소 대수 구조에 따라 스칼라 계수는 켤레 복소수로 변환된다.
 
-**2) 곱셈 규칙 (Product rule)과 경계항의 독립성**
+**3) 곱셈 규칙 (Product rule)과 경계항의 독립성**
 
 $$
 (\hat{A}\hat{B})^\dagger = \hat{B}^\dagger \hat{A}^\dagger
 $$
-
-이 대수적 등식은 무한 차원에서도 항상 성립한다. $(\hat{A}\hat{B})^\dagger = \hat{B}^\dagger \hat{A}^\dagger$ 규칙과 경계항 $\mathcal{R}$의 발생은 서로 모순되지 않는다. 이는 **'연산자의 추상적 형태 정의'** 와 **'실제 내적 적분의 실행'** 이 다른 차원의 문제이기 때문이다.
-
-- **형태 정의** : $(\hat{A}\hat{B})^\dagger$는 연산자 $\hat{A}$와 $\hat{B}$를 순차적으로 브라 쪽으로 넘겼을 때, 최종적으로 적분 기호 내부에 남게 되는 연산자의 대수적 형상을 의미한다. 이 형상은 반드시 작용 순서가 뒤집힌 $\hat{B}^\dagger \hat{A}^\dagger$가 된다.
-- **적분 실행** : 실제 내적 $\langle \phi | \hat{A}\hat{B} \psi \rangle$를 계산하기 위해 부분 적분을 수행하면, 각 미분기를 넘길 때마다 경계 찌꺼기가 발생한다.
-
-$$
-\langle \phi | \hat{A}\hat{B} \psi \rangle = \langle \hat{B}^\dagger \hat{A}^\dagger \phi | \psi \rangle + (\mathcal{R}\hat{A} + \mathcal{R}\hat{B})
-$$
-
-따라서 곱셈 규칙은 적분 내부의 **연산자 커널(Kernel)의 모양** 을 결정하는 규칙이며, $\mathcal{R}$은 그 변환 과정에서 발생하는 물리적 경계 조건의 산물이다. 수반 연산자의 대수 규칙은 시스템의 경계 조건과 무관하게 연산자 자체의 성질로서 유지된다.

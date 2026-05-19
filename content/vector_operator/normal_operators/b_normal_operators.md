@@ -7,11 +7,11 @@ weight = 1.5
 
 ### 1. 정규 연산자의 정의
 
-연산자 $\hat{A}$가 자신의 허미션 켤레($\hat{A}^\dagger$)와 교환 가능할 때, 노름 보존 조건을 만족하는 경우, **정규 연산자(Normal Operator)** 라고 한다.
+아래의 세가지 조건을 모두 만족할 때, **정규 연산자(Normal Operator)** 라고 한다.
 
 - [$\hat{A}, \hat{A}^\dagger] = \hat{A}\hat{A}^\dagger - \hat{A}^\dagger\hat{A} = 0$
-
-- 무한 차원을 포괄하는 보편적/해석학적 조건: 정의역 일치 $\mathcal{D}(\hat{A}) = \mathcal{D}(\hat{A}^\dagger)$ 및 노름 보존 $\|\hat{A}\psi\| = \|\hat{A}^\dagger\psi\|$
+- 정의역 일치 $\mathcal{D}(\hat{A}) = \mathcal{D}(\hat{A}^\dagger)$
+- $\mathcal{R}\hat{A}=0$ 이것은 노름 보존 $\|\hat{A}\psi\| = \|\hat{A}^\dagger\psi\|$ 과 동치이다.
 
 이 조건을 만족하는 연산자는 **항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장** 된다. 고유값이 $\lambda_i$, 고유상태벡터가 $|\lambda_i\rangle$ 라고 할 때,
 
