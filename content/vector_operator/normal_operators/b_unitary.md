@@ -75,7 +75,7 @@ $$
 \langle v_i|v_j\rangle = 0
 $$
 
-b_normal_operators.md §3 의 특성 2 의 직접 적용. (Unitary 가 정규 연산자이고, 표준 내적에서 듀얼 기저가 자연 켤레와 일치하므로 $\langle v^i| = \langle v_i|$.)
+b_iormal_operators.md §3 의 특성 2 의 직접 적용. (Unitary 가 정규 연산자이고, 표준 내적에서 듀얼 기저가 자연 켤레와 일치하므로 $\langle v^i| = \langle v_i|$.)
 
 **2) 노름 보존**
 
@@ -89,10 +89,10 @@ $$
 
 **3) 정수 거듭제곱**
 
-$\hat{U}^n$ 도 유니타리이다 ($n$ 정수).
+$\hat{U}^i$ 도 유니타리이다 ($n$ 정수).
 
 $$
-(\hat{U}^n)^\dagger\,\hat{U}^n = (\hat{U}^\dagger)^n\,\hat{U}^n = \hat{I}^n = \hat{I}
+(\hat{U}^i)^\dagger\,\hat{U}^i = (\hat{U}^\dagger)^i\,\hat{U}^i = \hat{I}^i = \hat{I}
 $$
 
 ---
@@ -105,46 +105,46 @@ $$
 
 proof)
 
-유니타리의 고유값이 단위 원 위에 있음을 도출했다. 따라서 spectral 분해의 각 고유값이 $e^{i\lambda_n}$ 형태로 표현된다.
+유니타리의 고유값이 단위 원 위에 있음을 도출했다. 따라서 spectral 분해의 각 고유값이 $e^{i\lambda_i}$ 형태로 표현된다.
 
 $$
-\hat{U} = \sum_n e^{i\lambda_n} |v_n\rangle\langle v_n|, \quad \lambda_n \in \mathbb{R}
+\hat{U} = \sum_i e^{i\lambda_i} |v_i\rangle\langle v_i|, \quad \lambda_i \in \mathbb{R}
 $$
 
-각 고유값 $e^{i\lambda_n}$ 이 스칼라 지수 함수. 그 정의 — Taylor 급수의 무한 합:
+각 고유값 $e^{i\lambda_i}$ 이 스칼라 지수 함수. 그 정의 — Taylor 급수의 무한 합:
 
 $$
-e^{i\lambda_n} = \sum_{k=0}^{\infty} \frac{(i\lambda_n)^k}{k!}
+e^{i\lambda_i} = \sum_{k=0}^{\infty} \frac{(i\lambda_i)^k}{k!}
 $$
 
 이를 spectral 분해에 대입:
 
 $$
-\hat{U} = \sum_n \left(\sum_{k=0}^{\infty} \frac{(i\lambda_n)^k}{k!}\right) |v_n\rangle\langle v_n|
+\hat{U} = \sum_i \left(\sum_{k=0}^{\infty} \frac{(i\lambda_i)^k}{k!}\right) |v_i\rangle\langle v_i|
 $$
 
 수렴 조건 하에서 합의 순서를 바꿈:
 
 $$
-\hat{U} = \sum_{k=0}^{\infty} \frac{i^k}{k!} \sum_n \lambda_n^k |v_n\rangle\langle v_n|
+\hat{U} = \sum_{k=0}^{\infty} \frac{i^k}{k!} \sum_i \lambda_i^k |v_i\rangle\langle v_i|
 $$
 
-안쪽의 합 $\sum_n \lambda_n^k |v_n\rangle\langle v_n|$ 이 어떤 작용소의 $k$ 거듭제곱의 형태. 작용소 $\hat{H}$ 를
+안쪽의 합 $\sum_i \lambda_i^k |v_i\rangle\langle v_i|$ 이 어떤 작용소의 $k$ 거듭제곱의 형태. 작용소 $\hat{H}$ 를
 
 $$
-\hat{H} := \sum_n \lambda_n |v_n\rangle\langle v_n|
+\hat{H} := \sum_i \lambda_i |v_i\rangle\langle v_i|
 $$
 
-으로 둔다. $\lambda_n$ 이 실수이므로 $\hat{H}$ 가 Hermitian:
+으로 둔다. $\lambda_i$ 이 실수이므로 $\hat{H}$ 가 Hermitian:
 
 $$
-\hat{H}^\dagger = \sum_n \overline{\lambda_n} |v_n\rangle\langle v_n| = \sum_n \lambda_n |v_n\rangle\langle v_n| = \hat{H}
+\hat{H}^\dagger = \sum_i \overline{\lambda_i} |v_i\rangle\langle v_i| = \sum_i \lambda_i |v_i\rangle\langle v_i| = \hat{H}
 $$
 
-Spectral 분해의 직교성 $\langle v_n|v_m\rangle = \delta_{nm}$ 에서
+Spectral 분해의 직교성 $\langle v_i|v_m\rangle = \delta_{nm}$ 에서
 
 $$
-\hat{H}^k = \sum_n \lambda_n^k |v_n\rangle\langle v_n|
+\hat{H}^k = \sum_i \lambda_i^k |v_i\rangle\langle v_i|
 $$
 
 이를 위 식에 대입하면
@@ -164,10 +164,10 @@ $$
 ### 6. 회전의 양과 측정 가능한 양의 동일성
 
 $$
-\hat{H} = \sum_n \lambda_n |v_n\rangle\langle v_n|, \quad \hat{U} = \sum_n e^{i\lambda_n} |v_n\rangle\langle v_n|
+\hat{H} = \sum_i \lambda_i |v_i\rangle\langle v_i|, \quad \hat{U} = \sum_i e^{i\lambda_i} |v_i\rangle\langle v_i|
 $$
 
-두 식의 의미를 자세하게 살펴보자. 두 작용소가 같은 사영 $|v_n\rangle\langle v_n|$ 위에 자리잡혀 있다. 사영 부분이 동일하고, 사영에 곱해지는 스칼라가 한쪽에서 $\lambda_n$, 다른 쪽에서 $e^{i\lambda_n}$. 같은 실수 $\lambda_n$ 이 두 표현에 등장한다.
+두 식의 의미를 자세하게 살펴보자. 두 작용소가 같은 사영 $|v_i\rangle\langle v_i|$ 위에 자리잡혀 있다. 사영 부분이 동일하고, 사영에 곱해지는 스칼라가 한쪽에서 $\lambda_i$, 다른 쪽에서 $e^{i\lambda_i}$. 같은 실수 $\lambda_i$ 이 두 표현에 등장한다.
 한 표현에서는 그대로, 다른 표현에서는 지수 안의 phase 각도로 표현된다.
 
-같은 $\lambda_n$ 이 두 작용소에서 서로 다른 역할을 한다. $\hat{U}$ 에서는 회전의 양, $\hat{H}$ 에서는 측정값. **회전의 양 자체가 측정 가능한 양을 의미하는 것** 이다. 이것은 $\hat{H}$ 가 $\hat{U}$ 와 무관하게 외부에서 정의된 작용소가 아니다.
+같은 $\lambda_i$ 이 두 작용소에서 서로 다른 역할을 한다. $\hat{U}$ 에서는 회전의 양, $\hat{H}$ 에서는 측정값. **회전의 양 자체가 측정 가능한 양을 의미하는 것** 이다. 이것은 $\hat{H}$ 가 $\hat{U}$ 와 무관하게 외부에서 정의된 작용소가 아니다.
