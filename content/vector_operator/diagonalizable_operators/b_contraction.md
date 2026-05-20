@@ -43,59 +43,27 @@ $$
 
 **4) Strict contraction**
 
-부등호가 모든 비영 벡터에 대해 strict 한 경우 — $\|\hat{T}|\psi\rangle\| < \|\psi\|$ — 를 strict contraction 이라 부른다. 이 경우 모든 비영 벡터의 길이가 strict 하게 줄어들고, 원래의 길이와 같은 상태로 유지되는 일이 없다. Operator norm 의 조건으로는 $\|\hat{T}\| < 1$ 이 성립한다.
-
-일반 contraction 의 경우 거듭제곱 $\hat{T}^n$ 이 일반적으로 수렴하지 않을 수 있다. 단위 원 위에 있는 고유값에 대응하는 부분이 영원히 같은 노름으로 남아 있기 때문이다. 반면 strict contraction 의 경우 모든 고유값이 단위 원의 내부에 있으므로 거듭제곱이 0 에 가까워진다. 이 두 경우의 차이가 §7 의 거듭제곱 거동에서 자세히 다뤄진다.
+부등호가 모든 비영 벡터에 대해 strict 한 경우, $\|\hat{T}|\psi\rangle\| < \|\psi\|$ 를 strict contraction 이라 부른다. 이 경우 모든 비영 벡터의 길이가 strict 하게 줄어들고, 원래의 길이와 같은 상태로 유지되는 일이 없다. Operator norm 의 조건으로는 $\|\hat{T}\| < 1$ 이 성립한다.
 
 ---
 
-### 2. Spectral 분해
+### 2. Hermitian 과의 자연 관계
 
-대각화 가능한 작용소 $\hat{T}$ 가 다음과 같은 spectral 분해를 가진다.
-
-$$
-\hat{T} = \sum_n \lambda_n |v_n\rangle\langle v^n|
-$$
-
-여기서 $\{|v_n\rangle\}$ 이 $\hat{T}$ 의 right eigenvector 들로 이루어진 집합이며, 이 벡터들이 서로 선형 독립이지만 일반적으로 정규 직교는 아니다. $\{\langle v^n|\}$ 이 이 right eigenvector 들에 대응하는 dual basis 를 이루며, 다음과 같은 biorthogonality 조건을 만족한다.
+**1) 지수 표현**
 
 $$
-\langle v^n|v_m\rangle = \delta^n_m
+\hat{T} = \sum_{k=0}^{\infty} \frac{(i\hat{Z})^k}{k!} = e^{i\hat{Z}}
 $$
 
-작용소 $\hat{T}$ 가 정규인 특수한 경우에는 $\langle v^n| = \langle v_n|$ 의 단순화가 성립하여 $\{|v_n\rangle\}$ 이 정규 직교 기저를 이루고, 분해가 표준 형태 $\hat{T} = \sum_n \lambda_n |v_n\rangle\langle v_n|$ 로 환원된다. 비-정규의 경우에는 이러한 단순화가 성립하지 않으며 dual basis $\{\langle v^n|\}$ 이 right eigenvector $\{|v_n\rangle\}$ 의 자연 켤레와 다른 형태를 가지게 된다.
+proof)
 
-이 분해에서 사영 부분 $|v_n\rangle\langle v^n|$ 이 biorthogonality 로부터 다음과 같은 곱셈 규칙을 만족하게 된다.
-
-$$
-|v_n\rangle\langle v^n| \cdot |v_m\rangle\langle v^m| = \delta^n_m |v_n\rangle\langle v^n|
-$$
-
-같은 사영을 두 번 곱하면 자기 자신으로 돌아오고 (idempotent), 다른 사영과 곱하면 0 이 된다 (서로 orthogonal). 이 성질이 정규 케이스의 Hermitian 사영 $|v_n\rangle\langle v_n|$ 이 가지는 성질의 자연스러운 일반화에 해당한다. 비-정규 케이스의 사영은 일반적으로 Hermitian 이 아니다.
-
-작용소 $\hat{T}$ 의 $k$ 거듭제곱이 biorthogonality 로부터 다음과 같이 계산된다.
-
-$$
-\hat{T}^k = \sum_n \lambda_n^k |v_n\rangle\langle v^n|
-$$
-
-반복된 곱셈에서 위의 곱셈 규칙에 의해 같은 인덱스의 항만 살아남고 다른 인덱스의 항들이 모두 소멸하기 때문에 이러한 결과가 얻어진다.
-
----
-
-### 3. Hermitian 과의 자연 관계 — $\hat{T} = e^{i\hat{Z}}$ 의 도출
-
-§2 의 spectral 분해에서 출발한다. Contraction 의 각 고유값 $\lambda_n$ 이 단위 원판 내부 또는 경계에 위치하므로 $|\lambda_n| \leq 1$ 이 성립한다. 0 이 아닌 $\lambda_n$ 을 극형식으로 풀면 $\lambda_n = r_n e^{i\theta_n}$ 의 형태가 되며, 여기서 $0 < r_n \leq 1$ 이고 $\theta_n \in \mathbb{R}$ 이다. $r_n$ 이 1 이하인 양수이므로 $r_n = e^{-\kappa_n}$ 의 형태로 다시 쓸 수 있으며, 이때 새 매개변수 $\kappa_n$ 이 0 이상의 실수이다.
-
-이를 종합하면 각 고유값이 다음과 같이 표현된다.
+spectral 분해에서 출발한다. Contraction 의 각 고유값 $\lambda_n$ 이 단위 원판 내부 또는 경계에 위치하므로 $|\lambda_n| \leq 1$ 이 성립한다. 0 이 아닌 $\lambda_n$ 을 극형식으로 풀면 $\lambda_n = r_n e^{i\theta_n}$ 의 형태가 되며, 여기서 $0 < r_n \leq 1$ 이고 $\theta_n \in \mathbb{R}$ 이다. $r_n$ 이 1 이하인 양수이므로 $r_n = e^{-\kappa_n}$ 의 형태로 다시 쓸 수 있으며, 이때 새 매개변수 $\kappa_n$ 이 0 이상의 실수이다.
 
 $$
 \lambda_n = e^{-\kappa_n} e^{i\theta_n} = e^{i(\theta_n + i\kappa_n)} = e^{i\mu_n}, \quad \mu_n = \theta_n + i\kappa_n
 $$
 
-새 매개변수 $\mu_n$ 의 허수부가 $\text{Im}\,\mu_n = \kappa_n \geq 0$ 이므로 $\mu_n$ 이 상반평면 (실수 직선 포함) 의 점에 해당한다.
-
-이 표현을 §2 의 spectral 분해에 대입하면 다음 형태가 된다.
+새 매개변수 $\mu_n$ 의 허수부가 $\text{Im}\,\mu_n = \kappa_n \geq 0$ 이므로 $\mu_n$ 이 상반평면 (실수 직선 포함) 의 점에 해당한다. spectral 분해에 대입하면 다음 형태가 된다.
 
 $$
 \hat{T} = \sum_n e^{i\mu_n} |v_n\rangle\langle v^n|, \quad \mu_n \in \text{closed upper half-plane}
@@ -119,7 +87,7 @@ $$
 \hat{Z} := \sum_n \mu_n |v_n\rangle\langle v^n|
 $$
 
-§2 에서 도출한 거듭제곱의 결과를 이 정의에 적용하면 다음 등식이 성립한다.
+거듭제곱의 결과를 이 정의에 적용하면 다음 등식이 성립한다.
 
 $$
 \hat{Z}^k = \sum_n \mu_n^k |v_n\rangle\langle v^n|

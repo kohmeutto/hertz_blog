@@ -17,15 +17,9 @@ $$
 
 즉 $\hat{U}^\dagger = \hat{U}^{-1}$, 에르미트 켤레가 역원과 같다. 이 조건이 정규 연산자의 조건 $[\hat{U}, \hat{U}^\dagger] = 0$ 을 자동으로 만족한다.
 
-**2) 노름 보존**
+**2) 물리적 의미**
 
-임의의 두 벡터 $|v\rangle, |w\rangle$ 에 대해
-
-$$
-\langle\hat{U}v|\hat{U}w\rangle = \langle v|\hat{U}^\dagger\hat{U}|w\rangle = \langle v|\hat{I}|w\rangle = \langle v|w\rangle
-$$
-
-내적이 보존되며, 특히 노름 $\|\hat{U}v\| = \|v\|$ 가 보존된다.
+유니타리 연산자는 상태 벡터의 길이(norm), 즉 **확률을 보존** 하는 모든 물리적 변환을 나타낸다. 양자 시스템의 **시간 변화(time evolution)** 나 **기저 변환(change of basis)** 등은 반드시 유니타리 연산자로 기술되어야 한다.
 
 ---
 
@@ -83,7 +77,17 @@ $$
 
 b_normal_operators.md §3 의 특성 2 의 직접 적용. (Unitary 가 정규 연산자이고, 표준 내적에서 듀얼 기저가 자연 켤레와 일치하므로 $\langle v^i| = \langle v_i|$.)
 
-**2) 정수 거듭제곱**
+**2) 노름 보존**
+
+임의의 두 벡터 $|v\rangle, |w\rangle$ 에 대해
+
+$$
+\langle\hat{U}v|\hat{U}w\rangle = \langle v|\hat{U}^\dagger\hat{U}|w\rangle = \langle v|\hat{I}|w\rangle = \langle v|w\rangle
+$$
+
+내적이 보존되며, 특히 노름 $\|\hat{U}v\| = \|v\|$ 가 보존된다.
+
+**3) 정수 거듭제곱**
 
 $\hat{U}^n$ 도 유니타리이다 ($n$ 정수).
 
@@ -93,9 +97,15 @@ $$
 
 ---
 
-### 5. Spectral 분해에서 Hermitian 의 등장 — $\hat{U} = e^{i\hat{H}}$ 의 도출
+### 5. Unitary 와 Hermitian
 
-§2 에서 유니타리의 고유값이 단위 원 위에 있음을 도출했다. 따라서 spectral 분해의 각 고유값이 $e^{i\lambda_n}$ 형태로 표현된다.
+$$
+\hat{U} = e^{i\hat{H}}
+$$
+
+proof)
+
+유니타리의 고유값이 단위 원 위에 있음을 도출했다. 따라서 spectral 분해의 각 고유값이 $e^{i\lambda_n}$ 형태로 표현된다.
 
 $$
 \hat{U} = \sum_n e^{i\lambda_n} |v_n\rangle\langle v_n|, \quad \lambda_n \in \mathbb{R}
@@ -131,8 +141,6 @@ $$
 \hat{H}^\dagger = \sum_n \overline{\lambda_n} |v_n\rangle\langle v_n| = \sum_n \lambda_n |v_n\rangle\langle v_n| = \hat{H}
 $$
 
-(자연 내적의 정규 작용소에서 dual basis 와 켤레가 일치 — b_normal_operators.md §3.)
-
 Spectral 분해의 직교성 $\langle v_n|v_m\rangle = \delta_{nm}$ 에서
 
 $$
@@ -155,28 +163,11 @@ $$
 
 ### 6. 회전의 양과 측정 가능한 양의 동일성
 
-§5 의 두 spectral 분해를 나란히 놓는다.
-
 $$
 \hat{H} = \sum_n \lambda_n |v_n\rangle\langle v_n|, \quad \hat{U} = \sum_n e^{i\lambda_n} |v_n\rangle\langle v_n|
 $$
 
-두 작용소가 같은 사영 $|v_n\rangle\langle v_n|$ 위에 자리잡혀 있다. 사영 부분이 동일하고, 사영에 곱해지는 스칼라가 한쪽에서 $\lambda_n$, 다른 쪽에서 $e^{i\lambda_n}$. 같은 실수 $\lambda_n$ 이 두 표현에 등장한다 — 한 표현에서는 그대로, 다른 표현에서는 지수 안의 phase 각도로.
+두 식의 의미를 자세하게 살펴보자. 두 작용소가 같은 사영 $|v_n\rangle\langle v_n|$ 위에 자리잡혀 있다. 사영 부분이 동일하고, 사영에 곱해지는 스칼라가 한쪽에서 $\lambda_n$, 다른 쪽에서 $e^{i\lambda_n}$. 같은 실수 $\lambda_n$ 이 두 표현에 등장한다.
+한 표현에서는 그대로, 다른 표현에서는 지수 안의 phase 각도로 표현된다.
 
-$\hat{U}$ 의 작용을 본다. 사영 $|v_n\rangle\langle v_n|$ 에 스칼라 $e^{i\lambda_n}$ 가 곱해진다. $|e^{i\lambda_n}| = 1$ 이므로 사영의 크기가 유지되고 위상만 $\lambda_n$ 각도로 회전. $\hat{U}$ 가 부분 공간 $|v_n\rangle$ 방향을 $\lambda_n$ 만큼 위상 회전시키는 작용소.
-
-$\hat{H}$ 의 작용을 본다. 사영 $|v_n\rangle\langle v_n|$ 에 스칼라 $\lambda_n$ 이 곱해진다. 실수 배율. $\hat{H}$ 가 부분 공간 $|v_n\rangle$ 방향에서 $\lambda_n$ 의 값을 측정하는 작용소.
-
-같은 $\lambda_n$ 이 두 작용소에서 서로 다른 역할을 한다. $\hat{U}$ 에서는 회전의 양, $\hat{H}$ 에서는 측정값. 회전의 양 자체가 측정 가능한 양.
-
-$\hat{H}$ 가 $\hat{U}$ 와 무관하게 외부에서 정의된 작용소가 아니다. §5 의 도출에서 $\hat{H}$ 가 $\hat{U}$ 의 spectral 분해에 들어있는 phase 각도들 $\{\lambda_n\}$ 을 모아 작용소 형태로 정리한 결과. $\hat{U}$ 와 $\hat{H}$ 가 별개의 두 작용소가 아니라 같은 spectral 정보의 두 표현 — 한 표현이 위상 곱셈 (회전), 다른 표현이 스칼라 곱셈 (측정).
-
-**Noether 와의 연결**
-
-대칭 변환을 유니타리 $\hat{U}$ 로 기술한다. §5 의 결과에 의해 모든 유니타리가 어떤 Hermitian $\hat{H}$ 로부터 자연 등장한다. $\hat{H}$ 가 변환 $\hat{U}$ 의 generator.
-
-$\hat{H}$ 가 Hermitian 이므로 그 고유값 $\lambda_n$ 이 실수 — 측정 가능한 양. 대칭 변환을 일으키는 양이 측정 가능한 양이다.
-
-$\hat{H}$ 가 자기 자신과 commute 한다 (자명). $\hat{U} = e^{i\hat{H}}$ 의 spectral 분해가 $\hat{H}$ 의 spectral 분해와 같은 기저를 사용하므로 $\hat{H}$ 와 $\hat{U}$ 도 commute. 변환 $\hat{U}$ 가 generator $\hat{H}$ 를 변화시키지 않는다.
-
-대칭 변환의 generator 가 측정 가능한 양이며 그 변환 하에서 보존되는 양이다. 시간 진화 unitary $\hat{U}(t)$ 의 1-parameter 군 구조와 Heisenberg 운동 방정식을 추가하면 시간 불변 보존량의 statement (Noether 의 양자 버전) 가 도출되며, 시간 진화의 1-parameter 군 framework 이 후속 Lie 군 chapter 에서 다뤄진다.
+같은 $\lambda_n$ 이 두 작용소에서 서로 다른 역할을 한다. $\hat{U}$ 에서는 회전의 양, $\hat{H}$ 에서는 측정값. **회전의 양 자체가 측정 가능한 양을 의미하는 것** 이다. 이것은 $\hat{H}$ 가 $\hat{U}$ 와 무관하게 외부에서 정의된 작용소가 아니다.
