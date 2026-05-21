@@ -13,7 +13,7 @@ weight = 1.5
 - 정의역 일치 $\mathcal{D}(\hat{A}) = \mathcal{D}(\hat{A}^\dagger)$
 - $\mathcal{R}\hat{A}=0$ 이것은 노름 보존 $\|\hat{A}\psi\| = \|\hat{A}^\dagger\psi\|$ 과 동치이다.
 
-이 조건을 만족하는 연산자는 **항상 완비적인 정규직교 고유벡터 기저를 가진다는 매우 중요한 특성이 보장** 된다. 고유값이 $\lambda_i$, 고유상태벡터가 $|\lambda_i\rangle$ 라고 할 때,
+이 조건을 만족하는 연산자는 **항상 완비적인 고유벡터 기저를 가진다는 매우 중요한 특성이 보장** 된다. 고유값이 $\lambda_i$, 고유상태벡터가 $|\lambda_i\rangle$ 라고 할 때,
 
 $$\hat{A} = \sum_i \lambda_i |\lambda_i\rangle \langle \lambda^i| \quad \text{or} \quad \hat{A} = \int d\lambda\, \lambda |\lambda\rangle \langle \lambda^d|$$
 

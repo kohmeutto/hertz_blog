@@ -1,5 +1,5 @@
 +++
-title = "Diagonalizable operators"
+title = "I-operators"
 weight = 11
 +++
 
