@@ -75,7 +75,70 @@ $$
 
 ---
 
-### 2. 스팩트럼 분해의 의미
+### 2. 스펙트럼 분해와 행렬 대각화
+
+**연산자의 스펙트럼 분해는 행렬 대각화 $A=PDP^{-1}$ 와 정확히 동등한 표현이다.** 두 표현을 잇는 다리는 **$P^{-1}$의 행이 쌍대 기저 $\langle\lambda^i|$** 라는 점이다.
+
+**1)** 행렬의 구성
+
+$P$는 고유벡터를 열로 쌓은 행렬, $D$는 고유값을 대각에 놓은 대각행렬, $P^{-1}$ 은 $P$의 역행렬이다.
+
+$$
+P=\begin{bmatrix} \vert & \vert & & \vert \\ |\lambda_1\rangle & |\lambda_2\rangle & \cdots & |\lambda_n\rangle \\ \vert & \vert & & \vert \end{bmatrix},\quad
+D=\begin{bmatrix} \lambda_1 & & & \\ & \lambda_2 & & \\ & & \ddots & \\ & & & \lambda_n \end{bmatrix}
+$$
+
+**2)** $P^{-1}$ 의 행이 쌍대 기저인 이유
+
+역행렬의 정의 $P^{-1}P=I$ 의 $(i,j)$ 성분은, $P^{-1}$ 의 $i$-번째 행과 $P$의 $j$-번째 열의 내적이다.
+
+$$
+(P^{-1}P)_{ij}=(P^{-1})_{i,:}\,|\lambda_j\rangle=\delta^i_j
+$$
+
+이는 쌍대 기저의 쌍직교 조건 $\langle\lambda^i|\lambda_j\rangle=\delta^i_j$ 와 정확히 같은 식이다. 따라서 $P^{-1}$ 의 $i$-번째 행은 $\langle\lambda^i|$ 와 같다.
+
+$$
+P^{-1}=\begin{bmatrix} - & \langle\lambda^1| & - \\ - & \langle\lambda^2| & - \\ & \vdots & \\ - & \langle\lambda^n| & - \end{bmatrix}
+$$
+
+즉, **고유벡터 $|\lambda_i\rangle$ 를 모아 $P$ 를 만드는 순간, 쌍대 기저 $\langle\lambda^i|$ 는 $P^{-1}$ 의 행으로 자동 결정된다.** 쌍대 기저를 따로 계산할 필요 없이, $P$ 의 역행렬을 구하면 그 행들이 곧 쌍대 기저이다.
+
+**3) 동치성** 
+
+$$
+PDP^{-1}=\sum_i\lambda_i|\lambda_i\rangle\langle\lambda^i|
+$$
+
+proof)
+
+먼저 $PD$ 를 계산한다. 대각행렬을 오른쪽에 곱하는 것은 $P$ 의 각 열을 해당 고유값으로 스케일링하는 것과 같다.
+
+$$
+PD=\begin{bmatrix} \vert & \vert & & \vert \\ \lambda_1|\lambda_1\rangle & \lambda_2|\lambda_2\rangle & \cdots & \lambda_n|\lambda_n\rangle \\ \vert & \vert & & \vert \end{bmatrix}
+$$
+
+이제 $(PD)P^{-1}$ 을 계산한다. 일반적으로 두 행렬의 곱은 **왼쪽 행렬의 열 벡터와 오른쪽 행렬의 행 벡터의 외적의 합** 으로 분해된다($\text{rank-1}$ 분해).
+
+$$
+AB=\sum_k (A_{:,k})(B_{k,:})
+$$
+
+이를 적용하면,
+
+$$
+PDP^{-1}=\sum_i (PD)_{:,i}\,(P^{-1})_{i,:}=\sum_i (\lambda_i|\lambda_i\rangle)(\langle\lambda^i|)=\sum_i\lambda_i|\lambda_i\rangle\langle\lambda^i|
+$$
+
+따라서 $\hat{A}=PDP^{-1}$ 이다.
+
+**4)** 정규직교 특수 경우
+
+고유벡터가 정규직교라면 $P$는 유니터리 행렬이 되어 $P^{-1}=P^\dagger$ 이고, $\langle\lambda^i|=\langle\lambda_i|$ 이다. 즉, 쌍대 기저가 원래 기저의 켤레전치와 같아진다. 일반 형태 $A=PDP^{-1}$ 은 $A=PDP^\dagger$ 로 단순화된다.
+
+---
+
+### 3. 스팩트럼 분해의 의미
 
 고유벡터의 의미를 다시한번 살펴보자. 고유벡터가 어떤 시스템(연산자)에 입력되었을 경우, **입력(고유벡터)의 특성이 전혀 변하지(왜곡되지) 않으면서, 크기만 바뀌어 출력되는 입력을 의미한다.**
 
@@ -90,7 +153,7 @@ $$
 
 ---
 
-### 3. 연산자의 고유벡터들이 완비성을 가질 조건
+### 4. 연산자의 고유벡터들이 완비성을 가질 조건
 
 **모든 고유값(eigenvalue)** 에 대해,
 
@@ -114,7 +177,7 @@ $$
 
 ---
 
-### 4. 연산자의 멱
+### 5. 연산자의 멱
 
 $$
 \hat{A}^n
