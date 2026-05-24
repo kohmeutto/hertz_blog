@@ -61,8 +61,8 @@ $$
 
 (1) 성분별 미분
 
-$$\dfrac{d}{d\tau}\cos\tau = -\sin\tau,\quad\dfrac{d}{d\tau}(-\sin\tau) = -\cos\tau$$
-$$\dfrac{d}{d\tau}\sin\tau = \cos\tau,\quad\dfrac{d}{d\tau}\cos\tau = -\sin\tau$$
+$$\frac{d}{d\tau}\cos\tau = -\sin\tau,\quad\frac{d}{d\tau}(-\sin\tau) = -\cos\tau$$
+$$\frac{d}{d\tau}\sin\tau = \cos\tau,\quad\frac{d}{d\tau}\cos\tau = -\sin\tau$$
 
 (2) 결과
 
