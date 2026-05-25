@@ -1,6 +1,6 @@
 +++
-title = "다변수 행렬 미분"
-weight = 11
+title = "(b) MV matrix"
+weight = 4
 +++
 
 ### 1. 동기

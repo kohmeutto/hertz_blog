@@ -1,6 +1,6 @@
 +++
-title = "다변수 스펙트럼 미분"
-weight = 12
+title = "(b) MV discrete spectrum"
+weight = 5
 +++
 
 ### 1. 동기

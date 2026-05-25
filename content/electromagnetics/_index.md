@@ -1,6 +1,6 @@
 +++
 title = "Electromagnetics"
-weight = 8
+weight = 100
 +++
 
 ---

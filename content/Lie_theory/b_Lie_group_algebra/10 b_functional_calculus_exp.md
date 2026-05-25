@@ -1,13 +1,17 @@
 +++
-title = "함수 미적분과 지수 사상"
-weight = 6
+title = "(b) Functional calculus"
+weight = 10
 +++
+
+---
 
 ### 1. 동기
 
 §5에서 곡선 $A(\tau)$의 미분 $\dfrac{dA}{d\tau}$를 계산하는 법을 봤다. 이제 그 *역*의 문제를 생각한다. 매개변수 $\tau = 0$에서의 미분값(어떤 행렬 $X$)이 주어졌을 때, *전체 곡선* $A(\tau)$를 복원할 수 있는가?
 
 이 복원을 가능하게 하는 도구가 *지수 사상(exponential map)*이다. 이를 정확히 이해하려면 *함수 미적분(functional calculus)*— 스칼라 함수를 행렬에 적용하는 일반적 방법— 을 먼저 짚어야 한다.
+
+---
 
 ### 2. 스펙트럼 분해
 
@@ -24,6 +28,8 @@ $$A = \sum_i \lambda_i\, \vert v_i\rangle\langle v^i\vert$$
 
 $$A\, \vert v_j\rangle = \sum_i \lambda_i\, \vert v_i\rangle \underbrace{\langle v^i\vert v_j\rangle}_{=\delta^i_j} = \lambda_j\, \vert v_j\rangle$$
 
+---
+
 ### 3. 함수 미적분의 스펙트럼 정의
 
 **1)** 스칼라 함수 $f: \mathbb{C} \to \mathbb{C}$가 주어지면, 행렬 $A$에 대한 $f(A)$를 다음으로 정의한다.
@@ -38,6 +44,8 @@ $$f(A) = \sum_i f(\lambda_i)\, \vert v_i\rangle\langle v^i\vert$$
 
 **4)** example2) $f(x) = e^x$이면 $f(A) = e^A = \sum_i e^{\lambda_i}\, \vert v_i\rangle\langle v^i\vert$.
 
+---
+
 ### 4. 지수 사상: 두 가지 정의
 
 **1)** *스펙트럼 정의*:
@@ -49,6 +57,8 @@ $$\exp(A) = \sum_i e^{\lambda_i}\, \vert v_i\rangle\langle v^i\vert$$
 $$\exp(A) = I + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \cdots = \sum_{n=0}^{\infty} \frac{A^n}{n!}$$
 
 **3)** 대각화 가능 행렬에서는 두 정의가 일치한다 (스펙트럼 분해를 대입하면 같은 식). 더 일반적으로 테일러 급수 정의는 대각화 가능성에 의존하지 않으므로 *임의의 정사각 행렬*에 대해 잘 정의된다.
+
+---
 
 ### 5. 지수 사상의 핵심 성질
 
@@ -72,6 +82,8 @@ $$\frac{d}{d\tau}\sum_{n=0}^\infty \frac{(\tau A)^n}{n!} = \sum_{n=1}^\infty \fr
 $A$가 $\exp(\tau A)$와 교환하는 것은 $\exp(\tau A)$가 $A$의 다항식의 극한이라는 사실에서 따라온다.
 
 이 성질은 *지수 사상이 곡선 $A(\tau) = \exp(\tau X)$의 미분과 자연스럽게 어울린다*는 것을 보여준다.
+
+---
 
 ### 6. SO(2) 예제: 회전 행렬의 복원
 
@@ -109,6 +121,8 @@ $$\exp(\tau X) = \cos\tau \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + \sin\ta
 
 **7)** *결론: $\tau = 0$에서의 미분 $X$만 알면 지수 사상으로 곡선 전체 $R(\tau)$가 복원된다.*
 
+---
+
 ### 7. 미분과 지수의 역대응
 
 **1)** 다음 두 도구가 서로의 *역*에 해당한다.
@@ -142,6 +156,8 @@ $$\exp(\tau X) = \cos\tau \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + \sin\ta
   <path d="M 270,120 Q 200,170 130,120" fill="none" stroke="#cc0000" stroke-width="2" marker-end="url(#arr6red)"/>
   <text x="200" y="180" text-anchor="middle" font-size="11" fill="#cc0000">exp(τ·)</text>
 </svg>
+
+---
 
 ### 8. 정리
 

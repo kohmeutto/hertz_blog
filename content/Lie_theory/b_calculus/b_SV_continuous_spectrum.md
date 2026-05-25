@@ -1,18 +1,9 @@
 +++
-title = "연속 스펙트럼 확장"
-weight = 8
+title = "(b) SV continuous spectrum"
+weight = 3
 +++
 
-### 1. 동기
-
-§7까지는 이산 스펙트럼(고유값들이 띄엄띄엄 분포된 경우)을 다뤘다. 그러나 위치 연산자, 운동량 연산자, 자유 입자 해밀토니안 같은 많은 연산자는 *연속 스펙트럼*을 가진다. 이 장에서는 §7의 결과들을 연속 스펙트럼으로 확장한다.
-
-핵심 변환:
-- 합 → 적분
-- 크로네커 델타 → 디랙 델타
-- 이산 고유벡터 $\vert v_i\rangle$ → 연속 고유상태 $\vert u\rangle$
-
-세 항 분해의 구조 자체는 그대로 유지된다.
+---
 
 ### 2. 연속 스펙트럼 분해
 
@@ -33,6 +24,8 @@ $$\langle u^d\vert u'\rangle = \delta(u - u')$$
 **3)** *주의*: 연속 고유상태 $\vert u\rangle$ 는 보통의 힐베르트 공간 원소가 아닌 *일반화된 고유상태*다 (rigged Hilbert space의 원소). 형식적으로 이산 경우와 같은 식이 통하지만, 정확한 수학적 정당화는 별도 이론(분배 이론, rigged Hilbert space)에서 다뤄진다.
 
 **4)** 위치 기저의 경우: $\vert x\rangle$ 는 자체수반이라 $\langle x^d\vert = \langle x\vert$ 로 단순화된다 (§1).
+
+---
 
 ### 3. 연속 함수 미적분
 
@@ -60,6 +53,8 @@ $$\frac{dA}{d\tau} = \int du\, \Big[\dot\lambda(u, \tau)\, \vert u\rangle\langle
 
 세 항의 의미는 §7의 이산 경우와 같다. 단지 *합이 적분으로* 바뀌었다.
 
+---
+
 ### 5. 깔끔한 경우: 고유상태 고정
 
 **1)** $\vert u\rangle$ 가 $\tau$ 와 무관하면 뒤의 두 항이 사라지고
@@ -83,6 +78,8 @@ $$\frac{dA}{d\tau} = \int dx\, x\, \vert x\rangle\langle x\vert = \hat{x}$$
 
 직접 미분 $\dfrac{d}{d\tau}(\tau \hat{x}) = \hat{x}$ 와 일치.
 
+---
+
 ### 6. 일반 경우: 고유상태가 변하는 상황
 
 **1)** 비퇴화 연속 스펙트럼에서 섭동 형식의 공식:
@@ -105,6 +102,8 @@ $$\frac{1}{x \pm i\epsilon} = P\frac{1}{x} \mp i\pi\, \delta(x)$$
 
 로 두 처방이 연결된다.
 
+---
+
 ### 7. 이산 ↔ 연속 비교
 
 | 항목 | 이산 | 연속 |
@@ -116,6 +115,8 @@ $$\frac{1}{x \pm i\epsilon} = P\frac{1}{x} \mp i\pi\, \delta(x)$$
 | 합/적분 | $\sum_{j\neq i}$ | $\int du'$ (주값) |
 
 구조는 동일하고, 기호만 갈아끼우는 셈이다.
+
+---
 
 ### 8. 정리
 

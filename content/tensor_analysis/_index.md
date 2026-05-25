@@ -1,6 +1,6 @@
 +++
 title = "Tensor analysis"
-weight = 7
+weight = 71
 +++
 
 ---

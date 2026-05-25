@@ -1,6 +1,6 @@
 +++
-title = "다변수 연속 스펙트럼"
-weight = 13
+title = "(b) MV continuous spectrum"
+weight = 6
 +++
 
 ### 1. 동기

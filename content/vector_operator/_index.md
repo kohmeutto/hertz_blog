@@ -1,6 +1,6 @@
 +++
 title = "Vector & Operator"
-weight = 1
+weight = 10
 +++
 
 ---
