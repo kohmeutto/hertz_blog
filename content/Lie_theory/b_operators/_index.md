@@ -1,5 +1,5 @@
 +++
-title = "b_operators"
+title = "Operators"
 weight = 3
 +++
 

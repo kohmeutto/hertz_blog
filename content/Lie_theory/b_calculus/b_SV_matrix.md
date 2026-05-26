@@ -73,12 +73,6 @@ $$\left.\frac{dR}{d\tau}\right|_{\tau=0} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{
 
 이 행렬 $X$ 는 *반대칭*($X^T = -X$)이다. 회전을 "살짝" 일으키는 방향을 가리키는 특정 행렬이라고 볼 수 있다. 이 X 를 회전 곡선 $R(\tau)$ 의 **생성자(generator)** 라 부른다. 이후 챕터에서 보겠지만 X 하나로부터 지수 사상을 통해 곡선 전체 $R(\tau) = \exp(\tau X)$ 가 *생성*되기 때문에 붙은 이름이다.
 
-$$
-X^2 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} = -I
-$$
-
-이 관계는 이후 챕터에서 $R(\tau)$ 를 $X$ 로부터 "지수 사상"으로 복원할 때 결정적 역할을 한다.
-
 ---
 
 ### 5. 미분 결과의 기하학적 의미
