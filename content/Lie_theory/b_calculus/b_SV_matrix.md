@@ -13,10 +13,10 @@ weight = 1
 
 ### 2. 행렬 연산자 미분
 
-행렬 연산자 $\hat{A}(\tau)$의 각 성분 $a_{ij}(\tau)$가 $\tau$의 함수일 때, $\hat{A}$의 미분은 **각 성분을 따로 미분** 해서 만든 행렬이다.
+행렬 연산자 $\hat{\hat{A}}(\tau)$의 각 성분 $a_{ij}(\tau)$가 $\tau$의 함수일 때, $\hat{\hat{A}}$의 미분은 **각 성분을 따로 미분** 해서 만든 행렬이다.
 
 $$
-\frac{dA}{d\tau} = \begin{pmatrix} \dfrac{da_{11}}{d\tau} & \dfrac{da_{12}}{d\tau} \\ \dfrac{da_{21}}{d\tau} & \dfrac{da_{22}}{d\tau} \end{pmatrix}
+\frac{d\hat{A}}{d\tau} = \begin{pmatrix} \dfrac{da_{11}}{d\tau} & \dfrac{da_{12}}{d\tau} \\ \dfrac{da_{21}}{d\tau} & \dfrac{da_{22}}{d\tau} \end{pmatrix}
 $$
 
 - 여기선 $2 \times 2$로 적었지만 일반 $n \times m$에 그대로 일반화된다.
@@ -30,33 +30,33 @@ $$
 **1) 선형성**
 
 $$
-\frac{d}{d\tau}(\alpha A + \beta B) = \alpha \frac{dA}{d\tau} + \beta \frac{dB}{d\tau}
+\frac{d}{d\tau}(\alpha \hat{A} + \beta \hat{B}) = \alpha \frac{d\hat{A}}{d\tau} + \beta \frac{d\hat{B}}{d\tau}
 $$
 
 **2) 곱셈 규칙 (*순서 조심*)**
 
 $$
-\frac{d}{d\tau}(AB) = \frac{dA}{d\tau}\, B + A\, \frac{dB}{d\tau}
+\frac{d}{d\tau}(\hat{A}\hat{B}) = \frac{d\hat{A}}{d\tau}\, \hat{B} + \hat{A}\, \frac{d\hat{B}}{d\tau}
 $$
 
-행렬 곱셈은 교환적이지 않으므로 $\dfrac{dA}{d\tau} B$ 와 $B\, \dfrac{dA}{d\tau}$ 는 일반적으로 다르다. 곱셈 순서를 임의로 바꾸면 안 된다.
+행렬 곱셈은 교환적이지 않으므로 $\dfrac{d\hat{A}}{d\tau} \hat{B}$ 와 $\hat{B}\, \dfrac{d\hat{A}}{d\tau}$ 는 일반적으로 다르다. 곱셈 순서를 임의로 바꾸면 안 된다.
 
 **3) 역행렬 미분 (참고)**
 
-$AA^{-1} = I$ 양변을 미분하면 $\dfrac{dA}{d\tau} A^{-1} + A \dfrac{d(A^{-1})}{d\tau} = 0$이고, 양변에 $A^{-1}$ 을 왼쪽에서 곱하면
+$\hat{A}\hat{A}^{-1} = I$ 양변을 미분하면 $\dfrac{d\hat{A}}{d\tau} \hat{A}^{-1} + \hat{A} \dfrac{d(\hat{A}^{-1})}{d\tau} = 0$이고, 양변에 $\hat{A}^{-1}$ 을 왼쪽에서 곱하면
 
 $$
-\frac{d(A^{-1})}{d\tau} = -A^{-1}\, \frac{dA}{d\tau}\, A^{-1}
+\frac{d(\hat{A}^{-1})}{d\tau} = -\hat{A}^{-1}\, \frac{d\hat{A}}{d\tau}\, \hat{A}^{-1}
 $$
 
-스칼라의 $\dfrac{d}{d\tau}\dfrac{1}{a} = -\dfrac{1}{a^2}\dfrac{da}{d\tau}$ 와 유사하지만, 행렬 곱셈이 교환적이지 않아 *왼쪽과 오른쪽에 각각* $A^{-1}$ 이 붙는다.
+스칼라의 $\dfrac{d}{d\tau}\dfrac{1}{a} = -\dfrac{1}{a^2}\dfrac{da}{d\tau}$ 와 유사하지만, 행렬 곱셈이 교환적이지 않아 *왼쪽과 오른쪽에 각각* $\hat{A}^{-1}$ 이 붙는다.
 
 ---
 
 ### 4. 회전 행렬 예제
 
 $$
-R(\tau) = \begin{pmatrix} \cos\tau & -\sin\tau \\ \sin\tau & \cos\tau \end{pmatrix}
+\hat{R}(\tau) = \begin{pmatrix} \cos\tau & -\sin\tau \\ \sin\tau & \cos\tau \end{pmatrix}
 $$
 
 (1) 성분별 미분
@@ -65,20 +65,20 @@ $$\frac{d}{d\tau}\cos\tau = -\sin\tau,\quad\frac{d}{d\tau}(-\sin\tau) = -\cos\ta
 
 (2) 결과
 
-$$\frac{dR}{d\tau} = \begin{pmatrix} -\sin\tau & -\cos\tau \\ \cos\tau & -\sin\tau \end{pmatrix}$$
+$$\frac{d\hat{R}}{d\tau} = \begin{pmatrix} -\sin\tau & -\cos\tau \\ \cos\tau & -\sin\tau \end{pmatrix}$$
 
 (3) 특히 $\tau = 0$ 에서,
 
-$$\left.\frac{dR}{d\tau}\right|_{\tau=0} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \equiv X$$
+$$\left.\frac{d\hat{R}}{d\tau}\right|_{\tau=0} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \equiv X$$
 
-이 행렬 $X$ 는 *반대칭*($X^T = -X$)이다. 회전을 "살짝" 일으키는 방향을 가리키는 특정 행렬이라고 볼 수 있다. 이 X 를 회전 곡선 $R(\tau)$ 의 **생성자(generator)** 라 부른다. 이후 챕터에서 보겠지만 X 하나로부터 지수 사상을 통해 곡선 전체 $R(\tau) = \exp(\tau X)$ 가 *생성*되기 때문에 붙은 이름이다.
+이 행렬 $X$ 는 *반대칭*($X^T = -X$)이다. 회전을 "살짝" 일으키는 방향을 가리키는 특정 행렬이라고 볼 수 있다. 이 X 를 회전 곡선 $\hat{R}(\tau)$ 의 **생성자(generator)** 라 부른다. 이후 챕터에서 보겠지만 X 하나로부터 지수 사상을 통해 곡선 전체 $\hat{R}(\tau) = \exp(\tau X)$ 가 *생성*되기 때문에 붙은 이름이다.
 
 ---
 
 ### 5. 미분 결과의 기하학적 의미
 
-(1) $\hat{A}(\tau)$ 가 행렬 공간 안에 그리는 곡선을 떠올린다.  
-(2) $\tau$ 가 변할 때 점이 움직이는데, *어느 방향으로* 움직이는지를 알려주는 행렬이 $d\hat{A}/d\tau$ 다.  
+(1) $\hat{\hat{A}}(\tau)$ 가 행렬 공간 안에 그리는 곡선을 떠올린다.  
+(2) $\tau$ 가 변할 때 점이 움직이는데, *어느 방향으로* 움직이는지를 알려주는 행렬이 $d\hat{\hat{A}}/d\tau$ 다.  
 (3) 스칼라 함수의 미분이 "접선의 기울기"인 것과 똑같이, 행렬 함수의 미분도 "곡선의 접선 방향"을 나타내는 행렬이다.  
 (4) 곡선 위의 *각 점마다 미분이 정의*되며, 그 점에서 곡선이 어디로 향하는지 알려준다.  
 (5) 특히 **단위행렬에서의 미분** (즉 $\tau = 0$ 에서의 미분)은 곡선이 "단위행렬에서 어느 방향으로 출발하는지"를 알려준다.  
@@ -86,14 +86,14 @@ $$\left.\frac{dR}{d\tau}\right|_{\tau=0} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{
 
 <svg viewBox="0 0 300 295" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:auto;max-width:300px">
   <defs>
-    <marker id="arr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arr5" view\hat{B}ox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0,0 L 10,5 L 0,10 z" fill="#0066cc"/>
     </marker>
   </defs>
   <circle cx="150" cy="140" r="90" fill="none" stroke="black" stroke-width="2"/>
   <circle cx="214" cy="76" r="5" fill="black"/>
-  <text x="220" y="73" font-size="12">A(τ)</text>
+  <text x="220" y="73" font-size="12">\hat{A}(τ)</text>
   <line x1="214" y1="76" x2="186" y2="48" stroke="#0066cc" stroke-width="2.5" marker-end="url(#arr5)"/>
-  <text x="138" y="48" font-size="12" fill="#0066cc">dA/dτ</text>
+  <text x="138" y="48" font-size="12" fill="#0066cc">d\hat{A}/dτ</text>
   <text x="150" y="285" text-anchor="middle" font-size="12" font-style="italic">행렬 공간 안의 곡선과 접선 방향</text>
 </svg>

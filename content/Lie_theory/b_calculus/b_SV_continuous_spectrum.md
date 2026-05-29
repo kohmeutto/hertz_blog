@@ -5,67 +5,31 @@ weight = 3
 
 ---
 
-### 2. 연속 스펙트럼 분해
-
-**1)** 연속 매개변수 $u$로 라벨링된 고유상태로 연산자 $A$를 분해하면
-
-$$A = \int du\, \lambda(u)\, \vert u\rangle\langle u^d\vert$$
-
-여기서:
-- $\lambda(u)$는 $\vert u\rangle$에 대응되는 고유값 (연속 매개변수의 함수)
-- $\langle u^d\vert$는 연속 기저에 대한 쌍대 기저 (§1 참조)
-
-**2)** 직교성:
-
-$$\langle u^d\vert u'\rangle = \delta(u - u')$$
-
-크로네커 $\delta^i_j$ 가 디랙 $\delta(u-u')$로 바뀐다.
-
-**3)** *주의*: 연속 고유상태 $\vert u\rangle$ 는 보통의 힐베르트 공간 원소가 아닌 *일반화된 고유상태*다 (rigged Hilbert space의 원소). 형식적으로 이산 경우와 같은 식이 통하지만, 정확한 수학적 정당화는 별도 이론(분배 이론, rigged Hilbert space)에서 다뤄진다.
-
-**4)** 위치 기저의 경우: $\vert x\rangle$ 는 자체수반이라 $\langle x^d\vert = \langle x\vert$ 로 단순화된다 (§1).
-
----
-
-### 3. 연속 함수 미적분
-
-**1)** 이산 경우 $f(A) = \sum_i f(\lambda_i)\, \vert v_i\rangle\langle v^i\vert$ 의 연속판:
-
-$$f(A) = \int du\, f(\lambda(u))\, \vert u\rangle\langle u^d\vert$$
-
-고유상태는 그대로 두고, *고유값에만 $f$ 를 적용*하는 원리는 동일하다.
-
-**2)** example) 지수 사상의 연속판:
-
-$$\exp(A) = \int du\, e^{\lambda(u)}\, \vert u\rangle\langle u^d\vert$$
-
-### 4. 연속 스펙트럼에서의 미분: 세 항
-
-**1)** 매개변수 $\tau$ 에 의존하는 연산자 $A(\tau)$ 의 연속 스펙트럼 분해를 다음으로 쓴다.
+### 1. 연속 스펙트럼에서의 미분: 세 항
 
 $$A(\tau) = \int du\, \lambda(u, \tau)\, \vert u(\tau)\rangle\langle u^d(\tau)\vert$$
 
-고유값과 고유상태 모두 $\tau$ 에 따라 변할 수 있다.
-
-**2)** 곱셈 규칙을 세 인자에 모두 적용:
+곱셈 규칙을 세 인자에 모두 적용:
 
 $$\frac{dA}{d\tau} = \int du\, \Big[\dot\lambda(u, \tau)\, \vert u\rangle\langle u^d\vert + \lambda(u, \tau)\, \vert\dot u\rangle\langle u^d\vert + \lambda(u, \tau)\, \vert u\rangle\langle \dot{u^d}\vert\Big]$$
 
-세 항의 의미는 §7의 이산 경우와 같다. 단지 *합이 적분으로* 바뀌었다.
-
 ---
 
-### 5. 깔끔한 경우: 고유상태 고정
+### 2. 특정 경우: 고유상태 고정
 
-**1)** $\vert u\rangle$ 가 $\tau$ 와 무관하면 뒤의 두 항이 사라지고
+$\vert u\rangle$ 가 $\tau$ 와 무관하면 뒤의 두 항이 사라지고
 
-$$\frac{dA}{d\tau} = \int du\, \dot\lambda(u, \tau)\, \vert u\rangle\langle u^d\vert$$
+$$
+\frac{dA}{d\tau} = \int du\, \dot\lambda(u, \tau)\, \vert u\rangle\langle u^d\vert
+$$
 
-**2)** 함수 미적분의 미분 구조(§7.3의 연속판)가 그대로 적용된다.
+example)
 
-**3)** example) 위치 연산자가 곱해진 형태
+위치 연산자가 곱해진 형태에서
 
-$$A(\tau) = \tau \hat{x}$$
+$$
+A(\tau) = \tau \hat{x}
+$$
 
 위치 기저는 $\hat{x}\vert x\rangle = x\vert x\rangle$ 로 고유상태가 고정 ($\tau$ 와 무관).
 
@@ -76,11 +40,11 @@ $$A(\tau) = \tau \hat{x}$$
 
 $$\frac{dA}{d\tau} = \int dx\, x\, \vert x\rangle\langle x\vert = \hat{x}$$
 
-직접 미분 $\dfrac{d}{d\tau}(\tau \hat{x}) = \hat{x}$ 와 일치.
+이것은 직접 미분 $\dfrac{d}{d\tau}(\tau \hat{x}) = \hat{x}$ 과 일치한다.
 
 ---
 
-### 6. 일반 경우: 고유상태가 변하는 상황
+### 3. 일반 경우: 고유상태가 변함
 
 **1)** 비퇴화 연속 스펙트럼에서 섭동 형식의 공식:
 
