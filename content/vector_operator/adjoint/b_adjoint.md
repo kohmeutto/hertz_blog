@@ -53,7 +53,7 @@ $$
 무한 차원 함수 공간에서 미분 연산자를 다룰 경우, 내적 적분 과정에서 부분 적분이 수반되므로 경계 적분항 $\mathcal{R}$이 발생한다.
 
 $$
-\langle \phi|\hat{A} \psi\rangle = \langle \hat{A}^\dagger \phi| \psi\rangle + \mathcal{R}_{\hat{A}}[\phi,\psi]
+\langle \phi|\hat{A} \psi\rangle = \langle \hat{A}^\dagger \phi| \psi\rangle + \mathcal{R}\hat{A}[\phi,\psi]
 $$
 
 여기서 경계항은 다음과 같이 정의된다.

@@ -19,21 +19,69 @@ weight = 3
 
 ### 2. 고유값은 항상 순수 허수이거나 0이다.
 
-고유값은 항상 순수 허수이거나 0이다.
+반-허미션 연산자의 모든 고유값 $\lambda$는 실수부가 0인 순수 허수(Pure imaginary number)이거나 0이다.
+
+$$
+\lambda = -\lambda^\ast
+$$
 
 proof)
 
-(1) $\hat{A}|v\rangle = \lambda|v\rangle$ 에서, 양변에 $\langle v|$를 내적하면 $\langle v|\hat{A}|v\rangle = \lambda\langle v|v\rangle$ 이다.  
-(2) 위 식의 에르미트 켤레를 취하면 $\langle v|\hat{A}^\dagger|v\rangle = \lambda^*\langle v|v\rangle$ 이다.  
-(3) $\hat{A}^\dagger = -\hat{A}$ 이므로, $-\langle v|\hat{A}|v\rangle = \lambda^*\langle v|v\rangle$ 이다.  
-(4) 1번 결과를 대입하면, $-\lambda\langle v|v\rangle = \lambda^*\langle v|v\rangle$ 이다.  
-(5) $\langle v|v\rangle \neq 0$ 이므로 $\lambda = -\lambda^*$ 이다. 이를 만족하는 복소수 $\lambda$는 반드시 순수 허수이거나 0이다.  
+임의의 고유값 $\lambda$와 영벡터가 아닌 고유벡터 $|\lambda\rangle$에 대하여, 다음의 우측 고유방정식이 성립한다.
+
+$$
+\hat{A}|\lambda\rangle = \lambda|\lambda\rangle
+$$
+
+위 식의 양변 좌측에 $\langle \lambda|$를 내적하여 스칼라 방정식을 도출한다.
+
+$$
+\langle \lambda|\hat{A}|\lambda\rangle = \lambda\langle \lambda|\lambda\rangle
+$$
+
+이 스칼라 방정식 전체에 허미션 켤레(복소 공액)를 취한다. 내적의 공리인 $\langle \psi | \phi \rangle^\ast = \langle \phi | \psi \rangle$ 및 연산자의 켤레 법칙을 적용한다.
+
+$$
+(\langle \lambda|\hat{A}|\lambda\rangle)^\ast = (\lambda\langle \lambda|\lambda\rangle)^\ast
+$$
+
+$$
+\langle \lambda|\hat{A}^\dagger|\lambda\rangle = \lambda^\ast\langle \lambda|\lambda\rangle
+$$
+
+정의에 의해 $\hat{A}^\dagger = -\hat{A}$이므로, 좌변의 연산자를 치환한다.
+
+$$
+\langle \lambda|(-\hat{A})|\lambda\rangle = \lambda^\ast\langle \lambda|\lambda\rangle
+$$
+
+$$
+-\langle \lambda|\hat{A}|\lambda\rangle = \lambda^\ast\langle \lambda|\lambda\rangle
+$$
+
+최초에 도출한 스칼라 내적 방정식($\langle \lambda|\hat{A}|\lambda\rangle = \lambda\langle \lambda|\lambda\rangle$)을 좌변에 대입한다.
+
+$$
+-\lambda\langle \lambda|\lambda\rangle = \lambda^\ast\langle \lambda|\lambda\rangle
+$$
+
+$$
+(\lambda + \lambda^\ast)\langle \lambda|\lambda\rangle = 0
+$$
+
+고유벡터는 영벡터가 아니므로, 그 노름의 제곱인 $\langle \lambda|\lambda\rangle$는 0이 될 수 없다. 따라서 이 방정식이 항등적으로 성립하기 위한 유일한 조건은 다음과 같다.
+
+$$
+\lambda + \lambda^\ast = 0 \implies \lambda = -\lambda^\ast
+$$
+
+어떤 복소수가 자신의 복소 공액에 마이너스를 붙인 것과 같다는 것은, 그 수의 실수부가 0임을 의미한다.
 
 ---
 
-### 3. 에르미트 연산자와의 관계
+### 3. 허미션 연산자와의 관계
 
-어떤 에르미트 연산자 $\hat{H}$에 허수 단위 $i$를 곱한 $i\hat{H}$는 반-에르미트 연산자이다.
+어떤 허미션 연산자 $\hat{H}$에 허수 단위 $i$를 곱한 $i\hat{H}$는 반-허미션 연산자이다.
 
 proof)
 
@@ -51,7 +99,7 @@ $$
 \hat{A} = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
 $$
 
-(1) 반-에르미트 확인
+(1) 반-허미션 확인
 
 $$
 \hat{A}^\dagger = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = -\hat{A}
@@ -86,7 +134,7 @@ $$
 \hat{D} = \frac{d}{dx}
 $$
 
-(1) 반-에르미트 확인
+(1) 반-허미션 확인
 
 부분적분을 통해,
 
@@ -109,13 +157,13 @@ $$
 
 임의의 연산자 $\hat{A}$는 복잡하고 혼란스러워 보일 수 있다. 그러나 수반 연산자($\hat{A}^\dagger$)라는 거울을 이용하면, **모든 연산자(비정규 포함)는 예외 없이** 질서를 상징하는 대칭 성분과 변화를 상징하는 반대칭 성분으로 유일하게 분해된다. 이를 카르테시안 분해(Cartesian Decomposition) 또는 **토플리츠 분해(Toeplitz Decomposition)** 라고 한다.
 
-임의의 연산자 $\hat{A}$를 에르미트 부분($\hat{H}$)과 반-에르미트 부분($\hat{S}$)의 합으로 정의하자.
+임의의 연산자 $\hat{A}$를 허미션 부분($\hat{H}$)과 반-허미션 부분($\hat{S}$)의 합으로 정의하자.
 
 $$
 \hat{A} = \hat{H} + \hat{S}
 $$
 
-이때, $\hat{H}$는 에르미트 성질($\hat{H}^\dagger = \hat{H}$)을, $\hat{S}$는 반-에르미트 성질($\hat{S}^\dagger = -\hat{S}$)을 가져야 한다. 수반 연산자의 성질을 이용해 양변에 수반 작용을 가하면,
+이때, $\hat{H}$는 허미션 성질($\hat{H}^\dagger = \hat{H}$)을, $\hat{S}$는 반-허미션 성질($\hat{S}^\dagger = -\hat{S}$)을 가져야 한다. 수반 연산자의 성질을 이용해 양변에 수반 작용을 가하면,
 
 $$
 \hat{A}^\dagger = (\hat{H} + \hat{S})^\dagger = \hat{H}^\dagger + \hat{S}^\dagger = \hat{H} - \hat{S}

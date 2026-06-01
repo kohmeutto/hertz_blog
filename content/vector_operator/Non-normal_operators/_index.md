@@ -1,5 +1,5 @@
 +++
-title = "I-operators"
+title = "Non-normal operators"
 weight = 11
 +++
 
