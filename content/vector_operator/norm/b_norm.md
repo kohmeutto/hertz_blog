@@ -1,6 +1,6 @@
 +++
-title = "(b) Operator Norm"
-weight = 4
+title = "(b) Operator norm"
+weight = 1
 +++
 
 ---

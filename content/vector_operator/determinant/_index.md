@@ -1,5 +1,5 @@
 +++
-title = "Determinant & Norm"
+title = "Determinant"
 weight = 6
 +++
 
