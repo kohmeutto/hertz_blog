@@ -85,43 +85,21 @@ $$
 
 ---
 
-### 3. 레졸번트 연산자의 급수화: 노이만 급수 (Neumann Series)
+### 4. 로랑 급수 전개
 
-**1) 노이만 급수**
-
-고유값에서 왜 발산하는 가를 알기 위해, 레졸벤트 연산자가 구체적으로 어떤 형태를 가지고 있는지를 파악해야 한다. 일단, 급수로 전개해 본다. 이를 노이만 급수라고 한다.
+레졸벤트 연산자를 로랑급수 전개 한다.
 
 $$
-R(z, \hat{A}) = (z \hat{I} - \hat{A})^{-1} = \left[ z \left( \hat{I} - \frac{\hat{A}}{z} \right) \right]^{-1} = \frac{1}{z} \left( \hat{I} - \frac{\hat{A}}{z} \right)^{-1}
+R(z, \hat{A}) = \sum_{k\ge2}\frac{\hat{C}_{-k}}{(z-\lambda_0)^k} + \frac{\hat{C}_{-1}}{z-\lambda_0} + \sum_{k\ge0}\hat{C}_k(z-\lambda_0)^k
 $$
 
-$$
-= \frac{1}{z} \sum_{n=0}^{\infty} \left( \frac{\hat{A}}{z} \right)^n = \sum_{n=0}^{\infty} \frac{\hat{A}^n}{z^{n+1}}
-$$
+여기서 각 계수는 아래와 같이 구한다.
 
 $$
-= \frac{\hat{I}}{z} + \frac{\hat{A}}{z^2} + \frac{\hat{A}^2}{z^3} + \dots
+\hat{C}_n = \frac{1}{2\pi i}\oint_{\Gamma}\frac{dz}{z-\lambda_0}\frac{R(z)}{(z-\lambda_0)^{n}}
 $$
 
-이 급수의 값이 존재하려면, 설정한 조건 $|z| > \lVert \hat{A} \rVert$ 에 의해, 작용소 항의 크기는 1보다 작아야 한다.
-
-$$
-\left\lVert \frac{\hat{A}}{z} \right\rVert < 1
-$$
-
-**1) 레졸번트 집합 (Resolvent Set, $\rho(\hat{A})$)**
-
-복소수 $z$ 를 대입했을 때, 레졸번트 연산자 $R(z, \hat{A})$ 가 유계 연산자(Bounded Operator)로서 안정적으로 존재하는 $z$ 의 집합이다. 이 영역에서 역작용소는 특정 입력 벡터를 공간 밖으로 이탈시키거나 증폭률을 무한대로 발산시키지 않으며, 복소해석학적 함수로서 안전하게 다뤄질 수 있다.
-
-**2) 스펙트럼 (Spectrum, $\sigma(\hat{A})$)**
-
-복소 평면에서 레졸번트 집합을 제외한 나머지 영역이다.
-
-$$
-\sigma(\hat{A}) = \mathbb{C} \setminus \rho(\hat{A})
-$$
-
-스펙트럼 내의 $z$ 에 대해서는 작용소 $(z\hat{I} - \hat{A})$ 의 역연산이 불가능해지거나, 결과값이 무한대로 발산하여 비유계(Unbounded) 특성을 띠게 된다. 이 발산하는 특이점(Singularity)들이 바로 무한 차원 공간에서 행렬식 없이 찾아낸 연산자 $\hat{A}$ 의 본질적인 고유값 집합이다.
+이후의 장에서는 이 계수들이 각각 시스템 내에서 어떠한 대수학적 작용을 수행하는지 상술한다.
 
 ---
 
