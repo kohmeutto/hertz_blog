@@ -1,5 +1,5 @@
 +++
-title = "(b) Resolvent operator"
+title = "(b) Resolvent"
 weight = 2
 +++
 
@@ -62,18 +62,6 @@ R(\lambda_i, \hat{A}) = (\lambda_i \hat{I} - \hat{A})^{-1} = \infty
 $$
 
 고유값에서 왜 발산하는 가를 알기 위해, 레졸벤트 연산자가 구체적으로 어떤 형태를 가지고 있는지를 파악해야 한다. 이는 후속 챕터에서 다룬다.
-
----
-
-### 3. zÎ − Â의 작용
-
-연산자 $z\hat{I}-\hat{A}$를 고유 상태 $|\lambda\rangle$에 작용시켜 그 의미를 본다. 고유벡터에 대하여 $z\hat{I}-\hat{A}$는 방향을 보존한 채 스칼라 $(z-\lambda)$를 곱하는 연산자이다. 고윳값마다 배율이 다르므로, 이 연산자는 **각 고유축 $|\lambda_k\rangle$를 $(z-\lambda_k)$배로 신축하는 장치** 로 해석된다.
-
-$$
-(z\hat{I}-\hat{A})|\lambda_k\rangle = (z-\lambda_k)\,|\lambda_k\rangle
-$$
-
-
 
 ---
 

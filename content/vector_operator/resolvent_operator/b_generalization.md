@@ -1,5 +1,5 @@
 +++
-title = "(b) Generalized eigenvector"
+title = "(b) Generalization"
 weight = 1
 +++
 
@@ -38,10 +38,12 @@ $$
 
 **2) 연속 공간 (무한 차원)**
 
-비유계 연산자의 연속 스펙트럼에서는 이산적인 랭크 강하 대신, 고윳값 구간 전체에 걸쳐 기하학적 중복도가 결핍되는 현상이 분포 함수의 형태로 발현된다. 연속 변수 $\nu$에 종속된 일반화된 고유벡터의 지배 방정식은 국소적 잉여 상태(Surplus state) 밀도 $|w(\nu)\rangle$를 수반하여 기술된다.
+비유계 연산자의 연속 스펙트럼에서는 이산적인 랭크 강하 대신, 고윳값 구간 전체에 걸쳐 기하학적 중복도가 결핍되는 현상이 분포 함수의 형태로 발현된다. 단, 이러한 결핍(잉여 상태)은 자기수반이 아닌 결함계에서만 나타나며, 자기수반 연산자의 경우에는 $|w(\nu)\rangle = 0$이 되어 잉여 항이 소멸한다.
+
+비자기수반 결함계에 한하여, 연속 변수 $\nu$에 종속된 일반화된 고유벡터의 지배 방정식은 국소적 잉여 상태(Surplus state) 밀도 $|w(\nu)\rangle$를 수반하여 다음과 같이 기술된다.
 
 $$
-\hat{A}|\lambda(\nu)\rangle = \lambda(\nu)|\lambda(\nu)\rangle + |w(\nu)\rangle
+\hat{A}|\lambda(\nu)\rangle = \lambda(\nu)|\lambda(\nu)\rangle + |w(\nu)\rangle \quad (\text{자기수반계의 경우 } |w(\nu)\rangle = 0)
 $$
 
 proof)
@@ -134,7 +136,8 @@ $$
 이산 공간에서는 직교 규격화 조건($\langle \lambda^{m,j}|\lambda_{n,k}\rangle = \delta^m_n \delta^j_k$)을 만족하도록 인덱스를 윗첨자(반변, Contravariant)로 올려 $\langle \lambda^{m,k}|$로 표기한다.
 
 $$
-\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m
+\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m\iff
+\hat{A} = \sum_m (\lambda_m\hat{P}_m + \hat{N}_m)
 $$
 
 - 사영 연산자(Projection): $\hat{P}_m = \sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}|$
@@ -145,15 +148,14 @@ $$
 연속 공간에서는 상태가 미소 구간 단위로 투영되므로, 델타 함수 직교 규격화 조건($\langle \lambda^d(\nu')|\lambda(\nu)\rangle = \delta(\nu-\nu')$)을 만족하는 연속 쌍대 기저 $\langle \lambda^d(\nu)|$를 도입하여 측도(Measure)를 포함하는 밀도(Density)의 형태로 분해한다.
 
 $$
-\hat{A}d\hat{P}(\nu) = \lambda(\nu) d\hat{P}(\nu) + d\hat{N}(\nu)
+\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\iff
+\hat{A} = \int_\nu \big[\lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\big]
 $$
 
-- 사영 밀도(Projection density): $d\hat{P}(\nu) = d|\lambda(\nu)\rangle\langle \lambda^d(\nu)|$
-- 멱영 밀도(Nilpotent density): $d\hat{N}(\nu) = d|w(\nu)\rangle\langle \lambda^d(\nu)|$
+- 사영 밀도(Projection density): $d\hat{P}(\nu) = d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)|$
+- 멱영 밀도(Nilpotent density): $d\hat{N}(\nu) = d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|$
 
-proof)
-
-**[이산 공간]**
+*proof1) 직접 방법*
 
 조르당 사슬 내 특정 랭크 $k$의 지배 방정식 양변 우측에 해당 랭크의 쌍대 기저 $\langle \lambda^{m,k}|$를 외적(Outer product)한다.
 
@@ -167,7 +169,46 @@ $$
 \sum_{k=1}^{k_m} \hat{A}|\lambda_{m,k}\rangle\langle \lambda^{m,k}| = \lambda_m \sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}| + \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|
 $$
 
-여기서 특정 고윳값 공간 내의 기저들을 모두 합산한 $\sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}|$는 해당 공간으로 투영하는 국소적 항등원(Resolution of identity within the local block)을 형성하므로 사영 연산자 $\hat{P}_m$을 완벽하게 구성한다. 따라서 분해 항등식 $\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m$이 성립한다.
+여기서 특정 고윳값 공간 내의 기저들을 모두 합산한 $\sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}|$는 해당 공간으로 투영하는 국소적 항등원(Resolution of identity within the local block)을 형성하므로 사영 연산자 $\hat{P}_m$을 구성한다.
+
+따라서, 분해 항등식 $\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m$이 성립한다.
+
+*proof2) 테일러 급수 이용*
+
+해석 함수 $f$를 점 $\lambda_m$ 둘레에서 테일러 전개한 뒤, 변수 $x$ 자리에 연산자 $\hat{A}$를 대입한다. 이때 변위 항 $(x-\lambda_m)$은 $(\hat{A}-\lambda_m\hat{I})$로 치환된다.
+
+$$
+f(x)=\sum_{k=0}^{\infty} \frac{f^{(k)}(\lambda_m)}{k!}(x-\lambda_m)^k \implies
+f(\hat{A})=\sum_{k=0}^{\infty} \frac{f^{(k)}(\lambda_m)}{k!}(\hat{A}-\lambda_m\hat{I})^k
+$$
+
+여기에 사영 연산자 $\hat{P}_m$ 를 곱한다.
+
+$$
+f(\hat{A})\hat{P}_m=\sum_{k=0}^{\infty} \frac{f^{(k)}(\lambda_m)}{k!}(\hat{A}-\lambda_m\hat{I})^k\hat{P}_m
+$$
+
+분해 항등식 $\hat{A}\hat{P}_m-\lambda_m\hat{P}_m=\hat{N}_m$, 즉 $(\hat{A}-\lambda_m\hat{I})\hat{P}_m=\hat{N}_m$을 거듭제곱하면 $(\hat{A}-\lambda_m\hat{I})^k\hat{P}_m=\hat{N}_m^k$이 성립한다. 이를 대입한다.
+
+$$
+f(\hat{A})\hat{P}_m=\sum_{k=0}^{\infty} \frac{f^{(k)}(\lambda_m)}{k!}\hat{N}^k_m \quad (\hat{N}_m^0 := \hat{P}_m)
+$$
+
+$f(\hat{A})=\hat{A}$가 되려면 $f(x)=x$ 이므로, 도함수는 다음과 같다.
+
+$$
+f^{(0)}(\lambda_m)=\lambda_m, \quad f^{(1)}(\lambda_m)=1, \quad f^{(k \ge 2)}(\lambda_m)=0
+$$
+
+$k=0$ 항과 $k=1$ 항만 남으며, $\hat{N}_m^0=\hat{P}_m$ 규약에 의해 정리하면 다음과 같다.
+
+$$
+f(\hat{A})\hat{P}_m=\hat{A}\hat{P}_m=\lambda_m\hat{P}_m+\hat{N}_m
+$$
+
+*proof3) Nilpotent*
+
+[이산 공간]
 
 분리된 비대각 성분 $\hat{N}_m = \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|$이 멱영(Nilpotent) 연산자가 되는 대수학적 인과율은 쌍대 기저의 직교성에 의해 증명된다. 단일 랭크 강하 항의 곱을 연산하면 다음과 같다.
 
@@ -177,18 +218,18 @@ $$
 
 랭크가 어긋나는 상태들의 내적은 상호 쌍대 기저의 직교 규격화 조건에 의해 소멸한다 ($\langle \lambda^{m,k}|\lambda_{m,j-1}\rangle = \delta^k_{j-1}$). 스칼라 항의 대수적 조건에 따라 랭크가 일치하지 않는 모든 교차 항들이 제거되므로, 비대각 전이 연산자는 유한 번의 거듭제곱 내에서 즉각 영연산자 $\hat{0}$으로 붕괴한다.
 
-**[연속 공간]**
+[연속 공간]
 
-연속 공간의 특정 상태 $\nu$에 대한 지배 방정식 양변 우측에 쌍대 기저 $\langle \lambda^d(\nu)|$를 외적하고 미소 구간에 대한 미분 요소 $d$를 취한다.
-
-$$
-\hat{A} d|\lambda(\nu)\rangle\langle \lambda^d(\nu)| = \lambda(\nu) d|\lambda(\nu)\rangle\langle \lambda^d(\nu)| + d|w(\nu)\rangle\langle \lambda^d(\nu)|
-$$
-
-이를 각 밀도 기호로 치환하면 국소 구간에 대한 연산자 항등식 $\hat{A}d\hat{P}(\nu) = \lambda(\nu) d\hat{P}(\nu) + d\hat{N}(\nu)$가 도출된다. 연속 공간의 비대각 성분 밀도 $d\hat{N}(\nu)$가 멱영 특성을 가지는 인과율은 다음과 같이 전개된다.
+연속 공간의 특정 상태 $\nu$에 대한 지배 방정식 양변 우측에 쌍대 기저 $\langle \lambda^d(\nu)|$를 외적하고 미소 구간 측도 $d\nu$를 취한다.
 
 $$
-(d|w(\nu)\rangle\langle \lambda^d(\nu)|) (d|w(\nu')\rangle\langle \lambda^d(\nu')|) = d|w(\nu)\rangle \langle \lambda^d(\nu)|w(\nu')\rangle d\langle \lambda^d(\nu')|
+\hat{A}\, d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)| = \lambda(\nu)\, d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)| + d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|
+$$
+
+이를 각 밀도 기호로 치환하면 국소 구간에 대한 연산자 항등식 $\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)$가 도출된다. 연속 공간의 비대각 성분 밀도 $d\hat{N}(\nu)$가 멱영 특성을 가지는 인과율은 다음과 같이 전개된다.
+
+$$
+(d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|) (d\nu'\,|w(\nu')\rangle\langle \lambda^d(\nu')|) = d\nu\,d\nu'\,|w(\nu)\rangle \langle \lambda^d(\nu)|w(\nu')\rangle \langle \lambda^d(\nu')|
 $$
 
 잉여 상태 $|w(\nu')\rangle$는 진성 고유공간과 대수적으로 선형 독립인 결함 공간을 구성하므로, 진성 상태를 투영하는 쌍대 기저 $\langle \lambda^d(\nu)|$와의 내적은 항상 0으로 소멸한다.
@@ -197,4 +238,10 @@ $$
 \langle \lambda^d(\nu)|w(\nu')\rangle = 0
 $$
 
-이 스칼라 항이 교차 내적 과정에서 영(0)으로 붕괴함에 따라, 연속 공간의 비대각 전이 밀도 역시 자체적인 거듭제곱 연산 시 자명한 영연산자 $\hat{0}$으로 수렴한다.
+이 스칼라 항이 교차 곱 과정에서 즉시 0이 되므로, 연속 공간의 비대각 전이 밀도는 자체적인 곱 연산에서 단번에 영연산자로 소멸한다.
+
+$$
+(d\hat{N})^2 = \hat{0}
+$$
+
+---

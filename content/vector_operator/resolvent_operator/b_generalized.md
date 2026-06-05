@@ -66,15 +66,19 @@ $$
 $$
 (\hat{A} - \lambda\hat{I}) |u_k\rangle = |u_{k-1}\rangle
 $$
+
 $$
 (\hat{A} - \lambda\hat{I}) |u_{k-1}\rangle = |u_{k-2}\rangle
 $$
+
 $$
 \vdots
 $$
+
 $$
 (\hat{A} - \lambda\hat{I}) |u_2\rangle = |u_1\rangle \quad (\text{진성 고유벡터})
 $$
+
 $$
 (\hat{A} - \lambda\hat{I}) |u_1\rangle = 0
 $$
@@ -90,9 +94,11 @@ $$
 $$
 \hat{A} |u_1\rangle = \lambda |u_1\rangle
 $$
+
 $$
 \hat{A} |u_2\rangle = \lambda |u_2\rangle + |u_1\rangle
 $$
+
 $$
 \hat{A} |u_3\rangle = \lambda |u_3\rangle + |u_2\rangle
 $$
