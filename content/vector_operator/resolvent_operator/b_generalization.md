@@ -143,18 +143,6 @@ $$
 - 사영 연산자(Projection): $\hat{P}_m = \sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}|$
 - 멱영 연산자(Nilpotent): $\hat{N}_m = \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|$
 
-**2) 연속 공간의 분해**
-
-연속 공간에서는 상태가 미소 구간 단위로 투영되므로, 델타 함수 직교 규격화 조건($\langle \lambda^d(\nu')|\lambda(\nu)\rangle = \delta(\nu-\nu')$)을 만족하는 연속 쌍대 기저 $\langle \lambda^d(\nu)|$를 도입하여 측도(Measure)를 포함하는 밀도(Density)의 형태로 분해한다.
-
-$$
-\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\iff
-\hat{A} = \int_\nu \big[\lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\big]
-$$
-
-- 사영 밀도(Projection density): $d\hat{P}(\nu) = d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)|$
-- 멱영 밀도(Nilpotent density): $d\hat{N}(\nu) = d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|$
-
 *proof1) 직접 방법*
 
 조르당 사슬 내 특정 랭크 $k$의 지배 방정식 양변 우측에 해당 랭크의 쌍대 기저 $\langle \lambda^{m,k}|$를 외적(Outer product)한다.
@@ -206,7 +194,36 @@ $$
 f(\hat{A})\hat{P}_m=\hat{A}\hat{P}_m=\lambda_m\hat{P}_m+\hat{N}_m
 $$
 
-*proof3) Nilpotent*
+
+**2) 연속 공간의 분해**
+
+연속 공간에서는 상태가 미소 구간 단위로 투영되므로, 델타 함수 직교 규격화 조건($\langle \lambda^d(\nu')|\lambda(\nu)\rangle = \delta(\nu-\nu')$)을 만족하는 연속 쌍대 기저 $\langle \lambda^d(\nu)|$를 도입하여 측도(Measure)를 포함하는 밀도(Density)의 형태로 분해한다.
+
+$$
+\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\iff
+\hat{A} = \int_\nu \big[\lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\big]
+$$
+
+- 사영 밀도(Projection density): $d\hat{P}(\nu) = d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)|$
+- 멱영 밀도(Nilpotent density): $d\hat{N}(\nu) = d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|$
+
+---
+
+### 4. 반단순 연산자와 비대각 연산자 특성
+
+**1) 사영 특성**
+
+$$
+\hat{P}^k = \hat{P}
+$$
+
+**2) 멱영 특성**
+
+$$
+\hat{N}^{k_m} = 0
+$$
+
+proof)
 
 [이산 공간]
 
@@ -238,10 +255,74 @@ $$
 \langle \lambda^d(\nu)|w(\nu')\rangle = 0
 $$
 
-이 스칼라 항이 교차 곱 과정에서 즉시 0이 되므로, 연속 공간의 비대각 전이 밀도는 자체적인 곱 연산에서 단번에 영연산자로 소멸한다.
+스칼라 항이 교차 곱 과정에서 즉시 0이 되므로, 연속 공간의 비대각 전이 밀도는 자체적인 곱 연산에서 단번에 영연산자로 소멸한다.
 
 $$
 (d\hat{N})^2 = \hat{0}
 $$
 
----
+**3) 상호 특성**
+
+결과적으로 index 가 다르다면, 무조건 0이다.
+
+*(1) 교환 관계*
+
+$$
+[\hat{A},\hat{P}]=0,\quad [\hat{A},\hat{N}]=0
+$$
+
+$$
+[\hat{P}_m,\hat{P}_l]=0,\quad [\hat{N}_m,\hat{N}_l]=0
+$$
+
+*(2) 상호 $\hat{P}$ 와의 관계*
+
+$$
+\hat{P}_m \hat{P}_l=0,\quad\text{단, } m \ne l
+$$
+
+*(3) $\hat{P}$ 와 $\hat{N}$의 관계*
+
+$$
+\hat{N}_m\hat{P}_m = \hat{P}_m\hat{N}_m = \hat{N}_m 
+$$
+
+$$
+\hat{N}_m\hat{P}_l = \hat{P}_m\hat{N}_l = 0,\quad\text{단, } m \ne l
+$$
+
+proof1)
+
+$$
+\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m
+$$
+
+$$
+\hat{A}\hat{P}_m^2 = \lambda_m\hat{P}_m^2 + \hat{N}_m\hat{P}_m \implies
+\hat{A}\hat{P}_m = \lambda_m\hat{P}_m + \hat{N}_m\hat{P}_m 
+$$
+
+따라서,
+
+$$
+\hat{N}_m\hat{P}_m = \hat{N}_m
+$$
+
+proof2)
+
+$$
+\hat{N}_m\hat{P}_l = \hat{N}_m\hat{P}_m\hat{P}_l=0
+$$
+
+*(4) 상호 $\hat{N}$ 와의 관계*
+
+$$
+\hat{N}_m\hat{N}_l = 0
+$$
+
+proof)
+
+$$
+\hat{N}_m\hat{N}_l = \hat{N}_m\hat{P}_m\hat{N}_l = 0
+$$
+
