@@ -21,14 +21,16 @@ $$
 
 ---
 
-### 2. 1차 단순극점 $\implies$은 사영 연산자(Projection operator) 
+### 2. (주부) 1차 단순극점 $\implies$ 사영 연산자(Projection operator) 
 
-위 급수 전개에서 주부(Principal part)의 2차 이상 극점 성분은 시스템의 결함(Defect)을 나타내며, 본 장에서는 대각화 가능한 성분을 추출하는 1차 단순 극점(Simple pole)의 해석에 집중한다.
-
-로랑 급수의 유수(Residue)에 해당하는 계수 $\hat{C}_{-1}$은 고윳값 $\lambda_m$ 공간으로의 스펙트럼 사영 연산자 $\hat{P}_m$으로 정의된다.
+위 급수 전개에서 주부(Principal part)의 2차 이상 극점 성분은 시스템의 결함(Defect)을 나타낸다. 로랑 급수의 유수(Residue)에 해당하는 계수 $\hat{C}_{-1}$은 고윳값 $\lambda_m$ 공간으로의 스펙트럼 사영 연산자 $\hat{P}_m$으로 정의된다.
 
 $$
 \hat{P}_m = \hat{C}_{-1} = \frac{1}{2\pi i}\oint_{\Gamma_m} dz \, R(z,\hat{A})
+$$
+
+$$
+\hat{P}_m^k = \hat{P}_m
 $$
 
 proof)
@@ -63,16 +65,69 @@ $$
 
 ---
 
-### 3. 사영 연산자에 의한 대각화 성분과 비대각 성분의 대수적 분리
+### 3. (주부) 2차 극점 $\implies$ 멱영 연산자(Nilpotent operator), 비대각
 
-사영 연산자 $\hat{P}_m$은 단일 고윳값 $\lambda_m$에 대응하는 일반화된 고유공간 전체를 투영한다. 이 닫힌 공간 내부에서 시스템 연산자 $\hat{A}$가 작용할 때, 대각화가 가능한 반단순(Semisimple) 성분과 대각화가 불가능한 비대각(Off-diagonal) 성분으로 본질적인 대수적 분리가 발생한다.
+본 장에서는 스케일 불변 측도 $\frac{dz}{z-\lambda_m}$를 적용한 로랑 급수의 일반 계수 산출 공식으로부터, 주부(Principal part)에 존재하는 모든 다중 극점(Multiple poles) 성분이 단 하나의 연산자 거듭제곱으로 표현됨을 보여준다.
 
 $$
-\hat{A}\hat{P}_m=\lambda_m\hat{P}_m+\hat{C}_{-2}
+\hat{N}_m \equiv \hat{C}_{-2}
+= \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m) \hat{R}(z, \hat{A})
 $$
 
-- $\lambda_m\hat{P}_m$: 대각화 가능 성분
-- $\hat{C}_{-2}$: 대각화 불가능 성분, 멱영 연산자
+$$
+\hat{N}_{m}^{k_m} = 0 
+$$
+
+proof)
+
+로랑 급수의 일반항 정의에 따라, 임의의 고차 극점 계수 $\hat{C}_{-n}$ ($n \ge 2$)은 불변 측도 $\frac{dz}{z-\lambda_m}$를 도입한 코시 닫힌 경로 적분으로 다음과 같이 기술된다.
+
+$$
+\hat{C}_{-n} = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^n
+$$
+
+따라서 시스템 내에서 대각화를 방해하는 모든 비대각 결함 성분을 생성해 내는 이 근원적인 2차 극점 계수 $\hat{C}_{-2}$를 멱영 연산자(Nilpotent operator) $\hat{N}_m$으로 확정하여 정의한다.
+
+$$
+\hat{N}_m \equiv \hat{C}_{-2} = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^2
+= \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m) \hat{R}(z, \hat{A})
+$$
+
+$\hat{P}_m$의 경우, 제곱을 하여 사영 연사자 임을 도출한것처럼, $C_{-2}$를 제곱해 본다. 특이점 $\lambda_m$을 둘러싸는 두 폐곡선 $\Gamma$와 $\Gamma'$ ($\Gamma$가 $\Gamma'$를 내포)에 대하여 $\hat{C}_{-2}^2$를 전개한다.
+
+$$
+\hat{N}_{m}^2 = \hat{C}_{-2}^2 = \frac{1}{(2\pi i)^2} \oint_{\Gamma} \oint_{\Gamma'} dz dw (z-\lambda_m)(w-\lambda_m) \hat{R}(z)\hat{R}(w)
+$$
+
+레졸번트 항등식을 대입하여 적분을 분리한다.
+
+$$
+\hat{N}_{m}^2 = \hat{C}_{-2}^2 = \frac{1}{(2\pi i)^2} \oint_{\Gamma} dz dw \oint_{\Gamma'} \frac{(z-\lambda_m)(w-\lambda_m)}{w - z} \left( \hat{R}(z) - \hat{R}(w) \right)
+$$
+
+앞선 사영 연산자의 멱등성 증명과 동일한 코시 적분 정리 절차를 거치면, $\Gamma'$에 대한 $w$ 적분에서 경로 내부에 위치한 극점 $z$에 의해 유수(Residue)가 발생한다.
+
+$$
+\hat{N}_{m}^2 = \hat{C}_{-2}^2 = \frac{1}{2\pi i} \oint_{\Gamma} dz (z-\lambda_m)^2 \hat{R}(z)
+$$
+
+위 적분식은 로랑 급수의 계수 공식 정의에 의해 정확히 3차 극점의 계수 $\hat{C}_{-3}$과 일치한다. 즉, $\hat{C}_{-2}^2 = \hat{C}_{-3}$가 성립한다. 이 적분 논리를 수학적 귀납법으로 임의의 정수 $k$로 확장하면 다음의 불변량이 도출된다.
+
+$$
+\hat{N}_{m}^k = \hat{C}_{-2}^k = \frac{1}{2\pi i} \oint_{\Gamma} dz (z-\lambda_m)^k \hat{R}(z) 
+$$
+
+**유한 차원 시스템의 대수학적 제약(유계**)에 의해 레졸번트의 로랑 급수 주부가 특정 차수인 멱영 지수 $k_m$에서 반드시 종결된다.
+
+---
+
+### 4. (주부) 대각화 성분과 비대각 성분의 대수적 분리
+
+사영 연산자 $\hat{P}_m$은 단일 고윳값 $\lambda_m$에 대응하는 일반화된 고유공간 전체를 투영한다. 이 닫힌 공간 내부에서 시스템 연산자 $\hat{A}$가 작용할 때, 대각화가 가능한 반단순(Semisimple) 성분과 대각화가 불가능한 비대각(Off-diagonal) 성분으로 본질적인 대수적 분리가 발생한다. **이것은 일반화 챕터와 동일한 결과를 레졸벤트를 사용하여 그대로 도출되는지를 확인하기 위함이다.**
+
+$$
+\hat{A}\hat{P}_m=\lambda_m\hat{P}_m+\hat{N}_{m}
+$$
 
 proof)
 
@@ -95,76 +150,23 @@ $$
 따라서,
 
 $$
-\hat{A} \hat{P}_m = \lambda_m \hat{P}_m + \hat{C}_{-2}
-$$
-
-여기서 $\hat{C}_{-2}$는 2차 극점 계수로서, 이것의 의미를 살펴보자. $\hat{P}_m$의 경우, 제곱을 하여 사영 연사자 임을 도출한것처럼, $C_{-2}$를 제곱해 본다. 특이점 $\lambda_m$을 둘러싸는 두 폐곡선 $\Gamma$와 $\Gamma'$ ($\Gamma$가 $\Gamma'$를 내포)에 대하여 $\hat{C}_{-2}^2$를 전개한다.
-
-$$
-\hat{C}_{-2}^2 = \frac{1}{(2\pi i)^2} \oint_{\Gamma} \oint_{\Gamma'} dz dw (z-\lambda_m)(w-\lambda_m) \hat{R}(z)\hat{R}(w)
-$$
-
-레졸번트 항등식을 대입하여 적분을 분리한다.
-
-$$
-\hat{C}_{-2}^2 = \frac{1}{(2\pi i)^2} \oint_{\Gamma} dz dw \oint_{\Gamma'} \frac{(z-\lambda_m)(w-\lambda_m)}{w - z} \left( \hat{R}(z) - \hat{R}(w) \right)
-$$
-
-앞선 사영 연산자의 멱등성 증명과 동일한 코시 적분 정리 절차를 거치면, $\Gamma'$에 대한 $w$ 적분에서 경로 내부에 위치한 극점 $z$에 의해 유수(Residue)가 발생한다.
-
-$$
-\hat{C}_{-2}^2 = \frac{1}{2\pi i} \oint_{\Gamma} (z-\lambda_m)^2 \hat{R}(z) dz
-$$
-
-위 적분식은 로랑 급수의 계수 공식 정의에 의해 정확히 3차 극점의 계수 $\hat{C}_{-3}$과 일치한다. 즉, $\hat{C}_{-2}^2 = \hat{C}_{-3}$가 성립한다. 이 적분 논리를 수학적 귀납법으로 임의의 정수 $k$로 확장하면 다음의 불변량이 도출된다.
-
-$$
-\hat{C}_{-2}^k = \hat{C}_{-(k+1)}
-$$
-
-로랑 급수의 주부(Principal part)는 유한 차원 시스템에서 무한히 전개될 수 없고 반드시 종결된다($n > k_m$일 때 $\hat{C}_{-n} = \hat{0}$). 따라서 **멱영 연산자 이다.**
-
----
-
-### 4. 다중 극점과 멱영 연산자 (비대각 성분)
-
-앞선 3장에서 사영 연산자 투영 시 발생하는 2차 극점 계수 $\hat{C}{-2}$의 거듭제곱 불변량 $\hat{C}{-2}^k = \hat{C}_{-(k+1)}$을 유도하였다. 본 장에서는 스케일 불변 측도 $\frac{dz}{z-\lambda_m}$를 적용한 로랑 급수의 일반 계수 산출 공식으로부터, 주부(Principal part)에 존재하는 모든 다중 극점(Multiple poles) 성분이 단 하나의 연산자 거듭제곱으로 표현됨을 보여준다.
-
-로랑 급수의 일반항 정의에 따라, 임의의 고차 극점 계수 $\hat{C}_{-n}$ ($n \ge 2$)은 불변 측도 $\frac{dz}{z-\lambda_m}$를 도입한 코시 닫힌 경로 적분으로 다음과 같이 기술된다.
-
-$$
-\hat{C}_{-n} = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^n
-$$
-
-3장에서 코시 2중 적분을 통해 도출한 대수적 불변량 $\hat{C}_{-(k+1)} = \hat{C}_{-2}^k$에 인덱스 $n = k + 1$을 대입하여 위 수식과 결합한다.
-
-$$
-\hat{C}_{-n} = \hat{C}_{-2}^{n-1} \quad (n \ge 2)
-$$
-
-이 항등식이 내포하는 대수학적 인과율은 절대적이다. 로랑 급수에 전개되는 3차, 4차 이상의 모든 고차 극점 계수들은 각기 독립적인 기원을 가지는 성분이 아니라, 오직 2차 극점 계수 $\hat{C}_{-2}$ 단 하나가 반복적으로 거듭제곱되며 파생된 종속적 결과물에 불과하다.
-
-따라서 시스템 내에서 대각화를 방해하는 모든 비대각 결함 성분을 생성해 내는 이 근원적인 2차 극점 계수 $\hat{C}_{-2}$를 멱영 연산자(Nilpotent operator) $\hat{N}_m$으로 확정하여 정의한다.
-
-$$
-\hat{N}_m \equiv \hat{C}_{-2} = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^2
-$$
-
-이 정의를 앞선 적분 공식에 역으로 대입하면, 임의의 고차 극점 계수는 멱영 연산자에 위상 가중치가 부여된 척도 적분과 완벽하게 동치임이 확인된다.
-
-$$
-\hat{N}_m^{n-1} = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A}) (z-\lambda_m)^n
-$$
-
-결론적으로, 유한 차원 시스템의 대수학적 제약에 의해 레졸번트의 로랑 급수 주부가 특정 차수인 멱영 지수 $k_m$에서 반드시 종결된다($n > k_m$일 때 $\hat{C}_{-n} = \hat{0}$)는 복소해석학적 정리를 상기 거듭제곱 항등식에 대입한다. 이를 통해 $\hat{N}_m$이 유한 차수 내에서 스스로 붕괴하는 멱영 연산자임을 최종적으로 증명한다.
-
-$$
-\hat{N}_m^{k_m} = \hat{C}_{-(k_m+1)} = \hat{0}
+\hat{A} \hat{P}_m = \lambda_m \hat{P}_m + \hat{N}_{m}
 $$
 
 ---
 
-### 5. 예제: 비정규 대각화 가능 연산자
+### 5. (정칙부) (?)
+
+
+
+
+
+
+
+
+---
+
+### 6. 예제: 비정규 대각화 가능 연산자
 
 2차원 비정규 행렬 연산자 $\hat{A}$ 가 대각화 가능성을 가질 때, 스펙트럼을 추출하는 과정을 대수학적 방법과 해석학적 방법으로 교차 검증한다.
 
