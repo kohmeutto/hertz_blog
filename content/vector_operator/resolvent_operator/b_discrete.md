@@ -66,7 +66,7 @@ $$
 본 장에서는 스케일 불변 측도 $\frac{dz}{z-\lambda_m}$를 적용한 로랑 급수의 일반 계수 산출 공식으로부터, 주부(Principal part)에 존재하는 모든 다중 극점(Multiple poles) 성분이 단 하나의 연산자 거듭제곱으로 표현됨을 보여준다.
 
 $$
-\hat{N}_{m}^{n-1} = \hat{C}_{-n} = \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m)^{n-1} \hat{R}(z) 
+\hat{N}_{m} = \hat{C}_{-2} = \frac{1}{2\pi i} \oint_{\Gamma_m} dz (z-\lambda_m) \hat{R}(z) 
 $$
 
 proof)
@@ -133,8 +133,6 @@ $$
 \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, z \hat{R}(z) = \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, \{ (z-\lambda_m) + \lambda_m \} \hat{R}(z)
 $$
 
-적분을 분리하여 각각의 유수(Residue)를 산출한다.
-
 $$
 = \lambda_m \left( \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, \hat{R}(z) \right) + \frac{1}{2\pi i} \oint_{\Gamma_m} dz \, (z-\lambda_m) \hat{R}(z)
 $$
@@ -155,14 +153,26 @@ $$
 \hat{S}_m \equiv \hat{C}_0 = \frac{1}{2\pi i} \oint_{\Gamma_m} \frac{dz}{z-\lambda_m} \hat{R}(z, \hat{A})
 $$
 
-proof)
-
-레졸번트 전개 챕터에서 대수적으로 유도된 바와 같이, 환원 레졸번트 $\hat{S}_m$은 관측 공간 $\lambda_m$을 제외한 여공간(Complementary space) 내부에 존재하는 국소 역작용소들의 합($\sum_{l \neq m} \hat{Y}_l^{-1}$)으로 정의된다. 
-
-이러한 대수적 기원으로 인해, 정칙부 성분은 관측점의 사영 연산자 $\hat{P}_m$과 완벽하게 직교하는 종속 관계를 가진다.
+$$
+\hat{P}_m\hat{S}_m = \hat{S}_m\hat{P}_m = 0
+$$
 
 $$
-\hat{P}_m \hat{S}_m = \hat{P}_m \left( \sum_{l \neq m} \hat{Y}_l^{-1} \right) = \sum_{l \neq m} (\hat{P}_m \hat{P}_l) \dots = \hat{0}
+\hat{S}_m\hat{N}_m = \hat{N}_m\hat{S}_m = 0
+$$
+
+proof)
+
+레졸번트 전개 챕터에서 대수적으로 유도된 바와 같이, 환원 레졸번트 $\hat{S}_m$은 관측 공간 $\lambda_m$을 제외한 여공간(Complementary space) 내부에 존재하는 국소 역작용소들의 합($\sum_{l \neq m} \hat{Y}_l^{-1}$)으로 정의된다. 이러한 대수적 기원으로 인해, 정칙부 성분은 관측점의 사영 연산자 $\hat{P}_m$과 직교하는 종속 관계를 가진다.
+
+$$
+\hat{P}_m \hat{S}_m = \hat{0}
+$$
+
+또한 다음의 관계도 도출할 수 있다.
+
+$$
+\hat{S}_m \hat{N}_m =\hat{S}_m \hat{P}_m  \hat{N}_m = 0
 $$
 
 다중 극점 계수가 단일 멱영 연산자의 거듭제곱으로 축약되었던 것과 동일한 인과율에 의해, 정칙부의 모든 임의의 계수 $\hat{C}_n$ ($n \ge 1$) 역시 상수항인 환원 레졸번트 $\hat{S}_m$의 무한 멱급수로 전개된다.
@@ -289,7 +299,7 @@ $$
 R(z, \hat{A}) = \frac{1}{z - 2} \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \frac{1}{(z - 2)^2} \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix}
 $$
 
-이 전개 결과는 1장 및 3장에서 구축한 로랑 급수 주부의 구조식과 완벽하게 일치한다. 따라서 닫힌 경로 적분 없이 각 차수의 계수를 즉각적으로 추출하여 연산자 구조를 확정한다.
+이 전개 결과는 1장 및 3장에서 구축한 로랑 급수 주부의 구조식과 일치한다. 따라서 닫힌 경로 적분 없이 각 차수의 계수를 즉각적으로 추출하여 연산자 구조를 확정한다.
 
 *(1) 1차 단순극점 계수 (사영 연산자 $\hat{P}$)*
 
@@ -322,3 +332,235 @@ $$
 $$
 2\hat{P} + \hat{N} = 2 \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} 3 & -1 \\ 1 & 1 \end{bmatrix} = \hat{A}
 $$
+
+---
+
+### 8. 예제: 복수 고윳값과 결함의 공존 (3×3)
+
+서로 다른 두 고윳값을 가지되 그중 하나가 결함(Defective)인 3×3 연산자에 대하여, 일반화된 고유벡터를 직접 탐색하지 않고 레졸번트 전개만으로 사영 연산자 $\hat{P}_m$, 멱영 연산자 $\hat{N}_m$, 환원 레졸번트 $\hat{S}_m$을 대수적 오차 없이 추출한다.
+
+$$
+\hat{A} = \begin{bmatrix} 2 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 5 \end{bmatrix}
+$$
+
+상삼각 행렬이므로 대각 성분이 곧 고윳값이며, 고윳값은 $\lambda_1 = 2$ (중복)와 $\lambda_2 = 5$ 이다.
+
+**1) 특성 방정식을 이용한 대수적 퇴화 확인**
+
+$$
+\det(\hat{A} - \lambda\hat{I}) = (2 - \lambda)^2 (5 - \lambda) = 0
+$$
+
+고윳값 $\lambda_1 = 2$ 의 대수적 중복도는 $\alpha = 2$ 이다. 기하적 중복도를 확인하기 위해 $(\hat{A} - 2\hat{I})$ 를 전개한다.
+
+$$
+\hat{A} - 2\hat{I} = \begin{bmatrix} 0 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 3 \end{bmatrix}
+$$
+
+제2열 $(1, 0, 0)$ 과 제3열 $(1, 1, 3)$ 이 선형 독립이므로 계수(Rank)는 2이고, 영공간의 차원은 $3 - 2 = 1$ 이다. 따라서 기하적 중복도는 $\gamma = 1$ 이다.
+
+$$
+\gamma = 1 < \alpha = 2
+$$
+
+$\lambda_1 = 2$ 가 결함을 가진다. 반면 $\lambda_2 = 5$ 는 단순 고윳값이므로 결함이 없다.
+
+**2) 레졸번트 전개**
+
+특성 연산자 $z\hat{I} - \hat{A}$ 를 전개한다.
+
+$$
+z\hat{I} - \hat{A} = \begin{bmatrix} z-2 & -1 & -1 \\ 0 & z-2 & -1 \\ 0 & 0 & z-5 \end{bmatrix}
+$$
+
+상삼각이므로 행렬식은 대각 성분의 곱이다.
+
+$$
+\det(z\hat{I} - \hat{A}) = (z-2)^2 (z-5)
+$$
+
+역작용소를 상삼각 형태 $R(z) = \begin{bmatrix} a & b & c \\ 0 & d & e \\ 0 & 0 & f \end{bmatrix}$ 로 두고, 항등식 $(z\hat{I} - \hat{A})R(z) = \hat{I}$ 의 각 성분을 차례로 푼다.
+
+(3,3) 성분에서 $f$ 를 산출한다.
+
+$$
+(z-5)f = 1 \implies f = \frac{1}{z-5}
+$$
+
+(1,1) 및 (2,2) 성분에서 $a, d$ 를 산출한다.
+
+$$
+(z-2)a = 1 \implies a = \frac{1}{z-2}, \qquad (z-2)d = 1 \implies d = \frac{1}{z-2}
+$$
+
+(1,2) 성분 $(z-2)b - d = 0$ 에서 $b$ 를 산출한다.
+
+$$
+(z-2)b = d = \frac{1}{z-2} \implies b = \frac{1}{(z-2)^2}
+$$
+
+(2,3) 성분 $(z-2)e - f = 0$ 에서 $e$ 를 산출한다.
+
+$$
+(z-2)e = f = \frac{1}{z-5} \implies e = \frac{1}{(z-2)(z-5)}
+$$
+
+(1,3) 성분 $(z-2)c - e - f = 0$ 에서 $c$ 를 산출한다. 먼저 $e + f$ 를 통분한다.
+
+$$
+e + f = \frac{1}{(z-2)(z-5)} + \frac{1}{z-5} = \frac{1 + (z-2)}{(z-2)(z-5)} = \frac{z-1}{(z-2)(z-5)}
+$$
+
+이를 대입하여 $c$ 를 확정한다.
+
+$$
+(z-2)c = \frac{z-1}{(z-2)(z-5)} \implies c = \frac{z-1}{(z-2)^2 (z-5)}
+$$
+
+레졸번트가 완성된다.
+
+$$
+R(z) = \begin{bmatrix} \frac{1}{z-2} & \frac{1}{(z-2)^2} & \frac{z-1}{(z-2)^2 (z-5)} \\ 0 & \frac{1}{z-2} & \frac{1}{(z-2)(z-5)} \\ 0 & 0 & \frac{1}{z-5} \end{bmatrix}
+$$
+
+**3) $\lambda_1 = 2$ 근방 로랑 전개를 통한 계수 추출**
+
+관측점을 $\lambda_1 = 2$ 로 두고 $u = z - 2$ 로 치환한다. 이때 $z - 5 = u - 3$, $z - 1 = u + 1$ 이다. 각 성분을 $u$ 의 멱급수로 전개하여 $u^{-2}$, $u^{-1}$, $u^0$ 의 계수를 추출한다.
+
+성분 (1,1)은 $\frac{1}{u}$ 이므로 $u^{-1}$ 계수가 $1$ 이다.
+
+성분 (1,2)는 $\frac{1}{u^2}$ 이므로 $u^{-2}$ 계수가 $1$ 이다.
+
+성분 (2,2)는 $\frac{1}{u}$ 이므로 $u^{-1}$ 계수가 $1$ 이다.
+
+성분 (2,3) $\frac{1}{u(u-3)}$ 을 전개한다. 먼저 $\frac{1}{u-3}$ 을 전개한다.
+
+$$
+\frac{1}{u-3} = -\frac{1}{3} \cdot \frac{1}{1 - u/3} = -\frac{1}{3}\left(1 + \frac{u}{3} + \frac{u^2}{9} + \cdots\right)
+$$
+
+$\frac{1}{u}$ 를 곱한다.
+
+$$
+\frac{1}{u(u-3)} = -\frac{1}{3u} - \frac{1}{9} - \frac{u}{27} - \cdots
+$$
+
+$u^{-1}$ 계수가 $-\frac{1}{3}$, $u^0$ 계수가 $-\frac{1}{9}$ 이다.
+
+성분 (3,3) $\frac{1}{u-3}$ 은 위 전개에서 $u^{-1}$ 계수가 $0$, $u^0$ 계수가 $-\frac{1}{3}$ 이다.
+
+성분 (1,3) $\frac{u+1}{u^2(u-3)}$ 을 전개한다. 먼저 $(u+1)$ 과 $\frac{1}{u-3}$ 의 곱을 정리한다.
+
+$$
+(u+1)\left(1 + \frac{u}{3} + \frac{u^2}{9} + \cdots\right) = 1 + \frac{4}{3}u + \frac{4}{9}u^2 + \cdots
+$$
+
+$-\frac{1}{3}$ 을 곱한다.
+
+$$
+(u+1)\cdot\frac{1}{u-3} = -\frac{1}{3} - \frac{4}{9}u - \frac{4}{27}u^2 - \cdots
+$$
+
+$\frac{1}{u^2}$ 를 곱한다.
+
+$$
+\frac{u+1}{u^2(u-3)} = -\frac{1}{3u^2} - \frac{4}{9u} - \frac{4}{27} - \cdots
+$$
+
+$u^{-2}$ 계수가 $-\frac{1}{3}$, $u^{-1}$ 계수가 $-\frac{4}{9}$, $u^0$ 계수가 $-\frac{4}{27}$ 이다.
+
+추출된 $u^{-2}$ 계수를 모아 멱영 연산자 $\hat{N}_1 = \hat{C}_{-2}$ 를 확정한다.
+
+$$
+\hat{N}_1 = \begin{bmatrix} 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+$u^{-1}$ 계수를 모아 사영 연산자 $\hat{P}_1 = \hat{C}_{-1}$ 를 확정한다.
+
+$$
+\hat{P}_1 = \begin{bmatrix} 1 & 0 & -\frac{4}{9} \\ 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+$u^0$ 계수를 모아 환원 레졸번트 $\hat{S}_1 = \hat{C}_0$ 를 확정한다.
+
+$$
+\hat{S}_1 = \begin{bmatrix} 0 & 0 & -\frac{4}{27} \\ 0 & 0 & -\frac{1}{9} \\ 0 & 0 & -\frac{1}{3} \end{bmatrix}
+$$
+
+**4) $\lambda_2 = 5$ 사영 연산자 추출**
+
+관측점을 $\lambda_2 = 5$ 로 두고 단순극의 유수(Residue)를 산출한다. $\frac{1}{z-5}$ 성분을 포함하는 항만 잔존한다. 성분 (3,3)의 유수는 $1$, 성분 (2,3) $\frac{1}{(z-2)(z-5)}$ 의 유수는 $\frac{1}{5-2} = \frac{1}{3}$, 성분 (1,3) $\frac{z-1}{(z-2)^2(z-5)}$ 의 유수는 $\frac{5-1}{(5-2)^2} = \frac{4}{9}$ 이다. 나머지 성분은 $z = 5$ 에서 정칙이므로 $0$ 이다.
+
+$$
+\hat{P}_2 = \begin{bmatrix} 0 & 0 & \frac{4}{9} \\ 0 & 0 & \frac{1}{3} \\ 0 & 0 & 1 \end{bmatrix}
+$$
+
+**5) 교차 검증**
+
+*(1) 완비성 ($\hat{P}_1 + \hat{P}_2 = \hat{I}$)*
+
+$$
+\hat{P}_1 + \hat{P}_2 = \begin{bmatrix} 1 & 0 & -\frac{4}{9} + \frac{4}{9} \\ 0 & 1 & -\frac{1}{3} + \frac{1}{3} \\ 0 & 0 & 0 + 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \hat{I}
+$$
+
+*(2) 멱등성 ($\hat{P}_1^2 = \hat{P}_1$)*
+
+유일한 비자명 성분인 (1,3)을 검증한다.
+
+$$
+(\hat{P}_1^2)_{13} = 1 \cdot \left(-\frac{4}{9}\right) + 0 \cdot \left(-\frac{1}{3}\right) + \left(-\frac{4}{9}\right) \cdot 0 = -\frac{4}{9}
+$$
+
+나머지 성분도 보존되므로 $\hat{P}_1^2 = \hat{P}_1$ 이 성립한다.
+
+*(3) 멱영성 ($\hat{N}_1^2 = \hat{0}$)*
+
+$\hat{N}_1$ 의 비자명 성분(1행)이 닿는 제2열·제3열의 행이 모두 영벡터이므로 곱이 소멸한다.
+
+$$
+\hat{N}_1^2 = \hat{0}
+$$
+
+멱영 지수는 $k_1 = 2$ 이며, 이는 결함 차수와 일치한다.
+
+*(4) 대수적 분해 항등식 ($\hat{A}\hat{P}_1 = \lambda_1\hat{P}_1 + \hat{N}_1$)*
+
+좌변을 계산한다.
+
+$$
+\hat{A}\hat{P}_1 = \begin{bmatrix} 2 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 5 \end{bmatrix} \begin{bmatrix} 1 & 0 & -\frac{4}{9} \\ 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 2 & 1 & -\frac{11}{9} \\ 0 & 2 & -\frac{2}{3} \\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+((1,3) 성분: $2 \cdot (-\frac{4}{9}) + 1 \cdot (-\frac{1}{3}) + 1 \cdot 0 = -\frac{8}{9} - \frac{3}{9} = -\frac{11}{9}$.) 우변을 계산한다.
+
+$$
+2\hat{P}_1 + \hat{N}_1 = \begin{bmatrix} 2 & 0 & -\frac{8}{9} \\ 0 & 2 & -\frac{2}{3} \\ 0 & 0 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 1 & -\frac{1}{3} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 2 & 1 & -\frac{11}{9} \\ 0 & 2 & -\frac{2}{3} \\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+((1,3) 성분: $-\frac{8}{9} - \frac{1}{3} = -\frac{11}{9}$.) 좌변과 일치한다.
+
+*(5) 환원 레졸번트와 타 고윳값의 관계 ($\hat{S}_1 = \frac{1}{\lambda_1 - \lambda_2}\hat{P}_2$)*
+
+$\lambda_2 = 5$ 가 단순 고윳값이므로 $\hat{N}_2 = \hat{0}$ 이고, 환원 레졸번트의 정의 $\hat{Y}_l = (\lambda_m - \lambda_l)\hat{P}_l - \hat{N}_l$ 에서 $\hat{Y}_2 = (\lambda_1 - \lambda_2)\hat{P}_2 = -3\hat{P}_2$ 이다. 그 역작용소는 $-\frac{1}{3}\hat{P}_2$ 이다.
+
+$$
+-\frac{1}{3}\hat{P}_2 = -\frac{1}{3}\begin{bmatrix} 0 & 0 & \frac{4}{9} \\ 0 & 0 & \frac{1}{3} \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 0 & -\frac{4}{27} \\ 0 & 0 & -\frac{1}{9} \\ 0 & 0 & -\frac{1}{3} \end{bmatrix} = \hat{S}_1
+$$
+
+3절에서 로랑 전개로 추출한 $\hat{S}_1$ 과 정확히 일치한다. 환원 레졸번트가 관측점 $\lambda_1$ 에서 타 고윳값 $\lambda_2$ 를 거리의 역수 $\frac{1}{\lambda_1 - \lambda_2} = -\frac{1}{3}$ 로 가중하여 집어냄이 수치적으로 확인된다.
+
+*(6) 직교성 ($\hat{P}_1 \hat{S}_1 = \hat{0}$)*
+
+비자명 성분 (1,3)과 (2,3)을 검증한다.
+
+$$
+(\hat{P}_1\hat{S}_1)_{13} = 1 \cdot \left(-\frac{4}{27}\right) + 0 \cdot \left(-\frac{1}{9}\right) + \left(-\frac{4}{9}\right)\left(-\frac{1}{3}\right) = -\frac{4}{27} + \frac{4}{27} = 0
+$$
+
+$$
+(\hat{P}_1\hat{S}_1)_{23} = 0 \cdot \left(-\frac{4}{27}\right) + 1 \cdot \left(-\frac{1}{9}\right) + \left(-\frac{1}{3}\right)\left(-\frac{1}{3}\right) = -\frac{1}{9} + \frac{1}{9} = 0
+$$
+
+따라서 $\hat{P}_1 \hat{S}_1 = \hat{0}$ 이 성립하여, 정칙부가 관측점의 사영 공간과 직교함이 검증된다.
+
+---
