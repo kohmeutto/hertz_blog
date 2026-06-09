@@ -57,7 +57,7 @@ $$
 R(\nu - i\epsilon) - R(\nu + i\epsilon) = \left[ \mathcal{P} \left( \frac{1}{\nu - \hat{A}} \right) + i\pi \delta(\nu - \hat{A}) \right] - \left[ \mathcal{P} \left( \frac{1}{\nu - \hat{A}} \right) - i\pi \delta(\nu - \hat{A}) \right]
 $$
 
-차분 과정에서 배경장을 형성하는 코시 주치 성분은 완벽하게 상쇄되어 소거되며, 상태를 특정하는 델타 함수 성분만이 $2i\pi \delta(\nu - \hat{A})$ 로 보존된다. 이 결과를 본래의 밀도 식에 대입하면 $2\pi i$ 계수가 소거되며 최종적인 항등식으로 귀결된다.
+차분 과정에서 배경장을 형성하는 코시 주치 성분은 상쇄되어 소거되며, 상태를 특정하는 델타 함수 성분만이 $2i\pi \delta(\nu - \hat{A})$ 로 보존된다. 이 결과를 본래의 밀도 식에 대입하면 $2\pi i$ 계수가 소거되며 최종적인 항등식으로 귀결된다.
 
 $$
 d\hat{P}(\nu) = \delta(\nu - \hat{A}) d\nu
@@ -97,7 +97,7 @@ $$
 = \phi(0) \int_{-\infty}^{\infty} \frac{1}{y^2 + 1} dy = \pi \phi(0)
 $$
 
-분포 이론의 정의상 임의의 함수 $\phi(x)$ 를 $\phi(0)$ 으로 추출해 내는 연산자는 디랙 델타 함수 $\delta(x)$ 이다. 따라서 허수부는 다음의 극한으로 완벽히 종결된다.
+분포 이론의 정의상 임의의 함수 $\phi(x)$ 를 $\phi(0)$ 으로 추출해 내는 연산자는 디랙 델타 함수 $\delta(x)$ 이다. 따라서 허수부는 다음의 극한으로 종결된다.
 
 $$
 \lim_{\epsilon \to 0^+} \frac{\epsilon}{x^2 + \epsilon^2} = \pi \delta(x)
@@ -119,7 +119,7 @@ $$
 \int_{-\delta}^{\delta} \frac{x}{x^2 + \epsilon^2} \left[ \phi(0) + x\psi(x) \right] dx = \phi(0) \int_{-\delta}^{\delta} \frac{x}{x^2 + \epsilon^2} dx + \int_{-\delta}^{\delta} \frac{x^2}{x^2 + \epsilon^2} \psi(x) dx
 $$
 
-첫 번째 항의 피적분 함수 $\frac{x}{x^2 + \epsilon^2}$ 는 완벽한 기함수이므로 대칭 구간 $[-\delta, \delta]$ 에 대한 적분은 자명하게 0으로 소멸한다. (이것이 발산하는 특이점이 상쇄되는 대수적 원리이다.) 
+첫 번째 항의 피적분 함수 $\frac{x}{x^2 + \epsilon^2}$ 는 기함수이므로 대칭 구간 $[-\delta, \delta]$ 에 대한 적분은 자명하게 0으로 소멸한다. (이것이 발산하는 특이점이 상쇄되는 대수적 원리이다.) 
 두 번째 항은 $\epsilon \to 0$ 극한에서 특이점이 상쇄되어 적분 가능한 값으로 수렴한다.
 
 결과적으로, 기함수의 대칭성을 이용해 발산 특이점을 제거하고 나머지 유효 면적만을 추출하는 이 적분 방식 자체가 바로 **코시 주치(Cauchy Principal Value, $\mathcal{P}$)**의 정의와  일치한다.
@@ -263,7 +263,7 @@ proof)
 
 서로 다른 변수 $\nu$ 와 $\nu'$ 에 대하여 도약 연산의 곱을 전개하면 $R(\nu \pm i\epsilon) R(\nu' \pm i\epsilon')$ 항들이 생성된다. 레졸번트 항등식 $R(z)R(w) = \frac{R(z) - R(w)}{w - z}$ 에 의해 이들의 곱은 $\frac{1}{\nu' - \nu}$ 형태의 차분으로 분리된다.
 
-극한 $\epsilon, \epsilon' \to 0$ 조건에서 $\nu \neq \nu'$ 일 경우, 분모가 0이 되지 않으므로 도약의 차분은 완벽히 상쇄되어 영연산자 $\hat{0}$ 으로 소멸한다. 오직 $\nu = \nu'$ 인 국소 지점에서만 $\epsilon$ 에 의한 극점 발산이 발생하며, 이는 분포 이론에 의해 델타 함수 $\delta(\nu - \nu')$ 로 수렴한다. 따라서 연속 공간 내 이종 특이점 간의 절대적인 대수적 직교성이 성립한다.
+극한 $\epsilon, \epsilon' \to 0$ 조건에서 $\nu \neq \nu'$ 일 경우, 분모가 0이 되지 않으므로 도약의 차분은 상쇄되어 영연산자 $\hat{0}$ 으로 소멸한다. 오직 $\nu = \nu'$ 인 국소 지점에서만 $\epsilon$ 에 의한 극점 발산이 발생하며, 이는 분포 이론에 의해 델타 함수 $\delta(\nu - \nu')$ 로 수렴한다. 따라서 연속 공간 내 이종 특이점 간의 절대적인 대수적 직교성이 성립한다.
 
 ---
 
@@ -277,7 +277,7 @@ $$
 \hat{S}(\nu) = \mathcal{P} \int_{\Omega} \frac{d\hat{P}(\nu')}{\nu - \nu'} = \lim_{\delta \to 0^+} \left( \int_{\min(\Omega)}^{\nu - \delta} \frac{d\hat{P}(\nu')}{\nu - \nu'} + \int_{\nu + \delta}^{\max(\Omega)} \frac{d\hat{P}(\nu')}{\nu - \nu'} \right)
 $$
 
-이산 공간에서 증명된 직교성 $\hat{P}_m \hat{S}_m = \hat{0}$ 과 대칭적으로, 연속 공간에서도 국소 사영 밀도 $d\hat{P}(\nu)$ 와 환원 레졸번트 $\hat{S}(\nu)$ 간의 대수적 직교성이 완벽히 보존된다.
+이산 공간에서 증명된 직교성 $\hat{P}_m \hat{S}_m = \hat{0}$ 과 대칭적으로, 연속 공간에서도 국소 사영 밀도 $d\hat{P}(\nu)$ 와 환원 레졸번트 $\hat{S}(\nu)$ 간의 대수적 직교성이 보존된다.
 
 $$
 d\hat{P}(\nu) \hat{S}(\nu) = d\hat{P}(\nu) \left( \mathcal{P} \int_{\Omega} \frac{d\hat{P}(\nu')}{\nu - \nu'} \right) = \mathcal{P} \int_{\Omega} \frac{\delta(\nu - \nu') d\hat{P}(\nu)}{\nu - \nu'} = \hat{0}
@@ -335,7 +335,7 @@ $$
 \int_{-\infty}^{\infty} \nu \, d\hat{P}(\nu) = \int_{-\infty}^{\infty} \nu \, \delta(\nu - \hat{X}) d\nu
 $$
 
-델타 함수의 적분 필터링(Sifting) 성질에 의해 변수 $\nu$ 는 연산자 $\hat{X}$ 로 치환되며 식이 완벽하게 항등원으로 환원된다.
+델타 함수의 적분 필터링(Sifting) 성질에 의해 변수 $\nu$ 는 연산자 $\hat{X}$ 로 치환되며 식이 항등원으로 환원된다.
 
 $$
 = \hat{X}
