@@ -1,5 +1,5 @@
 +++
-title = "(b) Resolvent"
+title = "(b) [D] Resolvent"
 weight = 2
 +++
 

@@ -1,5 +1,5 @@
 +++
-title = "(b) Generalization"
+title = "(b) [D] Generalization"
 weight = 1
 +++
 

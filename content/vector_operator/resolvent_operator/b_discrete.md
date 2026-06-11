@@ -1,5 +1,5 @@
 +++
-title = "(b) Discrete"
+title = "(b) [D] Discrete"
 weight = 3
 +++
 
