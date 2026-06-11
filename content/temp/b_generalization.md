@@ -34,9 +34,19 @@ $$
 \hat{A}|\lambda_{m,1}\rangle = \lambda_m|\lambda_{m,1}\rangle \quad (\text{진성 고유벡터})
 $$
 
+**2) 연속 공간 (무한 차원)**
+
+비유계 연산자의 연속 스펙트럼에서는 이산적인 랭크 강하 대신, 고윳값 구간 전체에 걸쳐 기하학적 중복도가 결핍되는 현상이 분포 함수의 형태로 발현된다. 단, 이러한 결핍(잉여 상태)은 자기수반이 아닌 결함계에서만 나타나며, 자기수반 연산자의 경우에는 $|w(\nu)\rangle = 0$이 되어 잉여 항이 소멸한다.
+
+비자기수반 결함계에 한하여, 연속 변수 $\nu$에 종속된 일반화된 고유벡터의 지배 방정식은 국소적 잉여 상태(Surplus state) 밀도 $|w(\nu)\rangle$를 수반하여 다음과 같이 기술된다.
+
+$$
+\hat{A}|\lambda(\nu)\rangle = \lambda(\nu)|\lambda(\nu)\rangle + |w(\nu)\rangle \quad (\text{자기수반계의 경우 } |w(\nu)\rangle = 0)
+$$
+
 proof)
 
-*(1) 대각화 가능한 경우 예*
+*(1) 대각화 가능한 경우 예 (이산)*
 
 대각화 가능한 연산자 $\hat{A}$가 서로 다른 고윳값 $\lambda_1, \lambda_2$와 이에 대응하는 진성 고유벡터 $|\lambda_{1,1}\rangle, |\lambda_{2,1}\rangle$을 가지는 경우 다음과 같이 기술된다.
 
@@ -47,7 +57,7 @@ $$
 \hat{A}|\lambda_{2,1}\rangle = \lambda_2|\lambda_{2,1}\rangle \implies (\hat{A}-\lambda_2 \hat{I})|\lambda_{2,1}\rangle=0
 $$
 
-*(2) 대각화가 불가능한 경우*
+*(2) 대각화가 불가능한 경우 (이산)*
 
 대수적 중복도가 2이고 기하학적 중복도가 1인 특정 고윳값 $\lambda_1$에 대한 연산자는 다음과 같이 기술된다.
 
@@ -119,6 +129,8 @@ $$
 
 결함 연산자의 기저는 스스로 직교하지 않으므로, 대수적 연산자 분해를 성립시키기 위해 상호 쌍대 기저(Bi-dual basis)를 도입한다. 
 
+**1) 이산 공간의 분해**
+
 이산 공간에서는 직교 규격화 조건($\langle \lambda^{m,j}|\lambda_{n,k}\rangle = \delta^m_n \delta^j_k$)을 만족하도록 인덱스를 윗첨자(반변, Contravariant)로 올려 $\langle \lambda^{m,k}|$로 표기한다.
 
 $$
@@ -180,6 +192,19 @@ $$
 f(\hat{A})\hat{P}_m=\hat{A}\hat{P}_m=\lambda_m\hat{P}_m+\hat{N}_m
 $$
 
+
+**2) 연속 공간의 분해**
+
+연속 공간에서는 상태가 미소 구간 단위로 투영되므로, 델타 함수 직교 규격화 조건($\langle \lambda^d(\nu')|\lambda(\nu)\rangle = \delta(\nu-\nu')$)을 만족하는 연속 쌍대 기저 $\langle \lambda^d(\nu)|$를 도입하여 측도(Measure)를 포함하는 밀도(Density)의 형태로 분해한다.
+
+$$
+\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\iff
+\hat{A} = \int_\nu \big[\lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)\big]
+$$
+
+- 사영 밀도(Projection density): $d\hat{P}(\nu) = d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)|$
+- 멱영 밀도(Nilpotent density): $d\hat{N}(\nu) = d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|$
+
 ---
 
 ### 4. 반단순 연산자와 비대각 연산자 특성
@@ -198,6 +223,8 @@ $$
 
 proof)
 
+[이산 공간]
+
 분리된 비대각 성분 $\hat{N}_m = \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|$이 멱영(Nilpotent) 연산자가 되는 대수학적 인과율은 쌍대 기저의 직교성에 의해 증명된다. 단일 랭크 강하 항의 곱을 연산하면 다음과 같다.
 
 $$
@@ -205,6 +232,32 @@ $$
 $$
 
 랭크가 어긋나는 상태들의 내적은 상호 쌍대 기저의 직교 규격화 조건에 의해 소멸한다 ($\langle \lambda^{m,k}|\lambda_{m,j-1}\rangle = \delta^k_{j-1}$). 스칼라 항의 대수적 조건에 따라 랭크가 일치하지 않는 모든 교차 항들이 제거되므로, 비대각 전이 연산자는 유한 번의 거듭제곱 내에서 즉각 영연산자 $\hat{0}$으로 붕괴한다.
+
+[연속 공간]
+
+연속 공간의 특정 상태 $\nu$에 대한 지배 방정식 양변 우측에 쌍대 기저 $\langle \lambda^d(\nu)|$를 외적하고 미소 구간 측도 $d\nu$를 취한다.
+
+$$
+\hat{A}\, d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)| = \lambda(\nu)\, d\nu\,|\lambda(\nu)\rangle\langle \lambda^d(\nu)| + d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|
+$$
+
+이를 각 밀도 기호로 치환하면 국소 구간에 대한 연산자 항등식 $\hat{A}\,d\hat{P}(\nu) = \lambda(\nu)\, d\hat{P}(\nu) + d\hat{N}(\nu)$가 도출된다. 연속 공간의 비대각 성분 밀도 $d\hat{N}(\nu)$가 멱영 특성을 가지는 인과율은 다음과 같이 전개된다.
+
+$$
+(d\nu\,|w(\nu)\rangle\langle \lambda^d(\nu)|) (d\nu'\,|w(\nu')\rangle\langle \lambda^d(\nu')|) = d\nu\,d\nu'\,|w(\nu)\rangle \langle \lambda^d(\nu)|w(\nu')\rangle \langle \lambda^d(\nu')|
+$$
+
+잉여 상태 $|w(\nu')\rangle$는 진성 고유공간과 대수적으로 선형 독립인 결함 공간을 구성하므로, 진성 상태를 투영하는 쌍대 기저 $\langle \lambda^d(\nu)|$와의 내적은 항상 0으로 소멸한다.
+
+$$
+\langle \lambda^d(\nu)|w(\nu')\rangle = 0
+$$
+
+스칼라 항이 교차 곱 과정에서 즉시 0이 되므로, 연속 공간의 비대각 전이 밀도는 자체적인 곱 연산에서 단번에 영연산자로 소멸한다.
+
+$$
+(d\hat{N})^2 = \hat{0}
+$$
 
 **3) 상호 특성**
 
@@ -270,3 +323,4 @@ proof)
 $$
 \hat{N}_m\hat{N}_l = \hat{N}_m\hat{P}_m\hat{N}_l = 0
 $$
+
