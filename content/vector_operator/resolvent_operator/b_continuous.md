@@ -1,0 +1,600 @@
++++
+title = "(b) [C] Continuous"
+weight = 6
++++
+
+---
+
+### 1. 행렬 원소에 연산자를 넣는 확장: 블록 연산자
+
+이산 Generalization 챕터에서 결함 연산자는 조르당 사슬(Jordan chain)을 따라 일반화된 고유벡터로 분해되었고, 그 구조는 유한한 크기의 행렬로 표현되었다. 연속 스펙트럼으로 넘어가기 전에, 그 유한 행렬의 원소 자리에 스칼라(숫자)가 아니라 연산자를 넣는 확장을 먼저 살핀다. 이 확장이 연속 일반화의 가장 자연스러운 출발점이며, 고윳값이 연속이 되는 과정과 사슬이 유지되는 과정을 한 식 안에서 분리해 보여 준다.
+
+다음 연산자를 본다. 두 켓을 세로로 쌓은 열 $|\Psi\rangle = \begin{pmatrix} |\psi_1\rangle \\ |\psi_2\rangle \end{pmatrix}$ 에 작용하며, 행렬의 대각 원소가 위치 연산자 $\hat{X}$(위치 고유켓에 대하여 $\hat{X}|\nu\rangle = \nu|\nu\rangle$)이다.
+
+$$
+\hat{A} = \begin{pmatrix} \hat{X} & \hat{I} \\ 0 & \hat{X} \end{pmatrix}
+$$
+
+이러한 연산자를 블록 연산자(Block operator) 또는 연산자값 행렬(Operator-valued matrix)이라 한다. 이산 Generalization의 조르당 블록 $\begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix}$ 에서 숫자 $\lambda$ 자리에 연산자 $\hat{X}$ 를, 숫자 $1$ 자리에 항등 연산자 $\hat{I}$ 를 넣은 것이다.
+
+이 블록 연산자는 텐서곱 챕터에서 정의한 텐서곱의 합 꼴로 정확히 분해된다. 위치 연산자 $\hat{X}$ 와 $2\times2$ 조르당 블록 $N = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$ 를 써서 적는다.
+
+$$
+\hat{A} = \hat{X} \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + \hat{I} \otimes \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}
+$$
+
+분해가 맞는지 두 항을 따로 계산한다. 첫 항은 대각 두 자리에 $\hat{X}$ 를 깐다.
+
+$$
+\hat{X} \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} \hat{X} & 0 \\ 0 & \hat{X} \end{pmatrix}
+$$
+
+둘째 항은 우상단에 $\hat{I}$ 를 깐다.
+
+$$
+\hat{I} \otimes \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & \hat{I} \\ 0 & 0 \end{pmatrix}
+$$
+
+두 항을 더하면 본래의 블록 연산자가 복원된다.
+
+$$
+\begin{pmatrix} \hat{X} & 0 \\ 0 & \hat{X} \end{pmatrix} + \begin{pmatrix} 0 & \hat{I} \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} \hat{X} & \hat{I} \\ 0 & \hat{X} \end{pmatrix}
+$$
+
+즉 행렬 원소에 연산자를 넣은 것은 연속 연산자 $\hat{X}$ 와 이산 행렬 $N$ 을 텐서곱으로 묶은 것이다.
+
+여기서 논리의 방향을 분명히 해 둔다. 위 블록 연산자는 "모든 연속 결함 연산자가 이런 꼴로 주어진다"는 전제가 아니다. 이 대상의 정확한 위상은 두 가지다. 첫째, 이것은 연속 결함 스펙트럼을 만들어내는 가장 작은 생성 예제다 — 이산 조르당 블록의 숫자 자리에 연산자를 넣은 연속판으로, "그런 대상이 존재하며 이렇게 생겼다"를 보여 준다. 둘째, 일반 연산자는 이 꼴로 주어지지 않지만, 사슬 구조를 가지기만 하면 자기 자신의 사슬 기저에서 본 좌표가 자동으로 이 블록 꼴이 된다. 즉 블록은 출발 형태가 아니라 사슬 기저가 드러내는 정규형(Normal form)이며, 그 일반 명제와 유도는 3절 말미에서 다룬다. 여기서는 블록 꼴이 아닌 채 주어진 연산자가 사슬 기저에서 블록으로 돌아오는 구체 예를 먼저 본다.
+
+**예제: 위장된 연산자 — 사슬 기저가 드러내는 블록**
+
+다음 연산자를 본다.
+
+$$
+\hat{A}' = \begin{pmatrix} \hat{X}+\hat{I} & \hat{I} \\ -\hat{I} & \hat{X}-\hat{I} \end{pmatrix}
+$$
+
+네 원소가 전부 비영이어서 상삼각 꼴도 아니고, 대각(고윳값부)과 우상단(멱영부)의 가시적 분리도 없다. 그러나 아래에서 보듯 이 연산자는 본 절 서두의 블록 연산자와 같은 사슬 구조를 가지며, 사슬 기저로 좌표를 바꾸면 같은 블록 꼴로 돌아온다.
+
+*(1) 결함 확인*
+
+위치 고유켓 $|\nu\rangle$ 의 고유공간 위에서 각 원소는 스칼라가 된다. 정의 $\hat{X}|\nu\rangle = \nu|\nu\rangle$ 에서 $(\hat{X}+\hat{I})|\nu\rangle = (\nu+1)|\nu\rangle$, $(\hat{X}-\hat{I})|\nu\rangle = (\nu-1)|\nu\rangle$ 이므로, 고유공간 성분에서 $\hat{A}'$ 는 숫자 행렬이 된다.
+
+$$
+M(\nu) = \begin{pmatrix} \nu+1 & 1 \\ -1 & \nu-1 \end{pmatrix}
+$$
+
+고윳값을 행렬식으로 찾는다. 행렬식 정의 $\det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc$ 에 $a = \nu+1-\lambda$, $b = 1$, $c = -1$, $d = \nu-1-\lambda$ 를 대입하고, 치환 $u = \nu - \lambda$ 를 적용한다.
+
+$$
+\det\big(M(\nu) - \lambda I_2\big) = (\nu+1-\lambda)(\nu-1-\lambda) - (1)(-1) = (u+1)(u-1) + 1 = u^2 - 1 + 1 = (\nu - \lambda)^2
+$$
+
+이중근 $\lambda = \nu$ 이다. 진성 고유벡터의 수를 보기 위해 $M(\nu) - \nu I_2$ 를 적는다. 대각 성분은 $(\nu+1) - \nu = 1$ 과 $(\nu-1) - \nu = -1$ 이다.
+
+$$
+M(\nu) - \nu I_2 = \begin{pmatrix} 1 & 1 \\ -1 & -1 \end{pmatrix}
+$$
+
+두 행이 비례하므로 랭크 1, 진성 고유벡터가 하나뿐이다(기하적 중복도 1 < 대수적 중복도 2). 제곱을 네 성분 모두 계산한다. $(1,1)$ 성분 $1\cdot1 + 1\cdot(-1) = 0$, $(1,2)$ 성분 $1\cdot1 + 1\cdot(-1) = 0$, $(2,1)$ 성분 $(-1)\cdot1 + (-1)\cdot(-1) = 0$, $(2,2)$ 성분 $(-1)\cdot1 + (-1)\cdot(-1) = 0$ 이다.
+
+$$
+\big(M(\nu) - \nu I_2\big)^2 = 0
+$$
+
+모든 $\nu$ 에서 2칸 사슬의 결함이다.
+
+*(2) 사슬 켓 확인*
+
+1칸(진성 고유켓) 후보를 $|\lambda_1(\nu)\rangle = \begin{pmatrix} |\nu\rangle \\ -|\nu\rangle \end{pmatrix}$ 로 둔다. 작용을 성분별로 계산한다. 첫 성분은 $(\hat{X}+\hat{I})|\nu\rangle + \hat{I}\,(-|\nu\rangle) = (\nu+1)|\nu\rangle - |\nu\rangle = \nu|\nu\rangle$ 이고, 둘째 성분은 $-\hat{I}|\nu\rangle + (\hat{X}-\hat{I})(-|\nu\rangle) = -|\nu\rangle - (\nu-1)|\nu\rangle = -\nu|\nu\rangle$ 이다.
+
+$$
+\hat{A}'|\lambda_1(\nu)\rangle = \begin{pmatrix} \nu|\nu\rangle \\ -\nu|\nu\rangle \end{pmatrix} = \nu\,|\lambda_1(\nu)\rangle
+$$
+
+2칸 후보를 $|\lambda_2(\nu)\rangle = \begin{pmatrix} |\nu\rangle \\ 0 \end{pmatrix}$ 로 둔다. 첫 성분은 $(\hat{X}+\hat{I})|\nu\rangle + \hat{I}\cdot 0 = (\nu+1)|\nu\rangle$, 둘째 성분은 $-\hat{I}|\nu\rangle + (\hat{X}-\hat{I})\cdot 0 = -|\nu\rangle$ 이다. 한편 우변 후보를 직접 합산하면 $\nu|\lambda_2(\nu)\rangle + |\lambda_1(\nu)\rangle = \begin{pmatrix} \nu|\nu\rangle + |\nu\rangle \\ 0 - |\nu\rangle \end{pmatrix} = \begin{pmatrix} (\nu+1)|\nu\rangle \\ -|\nu\rangle \end{pmatrix}$ 로 좌변과 일치한다.
+
+$$
+\hat{A}'|\lambda_2(\nu)\rangle = \nu\,|\lambda_2(\nu)\rangle + |\lambda_1(\nu)\rangle
+$$
+
+이산 Generalization의 사슬 관계(자기 고윳값을 돌려주고 한 칸 아래를 내놓음)가 연속 라벨 $\nu$ 위에서 그대로 성립한다.
+
+*(3) 사슬 기저에서의 닮음: 블록 복원*
+
+사슬 켓의 성분을 열로 둔 기저 변환 행렬과 그 역을 적는다.
+
+$$
+S = \begin{pmatrix} 1 & 1 \\ -1 & 0 \end{pmatrix}, \qquad \det S = 1\cdot 0 - 1\cdot(-1) = 1, \qquad S^{-1} = \begin{pmatrix} 0 & -1 \\ 1 & 1 \end{pmatrix}
+$$
+
+역행렬을 검증한다. $S S^{-1}$ 의 성분은 $(1,1)$ 이 $1\cdot0 + 1\cdot1 = 1$, $(1,2)$ 가 $1\cdot(-1) + 1\cdot1 = 0$, $(2,1)$ 이 $(-1)\cdot0 + 0\cdot1 = 0$, $(2,2)$ 가 $(-1)\cdot(-1) + 0\cdot1 = 1$ 로 항등이다. 이제 $M(\nu)S$ 를 성분으로 계산한다. $(1,1)$ 성분 $(\nu+1)\cdot1 + 1\cdot(-1) = \nu$, $(1,2)$ 성분 $(\nu+1)\cdot1 + 1\cdot0 = \nu+1$, $(2,1)$ 성분 $(-1)\cdot1 + (\nu-1)\cdot(-1) = -1 - \nu + 1 = -\nu$, $(2,2)$ 성분 $(-1)\cdot1 + (\nu-1)\cdot0 = -1$ 이다.
+
+$$
+M(\nu)\,S = \begin{pmatrix} \nu & \nu+1 \\ -\nu & -1 \end{pmatrix}
+$$
+
+이어서 $S^{-1}\big(M(\nu)S\big)$ 를 성분으로 계산한다. $(1,1)$ 성분 $0\cdot\nu + (-1)\cdot(-\nu) = \nu$, $(1,2)$ 성분 $0\cdot(\nu+1) + (-1)\cdot(-1) = 1$, $(2,1)$ 성분 $1\cdot\nu + 1\cdot(-\nu) = 0$, $(2,2)$ 성분 $1\cdot(\nu+1) + 1\cdot(-1) = \nu$ 이다.
+
+$$
+S^{-1}\,M(\nu)\,S = \begin{pmatrix} \nu & 1 \\ 0 & \nu \end{pmatrix}
+$$
+
+사슬 기저에서 본 $\hat{A}'$ 가 정확히 본 절 서두의 블록 연산자 $\hat{X}\otimes I_2 + \hat{I}\otimes N$ 의 고유공간 성분과 일치한다. 주어진 좌표에서는 위장되어 있던 블록 구조가 사슬 기저로 좌표를 바꾸자 드러난 것이다.
+
+이 예의 교훈은 다음과 같다. 일반 연산자는 블록 꼴로 주어지지 않으며, 사슬 기저를 찾아야 비로소 블록이 드러난다. 그런데 사슬 기저를 직접 푸는 일은 일반적으로 불가능에 가까운 역문제다 — 챕터 B가 레졸번트를 도구로 세우는 이유가 그것이고, 본 절의 블록 연산자는 그 역문제가 이미 풀린(사슬 기저가 곧 표준 기저인) 가장 단순한 표본일 뿐이다.
+
+---
+
+### 2. 두 개의 축: 고윳값 축(연속)과 사슬 축(이산)
+
+위 텐서곱 분해는 비정규 연산자의 상태에 붙는 두 종류의 라벨을 서로 갈라 놓는다. 이 둘은 성격이 완전히 다르며, 연속이냐 이산이냐를 가르는 것은 그중 한쪽뿐이다.
+
+첫째는 고윳값 축이다. 텐서곱에서 원소로 들어간 연산자 $\hat{X}$ 가 이 축을 담당한다. 위치 연산자의 고윳값은 임의의 실수 $\nu$ 이므로, 고윳값 축은 연속이다. 이산 스펙트럼에서는 이 축이 정수 인덱스 $m$ 으로 매겨졌으나($\lambda_1, \lambda_2, \dots$), 연속에서는 연속 변수 $\nu$ 로 매겨진다. 이산과 연속을 가르는 것은 오직 이 축이다.
+
+둘째는 사슬 축이다. 텐서곱에서 $\hat{X}$ 를 감싼 $2\times2$ 행렬 부분(항등 $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ 과 조르당 $\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$)이 이 축을 담당한다. 사슬 축은 "한 고윳값에 매달린 조르당 사슬에서 이 상태가 몇 번째 칸인가"를 가리키며, 인덱스 $k$ 로 매겨진다. 이 축은 고윳값이 이산이든 연속이든 상관없이 언제나 정수이다.
+
+사슬 축이 정수로 고정되는 이유는 사슬의 길이가 고유벡터의 결핍 정도이기 때문이다. 이산 Generalization에서 보았듯, 진성 고유벡터의 수(기하적 중복도 $\gamma$)가 대수적 중복도 $\alpha$ 보다 한 개 모자라면 사슬이 2칸, 두 개 모자라면 3칸이 된다. 이 결핍은 한 겹, 두 겹처럼 정수 단위로만 일어나고, 사슬의 길이 $k(\nu)$ 는 그 고윳값의 조르당 블록 크기, 즉 행렬의 차원이므로 본질적으로 유한한 정수이다. 따라서 고윳값 $\nu$ 가 아무리 촘촘히 연속으로 깔려도, 각 $\nu$ 위에 쌓인 사슬의 칸 수는 정수로 셀 수밖에 없다.
+
+두 축의 구분은 상태 라벨에 그대로 나타난다. 이산에서는 두 인덱스가 모두 이산이다.
+
+$$
+|\lambda_{m,k}\rangle \quad (m: \text{이산 고윳값},\ k: \text{이산 사슬 칸})
+$$
+
+연속화는 고윳값 축의 인덱스 $m$ 하나만 연속 변수 $\nu$ 로 바꾼다. 사슬 축의 인덱스 $k$ 는 그대로 둔다.
+
+$$
+|\lambda_k(\nu)\rangle \quad (\nu: \text{연속 고윳값},\ k: \text{이산 사슬 칸})
+$$
+
+이후의 모든 합은 이 두 축에 대해 따로 작동한다. 고윳값 축의 합 $\sum_m$ 은 적분 $\int d\nu$ 로 바뀌지만, 사슬 축의 합 $\sum_k$ 는 이산 챕터와 글자 그대로 동일하게 남는다.
+
+끝으로 이 두 축 구조가 왜 하필 연속에서 표면화되는지를 적어 둔다. 이산에서는 고윳값 축 $m$ 과 사슬 축 $k$ 가 둘 다 이산이라, 두 인덱스를 한 덩어리 첨자 $(m, k)$ 로 뭉쳐도 구조가 겉으로 드러나지 않았다. 연속에서는 한 축이 적분과 디랙 델타(연속), 다른 축이 합과 크로네커 델타(이산)로 성격이 갈리므로, 두 축의 분리를 좌표에 노출할 수밖에 없다. 그리고 서로 독립인 두 축을 가진 공간의 좌표 표현이 곧 텐서곱이며, 그 행렬 얼굴이 1절의 블록이다. 즉 연속이 블록을 강제하는 것이 아니라, 결함이 둘째 축(사슬 축)을 만들고, 연속이 그 분리를 가시화하는 것이다.
+
+---
+
+### 3. 연속 일반화 고유함수 사슬
+
+연속 변수 $\nu$ 에 종속된 일반화 고유함수 사슬의 지배 방정식은, 이산 조르당 사슬의 랭크 강하를 그대로 따른다. 사슬 칸 $k$ 의 상태에 연산자가 작용하면 자기 고윳값 $\nu$ 에 더해 한 칸 아래 상태 $|\lambda_{k-1}(\nu)\rangle$ 를 내놓는다.
+
+$$
+\hat{A}|\lambda_k(\nu)\rangle = \nu|\lambda_k(\nu)\rangle + |\lambda_{k-1}(\nu)\rangle \quad (\text{단, } |\lambda_0(\nu)\rangle = 0,\ 1 \le k \le k(\nu))
+$$
+
+사슬의 첫 칸 $k=1$ 에서는 아래 칸이 없으므로($|\lambda_0(\nu)\rangle = 0$) 자기 고윳값만 돌려주는 진성 고유함수(True eigenfunction)가 된다.
+
+$$
+\hat{A}|\lambda_1(\nu)\rangle = \nu|\lambda_1(\nu)\rangle
+$$
+
+결함 연산자의 사슬 기저는 스스로 직교하지 않으므로, 대수적 분해를 성립시키기 위해 상호 쌍대 기저(Bi-dual basis) $\langle \lambda^{d,k}(\nu)|$ 를 도입한다. 이산에서는 직교 규격화가 크로네커 델타 두 개($\langle \lambda^{m,j}|\lambda_{n,k}\rangle = \delta^m_n \delta^j_k$)로 주어졌으나, 연속에서는 고윳값 축이 연속이므로 그 축의 크로네커 델타 $\delta^m_n$ 이 디랙 델타 $\delta(\nu-\nu')$ 로 바뀐다. 사슬 축의 크로네커 델타 $\delta^j_k$ 는 그대로 남는다.
+
+$$
+\langle \lambda^{d,j}(\nu')|\lambda_k(\nu)\rangle = \delta^j_k\,\delta(\nu - \nu')
+$$
+
+이 규격화에서 사슬 축의 직교(서로 다른 칸 $j \neq k$ 는 0)와 고윳값 축의 직교(서로 다른 고윳값 $\nu \neq \nu'$ 는 0)가 한 식에 함께 담긴다.
+
+**정규형: 사슬 관계는 사슬 기저에서 블록이다**
+
+1절의 위장 연산자 예가 보여 준 사실을 일반 명제로 적는다. 전제를 먼저 명시한다.
+
+- 가정 (i) 완전성: 사슬 켓 $\{|\lambda_k(\nu)\rangle\}$ 와 쌍대 $\{\langle\lambda^{d,k}(\nu)|\}$ 가 전체 공간을 가로지르는 완전한 쌍대 사슬계를 이룬다(4절의 완비성 $\int_\Omega d\hat{P}(\nu) = \hat{I}$ 가 그 표현이다). 무한 차원 비정규 연산자에서 이는 자동으로 성립하는 성질이 아니며, 본 시리즈 전체의 상시 가정이다.
+- 가정 (ii) 사슬 길이 일정: 사슬 길이 $k(\nu) = K$ 가 스펙트럼 전체에서 일정하다.
+
+명제: 두 가정 아래에서, 연산자 $\hat{A}$ 의 사슬 기저 좌표는 정확히 1절의 블록(텐서곱) 꼴이다.
+
+$$
+\hat{A} = \hat{X}_\nu \otimes I_K + \hat{I} \otimes N \qquad (\text{사슬 기저 좌표에서})
+$$
+
+여기서 $\hat{X}_\nu$ 는 라벨 곱 연산자($\hat{X}_\nu|\nu\rangle = \nu|\nu\rangle$, 위치 연산자와 같은 작용 방식)이고, $N$ 은 $K \times K$ 단일 강하 행렬($N|e_k\rangle = |e_{k-1}\rangle$, $N|e_1\rangle = 0$)이다.
+
+proof)
+
+좌표 대응을 둔다. 사슬 켓을 보조 라벨 켓 $|\nu\rangle$ 와 $\mathbb{C}^K$ 표준기저 $|e_k\rangle$ 의 텐서곱에 대응시킨다.
+
+$$
+|\lambda_k(\nu)\rangle \;\leftrightarrow\; |\nu\rangle \otimes |e_k\rangle
+$$
+
+가정 (i)이 이 대응을 전체 공간의 좌표로 만든다. 이제 사슬의 지배 방정식 우변을 한 항씩 텐서곱 언어로 옮긴다. 우변 첫 항에서, 스칼라 $\nu$ 의 곱은 라벨 곱 연산자의 정의 $\hat{X}_\nu|\nu\rangle = \nu|\nu\rangle$ 를 좌우를 바꾸어 대입하면 첫 인자에 대한 작용으로 적힌다.
+
+$$
+\nu\,(|\nu\rangle \otimes |e_k\rangle) = (\hat{X}_\nu|\nu\rangle) \otimes |e_k\rangle = (\hat{X}_\nu \otimes I_K)\,(|\nu\rangle \otimes |e_k\rangle)
+$$
+
+우변 둘째 항에서, 한 칸 강하는 단일 강하 행렬의 정의 $N|e_k\rangle = |e_{k-1}\rangle$ 를 좌우를 바꾸어 대입하면 둘째 인자에 대한 작용으로 적힌다.
+
+$$
+|\nu\rangle \otimes |e_{k-1}\rangle = |\nu\rangle \otimes (N|e_k\rangle) = (\hat{I} \otimes N)\,(|\nu\rangle \otimes |e_k\rangle)
+$$
+
+두 항을 합치면 모든 기저 켓에서 작용이 일치한다.
+
+$$
+\hat{A}\,(|\nu\rangle \otimes |e_k\rangle) = \left(\hat{X}_\nu \otimes I_K + \hat{I} \otimes N\right)(|\nu\rangle \otimes |e_k\rangle)
+$$
+
+가정 (i)의 완전성에 의해, 기저 전체에서의 작용 일치가 연산자 동등이 된다.
+
+주의 두 가지를 명시한다.
+
+- 사슬 기저는 일반적으로 직교가 아니므로(쌍대 기저가 필요한 것과 같은 뿌리), 이 동등성은 유니터리 동치가 아니라 닮음(Similarity) 동치다. 1절 예제의 변환 행렬 $S$ 가 유니터리가 아니었던 것이 그 표본이다.
+- 가정 (ii)가 깨져 사슬 길이 $k(\nu)$ 가 $\nu$ 에 따라 변하면, 전역 단일 텐서곱은 존재하지 않는다. 이때는 사슬 길이가 같은 $\nu$ 구간(섹터)별로 위 정규형이 성립하고, 전체 공간은 그 섹터들의 직합이 된다. 길이가 변하는 경우를 단일 텐서곱으로 적는 것은 묵시적 일반화이므로 피한다.
+
+요약하면, 블록 꼴은 "주어져야 하는 형태"가 아니라 "사슬 기저가 드러내는 형태"다. 1절은 그 형태를 표준 기저에서 이미 가진 생성 예제로 시작했고, 본 절의 사슬 관계가 그 형태의 좌표 무관한 본체이며, 위 정규형 명제가 둘을 잇는다.
+
+---
+
+### 4. 연속 연산자 분해
+
+연속 공간에서는 상태가 미소 구간 단위로 투영되므로, 낱개의 연산자가 아니라 측도(Measure)를 머금은 밀도(Density)가 기본 단위가 된다. 이산의 사영 연산자 $\hat{P}_m = \sum_{k=1}^{k_m} |\lambda_{m,k}\rangle\langle \lambda^{m,k}|$ 와 멱영 연산자 $\hat{N}_m = \sum_{k=2}^{k_m} |\lambda_{m,k-1}\rangle\langle \lambda^{m,k}|$ 에서, 고윳값 축의 합을 적분으로 옮기고 미소 측도 $d\nu$ 를 붙이면 연속 밀도가 된다.
+
+$$
+d\hat{P}(\nu) = d\nu \sum_{k=1}^{k(\nu)} |\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)|
+$$
+
+$$
+d\hat{N}(\nu) = d\nu \sum_{k=2}^{k(\nu)} |\lambda_{k-1}(\nu)\rangle\langle \lambda^{d,k}(\nu)|
+$$
+
+사영 밀도는 사슬의 모든 칸에 대한 외적의 합이고, 멱영 밀도는 칸 $k$ 의 쌍대를 받아 칸 $k-1$ 의 케트를 내놓는 항들의 합이다. 사슬 축의 합 $\sum_k$ 가 이산 챕터와 동일하게 남아 있음을 확인할 수 있다.
+
+**1) 분해 항등식**
+
+$$
+\hat{A}\,d\hat{P}(\nu) = \nu\, d\hat{P}(\nu) + d\hat{N}(\nu)
+$$
+
+proof)
+
+사슬 칸 $k$ 의 지배 방정식 양변 우측에 그 칸의 쌍대 기저 $\langle \lambda^{d,k}(\nu)|$ 를 외적(Outer product)한다.
+
+$$
+\hat{A}|\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)| = \nu|\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)| + |\lambda_{k-1}(\nu)\rangle\langle \lambda^{d,k}(\nu)|
+$$
+
+고윳값 $\nu$ 에 속하는 전체 사슬 칸 $k$ 에 대하여 합산($\sum_{k=1}^{k(\nu)}$)을 수행한다. 우변 첫 항은 $k=1$ 부터, 둘째 항은 $|\lambda_0(\nu)\rangle = 0$ 이므로 $k=2$ 부터 살아남는다.
+
+$$
+\hat{A}\sum_{k=1}^{k(\nu)}|\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)| = \nu \sum_{k=1}^{k(\nu)}|\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)| + \sum_{k=2}^{k(\nu)}|\lambda_{k-1}(\nu)\rangle\langle \lambda^{d,k}(\nu)|
+$$
+
+양변에 미소 측도 $d\nu$ 를 곱한다.
+
+$$
+\hat{A}\,d\nu\sum_{k=1}^{k(\nu)}|\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)| = \nu\, d\nu \sum_{k=1}^{k(\nu)}|\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)| + d\nu\sum_{k=2}^{k(\nu)}|\lambda_{k-1}(\nu)\rangle\langle \lambda^{d,k}(\nu)|
+$$
+
+각 합을 위에서 정의한 밀도 기호로 치환하면 분해 항등식이 도출된다. 좌변과 우변 첫 항에 공통으로 들어 있는 $d\nu\sum_{k=1}^{k(\nu)}|\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)|$ 가 사영 밀도 $d\hat{P}(\nu)$ 이고, 우변 둘째 항의 $d\nu\sum_{k=2}^{k(\nu)}|\lambda_{k-1}(\nu)\rangle\langle \lambda^{d,k}(\nu)|$ 가 멱영 밀도 $d\hat{N}(\nu)$ 이다.
+
+$$
+\hat{A}\,d\hat{P}(\nu) = \nu\, d\hat{P}(\nu) + d\hat{N}(\nu)
+$$
+
+**2) 연산자의 복원**
+
+$$
+\hat{A} = \int_{\Omega} \big[ \nu\, d\hat{P}(\nu) + d\hat{N}(\nu) \big]
+$$
+
+proof)
+
+연속 사영 밀도를 전체 스펙트럼 구간 $\Omega$ 에 대하여 적분하면 항등 연산자가 된다(완비성). 이는 이산의 완비성 $\sum_m \hat{P}_m = \hat{I}$ 가 연속에서 취하는 형태이다.
+
+$$
+\int_{\Omega} d\hat{P}(\nu) = \hat{I}
+$$
+
+연산자 $\hat{A}$ 의 우측에 이 완비성을 끼워 넣는다.
+
+$$
+\hat{A} = \hat{A}\,\hat{I} = \hat{A}\int_{\Omega} d\hat{P}(\nu) = \int_{\Omega} \hat{A}\,d\hat{P}(\nu)
+$$
+
+적분 내부의 $\hat{A}\,d\hat{P}(\nu)$ 에 1)의 분해 항등식 $\hat{A}\,d\hat{P}(\nu) = \nu\,d\hat{P}(\nu) + d\hat{N}(\nu)$ 를 대입한다.
+
+$$
+\hat{A} = \int_{\Omega} \big[ \nu\, d\hat{P}(\nu) + d\hat{N}(\nu) \big]
+$$
+
+**3) 고차 멱영 밀도: 거듭제곱의 연속화**
+
+챕터 B의 레졸번트 전개(마스터 식)에는 멱영의 거듭제곱에 해당하는 고차극 항이 등장한다. 그 연속 대응물을 여기서 미리 정의한다. 출발점은 이산이다. 이산 멱영 연산자의 거듭제곱 $\hat{N}_m^j$ 가 사슬 칸을 $j$ 칸 내리는 연산자임을 직접 계산으로 확인한다.
+
+이산 멱영 연산자의 정의에서 제곱을 전개한다.
+
+$$
+\hat{N}_m^2 = \left(\sum_{k=2}^{k_m}|\lambda_{m,k-1}\rangle\langle\lambda^{m,k}|\right)\left(\sum_{k'=2}^{k_m}|\lambda_{m,k'-1}\rangle\langle\lambda^{m,k'}|\right) = \sum_{k=2}^{k_m}\sum_{k'=2}^{k_m}|\lambda_{m,k-1}\rangle\,\langle\lambda^{m,k}|\lambda_{m,k'-1}\rangle\,\langle\lambda^{m,k'}|
+$$
+
+가운데 내적에 이산 직교 규격화 $\langle \lambda^{m,j}|\lambda_{n,k}\rangle = \delta^m_n \delta^j_k$ 를 적용한다. 같은 고윳값 $m$ 내부이므로 고윳값 축의 델타는 1이고, 쌍대 칸 자리에 $k$, 케트 칸 자리에 $k'-1$ 을 대입하면 사슬 축의 델타만 남는다.
+
+$$
+\langle\lambda^{m,k}|\lambda_{m,k'-1}\rangle = \delta^{k}_{k'-1}
+$$
+
+크로네커 델타가 이중 합에서 $k = k' - 1$ 인 항만 남긴다. 이때 $k$ 의 범위 조건 $k \geq 2$ 는 $k' \geq 3$ 으로 옮겨지고, 케트의 칸은 $k - 1 = k' - 2$ 가 된다.
+
+$$
+\hat{N}_m^2 = \sum_{k'=3}^{k_m}|\lambda_{m,k'-2}\rangle\langle\lambda^{m,k'}|
+$$
+
+칸 $k'$ 의 쌍대를 받아 두 칸 내린 $k'-2$ 의 케트를 내놓는 2칸 강하 연산자이다. 한 번 곱할 때마다 크로네커 델타가 케트의 칸을 한 칸씩 추가로 내리고 합의 시작점을 한 칸씩 올리므로, 일반 거듭제곱은 $j$ 칸 강하 연산자가 된다.
+
+$$
+\hat{N}_m^j = \sum_{k=j+1}^{k_m}|\lambda_{m,k-j}\rangle\langle\lambda^{m,k}|
+$$
+
+$j$ 가 사슬 길이 $k_m$ 에 이르면 합의 시작점 $k = j+1$ 이 사슬 길이를 넘어 합이 비고, $\hat{N}_m^{k_m} = \hat{0}$ 으로 종결된다.
+
+구체 수치 예로 3칸 단일 사슬($k_m = 3$)에서 직접 확인한다. 사슬 기저 $\{|\lambda_{m,1}\rangle, |\lambda_{m,2}\rangle, |\lambda_{m,3}\rangle\}$ 표현에서 멱영 행렬과 그 제곱을 계산한다.
+
+$$
+\hat{N}_m = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}, \qquad \hat{N}_m^2 = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}\begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$
+
+성분으로 확인하면 $(\hat{N}_m^2)_{13} = \sum_l (\hat{N}_m)_{1l}(\hat{N}_m)_{l3} = (\hat{N}_m)_{12}(\hat{N}_m)_{23} = 1 \cdot 1 = 1$ 이고 나머지 성분은 모두 0이다. 살아남은 단일 성분 $(1,3)$ 이 곧 $|\lambda_{m,1}\rangle\langle\lambda^{m,3}|$, 즉 일반식의 $j=2$, $k=3$ 단일 항과 일치한다. 한 번 더 곱하면 $\hat{N}_m^3 = \hat{0}$ 으로 종결된다($k_m = 3$).
+
+이제 연속화한다. 사영·멱영 밀도와 같은 규칙(고윳값 축의 합을 적분으로, 미소 측도 $d\nu$ 부착)으로, 거듭제곱 $\hat{N}_m^j$ 의 연속 대응물을 $j$칸 강하 밀도 $d\hat{N}_j(\nu)$ 로 정의한다.
+
+$$
+d\hat{N}_j(\nu) = d\nu \sum_{k=j+1}^{k(\nu)} |\lambda_{k-j}(\nu)\rangle\langle \lambda^{d,k}(\nu)| \qquad (j = 0, 1, 2, \ldots)
+$$
+
+$j=0$ 이면 강하가 없고 합이 $k=1$ 부터 시작하여 사영 밀도와 같고, $j=1$ 이면 멱영 밀도와 같다. $j$ 가 사슬 길이 $k(\nu)$ 에 이르면 합의 시작점이 사슬 길이를 넘어 합이 비고, 밀도가 영연산자로 종결된다(종결성).
+
+$$
+d\hat{N}_0(\nu) = d\hat{P}(\nu), \qquad d\hat{N}_1(\nu) = d\hat{N}(\nu), \qquad d\hat{N}_j(\nu) = \hat{0} \quad (j \geq k(\nu))
+$$
+
+종결성은 이산의 $\hat{N}_m^{k_m} = \hat{0}$ 이 연속에서 취하는 형태이다.
+
+주의할 점이 하나 있다. $d\hat{N}_j(\nu)$ 는 밀도 $d\hat{N}(\nu)$ 를 $j$ 번 곱한 것이 아니다. 밀도 하나는 미소 측도 $d\nu$ 를 한 개 머금으므로, 밀도의 $j$중 곱은 측도를 $j$ 개 머금어 차원이 다른 대상이 된다. 거듭제곱의 올바른 연속 대응은, 곱을 한 번 할 때마다 디랙 델타가 하나씩 흡수되어 측도가 한 개로 유지되는 아래 4)의 합성 규칙으로 주어진다.
+
+**4) 밀도 직교성: 합성 규칙**
+
+서로 다른 관측점의 두 강하 밀도의 곱은, 디랙 델타 하나와 강하 수가 합산된 단일 밀도로 붕괴한다.
+
+$$
+d\hat{N}_i(\nu)\, d\hat{N}_j(\nu') = \delta(\nu - \nu')\, d\hat{N}_{i+j}(\nu)\, d\nu' \qquad (i, j \geq 0)
+$$
+
+proof)
+
+두 밀도를 3)의 정의대로 전개하고 곱을 펼친다.
+
+$$
+d\hat{N}_i(\nu)\, d\hat{N}_j(\nu') = d\nu\, d\nu' \sum_{k=i+1}^{k(\nu)}\sum_{k'=j+1}^{k(\nu')} |\lambda_{k-i}(\nu)\rangle\,\langle \lambda^{d,k}(\nu)|\lambda_{k'-j}(\nu')\rangle\,\langle \lambda^{d,k'}(\nu')|
+$$
+
+가운데 내적에 3절의 쌍대 직교 규격화 $\langle \lambda^{d,j}(\nu')|\lambda_k(\nu)\rangle = \delta^j_k\,\delta(\nu - \nu')$ 를 적용한다. 쌍대 칸 자리에 $k$, 케트 칸 자리에 $k'-j$ 를 대입하면 다음이 된다.
+
+$$
+\langle \lambda^{d,k}(\nu)|\lambda_{k'-j}(\nu')\rangle = \delta^{k}_{k'-j}\,\delta(\nu - \nu')
+$$
+
+크로네커 델타 $\delta^{k}_{k'-j}$ 가 이중 합에서 $k = k' - j$ 인 항만 남긴다. 이때 $k$ 의 범위 조건 $k \geq i+1$ 은 $k' - j \geq i+1$, 즉 $k' \geq i+j+1$ 로 옮겨지고, 케트의 칸은 $k - i = k' - j - i$ 가 된다. $k$ 합을 소거한다.
+
+$$
+d\hat{N}_i(\nu)\, d\hat{N}_j(\nu') = \delta(\nu - \nu')\, d\nu\, d\nu' \sum_{k'=i+j+1}^{k(\nu)} |\lambda_{k'-(i+j)}(\nu)\rangle\langle \lambda^{d,k'}(\nu')|
+$$
+
+여기서 디랙 델타 $\delta(\nu - \nu')$ 는 적분 아래에서 $\nu' = \nu$ 를 강제하므로, 둘째 합의 상한 $k(\nu')$ 를 $k(\nu)$ 로, 쌍대의 인자 $\nu'$ 를 $\nu$ 로 바꾸어 적을 수 있다(위 식에는 이미 반영하였다). 디랙 델타와 측도 $d\nu'$ 를 밖으로 분리하고 나머지를 대괄호로 묶는다.
+
+$$
+d\hat{N}_i(\nu)\, d\hat{N}_j(\nu') = \delta(\nu - \nu')\, d\nu' \left[ d\nu \sum_{k'=i+j+1}^{k(\nu)} |\lambda_{k'-(i+j)}(\nu)\rangle\langle \lambda^{d,k'}(\nu)| \right]
+$$
+
+대괄호 안이 정확히 3)의 정의에서 강하 수를 $i+j$ 로 둔 밀도이므로, 합성 규칙이 완성된다.
+
+$$
+d\hat{N}_i(\nu)\, d\hat{N}_j(\nu') = \delta(\nu - \nu')\, d\hat{N}_{i+j}(\nu)\, d\nu'
+$$
+
+이 한 식이 이산 분해의 곱 규칙 전부를 연속으로 옮긴다. 특수화하여 확인한다.
+
+*(1) 사영 직교성 ($i = j = 0$)*
+
+$$
+d\hat{P}(\nu)\, d\hat{P}(\nu') = \delta(\nu - \nu')\, d\hat{P}(\nu)\, d\nu'
+$$
+
+이산의 $\hat{P}_m \hat{P}_n = \delta_{mn}\hat{P}_m$ 의 연속형이다. 고윳값 축의 크로네커 델타 $\delta_{mn}$ 이 디랙 델타와 측도의 쌍 $\delta(\nu-\nu')\,d\nu'$ 로 바뀌었다. 멱등성도 따라 나온다. 한쪽 인자를 전체 구간에 대하여 적분하면 디랙 델타가 소진되어 자신으로 돌아온다.
+
+$$
+\int_\Omega d\hat{P}(\nu)\, d\hat{P}(\nu') = d\hat{P}(\nu) \int_\Omega \delta(\nu-\nu')\,d\nu' = d\hat{P}(\nu)
+$$
+
+이는 이산의 $\hat{P}_m\left(\sum_n \hat{P}_n\right) = \hat{P}_m \hat{I} = \hat{P}_m$ 에 대응한다.
+
+*(2) 사영과 멱영의 흡수 ($i=0, j=1$ 그리고 $i=1, j=0$)*
+
+$$
+d\hat{P}(\nu)\, d\hat{N}(\nu') = d\hat{N}(\nu)\, d\hat{P}(\nu') = \delta(\nu - \nu')\, d\hat{N}(\nu)\, d\nu'
+$$
+
+멱영 밀도가 자기 고윳값의 사영 안에서만 작용함을 뜻한다. 이산의 $\hat{P}_m \hat{N}_m = \hat{N}_m \hat{P}_m = \hat{N}_m$ 과 $\hat{N}_m \hat{P}_n = \hat{0}\ (m \neq n)$ 의 연속형이다.
+
+*(3) 멱영끼리의 곱과 종결 ($i = j = 1$)*
+
+$$
+d\hat{N}(\nu)\, d\hat{N}(\nu') = \delta(\nu - \nu')\, d\hat{N}_2(\nu)\, d\nu'
+$$
+
+곱이 한 번에 0이 되는 것이 아니라 2칸 강하 밀도로 내려간다. 사슬이 가장 짧은 2칸($k(\nu) = 2$)이면 3)의 종결성에서 $d\hat{N}_2(\nu) = \hat{0}$ 이므로 곱이 즉시 소멸한다. 이 특수 경우를 정의에서 직접 검증한다.
+
+2칸 사슬에서 멱영 밀도는 단일 항 $d\hat{N}(\nu) = d\nu\,|\lambda_1(\nu)\rangle\langle \lambda^{d,2}(\nu)|$ 이다. 서로 다른 관측점 $\nu, \nu'$ 의 곱을 전개한다.
+
+$$
+d\hat{N}(\nu)\, d\hat{N}(\nu') = d\nu\, d\nu'\,|\lambda_1(\nu)\rangle \langle \lambda^{d,2}(\nu)|\lambda_1(\nu')\rangle \langle \lambda^{d,2}(\nu')|
+$$
+
+가운데의 내적 $\langle \lambda^{d,2}(\nu)|\lambda_1(\nu')\rangle$ 에 쌍대 직교 규격화를 적용한다. 쌍대의 사슬 칸은 $j=2$, 케트의 사슬 칸은 $k=1$ 이므로, $\delta^j_k = \delta^2_1 = 0$ 이 되어 사슬 축의 델타가 소멸한다.
+
+$$
+\langle \lambda^{d,2}(\nu)|\lambda_1(\nu')\rangle = \delta^2_1\,\delta(\nu - \nu') = 0
+$$
+
+스칼라 내적이 0이므로 곱 전체가 영연산자가 된다.
+
+$$
+d\hat{N}(\nu)\, d\hat{N}(\nu') = \hat{0} \quad (k(\nu) = 2)
+$$
+
+사슬이 3칸 이상이면 곱이 한 번에 0이 되지 않고 합성 규칙대로 강하 수를 더해 내려가며, 누적 강하 수가 사슬 길이 $k(\nu)$ 에 이르는 곱에서 비로소 소멸한다. 이는 이산의 $\hat{N}_m^{k_m} = \hat{0}$ 이 연속에서 취하는 형태이다.
+
+---
+
+### 5. 세 가지 경우: 비축퇴 · 축퇴 · 결함
+
+연속 스펙트럼이 어느 경우에 해당하는지는 텐서곱의 행렬 부분이 어떤 모양인가로 갈린다. 세 경우를 구분한다.
+
+**1) 비축퇴(Non-degenerate): 한 층**
+
+행렬 부분이 없거나 $1\times1$ 인 경우이다. 각 고윳값 $\nu$ 에 진성 고유함수가 하나뿐이며, 사슬 축 인덱스 $k$ 가 필요 없어 상태가 $|\nu\rangle$ 로만 적힌다. 지배 방정식에 랭크 강하 항이 없다.
+
+$$
+\hat{A}|\nu\rangle = \nu|\nu\rangle
+$$
+
+멱영 밀도가 0이고 사영 밀도만 남는다. 위치 연산자 $\hat{X}$ 가 이 경우이다.
+
+$$
+d\hat{P}(\nu) = d\nu\,|\nu\rangle\langle \nu^d|, \qquad d\hat{N}(\nu) = \hat{0}
+$$
+
+**2) 축퇴(Degenerate): 여러 독립 층, 멱영 0**
+
+행렬 부분이 대각이거나 대각화가 가능한 경우이다. 각 고윳값 $\nu$ 에 고유함수가 여럿이지만, 이들은 서로 섞이지 않는 독립적인 진성 고유함수이다. 모든 칸이 자기 고윳값만 돌려주고 랭크 강하 항이 없다.
+
+$$
+\hat{A}|\lambda_k(\nu)\rangle = \nu|\lambda_k(\nu)\rangle \quad (\text{모든 } k)
+$$
+
+사영 밀도가 여러 항으로 나오지만 멱영 밀도는 여전히 0이다. 비축퇴 경우에 내부 자유도(축퇴 차수)만 더한 것이며, 멱영이 0인 점은 같다.
+
+$$
+d\hat{P}(\nu) = d\nu \sum_{k=1}^{k(\nu)} |\lambda_k(\nu)\rangle\langle \lambda^{d,k}(\nu)|, \qquad d\hat{N}(\nu) = \hat{0}
+$$
+
+**3) 결함(Defective): 사슬 층, 멱영 살아남**
+
+행렬 부분이 대각화 불가능한 조르당 결함인 경우이다. 이때 비로소 둘째 칸이 첫째 칸을 유발하는 사슬이 생기고($\hat{A}|\lambda_k(\nu)\rangle = \nu|\lambda_k(\nu)\rangle + |\lambda_{k-1}(\nu)\rangle$), 멱영 밀도가 0이 아니게 된다.
+
+$$
+d\hat{N}(\nu) = d\nu \sum_{k=2}^{k(\nu)} |\lambda_{k-1}(\nu)\rangle\langle \lambda^{d,k}(\nu)| \neq \hat{0}
+$$
+
+이 세 갈림은 이산 Generalization에서 기하적 중복도 $\gamma$ 와 대수적 중복도 $\alpha$ 를 비교한 것과 정확히 같다. $\gamma = \alpha$ 이면 대각화가 가능하여 비축퇴 또는 축퇴(멱영 0)이고, $\gamma < \alpha$ 이면 대각화가 불가능하여 결함(멱영 살아남)이다. 연속에서는 그 판정이 텐서곱의 행렬 부분에서 일어난다. 또한 자기수반(에르미트) 연산자는 결함이 일어나지 않으므로 항상 비축퇴 또는 축퇴이고, 따라서 멱영 밀도가 0이다. 결함과 멱영은 비자기수반 연산자에서만 나타난다.
+
+---
+
+### 6. 예제
+
+세 가지 경우를 구체적인 연산자로 교차 검증한다. 6-1은 비축퇴(한 층), 6-2는 축퇴(독립 여러 층, 멱영 0), 6-3은 결함(사슬 층, 멱영 살아남)이다.
+
+#### 6-1. 위치 연산자: 비축퇴
+
+무한 차원 힐베르트 공간 $L^2(\mathbb{R})$ 상의 위치 연산자 $\hat{X}$ 를 본다.
+
+$$
+\hat{X}|\nu\rangle = \nu|\nu\rangle
+$$
+
+위치 고유상태는 실수 $\nu$ 전체에 대하여 하나씩 존재하며, 정규직교 관계는 디랙 델타로 주어진다.
+
+$$
+\langle \nu'|\nu\rangle = \delta(\nu - \nu')
+$$
+
+각 $\nu$ 에 상태가 하나뿐이므로 사슬 축이 한 칸이고, 사영 밀도는 단일 외적이다.
+
+$$
+d\hat{P}(\nu) = d\nu\,|\nu\rangle\langle \nu|
+$$
+
+멱영 밀도는 0이다. 연산자 복원을 확인한다. 사영 밀도에 고윳값을 곱해 적분한다.
+
+$$
+\int_{-\infty}^{\infty} \nu\, d\hat{P}(\nu) = \int_{-\infty}^{\infty} \nu\,|\nu\rangle\langle \nu|\, d\nu = \hat{X}
+$$
+
+#### 6-2. 대각 블록 연산자: 축퇴
+
+위치 연산자를 두 성분에 똑같이 작용시키는 대각 블록 연산자를 본다.
+
+$$
+\hat{A} = \hat{X} \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} \hat{X} & 0 \\ 0 & \hat{X} \end{pmatrix}
+$$
+
+위치 고유상태 $|\nu\rangle$ 와 두 좌표 $e_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$, $e_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ 의 텐서곱으로 두 상태를 만든다.
+
+$$
+|\lambda_1(\nu)\rangle = \begin{pmatrix} |\nu\rangle \\ 0 \end{pmatrix}, \qquad |\lambda_2(\nu)\rangle = \begin{pmatrix} 0 \\ |\nu\rangle \end{pmatrix}
+$$
+
+첫째 상태에 작용시킨다. 행렬 곱을 성분별로 계산한다.
+
+$$
+\hat{A}|\lambda_1(\nu)\rangle = \begin{pmatrix} \hat{X} & 0 \\ 0 & \hat{X} \end{pmatrix}\begin{pmatrix} |\nu\rangle \\ 0 \end{pmatrix} = \begin{pmatrix} \hat{X}|\nu\rangle \\ 0 \end{pmatrix} = \begin{pmatrix} \nu|\nu\rangle \\ 0 \end{pmatrix} = \nu|\lambda_1(\nu)\rangle
+$$
+
+둘째 상태에 작용시킨다. 비대각 원소가 0이므로 둘째 성분만 움직인다.
+
+$$
+\hat{A}|\lambda_2(\nu)\rangle = \begin{pmatrix} \hat{X} & 0 \\ 0 & \hat{X} \end{pmatrix}\begin{pmatrix} 0 \\ |\nu\rangle \end{pmatrix} = \begin{pmatrix} 0 \\ \hat{X}|\nu\rangle \end{pmatrix} = \begin{pmatrix} 0 \\ \nu|\nu\rangle \end{pmatrix} = \nu|\lambda_2(\nu)\rangle
+$$
+
+두 상태 모두 고윳값 $\nu$ 의 진성 고유함수이며, 랭크 강하 항이 없다. 같은 고윳값을 갖는 독립적인 두 고유함수, 즉 2겹 축퇴이다. 사영 밀도는 두 항이고 멱영 밀도는 0이다.
+
+$$
+d\hat{P}(\nu) = d\nu\left( |\lambda_1(\nu)\rangle\langle \lambda^{d,1}(\nu)| + |\lambda_2(\nu)\rangle\langle \lambda^{d,2}(\nu)| \right), \qquad d\hat{N}(\nu) = \hat{0}
+$$
+
+#### 6-3. 비대각 블록 연산자: 결함
+
+1절의 비대각 블록 연산자를 본다.
+
+$$
+\hat{A} = \begin{pmatrix} \hat{X} & \hat{I} \\ 0 & \hat{X} \end{pmatrix}
+$$
+
+상태는 6-2와 같은 텐서곱 $|\lambda_1(\nu)\rangle = \begin{pmatrix} |\nu\rangle \\ 0 \end{pmatrix}$, $|\lambda_2(\nu)\rangle = \begin{pmatrix} 0 \\ |\nu\rangle \end{pmatrix}$ 로 둔다. 첫째 상태에 작용시킨다.
+
+$$
+\hat{A}|\lambda_1(\nu)\rangle = \begin{pmatrix} \hat{X} & \hat{I} \\ 0 & \hat{X} \end{pmatrix}\begin{pmatrix} |\nu\rangle \\ 0 \end{pmatrix} = \begin{pmatrix} \hat{X}|\nu\rangle \\ 0 \end{pmatrix} = \nu|\lambda_1(\nu)\rangle
+$$
+
+첫째 상태는 진성 고유함수이다. 둘째 상태에 작용시킨다. 비대각 $\hat{I}$ 가 둘째 성분의 $|\nu\rangle$ 를 첫째 성분으로 올린다.
+
+$$
+\hat{A}|\lambda_2(\nu)\rangle = \begin{pmatrix} \hat{X} & \hat{I} \\ 0 & \hat{X} \end{pmatrix}\begin{pmatrix} 0 \\ |\nu\rangle \end{pmatrix} = \begin{pmatrix} \hat{I}|\nu\rangle \\ \hat{X}|\nu\rangle \end{pmatrix} = \begin{pmatrix} |\nu\rangle \\ \nu|\nu\rangle \end{pmatrix}
+$$
+
+이 결과를 두 조각으로 가른다.
+
+$$
+\begin{pmatrix} |\nu\rangle \\ \nu|\nu\rangle \end{pmatrix} = \nu\begin{pmatrix} 0 \\ |\nu\rangle \end{pmatrix} + \begin{pmatrix} |\nu\rangle \\ 0 \end{pmatrix} = \nu|\lambda_2(\nu)\rangle + |\lambda_1(\nu)\rangle
+$$
+
+둘째 상태는 자기 고윳값 $\nu$ 에 더해 첫째 상태를 유발하는 사슬이다. 6-2의 대각 경우와 달리 랭크 강하 항 $+|\lambda_1(\nu)\rangle$ 이 살아 있다. 멱영 밀도가 0이 아니며, 둘째 칸의 쌍대를 받아 첫째 칸을 내놓는 외적이다.
+
+$$
+d\hat{P}(\nu) = d\nu\left( |\lambda_1(\nu)\rangle\langle \lambda^{d,1}(\nu)| + |\lambda_2(\nu)\rangle\langle \lambda^{d,2}(\nu)| \right)
+$$
+
+$$
+d\hat{N}(\nu) = d\nu\,|\lambda_1(\nu)\rangle\langle \lambda^{d,2}(\nu)|
+$$
+
+이 멱영 밀도가 둘째 칸을 첫째 칸으로 내린다는 것을 확인한다. 둘째 상태에 작용시킨다.
+
+$$
+d\hat{N}(\nu)\,|\lambda_2(\nu')\rangle = d\nu\,|\lambda_1(\nu)\rangle\langle \lambda^{d,2}(\nu)|\lambda_2(\nu')\rangle = d\nu\,|\lambda_1(\nu)\rangle\,\delta^2_2\,\delta(\nu - \nu') = d\nu\,|\lambda_1(\nu)\rangle\,\delta(\nu - \nu')
+$$
+
+이산 Generalization에서 조르당 블록의 멱영이 둘째 좌표를 첫째로 내린 것과 같은 일이, 연속에서는 모든 실수 $\nu$ 에 대해 한 벌씩 일어난다.
+
+---
