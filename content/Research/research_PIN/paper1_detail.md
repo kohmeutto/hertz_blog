@@ -400,7 +400,7 @@ $$
 
 ## 5. 트랩·순방향 — 재결합과 수명
 
-> **핵심 레퍼런스.** 재결합 전류와 이상계수 2는 Sah, Noyce, Shockley, *Proc. IRE* (1957); 이상계수 추출은 Sze. **(독창)** 이상계수 비대칭(기준 $n\approx2$ 좁은 구간 → 조사 $n\approx1.87$ 넓은 평탄역)을 손상 신호로 읽어 재결합 중심 증가와 중간 띠를 벗어난 성격으로 해석한 것, 그리고 각 시료의 제 이상계수로 유효 수명을 뽑는 처리. 또한 SiC에서 역방향 열적 생성이 측정 불가라 순방향 재결합에서 수명을 뽑는다는 전략은 본 연구의 선택이다(근거는 6절에서 완성).
+> **핵심 레퍼런스.** 재결합 전류와 이상계수 2는 Sah, Noyce, Shockley, *Proc. IRE* (1957); 이상계수 추출은 Sze. **(독창)** 이상계수 비대칭(기준 $n\approx2$ 좁은 구간 → 조사 $n\approx1.87$ 넓은 평탄역)을 손상 신호로 읽어 재결합 중심 증가와 중간 띠를 벗어난 성격으로 해석한 것(이 중간 띠를 벗어난 해석은 4H-SiC의 지배적 수명 킬러로 알려진 Z1/Z2 준위, 곧 $E_C$ 아래 약 0.6\~0.7 eV와 맞닿는다 — Kimoto, Danno, Suda 2008; Hazdra et al. 2021), 그리고 각 시료의 제 이상계수로 유효 수명을 뽑는 처리. 또한 SiC에서 역방향 열적 생성이 측정 불가라 순방향 재결합에서 수명을 뽑는다는 전략은 본 연구의 선택이다(근거는 6절에서 완성).
 
 이 절은 트랩·순방향 칸을 유도해 이상계수 2를 얻고, 데이터에서 이상계수와 유효 수명을 뽑는 절차를 끝까지 보인다. 핵심 결론을 먼저 적으면, 순방향 재결합 전류는 SRH에서 이상계수 2로 나오고, 각 시료의 제 기울기를 써서 뽑은 유효 수명이 기준 약 53 ns에서 조사 약 18 ns로 줄며 이 줄어듦이 손상 신호이다.
 
@@ -853,7 +853,7 @@ $$
 
 ## 8. 손상 계수 — 순방향에서의 수명과 역방향에서의 도핑
 
-> **핵심 레퍼런스.** 수명 손상 계수(Messenger-Spratt 관계)는 Messenger & Spratt, *Proc. IRE* (1958); 캐리어 제거 계수는 방사선 효과의 표준 개념(구체 SiC·방사선 인용은 직접 보강). **(독창)** 이 4H-SiC p-i-n 베타볼타익 소자에 대한 단일 플루언스 $K_\tau$·$\eta_c$ 실측값.
+> **핵심 레퍼런스.** 수명 손상 계수(Messenger-Spratt 관계)는 Messenger & Spratt, *Proc. IRE* 46(6), 1038–1044 (1958). 4H-SiC 수명 손상은 Hazdra et al., *phys. status solidi (a)* 218, 2100218 (2021, Z1/Z2·EH3·RD4 재결합, DLTS·OCVD)과 Sozzi et al., *IEEE Access* 12, 74230–74238 (2024, 양성자 조사 수명의 실험식). 4H-SiC 캐리어 제거는 Hazdra & Vobecký, *phys. status solidi (a)* 216, 1900312 (2019, NIEL 스케일링)과 Siddiqui, Hallén et al., *Mater. Sci. Semicond. Process.* 167, 107771 (2023, NIEL 기반 검증 모델). 전체 서지(권·쪽·DOI)는 끝의 참고문헌에 있다. **(독창)** 이 4H-SiC p-i-n 베타볼타익 소자에 대한 단일 플루언스 $K_\tau$·$\eta_c$ 실측값(위 문헌값과 벤치마크할 것).
 
 이 절은 NIEL에 짝지을 두 손상 계수를 추출 바이어스를 명시하며 뽑는다. 손상 양은 어느 바이어스의 어느 측정에서 나오는지로 갈린다. 위계로 적으면 1) 순방향 I-V의 트랩 재결합에서 수명 손상 계수 $K_\tau$ 를, 2) 역방향 바이어스 C-V의 도핑에서 캐리어 제거 계수 $\eta_c$ 를 뽑는다. 셋째 손상 양인 옴성 병렬 저항 $R_{sh}$ 은 역방향 0 V 부근 I-V에서 나오며 7절에서 다뤘다. 곧 순방향 I-V는 수명을, 역방향 바이어스 C-V는 도핑을, 역방향 0 V 부근 I-V는 누설 저항을 준다.
 
@@ -931,7 +931,7 @@ $$
 
 ## 9. 변위 손상과 NIEL 짝짓기
 
-> **핵심 레퍼런스.** NIEL과 변위 손상, NIEL 비례 가설은 Srour, Marshall, Marshall, *IEEE Trans. Nucl. Sci.* (2003); SiC NIEL 수치는 SRIM으로 확정(인용값은 직접 보강).
+> **핵심 레퍼런스.** NIEL과 변위 손상의 일반 틀은 Srour, Marshall, Marshall, *IEEE Trans. Nucl. Sci.* 50(3), 653–670 (2003). 중요한 점은 NIEL 비례가 4H-SiC 캐리어 제거에 대해 이미 검증됐다는 것이다 — Hazdra & Vobecký, *phys. status solidi (a)* 216, 1900312 (2019); Siddiqui, Hallén et al., *Mater. Sci. Semicond. Process.* 167, 107771 (2023). 따라서 본 절은 가설 검증이 아니라 확립된 틀의 적용이며, 4H-SiC NIEL 수치는 SRIM으로 확정한다. 전체 서지는 끝의 참고문헌에 있다.
 
 이 절은 두 손상 계수를 양성자가 격자에 준 물리적 손상에 짝짓는다. 변위 손상이란 양성자가 격자 원자를 자리에서 밀어내 만드는 손상으로, 그 세기는 비전리 에너지 손실 NIEL로 잰다. NIEL은 단위 질량당 변위에 쓰인 에너지 손실로 단위는 $\mathrm{MeV\cdot cm^2/g}$ 이며 SRIM으로 얻는다. 변위 손상의 누적량은 NIEL에 플루언스를 곱한 것이다.
 
@@ -939,7 +939,7 @@ $$
 D_d = \mathrm{NIEL}\times\Phi
 $$
 
-변위 손상 가설은 전기적 손상 계수가 NIEL에 비례한다는 것이다.
+변위 손상 틀은 전기적 손상 계수가 NIEL에 비례한다는 것이고, 이 비례는 4H-SiC 캐리어 제거에 대해 이미 검증돼 있다.
 
 $$
 K_\tau = k_\tau\cdot\mathrm{NIEL}, \qquad \eta_c = k_c\cdot\mathrm{NIEL}
@@ -965,7 +965,7 @@ $$
 \frac{\mathrm{NIEL}(15\ \mathrm{MeV})}{\mathrm{NIEL}(55\ \mathrm{MeV})} = \frac{1.5\times10^{-2}}{3.96\times10^{-3}} = 3.8
 $$
 
-따라서 변위 손상 가설이 맞다면 같은 소자에서 14.8 MeV의 계수는 55 MeV 값의 약 3.8배여야 한다. 현재는 단일 에너지·단일 플루언스라 이 비례 검증을 직접 하지 못하며, 이는 추가 실험으로 채울 자리이다. NIEL 값 자체도 인용값이므로 SRIM으로 다시 확정한다.
+따라서 변위 손상 틀이 맞으면 같은 소자에서 14.8 MeV의 계수는 55 MeV 값의 약 3.8배여야 한다. 본 연구는 단일 에너지·단일 플루언스라 비례 자체를 새로 검증하지는 않으나, SiC 캐리어 제거의 NIEL 비례가 이미 확립돼 있으므로 본 계수는 그 틀 안에서 해석되고 문헌의 4H-SiC 계수와 견줄 수 있다. NIEL 값 자체도 인용값이므로 SRIM으로 다시 확정한다.
 
 ## 10. 미시 추출과 분석 흐름
 
@@ -979,6 +979,36 @@ $$
 
 다음으로 역방향 I-V를 다룬다. 측정된 역방향 전류가 열적 생성보다 약 15자릿수 커 장 구동 누설임을 보이고(−5 V에서 약 19배 증가), 셀이 일하는 0 V 부근 전류를 우함수·기함수로 갈라 옴성 병렬 저항을 뽑는다(기준 시료 측정 불가에서 조사 시료 약 405 GΩ). 그 출력 영향은 이 셀의 베타 전류에 견주어 정한다.
 
-끝으로 변위 손상에 짝지을 두 계수, 곧 수명 손상 계수 $K_\tau$ 와 캐리어 제거 계수 $\eta_c$ 를 9절의 NIEL과 잇는다. 현재 단일 에너지·단일 플루언스라 비례 검증은 추가 실험의 몫이며, 본 논문은 이 소자에 대한 단일 플루언스 계수와 세 거시 신호의 일관된 묘사를 내놓는다.
+끝으로 변위 손상에 짝지을 두 계수, 곧 수명 손상 계수 $K_\tau$ 와 캐리어 제거 계수 $\eta_c$ 를 9절의 NIEL과 잇는다. NIEL 비례 자체는 4H-SiC 캐리어 제거에서 이미 확립돼 있어, 본 논문은 그 틀 안에서 이 소자의 단일 플루언스 계수를 문헌값과 견주고 세 거시 신호의 일관된 묘사를 내놓는다.
 
 결론을 다시 한 문장으로 적으면, 이 논문은 다이오드 전류를 바이어스 방향과 트랩 유무의 두 축으로 가른 뒤 손상이 트랩 칸에만 산다는 위계 위에서, SiC에서 측정 가능한 트랩·순방향 재결합 전류로 SRH 유효 수명(약 53 ns에서 약 18 ns)을 뽑아 수명 손상 계수 $K_\tau \approx 7.3\times10^{-7}\ \mathrm{cm^2/s}$ 를 얻고 C-V에서 캐리어 제거 계수 $\eta_c \approx 18.6\ \mathrm{cm^{-1}}$ 을 얻으며 역방향 장 구동 누설(−5 V에서 약 19배 증가)을 측정 불가에서 약 405 GΩ으로 떨어진 옴성 병렬 저항으로 적은 뒤, 두 손상 계수를 NIEL과 이어 양성자 변위 손상의 전기적 서명을 단일 플루언스에서 정량화하는 것이다.
+
+## 참고문헌
+
+이 목록의 서지(저자·지면·권·쪽·DOI)는 웹 검색으로 확인한 것이며, 투고 전 학술 데이터베이스에서 한 번 더 대조하기를 권한다. 교과서는 판과 출판사를 적되 쪽은 사용처에 따라 다르므로 비운다.
+
+**표준 소자·재결합 이론**
+
+1. W. Shockley, "The Theory of p-n Junctions in Semiconductors and p-n Junction Transistors," *Bell System Technical Journal* **28**(3), 435–489 (1949). DOI: 10.1002/j.1538-7305.1949.tb03645.x
+2. R. N. Hall, "Electron-Hole Recombination in Germanium," *Physical Review* **87**(2), 387 (1952). DOI: 10.1103/PhysRev.87.387
+3. W. Shockley, W. T. Read, "Statistics of the Recombinations of Holes and Electrons," *Physical Review* **87**(5), 835–842 (1952). DOI: 10.1103/PhysRev.87.835
+4. C. T. Sah, R. N. Noyce, W. Shockley, "Carrier Generation and Recombination in P-N Junctions and P-N Junction Characteristics," *Proceedings of the IRE* **45**(9), 1228–1243 (1957). DOI: 10.1109/JRPROC.1957.278528
+
+**특성화·태양전지 교과서**
+
+5. S. M. Sze, K. K. Ng, *Physics of Semiconductor Devices*, 3rd ed., Wiley (2007). (1판 1969; 2판 1981)
+6. D. K. Schroder, *Semiconductor Material and Device Characterization*, 3rd ed., Wiley–IEEE Press (2006).
+7. M. A. Green, *Solar Cells: Operating Principles, Technology, and System Applications*, Prentice-Hall (1982).
+
+**변위 손상·NIEL (일반 틀)**
+
+8. G. C. Messenger, J. P. Spratt, "The Effects of Neutron Irradiation on Germanium and Silicon," *Proceedings of the IRE* **46**(6), 1038–1044 (1958). (IEEE Xplore 문서 4065442; DOI는 IEEE Xplore에서 확인)
+9. J. R. Srour, C. J. Marshall, P. W. Marshall, "Review of Displacement Damage Effects in Silicon Devices," *IEEE Transactions on Nuclear Science* **50**(3), 653–670 (2003). DOI: 10.1109/TNS.2003.813197
+
+**4H-SiC 방사선 손상 (캐리어 제거·수명·NIEL)**
+
+10. A. Siddiqui, A. Hallén, A. Hussain, M. Usman, "Carrier Removal Rates in 4H–SiC Power Diodes—A Predictive Analytical Model," *Materials Science in Semiconductor Processing* **167**, 107771 (2023). DOI: 10.1016/j.mssp.2023.107771
+11. P. Hazdra, J. Vobecký, "Radiation Defects Created in n-Type 4H-SiC by Electron Irradiation in the Energy Range of 1–10 MeV," *physica status solidi (a)* **216**, 1900312 (2019). DOI: 10.1002/pssa.201900312
+12. P. Hazdra, P. Smrkovský, S. Popelka, "Radiation Defects and Carrier Lifetime in 4H-SiC Bipolar Devices," *physica status solidi (a)* **218**, 2100218 (2021). DOI: 10.1002/pssa.202100218
+13. G. Sozzi, S. Sapienza, G. Chiorboli, L. Vines, A. Hallén, R. Nipoti, "Carrier Lifetime Dependence on Temperature and Proton Irradiation in 4H-SiC Device: An Experimental Law," *IEEE Access* **12**, 74230–74238 (2024). DOI: 10.1109/ACCESS.2024.3405382
+14. T. Kimoto, K. Danno, J. Suda, "Lifetime-killing defects in 4H-SiC epilayers and lifetime control by low-energy electron irradiation," *physica status solidi (b)* **245**, 1327–1336 (2008).
