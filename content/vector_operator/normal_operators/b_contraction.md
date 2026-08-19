@@ -1,6 +1,6 @@
 +++
 title = "(b) Contraction"
-weight = 5
+weight = 50
 +++
 
 ---

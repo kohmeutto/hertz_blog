@@ -1,7 +1,46 @@
 +++
 title = "(b) Variational Operator"
-weight = 30
+weight = 20
 +++
+
+---
+
+### 0. 도입 및 동기 (Motivation)
+
+**1) 출발점: 1차원 실함수의 전미분**
+
+실수 집합 상의 함수 $f: \mathbb{R} \to \mathbb{R}$에 대하여, 점 $x$에서의 임의의 미소 증분 $dx$에 대한 1차 선형 근사(전미분)는 다음과 같이 정의된다.
+
+$$
+df(x; dx) \;=\; f'(x)\,dx \;=\; \left.\frac{d}{d\epsilon} f(x + \epsilon\,dx)\right\vert_{\epsilon=0}
+$$
+
+* 구조: $f'(x)$는 기준점 $x$에서의 도함수(1차 사상)이며, $dx$는 독립적으로 주어지는 방향 증분이다.
+* 의미: 비선형 함수의 거동을 기준점 근방에서 1차 선형화($f(x+dx) \approx f(x) + df$)하는 기본 연산이다.
+
+**2) 무한차원 함수 공간으로의 확장 및 보편화**
+
+미분의 대상을 스칼라 변수에서 **무한차원 상태 벡터 $|u\rangle \in V$** 및 **상태 의존 대상 $X(u)$(연산자 $\hat{A}(u)$, 계수 $D(u)$ 등)**로 확장할 때, 방향도함수 $D[\,\cdot : \cdot\,]$의 대수적 구조는 다음과 같이 일관되게 확장된다.
+
+$$
+\begin{aligned}
+\text{[1차원 실함수]} \quad & Df[x : dx] &&= f'(x)\,dx \\[6pt]
+\text{[다차원 스칼라장]} \quad & Df[\mathbf{x} : \mathbf{h}] &&= \nabla f(\mathbf{x}) \cdot \mathbf{h} \\[6pt]
+\text{[무한차원 범함수]} \quad & DJ[u : |\eta\rangle] &&= \langle \nabla J(u) \mid \eta \rangle \\[6pt]
+\text{[상태 의존 대상]} \quad & DX[u : |\eta\rangle] &&\equiv \delta X
+\end{aligned}
+$$
+
+* 구조적 통일성: 모든 차원에서 $D[\text{동작점} : \text{방향}]$은 동작점에서 1차 도함수(선형 사상)를 취하고, 뒤의 방향 인자를 선형으로 전달받는 동일한 구조를 갖는다.
+* 변분 기호 $\delta$의 위치: $DX[u : |\eta\rangle]$에서 동작점 $u$와 임의의 변분 방향 $|\eta\rangle$를 매번 병기하는 대신, 축약된 대수 연산 기호로서 $\delta X$를 정의하여 사용한다.
+
+**3) 변분 연산자 $\delta$ 체계의 필요성**
+
+연속체 역학, 비선형 편미분방정식, 양자역학 등에서 변분 연산자 $\delta$를 사용하는 이유는 다음과 같다.
+
+* **비선형계의 체계적 선형화:** 상태 종속 항이 결합된 연산자 방정식 $\hat{A}(u)|u\rangle = |b\rangle$에 대해 평형점 근방의 섭동 전개($|u\rangle \to |u\rangle + \epsilon|\eta\rangle$)를 일관된 대수 형식으로 수행한다.
+* **미분 대수 법칙의 상속:** 엡실론 극한($\left.\frac{d}{d\epsilon}\right\vert_{\epsilon=0}$)을 매번 계산하지 않고, 선형성, 곱의 법칙(Leibniz rule), 연쇄 법칙을 켓과 연산자 대수식에 직접 적용한다.
+* **선형 항과 비선형 항의 구조 분리:** 공간 미분 연산자($\partial_x, \nabla$)와 같은 상태 독립 선형 연산자와 상태 의존 계수($D(u), \hat{A}(u)$)가 혼재될 때, 교환 잔여항을 통해 미분의 적용 범위를 엄밀하게 구분한다.
 
 ---
 

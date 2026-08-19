@@ -279,14 +279,14 @@ $|\delta\psi\rangle = |\eta\rangle$을 대입하고 $2$로 나누면 결과가 �
 
 **2) 금지 표기 및 올바른 표기**
 
-| 금지 표기 | 위반 항목 | 올바른 표기 | 사유 |
-| :--- | :--- | :--- | :--- |
-| $\hat{A}\big(\vert u\rangle\big)$ | §3-2 | $\hat{A}(u)$ | 소괄호 내부에 켓 표기 사용 금지 |
-| $N\vert u\rangle$ ($N$ 비선형) | §3-1 | $N(u)$ | 비선형 사상에 병치 작용 표기 사용 금지 |
-| $\delta\hat{A}\vert u\rangle$ | §3-3 | $(\delta\hat{A})\vert u\rangle$ 또는 $\delta\{\hat{A}\vert u\rangle\}$ | 변분 작용 범위의 모호성 |
-| $DX\big\vert_a[\vert\eta\rangle]$ | §3-4 | $DX[a : \vert\eta\rangle]$ | 세로줄($\vert$) 사용으로 인한 디랙 표기와의 구문 충돌 |
-| $D\{\hat{A}_a\}[\vert\eta\rangle]$ | §3-5 | $DX[a : \vert\eta\rangle]$ | 고정된 상숫값 대상에 대한 미분 수행 모순 |
-| $\hat{A}_u$ | §3-5 | $\hat{A}$ 또는 $\hat{A}_a$ | 변분 대상 $u$를 아래첨자로 고정 표현 금지 |
-| $\hat{D}$, $\hat{\delta}$ | §3-1 | $D$, $\delta$ | 미분/변분 연산자에 헷 표기 부과 금지 |
-| $\hat{A}(u; \delta u)$ | 정의 1 | $\delta\hat{A}$ 또는 $D\hat{A}[\vert\eta\rangle]$ | 세미콜론 사용 및 방향 인자의 중복 전달 금지 |
-| $[\cdot] \in \mathcal{L}(\mathcal{H})$ | 정리 1 | 소속은 대상에 따라 정해짐 | 괄호 종류에 따른 출력 공간 소속 고정 오류 |
+| 금지 표기 | 올바른 표기 | 사유 |
+| :--- | :--- | :--- |
+| $\hat{A}\big(\vert u\rangle\big)$ | $\hat{A}(u)$ | 소괄호 내부에 켓 표기 사용 금지 |
+| $N\vert u\rangle$ ($N$ 비선형) | $N(u)$ | 비선형 사상에 병치 작용 표기 사용 금지 |
+| $\delta\hat{A}\vert u\rangle$ | $(\delta\hat{A})\vert u\rangle$ 또는 $\delta\{\hat{A}\vert u\rangle\}$ | 변분 작용 범위의 모호성 |
+| $DX\big\vert_a[\vert\eta\rangle]$ | $DX[a : \vert\eta\rangle]$ | 세로줄($\vert$) 사용으로 인한 디랙 표기와의 구문 충돌 |
+| $D\{\hat{A}_a\}[\vert\eta\rangle]$ | $DX[a : \vert\eta\rangle]$ | 고정된 상숫값 대상에 대한 미분 수행 모순 |
+| $\hat{A}_u$ | $\hat{A}$ 또는 $\hat{A}_a$ | 변분 대상 $u$를 아래첨자로 고정 표현 금지 |
+| $\hat{D}$, $\hat{\delta}$ | $D$, $\delta$ | 미분/변분 연산자에 헷 표기 부과 금지 |
+| $\hat{A}(u; \delta u)$ | $\delta\hat{A}$ 또는 $D\hat{A}[\vert\eta\rangle]$ | 세미콜론 사용 및 방향 인자의 중복 전달 금지 |
+| $[\cdot] \in \mathcal{L}(\mathcal{H})$ | 소속은 대상에 따라 정해짐 | 괄호 종류에 따른 출력 공간 소속 고정 오류 |

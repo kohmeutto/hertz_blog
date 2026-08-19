@@ -1,6 +1,6 @@
 +++
 title = "(b) Differential operators"
-weight = 20
+weight = 30
 +++
 
 ---

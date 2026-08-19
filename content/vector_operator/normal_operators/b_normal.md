@@ -1,6 +1,6 @@
 +++
 title = "(b) Normal"
-weight = 1
+weight = 10
 +++
 
 ---

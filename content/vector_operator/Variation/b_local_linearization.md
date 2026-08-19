@@ -99,7 +99,7 @@ $$
 두 항을 더한다.
 
 $$
-\hat{J}_{a}\,\vert{}\eta\rangle \;=\; \hat{L}_0\,\vert{}\eta\rangle \;+\; DN\big[\,a : \vert{}\eta\rangle\,\big] \qquad \blacksquare
+\hat{J}_{a}\,\vert{}\eta\rangle \;=\; \hat{L}_0\,\vert{}\eta\rangle \;+\; DN\big[\,a : \vert{}\eta\rangle\,\big]
 $$
 
 <hr>
